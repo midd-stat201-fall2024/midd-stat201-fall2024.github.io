@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "midd-stat201-fall2024.github.io",
+    "title": "Advanced Introduction to Statistics and Data Science",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the course Canvas, GitHub, and textbook."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Advanced Introduction to Statistics and Data Science",
+    "section": "Course details",
+    "text": "Course details\nInstructor: Becky Tang\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times:\n\nSection AZ: MWR 8:15-9:30am\nSection BY: MWR 9:45-11:00am\n\nSyllabus"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week\nMonday\nWednesday\nThursday\n\n\n\n\n1\n\nTopic: Welcome!\nLive code:\n\n\nTopic:\nLive code:\n\n\nTopic: Installation\nLive code:\n\n\n\n2\n\nTopic:\nLive code:\n\n\nTopic:\nLive code:\n\n\nTopic:\nLive code:"
   }
 ]

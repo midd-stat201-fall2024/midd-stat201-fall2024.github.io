@@ -3,18 +3,29 @@ project:
   output-dir: docs
 
 website:
-  title: "midd-stat201-fall2024.github.io"
+  title: "STAT 201: Advanced Intro. to Statistics and Data Science"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - file: index.qmd
+        text: "Home"
+      - file: schedule.qmd
+        text: "Schedule"
+    right:
+      - icon: book-half
+        href: https://openintro-ims.netlify.app/
+      - icon: bar-chart-fill
+        href: https://middlebury.instructure.com/
+      - icon: github
+        href: https://github.com/
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+    theme: 
+      - united
+      - customs.scss
+    toc: false
+    page-layout: article
 
 editor: visual
 

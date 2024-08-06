@@ -1,11 +1,21 @@
 ---
-title: "midd-stat201-fall2024.github.io"
+title: "Advanced Introduction to Statistics and Data Science"
 ---
 
-This is a Quarto website.
+Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the course Canvas, GitHub, and textbook.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+------------------------------------------------------------------------
 
-```{r}
-1 + 1
-```
+## Course details
+
+Instructor: Becky Tang
+
+-   Office: WNS 214
+-   Email: btang\@middlebury.edu
+
+Meeting times:
+
+-   Section AZ: MWR 8:15-9:30am
+-   Section BY: MWR 9:45-11:00am
+
+Syllabus
