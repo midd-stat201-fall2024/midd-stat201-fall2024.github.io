@@ -2,7 +2,7 @@
 title: "Advanced Introduction to Statistics and Data Science"
 ---
 
-Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the course Canvas, GitHub, and textbook.
+Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to textbook, GitHub, and Canvas.
 
 ------------------------------------------------------------------------
 

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "STAT 201: Advanced Intro. to Statistics and Data Science"
+  title: "STAT 201: Intro. to Statistics and Data Science"
   navbar:
     left:
       - file: index.qmd
@@ -12,11 +12,14 @@ website:
         text: "Schedule"
     right:
       - icon: book-half
+        text: "Textbook"
         href: https://openintro-ims.netlify.app/
-      - icon: bar-chart-fill
-        href: https://middlebury.instructure.com/
       - icon: github
+        text: "GitHub"
         href: https://github.com/
+      - icon: bar-chart-fill
+        text: "Canvas"
+        href: https://middlebury.instructure.com/
 
 
 format:
