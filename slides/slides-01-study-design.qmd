@@ -1,0 +1,239 @@
+---
+title: "Study design"
+date: "September 11, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+# Housekeeping
+
+```{r packabundances, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+
+plot_theme <- theme(text = element_text(size = 16))
+```
+
+# Key terminology
+
+## Population and samples
+
+-   Data do not come from thin air! Data have to be *collected* in some way.
+
+-   This usually takes the form of sampling a subset of individuals from a target group of interest
+
+    -   The target group of interest is called the **population**
+    -   The subset of individuals from whom we actually collect data is the **sample**
+
+-   ::: discuss
+    What are the target populations in the following research questions? What would an individual case be?
+
+    1.  What is the average height of trees on Middlebury College campus?
+
+    2.  What proportion of current Middlebury professors attended a liberal arts college?
+
+    3.  Over the last five years, what is the average time to complete a degree for Middlebury College students?
+    :::
+
+## Population and samples (cont.)
+
+-   Typically, the size of the sample is way smaller than the population. Why?
+    -   In the lucky event that we are able to collect data for every individual in the population, the sample is referred to as a **census**
+-   Example: the U.S. Census Bureau is responsible for producing data about the American people and economy. They collect data with different schemes and frequency:
+    -   [Decennial census](https://www.census.gov/programs-surveys/decennial-census.html)
+    -   [American community survey](https://www.census.gov/history/www/programs/demographic/american_community_survey.html#:~:text=The%20survey%20provides%20current%20data,than%20once%20every%20five%20years.)
+
+## Parameters and statistics
+
+-   Often times, answering the research question simplifies to understanding a numerical summary.
+
+    -   A numerical summary calculated from (or considered for calculation from) the entire population is called a (population) **parameter**
+
+    -   In contrast, a numerical summary calculated from the sample is called a (sample) **statistic**
+
+-   Why do we differentiate? It's always good to remember that we are trying to answer questions about the population!
+
+# Sampling from a population
+
+## A "good" sample
+
+-   The way we sample data from a population can directly influence the quality of that sample.
+
+-   ::: discuss
+    What are desirable characteristics of a sample?
+    :::
+
+    -   **Representative**: the sample roughly "looks like" the population, i.e. the individuals in the sample offer a good representation of the population at large
+    -   **Generalizable**: any results based on the sample can generalize to the population, i.e. we can make "good guesses" about a population parameter using a sample statistic
+    -   **Unbiased**: every individual in the sample had an equal chance of being sampled
+
+## Bias in a sample
+
+-   Bias in a sample can arise due to many causes. Here are a few:
+    -   Convenience sampling bias: sampling is done in a way that is convenient to the researcher
+
+    -   Response bias:
+
+    -   Self-selection and/or non-response bias:
+
+    -   Exclusion or undercoverage bias:
+
+    -   Survivorship bias:
+-   **Randomly sampling** from the population can help reduce bias in our sample.
+-   Depending on the population, we might need to use different random sampling methods to ensure the sample is representative.
+
+## Simple random sampling
+
+-   The most intuitive and basic form of random sampling!
+
+-   Each individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.
+
+    -   Knowing that an individual was sampled does not provide useful information about which other cases are included
+
+-   ::: discuss
+    Consider again the research question: What proportion of current Middlebury professors attended a liberal arts college?
+
+    How might I obtain a sample random sample of 25 professors?
+    :::
+
+## Stratified sampling
+
+-   Assume that the population is/can be broken up into several different, distinct sub-populations or **strata**
+
+    -   The division should "make sense"
+
+-   Rather than randomly sampling from the population as whole, we take a random sample from *each stratum*
+
+    -   How many from each stratum? Typically use a sampling fraction that is proportional to entire population!
+
+    -   E.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample $n = 10$ trees total, we should randomly sample 8 deciduous and 2 coniferous trees
+
+-   May be useful to ensure we have samples from rare groups, and helps to improve precision of the sample
+
+## Cluster sampling
+
+-   Divide total population into $M$ distinct groups or **clusters** of roughly equal size
+
+-   Perform a simple random sample on the $M$ clusters, than sample all individuals within each of the randomly select clusters
+
+-   ::: discuss
+    Discuss the following:
+
+    -   Would you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?
+
+    -   Would you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?
+
+    -   What is the difference between stratified and cluster sampling?
+    :::
+
+## Multistage sampling
+
+-   Builds on the cluster sampling method, but rather than sampling all individuals within the selected clusters, only collect a random sample within each selected cluster
+
+-   Though seemingly more complicated, why might we prefer multistage sampling over cluster sampling?
+
+# Experiments vs. Observational studies
+
+We now know *how* to collect data, but now we turn to examining *what* *kind* of study we'd like to perform in order to answer the research question. We begin with experiments.
+
+## Experimental design
+
+-   **Experiments** are studies where the researcher assigns treatments to cases
+
+    -   Note: experiments are often conducted in medical settings, hence the word "treatment".
+
+-   When the researcher *randomly* assigns the treatments, we have a **randomized experiment**
+
+    -   Randomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable
+
+    -   Note: random assignment $\ne$ random sampling
+
+## Confounding variables
+
+-   Understanding a causal relationship is made difficult by **confounding** variables: variables that are associated with both the explanatory and response variable of interest
+
+    -   Because it is associated with both variables, if not properly accounted for, it prevents the study from concluding that the explanatory variable caused the response variable
+
+-   Example: consider a study that seeks to examine the effect of coffee consumption on heart disease.
+
+    -   From each person, we only collect information on the average amount of coffee they consume per day and whether or not they have heart disease.
+
+    -   We find a positive association: more coffee $\rightarrow$ higher risk of heart disease
+
+    -   Possible confounder: smoker status. Smokers [tend to drink more coffee](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4879503/#:~:text=Cigarette%20smoking%20is%20associated%20with,of%20coffee%20per%20day%202.) and tend to have [higher rates of heart disease](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7399440/) than non-smokers.
+
+    -   So the increase in heart disease may be due to smoker status rather than caffeine intake
+
+## Principles of experimental design
+
+1.  **Randomization**: randomly assign patients to treatments
+    -   Helps account for variables that cannot be controlled and possible confounding variables
+2.  **Controlling** for differences in the treatment: ensure that everyone follows the same protocol exactly
+3.  **Replication**: the more cases we observe, the more confidence we have in the effect of the explanatory on the response
+    -   Achieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once
+
+-   These first three principles are crucial! The following is principle is desirable, but more complicated.
+
+## Principles of experimental design (cont.)
+
+4.  **Blocking**: suppose we know ahead of time that there is/are variable(s) than could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.
+    -   Helps to decrease unexplained variability by accounting for **nuisance variables**: variables that affect the response variable but are not of interest for answering the scientific question
+    -   Can lead to greater interpretation of results
+
+## **Treatment vs. control**
+
+-   Randomized experiments are the gold standard for data collection, but biases can still occur!
+
+-   When we want to learn if the explanatory variable causes some effect in the response variable.
+
+    -   We have a **control group** which establishes a baseline, and typically receives "zero amount" of the explanatory variable.
+
+    -   We also have a **treatment group** which receives some "non-zero amount" of the explanatory variable
+
+-   Example: suppose we want to test the effect of a drug that is developed to help people fall asleep.
+
+    -   Treatment group: receives 50mg of the drug in pill form
+
+    -   Control group: does not receive the drug at all
+
+    -   ::: discuss
+        What is a potential issue?
+        :::
+
+## Reducing bias in human experiments
+
+-   We should make the experiment a **blind experiment** by not allowing participants to know which group they've been assigned to
+
+    -   Give a fake treatment known as a **placebo** to those in the control group (e.g. a sugar pill that looks exactly like the actual treatment pill)
+
+    -   Oftentimes, a placebo results in a slight but real improvement in patients. This is known as the **placebo effect**
+
+-   Doctors and researchers involved in the study should also be blinded so they do not give preferential treatment or care to patients in certain groups.
+
+    -   **Double-blind** experiments: both the patients and the doctors/researchers who interact with patients are unaware of who is or is not receiving the treatment
+
+-   Question of ethics
+
+## Observational studies
+
+-   Studies where no treatment is explictly applied
+
+-   Nothing is manipulated; researchers simply record/observe without intervening
+
+-   Typically cannot obtain causal conclusions using data from observational studies
+
+    -   There are too many confounding variables at play in observational studies
+
+-   But we can use these studies to identify associations or form hypotheses for future experiments!

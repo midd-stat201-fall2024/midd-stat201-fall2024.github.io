@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+
+// fonts
+$presentation-font-size-root: 30px;
+
+
+/*-- scss:rules --*/
+.discuss {
+  color: #e4631c;
+  background-color: #ffe6b4;
+  font-size: 30px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 1px 16px;
+}
+
+.important {
+  color: maroon;
+  font-weight: bold;
+}

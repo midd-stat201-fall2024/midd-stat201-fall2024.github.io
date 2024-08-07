@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "",
-    "text": "Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the course Canvas, GitHub, and textbook."
+    "text": "Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to textbook, GitHub, and Canvas."
   },
   {
     "objectID": "about.html",
@@ -18,13 +18,139 @@
     "href": "index.html#course-details",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Course details",
-    "text": "Course details\nInstructor: Becky Tang\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times:\n\nSection AZ: MWR 8:15-9:30am\nSection BY: MWR 9:45-11:00am\n\nSyllabus"
+    "text": "Course details\nInstructor: Prof. Becky Tang\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2:00-4:00pm and Tuesday 3:45-5:00pm\nTA: TBD\n\nSyllabus:"
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/02\n\nTopic:\n\n\n\n\n\nW 09/04\n\nTopic:\n\n\n\n\n\nR 09/05\n\nTopic:\nInstallation instructions"
+    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/02\n\nTopic:\n\n\n\n\n\nW 09/04\n\nTopic: Study design\n\n\n\n\n\nR 09/05\n\nTopic:\nInstallation instructions"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#population-and-samples",
+    "href": "slides/slides-01-study-design.html#population-and-samples",
+    "title": "Study design",
+    "section": "Population and samples",
+    "text": "Population and samples\n\nData do not come from thin air! Data have to be collected in some way.\nThis usually takes the form of sampling a subset of individuals from a target group of interest\n\nThe target group of interest is called the population\nThe subset of individuals from whom we actually collect data is the sample\n\n\nWhat are the target populations in the following research questions? What would an individual case be?\n\nWhat is the average height of trees on Middlebury College campus?\nWhat proportion of current Middlebury professors attended a liberal arts college?\nOver the last five years, what is the average time to complete a degree for Middlebury College students?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#example",
+    "href": "slides/slides-01-study-design.html#example",
+    "title": "Study design",
+    "section": "Example",
+    "text": "Example\nThe U.S. Census Bureau is responsible for producing data about the American people and economy.\n\nDecennial census\nAmerican community survey"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#parameters-and-statistics",
+    "href": "slides/slides-01-study-design.html#parameters-and-statistics",
+    "title": "Study design",
+    "section": "Parameters and statistics",
+    "text": "Parameters and statistics\n\nOften times, answering the research question simplifies to understanding a numerical summary.\n\nA numerical summary calculated from (or considered for calculation from) the entire population is called a (population) parameter\nIn contrast, a numerical summary calculated from the sample is called a (sample) statistic\n\nWhy do we differentiate? It’s always good to remember that we are trying to answer questions about the population!"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#population-and-samples-cont.",
+    "href": "slides/slides-01-study-design.html#population-and-samples-cont.",
+    "title": "Study design",
+    "section": "Population and samples (cont.)",
+    "text": "Population and samples (cont.)\n\nTypically, the size of the sample is way smaller than the population. Why?\n\nIn the lucky event that we are able to collect data for every individual in the population, the sample is referred to as a census\n\nExample: the U.S. Census Bureau is responsible for producing data about the American people and economy. They collect data with different schemes and frequency:\n\nDecennial census\nAmerican community survey"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#a-good-sample",
+    "href": "slides/slides-01-study-design.html#a-good-sample",
+    "title": "Study design",
+    "section": "A “good” sample",
+    "text": "A “good” sample\n\nThe way we sample data from a population can directly influence the quality of that sample.\n\nWhat are desirable characteristics of a sample?\n\n\nRepresentative: the sample roughly “looks like” the population, i.e. the individuals in the sample offer a good representation of the population at large\nGeneralizable: any results based on the sample can generalize to the population, i.e. we can make “good guesses” about a population parameter using a sample statistic\nUnbiased: every individual in the sample had an equal chance of being sampled"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#bias-in-a-sample",
+    "href": "slides/slides-01-study-design.html#bias-in-a-sample",
+    "title": "Study design",
+    "section": "Bias in a sample",
+    "text": "Bias in a sample\n\nBias in a sample can arise due to many causes. Here are a few:\n\nConvenience sampling bias: sampling is done in a way that is convenient to the researcher\nResponse bias:\nSelf-selection and/or non-response bias:\nExclusion or undercoverage bias:\nSurvivorship bias:\n\nRandomly sampling from the population can help reduce bias in our sample.\nDepending on the population, we might need to use different random sampling methods to ensure the sample is representative."
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#simple-random-sampling",
+    "href": "slides/slides-01-study-design.html#simple-random-sampling",
+    "title": "Study design",
+    "section": "Simple random sampling",
+    "text": "Simple random sampling\n\nThe most intuitive and basic form of random sampling!\nEach individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.\n\nKnowing that an individual was sampled does not provide useful information about which other cases are included\n\n\nConsider again the research question: What proportion of current Middlebury professors attended a liberal arts college?\nHow might I obtain a sample random sample of 25 professors?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#stratified-sampling",
+    "href": "slides/slides-01-study-design.html#stratified-sampling",
+    "title": "Study design",
+    "section": "Stratified sampling",
+    "text": "Stratified sampling\n\nAssume that the population is/can be broken up into several different, distinct sub-populations or strata\n\nThe division should “make sense”\n\nRather than randomly sampling from the population as whole, we take a random sample from each stratum\n\nHow many from each stratum? Typically use a sampling fraction that is proportional to entire population!\nE.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample \\(n = 10\\) trees total, we should randomly sample 8 deciduous and 2 coniferous trees\n\nMay be useful to ensure we have samples from rare groups, and helps to improve precision of the sample"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#cluster-sampling",
+    "href": "slides/slides-01-study-design.html#cluster-sampling",
+    "title": "Study design",
+    "section": "Cluster sampling",
+    "text": "Cluster sampling\n\nDivide total population into \\(M\\) distinct groups or clusters of roughly equal size\nPerform a simple random sample on the \\(M\\) clusters, than sample all individuals within each of the randomly select clusters\n\nDiscuss the following:\n\nWould you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?\nWould you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?\nWhat is the difference between stratified and cluster sampling?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#multistage-sampling",
+    "href": "slides/slides-01-study-design.html#multistage-sampling",
+    "title": "Study design",
+    "section": "Multistage sampling",
+    "text": "Multistage sampling\n\nBuilds on the cluster sampling method, but rather than sampling all individuals within the selected clusters, only collect a random sample within each selected cluster\nThough seemingly more complicated, why might we prefer multistage sampling over cluster sampling?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#experimental-design",
+    "href": "slides/slides-01-study-design.html#experimental-design",
+    "title": "Study design",
+    "section": "Experimental design",
+    "text": "Experimental design\n\nExperiments are studies where the researcher assigns treatments to cases\n\nNote: experiments are often conducted in medical settings, hence the word “treatment”.\n\nWhen the researcher randomly assigns the treatments, we have a randomized experiment\n\nRandomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable\nNote: random assignment \\(\\ne\\) random sampling"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#confounding-variables",
+    "href": "slides/slides-01-study-design.html#confounding-variables",
+    "title": "Study design",
+    "section": "Confounding variables",
+    "text": "Confounding variables\n\nUnderstanding a causal relationship is made difficult by confounding variables: variables that are associated with both the explanatory and response variable of interest\n\nBecause it is associated with both variables, if not properly accounted for, it prevents the study from concluding that the explanatory variable caused the response variable\n\nExample: consider a study that seeks to examine the effect of coffee consumption on heart disease.\n\nFrom each person, we only collect information on the average amount of coffee they consume per day and whether or not they have heart disease.\nWe find a positive association: more coffee \\(\\rightarrow\\) higher risk of heart disease\nPossible confounder: smoker status. Smokers tend to drink more coffee and tend to have higher rates of heart disease than non-smokers.\nSo the increase in heart disease may be due to smoker status rather than caffeine intake"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#principles-of-experimental-design",
+    "href": "slides/slides-01-study-design.html#principles-of-experimental-design",
+    "title": "Study design",
+    "section": "Principles of experimental design",
+    "text": "Principles of experimental design\n\nRandomization: randomly assign patients to treatments\n\nHelps account for variables that cannot be controlled and possible confounding variables\n\nControlling for differences in the treatment: ensure that everyone follows the same protocol exactly\nReplication: the more cases we observe, the more confidence we have in the effect of the explanatory on the response\n\nAchieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once\n\n\n\nThese first three principles are crucial! The following is principle is desirable, but more complicated."
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#principles-of-experimental-design-cont.",
+    "href": "slides/slides-01-study-design.html#principles-of-experimental-design-cont.",
+    "title": "Study design",
+    "section": "Principles of experimental design (cont.)",
+    "text": "Principles of experimental design (cont.)\n\nBlocking: suppose we know ahead of time that there is/are variable(s) than could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.\n\nHelps to decrease unexplained variability by accounting for nuisance variables: variables that affect the response variable but are not of interest for answering the scientific question\nCan lead to greater interpretation of results"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments",
+    "href": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments",
+    "title": "Study design",
+    "section": "Reducing bias in human experiments",
+    "text": "Reducing bias in human experiments\n\nWe should make the experiment a blind experiment by not allowing participants to know which group they’ve been assigned to\n\nGive a fake treatment known as a placebo to those in the control group (e.g. a sugar pill that looks exactly like the actual treatment pill)\nOftentimes, a placebo results in a slight but real improvement in patients. This is known as the placebo effect\n\nDoctors and researchers involved in the study should also be blinded so they do not give preferential treatment or care to patients in certain groups.\n\nDouble-blind experiments: both the patients and the doctors/researchers who interact with patients are unaware of who is or is not receiving the treatment\n\nQuestion of ethics"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#treatment-vs.-control",
+    "href": "slides/slides-01-study-design.html#treatment-vs.-control",
+    "title": "Study design",
+    "section": "Treatment vs. control",
+    "text": "Treatment vs. control\n\nRandomized experiments are the gold standard for data collection, but biases can still occur!\nWhen we want to learn if the explanatory variable causes some effect in the response variable.\n\nWe have a control group which establishes a baseline, and typically receives “zero amount” of the explanatory variable.\nWe also have a treatment group which receives some “non-zero amount” of the explanatory variable\n\nExample: suppose we want to test the effect of a drug that is developed to help people fall asleep.\n\nTreatment group: receives 50mg of the drug in pill form\nControl group: does not receive the drug at all\n\nWhat is a potential issue?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#observational-studies-1",
+    "href": "slides/slides-01-study-design.html#observational-studies-1",
+    "title": "Study design",
+    "section": "Observational studies",
+    "text": "Observational studies\n\nStudies where no treatment is explictly applied\nNothing is manipulated; researchers simply record/observe without intervening\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#observational-studies",
+    "href": "slides/slides-01-study-design.html#observational-studies",
+    "title": "Study design",
+    "section": "Observational studies",
+    "text": "Observational studies\n\nStudies where no treatment is explictly applied\nNothing is manipulated; researchers simply record/observe without intervening\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!"
   }
 ]
