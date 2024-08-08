@@ -1,0 +1,238 @@
+---
+title: "Numerical data"
+subtitle: "Visualization"
+date: "September 16, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(readr)
+plot_theme <- theme(text = element_text(size = 16))
+```
+
+# Housekeeping
+
+# Visualizing numerical data
+
+We will be looking at some medical insurance data throughout these slides.
+
+```{r echo = F}
+insurance <- read_csv("data/insurance.csv") %>%
+  slice(1:200)
+```
+
+## Data
+
+Which of the following variables are numerical?
+
+```{r}
+insurance |>
+  DT::datatable(options = list(pageLength = 5))
+
+```
+
+## Scatterplots
+
+**Scatterplots** are *bivariate* visualizations that prove a case-by-case view of the data for two numerical variables
+
+-   Each point represents the observed pair of values of variables 1 and 2 for each case in the dataset
+
+::: fragment
+```{r}
+insurance |>
+  ggplot(aes(x = bmi, y = charges))+
+  geom_point() +
+  ylab("Charges ($)") +
+  xlab("Body mass index")  +
+  plot_theme
+```
+:::
+
+## Live code
+
+- Base R 
+
+- ggplot
+
+## Scatterplots (cont.)
+
+-   How do we determine which variable to put on each axis?
+
+-   What do scatterplots reveal about the data, and how are they useful?
+
+-   How might we improve on this visualization?
+
+## Dot plots
+
+-   Dot plots are a basic visualization that show the *distribution* of a single variable. They are univariate (one-variable) scatterplots.
+
+-   In the following, we have a dot plot of `BMI` rounded to the nearest integer.
+
+::: fragment
+```{r}
+insurance |>
+  mutate(bmi = round(bmi)) |>
+  ggplot(aes(x = bmi))+
+  geom_dotplot(binwidth = 1) +
+  xlab("Body mass index")  +
+  ylab("Count") +
+  scale_y_continuous(labels = NULL) +
+  plot_theme
+```
+:::
+
+## Binning
+
+-   Dot plot display the exact value for each observation. Become hard to read when the variable of interest has a wide set of values
+-   We will sacrifice a bit of precision for convenience by *binning*: we will consider segmenting the variable into equal-sized *bins* and visualize the value of each observation using its corresponding bin
+-   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5:
+    -   \[14, 18), \[18, 22), \[22, 26), ..., \[48, 52)
+-   We tabulate/count up the number of observations that fall into each bin.
+
+::: fragment
+```{r}
+insurance |>
+  mutate(bmi_bin = case_when( bmi < 19 ~ "[15, 19)",
+                    bmi >= 19 & bmi < 23 ~ "[19, 23)",
+                    bmi >= 23 & bmi < 27 ~ "[23, 27)",
+                    bmi >= 27 & bmi < 31 ~ "[27, 31)",
+                    bmi >= 31 & bmi < 35 ~ "[31, 35)",
+                    bmi >= 35 & bmi < 39 ~ "[35, 39)",
+                    bmi >= 39 & bmi < 43 ~ "[39, 43)",
+                    bmi >= 43 & bmi < 49 ~ "[43, 49)",
+                    bmi >= 49 & bmi < 53 ~ "[49, 52)")) |>
+  count(bmi_bin, name = "count")
+
+
+```
+:::
+
+## Histograms
+
+**Histograms** are visualizations that display the binned counts as bars for each bin.
+
+```{r}
+insurance |>
+  ggplot(aes(x = bmi)) +
+  geom_histogram(breaks = seq(15, 53, 4)) +
+  scale_x_continuous(breaks = seq(15, 50, 5)) +
+  scale_y_continuous(breaks = seq(0, 60, 10)) +
+  xlab("Body mass index") +
+  plot_theme
+```
+
+## Histograms (cont.)
+
+-   Histograms provide a view of the **density** of the data; the values the data take on as well as how often
+-   Very helpful for understanding the *shape* of the data distribution
+    -   Distributions are either **symmetric** or **skewed** in a one direction
+    -   Distributions with long tails to the left are called **left-skewed**, whereas distributions with long tails to the right are **right-skewed**
+-   Also helpful for identifying **modes** which are prominent peaks in the distribution
+    -   Distribution may be **unimodal** (one peak), **bimodal** (two peaks), or **multimodal** (more than two peaks)
+    -   Peaks need not be same height in histogram
+
+## Histograms (cont.)
+
+::: discuss
+How would you describe the shape and modality in the following two histograms?
+:::
+
+::: columns
+::: {.column width="\"50%"}
+```{r fig.height=8}
+insurance |>
+  ggplot(aes(x = bmi)) +
+  geom_histogram(breaks = seq(15, 53, 4)) +
+  scale_x_continuous(breaks = seq(15, 50, 5)) +
+  scale_y_continuous(breaks = seq(0, 60, 10)) +
+  xlab("Body mass index") +
+  theme(text=element_text(size = 24))
+```
+:::
+
+::: {.column width="\"50%"}
+```{r fig.height=8}
+insurance |>
+  ggplot(aes(x = charges)) +
+  geom_histogram(binwidth = 2500) +
+  xlab("Charges ($)") +
+  theme(text=element_text(size = 24))
+```
+:::
+:::
+
+# Summary statistics for numerical data
+
+Visualizations are great for understanding the distribution of the data, but it can be extremely useful to obtain more specific, quantitative information about how the data behave.
+
+## Mean
+
+-   By far the most common way to measure the center of the distribution of numerical data is using the **mean**, also called the **average**
+
+-   We use the term **sample mean** when referring to the mean of observed/sampled data, which is typically denoted as $\bar{x}$
+
+    -   $x$ is a placeholder for the variable of interest (e.g. `BMI`, `charges`)
+    -   The bar communicates that we are lookig at the average
+
+<!-- -->
+
+-   The (sample) mean is the sum over all the values of the variable, divided by total number of observations $n$:
+
+::: fragment
+$$\bar{x} = \frac{x_{1} + x_{2} + \ldots x_{n}}{n} = \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
+:::
+
+## Mean (cont.)
+
+
+
+::: fragment
+::: columns
+::: {.column width="\"50%"}
+```{r fig.height=8}
+insurance |>
+  ggplot(aes(x = bmi)) +
+  geom_histogram(breaks = seq(15, 53, 4)) +
+  scale_x_continuous(breaks = seq(15, 50, 5)) +
+  scale_y_continuous(breaks = seq(0, 60, 10)) +
+  geom_vline(xintercept = mean(insurance$bmi), col = "orange",
+             size = 3) +
+  xlab("Body mass index") +
+  theme(text=element_text(size = 24))
+```
+:::
+
+::: {.column width="\"50%"}
+```{r fig.height=8}
+insurance |>
+  ggplot(aes(x = charges)) +
+  geom_histogram(binwidth = 2500) +
+  xlab("Charges ($)") +
+  geom_vline(xintercept = mean(insurance$charges), col = "orange",
+             size = 3) +
+  theme(text=element_text(size = 24))
+```
+:::
+:::
+:::
+
+-   The sample mean $\bar{x}$ is an example of a sample statistic
+
+-   The mean over the entire population is an example of a population parameter. The **population mean** is often denoted $\mu$ (Greek letter mu)
+
+-   The sample mean $\bar{x}$ is often used as an estimate for $\mu$

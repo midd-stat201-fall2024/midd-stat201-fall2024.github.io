@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/02\n\nTopic:\n\n\n\n\n\nW 09/04\n\nTopic: Study design\n\n\n\n\n\nR 09/05\n\nTopic:\nInstallation instructions"
+    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/02\n\nTopic:\n\n\n\n\n\nW 09/04\n\nTopic: Study design\n\nPractice problems\n\n\n\n\n\n\nR 09/05\n\nTopic:\nInstallation instructions"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -74,7 +74,7 @@
     "href": "slides/slides-01-study-design.html#simple-random-sampling",
     "title": "Study design",
     "section": "Simple random sampling",
-    "text": "Simple random sampling\n\nThe most intuitive and basic form of random sampling!\nEach individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.\n\nKnowing that an individual was sampled does not provide useful information about which other cases are included\n\n\nConsider again the research question: What proportion of current Middlebury professors attended a liberal arts college?\nHow might I obtain a sample random sample of 25 professors?"
+    "text": "Simple random sampling\n\nThe most intuitive and basic form of random sampling!\nEach individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.\n\nKnowing that an individual was sampled does not provide useful information about which other cases are included\nAny given fixed-size subset of the population is equally likely to be chosen.\n\n\nConsider again the research question: What proportion of current Middlebury professors attended a liberal arts college?\nHow might I obtain a sample random sample of 25 professors?"
   },
   {
     "objectID": "slides/slides-01-study-design.html#stratified-sampling",
@@ -152,5 +152,82 @@
     "title": "Study design",
     "section": "Observational studies",
     "text": "Observational studies\n\nStudies where no treatment is explictly applied\nNothing is manipulated; researchers simply record/observe without intervening\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!"
+  },
+  {
+    "objectID": "practice/practice-01-study-design.html",
+    "href": "practice/practice-01-study-design.html",
+    "title": "Study design",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set. Unless otherwise stated, problems come from the IMS textbook.\n\nTime to implement the sampling methods we learned! Keep track of your work on this problem; we will return to it in the next few classes.\nWe have a farmer who grows sunflowers for making sunflower oil. Her field is arranged in a grid pattern, with 12 rows and 12 columns as shown below. Water is important for crops, so irrigation ditches have been installed along the top and bottom of the field. It is expected that plants closer to a water source will perform better than those further away from water.\nThe farmer would like to estimate the number of healthy plants in the field, along with a few other characteristics about the sunflowers. It would be unfeasible to conduct a census, so we should choose to sample a subset of the grid cells. Suppose we’d like to sample \\(n = 12\\) grid cells total.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using simple random sampling. I should be able to read your work and know what to do without any questions! Think about how you will perform the random sampling.\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using stratified sampling where the strata are rows. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using stratified sampling where the strata are columns. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using cluster sampling where we have 24 clusters total. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using multistage sampling. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\n\nWe discussed several methods of sampling today. Now consider a new sampling scheme that is commonly used in the social sciences when sampling from a “hidden” population. A scenario might be that we want to conduct a poll among homeless people, but the research team may only have contact details for a few homeless people.\nDenote the initial contacts as Group 1. The sampling proceeds in the following stages:\n\nStage 1: ask the people in Group 1 to take the survey, and then provide contact details for other people from the population who might want to participate. Denote these new contacts as Group 2.\nStage 2: ask the people in Group 2 to take the survey, and then provide contact details for other people from the population who might want to participate. Denote these new contacts as Group 3.\nProceed in a similar manner until the researchers have sufficient data.\n\n\n\nWhat are some advantages to this method of sampling?\nWhat are some disadvantages? Think about statistically and also ethically.\n\n(2.5.20) To assess the effectiveness of taking large doses of vitamin C in reducing the duration of the common cold, researchers recruited 400 healthy volunteers from staff and students at a university. A quarter of the patients were assigned a placebo, and the rest were evenly divided between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset of a cold for the following two days. All tablets had identical appearance and packaging. The nurses who handed the prescribed pills to the patients knew which patient received which treatment, but the researchers assessing the patients when they were sick did not. No statistically discernible differences were observed in any measure of cold duration or severity between the four groups, and the placebo group had the shortest duration of symptoms.\n\nWas this an experiment or an observational study? Why?\nWhat are the explanatory and response variables in this study?\nWere the patients blinded to their treatment?\nWas this study double-blind?\nParticipants are ultimately able to choose whether to use the pills prescribed to them. We might expect that not all of them will adhere and take their pills. Does this introduce a confounding variable to the study? Explain your reasoning."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#data",
+    "href": "slides/slides-03-numerical-vis.html#data",
+    "title": "Numerical data",
+    "section": "Data",
+    "text": "Data\nWhich of the following variables are numerical?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#scatterplots",
+    "href": "slides/slides-03-numerical-vis.html#scatterplots",
+    "title": "Numerical data",
+    "section": "Scatterplots",
+    "text": "Scatterplots\nScatterplots are bivariate visualizations that prove a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for each case in the dataset"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#scatterplots-cont.",
+    "href": "slides/slides-03-numerical-vis.html#scatterplots-cont.",
+    "title": "Numerical data",
+    "section": "Scatterplots (cont.)",
+    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\nHow might we improve on this visualization?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#dot-plots",
+    "href": "slides/slides-03-numerical-vis.html#dot-plots",
+    "title": "Numerical data",
+    "section": "Dot plots",
+    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable. They are univariate (one-variable) scatterplots.\nIn the following, we have a dot plot of BMI rounded to the nearest integer."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#binning",
+    "href": "slides/slides-03-numerical-vis.html#binning",
+    "title": "Numerical data",
+    "section": "Binning",
+    "text": "Binning\n\nDot plot display the exact value for each observation. Become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning: we will consider segmenting the variable into equal-sized bins and visualize the value of each observation using its corresponding bin\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5:\n\n[14, 18), [18, 22), [22, 26), …, [48, 52)\n\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#histograms",
+    "href": "slides/slides-03-numerical-vis.html#histograms",
+    "title": "Numerical data",
+    "section": "Histograms",
+    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#histograms-cont.",
+    "href": "slides/slides-03-numerical-vis.html#histograms-cont.",
+    "title": "Numerical data",
+    "section": "Histograms (cont.)",
+    "text": "Histograms (cont.)\n\nHistograms provide a view of the density of the data; the values the data take on as well as how often\nVery helpful for understanding the shape of the data distribution\n\nDistributions are either symmetric or skewed in a one direction\nDistributions with long tails to the left are called left-skewed, whereas distributions with long tails to the right are right-skewed\n\nAlso helpful for identifying modes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height in histogram"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#histograms-cont.-1",
+    "href": "slides/slides-03-numerical-vis.html#histograms-cont.-1",
+    "title": "Numerical data",
+    "section": "Histograms (cont.)",
+    "text": "Histograms (cont.)\n\nHow would you describe the shape and modality in the following two histograms?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#mean",
+    "href": "slides/slides-03-numerical-vis.html#mean",
+    "title": "Numerical data",
+    "section": "Mean",
+    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of observed/sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are lookig at the average\n\n\n\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#mean-cont.",
+    "href": "slides/slides-03-numerical-vis.html#mean-cont.",
+    "title": "Numerical data",
+    "section": "Mean (cont.)",
+    "text": "Mean (cont.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe sample mean \\(\\bar{x}\\) is an example of a sample statistic\nThe mean over the entire population is an example of a population parameter. The population mean is often denoted \\(\\mu\\) (Greek letter mu)\nThe sample mean \\(\\bar{x}\\) is often used as an estimate for \\(\\mu\\)"
   }
 ]

@@ -19,7 +19,7 @@ draft: false
 
 # Housekeeping
 
-```{r packabundances, echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
 
@@ -101,6 +101,7 @@ plot_theme <- theme(text = element_text(size = 16))
 -   Each individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.
 
     -   Knowing that an individual was sampled does not provide useful information about which other cases are included
+    -   Any given fixed-size subset of the population is equally likely to be chosen.
 
 -   ::: discuss
     Consider again the research question: What proportion of current Middlebury professors attended a liberal arts college?
