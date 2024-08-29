@@ -56,9 +56,8 @@ Please work on the practice problems in your group. At least one of the followin
     ii. Stage 2: ask the people in Group 2 to take the survey, and then provide contact details for other people from the population who might want to participate. Denote these new contacts as Group 3.
     iii. Proceed in a similar manner until the researchers have sufficient data.
 
-    ```{=html}
     <!-- -->
-    ```
+
     a.  What are some advantages to this method of sampling?
     b.  What are some disadvantages? Think about statistically and also ethically.
 
