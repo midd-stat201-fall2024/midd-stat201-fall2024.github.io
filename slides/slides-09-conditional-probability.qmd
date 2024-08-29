@@ -1,0 +1,195 @@
+---
+title: "Conditional probability"
+date: "September 23, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+# Housekeeping
+
+# Three types of probability
+
+## Probabilities with contingency tables
+
+-   As we saw in the previous class, sometimes the probabilities of events are quite clear to calculate (e.g. dice rolls or drawing cards)
+
+-   But oftentimes we have to use data to try and estimate probabilities (e.g. the Pew Research survey)
+
+-   When we have two (or more) variables, we often want to understand the relationships between them
+
+## Practice
+
+![](figs/08-coffee.png){fig-align="center"}
+
+Source: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/>
+
+::: fragment
+|                                | Did not die | Died | **Total** |
+|--------------------------------|-------------|------|-----------|
+| **Does not drink coffee**      | 5438        | 1039 | 6477      |
+| **Drinks coffee occasionally** | 29712       | 4440 | 34152     |
+| **Drinks coffee regularly**    | 24934       | 3601 | 28535     |
+| **Total**                      | 60084       | 9080 | 69164     |
+:::
+
+::: fragment
+::: discuss
+Define events $A$ = died and $B$ = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:
+
+-   $P(A)$
+
+-   $P(A \cap B)$
+
+-   $P(A \cup B^c)$
+:::
+:::
+
+## Marginal and joint probabilities
+
+-   $P(A)$ is an example of a **marginal probability**, which is a probability involving a single random process
+
+    -   From the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities
+
+-   $P(A \cap B)$ is an example of a **joint probability**, which is a probability of events for two or more random variables or processes
+
+    -   From the contingency table, we use specific cells and the overall total to obtain marginal probabilities
+
+## Marginal from joint
+
+In simple cases, we can obtain the marginal distribution from joint distributions. You already did this!
+
+|                                | Did not die | Died | **Total** |
+|--------------------------------|-------------|------|-----------|
+| **Does not drink coffee**      | 5438        | 1039 | 6477      |
+| **Drinks coffee occasionally** | 29712       | 4440 | 34152     |
+| **Drinks coffee regularly**    | 24934       | 3601 | 28535     |
+| **Total**                      | 60084       | 9080 | 69164     |
+
+::: fragment
+$$\begin{align*}
+P(\text{does not drink coffee}) &= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
+&\quad P(\text{does not drink coffee} \ \cap \text{ died}) \\
+&= \frac{5438}{69164 } + \frac{1039}{69164} \\
+&= 0.0936
+\end{align*}
+$$
+:::
+
+## Conditional probability
+
+-   The probability that an event will occur *given* that another event has already occurred is a **conditional probability**.
+
+    -   E.g. Given that it rained yesterday, what is the probability that it will rain today?
+
+    -   It is called "conditional" because we calculate a probability under a specific condition
+
+-   The conditional probability of event $A$ given event $B$ is written as $P(A|B)$, where the vertical bar "\|" is read as "given"
+
+    -   Not to be confused with the coding `|` which is "or"
+
+-   We can easily obtain conditional probabilities from contingency tables!
+
+## Conditional probability with contingency tables
+
+|                                | Did not die | Died | **Total** |
+|--------------------------------|-------------|------|-----------|
+| **Does not drink coffee**      | 5438        | 1039 | 6477      |
+| **Drinks coffee occasionally** | 29712       | 4440 | 34152     |
+| **Drinks coffee regularly**    | 24934       | 3601 | 28535     |
+| **Total**                      | 60084       | 9080 | 69164     |
+
+What is the conditional probability of dying given that someone does not drink coffee?
+
+## Conditional probability formula
+
+-   What happens if we don't have counts? We will see that conditional, joint, and marginal probabilities are related
+-   For any events $A$ and $B$:
+
+::: fragment
+$$
+P(A| B) = \frac{P(A \cap B)}{P(B)}
+$$
+:::
+
+-   Let $A$ be the event that someone died, and $B$ the event that someone does not drink coffee.
+    -   Use the above formula to obtain $P(A|B)$
+    -   Come up with a formula for $P(B|A)$ and calculate this conditional probability for the problem at hand.
+-   Note: complement rule holds for conditional probabilities if we condition on the same information: $P(A|B) = 1 - P(A^c | B)$
+
+## Independence and conditional probabilities
+
+-   What happens if we re-arrange the formula on the previous slide? We obtain (this is known as the **general multiplication rule**)
+
+::: fragment
+$$
+P(A \cap B) = P(A|B) \times P(B)
+$$
+:::
+
+-   Recall, $A$ and $B$ are independent when what is true?
+
+-   Putting these two components together, what is another way to determine if events $A$ and $B$ are independent?
+
+    -   Why does this make sense "intuitively"?
+
+-   ::: discuss
+    Using this new test of independence, are dying and abstaining from coffee independent events?
+    :::
+
+# Bayes' Rule
+
+## Bayes' Rule
+
+-   As we saw before, the two conditional probabilities $P(A|B)$ and $P(B|A)$ are not the same. But are they related in some way?
+
+-   Yes! Using Bayes' rule:
+
+::: fragment
+$$
+P(A|B) =
+$$
+:::
+
+-   Can we go even further?
+
+::: fragment
+$$
+P(A|B) =
+$$
+:::
+
+-   Why is this seemingly more complicated formula useful?
+
+## Bayes' Theorem (more general)
+
+-   Suppose we have two processes, each with their own sample spaces $S_{1}$ and $S_{2}$.
+
+-   Further suppose we can break up $S_{1}$ into $k$ disjoint outcomes $A_{1}, A_{2}, \ldots, A_{k}$
+
+-   **Bayes' Theorem** states:
+
+    $$\begin{align*}
+    P(\text{outcome } &A_{1} \text{ of process } 1 | \text{outcome } B \text{ of process } 2) = \\ &\frac{P(B|A_{1}) P(A_{1})}{P(B|A_{1}) P(A_{1}) + P(B | A_{2}) P(A_{2}) + \ldots + P(B | A_{k} ) P(A_{k})}
+    \end{align*}$$
+
+## Example
+
+-   In Canada, about 0.35% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but this test is not perfect.
+
+-   In about 11% of patients with breast cancer, the test gives a *false negative*: it indicates a woman does not have breast cancer when she does have breast cancer.
+
+-   In about 7% of patients who do not have breast cancer, the test gives a *false positive*: it indicates these patients have breast cancer when they actually do not.
+
+-   If we tested a random Canadian woman over 40 for breast cancer using a mammogram and the test came back positive, what is the probability that the patient actually has breast cancer?

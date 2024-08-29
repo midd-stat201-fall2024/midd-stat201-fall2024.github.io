@@ -1,0 +1,193 @@
+---
+title: "Probability basics"
+subtitle: "Part 1"
+date: "September 23, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+# Housekeeping
+
+# Probability basics
+
+## Key terms
+
+-   **Random process**: a situation in which the particular *outcome* is random/not known ahead of time
+
+    -   Examples: rolling die, sports game, if a treatment is effective
+
+-   A **sample space** $S$ is the set of all possible outcomes of the random process
+
+    -   ::: discuss
+        What are the sample spaces above for the above examples?
+        :::
+
+-   An **event** is a set of outcomes from a random process
+
+-   A **random variable** is a function from a sample space to the real numbers
+
+    -   Often denoted with a capitol letter like $X$ or $Y$
+
+    -   **NOTE**: we will focus on *discrete* random variables for now
+
+## Probability
+
+-   For us, the **probability** of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times
+
+    -   Probability is used to express the likelihood that some outcome or event will or will not occur
+
+    -   Defined as a proportion
+
+-   Let $A$ denote some outcome or event. We denote the probability of $A$ occurring as $P(A)$ or $Pr(A)$.
+
+    -   ::: discuss
+        What sorts of values can $P(A)$ take on?
+        :::
+
+-   When the sample space $S$ is discrete with a finite size, then $Pr(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}$
+
+## Example
+
+Let the random process be the outcome from rolling a fair, six-sided die. Let $X$ be the value of the die.
+
+-   What is $Pr(X = 1)$?
+
+-   What is $Pr(X = 6)$?
+
+-   What is $Pr(X = 1 \text{ or } 2 \text{ or }... \text{ or } 6)$?
+
+-   What is $Pr(X = 1 \text{ and } 2)$?
+
+## Operations with events
+
+Let $A$ and $B$ be two possible events.
+
+-   The **intersection** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to *both* events $A$ and $B$
+
+-   The **union** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to $A$ and/or $B$
+
+Venn diagrams for visualizing probabilities.
+
+## Addition rule
+
+Let $A$ and $B$ be two possible events. Then the probability that at least one will occur is:
+
+$$
+P(A \cap B) = P(A) + P(B) - P(A \cup B)
+$$
+
+-   Example: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).
+
+    -   Suppose we randomly draw one card from the shuffled deck.
+
+    -   Let $A$ be the event that the card is a spade.
+
+    -   Let $B$ be the event that the card is a face card (Jack, Queen or King).
+
+    -   Find $P(A \cup B)$.
+
+## Disjoint events
+
+Two events are called **disjoint** or **mutually exclusive** if they cannot both happen.
+
+-   ::: discuss
+    -   If our random process is rolling a six-sided die, what are some example of disjoint events?
+
+    -   If $A$ and $B$ are disjoint, what is $P(A \cap B)$?
+
+    -   If $A$ and $B$ are disjoint, what is $P(A \cup B)$?
+    :::
+
+## Rules of probability
+
+## Probability distributions
+
+When a random variable is discrete, it can be useful to discuss its **probability distribution**, which is a table of all (disjoint) outcomes and their associated probabilities.
+
+::: discuss
+-   Let $X$ be the sum of two fair, six-sided dice. What is the sample space $S$?
+
+-   Fill out the table below to display the probability distribution of $X$:
+:::
+
+::: fragment
+|             |     |     |     |     |     |     |
+|-------------|-----|-----|-----|-----|-----|-----|
+| $X$         | 2   | 3   | 4   | 5   | 6   | 7   |
+| Probability |     |     |     |     |     |     |
+| $X$         | 8   | 9   | 10  | 11  | 12  |     |
+| Probability |     |     |     |     |     |     |
+:::
+
+## Probability distributions (cont.)
+
+The probability distribution of a discrete random variable must satisfy the following three rules:
+
+1.  The outcomes listed must be disjoint
+2.  Each probability must be between 0 and 1 (inclusive)
+3.  The probabilities must sum to 1
+
+## Complement
+
+-   The **complement** of an event $A$ is the set of all outcomes in $S$ that are not in $A$
+
+    -   Denoted as $A^c$
+
+-   Continuing the dice example, if $A$ is the event that a 1 or 2 is rolled, what is $A^c$?
+
+-   ::: discuss
+    What is $P(A \cup A^c)$? Why?
+    :::
+
+-   We can use the above to obtain the **complement rule**
+
+-   ::: discuss
+    Let our random process be the sum of two dice. What is the probability that...
+
+    -   the sum of the dice is $not$ 6?
+
+    -   the sum is *at least* 4?
+    :::
+
+## DeMorgan's Laws
+
+1.  Complement of union: $(A \cup B)^c =  \ ?$
+2.  Complement of intersection: $(A \cap B)^c = \ ?$
+
+## Independence
+
+-   Qualitatively, two processes are **independent** if knowing the outcome of one does not provide any information about the outcome of the other process
+
+    -   (Non) Examples?
+
+-   If $A$ and $B$ are independent events from two different and independent processes, then $Pr(A \cap B) = Pr(A) \times Pr(B)$
+
+    -   This extends to more than two independent processes
+
+-   More generally, if $P(A \cap B) = Pr(A) \times Pr(B)$ and $A$ and $B$ are events from the same process, then $A$ and $B$ are independent.
+
+    -   This is known as the **multiplication rule**
+
+
+## Practice
+
+::: discuss
+A Pew Research survey asked 2,373 randomly sampled registered voters their political afilliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.
+
+a.  What percent of voters are Independent but not swing voters?
+b.  What percent of voters are Independent or swing voters?
+c.  What percent of voters are neither Independent nor swing voters?
+d.  Is the event that someone is a swing voter independent of the event that someone is a political Independent?
+:::

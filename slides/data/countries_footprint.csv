@@ -1,0 +1,183 @@
+Country,Region,SDGi,Life_Exectancy,HDI,GDP,Income_Group,Population,Cropland,Grazing,Forest_Product,Carbon,Fish,Built_up_land,Total
+Afghanistan,Middle East/Central Asia,52.5,62,0.48,,LI,40.8,0.4,0.1,0.1,0.2,0,0,0.8
+Albania,Other Europe,71.6,76,0.8,14889,UM,2.9,0.8,0.2,0.2,0.7,0,0.1,2.1
+Algeria,Africa,71.5,76,0.75,11137,UM,45.4,0.7,0.2,0.1,1.2,0,0,2.2
+Angola,Africa,50.9,62,0.59,6304,LM,35,0.2,0.1,0.1,0.3,0.1,0.1,0.9
+Antigua and Barbuda,Central America/Caribbean,,78,0.79,18749,HI,0.1,,,,,,,2.9
+Argentina,South America,72.8,75,0.84,22117,UM,46,0.9,0.5,0.2,1.4,0.1,0.1,3.2
+Armenia,Middle East/Central Asia,71.1,72,0.76,13548,LM,3,0.7,0.2,0.3,1.1,0,0.1,2.3
+Australia,Asia-Pacific,75.6,83,0.95,53053,HI,26.1,0.1,0.5,0.9,4.3,0.1,0,5.8
+Austria,EU-27,82.3,81,0.92,55460,HI,9.1,1,0.3,1,3.2,0,0.2,5.6
+Azerbaijan,Middle East/Central Asia,73.5,69,0.75,14692,UM,10.3,0.8,0.2,0.1,1.2,0,0,2.4
+Bahrain,Middle East/Central Asia,64.3,79,0.88,49184,HI,1.8,0.5,0.4,0.2,6.8,0.2,0.1,8.2
+Bangladesh,Asia-Pacific,64.2,72,0.66,5681,LI,167.9,0.2,0,0.1,0.3,0,0.1,0.7
+Barbados,Central America/Caribbean,70.3,78,0.79,14910,HI,0.3,0.6,0.3,0.2,1.8,0.4,0.1,3.3
+Belarus,Other Europe,76,72,0.81,18574,UM,9.4,1.5,0.1,1.1,1.8,0.1,0.1,4.6
+Belgium,EU-27,79.7,82,0.94,52749,HI,11.7,1.4,0.4,0.8,3.6,0.1,0.4,6.7
+Belize,Central America/Caribbean,65.7,70,0.68,6122,UM,0.4,0.2,0.3,0.3,1.7,5.1,0,7.5
+Benin,Africa,51.2,60,0.53,3543,LI,12.8,0.4,0,0.2,0.3,0.2,0,1.1
+Bermuda,North America,,79,,,HI,0.1,,,,,,,
+Bhutan,Asia-Pacific,70.5,72,0.67,11106,LM,0.8,0.6,0.3,2.8,0.8,0,0.2,4.7
+Bolivia,South America,68,64,0.69,8442,LM,12,0.3,1.6,0.2,0.6,0,0.1,2.8
+Bosnia and Herzegovina,Other Europe,71.7,75,0.78,14964,UM,3.2,1.1,0.4,0.7,1.8,0.3,0,4.3
+Botswana,Africa,61.4,61,0.69,16519,UM,2.4,0.3,0.3,0.2,1.3,0,0,2.2
+Brazil,South America,72.8,73,0.75,14739,UM,215.4,0.5,0.6,0.4,0.7,0.1,0.2,2.6
+Brunei Darussalam,Asia-Pacific,67.1,75,0.83,64198,HI,0.4,0.4,0.2,0.2,6.8,0.3,0,7.9
+Bulgaria,EU-27,74.3,72,0.8,24490,UM,6.8,0.8,0.2,0.5,1.9,0.1,0.1,3.6
+Burkina Faso,Africa,54.5,59,0.45,2281,LI,22.1,0.3,0.1,0.3,0.1,0,0,0.9
+Burundi,Africa,54.1,62,0.43,733,LI,12.6,0.3,0.1,0.2,0,0,0,0.6
+Cabo Verde,Africa,,74,0.66,6629,LM,0.6,,,,,,,1.2
+Cambodia,Asia-Pacific,63.8,70,0.59,4705,LI,17.2,,,,,,,1.3
+Cameroon,Africa,55.5,60,0.58,3767,LM,27.9,0.5,0.1,0.2,0.1,0.1,0.1,1
+Canada,North America,77.7,83,0.94,49516,HI,38.4,1.3,0.3,1.1,4.6,0.1,0,7.4
+Central African Republic,Africa,39.3,54,0.4,944,LI,5,0.4,0.4,0.2,0,0,0,1.1
+Chad,Africa,41.3,53,0.39,1460,LI,17.4,0.3,0.8,0.2,0,0,0,1.4
+Chile,South America,77.8,79,0.86,24433,UM,19.3,0.6,0.5,1,1.6,0.1,0.1,3.8
+China,Asia-Pacific,72.4,78,0.77,18299,UM,"1,480.60",0.5,0.1,0.2,2.6,0.1,0.1,3.6
+Colombia,South America,70.1,73,0.75,15610,UM,51.5,0.6,0.7,0.1,0.5,0,0.1,2
+Comoros,Africa,,63,0.56,2874,LI,0.9,,,,,,,2
+Congo,Africa,52.3,64,0.57,3921,LM,5.8,0.3,0.1,0.3,0.3,0.1,0.1,1.1
+"Congo, Democratic Republic of",Africa,50,59,0.48,1127,LI,95.2,0.2,0,0.4,0,0,0.1,0.7
+Costa Rica,Central America/Caribbean,73.8,77,0.81,20976,UM,5.2,0.4,0.1,0.6,0.9,0.2,0.3,2.6
+Côte d'Ivoire,Africa, , , , ,LM,27.7,0.3,0.1,0.2,0.2,0.1,0.1,0.9
+Croatia,Other Europe,78.8,76,0.86,31007,HI,4.1,0.8,0.2,0.7,1.8,0.1,0.2,3.7
+Cuba,Central America/Caribbean,74.7,74,0.76, ,UM,11.3,0.8,0.1,0.1,0.8,0,0.1,1.9
+Cyprus,EU-27,74.2,81,0.9,41492,HI,1.2,,,,,,,3.2
+Czech Republic,EU-27,80.5,77,0.89,40707,HI,10.7,1,0.3,0.8,2.8,0,0.1,5.1
+Denmark,EU-27,85.6,81,0.95,59333,HI,5.8,1.9,0.4,1,2.9,0.8,0.2,7.3
+Djibouti,Africa,50.3,62,0.51,5710,LM,1,1.6,0.1,0.2,0.2,0.1,0.2,2.5
+Dominica,Central America/Caribbean,,73,0.72,12412,UM,0.1,,,,,,,2.7
+Dominican Republic,Central America/Caribbean,70.8,73,0.77,20541,UM,11.1,0.5,0.1,0.1,0.9,0.1,0.1,1.8
+Ecuador,South America,71.5,74,0.74,10847,UM,18.1,,,,,,,1.7
+Egypt,Africa,68.7,70,0.73,12786,LM,106.2,,,,,,,1.5
+El Salvador,Central America/Caribbean,69.6,71,0.68,9062,LM,6.6,0.4,0.2,0.4,0.6,0.1,0.1,2
+Equatorial Guinea,Africa,,61,0.6,16305,HI,1.5,0.2,0,0.5,1,0.1,0,1.8
+Eritrea,Africa,,67,0.49,1800,LI,3.7,0.2,0.3,0.1,0.1,0,0,0.7
+Estonia,EU-27,80.6,77,0.89,38353,HI,1.3,0.9,0.2,4.3,2.6,0,0.1,8.1
+Eswatini,Africa,54.6,57,0.6,8917,LM,1.2,0.4,0.4,0.8,0.6,0,0.5,2.9
+Ethiopia,Africa,58,65,0.5,2918,LI,120.8,0.3,0.1,0.4,0.1,0,0,0.8
+Fiji,Asia-Pacific,72.9,67,0.73,11647,UM,0.9,0.8,0.2,0.7,0.9,0.2,0.1,2.8
+Finland,EU-27,86.5,82,0.94,49686,HI,5.6,0.9,0.2,0.9,3,0.1,0.1,5.4
+France,EU-27,81.2,82,0.9,47995,HI,65.6,1,0.3,0.5,2.2,0.2,0.2,4.3
+French Guiana,South America,,,,,,0.3,,,,,,,1.5
+French Polynesia,Asia-Pacific,,79,,,HI,0.3,,,,,,,3.7
+Gabon,Africa,62.8,66,0.71,15287,UM,2.3,0.5,0.1,0.7,0.4,0.3,0,2.1
+Gambia,Africa,60.2,62,0.5,2266,LI,2.6,0.5,0,0.1,0.1,0.1,0,0.9
+Georgia,Middle East/Central Asia,73.4,72,0.8,15926,LM,4,0.4,0.2,0.2,1.4,0.4,0.1,2.7
+Germany,EU-27,82.2,81,0.94,54192,HI,83.9,0.9,0.2,0.5,2.7,0.1,0.2,4.5
+Ghana,Africa,63.4,64,0.63,5785,LM,32.4,0.4,0.1,0.6,0.3,0.2,0.1,1.8
+Greece,EU-27,76.8,80,0.89,30488,HI,10.3,1,0.4,0.3,1.9,0.1,0.1,3.8
+Grenada,Central America/Caribbean,,75,0.8,15668,UM,0.1,,,,,,,1.8
+Guadeloupe,Central America/Caribbean,,,,,,0.4,,,,,,,3.4
+Guatemala,Central America/Caribbean,61,69,0.63,8489,LM,18.6,0.4,0.2,0.6,0.5,0.1,0.2,1.9
+Guinea,Africa,51.3,59,0.47,2595,LI,13.9,0.4,0.5,0.4,0.1,0.1,0.1,1.5
+Guinea-Bissau,Africa,,60,0.48,2384,LI,2.1,0.4,0.1,0.6,0.1,0.1,0,1.2
+Guyana,South America,63.9,66,0.71,32768,LM,0.8,,,,,,,3.3
+Haiti,Central America/Caribbean,51.9,63,0.54,2731,LI,11.7,0.3,0,0.1,0.1,0,0,0.6
+Honduras,Central America/Caribbean,63.1,70,0.62,5773,LM,10.2,,,,,,,1.3
+Hungary,EU-27,79,74,0.85,35069,HI,9.6,1.1,0.1,0.4,2.1,0,0.1,3.8
+India,Asia-Pacific,60.3,67,0.63,7159,LM,"1,406.60",0.2,0,0.1,0.6,0,0.1,1
+Indonesia,Asia-Pacific,69.2,68,0.71,12449,LM,279.1,0.5,0,0.1,0.7,0.2,0.1,1.7
+"Iran, Islamic Republic of",Middle East/Central Asia,68.6,74,0.77,15702,UM,86,0.5,0.1,0,2.4,0.1,0.1,3.2
+Iraq,Middle East/Central Asia,62.3,70,0.69,10399,LM,42.2,0.5,0,0,1.1,0,0,1.7
+Ireland,EU-27,80.7,82,0.95,106717,HI,5,0.9,0.3,0.6,2.5,0.1,0.1,4.5
+Israel,Middle East/Central Asia,73.5,83,0.92,43000,HI,8.9,0.8,0.3,0.3,2.6,0.1,0.1,4.2
+Italy,EU-27,78.3,83,0.9,43010,HI,60.3,0.8,0.3,0.5,2,0.2,0.1,4
+Jamaica,Central America/Caribbean,69,71,0.71,10109,UM,3,0.5,0.1,0.2,0.8,0.2,0.1,1.7
+Japan,Asia-Pacific,79.6,84,0.93,41809,HI,125.6,0.4,0.1,0.2,2.9,0.3,0.1,4
+Jordan,Middle East/Central Asia,69.4,74,0.72,10159,UM,10.3,0.4,0.1,0.1,0.6,0,0.1,1.3
+Kazakhstan,Middle East/Central Asia,71.1,70,0.81,26125,UM,19.2,0.6,0.3,0.1,3.3,0,0,4.3
+Kenya,Africa,61,61,0.58,5192,LI,56.2,0.3,0.2,0.2,0.2,0,0,0.9
+"Korea, Democratic People's Republic of",Asia-Pacific,,73,,,LI,26,0.2,0,0.1,0.8,0,0,1.2
+"Korea, Republic of",Asia-Pacific,77.9,84,0.93,45438,HI,51.3,0.7,0.2,0.2,4.2,0.5,0.1,5.8
+Kuwait,Middle East/Central Asia,64.5,79,0.83,43613,HI,4.4,0.7,0.4,0.1,6.4,0.5,0.5,8.6
+Kyrgyzstan,Middle East/Central Asia,73.7,72,0.69,4764,LI,6.7,0.5,0.2,0,0.6,0,0.1,1.5
+Lao People's Democratic Republic,Asia-Pacific,63.4,68,0.61,7866,LM,7.5,0.7,0.2,0.3,0.5,0,0.2,1.9
+Latvia,EU-27,80.3,73,0.86,31973,HI,1.8,1.8,0.2,4,1.5,0.2,0.1,7.7
+Lebanon,Middle East/Central Asia,66.3,75,0.71,,UM,6.7,0.6,0.3,0.1,1.9,0.1,0.1,3.1
+Lesotho,Africa,55.1,53,0.51,2599,LM,2.2,,,,,,,1.2
+Liberia,Africa,49.9,61,0.48,1524,LI,5.3,0.2,0,0.7,0.1,0.1,0,1.2
+Lithuania,EU-27,75.4,74,0.88,39810,UM,2.7,1.8,0.3,1.3,2.6,0.2,0.2,6.4
+Luxembourg,EU-27,75.7,83,0.93,120505,HI,0.6,0.9,0.5,1.4,8,0.1,0.1,11
+Madagascar,Africa,50.1,64,0.5,1523,LI,29.2,0.2,0.2,0.2,0.1,0,0.1,0.8
+Malawi,Africa,53.3,63,0.51,1373,LI,20.2,0.4,0.1,0.2,0,0,0.1,0.7
+Malaysia,Asia-Pacific,70.4,75,0.8,28180,UM,33.2,0.7,0.1,0.4,2.4,0.5,0.1,4.2
+Mali,Africa,54.1,59,0.43,2206,LI,21.5,0.3,0.4,0.1,0.1,0,0.1,1
+Malta,EU-27,76.8,83,0.92,46806,HI,0.4,,,,,,,3.7
+Martinique,Central America/Caribbean,,,,,,0.4,,,,,,,3.5
+Mauritania,Africa,55.8,64,0.56,5927,LM,4.9,0.4,1.3,0.2,0.4,0,0,2.3
+Mauritius,Africa,68.4,74,0.8,21450,UM,1.3,,,,,,,2.6
+Mexico,North America,70.2,70,0.76,19028,UM,131.6,0.5,0.2,0.3,1.1,0.1,0.1,2.3
+Mongolia,Asia-Pacific,63.5,71,0.74,11435,LM,3.4,0.6,4.7,0.1,2.2,0,0,7.7
+Montenegro,Other Europe,68.8,74,0.83,21308,UM,0.6,0.5,0.4,1.1,1.3,0.1,0.3,3.7
+Morocco,Africa,69,74,0.68,7744,LM,37.8,0.5,0.2,0.1,0.6,0.1,0,1.5
+Mozambique,Africa,53.6,59,0.45,1232,LI,33.1,0.2,0.1,0.2,0.2,0,0,0.8
+Myanmar,Asia-Pacific,64.3,66,0.59,4090,LI,55.2,0.4,0,0.3,0.2,0,0.1,1.1
+Namibia,Africa,62.7,59,0.62,8949,UM,2.6,0.3,0.8,0.3,0.9,0,0,2.4
+Nepal,Asia-Pacific,66.2,68,0.6,3921,LI,30.2,0.3,0.1,0.2,0.3,0,0.1,0.9
+Netherlands,EU-27,79.9,81,0.94,58732,HI,17.2,,,,,,,6
+New Zealand,Asia-Pacific,78.3,82,0.94,43178,HI,4.9,,,,,,,5.4
+Nicaragua,Central America/Caribbean,67.1,74,0.67,6056,LM,6.8,0.5,0.2,0.4,0.4,0,0.1,1.5
+Niger,Africa,52.2,62,0.4,1229,LI,26.1,0.7,0.3,0.2,0.1,0,0,1.4
+Nigeria,Africa,54.2,53,0.54,5013,LM,216.7,0.3,0.1,0.2,0.2,0,0,0.8
+Norway,Other Europe,82.3,83,0.96,66643,HI,5.5,0.9,0.1,0.8,2.6,0.9,0.1,5.4
+Oman,Middle East/Central Asia,69.2,73,0.82,30222,HI,5.3,0.7,0.3,0.1,4.9,0.8,0.5,7.3
+Pakistan,Asia-Pacific,59.3,66,0.54,5542,LM,229.5,0.3,0,0.1,0.3,0,0,0.7
+Panama,Central America/Caribbean,64,76,0.81,30907,UM,4.4,0.6,0.4,0.2,0.8,0.4,0.1,2.3
+Papua New Guinea,Asia-Pacific,53.6,65,0.56,3682,LM,9.3,0.2,0,0.3,0.2,0.2,0.2,1.2
+Paraguay,South America,67.4,70,0.72,12359,LM,7.3,0.7,0.8,0.9,0.7,0,0.1,3.2
+Peru,South America,71.9,72,0.76,12878,UM,33.7,0.6,0.5,0.1,0.5,0.4,0.1,2.2
+Philippines,Asia-Pacific,66.6,69,0.7,8768,LM,112.5,0.3,0,0.1,0.5,0.2,0.1,1.2
+Poland,EU-27,80.5,76,0.88,35703,HI,37.7,1,0,0.8,2.6,0.1,0.1,4.6
+Portugal,EU-27,79.2,81,0.87,34950,HI,10.1,0.8,0.4,0.4,1.6,0.4,0.1,3.7
+Qatar,Middle East/Central Asia,66.8,79,0.86,96605,HI,3,0.7,0.3,0.2,11.6,0.2,0.1,13.1
+Republic of Moldova,Other Europe,73.9,69,0.77,14320,LM,4,,,,,,,1.5
+Republic of North Macedonia,Other Europe,72.3,75,0.77,16896,UM,2.1,0.7,0.3,0.3,1.5,0,0,2.8
+Réunion,Africa,,,,,,0.9,,,,,,,3.5
+Romania,EU-27,77.7,73,0.82,31367,UM,19,0.6,0.1,0.5,1.4,0,0.1,2.7
+Russian Federation,Other Europe,74.1,69,0.82,25706,UM,145.8,1.2,0.1,0.7,3.6,0.2,0,5.8
+Rwanda,Africa,59.4,66,0.53,2405,LI,13.6,0.2,0,0.2,0.1,0,0,0.6
+Saint Lucia,Central America/Caribbean,,71,0.72,14140,UM,0.2,0.5,0.1,0.1,0.9,0.2,0,1.7
+Saint Vincent and Grenadines,Central America/Caribbean,,70,0.75,13280,UM,0.1,,,,,,,1.8
+Samoa,Asia-Pacific,0,73,0.71,5084,LM,0.2,,,,,,,2.5
+Sao Tome and Principe,Africa,59.4,68,0.62,4010,LM,0.2,,,,,,,1.1
+Saudi Arabia,Middle East/Central Asia,66.6,77,0.88,47423,HI,35.8,0.8,0.2,0.2,4.5,0.1,0,5.7
+Senegal,Africa,58.7,67,0.51,3505,LM,17.7,0.5,0.2,0.2,0.2,0.1,0,1.2
+Serbia,Other Europe,75.9,73,0.8,20474,UM,8.7,1,0.1,0.6,2,0,0.1,3.8
+Sierra Leone,Africa,53,60,0.48,1677,LI,8.3,0.5,0.1,0.3,0.1,0.1,0,1
+Singapore,Asia-Pacific,71.7,83,0.94,112699,HI,5.9,0.6,0.3,0,4.4,0.4,0.1,5.7
+Slovakia,EU-27,78.7,75,0.85,33079,HI,5.5,0.8,0.2,0.6,2.4,0,0.1,4.2
+Slovenia,EU-27,,81,0.92,41570,HI,2.1,0.7,0.2,1.3,2.4,0.1,0.1,4.8
+Solomon Islands,Asia-Pacific,0,70,0.56,2043,LI,0.7,,,,,,,1.7
+Somalia,Africa,45.6,55, ,1132,LI,16.8,0.2,0.3,0.4,0,0,0,0.9
+South Africa,Africa,63.7,62,0.71,13157,UM,60.8,0.6,0.1,0.2,2.2,0.1,0.1,3.2
+South Sudan,Africa,39,55,0.39,794,LM,11.6,0.3,1.1,0.2,0.1,0,0,1.7
+Spain,EU-27,79.9,83,0.91,39753,HI,46.7,1.2,0.2,0.2,1.8,0.5,0.1,3.9
+Sudan,Africa,49.6,65,0.51,3804,LM,46,0.3,0.5,0.1,0.2,0,0,1.1
+Suriname,South America,71.6,70,0.73,14818,UM,0.6,0.3,0,0.9,1.7,0.1,0.1,3.1
+Sweden,EU-27,85.2,83,0.95,53897,HI,10.2,1,0.3,1.3,2.1,0.1,0.2,4.9
+Switzerland,Other Europe,80.8,84,0.96,,HI,8.8,0.6,0.2,0.3,2.4,0,0.2,3.7
+Syrian Arab Republic,Middle East/Central Asia,57.4,72,0.58,,LM,19.4,0.4,0.1,0,0.5,0,0,1
+Tajikistan,Middle East/Central Asia,69.7,72,0.69,3966,LI,10,0.3,0.1,0.2,0.3,0,0.1,1.1
+"Tanzania, United Republic of",Africa,57.4,66,0.55,2876,LI,63.3,0.3,0.2,0.2,0.1,0.1,0,0.9
+Thailand,Asia-Pacific,,79,0.8,18036,UM,70.1,0.5,0,0.2,1.4,0.2,0.1,2.3
+Timor-Leste,Asia-Pacific,0,68,0.61,2860,LM,1.4,0.3,0.1,0,0.1,0.1,0,0.6
+Togo,Africa,,62,0.54,2226,LI,8.7,0.3,0.1,0.2,0.2,0.1,0,0.9
+Tonga,Asia-Pacific,0,71,0.75,5810,LM,0.1,,,,,,,3.1
+Trinidad and Tobago,Central America/Caribbean,60.4,73,0.81,25596,HI,1.4,0.4,0.2,0.2,4.5,0.1,0,5.4
+Tunisia,Africa,70.7,74,0.73,10535,UM,12,0.1,0.1,0.2,0.9,0.1,0,1.4
+Turkiye,Middle East/Central Asia,70.4,76,0.84,32109,UM,85.6,0.9,0.1,0.3,1.9,0,0,3.4
+Turkmenistan,Middle East/Central Asia,66.1,69,0.75,16151,LM,6.2,0.4,0.5,0,2.9,0,0,3.9
+Uganda,Africa,54.9,63,0.53,,LI,48.4,0.3,0.1,0.4,0.1,0.1,0,1
+Ukraine,Other Europe,75.7,70,0.77,,LM,43.2,,,,,,,2
+United Arab Emirates,Middle East/Central Asia,68.8,79,0.91,67026,HI,10.1,0.8,0.6,0.6,6.5,0.3,0,8.7
+United Kingdom,Other Europe,80.6,81,0.93,47366,HI,68.5,0.7,0.2,0.4,2.1,0.1,0.1,3.6
+United States of America,North America,74.6,76,0.92,65118,HI,334.8,1.3,0.3,0.8,4.8,0.1,0.1,7.5
+Uruguay,South America,,75,0.81,22837,UM,3.5,0.3,0.6,0.4,0.7,0,0.1,2.2
+Uzbekistan,Middle East/Central Asia,69.9,71,0.73,,LM,34.4,0.5,0.2,0.1,1.2,0,0.1,2.1
+Vanuatu,Asia-Pacific,0,70,0.61,2442,LM,0.3,,,,,,,1.8
+"Venezuela, Bolivarian Republic of",South America,60.3,71,0.69,,UM,29.3,0.3,0.6,0.1,0.9,0.1,0,2.1
+Viet Nam,Asia-Pacific,72.8,74,0.7,11032,LM,99,0.5,0,0.4,1.3,0.1,0.1,2.4
+Yemen,Middle East/Central Asia,52.1,64,0.46,1780,LM,31.2,0.3,0.1,0,0.2,0.1,0,0.6
+Zambia,Africa,,,,,LM,19.5,0.3,0.1,0.5,0.2,0,0.1,1.2
+Zimbabwe,Africa,,,,,LI,15.3,0.3,0.3,0.3,0.3,0,0,1.1

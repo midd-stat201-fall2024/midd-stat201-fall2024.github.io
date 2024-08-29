@@ -1,0 +1,215 @@
+---
+title: "Categorical data"
+subtitle: "Visualizations and contingency tables"
+date: "September 23, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo = F, warning = F}
+knitr::opts_chunk$set(echo = F)
+library(tidyverse)
+library(readr)
+library(knitr)
+plot_theme <- theme(text = element_text(size = 16))
+insurance <- read_csv("data/insurance.csv") %>%
+  slice(1:200)
+```
+
+# Housekeeping
+
+# Categorical data
+
+To visualize the distribution of a categorical variable, we are simple display the counts of different categories/groups/levels within a categorical variable
+
+## Looking at your data
+
+Is your data tidy, or do you have a table of counts (i.e. a frequency table)?
+
+```{r echo = F}
+fruits <- tibble(
+  fruit = c("apple", "apple", "orange", "apple", "orange")
+)
+fruits_counted <- tibble(
+  fruit = c("apple", "orange"),
+  number = c(3, 2)
+)
+```
+
+::: columns
+::: {.column width="50%"}
+```{r}
+fruits
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+fruits_counted
+```
+:::
+:::
+
+## Univariate visualizations
+
+If we are interested in visualizing the distribution of a single categorical variable, it is common to use a **barplot**, where the different levels are displayed on ones axis and the counts of each level are portrayed on the the other axis.
+
+```{r}
+insurance |>
+  count(smoker)
+```
+
+```{r}
+ggplot(insurance, aes(x = smoker)) +
+  geom_bar() +
+  plot_theme
+```
+
+## Contingency tables
+
+-   Perhaps we are interested in examining the distribution of two categorical variables at the same time
+
+-   We can summarize the distribution using a two-way table of counts known as a **contingency table**, where each value in the table count the number of times a particular combination of variable 1 and variable 2 outcomes/levels occurred
+
+    ::: fragment
+    ```{r}
+    ct <- insurance |>
+      group_by(smoker, sex) |>
+      summarise(n = n()) |>
+      spread(sex, n) |>
+      ungroup() |>
+      kable(caption = "Contingency table")
+    ct
+    ```
+    :::
+
+    -   Note: can easily obtain the distribution of just one of the variables by looking row-wise or column-wise
+
+-   We essentially convert the contingency table to a visualization to visualize the distribution of two categorical variables
+
+## Dodged bar plot
+
+The **dodged bar plot** directly converts the contingency table to a visualization.
+
+```{r}
+p1 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar(position = "dodge") +
+  ggtitle("Dodged bar plot") +
+  theme(text = element_text(size = 24))
+p2 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar() +
+  ggtitle("Stacked bar plot") +
+  theme(text = element_text(size = 24))
+p3 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar(position = "fill") +
+  ggtitle("Standardized bar plot")  +
+  theme(text = element_text(size = 24))
+```
+
+```{r}
+ct
+p1
+```
+
+## Stacked bar plot
+
+The **stacked bar plot** looks at the counts either row-wise or column-wise.
+
+```{r}
+ct
+```
+
+::: columns
+::: {.column width="50%"}
+```{r fig.height=8}
+p2
+```
+:::
+
+::: {.column width="50%"}
+```{r fig.height=8}
+ggplot(insurance, aes(fill = smoker, x = sex)) +
+  geom_bar() +
+  ggtitle("Stacked bar plot") 
+```
+:::
+:::
+
+## Proportions
+
+To obtain our final bar plot, we must first convert to the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another. In the following, we obtain **row proportions**:
+
+::: columns
+::: {.column width="50%"}
+```{r}
+ct
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+insurance |>
+  group_by(smoker, sex) |>
+  summarise(n = n()) |>
+  ungroup() |>
+  group_by(smoker) |>
+  mutate(n = round(n/sum(n), 3)) |>
+  spread(sex, n)  |>
+  kable(caption = "Row-wise proportions")
+```
+:::
+:::
+
+::: discuss
+-   What does the quantity 0.378 represent?
+-   If we take the proportions row-wise, does each row need to sum to 1?
+-   If we take the proportions row-wise, does each column need to sum to 1?
+
+:::
+
+
+## Proportions (cont.)
+
+Set-up how you would find the column-wise proportions using this contingency table
+
+```{r}
+ct
+```
+
+## Standardized bar plot
+
+The **standardized bar plot** visualizes the row-wise or column-wise proportions.
+
+```{r}
+ggplot(insurance, aes(fill = smoker, x = sex)) +
+  geom_bar(position = "fill") +
+  ggtitle("Standardized bar plot")  +
+  theme(text = element_text(size = 24))
+```
+
+## Choosing a bar plot
+
+::: discuss
+- Using any of the plots below, do you believe the smoker status and sex are associated?
+- When might you prefer to use the stacked, dodged, or standardized bar plot?
+:::
+
+```{r}
+ggpubr::ggarrange(p1,p2,p3, ncol = 2, nrow = 2, common.legend = T, legend = "bottom")
+```
+
+## Factoring
+
+## Live code

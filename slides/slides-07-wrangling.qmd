@@ -1,0 +1,181 @@
+---
+title: "Data wrangling with dplyr"
+subtitle: "Part 1"
+date: "September 23, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo = F, warning = F}
+knitr::opts_chunk$set(echo = T)
+library(tidyverse)
+library(readr)
+library(knitr)
+plot_theme <- theme(text = element_text(size = 16))
+insurance <- read_csv("data/insurance.csv") %>%
+  slice(1:200)
+```
+
+# Housekeeping
+
+## Working dataset
+
+Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+
+-   Let's go ahead and pull to get the data locally
+
+-   Then open a new `.Rmd` to work in
+
+-   Let's load in the data together and take a quick look at it before diving into data wrangling
+
+# Data wrangling
+
+## Grammar of data wrangling
+
+-   **Data frames** are objects in R that store tabular data in tidy form
+
+-   The `dplyr` package uses the concept of functions as verbs that manipulate **data frames**
+
+    -   `select()`: pick columns by name
+    -   `slice()`: pick rows using indices
+    -   `filters()`: pick rows matching criteria
+    -   `distinct()`: filter for unique rows
+    -   `mutate()`: add new variables as columns
+    -   `summarise()`: reduce variables to quantitative values
+    -   `group_by()`: for grouped operations based on a variable
+    -   and many more!!!
+
+## Rules of dplyr functions
+
+1.  The first argument is *always* a data frame
+2.  Subsequent argument(s) say what to do with that data frame
+    i.  We connect lines to code using a *pipe* operator (more on pipes in the next few slides)
+3.  Always return a data frame
+
+## Pipes
+
+-   In programming, a **pipe** is a technique for passing information from one process to another
+
+    -   In `dplyr`, the pipes are coded as `%>%` or `|>`
+
+-   We can think about pipes as following a sequence of actions which provide a more natural and easier to read structure
+
+-   For example: suppose that in order to get to work, I need to find my car keys, start my car, drive to work, and then park my car
+
+::: columns
+::: {.column width="50%"}
+-   Expressed as a set of nested `R` pseudocode, this might look like:
+
+::: fragment
+```{r eval = F}
+park(drive(start_car(find("car_keys")), 
+           to = "work"))
+```
+:::
+:::
+
+::: {.column width="50%"}
+-   Expressed using pipes, this might look like:
+
+::: fragment
+```{r eval = F}
+find("car_keys") |>
+  start_car() |>
+  drive(to = "work") |>
+  park
+```
+:::
+:::
+:::
+
+## Logical operators in R
+
+It is common to compare two quantities using logical operators. All of these operators will return a **boolean** `TRUE` or `FALSE`.
+
+Here are list of some common ones:
+
+-   `<`: less than
+
+-   `<=`: less than or equal to
+
+-   `>`: greater than
+
+-   `>=`: greater than or equal to
+
+-   `==`: (exactly) equal to
+
+-   `!=`: not equal to
+
+::: fragment
+```{r echo = T, eval = T}
+1 < 4
+2 == 3
+
+```
+:::
+
+## Logical operators (cont.)
+
+We may always want to know if a certain quantity "behaves" a certain way:
+
+-   `is.na(x)`: test if `x` is `NA`
+
+-   `x %in% y`: test if `x` is in `y`
+
+-   `!x`: not `x`
+
+## Commenting code
+
+Recall that in `R`, we can comment out lines of code using the `#` symbol. The line of code will still be displayed, but it will not execute:
+
+```{r echo = T, eval = T}
+1 + 1
+# 2 * 1
+3 %in% 1:10
+```
+
+## Live code
+
+## Piping to ggplot
+
+-   Remember that when creating plots, the `ggplot()` function expect a data frame as its first argument
+
+-   We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons)
+
+    1.  Wrangle the data, store the resulting data frame with a new variable name, and then refer to that data frame with `ggplot()`, or
+
+        ::: fragment
+        ```{r eval = F}
+        df_new <- df |>
+          mutate(age_months = age*12)
+        ggplot(df_new, aes(x = age_months)) +
+          geom_histogram()
+        ```
+        :::
+
+    2.  Wrangle the data, and then directly pipe the result into `ggplot()`
+
+        ::: fragment
+        ```{r eval = F}
+        df |>
+          mutate(age_months = age*12) |>
+          ggplot(aes(x = age_months)) +
+          geom_histogram()
+        ```
+        :::
+
+-   ::: discuss
+    When do we use `|>` and when do we use `+` to connect lines of code?
+    :::

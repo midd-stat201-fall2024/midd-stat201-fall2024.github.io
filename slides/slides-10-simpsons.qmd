@@ -1,0 +1,192 @@
+---
+title: "Simpson's paradox"
+date: "September 23, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo = F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(readr)
+plot_theme <- theme(text = element_text(size = 16))
+set.seed(1)
+admissions <- read_csv("data/ucb_admissions.csv") |>
+  sample_frac()
+```
+
+# Housekeeping
+
+# Brief recap
+
+## Study design
+
+-   What are the differences between observational studies and experimental studies?
+
+-   What is a confounding variable?
+
+## Probability
+
+Observational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley
+
+|           | Admit | Deny | Total |
+|-----------|-------|------|-------|
+| **Men**   | 3738  | 4704 | 8442  |
+| **Women** | 1494  | 2827 | 4321  |
+| **Total** | 5232  | 7531 | 12763 |
+
+::: discuss
+-   What is the probability of admission?
+
+-   What is the probability of admission among men? Among women?
+:::
+
+::: fragment
+::: discuss
+Suppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?
+:::
+:::
+
+::: fragment
+```{r}
+admissions |>
+  ggplot(aes(x = Gender, fill = Decision)) +
+  geom_bar(position = "fill") +
+  ggtitle("Admission decisions by gender") +
+  plot_theme
+```
+:::
+
+# Case study
+
+## Dive into data
+
+We have more nuanced data about the graduate admissions: we know the department that each person was applied to. We will consider the six largest departments: A, B, C, D, E, F
+
+::: fragment
+```{r}
+admissions |>
+  count(Decision, Gender, Dept) |>
+  pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  kableExtra::kable()
+
+```
+:::
+
+## Live code
+
+The first six observations in the data frame are as follows:
+
+```{r echo = T}
+head(admissions)
+```
+
+-   What sort of table of summary statistics would be interesting to display? How do we go about coding it?
+
+## Visualize
+
+```{r}
+admissions |>
+  ggplot(aes(x = Gender, fill = Decision)) +
+  geom_bar(position = 'fill') +
+  facet_wrap(~ Dept) +
+  plot_theme
+```
+
+## Closer look
+
+```{r}
+df1 <- admissions |> 
+  count(Dept, Gender,name = "Total")
+
+admissions |>
+  count(Dept, Gender, Decision) |>
+  group_by(Dept, Gender) |>
+  mutate(prop = n / sum(n)) |>
+  ungroup() |>
+  filter(Decision == "Admit") |>
+  rename("p_admit" = "prop")|>
+  select(-n, -Decision) |>
+  right_join(df1) |>
+  pivot_wider(names_from = Gender, values_from = c(p_admit, Total),
+              names_glue = "{Gender}_{.value}") |>
+  kableExtra::kable(digits = 2)
+```
+
+::: discuss
+-   Are the departments uniform in their admission rates?
+-   Do admissions still seem biased against women applicants?
+:::
+
+## What's going on?
+
+-   But wait... Didn't we see that the men were way more likely to be admitted than women?
+
+-   The first two departments (A and B) are easy to get into
+
+    -   What percentage of men applied to department A?
+
+    -   What percentage of women applied to departments C-F?
+
+::: discuss
+-   In one sentence, what is the "punch line"?
+-   What is the confounding variable?
+:::
+
+## Simpson's paradox
+
+The UC Berkeley admissions observational study is an example of **Simpson's paradox**: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable
+
+-   In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables
+
+::: columns
+::: {.column width="50%"}
+::: fragment
+```{r}
+df <- tribble(
+  ~x1, ~y, ~x2,
+  2,   4,  0,
+  3,   3,  0,
+  4,   2,  0,
+  5,   1,  0,
+  6,   11, 1,
+  7,   10, 1,
+  8,   9,  1,
+  9,   8,  1
+)
+ggplot() +
+  geom_point(data = df, aes(x1, y), size = 5) +
+  geom_smooth(data = df, aes(x1, y), lwd = 3, method = lm, se = FALSE, 
+              color = "black", linetype = "dashed") +
+  theme(text = element_text(size = 20))
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r  echo=FALSE, message=FALSE}
+ggplot() +
+  geom_point(data = df, aes(x1, y, color = factor(x2)), size = 5) +
+  geom_smooth(data = df, aes(x1, y, color = factor(x2)), method = lm,
+              lwd = 2.75) +
+  geom_smooth(data = df, aes(x1, y), method = lm, se = FALSE, 
+              color = "black", linetype = "dashed", lwd = 3) +
+  labs(color = "x2")+
+  theme(text = element_text(size = 20))
+```
+:::
+:::
+:::

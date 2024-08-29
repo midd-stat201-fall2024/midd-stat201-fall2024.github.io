@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/02\n\nTopic:\n\n\n\n\n\nW 09/04\n\nTopic: Study design\n\nPractice problems\n\n\n\n\n\n\nR 09/05\n\nTopic:\nInstallation instructions"
+    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome!\n\n\n\n\n\nW 09/11\n\nTopic: Study design\n\nPractice problems\n\n\n\n\n\n\nR 09/12\n\nTopic: Software installation and basics\nInstallation instructions\n\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nCoding practice\nPractice problems"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -221,7 +221,7 @@
     "href": "slides/slides-03-numerical-vis.html#mean",
     "title": "Numerical data",
     "section": "Mean",
-    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of observed/sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are lookig at the average\n\n\n\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
+    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of observed/sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
   },
   {
     "objectID": "slides/slides-03-numerical-vis.html#mean-cont.",
@@ -229,5 +229,1181 @@
     "title": "Numerical data",
     "section": "Mean (cont.)",
     "text": "Mean (cont.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe sample mean \\(\\bar{x}\\) is an example of a sample statistic\nThe mean over the entire population is an example of a population parameter. The population mean is often denoted \\(\\mu\\) (Greek letter mu)\nThe sample mean \\(\\bar{x}\\) is often used as an estimate for \\(\\mu\\)"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#live-code",
+    "href": "slides/slides-03-numerical-vis.html#live-code",
+    "title": "Numerical data",
+    "section": "Live code",
+    "text": "Live code\n\nBase R\nggplot"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#example",
+    "href": "slides/slides-03-numerical-vis.html#example",
+    "title": "Numerical data",
+    "section": "Example",
+    "text": "Example\nSuppose we have obtained the following data on diastolic blood pressure from patients at Porter Hospital:\n\\[\n\\boldsymbol{x} =76, 64, 62, 81, 70, 72, 81, 63, 67, 77\n\\]\n\nWrite out how you would calculate \\(\\bar{x}\\)\nThen we will use R to calculate the sample mean diastolic blood pressure!"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#means-depend-on-proportions",
+    "href": "slides/slides-03-numerical-vis.html#means-depend-on-proportions",
+    "title": "Numerical data",
+    "section": "Means depend on proportions",
+    "text": "Means depend on proportions\n\n\nWhat is the average of the following values: \\(1, 4, 4\\)?\n\n\n\\(\\bar{x} = \\frac{1+4+4}{3} = 1\\left(\\frac{1}{3} \\right) + 4\\left( \\frac{2}{3}\\right) = \\frac{9}{3} = 3\\)\n\n\nIf instead there were 10 1’s and 20 4’s, would the average be the same?\n\n\nYes! \\(\\bar{x} = 1\\left(\\frac{10}{30}\\right) + 4 \\left(\\frac{20}{30} \\right) = \\frac{90}{30} = 3\\)"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#variability",
+    "href": "slides/slides-03-numerical-vis.html#variability",
+    "title": "Numerical data",
+    "section": "Variability",
+    "text": "Variability\n\nWe learned that the mean is a way to describe the center or “average value” of a numerical variable\nHowever, at the heart of statistics is also the variability or spread of the distribution of the variable\nWe will work with variance and standard deviation, which describe how spread out data are from their mean"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#deviation",
+    "href": "slides/slides-03-numerical-vis.html#deviation",
+    "title": "Numerical data",
+    "section": "Deviation",
+    "text": "Deviation\nWe return to the blood pressure data:\n\\[\n\\boldsymbol{x} = 76, 64, 62, 81, 70, 72, 81, 63, 67, 77 \\qquad \\qquad \\qquad \\bar{x} = 71.3\n\\]\n\nWe start with deviation, which is the distance of or difference between an observation from the (sample) mean\n\nHow might we write this using statistical notation?\n\n\n\n\n\n    x deviation\n1  76       4.7\n2  64      -7.3\n3  62      -9.3\n4  81       9.7\n5  70      -1.3\n6  72       0.7\n7  81       9.7\n8  63      -8.3\n9  67      -4.3\n10 77       5.7"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#variance-and-standard-deviation",
+    "href": "slides/slides-03-numerical-vis.html#variance-and-standard-deviation",
+    "title": "Numerical data",
+    "section": "Variance and standard deviation",
+    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\nThe sample standard deviation \\(s\\) is simply the square root of the sample variance (\\(s = \\sqrt{s^2}\\))\nCalculate the sample variance and standard deviation for the blood pressure data\n\nBy hand\nUsing R"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-vis.html#variance-and-standard-deviation-cont.",
+    "href": "slides/slides-03-numerical-vis.html#variance-and-standard-deviation-cont.",
+    "title": "Numerical data",
+    "section": "Variance and standard deviation (cont.)",
+    "text": "Variance and standard deviation (cont.)\n\nLike the mean, the population values for variance and standard deviation are denoted with Greek letters:\n\n\\(\\sigma\\) for population standard deviation (sigma)\n\\(\\sigma^2\\) for population variance\n\n\nIf the calculation of standard deviation is a more complicated quantity than the variance, why do we bother with standard deviation?"
+  },
+  {
+    "objectID": "practice_probs/practice-03-numerical-data-pt1.html",
+    "href": "practice_probs/practice-03-numerical-data-pt1.html",
+    "title": "Numerical data (part 1)",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nIndicate which of the plots show (a) a positive association, (b) negative association, or (c) no association. Also determine if the positive and negative associations are linear or nonlinear. Each part may refer to more than on plot.\n\nCalculate the average/sample mean in each of the following scenarios:\n\nSuppose that we have some data where 20% of the data are 1’s, 50% are 2’s, and 30% are 3’s. What is the sample mean?\nA school has two classes, one with 10 students and one with 100 students. What is the average class size?\nA school as two classes, one with 10 students and one with 100 students. What is the average size of the class that a student is enrolled in?\n\nA list has 10 entries, and each entry is either a 1, 2, or 3. What must the list be if the average is 3? Can the average be 4?\n21 people in a room have an average of 5 feet 6 inches. A 22nd person enters the room. How tall would this person have to be to raise the average height by 1 inch?\nConsider the following lists:\n\\[(i) \\ 1, \\ 3,\\ 4, \\ 5,\\  7 \\qquad \\qquad (ii) \\ 6,\\ 8,\\ 9,\\ 10,\\ 12\\]\n\nFor each list, find the average and the standard deviation.\nHow is list (ii) related to list (i)? How does this relationship carry over to the average and to the standard deviation?\n\nWorkers at a particular mining site receive an average of 35 days paid vacation, which is lower than the national average. The manager of this plant is under pressure from a local union to increase the amount of paid time off. However, he does not want to give more days off to the workers because that would be costly. Instead he decides he should fire 10 employees in such a way as to raise the average number of days off that are reported by his employees. In order to achieve this goal, should he fire employees who have the most number of days off, least number of days off, or those who have about the average number of days off?\nLet’s return to the sunflowers! Recall that we used five different sampling schemes to obtain a sample of \\(n= 12\\) grid cells. You have now collected data on the number of healthy sunflowers in each of the 12 grid cells for each sampling scheme.\nFor each sampling scheme, calculate i) the average number of healthy sunflowers in a grid cell, as well as ii) the standard deviation of the number of healthy plants in a grid cell.\n\nTo show your work for this problem: it is sufficient to write-out the calculations by hand (using “…” notation is fine!) for just one of the sampling schemes. But be sure to report the statistics for all schemes.\nI highly encourage you to use R to help perform the actual calculations. If you do use R, write-out an example of the code you execute for just one of the sampling schemes."
+  },
+  {
+    "objectID": "practice_probs/practice-01-study-design.html",
+    "href": "practice_probs/practice-01-study-design.html",
+    "title": "Study design",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nIn Spring 2024, Prof. Tang asked her STAT 311 students to fill out a mid-semester survey. She was particularly interested in the the amount of hours her students were spending per week on the course. The average time spent on the course was found to be 10.2 hours per week.\n\nBased on this information, identify each of the following: observation, variable, parameter, and statistic.\nWas this survey a census or (just) a sample? Why?\n\nTime to implement the sampling methods we learned! Keep track of your work on this problem; we will return to it in the next few classes.\nWe have a farmer who grows sunflowers for making sunflower oil. Her field is arranged in a grid pattern, with 12 rows and 12 columns as shown below. Water is important for crops, so irrigation ditches have been installed along the top and bottom of the field. It is expected that plants closer to a water source will perform better than those further away from water.\nThe farmer would like to estimate the number of healthy plants in the field, along with a few other characteristics about the sunflowers. It would be unfeasible to conduct a census, so we should choose to sample a subset of the grid cells. Suppose we’d like to sample \\(n = 12\\) grid cells total.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using simple random sampling. I should be able to read your work and know what to do without any questions! Think about how you will perform the random sampling.\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using stratified sampling where the strata are rows. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using stratified sampling where the strata are columns. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using cluster sampling where we have 24 clusters total. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\nUsing words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using multistage sampling. I should be able to read your work and know what to do without any questions!\nThen implement the method that you’ve written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.\n\n\nWe discussed several methods of sampling today. Now consider a new sampling scheme that is commonly used in the social sciences when sampling from a “hidden” population. A scenario might be that we want to conduct a poll among homeless people, but the research team may only have contact details for a few homeless people.\nDenote the initial contacts as Group 1. The sampling proceeds in the following stages:\n\nStage 1: ask the people in Group 1 to take the survey, and then provide contact details for other people from the population who might want to participate. Denote these new contacts as Group 2.\nStage 2: ask the people in Group 2 to take the survey, and then provide contact details for other people from the population who might want to participate. Denote these new contacts as Group 3.\nProceed in a similar manner until the researchers have sufficient data.\n\n\n\nWhat are some advantages to this method of sampling?\nWhat are some disadvantages? Think about statistically and also ethically.\n\nSuppose we want to estimate household size, where a “household” is defined as people living together in the same dwelling, and sharing living accommodations. If we select students at random at an elementary school and ask them what their family size is, will this be a good measure of household size? Or will our average be biased? If so, will it overestimate or underestimate the true value?\nTo assess the effectiveness of taking large doses of vitamin C in reducing the duration of the common cold, researchers recruited 400 healthy volunteers from staff and students at a university. A quarter of the patients were assigned a placebo, and the rest were evenly divided between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset of a cold for the following two days. All tablets had identical appearance and packaging. The nurses who handed the prescribed pills to the patients knew which patient received which treatment, but the researchers assessing the patients when they were sick did not. No statistically discernible differences were observed in any measure of cold duration or severity between the four groups, and the placebo group had the shortest duration of symptoms.\n\nWas this an experiment or an observational study? Why?\nWhat are the explanatory and response variables in this study?\nWere the patients blinded to their treatment?\nWas this study double-blind?\nParticipants are ultimately able to choose whether to use the pills prescribed to them. We might expect that not all of them will adhere and take their pills. Does this introduce a confounding variable to the study? Explain your reasoning."
+  },
+  {
+    "objectID": "coding_practice/coding-practice-03-numerical-pt1.html",
+    "href": "coding_practice/coding-practice-03-numerical-pt1.html",
+    "title": "Numerical data coding practice",
+    "section": "",
+    "text": "library(openintro)\n\n\nChange your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in the cherry dataset from the openintro package.\n\n\n\n\n\nIn the console, type in ?cherry to open up the Help file for this dataset. Type into the white space below the units for each of the variables.\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit, commit, and push your work to Github!"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#recap",
+    "href": "slides/slides-04-numerical-pt2.html#recap",
+    "title": "Numerical data",
+    "section": "Recap",
+    "text": "Recap\n\n\nRows: 1338 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#boxplot",
+    "href": "slides/slides-04-numerical-pt2.html#boxplot",
+    "title": "Numerical data",
+    "section": "Boxplot",
+    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are creating using five statistics and identify unusual observations.\n\n\n\n\n\n\nDoes the orientation (vertical or horizontal) matter?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#median",
+    "href": "slides/slides-04-numerical-pt2.html#median",
+    "title": "Numerical data",
+    "section": "Median",
+    "text": "Median\n\nThe (sample) median \\(m\\) is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than \\(m\\) and 50% of the data are greater than \\(m\\).\n\nIf we order the data from smallest to largest, the median is the value in the middle.\nIf the number of observations \\(n\\) is even, then there will be two values in the middle, and the median is taken as their average.\n\nThe median is also known the 50th percentile because 50% of the data fall below it.\n\nRecall the blood pressure data: \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\). What is the median?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
+    "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
+    "title": "Numerical data",
+    "section": "Mean vs. median",
+    "text": "Mean vs. median"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#interquartile-range",
+    "href": "slides/slides-04-numerical-pt2.html#interquartile-range",
+    "title": "Numerical data",
+    "section": "Interquartile range",
+    "text": "Interquartile range\n\nThe interquartile range or IQR is a measure of variability in the data. The more variable, the larger the IQR.\nTo calculate the IQR, we need the first quartile \\(Q_{1}\\) (the 25th percentile) and the third quartile \\(Q_{3}\\) (the 75th percentile). Then\n\\[\nIQR = Q_{3} - Q_{1}\n\\]\nWhat percent of the data fall between \\(Q_{1}\\) and \\(Q_{3}\\) and the median \\(m\\)? What percent of the data fall about \\(Q_{1}\\) and the median?\nWhat is the IQR for the blood pressure data? \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\)"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
+    "href": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
+    "title": "Numerical data",
+    "section": "Creating the boxplot",
+    "text": "Creating the boxplot\n\nThe “box” part of the boxplot is created using \\(Q_{1}\\), \\(Q_{3}\\), and \\(m\\).\nThen we draw out whiskers from the box that attempt to capture data outside the IQR.\n\nHow long should the whiskers be? There isn’t a fixed rule, but \\(1.5 \\times IQR\\) below the first quartile and above third quartile is common\n\nLastly, we add dots for any points that lie beyond the whiskers\n\nThese points are unusually high/low compared to the rest of the data and are worth identifying as potential outliers\nAn outlier is an observation that appears extreme relative to the rest of the data\n\nLet’s draw the boxplot for the blood pressure data!"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#a-note-on-outliers",
+    "href": "slides/slides-04-numerical-pt2.html#a-note-on-outliers",
+    "title": "Numerical data",
+    "section": "A note on outliers",
+    "text": "A note on outliers\n\n\nWhy are we interested in identifying outliers?\n\n\nIdentifying strong skew\nIdentifying possible data collection/data entry errors\nProviding insight into interesting properties of the data\n\nAre outliers necessarily indicative of a problem in the data?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#histograms-vs-boxplots",
+    "href": "slides/slides-04-numerical-pt2.html#histograms-vs-boxplots",
+    "title": "Numerical data",
+    "section": "Histograms vs boxplots",
+    "text": "Histograms vs boxplots\n\nWhat characteristics of the distribution are apparent in the histogram and not in the box plot? What characteristics are apparent in the box plot but not in the histogram?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#robust-statistics",
+    "href": "slides/slides-04-numerical-pt2.html#robust-statistics",
+    "title": "Numerical data",
+    "section": "Robust statistics",
+    "text": "Robust statistics\n\n\n\n\nIn our observed blood pressure data \\[\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\] we have the following sample statistics:\n\n\\(\\bar{x} =\\) 115.8 , \\(s =\\) 4.4, \\(m =\\) 115.5 , \\(IQR =\\) 5.5\n\n\nSuppose we actually observed an additional data point with a systolic blood pressure of \\(170\\). What are the sample statistics with this additional data point? How do they compare to the values above?\n\n\n\\(\\bar{x}' =\\) 120.7 , \\(s' =\\) 16.9, \\(m' =\\) 116 , \\(IQR' =\\) 6\n\nRobust statistics are statistics (quantities calculated from data) that are minimally affected by extreme values\n\nWhich of the statistics above would be considered robust?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median-1",
+    "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median-1",
+    "title": "Numerical data",
+    "section": "Mean vs. Median",
+    "text": "Mean vs. Median\nIn the plot below, the orange line denotes the sample mean charges, and the blue line denotes the sample median:\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWhich is better? The mean or the median?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#boxplots-vs-histograms",
+    "href": "slides/slides-04-numerical-pt2.html#boxplots-vs-histograms",
+    "title": "Numerical data",
+    "section": "Boxplots vs histograms",
+    "text": "Boxplots vs histograms\nWhich plot do you prefer?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#transforming-data",
+    "href": "slides/slides-04-numerical-pt2.html#transforming-data",
+    "title": "Numerical data",
+    "section": "Transforming data",
+    "text": "Transforming data\n\nWhen data are strongly skewed or take on an “inconvenient” range of values, we might transform them so they are easier to model\nA transformation rescales the data using a function\n\ne.g. \\(f(x) = e^x\\), \\(f(x) = \\log_{10}(x)\\), \\(f(x) = \\ln(x)\\), \\(f(x) = \\sqrt{x}\\)\nThe exact transformation you choose depends heavily on the data!!"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#exploratory-data-analysis",
+    "href": "slides/slides-05-data-vis.html#exploratory-data-analysis",
+    "title": "Visualizations with ggplot",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\nExploratory data analysis (EDA) is an approach to analyzing data sets to summarize the main characteristics.\n\nOften visual through plots\n\nBecause of its name “exploratory”, we typically perform EDA at the beginning of a project\nCan also calculate summary statistics and perform data wrangling/manipulation/transformation at (or before) this stage of the analysis"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#tidy-data",
+    "href": "slides/slides-05-data-vis.html#tidy-data",
+    "title": "Visualizations with ggplot",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nThe first step of any data/statistical analysis is to understand the data you are working with. This often involves getting the data into R\nThen, it is a good idea to take a macro-level look at the data to ensure it is in tidy format, which means:\n\nEach row in the data set represent an observation/case\nEach columns represents a variable\n\nAnscombe data: four datasets with two variables each\n\n\n\n\nNon-tidy version:\n\n\n  x1 x2 x3 x4   y1   y2    y3   y4\n1 10 10 10  8 8.04 9.14  7.46 6.58\n2  8  8  8  8 6.95 8.14  6.77 5.76\n3 13 13 13  8 7.58 8.74 12.74 7.71\n4  9  9  9  8 8.81 8.77  7.11 8.84\n5 11 11 11  8 8.33 9.26  7.81 8.47\n6 14 14 14  8 9.96 8.10  8.84 7.04\n\n\n\nTidy version:\n\n\n   set  x     y\n1    I 10  8.04\n2    I  8  6.95\n3    I 13  7.58\n4    I  9  8.81\n5    I 11  8.33\n6    I 14  9.96\n7    I  6  7.24\n8    I  4  4.26\n9    I 12 10.84\n10   I  7  4.82\n11   I  5  5.68\n12  II 10  9.14\n13  II  8  8.14\n14  II 13  8.74\n15  II  9  8.77"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#country-footprint-datahttpswww.kaggle.comfootprintnetworkecological-footprint",
+    "href": "slides/slides-05-data-vis.html#country-footprint-datahttpswww.kaggle.comfootprintnetworkecological-footprint",
+    "title": "Visualizations with ggplot",
+    "section": "Country footprint data^[https://www.kaggle.com/footprintnetwork/ecological-footprint]",
+    "text": "Country footprint data^[https://www.kaggle.com/footprintnetwork/ecological-footprint]\n\nfootprint_data <- read_csv(\"data/countries_footprint.csv\")\nfootprint_data\n\n# A tibble: 188 × 14\n   Country   Region Population   HDI    GDP Cropland Grazing Forest Carbon  Fish\n   <chr>     <chr>       <dbl> <dbl>  <dbl>    <dbl>   <dbl>  <dbl>  <dbl> <dbl>\n 1 Afghanis… Middl…      29.8   0.46   615.     0.3     0.2    0.08   0.18  0   \n 2 Albania   North…       3.16  0.73  4534.     0.78    0.22   0.25   0.87  0.02\n 3 Algeria   Africa      38.5   0.73  5431.     0.6     0.16   0.17   1.14  0.01\n 4 Angola    Africa      20.8   0.52  4666.     0.33    0.15   0.12   0.2   0.09\n 5 Antigua … Latin…       0.09  0.78 13205.    NA      NA     NA     NA    NA   \n 6 Argentina Latin…      41.1   0.83 13540      0.78    0.79   0.29   1.08  0.1 \n 7 Armenia   Middl…       2.97  0.73  3426.     0.74    0.18   0.34   0.89  0.01\n 8 Aruba     Latin…       0.1  NA       NA     NA      NA     NA     NA    NA   \n 9 Australia Asia-…      23.0   0.93 66604.     2.68    0.63   0.89   4.85  0.11\n10 Austria   Europ…       8.46  0.88 51274.     0.82    0.27   0.63   4.14  0.06\n# ℹ 178 more rows\n# ℹ 4 more variables: Total <dbl>, EarthsRequired <dbl>,\n#   CountriesRequired <dbl>, DataQuality <chr>"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#country-footprint-data-httpswww.kaggle.comfootprintnetworkecological-footprint",
+    "href": "slides/slides-05-data-vis.html#country-footprint-data-httpswww.kaggle.comfootprintnetworkecological-footprint",
+    "title": "Visualizations with ggplot",
+    "section": "Country footprint data ^[https://www.kaggle.com/footprintnetwork/ecological-footprint]",
+    "text": "Country footprint data ^[https://www.kaggle.com/footprintnetwork/ecological-footprint]\n\nfootprint_data <- read_csv(\"data/countries_footprint.csv\")\nfootprint_data\n\n# A tibble: 188 × 14\n   Country   Region Population   HDI    GDP Cropland Grazing Forest Carbon  Fish\n   <chr>     <chr>       <dbl> <dbl>  <dbl>    <dbl>   <dbl>  <dbl>  <dbl> <dbl>\n 1 Afghanis… Middl…      29.8   0.46   615.     0.3     0.2    0.08   0.18  0   \n 2 Albania   North…       3.16  0.73  4534.     0.78    0.22   0.25   0.87  0.02\n 3 Algeria   Africa      38.5   0.73  5431.     0.6     0.16   0.17   1.14  0.01\n 4 Angola    Africa      20.8   0.52  4666.     0.33    0.15   0.12   0.2   0.09\n 5 Antigua … Latin…       0.09  0.78 13205.    NA      NA     NA     NA    NA   \n 6 Argentina Latin…      41.1   0.83 13540      0.78    0.79   0.29   1.08  0.1 \n 7 Armenia   Middl…       2.97  0.73  3426.     0.74    0.18   0.34   0.89  0.01\n 8 Aruba     Latin…       0.1  NA       NA     NA      NA     NA     NA    NA   \n 9 Australia Asia-…      23.0   0.93 66604.     2.68    0.63   0.89   4.85  0.11\n10 Austria   Europ…       8.46  0.88 51274.     0.82    0.27   0.63   4.14  0.06\n# ℹ 178 more rows\n# ℹ 4 more variables: Total <dbl>, EarthsRequired <dbl>,\n#   CountriesRequired <dbl>, DataQuality <chr>"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#country-footprint-data",
+    "href": "slides/slides-05-data-vis.html#country-footprint-data",
+    "title": "Visualizations with ggplot",
+    "section": "Country footprint data",
+    "text": "Country footprint data\nData on the ecological footprint by country in 2023\n\n\nfootprint_data <- read_csv(\"data/countries_footprint.csv\")\nfootprint_data\n\n# A tibble: 182 × 15\n   Country       Region  SDGi Life_Exectancy   HDI   GDP Income_Group Population\n   <chr>         <chr>  <dbl>          <dbl> <dbl> <dbl> <chr>             <dbl>\n 1 Afghanistan   Middl…  52.5             62  0.48    NA LI                 40.8\n 2 Albania       Other…  71.6             76  0.8  14889 UM                  2.9\n 3 Algeria       Africa  71.5             76  0.75 11137 UM                 45.4\n 4 Angola        Africa  50.9             62  0.59  6304 LM                 35  \n 5 Antigua and … Centr…  NA               78  0.79 18749 HI                  0.1\n 6 Argentina     South…  72.8             75  0.84 22117 UM                 46  \n 7 Armenia       Middl…  71.1             72  0.76 13548 LM                  3  \n 8 Australia     Asia-…  75.6             83  0.95 53053 HI                 26.1\n 9 Austria       EU-27   82.3             81  0.92 55460 HI                  9.1\n10 Azerbaijan    Middl…  73.5             69  0.75 14692 UM                 10.3\n# ℹ 172 more rows\n# ℹ 7 more variables: Cropland <dbl>, Grazing <dbl>, Forest_Product <dbl>,\n#   Carbon <dbl>, Fish <dbl>, Built_up_land <dbl>, Total <dbl>\n\n\n\nData obtained from https://www.kaggle.com/datasets/jainaru/global-ecological-footprint-2023"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#why-do-we-visualize",
+    "href": "slides/slides-05-data-vis.html#why-do-we-visualize",
+    "title": "Visualizations with ggplot",
+    "section": "Why do we visualize?",
+    "text": "Why do we visualize?\n\nSummary statistics from each of the four datasets in Anscombe:\n\n\n\n\n# A tibble: 4 × 5\n  set   mean_x mean_y  sd_x  sd_y\n  <fct>  <dbl>  <dbl> <dbl> <dbl>\n1 I          9   7.50  3.32  2.03\n2 II         9   7.50  3.32  2.03\n3 III        9   7.5   3.32  2.03\n4 IV         9   7.50  3.32  2.03\n\n\n\n\nLet’s visualize the four data sets. What would be an appropriate type of plot to examine the relationship between the two variables?"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#common-plots-numerical",
+    "href": "slides/slides-05-data-vis.html#common-plots-numerical",
+    "title": "Visualizations with ggplot",
+    "section": "Common plots (numerical)",
+    "text": "Common plots (numerical)"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#aesthetics",
+    "href": "slides/slides-05-data-vis.html#aesthetics",
+    "title": "Visualizations with ggplot",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,\n                                       shape = smoker)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, alpha = age,\n                                       shape = smoker)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#faceting",
+    "href": "slides/slides-05-data-vis.html#faceting",
+    "title": "Visualizations with ggplot",
+    "section": "Faceting",
+    "text": "Faceting"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#modifications",
+    "href": "slides/slides-05-data-vis.html#modifications",
+    "title": "Visualizations with ggplot",
+    "section": "Modifications",
+    "text": "Modifications\n\nAdding title\nChanging axis title"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#common-plots-numerical-in-ggplot",
+    "href": "slides/slides-05-data-vis.html#common-plots-numerical-in-ggplot",
+    "title": "Visualizations with ggplot",
+    "section": "Common plots (numerical) in ggplot",
+    "text": "Common plots (numerical) in ggplot\n\nWe have learned about histograms, density plots, boxplots, and scatterplots\nNow learn how to create these plots using the ggplot() function from the ggplot2 library\n\nPlots are constructed in layers\n\nAt a minimum, we need to specify 1) the dataset, 2) variable(s) from the dataset we’d like to plot, and 3) the type of plot\nThis is what the code will generally look like. Values in < > denote what you as the coder need to specify.\n\n\n\nggplot(data = <dataset>, \n       mapping = aes(x = <x-var>, y = <y-var>)) +\n  geom_xxx() +\n  <other options>\n\n\n\n\nNew lines and spacing don’t impact the execution of code, but are important for good coding style!"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#additional-variables",
+    "href": "slides/slides-05-data-vis.html#additional-variables",
+    "title": "Visualizations with ggplot",
+    "section": "Additional variables",
+    "text": "Additional variables\n\nDepending on the plot and data, we can map additional variables by using aesthetics (color, size, shape, alpha (transparency) or faceting"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#live-code",
+    "href": "slides/slides-05-data-vis.html#live-code",
+    "title": "Visualizations with ggplot",
+    "section": "Live code",
+    "text": "Live code\nNote: most of the code I will show will be presented at the end of these slides. However, we will most likely go off-script based on questions from the class!"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#geom_histogram",
+    "href": "slides/slides-05-data-vis.html#geom_histogram",
+    "title": "Visualizations with ggplot",
+    "section": "geom_histogram()",
+    "text": "geom_histogram()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram()\n\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram(binwidth = 5000)\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram(bins = 20)"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#geom_density",
+    "href": "slides/slides-05-data-vis.html#geom_density",
+    "title": "Visualizations with ggplot",
+    "section": "geom_density()",
+    "text": "geom_density()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_density()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#geom_boxplot",
+    "href": "slides/slides-05-data-vis.html#geom_boxplot",
+    "title": "Visualizations with ggplot",
+    "section": "geom_boxplot()",
+    "text": "geom_boxplot()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#side-by-side-boxplots",
+    "href": "slides/slides-05-data-vis.html#side-by-side-boxplots",
+    "title": "Visualizations with ggplot",
+    "section": "Side-by-side boxplots",
+    "text": "Side-by-side boxplots\n\nggplot(data = insurance, mapping = aes(x = sex, y = charges)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#geom_point",
+    "href": "slides/slides-05-data-vis.html#geom_point",
+    "title": "Visualizations with ggplot",
+    "section": "geom_point()",
+    "text": "geom_point()\n\nggplot(data = insurance, mapping = aes(x = age, y = charges)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#when-to-map-to-variable",
+    "href": "slides/slides-05-data-vis.html#when-to-map-to-variable",
+    "title": "Visualizations with ggplot",
+    "section": "When to map to variable",
+    "text": "When to map to variable\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point(col = \"purple\")\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = \"purple\")) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#facet_wrap",
+    "href": "slides/slides-05-data-vis.html#facet_wrap",
+    "title": "Visualizations with ggplot",
+    "section": "facet_wrap()",
+    "text": "facet_wrap()\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_wrap(~ smoker)\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_wrap(~ smoker, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#facet_grid",
+    "href": "slides/slides-05-data-vis.html#facet_grid",
+    "title": "Visualizations with ggplot",
+    "section": "facet_grid()",
+    "text": "facet_grid()\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_grid(sex ~ smoker)"
+  },
+  {
+    "objectID": "slides/slides-05-data-vis.html#adding-titles",
+    "href": "slides/slides-05-data-vis.html#adding-titles",
+    "title": "Visualizations with ggplot",
+    "section": "Adding titles",
+    "text": "Adding titles\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  ggtitle(\"Histogram of charges\")\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  ggtitle(\"Histogram of charges\") +\n  xlab(\"Charges ($)\")\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  labs(title = \"Histogram of charges\",\n       x = \"Charges ($)\", y = \"Count\")"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#looking-at-your-data",
+    "href": "slides/slides-06-categorical-data.html#looking-at-your-data",
+    "title": "Categorical data",
+    "section": "Looking at your data",
+    "text": "Looking at your data\nIs your data tidy, or do you have a table of counts (i.e. a frequency table)?\n\n\n\n\n\n\n\n# A tibble: 5 × 1\n  fruit \n  <chr> \n1 apple \n2 apple \n3 orange\n4 apple \n5 orange\n\n\n\n\n\n# A tibble: 2 × 2\n  fruit  number\n  <chr>   <dbl>\n1 apple       3\n2 orange      2"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#univariate-visualizations",
+    "href": "slides/slides-06-categorical-data.html#univariate-visualizations",
+    "title": "Categorical data",
+    "section": "Univariate visualizations",
+    "text": "Univariate visualizations\nIf we are interested in visualizing the distribution of a single categorical variable, it is common to use a barplot, where the different levels are displayed on ones axis and the counts of each level are portrayed on the the other axis.\n\n\n# A tibble: 2 × 2\n  smoker     n\n  <chr>  <int>\n1 no       155\n2 yes       45"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#contingency-tables",
+    "href": "slides/slides-06-categorical-data.html#contingency-tables",
+    "title": "Categorical data",
+    "section": "Contingency tables",
+    "text": "Contingency tables\n\nPerhaps we are interested in examining the distribution of two categorical variables at the same time\nWe can summarize the distribution using a two-way table of counts known as a contingency table, where each value in the table count the number of times a particular combination of variable 1 and variable 2 outcomes/levels occurred\n\n\n\n`summarise()` has grouped output by 'smoker'. You can override using the\n`.groups` argument.\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28\n\n\n\n\n\n\n\nNote: can easily obtain the distribution of just one of the variables by looking row-wise or column-wise\n\nWe essentially convert the contingency table to a visualization to visualize the distribution of two categorical variables"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#dodged-bar-plot",
+    "href": "slides/slides-06-categorical-data.html#dodged-bar-plot",
+    "title": "Categorical data",
+    "section": "Dodged bar plot",
+    "text": "Dodged bar plot\nThe dodged bar plot directly converts the contingency table to a visualization.\n\n\n\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#stacked-bar-plot",
+    "href": "slides/slides-06-categorical-data.html#stacked-bar-plot",
+    "title": "Categorical data",
+    "section": "Stacked bar plot",
+    "text": "Stacked bar plot\nThe stacked bar plot looks at the counts either row-wise or column-wise.\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#proportions",
+    "href": "slides/slides-06-categorical-data.html#proportions",
+    "title": "Categorical data",
+    "section": "Proportions",
+    "text": "Proportions\nTo obtain our final bar plot, we must first convert to the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another. In the following, we obtain row proportions:\n\n\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28\n\n\n\n\n\n\n\n\n`summarise()` has grouped output by 'smoker'. You can override using the\n`.groups` argument.\n\n\n\nRow-wise proportions\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n0.561\n0.439\n\n\nyes\n0.378\n0.622\n\n\n\n\n\n\n\n\n\nWhat does the quantity 0.378 represent?\nIf we take the proportions row-wise, does each row need to sum to 1?\nIf we take the proportions row-wise, does each column need to sum to 1?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#proportions-cont.",
+    "href": "slides/slides-06-categorical-data.html#proportions-cont.",
+    "title": "Categorical data",
+    "section": "Proportions (cont.)",
+    "text": "Proportions (cont.)\nSet-up how you would find the column-wise proportions using this contingency table\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#standardized-bar-plot",
+    "href": "slides/slides-06-categorical-data.html#standardized-bar-plot",
+    "title": "Categorical data",
+    "section": "Standardized bar plot",
+    "text": "Standardized bar plot\nThe standardized bar plot visualizes the row-wise or column-wise proportions."
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#choosing-a-bar-plot",
+    "href": "slides/slides-06-categorical-data.html#choosing-a-bar-plot",
+    "title": "Categorical data",
+    "section": "Choosing a bar plot",
+    "text": "Choosing a bar plot\n\n\nUsing any of the plots below, do you believe the smoker status and sex are associated?\nWhen might you prefer to use the stacked, dodged, or standardized bar plot?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#live-code",
+    "href": "slides/slides-06-categorical-data.html#live-code",
+    "title": "Categorical data",
+    "section": "Live code",
+    "text": "Live code"
+  },
+  {
+    "objectID": "live_code/dplyr.html",
+    "href": "live_code/dplyr.html",
+    "title": "Data wrangling with dplyr",
+    "section": "",
+    "text": "library(tidyverse)\n\n## modify this line accordingly!\ndatascience <- read_csv(\"data/datascience_survey_subset.csv\")\nBy default, all dplyr functions expect the first argument to be a data frame."
+  },
+  {
+    "objectID": "live_code/dplyr.html#selecting-a-single-column",
+    "href": "live_code/dplyr.html#selecting-a-single-column",
+    "title": "Untitled",
+    "section": "Selecting a single column",
+    "text": "Selecting a single column\nSometimes, there are a lot of columns in a data frame and we might not want all of them. The select() function gives us an easy way to choose which columns/variables we’d like to work with.\nThe select() function requires by default two arguments: the data frame and the variable names to choose from that data frame.\nThe following code works…\n\nselect(datascience, Age)\n\n# A tibble: 2,618 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    21\n 7    22\n 8    29\n 9    35\n10    37\n# ℹ 2,608 more rows\n\n\n…but it’s preferable to take advantage of piping in order to make code more readable:\n\ndatascience |>\n  select(Age)\n\n# A tibble: 2,618 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    21\n 7    22\n 8    29\n 9    35\n10    37\n# ℹ 2,608 more rows\n\n\n\n\nWhat’s going on here?\n\nStart with the data frame datascience\nPipe the data frame using |> the select() function and specify that we want the variable Age\nThe result is a data frame with 2618 rows and 1 column\n\nBy default, all dplyr functions expect the first argument to be a data frame."
+  },
+  {
+    "objectID": "practice_probs/practice-04-numerical-data-pt2.html",
+    "href": "practice_probs/practice-04-numerical-data-pt2.html",
+    "title": "Numerical data (part 2)",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nThe infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014:\n\n\nEstimate \\(Q_{1}\\), the median \\(m\\), and \\(Q_{3}\\) from the histogram.\nWould you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.\n\nThe statistic \\(\\frac{\\bar{x}}{m}\\) can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. \\(x_{i} > 0\\) for all observations \\(i = 1,\\ldots, n\\)). What is the expected shape of the distribution under the following conditions? Explain your reasoning.\n\n\\(\\frac{\\bar{x}}{m} = 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)\n\nReturning to the sunflowers:\n\nCalculate the median number of healthy sunflowers in a grid cell for each of the sampling strategies. How do they compare to the sample means?\nPick one of the sampling schemes. Draw out the boxplot for the data you obtained under that sampling scheme."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#data",
+    "href": "slides/slides-03-numerical-pt1.html#data",
+    "title": "Numerical data",
+    "section": "Data",
+    "text": "Data\nWhich of the following variables are numerical?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#scatterplots",
+    "href": "slides/slides-03-numerical-pt1.html#scatterplots",
+    "title": "Numerical data",
+    "section": "Scatterplots",
+    "text": "Scatterplots\nScatterplots are bivariate visualizations that prove a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for each case in the dataset"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#live-code",
+    "href": "slides/slides-03-numerical-pt1.html#live-code",
+    "title": "Numerical data",
+    "section": "Live code",
+    "text": "Live code\n\nBase R\nggplot"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#scatterplots-cont.",
+    "href": "slides/slides-03-numerical-pt1.html#scatterplots-cont.",
+    "title": "Numerical data",
+    "section": "Scatterplots (cont.)",
+    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\nHow might we improve on this visualization?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#dot-plots",
+    "href": "slides/slides-03-numerical-pt1.html#dot-plots",
+    "title": "Numerical data",
+    "section": "Dot plots",
+    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable. They are univariate (one-variable) scatterplots.\nIn the following, we have a dot plot of BMI rounded to the nearest integer."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#binning",
+    "href": "slides/slides-03-numerical-pt1.html#binning",
+    "title": "Numerical data",
+    "section": "Binning",
+    "text": "Binning\n\nDot plot display the exact value for each observation. Become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning: we will consider segmenting the variable into equal-sized bins and visualize the value of each observation using its corresponding bin\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5:\n\n[14, 18), [18, 22), [22, 26), …, [48, 52)\n\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#histograms",
+    "href": "slides/slides-03-numerical-pt1.html#histograms",
+    "title": "Numerical data",
+    "section": "Histograms",
+    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin."
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.",
+    "href": "slides/slides-03-numerical-pt1.html#histograms-cont.",
+    "title": "Numerical data",
+    "section": "Histograms (cont.)",
+    "text": "Histograms (cont.)\n\nHistograms provide a view of the density of the data; the values the data take on as well as how often\nVery helpful for understanding the shape of the data distribution\n\nDistributions are either symmetric or skewed in a one direction\nDistributions with long tails to the left are called left-skewed, whereas distributions with long tails to the right are right-skewed\n\nAlso helpful for identifying modes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height in histogram"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.-1",
+    "href": "slides/slides-03-numerical-pt1.html#histograms-cont.-1",
+    "title": "Numerical data",
+    "section": "Histograms (cont.)",
+    "text": "Histograms (cont.)\n\nHow would you describe the shape and modality in the following two histograms?"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#mean",
+    "href": "slides/slides-03-numerical-pt1.html#mean",
+    "title": "Numerical data",
+    "section": "Mean",
+    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of observed/sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#mean-cont.",
+    "href": "slides/slides-03-numerical-pt1.html#mean-cont.",
+    "title": "Numerical data",
+    "section": "Mean (cont.)",
+    "text": "Mean (cont.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe sample mean \\(\\bar{x}\\) is an example of a sample statistic\nThe mean over the entire population is an example of a population parameter. The population mean is often denoted \\(\\mu\\) (Greek letter mu)\nThe sample mean \\(\\bar{x}\\) is often used as an estimate for \\(\\mu\\)"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#example",
+    "href": "slides/slides-03-numerical-pt1.html#example",
+    "title": "Numerical data",
+    "section": "Example",
+    "text": "Example\nSuppose we have obtained the following data on systolic blood pressure from patients at Porter Hospital:\n\\[\n\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\n\\]\n\nWrite out how you would calculate \\(\\bar{x}\\)\nThen we will use R to calculate the sample mean diastolic blood pressure!"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#means-depend-on-proportions",
+    "href": "slides/slides-03-numerical-pt1.html#means-depend-on-proportions",
+    "title": "Numerical data",
+    "section": "Means depend on proportions",
+    "text": "Means depend on proportions\n\n\nWhat is the average of the following values: \\(1, 4, 4\\)?\n\n\n\\(\\bar{x} = \\frac{1+4+4}{3} = 1\\left(\\frac{1}{3} \\right) + 4\\left( \\frac{2}{3}\\right) = \\frac{9}{3} = 3\\)\n\n\nIf instead there were 10 1’s and 20 4’s, would the average be the same?\n\n\nYes! \\(\\bar{x} = 1\\left(\\frac{10}{30}\\right) + 4 \\left(\\frac{20}{30} \\right) = \\frac{90}{30} = 3\\)"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#variability",
+    "href": "slides/slides-03-numerical-pt1.html#variability",
+    "title": "Numerical data",
+    "section": "Variability",
+    "text": "Variability\n\nWe learned that the mean is a way to describe the center or “average value” of a numerical variable\nHowever, at the heart of statistics is also the variability or spread of the distribution of the variable\nWe will work with variance and standard deviation, which describe how spread out data are from their mean"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#deviation",
+    "href": "slides/slides-03-numerical-pt1.html#deviation",
+    "title": "Numerical data",
+    "section": "Deviation",
+    "text": "Deviation\nWe return to the blood pressure data:\n\\[\n\\boldsymbol{x} = 116, 114, 112, 120, 108, 113, 123, 118, 119, 115 \\qquad \\qquad \\qquad \\bar{x} = 115.8\n\\]\n\nWe start with deviation, which is the distance of or difference between an observation from the (sample) mean\n\nHow might we write this using statistical notation?\n\n\n\n\n\n     x deviation\n1  116       0.2\n2  114      -1.8\n3  112      -3.8\n4  120       4.2\n5  108      -7.8\n6  113      -2.8\n7  123       7.2\n8  118       2.2\n9  119       3.2\n10 115      -0.8"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
+    "href": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
+    "title": "Numerical data",
+    "section": "Variance and standard deviation",
+    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\nThe sample standard deviation \\(s\\) is simply the square root of the sample variance (\\(s = \\sqrt{s^2}\\))\nCalculate the sample variance and standard deviation for the blood pressure data\n\nBy hand\nUsing R"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation-cont.",
+    "href": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation-cont.",
+    "title": "Numerical data",
+    "section": "Variance and standard deviation (cont.)",
+    "text": "Variance and standard deviation (cont.)\n\nLike the mean, the population values for variance and standard deviation are denoted with Greek letters:\n\n\\(\\sigma\\) for population standard deviation (sigma)\n\\(\\sigma^2\\) for population variance\n\n\nIf the calculation of standard deviation is a more complicated quantity than the variance, why do we bother with standard deviation?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#comparing-numerical-data-across-groups",
+    "href": "slides/slides-04-numerical-pt2.html#comparing-numerical-data-across-groups",
+    "title": "Numerical data",
+    "section": "Comparing numerical data across groups",
+    "text": "Comparing numerical data across groups\n\nWhile we haven’t yet discussed categorical data, it is common to want to visualize the distribution of a numerical variable across different groups/levels of a categorical variable\n\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#live-code",
+    "href": "slides/slides-04-numerical-pt2.html#live-code",
+    "title": "Numerical data",
+    "section": "Live code",
+    "text": "Live code"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html",
+    "href": "slides/slides-06-categorical-data.html",
+    "title": "Categorical data",
+    "section": "",
+    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\nRows: 1338 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#factoring",
+    "href": "slides/slides-06-categorical-data.html#factoring",
+    "title": "Categorical data",
+    "section": "Factoring",
+    "text": "Factoring"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html",
+    "href": "slides/slides-05-numerical-data-viz.html",
+    "title": "Visualizations with ggplot",
+    "section": "",
+    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\nRows: 1338 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#exploratory-data-analysis",
+    "href": "slides/slides-05-numerical-data-viz.html#exploratory-data-analysis",
+    "title": "Visualizations with ggplot",
+    "section": "Exploratory data analysis",
+    "text": "Exploratory data analysis\n\nExploratory data analysis (EDA) is an approach to analyzing data sets to summarize the main characteristics.\n\nOften visual through plots\n\nBecause of its name “exploratory”, we typically perform EDA at the beginning of a project\nCan also calculate summary statistics and perform data wrangling/manipulation/transformation at (or before) this stage of the analysis"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#tidy-data",
+    "href": "slides/slides-05-numerical-data-viz.html#tidy-data",
+    "title": "Visualizations with ggplot",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nThe first step of any data/statistical analysis is to understand the data you are working with. This often involves getting the data into R\nThen, it is a good idea to take a macro-level look at the data to ensure it is in tidy format, which means:\n\nEach row in the data set represent an observation/case\nEach columns represents a variable\n\nAnscombe data: four datasets with two variables each\n\n\n\n\nNon-tidy version:\n\n\n  x1 x2 x3 x4   y1   y2    y3   y4\n1 10 10 10  8 8.04 9.14  7.46 6.58\n2  8  8  8  8 6.95 8.14  6.77 5.76\n3 13 13 13  8 7.58 8.74 12.74 7.71\n4  9  9  9  8 8.81 8.77  7.11 8.84\n5 11 11 11  8 8.33 9.26  7.81 8.47\n6 14 14 14  8 9.96 8.10  8.84 7.04\n\n\n\nTidy version:\n\n\n   set  x     y\n1    I 10  8.04\n2    I  8  6.95\n3    I 13  7.58\n4    I  9  8.81\n5    I 11  8.33\n6    I 14  9.96\n7    I  6  7.24\n8    I  4  4.26\n9    I 12 10.84\n10   I  7  4.82\n11   I  5  5.68\n12  II 10  9.14\n13  II  8  8.14\n14  II 13  8.74\n15  II  9  8.77"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#why-do-we-visualize",
+    "href": "slides/slides-05-numerical-data-viz.html#why-do-we-visualize",
+    "title": "Visualizations with ggplot",
+    "section": "Why do we visualize?",
+    "text": "Why do we visualize?\n\nSummary statistics from each of the four datasets in Anscombe:\n\n\n\n\n# A tibble: 4 × 5\n  set   mean_x mean_y  sd_x  sd_y\n  <fct>  <dbl>  <dbl> <dbl> <dbl>\n1 I          9   7.50  3.32  2.03\n2 II         9   7.50  3.32  2.03\n3 III        9   7.5   3.32  2.03\n4 IV         9   7.50  3.32  2.03\n\n\n\n\nLet’s visualize the four data sets. What would be an appropriate type of plot to examine the relationship between the two variables?"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#common-plots-numerical-in-ggplot",
+    "href": "slides/slides-05-numerical-data-viz.html#common-plots-numerical-in-ggplot",
+    "title": "Visualizations with ggplot",
+    "section": "Common plots (numerical) in ggplot",
+    "text": "Common plots (numerical) in ggplot\n\nWe have learned about histograms, density plots, boxplots, and scatterplots\nNow learn how to create these plots using the ggplot() function from the ggplot2 library\n\nPlots are constructed in layers\n\nAt a minimum, we need to specify 1) the dataset, 2) variable(s) from the dataset we’d like to plot, and 3) the type of plot\nThis is what the code will generally look like. Values in < > denote what you as the coder need to specify.\n\n\n\nggplot(data = <dataset>, \n       mapping = aes(x = <x-var>, y = <y-var>)) +\n  geom_xxx() +\n  <other options>\n\n\n\n\nNew lines and spacing don’t impact the execution of code, but are important for good coding style!"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#country-footprint-data",
+    "href": "slides/slides-05-numerical-data-viz.html#country-footprint-data",
+    "title": "Visualizations with ggplot",
+    "section": "Country footprint data",
+    "text": "Country footprint data\nData on the ecological footprint by country in 2023\n\n\nData obtained from https://www.kaggle.com/datasets/jainaru/global-ecological-footprint-2023\n\nfootprint_data <- read_csv(\"data/countries_footprint.csv\")\n\nRows: 182 Columns: 15\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): Country, Region, Income_Group\ndbl (11): SDGi, Life_Exectancy, HDI, GDP, Cropland, Grazing, Forest_Product,...\nnum  (1): Population\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nfootprint_data\n\n# A tibble: 182 × 15\n   Country       Region  SDGi Life_Exectancy   HDI   GDP Income_Group Population\n   <chr>         <chr>  <dbl>          <dbl> <dbl> <dbl> <chr>             <dbl>\n 1 Afghanistan   Middl…  52.5             62  0.48    NA LI                 40.8\n 2 Albania       Other…  71.6             76  0.8  14889 UM                  2.9\n 3 Algeria       Africa  71.5             76  0.75 11137 UM                 45.4\n 4 Angola        Africa  50.9             62  0.59  6304 LM                 35  \n 5 Antigua and … Centr…  NA               78  0.79 18749 HI                  0.1\n 6 Argentina     South…  72.8             75  0.84 22117 UM                 46  \n 7 Armenia       Middl…  71.1             72  0.76 13548 LM                  3  \n 8 Australia     Asia-…  75.6             83  0.95 53053 HI                 26.1\n 9 Austria       EU-27   82.3             81  0.92 55460 HI                  9.1\n10 Azerbaijan    Middl…  73.5             69  0.75 14692 UM                 10.3\n# ℹ 172 more rows\n# ℹ 7 more variables: Cropland <dbl>, Grazing <dbl>, Forest_Product <dbl>,\n#   Carbon <dbl>, Fish <dbl>, Built_up_land <dbl>, Total <dbl>"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#additional-variables",
+    "href": "slides/slides-05-numerical-data-viz.html#additional-variables",
+    "title": "Visualizations with ggplot",
+    "section": "Additional variables",
+    "text": "Additional variables\n\nDepending on the plot and data, we can map additional variables by using aesthetics (color, size, shape, alpha (transparency) or faceting"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#modifications",
+    "href": "slides/slides-05-numerical-data-viz.html#modifications",
+    "title": "Visualizations with ggplot",
+    "section": "Modifications",
+    "text": "Modifications\n\nAdding title\nChanging axis title"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#live-code",
+    "href": "slides/slides-05-numerical-data-viz.html#live-code",
+    "title": "Visualizations with ggplot",
+    "section": "Live code",
+    "text": "Live code\nNote: most of the code I will show is included in the remaining slides. However, we will most likely go off-script based on questions from the class!"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#geom_histogram",
+    "href": "slides/slides-05-numerical-data-viz.html#geom_histogram",
+    "title": "Visualizations with ggplot",
+    "section": "geom_histogram()",
+    "text": "geom_histogram()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram(binwidth = 5000)\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram(bins = 20)"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#geom_density",
+    "href": "slides/slides-05-numerical-data-viz.html#geom_density",
+    "title": "Visualizations with ggplot",
+    "section": "geom_density()",
+    "text": "geom_density()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_density()"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#geom_boxplot",
+    "href": "slides/slides-05-numerical-data-viz.html#geom_boxplot",
+    "title": "Visualizations with ggplot",
+    "section": "geom_boxplot()",
+    "text": "geom_boxplot()\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#side-by-side-boxplots",
+    "href": "slides/slides-05-numerical-data-viz.html#side-by-side-boxplots",
+    "title": "Visualizations with ggplot",
+    "section": "Side-by-side boxplots",
+    "text": "Side-by-side boxplots\n\nggplot(data = insurance, mapping = aes(x = sex, y = charges)) +\n  geom_boxplot()\n\n\n\n\n\n\nBivariate plot for a numerical and a categorical variable."
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#geom_point",
+    "href": "slides/slides-05-numerical-data-viz.html#geom_point",
+    "title": "Visualizations with ggplot",
+    "section": "geom_point()",
+    "text": "geom_point()\n\nggplot(data = insurance, mapping = aes(x = age, y = charges)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#aesthetics",
+    "href": "slides/slides-05-numerical-data-viz.html#aesthetics",
+    "title": "Visualizations with ggplot",
+    "section": "Aesthetics",
+    "text": "Aesthetics\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,\n                                       shape = smoker)) +\n  geom_point()\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, alpha = age,\n                                       shape = smoker)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#when-to-map-to-variable",
+    "href": "slides/slides-05-numerical-data-viz.html#when-to-map-to-variable",
+    "title": "Visualizations with ggplot",
+    "section": "When to map to variable",
+    "text": "When to map to variable\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point(col = \"purple\")\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = \"purple\")) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#facet_wrap",
+    "href": "slides/slides-05-numerical-data-viz.html#facet_wrap",
+    "title": "Visualizations with ggplot",
+    "section": "facet_wrap()",
+    "text": "facet_wrap()\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_wrap(~ smoker)\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_wrap(~ smoker, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#facet_grid",
+    "href": "slides/slides-05-numerical-data-viz.html#facet_grid",
+    "title": "Visualizations with ggplot",
+    "section": "facet_grid()",
+    "text": "facet_grid()\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +\n  geom_point() +\n  facet_grid(sex ~ smoker)"
+  },
+  {
+    "objectID": "slides/slides-05-numerical-data-viz.html#adding-titles",
+    "href": "slides/slides-05-numerical-data-viz.html#adding-titles",
+    "title": "Visualizations with ggplot",
+    "section": "Adding titles",
+    "text": "Adding titles\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  ggtitle(\"Histogram of charges\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  ggtitle(\"Histogram of charges\") +\n  xlab(\"Charges ($)\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nggplot(data = insurance, mapping = aes(x = charges)) +\n  geom_histogram() +\n  labs(title = \"Histogram of charges\",\n       x = \"Charges ($)\", y = \"Count\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "live_code/dplyr.html#selecting-columns",
+    "href": "live_code/dplyr.html#selecting-columns",
+    "title": "Data wrangling with dplyr",
+    "section": "Selecting columns",
+    "text": "Selecting columns\nSometimes, there are a lot of columns in a data frame and we might not want all of them. The select() function gives us an easy way to choose which columns/variables we’d like to work with.\nThe select() function requires by default two arguments: the data frame and the variable names to choose from that data frame.\nThe following code works…\n\nselect(datascience, Age)\n\n# A tibble: 2,288 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    22\n 7    29\n 8    35\n 9    37\n10    31\n# ℹ 2,278 more rows\n\n\n…but it’s preferable to take advantage of piping in order to make code more readable:\n\ndatascience |>\n  select(Age)\n\n# A tibble: 2,288 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    22\n 7    29\n 8    35\n 9    37\n10    31\n# ℹ 2,278 more rows\n\n\n\n\nWhat’s going on here?\n\nStart with the data frame datascience\nPipe (|>) the data frame to the select() function and specify that we want the variable Age\nThe result is a data frame with 2288 rows and 1 column with the Age variable\n\n\n\n\n\n\n\nCheck\n\n\n\nWhy do we type Age and not age?\n\n\n\nMultiple variables and excluding\n\n\n\n\n\n\nExpand\n\n\n\n\n\n\ndatascience |>\n  select(Age, Major)\n\n# A tibble: 2,288 × 2\n     Age Major                                                       \n   <dbl> <chr>                                                       \n 1    56 Mathematics or statistics                                   \n 2    33 Other                                                       \n 3    26 Computer Science                                            \n 4    25 Physics                                                     \n 5    33 Electrical Engineering                                      \n 6    22 Information technology, networking, or system administration\n 7    29 Computer Science                                            \n 8    35 Physics                                                     \n 9    37 Electrical Engineering                                      \n10    31 Computer Science                                            \n# ℹ 2,278 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if we swap the order of the variable names?\n\n\n\nA range of variables\n\ndatascience |>\n  select(Gender:EmploymentStatus)\n\n# A tibble: 2,288 × 3\n   Gender   Age EmploymentStatus                                    \n   <chr>  <dbl> <chr>                                               \n 1 Male      56 Independent contractor, freelancer, or self-employed\n 2 Male      33 Employed full-time                                  \n 3 Male      26 Employed full-time                                  \n 4 Male      25 Employed part-time                                  \n 5 Male      33 Employed full-time                                  \n 6 Male      22 Employed full-time                                  \n 7 Male      29 Employed full-time                                  \n 8 Male      35 Employed full-time                                  \n 9 Male      37 Employed full-time                                  \n10 Male      31 Employed part-time                                  \n# ℹ 2,278 more rows\n\n\n\n\nExcluding variables\n\ndatascience |>\n  select(-Country)\n\n# A tibble: 2,288 × 16\n   Gender   Age EmploymentStatus          EmployerIndustry FormalEducation Major\n   <chr>  <dbl> <chr>                     <chr>            <chr>           <chr>\n 1 Male      56 Independent contractor, … Mix of fields    Master's degree Math…\n 2 Male      33 Employed full-time        Internet-based   Bachelor's deg… Other\n 3 Male      26 Employed full-time        Financial        Master's degree Comp…\n 4 Male      25 Employed part-time        Academic         Bachelor's deg… Phys…\n 5 Male      33 Employed full-time        Telecommunicati… Doctoral degree Elec…\n 6 Male      22 Employed full-time        Mix of fields    Bachelor's deg… Info…\n 7 Male      29 Employed full-time        Pharmaceutical   Master's degree Comp…\n 8 Male      35 Employed full-time        Technology       Doctoral degree Phys…\n 9 Male      37 Employed full-time        Technology       Master's degree Elec…\n10 Male      31 Employed part-time        Technology       Doctoral degree Comp…\n# ℹ 2,278 more rows\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>"
+  },
+  {
+    "objectID": "live_code/dplyr.html#arranging-rows",
+    "href": "live_code/dplyr.html#arranging-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Arranging rows",
+    "text": "Arranging rows\nWe might want to re-arrange rows in ascending or descending order according to a certain variable:\n\ndatascience |>\n  select(Age, Major) |>\n  arrange(Age)\n\n# A tibble: 2,288 × 2\n     Age Major                                                       \n   <dbl> <chr>                                                       \n 1     0 Mathematics or statistics                                   \n 2     1 Other                                                       \n 3    19 Computer Science                                            \n 4    19 Biology                                                     \n 5    20 Information technology, networking, or system administration\n 6    20 Mathematics or statistics                                   \n 7    20 Computer Science                                            \n 8    20 Mathematics or statistics                                   \n 9    21 Other                                                       \n10    21 Computer Science                                            \n# ℹ 2,278 more rows\n\n\n\n\nBy default, arrange() will reorder in ascending order. If we’d like to go in descending order, we can code arrange(desc(Age))."
+  },
+  {
+    "objectID": "live_code/dplyr.html#slicing-for-certain-row-numbers",
+    "href": "live_code/dplyr.html#slicing-for-certain-row-numbers",
+    "title": "Data wrangling with dplyr",
+    "section": "Slicing for certain row numbers",
+    "text": "Slicing for certain row numbers\nRemember, data frames are in tabular format. So each row has a certain index, as does each column. The first row in index 1, the second row index 2, etc.\nThe slice() function expects a vector of row indices to retain:\n\ndatascience |>\n  slice(1:5)\n\n# A tibble: 5 × 17\n  Country   Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major\n  <chr>     <chr>  <dbl> <chr>            <chr>            <chr>           <chr>\n1 United S… Male      56 Independent con… Mix of fields    Master's degree Math…\n2 Russia    Male      33 Employed full-t… Internet-based   Bachelor's deg… Other\n3 Taiwan    Male      26 Employed full-t… Financial        Master's degree Comp…\n4 United S… Male      25 Employed part-t… Academic         Bachelor's deg… Phys…\n5 United S… Male      33 Employed full-t… Telecommunicati… Doctoral degree Elec…\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat is the difference between select() and slice()?"
+  },
+  {
+    "objectID": "live_code/dplyr.html#filtering-to-select-a-subset-of-rows",
+    "href": "live_code/dplyr.html#filtering-to-select-a-subset-of-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Filtering to select a subset of rows",
+    "text": "Filtering to select a subset of rows\nThe slice() function is nice, but unless the rows of your data frame are ordered meaningfully, its actual utility is limited. We might want to look at a set of the cases in which a certain condition is met.\nIn the following code, we only retain the observations where the person’s Major was Computer Science:\n\ndatascience |>\n  filter(Major == \"Computer Science\")\n\n# A tibble: 681 × 17\n   Country  Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major\n   <chr>    <chr>  <dbl> <chr>            <chr>            <chr>           <chr>\n 1 Taiwan   Male      26 Employed full-t… Financial        Master's degree Comp…\n 2 Poland   Male      29 Employed full-t… Pharmaceutical   Master's degree Comp…\n 3 Iran     Male      31 Employed part-t… Technology       Doctoral degree Comp…\n 4 Brazil   Male      25 Employed full-t… Academic         Master's degree Comp…\n 5 Brazil   Male      32 Employed full-t… Academic         Master's degree Comp…\n 6 Russia   Male      31 Independent con… CRM/Marketing    Some college/u… Comp…\n 7 India    Male      23 Employed full-t… Technology       Master's degree Comp…\n 8 Canada   Male      52 Employed full-t… Academic         Bachelor's deg… Comp…\n 9 Russia   Male      26 Independent con… Military/Securi… Bachelor's deg… Comp…\n10 Czech R… Male      25 Independent con… Internet-based   Master's degree Comp…\n# ℹ 671 more rows\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>\n\n\n\nMultiple conditions\n\n\n\n\n\n\nExpand\n\n\n\n\n\nWe can also filter for more than one condition at once. Within filter(), the comma , specifies that all conditions must be true. It can be read as “and”:\n\ndatascience |>\n  filter(Major == \"Computer Science\", \n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 36 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    30\n 2 Computer Science    30\n 3 Computer Science    30\n 4 Computer Science    30\n 5 Computer Science    30\n 6 Computer Science    30\n 7 Computer Science    30\n 8 Computer Science    30\n 9 Computer Science    30\n10 Computer Science    30\n# ℹ 26 more rows\n\n\nIf we just need at least one of multiple conditions to be true, we can use the | operator which stands for “or”:\n\ndatascience |>\n  filter(Major == \"Computer Science\" | \n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 765 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    26\n 2 Computer Science    29\n 3 Computer Science    31\n 4 Computer Science    25\n 5 Computer Science    32\n 6 Computer Science    31\n 7 A social science    30\n 8 Computer Science    23\n 9 Biology             30\n10 Computer Science    52\n# ℹ 755 more rows\n\n\n\ndatascience |>\n  filter(Major == \"Computer Science\" | Major == \"Other\",\n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 44 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    30\n 2 Computer Science    30\n 3 Computer Science    30\n 4 Computer Science    30\n 5 Computer Science    30\n 6 Computer Science    30\n 7 Computer Science    30\n 8 Computer Science    30\n 9 Other               30\n10 Computer Science    30\n# ℹ 34 more rows"
+  },
+  {
+    "objectID": "live_code/dplyr.html#distinct-to-filter-for-unique-rows",
+    "href": "live_code/dplyr.html#distinct-to-filter-for-unique-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Distinct to filter for unique rows",
+    "text": "Distinct to filter for unique rows\n\ndatascience |>\n  distinct(FormalEducation)\n\n# A tibble: 5 × 1\n  FormalEducation                                                  \n  <chr>                                                            \n1 Master's degree                                                  \n2 Bachelor's degree                                                \n3 Doctoral degree                                                  \n4 Some college/university study without earning a bachelor's degree\n5 I prefer not to answer                                           \n\ndatascience |>\n  distinct(FormalEducation, Major) |>\n  arrange(FormalEducation)\n\n# A tibble: 58 × 2\n   FormalEducation   Major                                                      \n   <chr>             <chr>                                                      \n 1 Bachelor's degree Other                                                      \n 2 Bachelor's degree Physics                                                    \n 3 Bachelor's degree Information technology, networking, or system administrati…\n 4 Bachelor's degree A social science                                           \n 5 Bachelor's degree Electrical Engineering                                     \n 6 Bachelor's degree Mathematics or statistics                                  \n 7 Bachelor's degree Computer Science                                           \n 8 Bachelor's degree Engineering (non-computer focused)                         \n 9 Bachelor's degree A humanities discipline                                    \n10 Bachelor's degree Management information systems                             \n# ℹ 48 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat variables are by default included in the output from distinct()?"
+  },
+  {
+    "objectID": "live_code/dplyr.html#mutate-to-add-a-new-variable",
+    "href": "live_code/dplyr.html#mutate-to-add-a-new-variable",
+    "title": "Data wrangling with dplyr",
+    "section": "Mutate to add a new variable",
+    "text": "Mutate to add a new variable\nIt is typical for us to want to add variables to a given data frame. We do this with the mutate() function. We must specify the name of the new variable and how to calculate the value of that variable for each observation:\n\ndatascience %>%\n  mutate(compensation_1k = CompensationAmount/1000) |>\n  select(CompensationAmount, compensation_1k)\n\n# A tibble: 2,288 × 2\n   CompensationAmount compensation_1k\n                <dbl>           <dbl>\n 1             250000             250\n 2            1200000            1200\n 3            1100000            1100\n 4              20000              20\n 5             100000             100\n 6             624000             624\n 7             126000             126\n 8             133000             133\n 9              80000              80\n10              15000              15\n# ℹ 2,278 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat exactly is going on in the second line of code?"
+  },
+  {
+    "objectID": "live_code/dplyr.html#counting-to-create-frequency-tables",
+    "href": "live_code/dplyr.html#counting-to-create-frequency-tables",
+    "title": "Data wrangling with dplyr",
+    "section": "Counting to create frequency tables",
+    "text": "Counting to create frequency tables\nWe can count the number of instances we observed each level of a given categorical variable:\n\ndatascience |>\n  count(EmployerIndustry)\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 CRM/Marketing                       70\n 3 Financial                          211\n 4 Government                         137\n 5 Hospitality/Entertainment/Sports    27\n 6 Insurance                           68\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 Military/Security                   35\n10 Mix of fields                      195\n11 Non-profit                          35\n12 Other                              198\n13 Pharmaceutical                      54\n14 Retail                              61\n15 Technology                         445\n16 Telecommunications                  65\n\n\n\n\n\n\n\n\nCheck\n\n\n\nHow does the resulting data frame from count() compare to the original data frame we passed in?\n\n\n\nMaking frequency tables useful\nWe typically want to present the counts in ascending or descending order.\n\n\n\n\n\n\nExpand\n\n\n\n\n\nNote that the following chunks of code do the same thing. One of them takes advantage of an additional argument in count(), whereas the other block of the uses an additional function:\n\ndatascience |>\n  count(EmployerIndustry, sort = T)\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 Technology                         445\n 3 Financial                          211\n 4 Other                              198\n 5 Mix of fields                      195\n 6 Government                         137\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 CRM/Marketing                       70\n10 Insurance                           68\n11 Telecommunications                  65\n12 Retail                              61\n13 Pharmaceutical                      54\n14 Military/Security                   35\n15 Non-profit                          35\n16 Hospitality/Entertainment/Sports    27\n\n\n\ndatascience |>\n  count(EmployerIndustry) |>\n  arrange(desc(n))\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 Technology                         445\n 3 Financial                          211\n 4 Other                              198\n 5 Mix of fields                      195\n 6 Government                         137\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 CRM/Marketing                       70\n10 Insurance                           68\n11 Telecommunications                  65\n12 Retail                              61\n13 Pharmaceutical                      54\n14 Military/Security                   35\n15 Non-profit                          35\n16 Hospitality/Entertainment/Sports    27\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if you pass in more than one variable into count()?"
+  },
+  {
+    "objectID": "live_code/dplyr.html#practice",
+    "href": "live_code/dplyr.html#practice",
+    "title": "Data wrangling with dplyr",
+    "section": "Practice",
+    "text": "Practice\nSuppose I want to report a data frame that reports each unique level of Major and the proportion of times each level was observed in the data set in order of most popular to least popular. How might we do that?\n\n\nCode\ndatascience |>\n  count(Major) |>\n  mutate(prop = n/sum(n)) |>\n  select(Major, prop) |>\n  arrange(desc(prop))"
+  },
+  {
+    "objectID": "live_code/dplyr.html#summarising-for-summary-statistics",
+    "href": "live_code/dplyr.html#summarising-for-summary-statistics",
+    "title": "Data wrangling with dplyr",
+    "section": "Summarising for summary statistics",
+    "text": "Summarising for summary statistics\nThe summarise() function gives us an easy way to calculate summary statistics of variables in the data frame! We just need to know the name of the function that will calculate the summary statistic for us.\n\ndatascience |>\n  summarise(mean_age = mean(Age))\n\n# A tibble: 1 × 1\n  mean_age\n     <dbl>\n1     34.4\n\n\n\n\nYou can obtain multiple summary statistics at once by separating the desired summary statistics with commas.\nThe summarise() function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if you type summarise(mean(Age)) instead?"
+  },
+  {
+    "objectID": "live_code/dplyr.html#grouping-by-grouped-operations",
+    "href": "live_code/dplyr.html#grouping-by-grouped-operations",
+    "title": "Data wrangling with dplyr",
+    "section": "Grouping by grouped operations",
+    "text": "Grouping by grouped operations\nSometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The group_by() function tells R to treat each unique level as a separate data set.\n\ndatascience |>\n  group_by(EmploymentStatus) |>\n  summarise(mean_age = mean(Age))\n\n# A tibble: 3 × 2\n  EmploymentStatus                                     mean_age\n  <chr>                                                   <dbl>\n1 Employed full-time                                       34.3\n2 Employed part-time                                       29.5\n3 Independent contractor, freelancer, or self-employed     39.0"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#working-dataset",
+    "href": "slides/slides-07-wrangling.html#working-dataset",
+    "title": "Data wrangling with dplyr",
+    "section": "Working dataset",
+    "text": "Working dataset\nData from Kaggle: In 2017, Kaggle conducted an industry-wide survey to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.\n\nLet’s go ahead and pull to get the data locally\nThen open a new .Rmd to work in\nLet’s load in the data together and take a quick look at it before diving into data wrangling"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#grammar-of-data-wrangling",
+    "href": "slides/slides-07-wrangling.html#grammar-of-data-wrangling",
+    "title": "Data wrangling with dplyr",
+    "section": "Grammar of data wrangling",
+    "text": "Grammar of data wrangling\n\nData frames are objects in R that store tabular data in tidy form\nThe dplyr package uses the concept of functions as verbs that manipulate data frames\n\nselect(): pick columns by name\nslice(): pick rows using indices\nfilters(): pick rows matching criteria\ndistinct(): filter for unique rows\nmutate(): add new variables as columns\nsummarise(): reduce variables to quantitative values\ngroup_by(): for grouped operations based on a variable\nand many more!!!"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#rules-of-dplyr-functions",
+    "href": "slides/slides-07-wrangling.html#rules-of-dplyr-functions",
+    "title": "Data wrangling with dplyr",
+    "section": "Rules of dplyr functions",
+    "text": "Rules of dplyr functions\n\nThe first argument is always a data frame\nSubsequent argument(s) say what to do with that data frame\n\nWe connect lines to code using a pipe operator (more on pipes in the next few slides)\n\nAlways return a data frame"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#pipes",
+    "href": "slides/slides-07-wrangling.html#pipes",
+    "title": "Data wrangling with dplyr",
+    "section": "Pipes",
+    "text": "Pipes\n\nIn programming, a pipe is a technique for passing information from one process to another\n\nIn dplyr, the pipes are coded as %>% or |>\n\nWe can think about pipes as following a sequence of actions which provide a more natural and easier to read structure\nFor example: suppose that in order to get to work, I need to find my car keys, start my car, drive to work, and then park my car\n\n\n\n\nExpressed as a set of nested R pseudocode, this might look like:\n\n\n\npark(drive(start_car(find(\"car_keys\")), \n           to = \"work\"))\n\n\n\n\nExpressed using pipes, this might look like:\n\n\n\nfind(\"car_keys\") |>\n  start_car() |>\n  drive(to = \"work\") |>\n  park"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#logical-operators-in-r",
+    "href": "slides/slides-07-wrangling.html#logical-operators-in-r",
+    "title": "Data wrangling with dplyr",
+    "section": "Logical operators in R",
+    "text": "Logical operators in R\nIt is common to compare two quantities using logical operators. All of these operators will return a boolean TRUE or FALSE.\nHere are list of some common ones:\n\n<: less than\n<=: less than or equal to\n>: greater than\n>=: greater than or equal to\n==: (exactly) equal to\n!=: not equal to\n\n\n\n1 < 4\n\n[1] TRUE\n\n2 == 3\n\n[1] FALSE"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#logical-operators-cont.",
+    "href": "slides/slides-07-wrangling.html#logical-operators-cont.",
+    "title": "Data wrangling with dplyr",
+    "section": "Logical operators (cont.)",
+    "text": "Logical operators (cont.)\nWe may always want to know if a certain quantity “behaves” a certain way:\n\nis.na(x): test if x is NA\nx %in% y: test if x is in y\n!x: not x"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#commenting-code",
+    "href": "slides/slides-07-wrangling.html#commenting-code",
+    "title": "Data wrangling with dplyr",
+    "section": "Commenting code",
+    "text": "Commenting code\nRecall that in R, we can comment out lines of code using the # symbol. The line of code will still be displayed, but it will not execute:\n\n1 + 1\n\n[1] 2\n\n# 2 * 1\n3 %in% 1:10\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#live-code",
+    "href": "slides/slides-07-wrangling.html#live-code",
+    "title": "Data wrangling with dplyr",
+    "section": "Live code",
+    "text": "Live code"
+  },
+  {
+    "objectID": "slides/slides-07-wrangling.html#piping-to-ggplot",
+    "href": "slides/slides-07-wrangling.html#piping-to-ggplot",
+    "title": "Data wrangling with dplyr",
+    "section": "Piping to ggplot",
+    "text": "Piping to ggplot\n\nRemember that when creating plots, the ggplot() function expect a data frame as its first argument\nWe may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons)\n\nWrangle the data, store the resulting data frame with a new variable name, and then refer to that data frame with ggplot(), or\n\n\ndf_new <- df |>\n  mutate(age_months = age*12)\nggplot(df_new, aes(x = age_months)) +\n  geom_histogram()\n\n\nWrangle the data, and then directly pipe the result into ggplot()\n\n\ndf |>\n  mutate(age_months = age*12) |>\n  ggplot(aes(x = age_months)) +\n  geom_histogram()\n\n\n\n\nWhen do we use |> and when do we use + to connect lines of code?"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#key-terms",
+    "href": "slides/slides-08-probability.html#key-terms",
+    "title": "Probability basics",
+    "section": "Key terms",
+    "text": "Key terms\n\nRandom process: a situation in which the particular outcome is random/not known ahead of time\n\nExamples: rolling die, sports game, if a treatment is effective\n\nA sample space \\(S\\) is the set of all possible outcomes of the random process\n\n\nWhat are the sample spaces above for the above examples?\n\n\nAn event is a set of outcomes from a random process\nA random variable is a function from a sample space to the real numbers\n\nOften denoted with a capitol letter like \\(X\\) or \\(Y\\)\nNOTE: we will focus on discrete random variables for now"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#probability",
+    "href": "slides/slides-08-probability.html#probability",
+    "title": "Probability basics",
+    "section": "Probability",
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nDefined as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(P(A)\\) or \\(Pr(A)\\).\n\n\nWhat sorts of values can \\(P(A)\\) take on?\n\n\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(Pr(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} } = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ size of } S}\\)"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#example",
+    "href": "slides/slides-08-probability.html#example",
+    "title": "Probability basics",
+    "section": "Example",
+    "text": "Example\nLet the random process be the outcome from rolling a fair, six-sided die. Let \\(X\\) be the value of the die.\n\nWhat is \\(Pr(X = 1)\\)?\nWhat is \\(Pr(X = 6)\\)?\nWhat is \\(Pr(X = 1 \\text{ or } 2 \\text{ or }... \\text{ or } 6)\\)?\nWhat is \\(Pr(X = 1 \\text{ and } 2)\\)?"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#operations-with-events",
+    "href": "slides/slides-08-probability.html#operations-with-events",
+    "title": "Probability basics",
+    "section": "Operations with events",
+    "text": "Operations with events\nLet \\(A\\) and \\(B\\) be two possible events.\n\nThe intersection of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to both events \\(A\\) and \\(B\\)\nThe union of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to \\(A\\) and/or \\(B\\)\n\nVenn diagrams for visualizing probabilities."
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#addition-rule",
+    "href": "slides/slides-08-probability.html#addition-rule",
+    "title": "Probability basics",
+    "section": "Addition rule",
+    "text": "Addition rule\nLet \\(A\\) and \\(B\\) be two possible events. Then the probability that at least one will occur is:\n\\[\nP(A \\cap B) = P(A) + P(B) - P(A \\cup B)\n\\]\n\nExample: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).\n\nSuppose we randomly draw one card from the shuffled deck.\nLet \\(A\\) be the event that the card is a spade.\nLet \\(B\\) be the event that the card is a face card (Jack, Queen or King).\nFind \\(P(A \\cup B)\\)."
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#disjoint-events",
+    "href": "slides/slides-08-probability.html#disjoint-events",
+    "title": "Probability basics",
+    "section": "Disjoint events",
+    "text": "Disjoint events\nTwo events are called disjoint or mutually exclusive if they cannot both happen.\n\n\n\nIf our random process is rolling a six-sided die, what are some example of disjoint events?\nIf \\(A\\) and \\(B\\) are disjoint, what is \\(P(A \\cap B)\\)?\nIf \\(A\\) and \\(B\\) are disjoint, what is \\(P(A \\cup B)\\)?"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#rules-of-probability",
+    "href": "slides/slides-08-probability.html#rules-of-probability",
+    "title": "Probability basics",
+    "section": "Rules of probability",
+    "text": "Rules of probability"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#probability-distributions",
+    "href": "slides/slides-08-probability.html#probability-distributions",
+    "title": "Probability basics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#probability-distributions-cont.",
+    "href": "slides/slides-08-probability.html#probability-distributions-cont.",
+    "title": "Probability basics",
+    "section": "Probability distributions (cont.)",
+    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable must satisfy the following three rules:\n\nThe outcomes listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#complement",
+    "href": "slides/slides-08-probability.html#complement",
+    "title": "Probability basics",
+    "section": "Complement",
+    "text": "Complement\n\nThe complement of an event \\(A\\) is the set of all outcomes in \\(S\\) that are not in \\(A\\)\n\nDenoted as \\(A^c\\)\n\nContinuing the dice example, if \\(A\\) is the event that a 1 or 2 is rolled, what is \\(A^c\\)?\n\nWhat is \\(P(A \\cup A^c)\\)? Why?\n\nWe can use the above to obtain the complement rule\n\nLet our random process be the sum of two dice. What is the probability that…\n\nthe sum of the dice is \\(not\\) 6?\nthe sum is at least 4?"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#demorgans-laws",
+    "href": "slides/slides-08-probability.html#demorgans-laws",
+    "title": "Probability basics",
+    "section": "DeMorgan’s Laws",
+    "text": "DeMorgan’s Laws\n\nComplement of union: \\((A \\cup B)^c = \\ ?\\)\nComplement of intersection: \\((A \\cap B)^c = \\ ?\\)"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#independence",
+    "href": "slides/slides-08-probability.html#independence",
+    "title": "Probability basics",
+    "section": "Independence",
+    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\n(Non) Examples?\n\nIf \\(A\\) and \\(B\\) are independent events from two different and independent processes, then \\(Pr(A \\cap B) = Pr(A) \\times Pr(B)\\)\n\nThis extends to more than two independent processes\n\nMore generally, if \\(P(A \\cap B) = Pr(A) \\times Pr(B)\\) and \\(A\\) and \\(B\\) are events from the same process, then \\(A\\) and \\(B\\) are independent.\n\nThis is known as the multiplication rule"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#practice",
+    "href": "slides/slides-08-probability.html#practice",
+    "title": "Probability basics",
+    "section": "Practice",
+    "text": "Practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political afilliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
+  },
+  {
+    "objectID": "slides/slides-08-probability.html#more-practice",
+    "href": "slides/slides-08-probability.html#more-practice",
+    "title": "Probability basics",
+    "section": "More practice",
+    "text": "More practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political afilliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#probabilities-with-contingency-tables",
+    "href": "slides/slides-09-conditional-probability.html#probabilities-with-contingency-tables",
+    "title": "Conditional probability",
+    "section": "Probabilities with contingency tables",
+    "text": "Probabilities with contingency tables\n\nAs we saw in the previous class, sometimes the probabilities of events are quite clear to calculate (e.g. dice rolls or drawing cards)\nBut oftentimes we have to use data to try and estimate probabilities (e.g. the Pew Research survey)\nWhen we have two (or more) variables, we often want to understand the relationships between them"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#practice",
+    "href": "slides/slides-09-conditional-probability.html#practice",
+    "title": "Conditional probability",
+    "section": "Practice",
+    "text": "Practice\n\n\n\n\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\nDefine events \\(A\\) = died and \\(B\\) = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:\n\n\\(P(A)\\)\n\\(P(A \\cap B)\\)\n\\(P(A \\cup B^c)\\)"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
+    "href": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
+    "title": "Conditional probability",
+    "section": "Marginal and joint probabilities",
+    "text": "Marginal and joint probabilities\n\n\\(P(A)\\) is an example of a marginal probability, which is a probability involving a single random process\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(P(A \\cap B)\\) is an example of a joint probability, which is a probability of events for two or more random variables or processes\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#marginal-from-joint",
+    "href": "slides/slides-09-conditional-probability.html#marginal-from-joint",
+    "title": "Conditional probability",
+    "section": "Marginal from joint",
+    "text": "Marginal from joint\nIn simple cases, we can obtain the marginal distribution from joint distributions. You already did this!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\nP(\\text{does not drink coffee}) &= P(\\text{does not drink coffee} \\ \\cap \\text{ did not die}) + \\\\\n&\\quad P(\\text{does not drink coffee} \\ \\cap \\text{ died}) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#conditional-probability",
+    "href": "slides/slides-09-conditional-probability.html#conditional-probability",
+    "title": "Conditional probability",
+    "section": "Conditional probability",
+    "text": "Conditional probability\n\nThe probability that an event will occur given that another event has already occurred is a conditional probability.\n\nE.g. Given that it rained yesterday, what is the probability that it will rain today?\nIt is called “conditional” because we calculate a probability under a specific condition\n\nThe conditional probability of event \\(A\\) given event \\(B\\) is written as \\(P(A|B)\\), where the vertical bar “|” is read as “given”\n\nNot to be confused with the coding | which is “or”\n\nWe can easily obtain conditional probabilities from contingency tables!"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
+    "href": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
+    "title": "Conditional probability",
+    "section": "Conditional probability with contingency tables",
+    "text": "Conditional probability with contingency tables\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\nWhat is the conditional probability of dying given that someone does not drink coffee?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
+    "href": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
+    "title": "Conditional probability",
+    "section": "Conditional probability formula",
+    "text": "Conditional probability formula\n\nWhat happens if we don’t have counts? We will see that conditional, joint, and marginal probabilities are related\nFor any events \\(A\\) and \\(B\\):\n\n\n\\[\nP(A| B) = \\frac{P(A \\cap B)}{P(B)}\n\\]\n\n\nLet \\(A\\) be the event that someone died, and \\(B\\) the event that someone does not drink coffee.\n\nUse the above formula to obtain \\(P(A|B)\\)\nCome up with a formula for \\(P(B|A)\\) and calculate this conditional probability for the problem at hand.\n\nNote: complement rule holds for conditional probabilities if we condition on the same information: \\(P(A|B) = 1 - P(A^c | B)\\)"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#independence-and-conditional-probabilities",
+    "href": "slides/slides-09-conditional-probability.html#independence-and-conditional-probabilities",
+    "title": "Conditional probability",
+    "section": "Independence and conditional probabilities",
+    "text": "Independence and conditional probabilities\n\nWhat happens if we re-arrange the formula on the previous slide? We obtain (this is known as the general multiplication rule)\n\n\n\\[\nP(A \\cap B) = P(A|B) \\times P(B)\n\\]\n\n\nRecall, \\(A\\) and \\(B\\) are independent when what is true?\nPutting these two components together, what is another way to determine if events \\(A\\) and \\(B\\) are independent?\n\nWhy does this make sense “intuitively”?\n\n\nUsing this new test of independence, are dying and abstaining from coffee independent events?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#bayes-rule-1",
+    "href": "slides/slides-09-conditional-probability.html#bayes-rule-1",
+    "title": "Conditional probability",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\n\nAs we saw before, the two conditional probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are not the same. But are they related in some way?\nYes! Using Bayes’ rule:\n\n\n\\[\nP(A|B) =\n\\]\n\n\nCan we go even further?\n\n\n\\[\nP(A|B) =\n\\]\n\n\nWhy is this seemingly more complicated formula useful?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
+    "href": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
+    "title": "Conditional probability",
+    "section": "Bayes’ Theorem (more general)",
+    "text": "Bayes’ Theorem (more general)\n\nSuppose we have two processes, each with their own sample spaces \\(S_{1}\\) and \\(S_{2}\\).\nFurther suppose we can break up \\(S_{1}\\) into \\(k\\) disjoint outcomes \\(A_{1}, A_{2}, \\ldots, A_{k}\\)\nBayes’ Theorem states:\n\\[\\begin{align*}\nP(\\text{outcome } &A_{1} \\text{ of process } 1 | \\text{outcome } B \\text{ of process } 2) = \\\\ &\\frac{P(B|A_{1}) P(A_{1})}{P(B|A_{1}) P(A_{1}) + P(B | A_{2}) P(A_{2}) + \\ldots + P(B | A_{k} ) P(A_{k})}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#diagnostic-testing-example",
+    "href": "slides/slides-09-conditional-probability.html#diagnostic-testing-example",
+    "title": "Conditional probability",
+    "section": "Diagnostic testing example",
+    "text": "Diagnostic testing example\nSuppose we are interested in the performance of a medical diagnostic test. Let \\(D\\) be the event that a patient has the disease, and let \\(T\\) be the event that the test is positive for the disease.\n\nSome definitions (don’t worry about memorizing):\n\nPrevalence: \\(P(D)\\)\nSensitivity of test: \\(P(T|D)\\)\nSpecificity of test: \\(P(T^c | D^c)\\)\nPositive predictive value: \\(P(D | T)\\)\nNegative predictive value: \\(P(D^c | T^c)\\)\n\n\nWhat do these probabilities mean in plain English? Which ones do we hope are low? Which ones do we hope are high?\nWhich probability would you be most interested in knowing?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#example",
+    "href": "slides/slides-09-conditional-probability.html#example",
+    "title": "Conditional probability",
+    "section": "Example",
+    "text": "Example\n\nIn Canada, about 0.35% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but this test is not perfect.\nIn about 11% of patients with breast cancer, the test gives a false negative: it indicates a woman does not have breast cancer when she does have breast cancer.\nIn about 7% of patients who do not have breast cancer, the test gives a false positive: it indicates these patients have breast cancer when they actually do not.\nIf we tested a random Canadian woman over 40 for breast cancer using a mammogram and the test came back positive, what is the probability that the patient actually has breast cancer?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#study-design",
+    "href": "slides/slides-10-simpsons.html#study-design",
+    "title": "Simpson’s paradox",
+    "section": "Study design",
+    "text": "Study design\n\nWhat are the differences between observational studies and experimental studies?\nWhat is a confounding variable?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#probability",
+    "href": "slides/slides-10-simpsons.html#probability",
+    "title": "Simpson’s paradox",
+    "section": "Probability",
+    "text": "Probability\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability of admission?\nWhat is the probability of admission among men? Among women?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#dive-into-data",
+    "href": "slides/slides-10-simpsons.html#dive-into-data",
+    "title": "Simpson’s paradox",
+    "section": "Dive into data",
+    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to. We will consider the six largest departments: A, B, C, D, E, F\n\n\n\n\n\n\nDept\nFemale: Admit\nMale: Admit\nFemale: Reject\nMale: Reject\n\n\n\n\nA\n89\n512\n19\n313\n\n\nB\n17\n353\n8\n207\n\n\nC\n202\n120\n391\n205\n\n\nD\n131\n138\n244\n279\n\n\nE\n94\n53\n299\n138\n\n\nF\n24\n22\n317\n351"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#live-code",
+    "href": "slides/slides-10-simpsons.html#live-code",
+    "title": "Simpson’s paradox",
+    "section": "Live code",
+    "text": "Live code\nThe first six observations in the data frame are as follows:\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\nWhat sort of table of summary statistics would be interesting to display? How do we go about coding it?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#visualize",
+    "href": "slides/slides-10-simpsons.html#visualize",
+    "title": "Simpson’s paradox",
+    "section": "Visualize",
+    "text": "Visualize"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#closer-look",
+    "href": "slides/slides-10-simpsons.html#closer-look",
+    "title": "Simpson’s paradox",
+    "section": "Closer look",
+    "text": "Closer look\n\n\n\n\n\nDept\nFemale_p_admit\nMale_p_admit\nFemale_Total\nMale_Total\n\n\n\n\nA\n0.82\n0.62\n108\n825\n\n\nB\n0.68\n0.63\n25\n560\n\n\nC\n0.34\n0.37\n593\n325\n\n\nD\n0.35\n0.33\n375\n417\n\n\nE\n0.24\n0.28\n393\n191\n\n\nF\n0.07\n0.06\n341\n373\n\n\n\n\n\n\n\nAre the departments uniform in their admission rates?\nDo admissions still seem biased against women applicants?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#whats-going-on",
+    "href": "slides/slides-10-simpsons.html#whats-going-on",
+    "title": "Simpson’s paradox",
+    "section": "What’s going on?",
+    "text": "What’s going on?\n\nBut wait… Didn’t we see that the men were way more likely to be admitted than women?\nThe first two departments (A and B) are easy to get into\n\nWhat percentage of men applied to department A?\nWhat percentage of women applied to departments C-F?\n\n\n\n\nIn one sentence, what is the “punch line”?\nWhat is the confounding variable?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#simpsons-paradox",
+    "href": "slides/slides-10-simpsons.html#simpsons-paradox",
+    "title": "Simpson’s paradox",
+    "section": "Simpson’s paradox",
+    "text": "Simpson’s paradox\nThe UC Berkeley admissions observational study is an example of Simpson’s paradox: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable\n\nIn other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables"
+  },
+  {
+    "objectID": "practice_probs/practice-08-probability.html",
+    "href": "practice_probs/practice-08-probability.html",
+    "title": "Probability",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nIf events \\(A\\) and \\(B\\) are disjoint:\n\nWhat must \\(P(A \\cap B)\\) equal, and why?\nWhat is a simple formula for \\(P(A \\cup B)\\)?\n\nIn a multiple choice exam, there are 5 questions and 4 choices for each question. Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:\n\nthe first question Nancy gets correct is the 5th question?\nNancy gets all of the questions right?\nNancy gets at least one question right?\n\nIn the following figure, the sample space is the set of outcomes \\(S = \\{1,2,3,4,5,6\\}\\). We define three different events \\(A\\), \\(B\\) and \\(D\\) as denoted by the color and circling.\n\n\nWhich pairs of events are disjoint?\nSuppose we have a random process whose sample space is \\(S\\) as defined above. Also suppose that \\(P(A) = 0.3\\), \\(P(B) = 0.2\\), and the probability of observing a 1 is \\(0.1\\). Based on this information, create a table that represents a valid probability distribution for this random process."
+  },
+  {
+    "objectID": "practice_probs/practice-09-conditional-probability.html",
+    "href": "practice_probs/practice-09-conditional-probability.html",
+    "title": "Conditional probability",
+    "section": "",
+    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nSuppose we have an event \\(A\\) from one random process and an event \\(B\\) from a second random process such that \\(P(A) = 0.3\\), \\(P(B) = 0.7\\), and \\(P(A \\cap B) = 0.1\\).\n\nAre the random processes independent?\nWhat is \\(P(A|B)\\)?\n\nAssortative mating is a nonrandom mating pattern where individuals with similar genotypes and/or phenotypes mate with one another more frequently than what would be expected under a random mating pattern. Researchers studying this topic collected data on eye colors of 204 Scandinavian men and their female partners. The table below summarizes the results. For simplicity, we only include heterosexual relationships in this exercise.\n\n\nWhat is the probability that a randomly chosen male respondent or his partner has blue eyes?\nWhat is the probability that a randomly chosen male respondent with blue eyes has a partner with blue eyes?\nWhat is the probability that a randomly chosen male respondent with brown eyes has a partner with blue eyes? What about the probability of a randomly chosen male respondent with green eyes having a partner with blue eyes?\nDoes it appear that the eye colors of male respondents and their partners are independent? Explain your reasoning.\n\nAfter an introductory statistics course, 80% of students can successfully construct box plots. Of those who can construct box plots, 86% passed, while only 65% of those students who could not construct box plots passed. Calculate the probability that a student is able to construct a box plot if it is known that he passed."
+  },
+  {
+    "objectID": "live_code/data_wrangling_viz.html",
+    "href": "live_code/data_wrangling_viz.html",
+    "title": "More data wrangling",
+    "section": "",
+    "text": "# load libraries here\nlibrary(tidyverse)\n\n## modify this line accordingly!\ndatascience <- read_csv(\"data/datascience_survey_subset.csv\")"
+  },
+  {
+    "objectID": "live_code/data_wrangling_viz.html#warm-up-exercises",
+    "href": "live_code/data_wrangling_viz.html#warm-up-exercises",
+    "title": "More data wrangling",
+    "section": "Warm-up exercises",
+    "text": "Warm-up exercises\nHow many different programming languages were recommended in the survey?\n\n\n\nHow many of the respondents who work in academia in the United States are at most 25 years old at the time taking the survey?"
+  },
+  {
+    "objectID": "live_code/data_wrangling_viz.html#group-analysis",
+    "href": "live_code/data_wrangling_viz.html#group-analysis",
+    "title": "More data wrangling",
+    "section": "Group analysis",
+    "text": "Group analysis\nI want your to generate your own investigation. Using your data-wrangling skills, try to find some interesting conclusions. After about a half hour, your group will share your process and results with the rest of the class!\nYour final results must include:\n\nSummary statistics or frequency table\nVisualization\nComments of your code using the pound-symbol (#) to describe what you are doing in each code chunk\n\nYou can create more than one visualization and/or more than one table. Whatever speaks to you! The individual components (i.e. table/summary stats vs plot) do not need to use the same set of variables. Feel free to create as many code chunks as you’d like! There is a data dictionary below that defines all the variables in the data set for you.\nAs a stretch goal, I encourage you to try using mutate() and/or group_by() somewhere in your analysis, but it isn’t necessary!"
+  },
+  {
+    "objectID": "live_code/data_wrangling_viz.html#data-dictionary",
+    "href": "live_code/data_wrangling_viz.html#data-dictionary",
+    "title": "More data wrangling",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nBelow is the data dictionary for the subset of the Kaggle data data.\n\n\n\n\n\n\n\n\nvariable\nclass\ndescription\n\n\n\n\nCountry\ncharacter\nHome country of employee\n\n\nGender\ncharacter\nSelected gender, one of “A different identity”, “Female”, “Male”, “Non-binary, genderqueer, or gender non-conforming”\n\n\nAge\ndouble\nAge at time of survey\n\n\nEmploymentStatus\ncharacter\nOne of “Employed full-time”, “Employed part-time”, or “Independent contractor, freelancer, or self-employed\n\n\nEmployerIndustry\ncharacter\nIndustry of current employer\n\n\nFormalEducation\ncharacter\nHighest level of education\n\n\nMajor\ncharacter\nCollege major\n\n\nCompensationAmount\ndouble\nTotal compensation\n\n\nCompensationCurrency\ncharacter\n3-letter currency code for day-to-day currency\n\n\nCurrentJobTitle\ncharacter\nJob title\n\n\nTitleFit\ncharacter\nAssessment of how well title fits actual duties. One of “Fine”, “Perfectly”, “Poorly”\n\n\nLanguageRecommendation\ncharacter\nRecommended programming language\n\n\nWorkDataVisualizations\ncharacter\nProportion of job dedicated to creating data visualizations, broken into pre-determined categories\n\n\nJobSatisfaction\ncharacter\nRating of job satisfaction on scale of 1-10, where 1 is not satisfied and 10 is highly satisfied\n\n\nJobSatisfaction2\ndouble\nRating of job satisfaction on scale of 1-10, where 1 is not satisfied and 10 is highly satisfied\n\n\nConversionUSD\ndouble\nConversion factor from CompensationCurrency to USD."
+  },
+  {
+    "objectID": "live_code/data_wrangling.html",
+    "href": "live_code/data_wrangling.html",
+    "title": "Data wrangling with dplyr",
+    "section": "",
+    "text": "library(tidyverse)\n\n## modify this line accordingly!\ndatascience <- read_csv(\"data/datascience_survey_subset.csv\")\nBy default, all dplyr functions expect the first argument to be a data frame."
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#selecting-columns",
+    "href": "live_code/data_wrangling.html#selecting-columns",
+    "title": "Data wrangling with dplyr",
+    "section": "Selecting columns",
+    "text": "Selecting columns\nSometimes, there are a lot of columns in a data frame and we might not want all of them. The select() function gives us an easy way to choose which columns/variables we’d like to work with.\nThe select() function requires by default two arguments: the data frame and the variable names to choose from that data frame.\nThe following code works…\n\nselect(datascience, Age)\n\n# A tibble: 2,288 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    22\n 7    29\n 8    35\n 9    37\n10    31\n# ℹ 2,278 more rows\n\n\n…but it’s preferable to take advantage of piping in order to make code more readable:\n\ndatascience |>\n  select(Age)\n\n# A tibble: 2,288 × 1\n     Age\n   <dbl>\n 1    56\n 2    33\n 3    26\n 4    25\n 5    33\n 6    22\n 7    29\n 8    35\n 9    37\n10    31\n# ℹ 2,278 more rows\n\n\n\n\nWhat’s going on here?\n\nStart with the data frame datascience\nPipe (|>) the data frame to the select() function and specify that we want the variable Age\nThe result is a data frame with 2288 rows and 1 column with the Age variable\n\n\n\n\n\n\n\nCheck\n\n\n\nWhy do we type Age and not age?\n\n\n\nMultiple variables and excluding\n\n\n\n\n\n\nExpand\n\n\n\n\n\n\ndatascience |>\n  select(Age, Major)\n\n# A tibble: 2,288 × 2\n     Age Major                                                       \n   <dbl> <chr>                                                       \n 1    56 Mathematics or statistics                                   \n 2    33 Other                                                       \n 3    26 Computer Science                                            \n 4    25 Physics                                                     \n 5    33 Electrical Engineering                                      \n 6    22 Information technology, networking, or system administration\n 7    29 Computer Science                                            \n 8    35 Physics                                                     \n 9    37 Electrical Engineering                                      \n10    31 Computer Science                                            \n# ℹ 2,278 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if we swap the order of the variable names?\n\n\n\nA range of variables\n\ndatascience |>\n  select(Gender:EmploymentStatus)\n\n# A tibble: 2,288 × 3\n   Gender   Age EmploymentStatus                                    \n   <chr>  <dbl> <chr>                                               \n 1 Male      56 Independent contractor, freelancer, or self-employed\n 2 Male      33 Employed full-time                                  \n 3 Male      26 Employed full-time                                  \n 4 Male      25 Employed part-time                                  \n 5 Male      33 Employed full-time                                  \n 6 Male      22 Employed full-time                                  \n 7 Male      29 Employed full-time                                  \n 8 Male      35 Employed full-time                                  \n 9 Male      37 Employed full-time                                  \n10 Male      31 Employed part-time                                  \n# ℹ 2,278 more rows\n\n\n\n\nExcluding variables\n\ndatascience |>\n  select(-Country)\n\n# A tibble: 2,288 × 16\n   Gender   Age EmploymentStatus          EmployerIndustry FormalEducation Major\n   <chr>  <dbl> <chr>                     <chr>            <chr>           <chr>\n 1 Male      56 Independent contractor, … Mix of fields    Master's degree Math…\n 2 Male      33 Employed full-time        Internet-based   Bachelor's deg… Other\n 3 Male      26 Employed full-time        Financial        Master's degree Comp…\n 4 Male      25 Employed part-time        Academic         Bachelor's deg… Phys…\n 5 Male      33 Employed full-time        Telecommunicati… Doctoral degree Elec…\n 6 Male      22 Employed full-time        Mix of fields    Bachelor's deg… Info…\n 7 Male      29 Employed full-time        Pharmaceutical   Master's degree Comp…\n 8 Male      35 Employed full-time        Technology       Doctoral degree Phys…\n 9 Male      37 Employed full-time        Technology       Master's degree Elec…\n10 Male      31 Employed part-time        Technology       Doctoral degree Comp…\n# ℹ 2,278 more rows\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#arranging-rows",
+    "href": "live_code/data_wrangling.html#arranging-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Arranging rows",
+    "text": "Arranging rows\nWe might want to re-arrange rows in ascending or descending order according to a certain variable:\n\ndatascience |>\n  select(Age, Major) |>\n  arrange(Age)\n\n# A tibble: 2,288 × 2\n     Age Major                                                       \n   <dbl> <chr>                                                       \n 1     0 Mathematics or statistics                                   \n 2     1 Other                                                       \n 3    19 Computer Science                                            \n 4    19 Biology                                                     \n 5    20 Information technology, networking, or system administration\n 6    20 Mathematics or statistics                                   \n 7    20 Computer Science                                            \n 8    20 Mathematics or statistics                                   \n 9    21 Other                                                       \n10    21 Computer Science                                            \n# ℹ 2,278 more rows\n\n\n\n\nBy default, arrange() will reorder in ascending order. If we’d like to go in descending order, we can code arrange(desc(Age))."
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#slicing-for-certain-row-numbers",
+    "href": "live_code/data_wrangling.html#slicing-for-certain-row-numbers",
+    "title": "Data wrangling with dplyr",
+    "section": "Slicing for certain row numbers",
+    "text": "Slicing for certain row numbers\nRemember, data frames are in tabular format. So each row has a certain index, as does each column. The first row in index 1, the second row index 2, etc.\nThe slice() function expects a vector of row indices to retain:\n\ndatascience |>\n  slice(1:5)\n\n# A tibble: 5 × 17\n  Country   Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major\n  <chr>     <chr>  <dbl> <chr>            <chr>            <chr>           <chr>\n1 United S… Male      56 Independent con… Mix of fields    Master's degree Math…\n2 Russia    Male      33 Employed full-t… Internet-based   Bachelor's deg… Other\n3 Taiwan    Male      26 Employed full-t… Financial        Master's degree Comp…\n4 United S… Male      25 Employed part-t… Academic         Bachelor's deg… Phys…\n5 United S… Male      33 Employed full-t… Telecommunicati… Doctoral degree Elec…\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat is the difference between select() and slice()?"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#filtering-to-select-a-subset-of-rows",
+    "href": "live_code/data_wrangling.html#filtering-to-select-a-subset-of-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Filtering to select a subset of rows",
+    "text": "Filtering to select a subset of rows\nThe slice() function is nice, but unless the rows of your data frame are ordered meaningfully, its actual utility is limited. We might want to look at a set of the cases in which a certain condition is met.\nIn the following code, we only retain the observations where the person’s Major was Computer Science:\n\ndatascience |>\n  filter(Major == \"Computer Science\")\n\n# A tibble: 681 × 17\n   Country  Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major\n   <chr>    <chr>  <dbl> <chr>            <chr>            <chr>           <chr>\n 1 Taiwan   Male      26 Employed full-t… Financial        Master's degree Comp…\n 2 Poland   Male      29 Employed full-t… Pharmaceutical   Master's degree Comp…\n 3 Iran     Male      31 Employed part-t… Technology       Doctoral degree Comp…\n 4 Brazil   Male      25 Employed full-t… Academic         Master's degree Comp…\n 5 Brazil   Male      32 Employed full-t… Academic         Master's degree Comp…\n 6 Russia   Male      31 Independent con… CRM/Marketing    Some college/u… Comp…\n 7 India    Male      23 Employed full-t… Technology       Master's degree Comp…\n 8 Canada   Male      52 Employed full-t… Academic         Bachelor's deg… Comp…\n 9 Russia   Male      26 Independent con… Military/Securi… Bachelor's deg… Comp…\n10 Czech R… Male      25 Independent con… Internet-based   Master's degree Comp…\n# ℹ 671 more rows\n# ℹ 10 more variables: CompensationAmount <dbl>, CompensationCurrency <chr>,\n#   CurrentJobTitle <chr>, TitleFit <chr>, LanguageRecommendation <chr>,\n#   DataScienceIdentity <chr>, WorkDataVisualizations <chr>,\n#   JobSatisfaction <chr>, JobSatisfaction2 <dbl>, ConversionUSD <dbl>\n\n\n\nMultiple conditions\n\n\n\n\n\n\nExpand\n\n\n\n\n\nWe can also filter for more than one condition at once. Within filter(), the comma , specifies that all conditions must be true. It can be read as “and”:\n\ndatascience |>\n  filter(Major == \"Computer Science\", \n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 36 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    30\n 2 Computer Science    30\n 3 Computer Science    30\n 4 Computer Science    30\n 5 Computer Science    30\n 6 Computer Science    30\n 7 Computer Science    30\n 8 Computer Science    30\n 9 Computer Science    30\n10 Computer Science    30\n# ℹ 26 more rows\n\n\nIf we just need at least one of multiple conditions to be true, we can use the | operator which stands for “or”:\n\ndatascience |>\n  filter(Major == \"Computer Science\" | \n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 765 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    26\n 2 Computer Science    29\n 3 Computer Science    31\n 4 Computer Science    25\n 5 Computer Science    32\n 6 Computer Science    31\n 7 A social science    30\n 8 Computer Science    23\n 9 Biology             30\n10 Computer Science    52\n# ℹ 755 more rows\n\n\n\ndatascience |>\n  filter(Major == \"Computer Science\" | Major == \"Other\",\n         Age == 30) |>\n  select(Major, Age)\n\n# A tibble: 44 × 2\n   Major              Age\n   <chr>            <dbl>\n 1 Computer Science    30\n 2 Computer Science    30\n 3 Computer Science    30\n 4 Computer Science    30\n 5 Computer Science    30\n 6 Computer Science    30\n 7 Computer Science    30\n 8 Computer Science    30\n 9 Other               30\n10 Computer Science    30\n# ℹ 34 more rows"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#distinct-to-filter-for-unique-rows",
+    "href": "live_code/data_wrangling.html#distinct-to-filter-for-unique-rows",
+    "title": "Data wrangling with dplyr",
+    "section": "Distinct to filter for unique rows",
+    "text": "Distinct to filter for unique rows\n\ndatascience |>\n  distinct(FormalEducation)\n\n# A tibble: 5 × 1\n  FormalEducation                                                  \n  <chr>                                                            \n1 Master's degree                                                  \n2 Bachelor's degree                                                \n3 Doctoral degree                                                  \n4 Some college/university study without earning a bachelor's degree\n5 I prefer not to answer                                           \n\ndatascience |>\n  distinct(FormalEducation, Major) |>\n  arrange(FormalEducation)\n\n# A tibble: 58 × 2\n   FormalEducation   Major                                                      \n   <chr>             <chr>                                                      \n 1 Bachelor's degree Other                                                      \n 2 Bachelor's degree Physics                                                    \n 3 Bachelor's degree Information technology, networking, or system administrati…\n 4 Bachelor's degree A social science                                           \n 5 Bachelor's degree Electrical Engineering                                     \n 6 Bachelor's degree Mathematics or statistics                                  \n 7 Bachelor's degree Computer Science                                           \n 8 Bachelor's degree Engineering (non-computer focused)                         \n 9 Bachelor's degree A humanities discipline                                    \n10 Bachelor's degree Management information systems                             \n# ℹ 48 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat variables are by default included in the output from distinct()?"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#mutate-to-add-a-new-variable",
+    "href": "live_code/data_wrangling.html#mutate-to-add-a-new-variable",
+    "title": "Data wrangling with dplyr",
+    "section": "Mutate to add a new variable",
+    "text": "Mutate to add a new variable\nIt is typical for us to want to add variables to a given data frame. We do this with the mutate() function. We must specify the name of the new variable and how to calculate the value of that variable for each observation:\n\ndatascience %>%\n  mutate(compensation_1k = CompensationAmount/1000) |>\n  select(CompensationAmount, compensation_1k)\n\n# A tibble: 2,288 × 2\n   CompensationAmount compensation_1k\n                <dbl>           <dbl>\n 1             250000             250\n 2            1200000            1200\n 3            1100000            1100\n 4              20000              20\n 5             100000             100\n 6             624000             624\n 7             126000             126\n 8             133000             133\n 9              80000              80\n10              15000              15\n# ℹ 2,278 more rows\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat exactly is going on in the second line of code?"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#counting-to-create-frequency-tables",
+    "href": "live_code/data_wrangling.html#counting-to-create-frequency-tables",
+    "title": "Data wrangling with dplyr",
+    "section": "Counting to create frequency tables",
+    "text": "Counting to create frequency tables\nWe can count the number of instances we observed each level of a given categorical variable:\n\ndatascience |>\n  count(EmployerIndustry)\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 CRM/Marketing                       70\n 3 Financial                          211\n 4 Government                         137\n 5 Hospitality/Entertainment/Sports    27\n 6 Insurance                           68\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 Military/Security                   35\n10 Mix of fields                      195\n11 Non-profit                          35\n12 Other                              198\n13 Pharmaceutical                      54\n14 Retail                              61\n15 Technology                         445\n16 Telecommunications                  65\n\n\n\n\n\n\n\n\nCheck\n\n\n\nHow does the resulting data frame from count() compare to the original data frame we passed in?\n\n\n\nMaking frequency tables useful\nWe typically want to present the counts in ascending or descending order.\n\n\n\n\n\n\nExpand\n\n\n\n\n\nNote that the following chunks of code do the same thing. One of them takes advantage of an additional argument in count(), whereas the other block of the uses an additional function:\n\ndatascience |>\n  count(EmployerIndustry, sort = T)\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 Technology                         445\n 3 Financial                          211\n 4 Other                              198\n 5 Mix of fields                      195\n 6 Government                         137\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 CRM/Marketing                       70\n10 Insurance                           68\n11 Telecommunications                  65\n12 Retail                              61\n13 Pharmaceutical                      54\n14 Military/Security                   35\n15 Non-profit                          35\n16 Hospitality/Entertainment/Sports    27\n\n\n\ndatascience |>\n  count(EmployerIndustry) |>\n  arrange(desc(n))\n\n# A tibble: 16 × 2\n   EmployerIndustry                     n\n   <chr>                            <int>\n 1 Academic                           478\n 2 Technology                         445\n 3 Financial                          211\n 4 Other                              198\n 5 Mix of fields                      195\n 6 Government                         137\n 7 Internet-based                     134\n 8 Manufacturing                       75\n 9 CRM/Marketing                       70\n10 Insurance                           68\n11 Telecommunications                  65\n12 Retail                              61\n13 Pharmaceutical                      54\n14 Military/Security                   35\n15 Non-profit                          35\n16 Hospitality/Entertainment/Sports    27\n\n\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if you pass in more than one variable into count()?"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#practice",
+    "href": "live_code/data_wrangling.html#practice",
+    "title": "Data wrangling with dplyr",
+    "section": "Practice",
+    "text": "Practice\nSuppose I want to report a data frame that reports each unique level of Major and the proportion of times each level was observed in the data set in order of most popular to least popular. How might we do that?\n\n\nCode\ndatascience |>\n  count(Major) |>\n  mutate(prop = n/sum(n)) |>\n  select(Major, prop) |>\n  arrange(desc(prop))"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#summarising-for-summary-statistics",
+    "href": "live_code/data_wrangling.html#summarising-for-summary-statistics",
+    "title": "Data wrangling with dplyr",
+    "section": "Summarising for summary statistics",
+    "text": "Summarising for summary statistics\nThe summarise() function gives us an easy way to calculate summary statistics of variables in the data frame! We just need to know the name of the function that will calculate the summary statistic for us.\n\ndatascience |>\n  summarise(mean_age = mean(Age))\n\n# A tibble: 1 × 1\n  mean_age\n     <dbl>\n1     34.4\n\n\n\n\nYou can obtain multiple summary statistics at once by separating the desired summary statistics with commas.\nThe summarise() function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.\n\n\n\n\n\n\nCheck\n\n\n\nWhat happens if you type summarise(mean(Age)) instead?"
+  },
+  {
+    "objectID": "live_code/data_wrangling.html#grouping-by-grouped-operations",
+    "href": "live_code/data_wrangling.html#grouping-by-grouped-operations",
+    "title": "Data wrangling with dplyr",
+    "section": "Grouping by grouped operations",
+    "text": "Grouping by grouped operations\nSometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The group_by() function tells R to treat each unique level as a separate data set.\n\ndatascience |>\n  group_by(EmploymentStatus) |>\n  summarise(mean_age = mean(Age))\n\n# A tibble: 3 × 2\n  EmploymentStatus                                     mean_age\n  <chr>                                                   <dbl>\n1 Employed full-time                                       34.3\n2 Employed part-time                                       29.5\n3 Independent contractor, freelancer, or self-employed     39.0"
+  },
+  {
+    "objectID": "coding_practice/coding-practice-07-wrangling.html",
+    "href": "coding_practice/coding-practice-07-wrangling.html",
+    "title": "Data wrangling coding practice",
+    "section": "",
+    "text": "Load in the tidyverse and openintro packages the in the code chunk above. We will work with the starbucks data from the openintro package. Load the data by typing data(starbucks) right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the word starbucks in your Environment.\nWrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.\n\n\n\nOne gram of protein contains 4 calories. Wrangle the data to add a new variable called prop_protein which represents the proportion of the item’s calories that are due to protein. Store the resulting data frame as a new variable called starbucks_new.\n\n\n\nUsing your starbucks_new data frame from the previous step, display a table/data frame that shows the median proportion of calories that come from protein for each type of item."
   }
 ]

@@ -1,0 +1,30 @@
+---
+title: "Numerical data (part 2)"
+subtitle: "Practice problems"
+date: "September 18, 2024"
+format: pdf
+---
+
+Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.
+
+1.  The infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014:
+
+    ![](figs/04-infant-mortality.png)
+
+    a.  Estimate $Q_{1}$, the median $m$, and $Q_{3}$ from the histogram.
+
+    b.  Would you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.
+
+2.  The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
+
+    a.  $\frac{\bar{x}}{m} = 1$
+
+    b.  $\frac{\bar{x}}{m} > 1$
+
+    c.  $\frac{\bar{x}}{m} > 1$
+
+3.  Returning to the sunflowers:
+
+    a.  Calculate the median number of healthy sunflowers in a grid cell for each of the sampling strategies. How do they compare to the sample means?
+
+    b.  Pick one of the sampling schemes. Draw out the boxplot for the data you obtained under that sampling scheme.

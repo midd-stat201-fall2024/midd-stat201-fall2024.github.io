@@ -1,0 +1,36 @@
+---
+title: "Probability"
+subtitle: "Practice problems"
+date: "September 23, 2024"
+format: pdf
+---
+
+```{r echo = F, message = F, warning = F}
+library(tidyverse)
+library(openintro)
+library(knitr)
+```
+
+Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.
+
+1.  If events $A$ and $B$ are disjoint:
+
+    a.  What must $P(A \cap B)$ equal, and why?
+
+    b.  What is a simple formula for $P(A \cup B)$?
+
+2.  In a multiple choice exam, there are 5 questions and 4 choices for each question. Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:
+
+    a.  the first question Nancy gets correct is the 5th question?
+
+    b.  Nancy gets all of the questions right?
+
+    c.  Nancy gets at least one question right?
+
+3.  In the following figure, the sample space is the set of outcomes $S = \{1,2,3,4,5,6\}$. We define three different events $A$, $B$ and $D$ as denoted by the color and circling.
+
+    ![](figs/08-disjoint.png){width="271"}
+
+    a.  Which pairs of events are disjoint?
+
+    b.  Suppose we have a random process whose sample space is $S$ as defined above. Also suppose that $P(A) = 0.3$, $P(B) = 0.2$, and the probability of observing a 1 is $0.1$. Based on this information, create a table that represents a valid probability distribution for this random process.

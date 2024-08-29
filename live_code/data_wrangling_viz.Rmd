@@ -1,0 +1,67 @@
+---
+title: "More data wrangling"
+author: "Becky Tang"
+date: "2024-08-15"
+output: html_document
+---
+
+```{r setup, message = F}
+# load libraries here
+library(tidyverse)
+
+## modify this line accordingly!
+datascience <- read_csv("data/datascience_survey_subset.csv")
+```
+
+## Warm-up exercises
+
+How many different programming languages were recommended in the survey?
+
+```{r}
+
+```
+
+How many of the respondents who work in academia in the United States are at most 25 years old at the time taking the survey?
+
+```{r}
+
+```
+
+## Group analysis
+
+I want your to generate your own investigation. Using your data-wrangling skills, try to find some interesting conclusions. After about a half hour, your group will share your process and results with the rest of the class!
+
+Your final results must include:
+
+-   Summary statistics or frequency table
+
+-   Visualization
+
+-   Comments of your code using the pound-symbol (`#`) to describe what you are doing in each code chunk
+
+You can create more than one visualization and/or more than one table. Whatever speaks to you! The individual components (i.e. table/summary stats vs plot) do not need to use the same set of variables. Feel free to create as many code chunks as you'd like! There is a data dictionary below that defines all the variables in the data set for you.
+
+As a stretch goal, I encourage you to try using `mutate()` and/or `group_by()` somewhere in your analysis, but it isn't necessary!
+
+## Data dictionary
+
+Below is the data dictionary for the subset of the Kaggle data data.
+
+| variable               | class     | description                                                                                                           |
+|:----------------------------------|:-----------------|:------------------|
+| Country                | character | Home country of employee                                                                                              |
+| Gender                 | character | Selected gender, one of "A different identity", "Female", "Male", "Non-binary, genderqueer, or gender non-conforming" |
+| Age                    | double    | Age at time of survey                                                                                                 |
+| EmploymentStatus       | character | One of "Employed full-time", "Employed part-time", or "Independent contractor, freelancer, or self-employed           |
+| EmployerIndustry       | character | Industry of current employer                                                                                          |
+| FormalEducation        | character | Highest level of education                                                                                            |
+| Major                  | character | College major                                                                                                         |
+| CompensationAmount     | double    | Total compensation                                                                                                    |
+| CompensationCurrency   | character | 3-letter currency code for day-to-day currency                                                                        |
+| CurrentJobTitle        | character | Job title                                                                                                             |
+| TitleFit               | character | Assessment of how well title fits actual duties. One of "Fine", "Perfectly", "Poorly"                                 |
+| LanguageRecommendation | character | Recommended programming language                                                                                      |
+| WorkDataVisualizations | character | Proportion of job dedicated to creating data visualizations, broken into pre-determined categories                    |
+| JobSatisfaction        | character | Rating of job satisfaction on scale of 1-10, where 1 is not satisfied and 10 is highly satisfied                      |
+| JobSatisfaction2       | double    | Rating of job satisfaction on scale of 1-10, where 1 is not satisfied and 10 is highly satisfied                      |
+| ConversionUSD          | double    | Conversion factor from `CompensationCurrency` to USD.                                                                 |

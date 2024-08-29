@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT 201: Intro. to Statistics and Data Science - Data wrangling with dplyr</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STAT 201: Intro. to Statistics and Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://openintro-ims.netlify.app/"><i class="bi bi-book-half" role="img">
+</i> 
+ <span class="menu-text">Textbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://middlebury.instructure.com/"><i class="bi bi-bar-chart-fill" role="img">
+</i> 
+ <span class="menu-text">Canvas</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#selecting-columns" id="toc-selecting-columns" class="nav-link active" data-scroll-target="#selecting-columns">Selecting columns</a>
+  <ul class="collapse">
+  <li><a href="#multiple-variables-and-excluding" id="toc-multiple-variables-and-excluding" class="nav-link" data-scroll-target="#multiple-variables-and-excluding">Multiple variables and excluding</a></li>
+  </ul></li>
+  <li><a href="#arranging-rows" id="toc-arranging-rows" class="nav-link" data-scroll-target="#arranging-rows">Arranging rows</a></li>
+  <li><a href="#slicing-for-certain-row-numbers" id="toc-slicing-for-certain-row-numbers" class="nav-link" data-scroll-target="#slicing-for-certain-row-numbers">Slicing for certain row numbers</a></li>
+  <li><a href="#filtering-to-select-a-subset-of-rows" id="toc-filtering-to-select-a-subset-of-rows" class="nav-link" data-scroll-target="#filtering-to-select-a-subset-of-rows">Filtering to select a subset of rows</a>
+  <ul class="collapse">
+  <li><a href="#multiple-conditions" id="toc-multiple-conditions" class="nav-link" data-scroll-target="#multiple-conditions">Multiple conditions</a></li>
+  </ul></li>
+  <li><a href="#distinct-to-filter-for-unique-rows" id="toc-distinct-to-filter-for-unique-rows" class="nav-link" data-scroll-target="#distinct-to-filter-for-unique-rows">Distinct to filter for unique rows</a></li>
+  <li><a href="#mutate-to-add-a-new-variable" id="toc-mutate-to-add-a-new-variable" class="nav-link" data-scroll-target="#mutate-to-add-a-new-variable">Mutate to add a new variable</a></li>
+  <li><a href="#counting-to-create-frequency-tables" id="toc-counting-to-create-frequency-tables" class="nav-link" data-scroll-target="#counting-to-create-frequency-tables">Counting to create frequency tables</a>
+  <ul class="collapse">
+  <li><a href="#making-frequency-tables-useful" id="toc-making-frequency-tables-useful" class="nav-link" data-scroll-target="#making-frequency-tables-useful">Making frequency tables useful</a></li>
+  </ul></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#summarising-for-summary-statistics" id="toc-summarising-for-summary-statistics" class="nav-link" data-scroll-target="#summarising-for-summary-statistics">Summarising for summary statistics</a></li>
+  <li><a href="#grouping-by-grouped-operations" id="toc-grouping-by-grouped-operations" class="nav-link" data-scroll-target="#grouping-by-grouped-operations">Grouping by grouped operations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data wrangling with dplyr</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="do">## modify this line accordingly!</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>datascience <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/datascience_survey_subset.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>By default, all <code>dplyr</code> functions expect the first argument to be a data frame.</strong></p>
+<section id="selecting-columns" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="selecting-columns">Selecting columns</h2>
+<p>Sometimes, there are a lot of columns in a data frame and we might not want all of them. The <code>select()</code> function gives us an easy way to choose which columns/variables we’d like to work with.</p>
+<p>The <code>select()</code> function requires by default two arguments: the data frame and the variable names to choose from that data frame.</p>
+<p>The following code works…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">select</span>(datascience, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 1
+     Age
+   &lt;dbl&gt;
+ 1    56
+ 2    33
+ 3    26
+ 4    25
+ 5    33
+ 6    22
+ 7    29
+ 8    35
+ 9    37
+10    31
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+<p>…but it’s preferable to take advantage of piping in order to make code more readable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">select</span>(Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 1
+     Age
+   &lt;dbl&gt;
+ 1    56
+ 2    33
+ 3    26
+ 4    25
+ 5    33
+ 6    22
+ 7    29
+ 8    35
+ 9    37
+10    31
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>What’s going on here?</p>
+<ol type="1">
+<li>Start with the data frame <code>datascience</code></li>
+<li>Pipe (<code>|&gt;</code>) the data frame to the <code>select()</code> function and specify that we want the variable <code>Age</code></li>
+<li>The result is a data frame with 2288 rows and 1 column with the <code>Age</code> variable</li>
+</ol>
+</div></div><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why do we type <code>Age</code> and not <code>age</code>?</p>
+</div>
+</div>
+<section id="multiple-variables-and-excluding" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-variables-and-excluding">Multiple variables and excluding</h3>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Expand
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">select</span>(Age, Major)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 2
+     Age Major                                                       
+   &lt;dbl&gt; &lt;chr&gt;                                                       
+ 1    56 Mathematics or statistics                                   
+ 2    33 Other                                                       
+ 3    26 Computer Science                                            
+ 4    25 Physics                                                     
+ 5    33 Electrical Engineering                                      
+ 6    22 Information technology, networking, or system administration
+ 7    29 Computer Science                                            
+ 8    35 Physics                                                     
+ 9    37 Electrical Engineering                                      
+10    31 Computer Science                                            
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What happens if we swap the order of the variable names?</p>
+</div>
+</div>
+<section id="a-range-of-variables" class="level3">
+<h3 class="anchored" data-anchor-id="a-range-of-variables">A range of variables</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">select</span>(Gender<span class="sc">:</span>EmploymentStatus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 3
+   Gender   Age EmploymentStatus                                    
+   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                                               
+ 1 Male      56 Independent contractor, freelancer, or self-employed
+ 2 Male      33 Employed full-time                                  
+ 3 Male      26 Employed full-time                                  
+ 4 Male      25 Employed part-time                                  
+ 5 Male      33 Employed full-time                                  
+ 6 Male      22 Employed full-time                                  
+ 7 Male      29 Employed full-time                                  
+ 8 Male      35 Employed full-time                                  
+ 9 Male      37 Employed full-time                                  
+10 Male      31 Employed part-time                                  
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="excluding-variables" class="level3">
+<h3 class="anchored" data-anchor-id="excluding-variables">Excluding variables</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>Country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 16
+   Gender   Age EmploymentStatus          EmployerIndustry FormalEducation Major
+   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                     &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
+ 1 Male      56 Independent contractor, … Mix of fields    Master's degree Math…
+ 2 Male      33 Employed full-time        Internet-based   Bachelor's deg… Other
+ 3 Male      26 Employed full-time        Financial        Master's degree Comp…
+ 4 Male      25 Employed part-time        Academic         Bachelor's deg… Phys…
+ 5 Male      33 Employed full-time        Telecommunicati… Doctoral degree Elec…
+ 6 Male      22 Employed full-time        Mix of fields    Bachelor's deg… Info…
+ 7 Male      29 Employed full-time        Pharmaceutical   Master's degree Comp…
+ 8 Male      35 Employed full-time        Technology       Doctoral degree Phys…
+ 9 Male      37 Employed full-time        Technology       Master's degree Elec…
+10 Male      31 Employed part-time        Technology       Doctoral degree Comp…
+# ℹ 2,278 more rows
+# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
+#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
+#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
+#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="arranging-rows" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="arranging-rows">Arranging rows</h2>
+<p>We might want to re-arrange rows in ascending or descending order according to a certain variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">select</span>(Age, Major) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">arrange</span>(Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 2
+     Age Major                                                       
+   &lt;dbl&gt; &lt;chr&gt;                                                       
+ 1     0 Mathematics or statistics                                   
+ 2     1 Other                                                       
+ 3    19 Computer Science                                            
+ 4    19 Biology                                                     
+ 5    20 Information technology, networking, or system administration
+ 6    20 Mathematics or statistics                                   
+ 7    20 Computer Science                                            
+ 8    20 Mathematics or statistics                                   
+ 9    21 Other                                                       
+10    21 Computer Science                                            
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>By default, <code>arrange()</code> will reorder in ascending order. If we’d like to go in descending order, we can code <code>arrange(desc(Age))</code>.</p>
+</div></div></section>
+<section id="slicing-for-certain-row-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="slicing-for-certain-row-numbers">Slicing for certain row numbers</h2>
+<p>Remember, data frames are in tabular format. So each row has a certain index, as does each column. The first row in index 1, the second row index 2, etc.</p>
+<p>The <code>slice()</code> function expects a vector of row indices to retain:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 17
+  Country   Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major
+  &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
+1 United S… Male      56 Independent con… Mix of fields    Master's degree Math…
+2 Russia    Male      33 Employed full-t… Internet-based   Bachelor's deg… Other
+3 Taiwan    Male      26 Employed full-t… Financial        Master's degree Comp…
+4 United S… Male      25 Employed part-t… Academic         Bachelor's deg… Phys…
+5 United S… Male      33 Employed full-t… Telecommunicati… Doctoral degree Elec…
+# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
+#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
+#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
+#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is the difference between <code>select()</code> and <code>slice()</code>?</p>
+</div>
+</div>
+</section>
+<section id="filtering-to-select-a-subset-of-rows" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-to-select-a-subset-of-rows">Filtering to select a subset of rows</h2>
+<p>The <code>slice()</code> function is nice, but unless the rows of your data frame are ordered meaningfully, its actual utility is limited. We might want to look at a set of the cases in which a certain condition is met.</p>
+<p>In the following code, we only retain the observations where the person’s <code>Major</code> was Computer Science:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(Major <span class="sc">==</span> <span class="st">"Computer Science"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 681 × 17
+   Country  Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major
+   &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
+ 1 Taiwan   Male      26 Employed full-t… Financial        Master's degree Comp…
+ 2 Poland   Male      29 Employed full-t… Pharmaceutical   Master's degree Comp…
+ 3 Iran     Male      31 Employed part-t… Technology       Doctoral degree Comp…
+ 4 Brazil   Male      25 Employed full-t… Academic         Master's degree Comp…
+ 5 Brazil   Male      32 Employed full-t… Academic         Master's degree Comp…
+ 6 Russia   Male      31 Independent con… CRM/Marketing    Some college/u… Comp…
+ 7 India    Male      23 Employed full-t… Technology       Master's degree Comp…
+ 8 Canada   Male      52 Employed full-t… Academic         Bachelor's deg… Comp…
+ 9 Russia   Male      26 Independent con… Military/Securi… Bachelor's deg… Comp…
+10 Czech R… Male      25 Independent con… Internet-based   Master's degree Comp…
+# ℹ 671 more rows
+# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
+#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
+#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
+#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<section id="multiple-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-conditions">Multiple conditions</h3>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Expand
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can also filter for more than one condition at once. Within <code>filter()</code>, the comma <code>,</code> specifies that all conditions must be true. It can be read as “and”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(Major <span class="sc">==</span> <span class="st">"Computer Science"</span>, </span>
+<span id="cb18-3"><a href="#cb18-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 36 × 2
+   Major              Age
+   &lt;chr&gt;            &lt;dbl&gt;
+ 1 Computer Science    30
+ 2 Computer Science    30
+ 3 Computer Science    30
+ 4 Computer Science    30
+ 5 Computer Science    30
+ 6 Computer Science    30
+ 7 Computer Science    30
+ 8 Computer Science    30
+ 9 Computer Science    30
+10 Computer Science    30
+# ℹ 26 more rows</code></pre>
+</div>
+</div>
+<p>If we just need at least one of multiple conditions to be true, we can use the <code>|</code> operator which stands for “or”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">filter</span>(Major <span class="sc">==</span> <span class="st">"Computer Science"</span> <span class="sc">|</span> </span>
+<span id="cb20-3"><a href="#cb20-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 765 × 2
+   Major              Age
+   &lt;chr&gt;            &lt;dbl&gt;
+ 1 Computer Science    26
+ 2 Computer Science    29
+ 3 Computer Science    31
+ 4 Computer Science    25
+ 5 Computer Science    32
+ 6 Computer Science    31
+ 7 A social science    30
+ 8 Computer Science    23
+ 9 Biology             30
+10 Computer Science    52
+# ℹ 755 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">filter</span>(Major <span class="sc">==</span> <span class="st">"Computer Science"</span> <span class="sc">|</span> Major <span class="sc">==</span> <span class="st">"Other"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 2
+   Major              Age
+   &lt;chr&gt;            &lt;dbl&gt;
+ 1 Computer Science    30
+ 2 Computer Science    30
+ 3 Computer Science    30
+ 4 Computer Science    30
+ 5 Computer Science    30
+ 6 Computer Science    30
+ 7 Computer Science    30
+ 8 Computer Science    30
+ 9 Other               30
+10 Computer Science    30
+# ℹ 34 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distinct-to-filter-for-unique-rows" class="level2">
+<h2 class="anchored" data-anchor-id="distinct-to-filter-for-unique-rows">Distinct to filter for unique rows</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">distinct</span>(FormalEducation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  FormalEducation                                                  
+  &lt;chr&gt;                                                            
+1 Master's degree                                                  
+2 Bachelor's degree                                                
+3 Doctoral degree                                                  
+4 Some college/university study without earning a bachelor's degree
+5 I prefer not to answer                                           </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">distinct</span>(FormalEducation, Major) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">arrange</span>(FormalEducation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 58 × 2
+   FormalEducation   Major                                                      
+   &lt;chr&gt;             &lt;chr&gt;                                                      
+ 1 Bachelor's degree Other                                                      
+ 2 Bachelor's degree Physics                                                    
+ 3 Bachelor's degree Information technology, networking, or system administrati…
+ 4 Bachelor's degree A social science                                           
+ 5 Bachelor's degree Electrical Engineering                                     
+ 6 Bachelor's degree Mathematics or statistics                                  
+ 7 Bachelor's degree Computer Science                                           
+ 8 Bachelor's degree Engineering (non-computer focused)                         
+ 9 Bachelor's degree A humanities discipline                                    
+10 Bachelor's degree Management information systems                             
+# ℹ 48 more rows</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What variables are by default included in the output from <code>distinct()</code>?</p>
+</div>
+</div>
+</section>
+<section id="mutate-to-add-a-new-variable" class="level2">
+<h2 class="anchored" data-anchor-id="mutate-to-add-a-new-variable">Mutate to add a new variable</h2>
+<p>It is typical for us to want to add variables to a given data frame. We do this with the <code>mutate()</code> function. We must specify the name of the new variable and how to calculate the value of that variable for each observation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>datascience <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">mutate</span>(<span class="at">compensation_1k =</span> CompensationAmount<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">select</span>(CompensationAmount, compensation_1k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,288 × 2
+   CompensationAmount compensation_1k
+                &lt;dbl&gt;           &lt;dbl&gt;
+ 1             250000             250
+ 2            1200000            1200
+ 3            1100000            1100
+ 4              20000              20
+ 5             100000             100
+ 6             624000             624
+ 7             126000             126
+ 8             133000             133
+ 9              80000              80
+10              15000              15
+# ℹ 2,278 more rows</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What exactly is going on in the second line of code?</p>
+</div>
+</div>
+</section>
+<section id="counting-to-create-frequency-tables" class="level2">
+<h2 class="anchored" data-anchor-id="counting-to-create-frequency-tables">Counting to create frequency tables</h2>
+<p>We can count the number of instances we observed each level of a given categorical variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">count</span>(EmployerIndustry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 2
+   EmployerIndustry                     n
+   &lt;chr&gt;                            &lt;int&gt;
+ 1 Academic                           478
+ 2 CRM/Marketing                       70
+ 3 Financial                          211
+ 4 Government                         137
+ 5 Hospitality/Entertainment/Sports    27
+ 6 Insurance                           68
+ 7 Internet-based                     134
+ 8 Manufacturing                       75
+ 9 Military/Security                   35
+10 Mix of fields                      195
+11 Non-profit                          35
+12 Other                              198
+13 Pharmaceutical                      54
+14 Retail                              61
+15 Technology                         445
+16 Telecommunications                  65</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How does the resulting data frame from <code>count()</code> compare to the original data frame we passed in?</p>
+</div>
+</div>
+<section id="making-frequency-tables-useful" class="level3">
+<h3 class="anchored" data-anchor-id="making-frequency-tables-useful">Making frequency tables useful</h3>
+<p>We typically want to present the counts in ascending or descending order.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Expand
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that the following chunks of code do the same thing. One of them takes advantage of an additional argument in <code>count()</code>, whereas the other block of the uses an additional function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">count</span>(EmployerIndustry, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 2
+   EmployerIndustry                     n
+   &lt;chr&gt;                            &lt;int&gt;
+ 1 Academic                           478
+ 2 Technology                         445
+ 3 Financial                          211
+ 4 Other                              198
+ 5 Mix of fields                      195
+ 6 Government                         137
+ 7 Internet-based                     134
+ 8 Manufacturing                       75
+ 9 CRM/Marketing                       70
+10 Insurance                           68
+11 Telecommunications                  65
+12 Retail                              61
+13 Pharmaceutical                      54
+14 Military/Security                   35
+15 Non-profit                          35
+16 Hospitality/Entertainment/Sports    27</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">count</span>(EmployerIndustry) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 2
+   EmployerIndustry                     n
+   &lt;chr&gt;                            &lt;int&gt;
+ 1 Academic                           478
+ 2 Technology                         445
+ 3 Financial                          211
+ 4 Other                              198
+ 5 Mix of fields                      195
+ 6 Government                         137
+ 7 Internet-based                     134
+ 8 Manufacturing                       75
+ 9 CRM/Marketing                       70
+10 Insurance                           68
+11 Telecommunications                  65
+12 Retail                              61
+13 Pharmaceutical                      54
+14 Military/Security                   35
+15 Non-profit                          35
+16 Hospitality/Entertainment/Sports    27</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What happens if you pass in more than one variable into <code>count()</code>?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>Suppose I want to report a data frame that reports each unique level of <code>Major</code> and the proportion of times each level was observed in the data set in order of most popular to least popular. How might we do that?</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">count</span>(Major) <span class="sc">|&gt;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">select</span>(Major, prop) <span class="sc">|&gt;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(prop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="summarising-for-summary-statistics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="summarising-for-summary-statistics">Summarising for summary statistics</h2>
+<p>The <code>summarise()</code> function gives us an easy way to calculate summary statistics of variables in the data frame! We just need to know the name of the function that will calculate the summary statistic for us.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_age
+     &lt;dbl&gt;
+1     34.4</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>You can obtain multiple summary statistics at once by separating the desired summary statistics with commas.</p>
+</div></div><p>The <code>summarise()</code> function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What happens if you type <code>summarise(mean(Age))</code> instead?</p>
+</div>
+</div>
+</section>
+<section id="grouping-by-grouped-operations" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-by-grouped-operations">Grouping by grouped operations</h2>
+<p>Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The <code>group_by()</code> function tells <code>R</code> to treat each unique level as a separate data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">group_by</span>(EmploymentStatus) <span class="sc">|&gt;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  EmploymentStatus                                     mean_age
+  &lt;chr&gt;                                                   &lt;dbl&gt;
+1 Employed full-time                                       34.3
+2 Employed part-time                                       29.5
+3 Independent contractor, freelancer, or self-employed     39.0</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

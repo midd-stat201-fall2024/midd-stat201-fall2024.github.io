@@ -1,0 +1,205 @@
+---
+title: "Numerical data"
+subtitle: "Visualization and summary statistics (part 2)"
+date: "September 18, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(readr)
+plot_theme <- theme(text = element_text(size = 16))
+```
+
+# Housekeeping
+
+## Recap
+
+```{r echo = F}
+insurance <- read_csv("data/insurance.csv") %>%
+  slice(1:200)
+
+ggplot(insurance, aes(x = charges)) +
+  geom_histogram() +
+  geom_vline(xintercept = mean(insurance$charges), col = "orange") 
+  # facet_wrap(~smoker)
+```
+
+We know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn't it be great if we had a visualization that directly displays some summary statistics?
+
+## Boxplot
+
+Another commonly used visualization to display the distribution of a numerical variable is the **boxplot**. Boxplots are creating using five statistics and identify unusual observations.
+
+```{r}
+ggplot(insurance, aes(x = charges)) +
+  geom_boxplot() +
+  scale_y_continuous(NULL, breaks = NULL)
+```
+
+-   Does the orientation (vertical or horizontal) matter?
+
+## Median
+
+-   The (sample) **median** $m$ is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than $m$ and 50% of the data are greater than $m$.
+
+    -   If we order the data from smallest to largest, the median is the value in the middle.
+    -   If the number of observations $n$ is even, then there will be two values in the middle, and the median is taken as their average.
+
+-   The median is also known the 50th *percentile* because 50% of the data fall below it.
+
+-   ::: discuss
+    Recall the blood pressure data: $\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115$. What is the median?
+    :::
+
+## Interquartile range
+
+-   The **interquartile range** or **IQR** is a measure of variability in the data. The more variable, the larger the IQR.
+
+-   To calculate the IQR, we need the **first quartile** $Q_{1}$ (the 25th percentile) and the **third quartile** $Q_{3}$ (the 75th percentile). Then
+
+    $$
+    IQR = Q_{3} - Q_{1}
+    $$
+
+-   What percent of the data fall between $Q_{1}$ and $Q_{3}$ and the median $m$? What percent of the data fall about $Q_{1}$ and the median?
+
+-   What is the IQR for the blood pressure data? $\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115$
+
+## Creating the boxplot
+
+-   The "box" part of the boxplot is created using $Q_{1}$, $Q_{3}$, and $m$.
+
+-   Then we draw out **whiskers** from the box that attempt to capture data outside the IQR.
+
+    -   How long should the whiskers be? There isn't a fixed rule, but $1.5 \times IQR$ below the first quartile and above third quartile is common
+
+-   Lastly, we add dots for any points that lie beyond the whiskers
+
+    -   These points are unusually high/low compared to the rest of the data and are worth identifying as *potential* **outliers**
+
+    -   An **outlier** is an observation that appears extreme relative to the rest of the data
+
+-   Let's draw the boxplot for the blood pressure data!
+
+## A note on outliers
+
+-   ::: discuss
+    Why are we interested in identifying outliers?
+    :::
+
+    -   Identifying strong skew
+
+    -   Identifying possible data collection/data entry errors
+
+    -   Providing insight into interesting properties of the data
+
+-   Are outliers necessarily indicative of a problem in the data?
+
+## Histograms vs boxplots
+
+::: discuss
+What characteristics of the distribution are apparent in the histogram and not in the box plot? What characteristics are apparent in the box plot but not in the histogram?
+:::
+
+![](slides/figs/04-hist_v_boxplot.png){fig-align="center"}
+
+## Robust statistics
+
+```{r}
+x <- c(116, 114, 112, 120, 108, 113, 123, 118, 119, 115)
+x2 <- c(x, 170)
+```
+
+-   In our observed blood pressure data $$\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115$$ we have the following sample statistics:
+
+    -   $\bar{x} =$ `r round(mean(x), 1)` , $s =$ `r round(sd(x), 1)`, $m =$ `r round(median(x), 1)` , $IQR =$ `r round(IQR(x), 1)`
+
+-   ::: discuss
+    Suppose we actually observed an additional data point with a systolic blood pressure of $170$. What are the sample statistics with this additional data point? How do they compare to the values above?
+    :::
+
+    -   $\bar{x}' =$ `r round(mean(x2), 1)` , $s' =$ `r round(sd(x2), 1)`, $m' =$ `r round(median(x2), 1)` , $IQR' =$ `r round(IQR(x2), 1)`
+
+-   **Robust statistics** are statistics (quantities calculated from data) that are minimally affected by extreme values
+
+    -   Which of the statistics above would be considered robust?
+
+## Mean vs. median
+
+## Mean vs. Median
+
+In the plot below, the orange line denotes the sample mean charges, and the blue line denotes the sample median:
+
+```{r}
+ggplot(insurance, aes(x = charges)) +
+  geom_histogram() +
+  geom_vline(xintercept = mean(insurance$charges), col = "orange") +
+   geom_vline(xintercept = median(insurance$charges), col = "blue")+
+  plot_theme
+```
+
+Which is better? The mean or the median?
+
+## Comparing numerical data across groups
+
+-   While we haven't yet discussed categorical data, it is common to want to visualize the distribution of a numerical variable across different groups/levels of a categorical variable
+
+```{r}
+p1 <- ggplot(insurance, aes(y = smoker, x = charges)) +
+  geom_boxplot() +
+  plot_theme
+
+p2 <- ggplot(insurance, aes(x = charges, col = smoker, fill = smoker)) +
+  geom_density(alpha = 0.3) +
+  plot_theme
+
+p3 <- ggplot(insurance, aes(x = charges)) +
+  geom_histogram()+
+  facet_wrap(~smoker) +
+  theme(text =element_text(size = 14),
+        axis.text.x = element_text(angle = 45))
+
+gridExtra::grid.arrange(grobs =list(p1,p2,p3), ncol = 2)
+```
+
+## Transforming data
+
+-   When data are strongly skewed or take on an "inconvenient" range of values, we might transform them so they are easier to model
+
+-   A **transformation** rescales the data using a function
+
+    -   e.g. $f(x) = e^x$, $f(x) = \log_{10}(x)$, $f(x) = \ln(x)$, $f(x) = \sqrt{x}$
+
+    -   The exact transformation you choose depends heavily on the data!!
+
+::: fragment
+```{r}
+p1 <- ggplot(insurance, aes(x = charges)) +
+  geom_histogram(bins = 20) +
+  plot_theme
+
+p2<- ggplot(insurance, aes(x = log(charges, base = 10))) +
+  geom_histogram(bins = 20) +
+  xlab(expression("log" [10] ~ "(charges)")) +
+  plot_theme
+
+gridExtra::grid.arrange(grobs =list(p1,p2), ncol = 2)
+```
+:::
+
+## Live code

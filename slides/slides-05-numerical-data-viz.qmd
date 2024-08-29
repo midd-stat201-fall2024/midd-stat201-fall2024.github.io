@@ -1,0 +1,294 @@
+---
+title: "Visualizations with ggplot"
+date: "September 19, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+```{r echo = F, warning = F}
+knitr::opts_chunk$set(echo = T)
+library(tidyverse)
+library(readr)
+plot_theme <- theme(text = element_text(size = 16))
+insurance <- read_csv("data/insurance.csv") %>%
+  slice(1:200)
+```
+
+# Housekeeping
+
+## Exploratory data analysis
+
+-   **Exploratory data analysis (EDA)** is an approach to analyzing data sets to summarize the main characteristics.
+
+    -   Often visual through plots
+
+-   Because of its name "exploratory", we typically perform EDA at the beginning of a project
+
+-   Can also calculate summary statistics and perform data wrangling/manipulation/transformation at (or before) this stage of the analysis
+
+## Tidy data
+
+-   The first step of any data/statistical analysis is to understand the data you are working with. This often involves getting the data into `R`
+
+-   Then, it is a good idea to take a macro-level look at the data to ensure it is in **tidy** format, which means:
+
+    -   Each row in the data set represent an observation/case
+
+    -   Each columns represents a variable
+
+-   Anscombe data: four datasets with two variables each
+
+::: fragment
+::: columns
+::: {.column width="\"50%"}
+Non-tidy version:
+
+```{r echo = F}
+head(anscombe)
+```
+:::
+
+::: {.column width="\"50%"}
+Tidy version:
+
+```{r echo = F}
+library(Tmisc)
+quartet[1:15,]
+```
+:::
+:::
+:::
+
+# Data visualization
+
+-   **Data visualization** is the creation and study of the visual representation of data
+
+-   We have learned how to use base `R` code to make simple histograms and scatterplots. We will now use `ggplot2` which makes customization easier
+
+## Why do we visualize?
+
+-   Summary statistics from each of the four datasets in Anscombe:
+
+::: fragment
+```{r echo = F}
+quartet %>%
+  group_by(set) %>%
+  summarise(
+    mean_x = mean(x), mean_y = mean(y),
+    sd_x = sd(x), sd_y = sd(y)
+    # r = cor(x, y)
+  )
+```
+:::
+
+-   Let's visualize the four data sets. What would be an appropriate type of plot to examine the relationship between the two variables?
+
+::: fragment
+```{r echo = F}
+ggplot(quartet, aes(x = x, y = y)) +
+  geom_point() +
+  facet_wrap(~ set, ncol = 4) +
+  plot_theme
+```
+:::
+
+## Common plots (numerical) in ggplot
+
+-   We have learned about histograms, density plots, boxplots, and scatterplots
+
+-   Now learn how to create these plots using the `ggplot()` function from the `ggplot2` library
+
+    -   Plots are constructed in layers
+
+-   At a *minimum*, we need to specify 1) the dataset, 2) variable(s) from the dataset we'd like to plot, and 3) the type of plot
+
+-   This is what the code will generally look like. Values in \< \> denote what you as the coder need to specify.
+
+::: fragment
+```{r eval = F}
+ggplot(data = <dataset>, 
+       mapping = aes(x = <x-var>, y = <y-var>)) +
+  geom_xxx() +
+  <other options>
+```
+:::
+
+::: aside
+New lines and spacing don't impact the execution of code, but are important for good coding style!
+:::
+
+## Country footprint data
+
+Data on the ecological footprint by country in 2023
+
+::: aside
+Data obtained from <https://www.kaggle.com/datasets/jainaru/global-ecological-footprint-2023>
+:::
+
+```{r}
+footprint_data <- read_csv("data/countries_footprint.csv")
+footprint_data
+```
+
+## Additional variables
+
+-   Depending on the plot and data, we can map additional variables by using **aesthetics** (color, size, shape, alpha (transparency) or **faceting**
+
+## Modifications
+
+-   Adding title
+
+-   Changing axis title
+
+## Live code
+
+Note: most of the code I will show is included in the remaining slides. However, we will most likely go off-script based on questions from the class!
+
+# Slides on ggplot()
+
+## geom_histogram()
+
+```{r warning = T}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram()
+```
+
+::: columns
+::: {.column width="50%"}
+```{r warning = T}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram(binwidth = 5000)
+```
+:::
+
+::: {.column width="50%"}
+```{r warning = T}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram(bins = 20)
+```
+:::
+:::
+
+## geom_density()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_density()
+```
+
+## geom_boxplot()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_boxplot()
+```
+
+## Side-by-side boxplots
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = sex, y = charges)) +
+  geom_boxplot()
+```
+
+::: aside
+Bivariate plot for a numerical and a categorical variable.
+:::
+
+## geom_point()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = age, y = charges)) +
+  geom_point()
+```
+
+## Aesthetics
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age)) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,
+                                       shape = smoker)) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, alpha = age,
+                                       shape = smoker)) +
+  geom_point()
+```
+
+## When to map to variable
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point(col = "purple")
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = "purple")) +
+  geom_point()
+```
+
+## facet_wrap()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_wrap(~ smoker)
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_wrap(~ smoker, scales = "free_y")
+```
+
+## facet_grid()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_grid(sex ~ smoker)
+```
+
+## Adding titles
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram() +
+  ggtitle("Histogram of charges")
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram() +
+  ggtitle("Histogram of charges") +
+  xlab("Charges ($)")
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram() +
+  labs(title = "Histogram of charges",
+       x = "Charges ($)", y = "Count")
+```

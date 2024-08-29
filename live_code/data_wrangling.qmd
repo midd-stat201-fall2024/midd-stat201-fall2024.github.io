@@ -1,0 +1,269 @@
+---
+title: "Data wrangling with dplyr"
+format:
+  html:
+    toc: true
+    code-line-numbers: true
+---
+
+```{r library-data, message= F}
+library(tidyverse)
+
+## modify this line accordingly!
+datascience <- read_csv("data/datascience_survey_subset.csv")
+
+```
+
+**By default, all `dplyr` functions expect the first argument to be a data frame.**
+
+## Selecting columns
+
+Sometimes, there are a lot of columns in a data frame and we might not want all of them. The `select()` function gives us an easy way to choose which columns/variables we'd like to work with.
+
+
+The `select()` function requires by default two arguments: the data frame and the variable names to choose from that data frame.
+
+The following code works...
+
+```{r}
+select(datascience, Age)
+```
+
+...but it's preferable to take advantage of piping in order to make code more readable:
+
+```{r}
+datascience |>
+  select(Age)
+```
+
+::: {.column-margin}
+What's going on here?
+
+1.  Start with the data frame `datascience`
+2.  Pipe (`|>`) the data frame to the `select()` function and specify that we want the variable `Age`
+3.  The result is a data frame with `r nrow(datascience)` rows and 1 column with the `Age` variable
+:::
+
+
+
+::: {.callout-tip}
+## Check
+Why do we type `Age` and not `age`?
+:::
+
+
+### Multiple variables and excluding 
+::: {.callout-note collapse=true appearance="minimal"}
+## Expand
+
+```{r}
+datascience |>
+  select(Age, Major)
+```
+
+::: {.callout-tip}
+## Check
+What happens if we swap the order of the variable names?
+:::
+### A range of variables
+  
+```{r}
+datascience |>
+  select(Gender:EmploymentStatus)
+```
+
+### Excluding variables
+
+```{r}
+datascience |>
+  select(-Country)
+```
+:::
+
+## Arranging rows
+
+
+We might want to re-arrange rows in ascending or descending order according to a certain variable:
+
+```{r}
+datascience |>
+  select(Age, Major) |>
+  arrange(Age)
+```
+
+::: {.column-margin}
+By default, `arrange()` will reorder in ascending order. If we'd like to go in descending order, we can code `arrange(desc(Age))`.
+:::
+
+
+## Slicing for certain row numbers
+
+Remember, data frames are in tabular format. So each row has a certain index, as does each column. The first row in index 1, the second row index 2, etc.
+
+The `slice()` function expects a vector of row indices to retain:
+
+```{r}
+datascience |>
+  slice(1:5)
+```
+::: {.callout-tip}
+## Check
+What is the difference between `select()` and `slice()`?
+:::
+
+## Filtering to select a subset of rows
+
+The `slice()` function is nice, but unless the rows of your data frame are ordered meaningfully, its actual utility is limited. We might want to look at a set of the cases in which a certain condition is met.
+
+In the following code, we only retain the observations where the person's `Major` was Computer Science:
+
+```{r}
+datascience |>
+  filter(Major == "Computer Science")
+```
+
+### Multiple conditions
+::: {.callout-note collapse=true appearance="minimal"}
+## Expand
+We can also filter for more than one condition at once. Within `filter()`, the comma `,` specifies that all conditions must be true. It can be read as "and":
+
+```{r}
+datascience |>
+  filter(Major == "Computer Science", 
+         Age == 30) |>
+  select(Major, Age)
+```
+
+If we just need at least one of multiple conditions to be true, we can use the `|` operator which stands for "or":
+
+```{r}
+datascience |>
+  filter(Major == "Computer Science" | 
+         Age == 30) |>
+  select(Major, Age)
+```
+
+```{r}
+datascience |>
+  filter(Major == "Computer Science" | Major == "Other",
+         Age == 30) |>
+  select(Major, Age)
+```
+:::
+
+## Distinct to filter for unique rows
+
+```{r}
+datascience |>
+  distinct(FormalEducation)
+
+datascience |>
+  distinct(FormalEducation, Major) |>
+  arrange(FormalEducation)
+```
+
+::: {.callout-tip}
+## Check
+What variables are by default included in the output from `distinct()`?
+:::
+
+## Mutate to add a new variable
+
+It is typical for us to want to add variables to a given data frame. We do this with the `mutate()` function. We must specify the name of the new variable and how to calculate the value of that variable for each observation:
+
+```{r}
+datascience %>%
+  mutate(compensation_1k = CompensationAmount/1000) |>
+  select(CompensationAmount, compensation_1k)
+```
+
+::: {.callout-tip}
+## Check
+What exactly is going on in the second line of code?
+:::
+
+## Counting to create frequency tables
+
+We can count the number of instances we observed each level of a given categorical variable:
+
+```{r}
+datascience |>
+  count(EmployerIndustry)
+```
+
+::: {.callout-tip}
+## Check
+How does the resulting data frame from `count()` compare to the original data frame we passed in?
+:::
+
+### Making frequency tables useful
+
+We typically want to present the counts in ascending or descending order.
+
+::: {.callout-note collapse=true appearance="minimal"}
+## Expand
+
+Note that the following chunks of code do the same thing. One of them takes advantage of an additional argument in `count()`, whereas the other block of the uses an additional function:
+
+```{r}
+datascience |>
+  count(EmployerIndustry, sort = T)
+```
+
+```{r}
+datascience |>
+  count(EmployerIndustry) |>
+  arrange(desc(n))
+```
+
+::: {.callout-tip}
+## Check
+What happens if you pass in more than one variable into `count()`?
+:::
+
+:::
+
+## Practice
+
+Suppose I want to report a data frame that reports each unique level of `Major` and the proportion of times each level was observed in the data set in order of most popular to least popular. How might we do that?
+
+```{r eval = F}
+#| code-fold: true
+datascience |>
+  count(Major) |>
+  mutate(prop = n/sum(n)) |>
+  select(Major, prop) |>
+  arrange(desc(prop))
+```
+
+
+## Summarising for summary statistics
+
+The `summarise()` function gives us an easy way to calculate summary statistics of variables in the data frame! We just need to know the name of the function that will calculate the summary statistic for us.
+
+```{r}
+datascience |>
+  summarise(mean_age = mean(Age))
+```
+
+::: {.column-margin}
+You can obtain multiple summary statistics at once by separating the desired summary statistics with commas.
+:::
+
+The `summarise()` function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.
+
+::: {.callout-tip}
+## Check
+What happens if you type `summarise(mean(Age))` instead?
+:::
+
+## Grouping by grouped operations
+
+Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The `group_by()` function tells `R` to treat each unique level as a separate data set.
+
+```{r}
+datascience |>
+  group_by(EmploymentStatus) |>
+  summarise(mean_age = mean(Age))
+```
+
