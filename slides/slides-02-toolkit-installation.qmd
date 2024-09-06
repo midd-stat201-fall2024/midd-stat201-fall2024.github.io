@@ -1,0 +1,135 @@
+---
+title: "Installation Day"
+date: "September 12, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+# Housekeeping
+
+# Agenda
+
+-   Reproducible data analysis
+
+-   Toolkit
+
+    -   `R` and RStudio (Posit)
+
+    -   `R` Markdown
+
+    -   Git, GitHub, and GitHub Desktop
+
+-   Installation
+
+-   Practice!
+
+## Reproducibility
+
+-   Allows your code execution or an experiment to be repeated by another person
+
+-   Goals:
+
+    -   Are the tables and figures generated directly from the code?
+
+    -   Does the code actually do what you think it does?
+
+    -   Can your code be used for other data/analyses?
+
+## Toolkit
+
+![](figs/02-toolkit.png){width="365"}
+
+-   We will use the programming language **`R`** to write code
+
+-   How will interact with the `R` code? In the integrated development environment called **RStudio.** Helps us be more productive with `R`
+
+    -   `R` is like a car engine, and RStudio is like a car's dashboard
+
+-   We will liberate our programming by keeping code, narrative, and output all in the same interface using **R Markdown** documents
+
+-   We will want to keep track of the modifications we make to these R Markdowns by using the version control system **Git** and **GitHub**
+
+## R Markdown
+
+-   Allows us to create fully reproducible reports
+
+-   Can code in *code chunks* and type regular text/narrative outside of these chunks
+
+-   How will we use R Markdown?
+
+    -   You coding practice problems and some weekly lab assignments will be assigned as an R Markdown document (.Rmd)
+
+    -   You will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you've mastered this material!)
+
+## Version control
+
+![](figs/02-lego-steps-commit-messages.png){fig-align="center" width="443"}
+
+## Git and GitHub
+
+-   Git is a version control system (like "Track Changes" in Microsoft Word)
+
+-   GitHub is the home for your Git-based projects (like DropBox)
+
+-   We will work with GitHub Desktop to make working on code on your personal machine and sending it to the cloud for "safe keeping" seamless
+
+    -   Also makes for great collaboration, because multiple people can be on the same GitHub project and will see all the change you make (kind of like a shared GoogleDoc)
+
+# Installation
+
+## Installing `R`
+
+Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!
+
+1.  Go to the [CRAN website](https://lib.stat.cmu.edu/R/CRAN/) and click on the appropriate link under "Download and Install R". Then:
+    i.  If you are **Windows**: click on the blue text that says "install R for the first time".
+    ii. If you are **macOS**: check your Mac OS system and if you have a chip (Apple icon -\> About this Mac -\> Overview)
+        i.  Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.
+
+            ![](figs/02-macOS-R.png){width="267"}
+
+## Install R (cont.)
+
+2.  A file will download, most likely to your *Downloads* folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.
+
+    ![](figs/02-R_wizard.png){width="347"}
+
+3.  Follow the installation instructions, until you click on "Finish" to exit the installation setup. At this point, `R` should be successfully installed!
+
+## Installing RStudio
+
+1.  Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and scroll down a little until you see two steps. We already did Step 1!
+
+2.  Under Step 2, click the blue Download RStudio Desktop button recommended for your computer
+
+    i.  macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!
+
+3.  Run the downloaded RStudio Executable file until you hit the "Finish" button. It may be the case that you don't have to click anything at all.
+
+4.  After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.
+
+    ![](figs/02-RStudio_download.png){width="273"}
+
+## Opening RStudio
+
+-   In the previous step, we put an RStudio shortcut into your *Applications* folder.
+
+-   You may find it easier to put a shortcut somewhere else for easier access (e.g. your dock or home screen)
+
+-   To open RStudio, simply double click on the RStudio icon (you do not need to click an the `R` icon)
+
+## Make a folder
+
+-   Make a folder that is easy to access (e.g. on your Desktop). Call it **STAT 201**. All of your files for this course should go into this folder.

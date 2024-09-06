@@ -14,9 +14,6 @@ website:
       - icon: book-half
         text: "Textbook"
         href: https://openintro-ims.netlify.app/
-      - icon: github
-        text: "GitHub"
-        href: https://github.com/
       - icon: bar-chart-fill
         text: "Canvas"
         href: https://middlebury.instructure.com/

@@ -1,0 +1,135 @@
+---
+title: "Welcome!"
+date: "September 9, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+# Welcome to the course!
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(tidytext)
+beyonce <- read_csv("data/beyonce_lyrics.csv")
+
+plot_theme <- theme(text = element_text(size = 16))
+```
+
+## Syllabus and website
+
+-   Course website: <https://midd-stat201-fall2024.github.io/>
+
+    -   Please bookmark this page and visit frequently!
+    -   Note that both sections will use the same website
+
+## What is this course about?
+
+-   What is statistics? What is data science?
+
+-   By the end of this course, you will:
+
+    -   Hopefully want to pursue another Statistics or Mathematics course!
+
+## Necessary background
+
+-   We assume ZERO background in statistics and data science
+
+-   There is a large computing component, though not as much as in STAT 118
+
+-   MATH 121 (Calculus 1) pre-req
+
+## Recommendations
+
+-   Takes notes! Each day's slides will be made available on the course website by 10pm the night before. I recommend either:
+
+    -   Printing out the PDF version of slides to write notes on in during class
+
+        -   I recommend 4 or 6 slides per page (demo)
+
+    -   Downloading PDF of slides to iPad/tablet/laptop and write notes on then using device
+
+    -   Taking supplemental notes on paper/device
+
+-   Re–visit notes within 24 hours of class
+
+## Recommendations (cont.)
+
+-   We will frequently make use of our laptops. Please bring one with enough charge to last the entire class each day we meet!
+
+    -   **Please let me know as soon as possible if you do not have access to a laptop**
+
+-   Try to resist the temptation to do other tasks (e.g. check email, online shop, watch shows) when your laptop is open
+
+    -   This can be distracting to those around you
+
+-   Keep an open mind and don't be afraid to ask for assistance or tell me to slow down!
+
+-   Resist the temptation of using ChatGPT or other generative AI tools
+
+<!--
+## GitHub username
+
+-   If you don't already have a GitHub account, please make one by visiting <https://github.com/> and creating an account.
+
+    -   Tips for creating a username: incorporate your actual name, shorter is better than longer, make it timeless
+
+-   Once you have an account, please go to this [GoogleForm](https://forms.gle/asi7AvkZwfpbszWaA) and enter in your GitHub username.
+
+# Exercise
+
+## Beyoncé's albums
+
+-   Beyoncé is one of the most famous singers of the 21st century
+
+-   By 2023, Beyoncé had produced eight solo studio albums:
+
+    -   *Dangerously in Love* (2003), *B'Day* (2006), *I Am... Sasha Fierce* (2008), *4* (2011), *Beyoncé* (2013), *Lemonade* (2016), *Renaissance* (2022)
+
+    -   Popular opinion (i.e. Reddit) is that *Lemonade* is her best album
+
+-   Is there any difference between the first four albums and *Lemonade*?
+
+-   Let's consider the *average* length of words in these albums
+
+    -   We will discuss "average" in more detail next week, but for today, we will treat "average" as a number that is calculated by summing a bunch of quantities together and dividing by the total number of quantities
+
+## Average word length
+
+```{r echo = F}
+words <- beyonce |>
+  unnest_tokens(output = word_all, input = lyric) |>
+  mutate(word = str_replace_all(word_all, "[[:punct:]]", ""))  |>
+  mutate(length = str_length(word)) |>
+  # anti_join(stop_words) |>
+  select(album, year, line, track_title, word, length) 
+avg_length_true <- words |>
+  filter(year < 2018) |>
+  # group_by(album, year) |>
+  summarise(avg_length = mean(length))
+avg_length_lemonade_true <- words |>
+  filter(album =="Lemonade") |>
+  # group_by(album, year) |>
+  summarise(avg_length = mean(length))
+```
+
+The average length of a word in Beyoncé's first four alums is `r round(avg_length_true, 2)`. What is the average length of a word in *Lemonade*?
+
+-   ::: discuss
+    How might we go about answering this question?
+    :::
+
+-   Let's collect some data!
+-->

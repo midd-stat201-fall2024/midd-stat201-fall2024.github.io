@@ -6,17 +6,16 @@ output: html_document
 ---
 
 ```{r packages, message = F}
-library(openintro)
+
 ```
 
 1.  Change your name in the YAML. Be sure to keep the quotation marks!
-2.  In the following code chunk, load in the `cherry` dataset from the `openintro` package.
+
+2.  In the following code chunk, load in `openintro` package.
 
 ```{r}
 
 ```
-
-2.  In the console, type in `?cherry` to open up the Help file for this dataset. Type into the white space below the units for each of the variables.
 
 3.  Make a histogram of the diameter of cherry trees. Can you add a title to your plot?
 
@@ -30,4 +29,4 @@ library(openintro)
 
 ```
 
-Once you're finished, be sure to knit, commit, and push your work to Github!
+Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

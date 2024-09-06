@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "",
-    "text": "Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to textbook, GitHub, and Canvas."
+    "text": "Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the supplemental textbook and Canvas."
   },
   {
     "objectID": "about.html",
@@ -18,14 +18,14 @@
     "href": "index.html#course-details",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Course details",
-    "text": "Course details\nInstructor: Prof. Becky Tang\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2:00-4:00pm and Tuesday 3:45-5:00pm\nTA: TBD\n\nSyllabus:"
+    "text": "Course details\nInstructor: Prof. Becky Tang (she/her)\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2-4pm, Friday 1-2pm\n\nTA hours in Quantitative Center in Armstrong Library:\n\nTA Claire Yang: Sunday 7-9, Thursday 7-9\nTA Justin Corke: Thursday 7-9\n\nThe syllabus (most recent update: 9/2/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website."
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome!\n\n\n\n\n\nW 09/11\n\nTopic: Study design\n\nPractice problems\n\n\n\n\n\n\nR 09/12\n\nTopic: Software installation and basics\nInstallation instructions\n\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nCoding practice\nPractice problems"
+    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome!\n\n\nFill out this survey by next class.\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\n\n\n\nR 09/12\n\nTopic: Software installation\nR basics\n\n\nIntro to R and R Markdown\n\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -298,7 +298,7 @@
     "href": "coding_practice/coding-practice-03-numerical-pt1.html",
     "title": "Numerical data coding practice",
     "section": "",
-    "text": "library(openintro)\n\n\nChange your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in the cherry dataset from the openintro package.\n\n\n\n\n\nIn the console, type in ?cherry to open up the Help file for this dataset. Type into the white space below the units for each of the variables.\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit, commit, and push your work to Github!"
+    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in openintro package.\n\n\n\n\n\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#recap",
@@ -1404,6 +1404,195 @@
     "href": "coding_practice/coding-practice-07-wrangling.html",
     "title": "Data wrangling coding practice",
     "section": "",
-    "text": "Load in the tidyverse and openintro packages the in the code chunk above. We will work with the starbucks data from the openintro package. Load the data by typing data(starbucks) right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the word starbucks in your Environment.\nWrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.\n\n\n\nOne gram of protein contains 4 calories. Wrangle the data to add a new variable called prop_protein which represents the proportion of the item’s calories that are due to protein. Store the resulting data frame as a new variable called starbucks_new.\n\n\n\nUsing your starbucks_new data frame from the previous step, display a table/data frame that shows the median proportion of calories that come from protein for each type of item."
+    "text": "Load in the tidyverse and openintro packages the in the code chunk above. We will work with the starbucks data from the openintro package. Load the data by typing data(starbucks) right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the word starbucks in your Environment.\nWrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.\n\n\n\nOne gram of protein contains 4 calories. Wrangle the data to add a new variable called prop_protein which represents the proportion of the item’s calories that are due to protein. Store the resulting data frame as a new variable called starbucks_new.\n\n\n\nUsing your starbucks_new data frame from the previous step, display a table/data frame that shows the median proportion of calories that come from protein for each type of item.\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#syllabus-and-website",
+    "href": "slides/slides-00-welcome.html#syllabus-and-website",
+    "title": "Welcome!",
+    "section": "Syllabus and website",
+    "text": "Syllabus and website\n\nCourse website: https://midd-stat201-fall2024.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#what-is-this-course-about",
+    "href": "slides/slides-00-welcome.html#what-is-this-course-about",
+    "title": "Welcome!",
+    "section": "What is this course about?",
+    "text": "What is this course about?\n\nWhat is statistics? What is data science?\nBy the end of this course, you will:\n\nHopefully want to pursue another Statistics or Mathematics course!"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#necessary-background",
+    "href": "slides/slides-00-welcome.html#necessary-background",
+    "title": "Welcome!",
+    "section": "Necessary background",
+    "text": "Necessary background\n\nWe assume ZERO background in statistics and data science\nThere is a large computing component, though not as much as in STAT 118\nMATH 121 (Calculus 1) pre-req"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#recommendations",
+    "href": "slides/slides-00-welcome.html#recommendations",
+    "title": "Welcome!",
+    "section": "Recommendations",
+    "text": "Recommendations\n\nTakes notes! Each day’s slides will be made available on the course website by 10pm the night before. I recommend either:\n\nPrinting out the PDF version of slides to write notes on in during class\n\nI recommend 4 or 6 slides per page (demo)\n\nDownloading PDF of slides to iPad/tablet/laptop and write notes on then using device\nTaking supplemental notes on paper/device\n\nRe–visit notes within 24 hours of class"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#recommendations-cont.",
+    "href": "slides/slides-00-welcome.html#recommendations-cont.",
+    "title": "Welcome!",
+    "section": "Recommendations (cont.)",
+    "text": "Recommendations (cont.)\n\nWe will frequently make use of our laptops. Please bring one with enough charge to last the entire class each day we meet!\n\nPlease let me know as soon as possible if you do not have access to a laptop\n\nTry to resist the temptation to do other tasks (e.g. check email, online shop, watch shows) when your laptop is open\n\nThis can be distracting to those around you\n\nKeep an open mind and don’t be afraid to ask for assistance or tell me to slow down!\nResist the temptation of using ChatGPT or other generative AI tools"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#github-username",
+    "href": "slides/slides-00-welcome.html#github-username",
+    "title": "Welcome!",
+    "section": "GitHub username",
+    "text": "GitHub username\n\nIf you don’t already have a GitHub account, please make one by visiting https://github.com/ and creating an account.\n\nTips for creating a username: incorporate your actual name, shorter is better than longer, make it timeless\n\nOnce you have an account, please go to this GoogleForm and enter in your GitHub username."
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#beyoncés-albums",
+    "href": "slides/slides-00-welcome.html#beyoncés-albums",
+    "title": "Welcome!",
+    "section": "Beyoncé’s albums",
+    "text": "Beyoncé’s albums\n\nBeyoncé is one of the most famous singers of the 21st century\nBy 2023, Beyoncé had produced eight solo studio albums:\n\nDangerously in Love (2003), B’Day (2006), I Am… Sasha Fierce (2008), 4 (2011), Beyoncé (2013), Lemonade (2016), Renaissance (2022)\nPopular opinion (i.e. Reddit) is that Lemonade is her best album\n\nIs there any difference between the first four albums and Lemonade?\nLet’s consider the average length of words in these albums\n\nWe will discuss “average” in more detail next week, but for today, we will treat “average” as a number that is calculated by summing a bunch of quantities together and dividing by the total number of quantities"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#average-word-length",
+    "href": "slides/slides-00-welcome.html#average-word-length",
+    "title": "Welcome!",
+    "section": "Average word length",
+    "text": "Average word length\n\n\n\nThe average length of a word in Beyoncé’s first four alums is 3.62. What is the average length of a word in Lemonade?\n\n\nHow might we go about answering this question?\n\nLet’s collect some data!"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#reproducibility",
+    "href": "slides/slides-02-toolkit-installation.html#reproducibility",
+    "title": "Installation Day",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nAllows your code execution or an experiment to be repeated by another person\nGoals:\n\nAre the tables and figures generated directly from the code?\nDoes the code actually do what you think it does?\nCan your code be used for other data/analyses?"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#toolkit",
+    "href": "slides/slides-02-toolkit-installation.html#toolkit",
+    "title": "Installation Day",
+    "section": "Toolkit",
+    "text": "Toolkit\n\n\nWe will use the programming language R to write code\nHow will interact with the R code? In the integrated development environment called RStudio. Helps us be more productive with R\n\nR is like a car engine, and RStudio is like a car’s dashboard\n\nWe will liberate our programming by keeping code, narrative, and output all in the same interface using R Markdown documents\nWe will want to keep track of the modifications we make to these R Markdowns by using the version control system Git and GitHub"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#r-markdown",
+    "href": "slides/slides-02-toolkit-installation.html#r-markdown",
+    "title": "Installation Day",
+    "section": "R Markdown",
+    "text": "R Markdown\n\nAllows us to create fully reproducible reports\nCan code in code chunks and type regular text/narrative outside of these chunks\nHow will we use R Markdown?\n\nYou coding practice problems and some weekly lab assignments will be assigned as an R Markdown document (.Rmd)\nYou will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you’ve mastered this material!)"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#version-control",
+    "href": "slides/slides-02-toolkit-installation.html#version-control",
+    "title": "Installation Day",
+    "section": "Version control",
+    "text": "Version control"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#git-and-github",
+    "href": "slides/slides-02-toolkit-installation.html#git-and-github",
+    "title": "Installation Day",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\nGit is a version control system (like “Track Changes” in Microsoft Word)\nGitHub is the home for your Git-based projects (like DropBox)\nWe will work with GitHub Desktop to make working on code on your personal machine and sending it to the cloud for “safe keeping” seamless\n\nAlso makes for great collaboration, because multiple people can be on the same GitHub project and will see all the change you make (kind of like a shared GoogleDoc)"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#installing-r",
+    "href": "slides/slides-02-toolkit-installation.html#installing-r",
+    "title": "Installation Day",
+    "section": "Installing R",
+    "text": "Installing R\nPlease be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!\n\nGo to the CRAN website and click on the appropriate link under “Download and Install R”. Then:\n\nIf you are Windows: click on the blue text that says “install R for the first time”.\nIf you are macOS: check your Mac OS system and if you have a chip (Apple icon -> About this Mac -> Overview)\n\nThen on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg."
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#install-r-cont.",
+    "href": "slides/slides-02-toolkit-installation.html#install-r-cont.",
+    "title": "Installation Day",
+    "section": "Install R (cont.)",
+    "text": "Install R (cont.)\n\nA file will download, most likely to your Downloads folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.\n\nFollow the installation instructions, until you click on “Finish” to exit the installation setup. At this point, R should be successfully installed!"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#installing-rstudio",
+    "href": "slides/slides-02-toolkit-installation.html#installing-rstudio",
+    "title": "Installation Day",
+    "section": "Installing RStudio",
+    "text": "Installing RStudio\n\nGo to the Posit website and scroll down a little until you see two steps. We already did Step 1!\nUnder Step 2, click the blue Download RStudio Desktop button recommended for your computer\n\nmacOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!\n\nRun the downloaded RStudio Executable file until you hit the “Finish” button. It may be the case that you don’t have to click anything at all.\nAfter RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder."
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#opening-rstudio",
+    "href": "slides/slides-02-toolkit-installation.html#opening-rstudio",
+    "title": "Installation Day",
+    "section": "Opening RStudio",
+    "text": "Opening RStudio\n\nIn the previous step, we put an RStudio shortcut into your Applications folder.\nYou may find it easier to put a shortcut somewhere else for easier access (e.g. your dock or home screen)\nTo open RStudio, simply double click on the RStudio icon (you do not need to click an the R icon)"
+  },
+  {
+    "objectID": "slides/slides-02-toolkit-installation.html#make-a-folder",
+    "href": "slides/slides-02-toolkit-installation.html#make-a-folder",
+    "title": "Installation Day",
+    "section": "Make a folder",
+    "text": "Make a folder\n\nMake a folder that is easy to access (e.g. on your Desktop). Call it STAT 201. All of your files for this course should go into this folder."
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html",
+    "href": "slides/slides-00-welcome.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "Course website: https://midd-stat201-fall2024.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website\n\n\n\n\n\n\nWhat is statistics? What is data science?\nBy the end of this course, you will:\n\nHopefully want to pursue another Statistics or Mathematics course!\n\n\n\n\n\n\nWe assume ZERO background in statistics and data science\nThere is a large computing component, though not as much as in STAT 118\nMATH 121 (Calculus 1) pre-req\n\n\n\n\n\nTakes notes! Each day’s slides will be made available on the course website by 10pm the night before. I recommend either:\n\nPrinting out the PDF version of slides to write notes on in during class\n\nI recommend 4 or 6 slides per page (demo)\n\nDownloading PDF of slides to iPad/tablet/laptop and write notes on then using device\nTaking supplemental notes on paper/device\n\nRe–visit notes within 24 hours of class\n\n\n\n\n\nWe will frequently make use of our laptops. Please bring one with enough charge to last the entire class each day we meet!\n\nPlease let me know as soon as possible if you do not have access to a laptop\n\nTry to resist the temptation to do other tasks (e.g. check email, online shop, watch shows) when your laptop is open\n\nThis can be distracting to those around you\n\nKeep an open mind and don’t be afraid to ask for assistance or tell me to slow down!\nResist the temptation of using ChatGPT or other generative AI tools\n\n\n\n\n\nIf you don’t already have a GitHub account, please make one by visiting https://github.com/ and creating an account.\n\nTips for creating a username: incorporate your actual name, shorter is better than longer, make it timeless\n\nOnce you have an account, please go to this GoogleForm and enter in your GitHub username."
+  },
+  {
+    "objectID": "live_code/intro_R.html",
+    "href": "live_code/intro_R.html",
+    "title": "Intro to R and R Markdown",
+    "section": "",
+    "text": "In the Console, type the following code: 1 + 1. What happens?\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nNothing!\n\n\n\nTo execute/run code in the Console, we simply press Enter. Try it! What happens?\n\n\nNote that spacing doesn’t matter in R code.\nWe can add (+), subtract (-), multiply (*), divide (/), and perform more complicated calculations using R.\n\n\n\nThis document that we are working in is called an R markdown document. It allows us to seamlessly move between R code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in ____.\nHow do we tell the document which parts correspond to code, and which parts correspond to text?\nIn the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right. These backs ticks must be aligned on the same tabulation.\nThis defines ______. All of our R code should go into one.\n\n\n\n\n\n\n\nWhat happens if we delete a back tick?\n\n\n\nIn the code chunk above, let’s evaluate \\(\\sqrt{4}\\) (the square root of 4). To do this, type the following code: sqrt(4). Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:\n1.\n2.\n\nsqrt(4)\n\n[1] 2\n\n\n\n\n\nAt this point it is a good idea to save our progress. Like most document editors, we need to explicitly save our work. You know your work is not saved when _____.\nTo save our work in R Markdown document, we can do one of the following:\n\nClick on the floppy disk at the top of the panel\nGo to File -> Save\nHit Cmd+S\n____ the document\n\n\n\nKnitting the document will render your R markdown into its final output form. To knit, simply click on the ball of yarn at the top of the panel. Knitting can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have.\nNow, outside of R Studio, go to the Folder where this R Markdown document is located. What do you notice? ______\n\n\n\n\nR is more than just a calculator! It provides lots of functionality for performing tasks related specifically to statistics.\n\n\nEverything in R is an object. Here, we provide a non-exhaustive list of common objects (i.e. structures) you will encounter.\n\nA ____ object contains only a single number\n\n\n\n\n\nA ____ or ____ object is a set of characters within one pair of quotation marks\n\n\n\n\n\nA ____ object is an ordered collection of numbers or strings. We can create vectors using the command c():\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nWhat happened here?\n\nc(1, \"no\")\n\n[1] \"1\"  \"no\"\n\n\n\n\n\n\nA ____ object is either TRUE or FALSE. It is also referred to as a boolean.\nData frames are representations of datasets in R where the rows correspond to observations and columns correspond to variables that describe the observations (more on this later).\n\n\n\n\nWhen we calculated \\(\\sqrt{4}\\), we used the code sqrt(). This is an example of a function. Functions allow us to automate common tasks in a general way. Functions (just like in math) take in one or more inputs. These inputs are known as _____ or _____. They will almost always return an output. We know a command in R is a function because it has _____.\nIt is possible for us to create our own customized functions (you definitely will if you take STAT 218). However, in STAT 201, we will work with pre-provided functions. All pre-provided functions in R are accompanied by a Help file. To access the Help file, simply type ? followed by the name of the function in the Console. Try opening the Help file for the sqrt() function.\nIf I want to obtain the square root of the values 1, 4, 9, and 16, what code can I type?\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nsqrt(c(1,4,9, 16))\n\n[1] 1 2 3 4\n\n\n\n\n\n\n\n\nSuppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is \\(\\text{edge length}^3\\) . We could calculate the area as follows:\n\n2*2*2\n\n[1] 8\n\n\nNow suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:\n\n2.1*2.1*2.1\n\n[1] 9.261\n\n\nThen you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code reproducible:\n\nlength <- 2.2\nlength^3\n\n[1] 10.648\n\n\nWhat did we do in the above code? We _____ or ______ the value 2.2 into the ______ called length using the keys <-.\nNow make a new R code chunk here. In this new code chunk, make a new object called volume and assign to it an appropriate value. Now let’s knit the document.\nAs you should note: when we assign an object a value, its value is not automatically shown as output. In order to display the output, you must _____.\n\n\n\n\nThese are always shown in red text in the Console. Whenever you see them, don’t panic! With practice, you will be able to decipher the messages and de-bug your code with ease.\n\nErrors: prevent code from executing and documents from knitting. It will be prefaced with “Error in…”. Trying typing in the following code in your Console: 1 + a. What happens?\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n1+a\n\nError in eval(expr, envir, enclos): object 'a' not found\n\n\n\n\n\n\n\nA good reason to knit often is to ensure your code is error-free!\n\nWarnings: your code will run with some caveats. It will be prefaced with “Warning:”. We will see examples of this later on.\nMessages: messages in red that do not begin with “Error” or “Warning” are simply friendly messages that might provide you more information about the execution of your code.\n\n\n\n\nPackages in R extend the functionality by providing additional functions and data. You can view them as analogous to apps you download from the App Store or Google Play on a cell phone. To use an app on a phone, you have to:\n\nDownload the app\nExplicitly open the app\n\nTo use a package, we need to:\n\n____ the package\n____ the package\n\nUnless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new R Markdown document.\nThere are thousands of available packages to work with. Two of the most common packages we will use are the openintro package and the tidyverse package (though, the tidyverse package is actually a giant package that is comprised of several other packages).\n\n\nThere are two ways to install a package:\n\nOption 1:\n\nClick on the “Packages” tab in the Files pane of RStudio\nClick on “Install”\nType the name of the package under “Packages (separate multiple with space or comma):”.\nClick “Install”\n\nOption 2:\n\nType install.packages(\"package name\") into the Console. Note that the quotation marks are necessary.\nPress Return/Enter\n\n\nWe will install the openintro package together. Now, try installing the tidyverse package on your own!\n\n\n\nTo use the package we have installed, we use the library() command:\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\n\nThis is an example of a function that does not return an output\n\n\n\n\n\n\nTip\n\n\n\nYou may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?"
+  },
+  {
+    "objectID": "live_code/intro_R.html#introduction-to-r-markdown",
+    "href": "live_code/intro_R.html#introduction-to-r-markdown",
+    "title": "Untitled",
+    "section": "Introduction to R Markdown",
+    "text": "Introduction to R Markdown\nThis document that we are working in is called an R markdown document. It allows us to seamlessly move between R code and regular text. How do we tell the document which parts correspond to code, and which parts correspond to text?\nIn the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right.\nThis defines ______. All of our R code should go into one.\n\n\n\n\n\n\n\nWhat happens if we delete a back tick?\n\n\n\nIn the code chunk above, let’s evaluate \\(\\sqrt{4}\\) (the square root of 4). To do this, type the following code: sqrt(4). Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:\n1.\n2."
+  },
+  {
+    "objectID": "live_code/intro_R.html#saving-progress",
+    "href": "live_code/intro_R.html#saving-progress",
+    "title": "Intro to R and R Markdown",
+    "section": "Saving progress",
+    "text": "Saving progress\nAt this point it is a good idea to save our progress. Like most document editors, we need to explicitly save our work. You know your work is not saved when _____.\nTo save our work in R Markdown document, we can do one of the following:\n\nClick on the floppy disk at the top of the panel\nGo to File -> Save\nHit Cmd+S\n____ the document\n\n\nKnitting\nKnitting the document will render your R markdown into its final output form. To knit, simply click on the ball of yarn at the top of the panel. Knitting can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have.\nNow, outside of R Studio, go to the Folder where this R Markdown document is located. What do you notice? ______"
+  },
+  {
+    "objectID": "live_code/intro_R.html#r-markdown-basics",
+    "href": "live_code/intro_R.html#r-markdown-basics",
+    "title": "Intro to R and R Markdown",
+    "section": "R Markdown basics",
+    "text": "R Markdown basics\nThis document that we are working in is called an R markdown document. It allows us to seamlessly move between R code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in ____.\nHow do we tell the document which parts correspond to code, and which parts correspond to text?\nIn the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right. These backs ticks must be aligned on the same tabulation.\nThis defines ______. All of our R code should go into one.\n\n\n\n\n\n\n\nWhat happens if we delete a back tick?\n\n\n\nIn the code chunk above, let’s evaluate \\(\\sqrt{4}\\) (the square root of 4). To do this, type the following code: sqrt(4). Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:\n1.\n2.\n\nsqrt(4)\n\n[1] 2"
+  },
+  {
+    "objectID": "live_code/intro_R.html#coding-in-r",
+    "href": "live_code/intro_R.html#coding-in-r",
+    "title": "Intro to R and R Markdown",
+    "section": "Coding in R",
+    "text": "Coding in R\nR is more than just a calculator! It provides lots of functionality for performing tasks related specifically to statistics.\n\nObject types\nEverything in R is an object. Here, we provide a non-exhaustive list of common objects (i.e. structures) you will encounter.\n\nA ____ object contains only a single number\n\n\n\n\n\nA ____ or ____ object is a set of characters within one pair of quotation marks\n\n\n\n\n\nA ____ object is an ordered collection of numbers or strings. We can create vectors using the command c():\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nWhat happened here?\n\nc(1, \"no\")\n\n[1] \"1\"  \"no\"\n\n\n\n\n\n\nA ____ object is either TRUE or FALSE. It is also referred to as a boolean.\nData frames are representations of datasets in R where the rows correspond to observations and columns correspond to variables that describe the observations (more on this later).\n\n\n\nFunctions\nWhen we calculated \\(\\sqrt{4}\\), we used the code sqrt(). This is an example of a function. Functions allow us to automate common tasks in a general way. Functions (just like in math) take in one or more inputs. These inputs are known as _____ or _____. They will almost always return an output. We know a command in R is a function because it has _____.\nIt is possible for us to create our own customized functions (you definitely will if you take STAT 218). However, in STAT 201, we will work with pre-provided functions. All pre-provided functions in R are accompanied by a Help file. To access the Help file, simply type ? followed by the name of the function in the Console. Try opening the Help file for the sqrt() function.\nIf I want to obtain the square root of the values 1, 4, 9, and 16, what code can I type?\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nsqrt(c(1,4,9, 16))\n\n[1] 1 2 3 4\n\n\n\n\n\n\n\nStoring objects as variables\nSuppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is \\(\\text{edge length}^3\\) . We could calculate the area as follows:\n\n2*2*2\n\n[1] 8\n\n\nNow suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:\n\n2.1*2.1*2.1\n\n[1] 9.261\n\n\nThen you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code reproducible:\n\nlength <- 2.2\nlength^3\n\n[1] 10.648\n\n\nWhat did we do in the above code? We _____ or ______ the value 2.2 into the ______ called length using the keys <-.\nNow make a new R code chunk here. In this new code chunk, make a new object called volume and assign to it an appropriate value. Now let’s knit the document.\nAs you should note: when we assign an object a value, its value is not automatically shown as output. In order to display the output, you must _____."
+  },
+  {
+    "objectID": "live_code/intro_R.html#errors-warnings-and-messages",
+    "href": "live_code/intro_R.html#errors-warnings-and-messages",
+    "title": "Intro to R and R Markdown",
+    "section": "Errors, warnings, and messages",
+    "text": "Errors, warnings, and messages\nThese are always shown in red text in the Console. Whenever you see them, don’t panic! With practice, you will be able to decipher the messages and de-bug your code with ease.\n\nErrors: prevent code from executing and documents from knitting. It will be prefaced with “Error in…”. Trying typing in the following code in your Console: 1 + a. What happens?\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\n1+a\n\nError in eval(expr, envir, enclos): object 'a' not found\n\n\n\n\n\n\n\nA good reason to knit often is to ensure your code is error-free!\n\nWarnings: your code will run with some caveats. It will be prefaced with “Warning:”. We will see examples of this later on.\nMessages: messages in red that do not begin with “Error” or “Warning” are simply friendly messages that might provide you more information about the execution of your code."
+  },
+  {
+    "objectID": "live_code/intro_R.html#packages",
+    "href": "live_code/intro_R.html#packages",
+    "title": "Intro to R and R Markdown",
+    "section": "Packages",
+    "text": "Packages\nPackages in R extend the functionality by providing additional functions and data. You can view them as analogous to apps you download from the App Store or Google Play on a cell phone. To use an app on a phone, you have to:\n\nDownload the app\nExplicitly open the app\n\nTo use a package, we need to:\n\n____ the package\n____ the package\n\nThere are thousands of available packages to work with. Two of the most common packages we will use are the openintro package and the tidyverse package (though, the tidyverse package is actually a giant package that is comprised of several other packages).\n\nPackage installation\nThere are two ways to install a package:\n\nOption 1:\n\nClick on the “Packages” tab in the Files pane of RStudio\nClick on “Install”\nType the name of the package under “Packages (separate multiple with space or comma):”.\nClick “Install”\n\nOption 2:\n\nType install.packages(\"package name\") into the Console. Note that the quotation marks are necessary.\nPress Return/Enter\n\n\nWe will install the openintro package together. Now, try installing the tidyverse package on your own!\n\n\nPackage loading\nTo use the package we have installed, we use the library() command:\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\n\nThis is an example of a function that does not return an output\n\n\n\n\n\n\nTip\n\n\n\nYou may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?"
+  },
+  {
+    "objectID": "coding_practice/coding-practice-02-intro-r.html",
+    "href": "coding_practice/coding-practice-02-intro-r.html",
+    "title": "Intro to R coding practice",
+    "section": "",
+    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, write code to load in the openintro package. Then run the code in the code chunk.\n\n\n\n\n\nIn the Console, type in ?cherry to open up the Help file for the cherry data frame. Type into the white space below the units for each of the variables.\n\nAnswer:\n\nRemember that rows in data frames represents observations. How many observations are there in the cherry data frame? Do this two ways: 1) first by using the nrow() function and passing in the name of data frame of interest. And 2) confirming by looking at the cherry Help file.\n\n\n\n\nAnswer:\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, access the height variable from the cherry data frame. Then answer the following: what type of object does the code output?\n\n\n\n\nAnswer:\n\nIn the code chunk below, try writing code that outputs the height of trees in the dataset in inches.\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
   }
 ]

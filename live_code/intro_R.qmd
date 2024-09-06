@@ -1,0 +1,223 @@
+---
+title: "Intro to R and R Markdown"
+format:
+  html:
+    toc: true
+---
+
+# Programming in R Markdown
+
+## R as a calculator
+
+In the *Console,* type the following code: `1 + 1`. What happens?
+
+::: {.callout-tip collapse="true" icon="false"}
+## Answer
+
+Nothing!
+:::
+
+To **execute/run code** in the Console, we simply press Enter. Try it! What happens?
+
+::: column-margin
+Note that spacing doesn't matter in R code.
+:::
+
+We can add (+), subtract (-), multiply (\*), divide (/), and perform more complicated calculations using `R`.
+
+## R Markdown basics
+
+This document that we are working in is called an **R markdown** document. It allows us to seamlessly move between `R` code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in \_\_\_\_.
+
+How do we tell the document which parts correspond to code, and which parts correspond to text?
+
+In the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right. These backs ticks must be aligned on the same tabulation.
+
+This defines \_\_\_\_\_\_. All of our `R` code should go into one.
+
+![](figs/code_chunk.png){fig-align="center" width="388"}
+
+::: column-margin
+What happens if we delete a back tick?
+:::
+
+```{r}
+
+```
+
+In the code chunk above, let's evaluate $\sqrt{4}$ (the square root of 4). To do this, type the following code: `sqrt(4)`. Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:
+
+1\.
+
+2\.
+
+```{r}
+sqrt(4)
+```
+
+## Saving progress
+
+At this point it is a good idea to save our progress. Like most document editors, we need to explicitly save our work. You know your work is not saved when \_\_\_\_\_.
+
+To save our work in R Markdown document, we can do one of the following:
+
+1.  Click on the floppy disk at the top of the panel
+2.  Go to File -\> Save
+3.  Hit Cmd+S
+4.  \_\_\_\_ the document
+
+### Knitting
+
+Knitting the document will render your R markdown into its final output form. To knit, simply click on the ball of yarn at the top of the panel. Knitting can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have.
+
+Now, outside of R Studio, go to the Folder where this R Markdown document is located. What do you notice? \_\_\_\_\_\_
+
+## Coding in R
+
+`R` is more than just a calculator! It provides lots of functionality for performing tasks related specifically to statistics.
+
+### Object types
+
+Everything in `R` is an object. Here, we provide a non-exhaustive list of common objects (i.e. structures) you will encounter.
+
+-   A \_\_\_\_ object contains only a single number
+
+```{r}
+
+```
+
+-   A \_\_\_\_ or \_\_\_\_ object is a set of characters within one pair of quotation marks
+
+```{r}
+
+```
+
+-   A \_\_\_\_ object is an ordered collection of numbers *or* strings. We can create vectors using the command `c()`:
+
+```{r}
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+What happened here?
+
+```{r}
+c(1, "no")
+```
+:::
+
+-   A \_\_\_\_ object is either `TRUE` or `FALSE`. It is also referred to as a boolean.
+
+-   **Data frames** are representations of datasets in `R` where the rows correspond to observations and columns correspond to variables that describe the observations (more on this later).
+
+### Functions
+
+When we calculated $\sqrt{4}$, we used the code `sqrt()`. This is an example of a **function**. Functions allow us to automate common tasks in a general way. Functions (just like in math) take in one or more inputs. These inputs are known as \_\_\_\_\_ or \_\_\_\_\_. They will almost always return an output. We know a command in `R` is a function because it has \_\_\_\_\_.
+
+It is possible for us to create our own customized functions (you definitely will if you take STAT 218). However, in STAT 201, we will work with pre-provided functions. All pre-provided functions in `R` are accompanied by a **Help file**. To access the Help file, simply type `?` followed by the name of the function in the Console. Try opening the Help file for the `sqrt()` function.
+
+If I want to obtain the square root of the values 1, 4, 9, and 16, what code can I type?
+
+::: {.callout-tip collapse="true" icon="false"}
+```{r}
+sqrt(c(1,4,9, 16))
+```
+:::
+
+### Storing objects as variables
+
+Suppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is $\text{edge length}^3$ . We could calculate the area as follows:
+
+```{r}
+2*2*2
+```
+
+Now suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:
+
+```{r}
+2.1*2.1*2.1
+```
+
+Then you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code *reproducible*:
+
+```{r}
+length <- 2.2
+length^3
+```
+
+What did we do in the above code? We \_\_\_\_\_ or \_\_\_\_\_\_ the value 2.2 into the \_\_\_\_\_\_ called `length` using the keys `<-`.
+
+Now make a new R code chunk here. In this new code chunk, make a new object called `volume` and assign to it an appropriate value. Now let's knit the document.
+
+As you should note: when we assign an object a value, its value is *not* automatically shown as output. In order to display the output, you must \_\_\_\_\_.
+
+## Errors, warnings, and messages
+
+These are always shown in red text in the Console. Whenever you see them, don't panic! With practice, you will be able to decipher the messages and de-bug your code with ease.
+
+-   **Errors:** prevent code from executing and documents from knitting. It will be prefaced with "Error in...". Trying typing in the following code in your Console: `1 + a`. What happens?
+
+::: {.callout-tip collapse="true" icon="false"}
+```{r error = T}
+1+a
+```
+:::
+
+::: column-margin
+A good reason to knit often is to ensure your code is error-free!
+:::
+
+-   **Warnings**: your code will run with some caveats. It will be prefaced with "Warning: ". We will see examples of this later on.
+
+-   **Messages**: messages in red that do not begin with "Error" or "Warning" are simply friendly messages that might provide you more information about the execution of your code.
+
+## Packages
+
+Packages in `R` extend the functionality by providing additional functions and data. You can view them as analogous to apps you download from the App Store or Google Play on a cell phone. To use an app on a phone, you have to:
+
+1.  Download the app
+2.  Explicitly open the app
+
+To use a package, we need to:
+
+1.  \_\_\_\_ the package
+2.  \_\_\_\_ the package
+
+**Unless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new R Markdown document.**
+
+There are thousands of available packages to work with. Two of the most common packages we will use are the `openintro` package and the `tidyverse` package (though, the `tidyverse` package is actually a giant package that is comprised of several other packages).
+
+### Package installation
+
+There are two ways to install a package:
+
+1.  Option 1:
+    i.  Click on the "Packages" tab in the Files pane of RStudio
+    ii. Click on "Install"
+    iii. Type the name of the package under “Packages (separate multiple with space or comma):”.
+    iv. Click "Install"
+2.  Option 2:
+    1.  Type `install.packages("package name")` into the Console. Note that the quotation marks are necessary.
+    2.  Press Return/Enter
+
+We will install the `openintro` package together. Now, try installing the `tidyverse` package on your own!
+
+### Package loading
+
+To use the package we have installed, we use the `library()` command:
+
+```{r}
+library(openintro)
+```
+
+::: column-margin
+This is an example of a function that does not return an output
+:::
+
+::: {.callout-tip icon="false"}
+You may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?
+:::
+
+# Submit to Canvas
+
+When you are finished with your work and ready to submit, you should always knit one last time. You should then submit the most recent knitted output (i.e. the HTML or PDF file) to the corresponding Canvas assignment. Sometimes I will also ask you to submit the accompanying .Rmd file.

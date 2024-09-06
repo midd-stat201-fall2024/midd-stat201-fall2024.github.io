@@ -2,25 +2,29 @@
 title: "Advanced Introduction to Statistics and Data Science"
 ---
 
-Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to textbook, GitHub, and Canvas.
+Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the supplemental textbook and Canvas.
 
 ------------------------------------------------------------------------
 
 ## Course details
 
-Instructor: Prof. Becky Tang
+**Instructor:** Prof. Becky Tang (she/her)
 
 -   Office: WNS 214
 -   Email: btang\@middlebury.edu
 
-Meeting times and location:
+**Meeting times and location:**
 
 -   Section AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104
 -   Section BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101
 
-Office hours (both sections welcome):
+**Office hours** (both sections welcome):
 
--   Prof. Tang: Monday 2:00-4:00pm and Tuesday 3:45-5:00pm
--   TA: TBD
+-   Prof. Tang: Monday 2-4pm, Friday 1-2pm
 
-Syllabus:
+**TA hours** in Quantitative Center in Armstrong Library:
+
+-   TA Claire Yang: Sunday 7-9, Thursday 7-9
+-   TA Justin Corke: Thursday 7-9
+
+The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/2/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.

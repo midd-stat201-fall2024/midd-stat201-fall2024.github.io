@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-16">
+<meta name="author" content="Your name here">
+<meta name="dcterms.date" content="2024-09-13">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Numerical data (part 1)</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Intro to R coding practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +61,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -116,19 +116,24 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerical data (part 1)</h1>
-<p class="subtitle lead">Practice problems</p>
+<h1 class="title">Intro to R coding practice</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your name here </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2024</p>
+      <p class="date">September 13, 2024</p>
     </div>
   </div>
   
@@ -138,32 +143,38 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.</p>
 <ol type="1">
-<li><p>Indicate which of the plots show (a) a positive association, (b) negative association, or (c) no association. Also determine if the positive and negative associations are linear or nonlinear. Each part may refer to more than on plot.</p>
-<p><img src="practice/figs/03-scatterplots.png" class="img-fluid"></p></li>
-<li><p>Calculate the average/sample mean in each of the following scenarios:</p>
-<ol type="a">
-<li>Suppose that we have some data where 20% of the data are 1’s, 50% are 2’s, and 30% are 3’s. What is the sample mean?</li>
-<li>A school has two classes, one with 10 students and one with 100 students. What is the average class size?</li>
-<li>A school as two classes, one with 10 students and one with 100 students. What is the average size of the class that a student is enrolled in?</li>
-</ol></li>
-<li><p>A list has 10 entries, and each entry is either a 1, 2, or 3. What must the list be if the average is 3? Can the average be 4?</p></li>
-<li><p>21 people in a room have an average of 5 feet 6 inches. A 22nd person enters the room. How tall would this person have to be to raise the average height by 1 inch?</p></li>
-<li><p>Consider the following lists:</p>
-<p><span class="math display">\[(i) \ 1, \ 3,\ 4, \ 5,\  7 \qquad \qquad (ii) \ 6,\ 8,\ 9,\ 10,\ 12\]</span></p>
-<ol type="a">
-<li><p>For each list, find the average and the standard deviation.</p></li>
-<li><p>How is list (ii) related to list (i)? How does this relationship carry over to the average and to the standard deviation?</p></li>
-</ol></li>
-<li><p>Workers at a particular mining site receive an average of 35 days paid vacation, which is lower than the national average. The manager of this plant is under pressure from a local union to increase the amount of paid time off. However, he does not want to give more days off to the workers because that would be costly. Instead he decides he should fire 10 employees in such a way as to raise the average number of days off that are reported by his employees. In order to achieve this goal, should he fire employees who have the most number of days off, least number of days off, or those who have about the average number of days off?</p></li>
-<li><p>Let’s return to the sunflowers! Recall that we used five different sampling schemes to obtain a sample of <span class="math inline">\(n= 12\)</span> grid cells. You have now collected data on the number of healthy sunflowers in each of the 12 grid cells for each sampling scheme.</p>
-<p>For each sampling scheme, calculate i) the average number of healthy sunflowers in a grid cell, as well as ii) the standard deviation of the number of healthy plants in a grid cell.</p>
-<ul>
-<li><p>To show your work for this problem: it is sufficient to write-out the calculations by hand (using “…” notation is fine!) for just one of the sampling schemes. But be sure to report the statistics for all schemes.</p></li>
-<li><p>I highly encourage you to use <code>R</code> to help perform the actual calculations. If you do use <code>R</code>, write-out an example of the code you execute for just one of the sampling schemes.</p></li>
-</ul></li>
+<li><p>Change your name in the YAML. Be sure to keep the quotation marks!</p></li>
+<li><p>In the following code chunk, write code to load in the <code>openintro</code> package. Then run the code in the code chunk.</p></li>
 </ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>In the Console, type in <code>?cherry</code> to open up the Help file for the <code>cherry</code> data frame. Type into the white space below the units for each of the variables.</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<ol start="4" type="1">
+<li>Remember that rows in data frames represents observations. How many observations are there in the <code>cherry</code> data frame? Do this two ways: 1) first by using the <code>nrow()</code> function and passing in the name of data frame of interest. And 2) confirming by looking at the <code>cherry</code> Help file.</li>
+</ol>
+<div class="cell">
+
+</div>
+<p><strong>Answer</strong>:</p>
+<ol start="5" type="1">
+<li>Remember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g.&nbsp;<code>dataframe$variable_name</code>). In the code chunk below, access the <code>height</code> variable from the <code>cherry</code> data frame. Then answer the following: what type of object does the code output?</li>
+</ol>
+<div class="cell">
+
+</div>
+<p><strong>Answer</strong>:</p>
+<ol start="5" type="1">
+<li>In the code chunk below, try writing code that outputs the height of trees in the dataset in inches.</li>
+</ol>
+<div class="cell">
+
+</div>
+<p>Once you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!</p>
 
 
 

@@ -1,0 +1,43 @@
+---
+title: "Intro to R coding practice"
+author: "Your name here"
+date: "2024-09-13"
+output: html_document
+---
+
+1.  Change your name in the YAML. Be sure to keep the quotation marks!
+
+2.  In the following code chunk, write code to load in the `openintro` package. Then run the code in the code chunk.
+
+```{r}
+
+```
+
+3.  In the Console, type in `?cherry` to open up the Help file for the `cherry` data frame. Type into the white space below the units for each of the variables.
+
+**Answer**:
+
+4.  Remember that rows in data frames represents observations. How many observations are there in the `cherry` data frame? Do this two ways: 1) first by using the `nrow()` function and passing in the name of data frame of interest. And 2) confirming by looking at the `cherry` Help file.
+
+```{r}
+
+```
+
+**Answer**:
+
+5.  Remember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. `dataframe$variable_name`). In the code chunk below, access the `height` variable from the `cherry` data frame. Then answer the following: what type of object does the code output?
+
+```{r}
+
+```
+
+**Answer**:
+
+5.  In the code chunk below, try writing code that outputs the height of trees in the dataset in inches.
+
+```{r}
+
+```
+
+
+Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

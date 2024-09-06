@@ -33,3 +33,5 @@ output: html_document
     ```{r}
 
     ```
+
+Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

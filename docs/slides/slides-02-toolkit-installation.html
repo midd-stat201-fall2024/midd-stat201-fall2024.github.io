@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-16">
+<meta name="dcterms.date" content="2024-09-12">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Numerical data (part 1)</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Installation Day</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +60,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -96,6 +95,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Textbook</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="https://middlebury.instructure.com/"><i class="bi bi-bar-chart-fill" role="img">
 </i> 
  <span class="menu-text">Canvas</span></a>
@@ -116,8 +120,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerical data (part 1)</h1>
-<p class="subtitle lead">Practice problems</p>
+<h1 class="title">Installation Day</h1>
 </div>
 
 
@@ -128,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2024</p>
+      <p class="date">September 12, 2024</p>
     </div>
   </div>
   
@@ -138,34 +141,134 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.</p>
-<ol type="1">
-<li><p>Indicate which of the plots show (a) a positive association, (b) negative association, or (c) no association. Also determine if the positive and negative associations are linear or nonlinear. Each part may refer to more than on plot.</p>
-<p><img src="practice/figs/03-scatterplots.png" class="img-fluid"></p></li>
-<li><p>Calculate the average/sample mean in each of the following scenarios:</p>
-<ol type="a">
-<li>Suppose that we have some data where 20% of the data are 1’s, 50% are 2’s, and 30% are 3’s. What is the sample mean?</li>
-<li>A school has two classes, one with 10 students and one with 100 students. What is the average class size?</li>
-<li>A school as two classes, one with 10 students and one with 100 students. What is the average size of the class that a student is enrolled in?</li>
-</ol></li>
-<li><p>A list has 10 entries, and each entry is either a 1, 2, or 3. What must the list be if the average is 3? Can the average be 4?</p></li>
-<li><p>21 people in a room have an average of 5 feet 6 inches. A 22nd person enters the room. How tall would this person have to be to raise the average height by 1 inch?</p></li>
-<li><p>Consider the following lists:</p>
-<p><span class="math display">\[(i) \ 1, \ 3,\ 4, \ 5,\  7 \qquad \qquad (ii) \ 6,\ 8,\ 9,\ 10,\ 12\]</span></p>
-<ol type="a">
-<li><p>For each list, find the average and the standard deviation.</p></li>
-<li><p>How is list (ii) related to list (i)? How does this relationship carry over to the average and to the standard deviation?</p></li>
-</ol></li>
-<li><p>Workers at a particular mining site receive an average of 35 days paid vacation, which is lower than the national average. The manager of this plant is under pressure from a local union to increase the amount of paid time off. However, he does not want to give more days off to the workers because that would be costly. Instead he decides he should fire 10 employees in such a way as to raise the average number of days off that are reported by his employees. In order to achieve this goal, should he fire employees who have the most number of days off, least number of days off, or those who have about the average number of days off?</p></li>
-<li><p>Let’s return to the sunflowers! Recall that we used five different sampling schemes to obtain a sample of <span class="math inline">\(n= 12\)</span> grid cells. You have now collected data on the number of healthy sunflowers in each of the 12 grid cells for each sampling scheme.</p>
-<p>For each sampling scheme, calculate i) the average number of healthy sunflowers in a grid cell, as well as ii) the standard deviation of the number of healthy plants in a grid cell.</p>
+<section id="housekeeping" class="level1">
+<h1>Housekeeping</h1>
+</section>
+<section id="agenda" class="level1">
+<h1>Agenda</h1>
 <ul>
-<li><p>To show your work for this problem: it is sufficient to write-out the calculations by hand (using “…” notation is fine!) for just one of the sampling schemes. But be sure to report the statistics for all schemes.</p></li>
-<li><p>I highly encourage you to use <code>R</code> to help perform the actual calculations. If you do use <code>R</code>, write-out an example of the code you execute for just one of the sampling schemes.</p></li>
+<li><p>Reproducible data analysis</p></li>
+<li><p>Toolkit</p>
+<ul>
+<li><p><code>R</code> and RStudio (Posit)</p></li>
+<li><p><code>R</code> Markdown</p></li>
+<li><p>Git, GitHub, and GitHub Desktop</p></li>
 </ul></li>
+<li><p>Installation</p></li>
+<li><p>Practice!</p></li>
+</ul>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<ul>
+<li><p>Allows your code execution or an experiment to be repeated by another person</p></li>
+<li><p>Goals:</p>
+<ul>
+<li><p>Are the tables and figures generated directly from the code?</p></li>
+<li><p>Does the code actually do what you think it does?</p></li>
+<li><p>Can your code be used for other data/analyses?</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="toolkit">Toolkit</h2>
+<p><img src="figs/02-toolkit.png" class="img-fluid" width="365"></p>
+<ul>
+<li><p>We will use the programming language <strong><code>R</code></strong> to write code</p></li>
+<li><p>How will interact with the <code>R</code> code? In the integrated development environment called <strong>RStudio.</strong> Helps us be more productive with <code>R</code></p>
+<ul>
+<li><code>R</code> is like a car engine, and RStudio is like a car’s dashboard</li>
+</ul></li>
+<li><p>We will liberate our programming by keeping code, narrative, and output all in the same interface using <strong>R Markdown</strong> documents</p></li>
+<li><p>We will want to keep track of the modifications we make to these R Markdowns by using the version control system <strong>Git</strong> and <strong>GitHub</strong></p></li>
+</ul>
+</section>
+<section id="r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="r-markdown">R Markdown</h2>
+<ul>
+<li><p>Allows us to create fully reproducible reports</p></li>
+<li><p>Can code in <em>code chunks</em> and type regular text/narrative outside of these chunks</p></li>
+<li><p>How will we use R Markdown?</p>
+<ul>
+<li><p>You coding practice problems and some weekly lab assignments will be assigned as an R Markdown document (.Rmd)</p></li>
+<li><p>You will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you’ve mastered this material!)</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="version-control" class="level2">
+<h2 class="anchored" data-anchor-id="version-control">Version control</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/02-lego-steps-commit-messages.png" class="img-fluid figure-img" width="443"></p>
+</figure>
+</div>
+</section>
+<section id="git-and-github" class="level2">
+<h2 class="anchored" data-anchor-id="git-and-github">Git and GitHub</h2>
+<ul>
+<li><p>Git is a version control system (like “Track Changes” in Microsoft Word)</p></li>
+<li><p>GitHub is the home for your Git-based projects (like DropBox)</p></li>
+<li><p>We will work with GitHub Desktop to make working on code on your personal machine and sending it to the cloud for “safe keeping” seamless</p>
+<ul>
+<li>Also makes for great collaboration, because multiple people can be on the same GitHub project and will see all the change you make (kind of like a shared GoogleDoc)</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="installation" class="level1">
+<h1>Installation</h1>
+<section id="installing-r" class="level2">
+<h2 class="anchored" data-anchor-id="installing-r">Installing <code>R</code></h2>
+<p>Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!</p>
+<ol type="1">
+<li>Go to the <a href="https://lib.stat.cmu.edu/R/CRAN/">CRAN website</a> and click on the appropriate link under “Download and Install R”. Then:
+<ol type="i">
+<li>If you are <strong>Windows</strong>: click on the blue text that says “install R for the first time”.</li>
+<li>If you are <strong>macOS</strong>: check your Mac OS system and if you have a chip (Apple icon -&gt; About this Mac -&gt; Overview)
+<ol type="i">
+<li><p>Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.</p>
+<p><img src="figs/02-macOS-R.png" class="img-fluid" width="267"></p></li>
+</ol></li>
+</ol></li>
 </ol>
+</section>
+<section id="install-r-cont." class="level2">
+<h2 class="anchored" data-anchor-id="install-r-cont.">Install R (cont.)</h2>
+<ol start="2" type="1">
+<li><p>A file will download, most likely to your <em>Downloads</em> folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.</p>
+<p><img src="figs/02-R_wizard.png" class="img-fluid" width="347"></p></li>
+<li><p>Follow the installation instructions, until you click on “Finish” to exit the installation setup. At this point, <code>R</code> should be successfully installed!</p></li>
+</ol>
+</section>
+<section id="installing-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="installing-rstudio">Installing RStudio</h2>
+<ol type="1">
+<li><p>Go to the <a href="https://posit.co/download/rstudio-desktop/">Posit website</a> and scroll down a little until you see two steps. We already did Step 1!</p></li>
+<li><p>Under Step 2, click the blue Download RStudio Desktop button recommended for your computer</p>
+<ol type="i">
+<li>macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!</li>
+</ol></li>
+<li><p>Run the downloaded RStudio Executable file until you hit the “Finish” button. It may be the case that you don’t have to click anything at all.</p></li>
+<li><p>After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.</p>
+<p><img src="figs/02-RStudio_download.png" class="img-fluid" width="273"></p></li>
+</ol>
+</section>
+<section id="opening-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="opening-rstudio">Opening RStudio</h2>
+<ul>
+<li><p>In the previous step, we put an RStudio shortcut into your <em>Applications</em> folder.</p></li>
+<li><p>You may find it easier to put a shortcut somewhere else for easier access (e.g.&nbsp;your dock or home screen)</p></li>
+<li><p>To open RStudio, simply double click on the RStudio icon (you do not need to click an the <code>R</code> icon)</p></li>
+</ul>
+</section>
+<section id="make-a-folder" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-folder">Make a folder</h2>
+<ul>
+<li>Make a folder that is easy to access (e.g.&nbsp;on your Desktop). Call it <strong>STAT 201</strong>. All of your files for this course should go into this folder.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

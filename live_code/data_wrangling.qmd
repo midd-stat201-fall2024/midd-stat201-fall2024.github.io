@@ -20,7 +20,6 @@ datascience <- read_csv("data/datascience_survey_subset.csv")
 
 Sometimes, there are a lot of columns in a data frame and we might not want all of them. The `select()` function gives us an easy way to choose which columns/variables we'd like to work with.
 
-
 The `select()` function requires by default two arguments: the data frame and the variable names to choose from that data frame.
 
 The following code works...
@@ -36,7 +35,7 @@ datascience |>
   select(Age)
 ```
 
-::: {.column-margin}
+::: column-margin
 What's going on here?
 
 1.  Start with the data frame `datascience`
@@ -44,16 +43,15 @@ What's going on here?
 3.  The result is a data frame with `r nrow(datascience)` rows and 1 column with the `Age` variable
 :::
 
-
-
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 Why do we type `Age` and not `age`?
 :::
 
+### Multiple variables and excluding
 
-### Multiple variables and excluding 
-::: {.callout-note collapse=true appearance="minimal"}
+::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
 
 ```{r}
@@ -61,12 +59,14 @@ datascience |>
   select(Age, Major)
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 What happens if we swap the order of the variable names?
 :::
+
 ### A range of variables
-  
+
 ```{r}
 datascience |>
   select(Gender:EmploymentStatus)
@@ -82,7 +82,6 @@ datascience |>
 
 ## Arranging rows
 
-
 We might want to re-arrange rows in ascending or descending order according to a certain variable:
 
 ```{r}
@@ -91,10 +90,9 @@ datascience |>
   arrange(Age)
 ```
 
-::: {.column-margin}
+::: column-margin
 By default, `arrange()` will reorder in ascending order. If we'd like to go in descending order, we can code `arrange(desc(Age))`.
 :::
-
 
 ## Slicing for certain row numbers
 
@@ -106,8 +104,10 @@ The `slice()` function expects a vector of row indices to retain:
 datascience |>
   slice(1:5)
 ```
-::: {.callout-tip}
+
+::: callout-tip
 ## Check
+
 What is the difference between `select()` and `slice()`?
 :::
 
@@ -123,8 +123,10 @@ datascience |>
 ```
 
 ### Multiple conditions
-::: {.callout-note collapse=true appearance="minimal"}
+
+::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
+
 We can also filter for more than one condition at once. Within `filter()`, the comma `,` specifies that all conditions must be true. It can be read as "and":
 
 ```{r}
@@ -162,8 +164,9 @@ datascience |>
   arrange(FormalEducation)
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 What variables are by default included in the output from `distinct()`?
 :::
 
@@ -177,8 +180,9 @@ datascience %>%
   select(CompensationAmount, compensation_1k)
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 What exactly is going on in the second line of code?
 :::
 
@@ -191,8 +195,9 @@ datascience |>
   count(EmployerIndustry)
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 How does the resulting data frame from `count()` compare to the original data frame we passed in?
 :::
 
@@ -200,7 +205,7 @@ How does the resulting data frame from `count()` compare to the original data fr
 
 We typically want to present the counts in ascending or descending order.
 
-::: {.callout-note collapse=true appearance="minimal"}
+::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
 
 Note that the following chunks of code do the same thing. One of them takes advantage of an additional argument in `count()`, whereas the other block of the uses an additional function:
@@ -216,11 +221,11 @@ datascience |>
   arrange(desc(n))
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 What happens if you pass in more than one variable into `count()`?
 :::
-
 :::
 
 ## Practice
@@ -236,7 +241,6 @@ datascience |>
   arrange(desc(prop))
 ```
 
-
 ## Summarising for summary statistics
 
 The `summarise()` function gives us an easy way to calculate summary statistics of variables in the data frame! We just need to know the name of the function that will calculate the summary statistic for us.
@@ -246,14 +250,15 @@ datascience |>
   summarise(mean_age = mean(Age))
 ```
 
-::: {.column-margin}
+::: column-margin
 You can obtain multiple summary statistics at once by separating the desired summary statistics with commas.
 :::
 
 The `summarise()` function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.
 
-::: {.callout-tip}
+::: callout-tip
 ## Check
+
 What happens if you type `summarise(mean(Age))` instead?
 :::
 
@@ -266,4 +271,3 @@ datascience |>
   group_by(EmploymentStatus) |>
   summarise(mean_age = mean(Age))
 ```
-
