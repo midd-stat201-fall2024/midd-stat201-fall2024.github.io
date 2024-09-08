@@ -20,11 +20,11 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 **Office hours** (both sections welcome):
 
--   Prof. Tang: Monday 2-4pm, Friday 1-2pm
+-   Prof. Tang: Monday 2-4pm, Friday 9-10am
 
 **TA hours** in Quantitative Center in Armstrong Library:
 
 -   TA Claire Yang: Sunday 7-9, Thursday 7-9
 -   TA Justin Corke: Thursday 7-9
 
-The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/2/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
+The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.

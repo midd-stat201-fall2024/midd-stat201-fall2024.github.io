@@ -37,6 +37,8 @@ plot_theme <- theme(text = element_text(size = 16))
     -   The target group of interest is called the **population**
     -   The subset of individuals from whom we actually collect data is the **sample**
 
+-   A **case** is a fancy term for saying one observational unit
+
 -   ::: discuss
     What are the target populations in the following research questions? What would an individual case be?
 
@@ -82,15 +84,11 @@ plot_theme <- theme(text = element_text(size = 16))
 ## Bias in a sample
 
 -   Bias in a sample can arise due to many causes. Here are a few:
-    -   Convenience sampling bias: sampling is done in a way that is convenient to the researcher
-
-    -   Response bias:
-
-    -   Self-selection and/or non-response bias:
-
-    -   Exclusion or undercoverage bias:
-
-    -   Survivorship bias:
+    -   Convenience sampling bias
+    -   Response bias
+    -   Self-selection and/or non-response bias
+    -   Exclusion or undercoverage bias
+    -   Survivorship bias
 -   **Randomly sampling** from the population can help reduce bias in our sample.
 -   Depending on the population, we might need to use different random sampling methods to ensure the sample is representative.
 
@@ -119,7 +117,7 @@ plot_theme <- theme(text = element_text(size = 16))
 
     -   How many from each stratum? Typically use a sampling fraction that is proportional to entire population!
 
-    -   E.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample $n = 10$ trees total, we should randomly sample 8 deciduous and 2 coniferous trees
+    -   E.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample $n = 10$ trees total, we should *randomly* sample \_\_\_ deciduous and \_\_\_ coniferous trees
 
 -   May be useful to ensure we have samples from rare groups, and helps to improve precision of the sample
 
@@ -127,7 +125,7 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Divide total population into $M$ distinct groups or **clusters** of roughly equal size
 
--   Perform a simple random sample on the $M$ clusters, than sample all individuals within each of the randomly select clusters
+-   Perform a simple random sample on the $M$ clusters, than sample all individuals within each of the randomly selected clusters
 
 -   ::: discuss
     Discuss the following:
@@ -147,13 +145,31 @@ plot_theme <- theme(text = element_text(size = 16))
 
 # Experiments vs. Observational studies
 
-We now know *how* to collect data, but now we turn to examining *what* *kind* of study we'd like to perform in order to answer the research question. We begin with experiments.
+We now know *how* to collect data, but now we turn to examining *what* *kind* of study we'd like to perform in order to answer the research question. We begin with experiments. But first...
+
+::: discuss
+What is a variable?
+:::
+
+## Explanatory vs. Response
+
+-   Lots of scientific questions revolve around asking how $x$ relates to $y$
+
+-   If $y$ is the primary variable of interest, i.e. the variable whose behavior we want to understand, it is called the **response variable**
+
+-   If we try to understand how changing $x$ affects $y$, then $x$ is called the **explanatory variable**
+
+    -   Explanatory variables can often be manipulated/controlled/observed by the researcher ahead of time
 
 ## Experimental design
 
 -   **Experiments** are studies where the researcher assigns treatments to cases
 
-    -   Note: experiments are often conducted in medical settings, hence the word "treatment".
+    -   Note: experiments are often conducted in medical settings, hence the word "treatment"
+
+    -   ::: discuss
+        Are treatments considered explanatory or response variables?
+        :::
 
 -   When the researcher *randomly* assigns the treatments, we have a **randomized experiment**
 
@@ -163,9 +179,11 @@ We now know *how* to collect data, but now we turn to examining *what* *kind* of
 
 ## Confounding variables
 
--   Understanding a causal relationship is made difficult by **confounding** variables: variables that are associated with both the explanatory and response variable of interest
+-   Understanding a *causal* relationship is made difficult by **confounding** **variables**: variables that are associated with both the explanatory and response variable of interest
 
-    -   Because it is associated with both variables, if not properly accounted for, it prevents the study from concluding that the explanatory variable caused the response variable
+    -   ::: {style="color: maroon"}
+        Confounders are bad!! Why?
+        :::
 
 -   Example: consider a study that seeks to examine the effect of coffee consumption on heart disease.
 
@@ -179,17 +197,25 @@ We now know *how* to collect data, but now we turn to examining *what* *kind* of
 
 ## Principles of experimental design
 
+Running example: quizzes and final exam
+
 1.  **Randomization**: randomly assign patients to treatments
+
     -   Helps account for variables that cannot be controlled and possible confounding variables
+
 2.  **Controlling** for differences in the treatment: ensure that everyone follows the same protocol exactly
+
 3.  **Replication**: the more cases we observe, the more confidence we have in the effect of the explanatory on the response
+
     -   Achieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once
 
--   These first three principles are crucial! The following is principle is desirable, but more complicated.
+::: fragment
+These first three principles are crucial! The following is principle is desirable, but more complicated.
+:::
 
 ## Principles of experimental design (cont.)
 
-4.  **Blocking**: suppose we know ahead of time that there is/are variable(s) than could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.
+4.  **Blocking**: suppose we know ahead of time that there is/are variable(s) that could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.
     -   Helps to decrease unexplained variability by accounting for **nuisance variables**: variables that affect the response variable but are not of interest for answering the scientific question
     -   Can lead to greater interpretation of results
 
@@ -229,9 +255,13 @@ We now know *how* to collect data, but now we turn to examining *what* *kind* of
 
 ## Observational studies
 
--   Studies where no treatment is explictly applied
+-   Studies where no treatment is explicitly applied
 
 -   Nothing is manipulated; researchers simply record/observe without intervening
+
+    -   ::: discuss
+        How would we turn the quiz/exam score example into an observational study?
+        :::
 
 -   Typically cannot obtain causal conclusions using data from observational studies
 

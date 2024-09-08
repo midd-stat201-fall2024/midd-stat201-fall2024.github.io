@@ -28,7 +28,12 @@ beyonce <- read_csv("data/beyonce_lyrics.csv")
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
-## Syllabus and website
+## Important course information
+
+-   Professor Becky Tang
+
+    -   Office: Warner 214
+    -   Email: btang\@middlebury.edu
 
 -   Course website: <https://midd-stat201-fall2024.github.io/>
 
@@ -41,7 +46,11 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   By the end of this course, you will:
 
+    -   Produce and interpret graphical displays and numerical summaries of data
+    -   Have developed confidence and some proficiency in coding in `R` (and in particular, the tidyverse syntax)
+    -   Better understand the central role of randomness in designing studies and making conclusions
     -   Hopefully want to pursue another Statistics or Mathematics course!
+    -   And much more...
 
 ## Necessary background
 
@@ -55,7 +64,7 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Takes notes! Each day's slides will be made available on the course website by 10pm the night before. I recommend either:
 
-    -   Printing out the PDF version of slides to write notes on in during class
+    -   Printing out the PDF version of slides to write notes on during class
 
         -   I recommend 4 or 6 slides per page (demo)
 
@@ -79,6 +88,7 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Resist the temptation of using ChatGPT or other generative AI tools
 
+````{=html}
 <!--
 ## GitHub username
 
@@ -133,3 +143,4 @@ The average length of a word in Beyoncé's first four alums is `r round(avg_leng
 
 -   Let's collect some data!
 -->
+````

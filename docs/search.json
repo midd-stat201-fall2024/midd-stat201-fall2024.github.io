@@ -18,7 +18,7 @@
     "href": "index.html#course-details",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Course details",
-    "text": "Course details\nInstructor: Prof. Becky Tang (she/her)\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2-4pm, Friday 1-2pm\n\nTA hours in Quantitative Center in Armstrong Library:\n\nTA Claire Yang: Sunday 7-9, Thursday 7-9\nTA Justin Corke: Thursday 7-9\n\nThe syllabus (most recent update: 9/2/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website."
+    "text": "Course details\nInstructor: Prof. Becky Tang (she/her)\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2-4pm, Friday 9-10am\n\nTA hours in Quantitative Center in Armstrong Library:\n\nTA Claire Yang: Sunday 7-9, Thursday 7-9\nTA Justin Corke: Thursday 7-9\n\nThe syllabus (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website."
   },
   {
     "objectID": "schedule.html",
@@ -32,7 +32,7 @@
     "href": "slides/slides-01-study-design.html#population-and-samples",
     "title": "Study design",
     "section": "Population and samples",
-    "text": "Population and samples\n\nData do not come from thin air! Data have to be collected in some way.\nThis usually takes the form of sampling a subset of individuals from a target group of interest\n\nThe target group of interest is called the population\nThe subset of individuals from whom we actually collect data is the sample\n\n\nWhat are the target populations in the following research questions? What would an individual case be?\n\nWhat is the average height of trees on Middlebury College campus?\nWhat proportion of current Middlebury professors attended a liberal arts college?\nOver the last five years, what is the average time to complete a degree for Middlebury College students?"
+    "text": "Population and samples\n\nData do not come from thin air! Data have to be collected in some way.\nThis usually takes the form of sampling a subset of individuals from a target group of interest\n\nThe target group of interest is called the population\nThe subset of individuals from whom we actually collect data is the sample\n\nA case is a fancy term for saying one observational unit\n\nWhat are the target populations in the following research questions? What would an individual case be?\n\nWhat is the average height of trees on Middlebury College campus?\nWhat proportion of current Middlebury professors attended a liberal arts college?\nOver the last five years, what is the average time to complete a degree for Middlebury College students?"
   },
   {
     "objectID": "slides/slides-01-study-design.html#example",
@@ -67,7 +67,7 @@
     "href": "slides/slides-01-study-design.html#bias-in-a-sample",
     "title": "Study design",
     "section": "Bias in a sample",
-    "text": "Bias in a sample\n\nBias in a sample can arise due to many causes. Here are a few:\n\nConvenience sampling bias: sampling is done in a way that is convenient to the researcher\nResponse bias:\nSelf-selection and/or non-response bias:\nExclusion or undercoverage bias:\nSurvivorship bias:\n\nRandomly sampling from the population can help reduce bias in our sample.\nDepending on the population, we might need to use different random sampling methods to ensure the sample is representative."
+    "text": "Bias in a sample\n\nBias in a sample can arise due to many causes. Here are a few:\n\nConvenience sampling bias\nResponse bias\nSelf-selection and/or non-response bias\nExclusion or undercoverage bias\nSurvivorship bias\n\nRandomly sampling from the population can help reduce bias in our sample.\nDepending on the population, we might need to use different random sampling methods to ensure the sample is representative."
   },
   {
     "objectID": "slides/slides-01-study-design.html#simple-random-sampling",
@@ -81,14 +81,14 @@
     "href": "slides/slides-01-study-design.html#stratified-sampling",
     "title": "Study design",
     "section": "Stratified sampling",
-    "text": "Stratified sampling\n\nAssume that the population is/can be broken up into several different, distinct sub-populations or strata\n\nThe division should “make sense”\n\nRather than randomly sampling from the population as whole, we take a random sample from each stratum\n\nHow many from each stratum? Typically use a sampling fraction that is proportional to entire population!\nE.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample \\(n = 10\\) trees total, we should randomly sample 8 deciduous and 2 coniferous trees\n\nMay be useful to ensure we have samples from rare groups, and helps to improve precision of the sample"
+    "text": "Stratified sampling\n\nAssume that the population is/can be broken up into several different, distinct sub-populations or strata\n\nThe division should “make sense”\n\nRather than randomly sampling from the population as whole, we take a random sample from each stratum\n\nHow many from each stratum? Typically use a sampling fraction that is proportional to entire population!\nE.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample \\(n = 10\\) trees total, we should randomly sample ___ deciduous and ___ coniferous trees\n\nMay be useful to ensure we have samples from rare groups, and helps to improve precision of the sample"
   },
   {
     "objectID": "slides/slides-01-study-design.html#cluster-sampling",
     "href": "slides/slides-01-study-design.html#cluster-sampling",
     "title": "Study design",
     "section": "Cluster sampling",
-    "text": "Cluster sampling\n\nDivide total population into \\(M\\) distinct groups or clusters of roughly equal size\nPerform a simple random sample on the \\(M\\) clusters, than sample all individuals within each of the randomly select clusters\n\nDiscuss the following:\n\nWould you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?\nWould you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?\nWhat is the difference between stratified and cluster sampling?"
+    "text": "Cluster sampling\n\nDivide total population into \\(M\\) distinct groups or clusters of roughly equal size\nPerform a simple random sample on the \\(M\\) clusters, than sample all individuals within each of the randomly selected clusters\n\nDiscuss the following:\n\nWould you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?\nWould you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?\nWhat is the difference between stratified and cluster sampling?"
   },
   {
     "objectID": "slides/slides-01-study-design.html#multistage-sampling",
@@ -102,28 +102,28 @@
     "href": "slides/slides-01-study-design.html#experimental-design",
     "title": "Study design",
     "section": "Experimental design",
-    "text": "Experimental design\n\nExperiments are studies where the researcher assigns treatments to cases\n\nNote: experiments are often conducted in medical settings, hence the word “treatment”.\n\nWhen the researcher randomly assigns the treatments, we have a randomized experiment\n\nRandomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable\nNote: random assignment \\(\\ne\\) random sampling"
+    "text": "Experimental design\n\nExperiments are studies where the researcher assigns treatments to cases\n\nNote: experiments are often conducted in medical settings, hence the word “treatment”\n\nAre treatments considered explanatory or response variables?\n\n\nWhen the researcher randomly assigns the treatments, we have a randomized experiment\n\nRandomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable\nNote: random assignment \\(\\ne\\) random sampling"
   },
   {
     "objectID": "slides/slides-01-study-design.html#confounding-variables",
     "href": "slides/slides-01-study-design.html#confounding-variables",
     "title": "Study design",
     "section": "Confounding variables",
-    "text": "Confounding variables\n\nUnderstanding a causal relationship is made difficult by confounding variables: variables that are associated with both the explanatory and response variable of interest\n\nBecause it is associated with both variables, if not properly accounted for, it prevents the study from concluding that the explanatory variable caused the response variable\n\nExample: consider a study that seeks to examine the effect of coffee consumption on heart disease.\n\nFrom each person, we only collect information on the average amount of coffee they consume per day and whether or not they have heart disease.\nWe find a positive association: more coffee \\(\\rightarrow\\) higher risk of heart disease\nPossible confounder: smoker status. Smokers tend to drink more coffee and tend to have higher rates of heart disease than non-smokers.\nSo the increase in heart disease may be due to smoker status rather than caffeine intake"
+    "text": "Confounding variables\n\nUnderstanding a causal relationship is made difficult by confounding variables: variables that are associated with both the explanatory and response variable of interest\n\n\nConfounders are bad!! Why?\n\n\nExample: consider a study that seeks to examine the effect of coffee consumption on heart disease.\n\nFrom each person, we only collect information on the average amount of coffee they consume per day and whether or not they have heart disease.\nWe find a positive association: more coffee \\(\\rightarrow\\) higher risk of heart disease\nPossible confounder: smoker status. Smokers tend to drink more coffee and tend to have higher rates of heart disease than non-smokers.\nSo the increase in heart disease may be due to smoker status rather than caffeine intake"
   },
   {
     "objectID": "slides/slides-01-study-design.html#principles-of-experimental-design",
     "href": "slides/slides-01-study-design.html#principles-of-experimental-design",
     "title": "Study design",
     "section": "Principles of experimental design",
-    "text": "Principles of experimental design\n\nRandomization: randomly assign patients to treatments\n\nHelps account for variables that cannot be controlled and possible confounding variables\n\nControlling for differences in the treatment: ensure that everyone follows the same protocol exactly\nReplication: the more cases we observe, the more confidence we have in the effect of the explanatory on the response\n\nAchieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once\n\n\n\nThese first three principles are crucial! The following is principle is desirable, but more complicated."
+    "text": "Principles of experimental design\nRunning example: quizzes and final exam\n\nRandomization: randomly assign patients to treatments\n\nHelps account for variables that cannot be controlled and possible confounding variables\n\nControlling for differences in the treatment: ensure that everyone follows the same protocol exactly\nReplication: the more cases we observe, the more confidence we have in the effect of the explanatory on the response\n\nAchieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once\n\n\n\nThese first three principles are crucial! The following is principle is desirable, but more complicated."
   },
   {
     "objectID": "slides/slides-01-study-design.html#principles-of-experimental-design-cont.",
     "href": "slides/slides-01-study-design.html#principles-of-experimental-design-cont.",
     "title": "Study design",
     "section": "Principles of experimental design (cont.)",
-    "text": "Principles of experimental design (cont.)\n\nBlocking: suppose we know ahead of time that there is/are variable(s) than could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.\n\nHelps to decrease unexplained variability by accounting for nuisance variables: variables that affect the response variable but are not of interest for answering the scientific question\nCan lead to greater interpretation of results"
+    "text": "Principles of experimental design (cont.)\n\nBlocking: suppose we know ahead of time that there is/are variable(s) that could influence the response besides just the explanatory. We assign patients to their respective blocks, and than randomly assign treatments within blocks.\n\nHelps to decrease unexplained variability by accounting for nuisance variables: variables that affect the response variable but are not of interest for answering the scientific question\nCan lead to greater interpretation of results"
   },
   {
     "objectID": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments",
@@ -151,7 +151,7 @@
     "href": "slides/slides-01-study-design.html#observational-studies",
     "title": "Study design",
     "section": "Observational studies",
-    "text": "Observational studies\n\nStudies where no treatment is explictly applied\nNothing is manipulated; researchers simply record/observe without intervening\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!"
+    "text": "Observational studies\n\nStudies where no treatment is explicitly applied\nNothing is manipulated; researchers simply record/observe without intervening\n\n\nHow would we turn the quiz/exam score example into an observational study?\n\n\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!"
   },
   {
     "objectID": "practice/practice-01-study-design.html",
@@ -1418,7 +1418,7 @@
     "href": "slides/slides-00-welcome.html#what-is-this-course-about",
     "title": "Welcome!",
     "section": "What is this course about?",
-    "text": "What is this course about?\n\nWhat is statistics? What is data science?\nBy the end of this course, you will:\n\nHopefully want to pursue another Statistics or Mathematics course!"
+    "text": "What is this course about?\n\nWhat is statistics? What is data science?\nBy the end of this course, you will:\n\nProduce and interpret graphical displays and numerical summaries of data\nHave developed confidence and some proficiency in coding in R (and in particular, the tidyverse syntax)\nBetter understand the central role of randomness in designing studies and making conclusions\nHopefully want to pursue another Statistics or Mathematics course!\nAnd much more…"
   },
   {
     "objectID": "slides/slides-00-welcome.html#necessary-background",
@@ -1432,7 +1432,7 @@
     "href": "slides/slides-00-welcome.html#recommendations",
     "title": "Welcome!",
     "section": "Recommendations",
-    "text": "Recommendations\n\nTakes notes! Each day’s slides will be made available on the course website by 10pm the night before. I recommend either:\n\nPrinting out the PDF version of slides to write notes on in during class\n\nI recommend 4 or 6 slides per page (demo)\n\nDownloading PDF of slides to iPad/tablet/laptop and write notes on then using device\nTaking supplemental notes on paper/device\n\nRe–visit notes within 24 hours of class"
+    "text": "Recommendations\n\nTakes notes! Each day’s slides will be made available on the course website by 10pm the night before. I recommend either:\n\nPrinting out the PDF version of slides to write notes on during class\n\nI recommend 4 or 6 slides per page (demo)\n\nDownloading PDF of slides to iPad/tablet/laptop and write notes on then using device\nTaking supplemental notes on paper/device\n\nRe–visit notes within 24 hours of class"
   },
   {
     "objectID": "slides/slides-00-welcome.html#recommendations-cont.",
@@ -1594,5 +1594,19 @@
     "title": "Intro to R coding practice",
     "section": "",
     "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, write code to load in the openintro package. Then run the code in the code chunk.\n\n\n\n\n\nIn the Console, type in ?cherry to open up the Help file for the cherry data frame. Type into the white space below the units for each of the variables.\n\nAnswer:\n\nRemember that rows in data frames represents observations. How many observations are there in the cherry data frame? Do this two ways: 1) first by using the nrow() function and passing in the name of data frame of interest. And 2) confirming by looking at the cherry Help file.\n\n\n\n\nAnswer:\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, access the height variable from the cherry data frame. Then answer the following: what type of object does the code output?\n\n\n\n\nAnswer:\n\nIn the code chunk below, try writing code that outputs the height of trees in the dataset in inches.\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#explanatory-vs.-response",
+    "href": "slides/slides-01-study-design.html#explanatory-vs.-response",
+    "title": "Study design",
+    "section": "Explanatory vs. Response",
+    "text": "Explanatory vs. Response\n\nLots of scientific questions revolve around asking how \\(x\\) relates to \\(y\\)\nIf \\(y\\) is the primary variable of interest, i.e. the variable whose behavior we want to understand, it is called the response variable\nIf we try to understand how changing \\(x\\) affects \\(y\\), then \\(x\\) is called the explanatory variable\n\nExplanatory variables can often be manipulated/controlled/observed by the researcher ahead of time"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#important-course-information",
+    "href": "slides/slides-00-welcome.html#important-course-information",
+    "title": "Welcome!",
+    "section": "Important course information",
+    "text": "Important course information\n\nProfessor Becky Tang\n\nOffice: Warner 214\nEmail: btang@middlebury.edu\n\nCourse website: https://midd-stat201-fall2024.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website"
   }
 ]
