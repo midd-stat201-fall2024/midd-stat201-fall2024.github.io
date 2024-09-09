@@ -88,6 +88,31 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Resist the temptation of using ChatGPT or other generative AI tools
 
+## Example
+
+Counties of the U.S. within the **bottom 10%** of death rates for kidney cancer for white males, 1980-1989.
+
+![](figs/00-kidney_lowest.png){fig-align="center" width="574"}
+
+::: discuss
+What do you notice? What might be the explanation?
+:::
+
+## Example (cont.)
+
+
+Counties of the U.S. within the **top 10%** of death rates for kidney cancer for white males, 1980-1989.
+
+![](figs/00-kidney_highest.png){fig-align="center" width="510"}
+
+## Example (cont.)
+
+What's going on? Let's do some digging...
+
+-   Death rate for kidney cancer: <https://seer.cancer.gov/statfacts/html/kidrp.html>
+
+-   County sizes: <https://en.wikipedia.org/wiki/County_statistics_of_the_United_States>
+
 ````{=html}
 <!--
 ## GitHub username

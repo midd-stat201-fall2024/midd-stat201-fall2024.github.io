@@ -1608,5 +1608,26 @@
     "title": "Welcome!",
     "section": "Important course information",
     "text": "Important course information\n\nProfessor Becky Tang\n\nOffice: Warner 214\nEmail: btang@middlebury.edu\n\nCourse website: https://midd-stat201-fall2024.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#example",
+    "href": "slides/slides-00-welcome.html#example",
+    "title": "Welcome!",
+    "section": "Example",
+    "text": "Example\nCounties of the U.S. within the bottom 10% of death rates for kidney cancer for white males, 1980-1989.\n\n\nWhat do you notice? What might be the explanation?"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#example-cont.",
+    "href": "slides/slides-00-welcome.html#example-cont.",
+    "title": "Welcome!",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\nCounties of the U.S. within the top 10% of death rates for kidney cancer for white males, 1980-1989."
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#example-cont.-1",
+    "href": "slides/slides-00-welcome.html#example-cont.-1",
+    "title": "Welcome!",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\nWhat’s going on? Let’s do some digging…\n\nDeath rate for kidney cancer: https://seer.cancer.gov/statfacts/html/kidrp.html\nCounty sizes: https://en.wikipedia.org/wiki/County_statistics_of_the_United_States"
   }
 ]
