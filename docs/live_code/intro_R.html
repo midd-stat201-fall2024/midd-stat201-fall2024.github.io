@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name here">
-<meta name="dcterms.date" content="2024-09-10">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Introduction to R and R Markdown</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Intro to R and R Markdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -65,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,32 +172,50 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r-as-a-calculator" id="toc-r-as-a-calculator" class="nav-link active" data-scroll-target="#r-as-a-calculator">R as a calculator</a></li>
+  <li><a href="#programming-in-r-markdown" id="toc-programming-in-r-markdown" class="nav-link" data-scroll-target="#programming-in-r-markdown">Programming in R Markdown</a>
+  <ul class="collapse">
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#r-markdown-basics" id="toc-r-markdown-basics" class="nav-link" data-scroll-target="#r-markdown-basics">R Markdown basics</a></li>
+  <li><a href="#saving-progress" id="toc-saving-progress" class="nav-link" data-scroll-target="#saving-progress">Saving progress</a>
+  <ul class="collapse">
+  <li><a href="#knitting" id="toc-knitting" class="nav-link" data-scroll-target="#knitting">Knitting</a></li>
+  </ul></li>
+  <li><a href="#coding-in-r" id="toc-coding-in-r" class="nav-link" data-scroll-target="#coding-in-r">Coding in R</a>
+  <ul class="collapse">
+  <li><a href="#object-types" id="toc-object-types" class="nav-link" data-scroll-target="#object-types">Object types</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#storing-objects-as-variables" id="toc-storing-objects-as-variables" class="nav-link" data-scroll-target="#storing-objects-as-variables">Storing objects as variables</a></li>
+  </ul></li>
+  <li><a href="#errors-warnings-and-messages" id="toc-errors-warnings-and-messages" class="nav-link" data-scroll-target="#errors-warnings-and-messages">Errors, warnings, and messages</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+  <ul class="collapse">
+  <li><a href="#package-installation" id="toc-package-installation" class="nav-link" data-scroll-target="#package-installation">Package installation</a></li>
+  <li><a href="#package-loading" id="toc-package-loading" class="nav-link" data-scroll-target="#package-loading">Package loading</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#submit-to-canvas" id="toc-submit-to-canvas" class="nav-link" data-scroll-target="#submit-to-canvas">Submit to Canvas</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to R and R Markdown</h1>
+<h1 class="title">Intro to R and R Markdown</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your name here </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 10, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -144,27 +223,72 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="programming-in-r-markdown" class="level1">
+<section id="r-as-a-calculator" class="level1 page-columns page-full">
+<h1>R as a calculator</h1>
+<p>In the <em>Console,</em> type the following code: <code>1 + 1</code>. What happens?</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nothing!</p>
+</div>
+</div>
+</div>
+<p>To <strong>execute/run code</strong> in the Console, we simply press Enter. Try it! What happens?</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Note that spacing doesn’t matter in R code.</p>
+</div></div><p>We can add (+), subtract (-), multiply (*), divide (/), and perform more complicated calculations using <code>R</code>.</p>
+</section>
+<section id="programming-in-r-markdown" class="level1 page-columns page-full">
 <h1>Programming in R Markdown</h1>
 <p>This document that we are working in is called an <strong>R markdown</strong> document. It allows us to seamlessly move between <code>R</code> code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in ____.</p>
-<section id="yaml" class="level2">
+<section id="yaml" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="yaml">YAML</h2>
-<p>At the top of a markdown topic, you’ll see code between two sets of three dashed lines. This is known as a <strong>YAML header</strong>, and it contains the “informational” content of a document (e.g.&nbsp;title, author, date). Change these accordingly for each assignment!</p>
-<p>Go ahead and change your name in the author argument of the YAML.</p>
+<p>At the top of a markdown topic, you’ll see code between two sets of three dashed lines. This is known as a <strong>YAML header</strong>, and it contains the “informational” content of a document (e.g.&nbsp;title, author, date). Change these arguments accordingly for each assignment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/yaml.png" class="img-fluid figure-img" width="312"></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Notice the quotation marks! These are extremely important!</p>
+</div></div><p>Go ahead and change your name in the author argument of the YAML.</p>
 </section>
-<section id="r-markdown-basics" class="level2">
+<section id="r-markdown-basics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="r-markdown-basics">R Markdown basics</h2>
 <p>How do we tell the document which parts correspond to code, and which parts correspond to text?</p>
 <p>In the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right. These backs ticks must be aligned on the same tabulation.</p>
 <p>This defines ______. All of our <code>R</code> code should go into one.</p>
-<div class="cell">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/code_chunk.png" class="img-fluid figure-img" width="388"></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>What happens if we delete a back tick?</p>
+</div></div><div class="cell">
 
 </div>
 <p>In the code chunk above, let’s evaluate <span class="math inline">\(\sqrt{4}\)</span> (the square root of 4). To do this, type the following code: <code>sqrt(4)</code>. Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:</p>
-<ol type="1">
-<li></li>
-<li></li>
-</ol>
+<p>1.</p>
+<p>2.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
 </section>
 <section id="saving-progress" class="level2">
 <h2 class="anchored" data-anchor-id="saving-progress">Saving progress</h2>
@@ -206,6 +330,28 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 
 </div>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>What happened here?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"no"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1"  "no"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <ul>
 <li><p>A ____ object is either <code>TRUE</code> or <code>FALSE</code>. It is also referred to as a boolean.</p></li>
 <li><p><strong>Data frames</strong> are representations of datasets in <code>R</code> where the rows correspond to observations and columns correspond to variables that describe the observations (more on this later).</p></li>
@@ -215,36 +361,97 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="functions">Functions</h3>
 <p>When we calculated <span class="math inline">\(\sqrt{4}\)</span>, we used the code <code>sqrt()</code>. This is an example of a <strong>function</strong>. Functions allow us to automate common tasks in a general way. Functions (just like in math) take in one or more inputs. These inputs are known as _____ or _____. They will almost always return an output. We know a command in <code>R</code> is a function because it has _____.</p>
 <p>It is possible for us to create our own customized functions (you definitely will if you take STAT 218). However, in STAT 201, we will work with pre-provided functions. All pre-provided functions in <code>R</code> are accompanied by a <strong>Help file</strong>. To access the Help file, simply type <code>?</code> followed by the name of the function in the Console. Try opening the Help file for the <code>sqrt()</code> function.</p>
+<p>If I want to obtain the square root of the values 1, 4, 9, and 16, what code can I type?</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>, <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="storing-objects-as-variables" class="level3">
 <h3 class="anchored" data-anchor-id="storing-objects-as-variables">Storing objects as variables</h3>
 <p>Suppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is <span class="math inline">\(\text{edge length}^3\)</span> . We could calculate the area as follows:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
 </div>
 <p>Now suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2.1</span><span class="sc">*</span><span class="fl">2.1</span><span class="sc">*</span><span class="fl">2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.261</code></pre>
+</div>
 </div>
 <p>Then you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code <em>reproducible</em>:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>length <span class="ot">&lt;-</span> <span class="fl">2.2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>length<span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.648</code></pre>
+</div>
 </div>
 <p>What did we do in the above code? We _____ or ______ the value 2.2 into the ______ called <code>length</code> using the keys <code>&lt;-</code>.</p>
 <p>Now make a new R code chunk here. In this new code chunk, make a new object called <code>volume</code> and assign to it an appropriate value. Now let’s knit the document.</p>
+<div class="cell">
+
+</div>
 <p>As you should note: when we assign an object a value, its value is <em>not</em> automatically shown as output. In order to display the output, you must _____.</p>
 </section>
 </section>
-<section id="errors-warnings-and-messages" class="level2">
+<section id="errors-warnings-and-messages" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="errors-warnings-and-messages">Errors, warnings, and messages</h2>
 <p>These are always shown in red text in the Console. Whenever you see them, don’t panic! With practice, you will be able to decipher the messages and de-bug your code with ease.</p>
 <ul>
-<li><p><strong>Errors:</strong> prevent code from executing and documents from knitting. It will be prefaced with “Error in…”. Trying typing in the following code in your Console: <code>1 + a</code>. What happens?</p></li>
+<li><strong>Errors:</strong> prevent code from executing and documents from knitting. It will be prefaced with “Error in…”. Trying typing in the following code in your Console: <code>1 + a</code>. What happens?</li>
+</ul>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'a' not found</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A good reason to knit often is to ensure your code is error-free!</p>
+</div></div><ul>
 <li><p><strong>Warnings</strong>: your code will run with some caveats. It will be prefaced with “Warning:”. We will see examples of this later on.</p></li>
 <li><p><strong>Messages</strong>: messages in red that do not begin with “Error” or “Warning” are simply friendly messages that might provide you more information about the execution of your code.</p></li>
 </ul>
 </section>
-<section id="packages" class="level2">
+<section id="packages" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <p>Packages in <code>R</code> extend the functionality by providing additional functions and data. You can view them as analogous to apps you download from the App Store or Google Play on a cell phone. To use an app on a phone, you have to:</p>
 <ol type="1">
@@ -277,11 +484,36 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>We will install the <code>openintro</code> package together. Now, try installing the <code>tidyverse</code> package on your own!</p>
 </section>
-<section id="package-loading" class="level3">
+<section id="package-loading" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="package-loading">Package loading</h3>
 <p>To use the package we have installed, we use the <code>library()</code> command:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: airports</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: cherryblossom</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: usdata</code></pre>
+</div>
+</div>
 
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This is an example of a function that does not return an output</p>
+</div></div><div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?</p>
+</div>
 </div>
 </section>
 </section>
