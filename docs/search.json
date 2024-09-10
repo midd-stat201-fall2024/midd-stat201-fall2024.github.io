@@ -1656,7 +1656,7 @@
     "href": "slides/slides-01-study-design.html#probability-sampling",
     "title": "Study design",
     "section": "Probability sampling",
-    "text": "Probability sampling\n\nAny sampling method where the selection from the target population is based on random selection/chance\n\nAll subjects in the target population have equal chances of being selected\nRandomly sampling from the population can help reduce bias in our sample\nNo one has discretion about who is included in the sample\n\nExamples include: simple random, stratified, cluster, systematic"
+    "text": "Probability sampling\n\nAny sampling method where the selection from the target population is based on random selection/chance\n\nAll subjects in the target population have equal chances of being selected\nRandomly sampling from the population can help reduce bias in our sample\nNo one has discretion about who is included in the sample\n\nExamples include: simple random, stratified, cluster, systematic\nIf we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population"
   },
   {
     "objectID": "live_code/intro_R.html#yaml",

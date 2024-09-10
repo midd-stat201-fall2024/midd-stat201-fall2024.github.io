@@ -161,6 +161,10 @@ What did we do in the above code? We \_\_\_\_\_ or \_\_\_\_\_\_ the value 2.2 in
 
 Now make a new R code chunk here. In this new code chunk, make a new object called `volume` and assign to it an appropriate value. Now let's knit the document.
 
+```{r}
+
+```
+
 As you should note: when we assign an object a value, its value is *not* automatically shown as output. In order to display the output, you must \_\_\_\_\_.
 
 ## Errors, warnings, and messages

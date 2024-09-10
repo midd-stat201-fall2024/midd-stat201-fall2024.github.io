@@ -21,45 +21,9 @@ Please work on the practice problems in your group. At least one of the followin
     a.  Based on this information, identify each of the following: observation, variable, parameter, and statistic.
     b.  Was this survey a census or (just) a sample? Why?
 
-2.  Time to implement the sampling methods we learned! **Keep track of your work on this problem; we will return to it in the next few classes.**
+2.  Suppose we want to estimate household size, where a *“household”* is defined as people living together in the same dwelling, and sharing living accommodations. If we select students at random at an elementary school and ask them what their family size is, will this be a good measure of household size? Or will our average be biased? If so, will it overestimate or underestimate the true value?
 
-    We have a farmer who grows sunflowers for making sunflower oil. Her field is arranged in a grid pattern, with 12 rows and 12 columns as shown below. Water is important for crops, so irrigation ditches have been installed along the top and bottom of the field. It is expected that plants closer to a water source will perform better than those further away from water.
-
-    The farmer would like to estimate the number of healthy plants in the field, along with a few other characteristics about the sunflowers. It would be unfeasible to conduct a census, so we should choose to sample a subset of the grid cells. Suppose we'd like to sample $n = 12$ grid cells total.
-
-    a.  Using words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using **simple random sampling**. I should be able to read your work and know what to do without any questions! Think about how you will perform the random sampling.
-
-        Then implement the method that you've written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.
-
-        ![](figs/sunflower_field.png){width="214"}
-
-    b.  Using words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using **stratified sampling** where the strata are rows. I should be able to read your work and know what to do without any questions!
-
-        Then implement the method that you've written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.
-
-        ![](figs/sunflower_field.png){width="214"}
-
-    c.  Using words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using **stratified sampling** where the strata are columns. I should be able to read your work and know what to do without any questions!
-
-        Then implement the method that you've written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.
-
-        ![](figs/sunflower_field.png){width="214"}
-
-    d.  Using words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using **cluster sampling** where we have 24 clusters total. I should be able to read your work and know what to do without any questions!
-
-        Then implement the method that you've written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.
-
-        ![](figs/sunflower_field.png){width="214"}
-
-    e.  Using words (sentences or bulleted list are fine) and perhaps labeling the figure below, describe exactly how you would obtain a sample of 12 grid cells using **multistage sampling**. I should be able to read your work and know what to do without any questions!
-
-        Then implement the method that you've written down, and either using the figure below or drawing your own 12x12 field, shade in the squares that correspond to your sample.
-
-        ![](figs/sunflower_field.png){width="214"}
-
-3.  Suppose we want to estimate household size, where a *“household”* is defined as people living together in the same dwelling, and sharing living accommodations. If we select students at random at an elementary school and ask them what their family size is, will this be a good measure of household size? Or will our average be biased? If so, will it overestimate or underestimate the true value?
-
-4.  To assess the effectiveness of taking large doses of vitamin C in reducing the duration of the common cold, researchers recruited 400 healthy volunteers from staff and students at a university. A quarter of the patients were assigned a placebo, and the rest were evenly divided between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset of a cold for the following two days. All tablets had identical appearance and packaging. The nurses who handed the prescribed pills to the patients knew which patient received which treatment, but the researchers assessing the patients when they were sick did not. No statistically discernible differences were observed in any measure of cold duration or severity between the four groups, and the placebo group had the shortest duration of symptoms.
+3.  To assess the effectiveness of taking large doses of vitamin C in reducing the duration of the common cold, researchers recruited 400 healthy volunteers from staff and students at a university. A quarter of the patients were assigned a placebo, and the rest were evenly divided between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset of a cold for the following two days. All tablets had identical appearance and packaging. The nurses who handed the prescribed pills to the patients knew which patient received which treatment, but the researchers assessing the patients when they were sick did not. No statistically discernible differences were observed in any measure of cold duration or severity between the four groups, and the placebo group had the shortest duration of symptoms.
 
     a.  Was this an experiment or an observational study? Why?
     b.  What are the explanatory and response variables in this study?
@@ -67,7 +31,19 @@ Please work on the practice problems in your group. At least one of the followin
     d.  Was this study double-blind?
     e.  Participants are ultimately able to choose whether to use the pills prescribed to them. We might expect that not all of them will adhere and take their pills. Does this introduce a confounding variable to the study? Explain your reasoning.
 
-````{=html}
+4.  Chia seeds have gained reputation as a diet supplement. In one 2009 study, 38 men and 38 women were recruited (i.e. specifically chosen) and then divided randomly into two groups: treatment or control. One group was given 25 grams of chia seeds twice a day to consume, and the other was given a placebo. The seeds and placebo were designed to look the same. The subjects volunteered to be a part of the study. After 12 weeks, the scientists found no statistically discernible difference between the groups in appetite or weight loss.
+
+    a.  What type of study is this?
+
+    b.  What are the experimental and control treatments in this study?
+
+    c.  Has blocking been used in this study? If so, what is the blocking variable?
+
+    d.  Is there any blinding in the study?
+
+    e.  Comment on whether we can make a causal statement, and indicate whether we can generalize the conclusions from this study to the population at large.
+
+```{=html}
 <!--
 1.  We discussed several methods of sampling today. Now consider a new sampling scheme that is commonly used in the social sciences when sampling from a "hidden" population. A scenario might be that we want to conduct a poll among homeless people, but the research team may only have contact details for a few homeless people.
 
@@ -82,4 +58,4 @@ Please work on the practice problems in your group. At least one of the followin
     a.  What are some advantages to this method of sampling?
     b.  What are some disadvantages? Think about statistically and also ethically.
 -->
-````
+```

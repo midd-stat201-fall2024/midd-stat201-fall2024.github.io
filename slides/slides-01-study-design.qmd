@@ -132,6 +132,8 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Examples include: simple random, stratified, cluster, systematic
 
+-   If we don't randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population
+
 ## Simple random sampling (SRS)
 
 -   In a **simple random sample**, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled.
