@@ -216,7 +216,7 @@ There are two ways to install a package:
     1.  Type `install.packages("package name")` into the Console. Note that the quotation marks are necessary.
     2.  Press Return/Enter
 
-We will install the `openintro` package together. Now, try installing the `tidyverse` package on your own!
+We will install the `openintro` package together. Then, try installing the `tidyverse` package on your own!
 
 ### Package loading
 

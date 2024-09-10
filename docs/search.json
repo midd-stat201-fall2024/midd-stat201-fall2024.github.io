@@ -1474,7 +1474,7 @@
     "href": "slides/slides-02-toolkit-installation.html#toolkit",
     "title": "Installation Day",
     "section": "Toolkit",
-    "text": "Toolkit\n\n\nWe will use the programming language R to write code\nHow will interact with the R code? In the integrated development environment called RStudio. Helps us be more productive with R\n\nR is like a car engine, and RStudio is like a car’s dashboard\n\nWe will liberate our programming by keeping code, narrative, and output all in the same interface using R Markdown documents\nWe will want to keep track of the modifications we make to these R Markdowns by using the version control system Git and GitHub"
+    "text": "Toolkit\n\n\nWe will use the programming language R to write code\nHow will interact with the R code? In the integrated development environment called RStudio. Helps us be more productive with R\n\nR is like a car engine, and RStudio is like a car’s dashboard\n\nWe will liberate our programming by keeping code, narrative, and output all in the same interface using R Markdown documents"
   },
   {
     "objectID": "slides/slides-02-toolkit-installation.html#r-markdown",
@@ -1530,7 +1530,7 @@
     "href": "slides/slides-02-toolkit-installation.html#make-a-folder",
     "title": "Installation Day",
     "section": "Make a folder",
-    "text": "Make a folder\n\nMake a folder that is easy to access (e.g. on your Desktop). Call it STAT 201.\n\nAll of your files for this course should go into this folder."
+    "text": "Make a folder\n\nMake a folder that is easy to access (e.g. on your Desktop). Call it STAT 201.\n\nAll of your files for this course should go into this folder!!!!"
   },
   {
     "objectID": "slides/slides-00-welcome.html",
