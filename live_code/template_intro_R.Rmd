@@ -1,27 +1,9 @@
 ---
-title: "Intro to R and R Markdown"
-format:
-  html:
-    toc: true
+title: "Introduction to R and R Markdown"
+author: "Your name here"
+date: "2024-09-10"
+output: html_document
 ---
-
-# R as a calculator
-
-In the *Console,* type the following code: `1 + 1`. What happens?
-
-::: {.callout-tip collapse="true" icon="false"}
-## Answer
-
-Nothing!
-:::
-
-To **execute/run code** in the Console, we simply press Enter. Try it! What happens?
-
-::: column-margin
-Note that spacing doesn't matter in R code.
-:::
-
-We can add (+), subtract (-), multiply (\*), divide (/), and perform more complicated calculations using `R`.
 
 # Programming in R Markdown
 
@@ -29,13 +11,7 @@ This document that we are working in is called an **R markdown** document. It al
 
 ## YAML
 
-At the top of a markdown topic, you'll see code between two sets of three dashed lines. This is known as a **YAML header**, and it contains the "informational" content of a document (e.g. title, author, date). Change these arguments accordingly for each assignment.
-
-![](figs/yaml.png){fig-align="center" width="312"}
-
-::: column-margin
-Notice the quotation marks! These are extremely important!
-:::
+At the top of a markdown topic, you'll see code between two sets of three dashed lines. This is known as a **YAML header**, and it contains the "informational" content of a document (e.g. title, author, date). Change these accordingly for each assignment!
 
 Go ahead and change your name in the author argument of the YAML.
 
@@ -47,25 +23,15 @@ In the following, you see three back ticks followed by a left curly brace, the l
 
 This defines \_\_\_\_\_\_. All of our `R` code should go into one.
 
-![](figs/code_chunk.png){fig-align="center" width="388"}
-
-::: column-margin
-What happens if we delete a back tick?
-:::
-
 ```{r}
 
 ```
 
 In the code chunk above, let's evaluate $\sqrt{4}$ (the square root of 4). To do this, type the following code: `sqrt(4)`. Now evaluating the code in a code chunk is different from evaluating code in the Console. There are two ways to do so:
 
-1\.
+1.  
 
-2\.
-
-```{r}
-sqrt(4)
-```
+2.  
 
 ## Saving progress
 
@@ -110,14 +76,6 @@ Everything in `R` is an object. Here, we provide a non-exhaustive list of common
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-What happened here?
-
-```{r}
-c(1, "no")
-```
-:::
-
 -   A \_\_\_\_ object is either `TRUE` or `FALSE`. It is also referred to as a boolean.
 
 -   **Data frames** are representations of datasets in `R` where the rows correspond to observations and columns correspond to variables that describe the observations (more on this later).
@@ -128,33 +86,24 @@ When we calculated $\sqrt{4}$, we used the code `sqrt()`. This is an example of 
 
 It is possible for us to create our own customized functions (you definitely will if you take STAT 218). However, in STAT 201, we will work with pre-provided functions. All pre-provided functions in `R` are accompanied by a **Help file**. To access the Help file, simply type `?` followed by the name of the function in the Console. Try opening the Help file for the `sqrt()` function.
 
-If I want to obtain the square root of the values 1, 4, 9, and 16, what code can I type?
-
-::: {.callout-tip collapse="true" icon="false"}
-```{r}
-sqrt(c(1,4,9, 16))
-```
-:::
-
 ### Storing objects as variables
 
 Suppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is $\text{edge length}^3$ . We could calculate the area as follows:
 
 ```{r}
-2*2*2
+
 ```
 
 Now suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:
 
 ```{r}
-2.1*2.1*2.1
+
 ```
 
 Then you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code *reproducible*:
 
 ```{r}
-length <- 2.2
-length^3
+
 ```
 
 What did we do in the above code? We \_\_\_\_\_ or \_\_\_\_\_\_ the value 2.2 into the \_\_\_\_\_\_ called `length` using the keys `<-`.
@@ -168,16 +117,6 @@ As you should note: when we assign an object a value, its value is *not* automat
 These are always shown in red text in the Console. Whenever you see them, don't panic! With practice, you will be able to decipher the messages and de-bug your code with ease.
 
 -   **Errors:** prevent code from executing and documents from knitting. It will be prefaced with "Error in...". Trying typing in the following code in your Console: `1 + a`. What happens?
-
-::: {.callout-tip collapse="true" icon="false"}
-```{r error = T}
-1+a
-```
-:::
-
-::: column-margin
-A good reason to knit often is to ensure your code is error-free!
-:::
 
 -   **Warnings**: your code will run with some caveats. It will be prefaced with "Warning: ". We will see examples of this later on.
 
@@ -219,16 +158,8 @@ We will install the `openintro` package together. Now, try installing the `tidyv
 To use the package we have installed, we use the `library()` command:
 
 ```{r}
-library(openintro)
+
 ```
-
-::: column-margin
-This is an example of a function that does not return an output
-:::
-
-::: {.callout-tip icon="false"}
-You may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?
-:::
 
 # Submit to Canvas
 

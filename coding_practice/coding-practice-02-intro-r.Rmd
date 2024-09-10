@@ -1,7 +1,7 @@
 ---
 title: "Intro to R coding practice"
 author: "Your name here"
-date: "2024-09-13"
+date: "Due: 9/12/2024 at 11:59pm"
 output: html_document
 ---
 
@@ -38,6 +38,5 @@ output: html_document
 ```{r}
 
 ```
-
 
 Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

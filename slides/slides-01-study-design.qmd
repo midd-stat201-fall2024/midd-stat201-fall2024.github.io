@@ -26,6 +26,8 @@ library(tidyverse)
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
+-   Please bring your laptops tomorrow! We will be installing R and RStudio!
+
 # Key terminology
 
 ## Population and samples
@@ -37,10 +39,10 @@ plot_theme <- theme(text = element_text(size = 16))
     -   The target group of interest is called the **population**
     -   The subset of individuals from whom we actually collect data is the **sample**
 
--   A **case** is a fancy term for saying one observational unit
+-   A **case** is a fancy term for saying one observational *unit*
 
 -   ::: discuss
-    What are the target populations in the following research questions? What would an individual case be?
+    What are the target populations in the following research questions? What would an individual case/unit be?
 
     1.  What is the average height of trees on Middlebury College campus?
 
@@ -85,19 +87,56 @@ plot_theme <- theme(text = element_text(size = 16))
 
 -   Bias in a sample can arise due to many causes. Here are a few:
     -   Convenience sampling bias
+    -   Selection bias: systematic tendency in procedure that causes some members of population to be less likely to be included than others
+    -   Exclusion/undercoverage bias
+    -   Non-response bias
     -   Response bias
-    -   Self-selection and/or non-response bias
-    -   Exclusion or undercoverage bias
-    -   Survivorship bias
--   **Randomly sampling** from the population can help reduce bias in our sample.
--   Depending on the population, we might need to use different random sampling methods to ensure the sample is representative.
 
-## Simple random sampling
+## Example: *Literary Digest* poll
 
--   The most intuitive and basic form of random sampling!
+-   1936 was an election year in the United States. Franklin D. Roosevelt (a Democrat) was completing his first term in office as president.
 
--   Each individual is chosen entirely by chance from the population, each member of the population has an equal chance of being sampled.
+-   Republican candidate Alfred Landon of Kansas was his competitor
 
+-   *Literary Digest* magazine conducted a polling survey, which received 2.4 million respondents (largest number of people every replying to a poll at that time)
+
+    -   Prediction: overwhelming victory for Landon (predicted FDR would only get **43%** of popular vote)
+
+-   Actual result: FDR won by a landslide! (**62%** to 38%)
+
+-   What happened? Selection and non-response bias
+
+::: notes
+-   Selection bias: Digest mailed questionnaires to 10 million people. Where did they get the address form? Telephone books and club membership lists –\> screened out the poor (only about 25% of households had phones)
+
+    -   This wouldn't necessarily be bias, EXCEPT for the fact that poor people overwhelmingly favored FDR and the rich favored Landon
+
+-   Non-response bias: lots of people didn't respond to survey (\~75%)
+
+    -   Once again, wouldn't matter if there wasn't a difference in the opinions of respondents vs non-respondents. But among the 20% who responded, over half favored Landon
+
+    -   Non-respondents can be very different from respondents. When there is high non-response rate, look for non-response bias
+
+-   Lesson: not all samples that were done poorly are necessarily biased, but we should always ask how the sample was conducted! Also, when a selection procedure is biased, a large sample does not help; this just replicates the mistake on a larger scale!
+:::
+
+## Probability sampling
+
+-   Any sampling method where the selection from the target population is based on random selection/chance
+
+    -   All subjects in the target population have equal chances of being selected
+
+    -   Randomly sampling from the population can help reduce bias in our sample
+
+    -   No one has discretion about who is included in the sample
+
+-   Examples include: simple random, stratified, cluster, systematic
+
+## Simple random sampling (SRS)
+
+-   In a **simple random sample**, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled.
+
+    -   Typically sampling *without* replacement
     -   Knowing that an individual was sampled does not provide useful information about which other cases are included
     -   Any given fixed-size subset of the population is equally likely to be chosen.
 
@@ -107,7 +146,13 @@ plot_theme <- theme(text = element_text(size = 16))
     How might I obtain a sample random sample of 25 professors?
     :::
 
+::: notes
+Requires us to list all of the units in the target/survey population --\> May be unrealistic!
+:::
+
 ## Stratified sampling
+
+-   Depending on the population, we might need to use different random sampling methods to ensure the sample is representative.
 
 -   Assume that the population is/can be broken up into several different, distinct sub-populations or **strata**
 
@@ -119,7 +164,15 @@ plot_theme <- theme(text = element_text(size = 16))
 
     -   E.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample $n = 10$ trees total, we should *randomly* sample \_\_\_ deciduous and \_\_\_ coniferous trees
 
+-   What are some pros/cons?
+
+::: notes
 -   May be useful to ensure we have samples from rare groups, and helps to improve precision of the sample
+
+-   Most useful when stratifying variables are simple to work with, easy to observe, closely related to topic of survey
+
+-   Can be expensive to travel –\> motivates the next type
+:::
 
 ## Cluster sampling
 
@@ -137,11 +190,25 @@ plot_theme <- theme(text = element_text(size = 16))
     -   What is the difference between stratified and cluster sampling?
     :::
 
-## Multistage sampling
+::: notes
+-   Creates pockets of sampled units –\> reducing costs. Also useful when we cannot obtain a list of ALL units in the population, but can easily obtain a list of all units within a cluster
 
--   Builds on the cluster sampling method, but rather than sampling all individuals within the selected clusters, only collect a random sample within each selected cluster
+-   Less efficient that SRS –\> better to survey large number of small clusters than vice versa
+
+    -   Neighboring units tend to be more similar –\> sampling one being cluster would not represent a whole spectrum of variation present in the entire population
+
+-   Difficult to control final sample size. If you want a particular size n (e.g. 100), the other two methods are easier
+:::
+
+## Multistage cluster sampling
+
+-   Builds on the cluster sampling method, but rather than sampling all individuals within the selected clusters, only collect a simple random sample within each selected cluster
+
+    -   Can make more stages/layers if appropriate!
 
 -   Though seemingly more complicated, why might we prefer multistage sampling over cluster sampling?
+
+-   How might we devise a multistage cluster sample for Literary Digest?
 
 # Experiments vs. Observational studies
 
@@ -149,6 +216,10 @@ We now know *how* to collect data, but now we turn to examining *what* *kind* of
 
 ::: discuss
 What is a variable?
+:::
+
+::: notes
+Variables in math represent a quantity that can change; not fixed. For us, it's the same idea! A variable is a characteristic/number/quantity that can be measured or counted and can take different values
 :::
 
 ## Explanatory vs. Response
@@ -194,6 +265,10 @@ What is a variable?
     -   Possible confounder: smoker status. Smokers [tend to drink more coffee](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4879503/#:~:text=Cigarette%20smoking%20is%20associated%20with,of%20coffee%20per%20day%202.) and tend to have [higher rates of heart disease](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7399440/) than non-smokers.
 
     -   So the increase in heart disease may be due to smoker status rather than caffeine intake
+
+::: notes
+Confounders prevent us from attributing the cause to the (desired) explanatory variable!
+:::
 
 ## Principles of experimental design
 

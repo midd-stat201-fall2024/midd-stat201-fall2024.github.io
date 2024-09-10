@@ -132,4 +132,8 @@ Please be patient! This process may be time-consuming and stressful, but it is n
 
 ## Make a folder
 
--   Make a folder that is easy to access (e.g. on your Desktop). Call it **STAT 201**. All of your files for this course should go into this folder.
+-   Make a folder that is easy to access (e.g. on your Desktop). Call it **STAT 201**.
+
+-   ::: {style="color: maroon"}
+    All of your files for this course should go into this folder.
+    :::
