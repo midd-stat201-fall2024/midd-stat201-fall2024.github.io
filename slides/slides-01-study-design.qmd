@@ -71,6 +71,10 @@ plot_theme <- theme(text = element_text(size = 16))
 
 # Sampling from a population
 
+::: {.notes}
+Ask class: do you like statistics? Expect: response, non-response, and selection bias due to convenience sampling
+:::
+
 ## A "good" sample
 
 -   The way we sample data from a population can directly influence the quality of that sample.
@@ -85,12 +89,23 @@ plot_theme <- theme(text = element_text(size = 16))
 
 ## Bias in a sample
 
--   Bias in a sample can arise due to many causes. Here are a few:
-    -   Convenience sampling bias
-    -   Selection bias: systematic tendency in procedure that causes some members of population to be less likely to be included than others
-    -   Exclusion/undercoverage bias
-    -   Non-response bias
-    -   Response bias
+Bias in a sample can arise due to many causes. Here are a few:
+
+-   Selection bias
+    -   Often arises when convenience sample is taken
+-   Exclusion/undercoverage bias
+-   Non-response bias
+-   Response bias
+
+::: notes
+-   Selection bias: systematic tendency in procedure that causes some members of population to be more likely to be included than others
+
+-   Undercoverage bias: part of population is excluded from sample -\> not representative
+
+-   Non-response bias: bias introduced when people who don't respond differ for some reason that affects the target quantity of interest
+
+-   Response bias: systematic favoring of certain outcomes that occurs when people don't answer truthfully (lying or not being truthful)
+:::
 
 ## Example: *Literary Digest* poll
 
@@ -125,22 +140,25 @@ plot_theme <- theme(text = element_text(size = 16))
 -   Any sampling method where the selection from the target population is based on random selection/chance
 
     -   All subjects in the target population have equal chances of being selected
-
-    -   Randomly sampling from the population can help reduce bias in our sample
-
     -   No one has discretion about who is included in the sample
+
+-   Randomly sampling from the population can help reduce bias in our sample
+
+    -   If we don't randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population
 
 -   Examples include: simple random, stratified, cluster, systematic
 
--   If we don't randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population
-
 ## Simple random sampling (SRS)
 
--   In a **simple random sample**, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled.
+-   In a **simple random sample**, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled
 
     -   Typically sampling *without* replacement
+
     -   Knowing that an individual was sampled does not provide useful information about which other cases are included
-    -   Any given fixed-size subset of the population is equally likely to be chosen.
+
+    -   ::: {style="color: maroon"}
+        Any given fixed-size subset of the population is equally likely to be chosen
+        :::
 
 -   ::: discuss
     Consider again the research question: What proportion of current Middlebury professors attended a liberal arts college?
@@ -236,7 +254,7 @@ Variables in math represent a quantity that can change; not fixed. For us, it's 
 
 ## Experimental design
 
--   **Experiments** are studies where the researcher assigns treatments to cases
+-   **Experiments** are studies where the researcher *assigns* treatments to cases
 
     -   Note: experiments are often conducted in medical settings, hence the word "treatment"
 
@@ -249,6 +267,10 @@ Variables in math represent a quantity that can change; not fixed. For us, it's 
     -   Randomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable
 
     -   Note: random assignment $\ne$ random sampling
+
+::: notes
+Running example: quizzes and final exam. Want to know if having quizzes throughout semester boosts performance on final exam. Randomly assign half of class to do quizzes, and the other half to not. Then compare their final exam scores.
+:::
 
 ## Confounding variables
 
@@ -273,8 +295,6 @@ Confounders prevent us from attributing the cause to the (desired) explanatory v
 :::
 
 ## Principles of experimental design
-
-Running example: quizzes and final exam
 
 1.  **Randomization**: randomly assign patients to treatments
 
@@ -336,12 +356,12 @@ These first three principles are crucial! The following is principle is desirabl
 
 -   Nothing is manipulated; researchers simply record/observe without intervening
 
-    -   ::: discuss
-        How would we turn the quiz/exam score example into an observational study?
-        :::
-
 -   Typically cannot obtain causal conclusions using data from observational studies
 
     -   There are too many confounding variables at play in observational studies
 
 -   But we can use these studies to identify associations or form hypotheses for future experiments!
+
+::: notes
+Quiz/exam example could be an observational study if we gave students the choice to do an optional quiz.
+:::

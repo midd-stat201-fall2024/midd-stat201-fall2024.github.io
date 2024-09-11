@@ -394,7 +394,19 @@
 <section>
 <section id="sampling-from-a-population" class="title-slide slide level1 center">
 <h1>Sampling from a population</h1>
-
+<aside class="notes">
+<p>Ask class: do you like statistics? Expect: response, non-response, and selection bias due to convenience sampling</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="a-good-sample" class="slide level2">
 <h2>A “good” sample</h2>
@@ -412,16 +424,34 @@
 </section>
 <section id="bias-in-a-sample" class="slide level2">
 <h2>Bias in a sample</h2>
+<p>Bias in a sample can arise due to many causes. Here are a few:</p>
 <ul>
-<li class="fragment">Bias in a sample can arise due to many causes. Here are a few:
+<li class="fragment">Selection bias
 <ul>
-<li class="fragment">Convenience sampling bias</li>
-<li class="fragment">Selection bias: systematic tendency in procedure that causes some members of population to be less likely to be included than others</li>
+<li class="fragment">Often arises when convenience sample is taken</li>
+</ul></li>
 <li class="fragment">Exclusion/undercoverage bias</li>
 <li class="fragment">Non-response bias</li>
 <li class="fragment">Response bias</li>
-</ul></li>
 </ul>
+<aside class="notes">
+<ul>
+<li><p>Selection bias: systematic tendency in procedure that causes some members of population to be more likely to be included than others</p></li>
+<li><p>Undercoverage bias: part of population is excluded from sample -&gt; not representative</p></li>
+<li><p>Non-response bias: bias introduced when people who don’t respond differ for some reason that affects the target quantity of interest</p></li>
+<li><p>Response bias: systematic favoring of certain outcomes that occurs when people don’t answer truthfully (lying or not being truthful)</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="example-literary-digest-poll" class="slide level2">
 <h2>Example: <em>Literary Digest</em> poll</h2>
@@ -465,22 +495,26 @@
 <ul>
 <li class="fragment"><p>Any sampling method where the selection from the target population is based on random selection/chance</p>
 <ul>
-<li class="fragment"><p>All subjects in the target population have equal chances of being selected</p></li>
-<li class="fragment"><p>Randomly sampling from the population can help reduce bias in our sample</p></li>
-<li class="fragment"><p>No one has discretion about who is included in the sample</p></li>
+<li class="fragment">All subjects in the target population have equal chances of being selected</li>
+<li class="fragment">No one has discretion about who is included in the sample</li>
+</ul></li>
+<li class="fragment"><p>Randomly sampling from the population can help reduce bias in our sample</p>
+<ul>
+<li class="fragment">If we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population</li>
 </ul></li>
 <li class="fragment"><p>Examples include: simple random, stratified, cluster, systematic</p></li>
-<li class="fragment"><p>If we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population</p></li>
 </ul>
 </section>
 <section id="simple-random-sampling-srs" class="slide level2">
 <h2>Simple random sampling (SRS)</h2>
 <ul>
-<li class="fragment"><p>In a <strong>simple random sample</strong>, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled.</p>
+<li class="fragment"><p>In a <strong>simple random sample</strong>, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled</p>
 <ul>
-<li class="fragment">Typically sampling <em>without</em> replacement</li>
-<li class="fragment">Knowing that an individual was sampled does not provide useful information about which other cases are included</li>
-<li class="fragment">Any given fixed-size subset of the population is equally likely to be chosen.</li>
+<li class="fragment"><p>Typically sampling <em>without</em> replacement</p></li>
+<li class="fragment"><p>Knowing that an individual was sampled does not provide useful information about which other cases are included</p></li>
+<li class="fragment"><div style="color: maroon">
+<p>Any given fixed-size subset of the population is equally likely to be chosen</p>
+</div></li>
 </ul></li>
 <li class="fragment"><div class="discuss">
 <p>Consider again the research question: What proportion of current Middlebury professors attended a liberal arts college?</p>
@@ -615,7 +649,7 @@
 <section id="experimental-design" class="slide level2">
 <h2>Experimental design</h2>
 <ul>
-<li class="fragment"><p><strong>Experiments</strong> are studies where the researcher assigns treatments to cases</p>
+<li class="fragment"><p><strong>Experiments</strong> are studies where the researcher <em>assigns</em> treatments to cases</p>
 <ul>
 <li class="fragment"><p>Note: experiments are often conducted in medical settings, hence the word “treatment”</p></li>
 <li class="fragment"><div class="discuss">
@@ -628,6 +662,19 @@
 <li class="fragment"><p>Note: random assignment <span class="math inline">\(\ne\)</span> random sampling</p></li>
 </ul></li>
 </ul>
+<aside class="notes">
+<p>Running example: quizzes and final exam. Want to know if having quizzes throughout semester boosts performance on final exam. Randomly assign half of class to do quizzes, and the other half to not. Then compare their final exam scores.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="confounding-variables" class="slide level2">
 <h2>Confounding variables</h2>
@@ -662,7 +709,6 @@
 </section>
 <section id="principles-of-experimental-design" class="slide level2">
 <h2>Principles of experimental design</h2>
-<p>Running example: quizzes and final exam</p>
 <ol type="1">
 <li class="fragment"><p><strong>Randomization</strong>: randomly assign patients to treatments</p>
 <ul>
@@ -726,18 +772,26 @@
 <h2>Observational studies</h2>
 <ul>
 <li class="fragment"><p>Studies where no treatment is explicitly applied</p></li>
-<li class="fragment"><p>Nothing is manipulated; researchers simply record/observe without intervening</p>
-<ul>
-<li class="fragment"><div class="discuss">
-<p>How would we turn the quiz/exam score example into an observational study?</p>
-</div></li>
-</ul></li>
+<li class="fragment"><p>Nothing is manipulated; researchers simply record/observe without intervening</p></li>
 <li class="fragment"><p>Typically cannot obtain causal conclusions using data from observational studies</p>
 <ul>
 <li class="fragment">There are too many confounding variables at play in observational studies</li>
 </ul></li>
 <li class="fragment"><p>But we can use these studies to identify associations or form hypotheses for future experiments!</p></li>
 </ul>
+<aside class="notes">
+<p>Quiz/exam example could be an observational study if we gave students the choice to do an optional quiz.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 <div class="footer footer-default">
 
