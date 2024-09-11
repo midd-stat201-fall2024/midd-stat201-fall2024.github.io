@@ -139,7 +139,7 @@ Bias in a sample can arise due to many causes. Here are a few:
 
 -   Any sampling method where the selection from the target population is based on random selection/chance
 
-    -   All subjects in the target population have equal chances of being selected
+    -   All subjects in the target population have equal chances of being selected as some point in the method
     -   No one has discretion about who is included in the sample
 
 -   Randomly sampling from the population can help reduce bias in our sample

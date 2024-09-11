@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\n\n\n\nR 09/12\n\nTopic: Software installation\nR and .Rmd basics\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \n\n\nIntro to R and R Markdown\n Coding practice \n\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation\nR and .Rmd basics\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \n\n\nIntro to R and R Markdown\n Coding practice \n\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -1656,7 +1656,7 @@
     "href": "slides/slides-01-study-design.html#probability-sampling",
     "title": "Study design",
     "section": "Probability sampling",
-    "text": "Probability sampling\n\nAny sampling method where the selection from the target population is based on random selection/chance\n\nAll subjects in the target population have equal chances of being selected\nNo one has discretion about who is included in the sample\n\nRandomly sampling from the population can help reduce bias in our sample\n\nIf we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population\n\nExamples include: simple random, stratified, cluster, systematic"
+    "text": "Probability sampling\n\nAny sampling method where the selection from the target population is based on random selection/chance\n\nAll subjects in the target population have equal chances of being selected as some point in the method\nNo one has discretion about who is included in the sample\n\nRandomly sampling from the population can help reduce bias in our sample\n\nIf we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population\n\nExamples include: simple random, stratified, cluster, systematic"
   },
   {
     "objectID": "live_code/intro_R.html#yaml",
