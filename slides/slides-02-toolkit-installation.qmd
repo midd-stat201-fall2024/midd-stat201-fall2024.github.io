@@ -19,6 +19,10 @@ draft: false
 
 # Housekeeping
 
+-   More homework problems released today. All due to Canvas on Monday, 9/16 by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.
+
+-   Office hours reminder!
+
 # Agenda
 
 -   Reproducible data analysis
@@ -75,12 +79,13 @@ draft: false
 
 Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!
 
-1.  Go to the [CRAN website](https://lib.stat.cmu.edu/R/CRAN/) and click on the appropriate link under "Download and Install R". Then:
+1.  **WINDOWS/MAC**: Go to the [CRAN website](https://lib.stat.cmu.edu/R/CRAN/) and click on the appropriate link under "Download and Install R". Then:
     i.  If you are **Windows**: click on the blue text that says "install R for the first time".
     ii. If you are **macOS**: check your Mac OS system and if you have a chip (Apple icon -\> About this Mac -\> Overview)
         i.  Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.
 
             ![](figs/02-macOS-R.png){width="267"}
+2.  **LINUX**: follow the instructions on for Steps 1 and 2 on [this website](https://posit.co/download/rstudio-server/).
 
 ## Install R (cont.)
 
@@ -92,17 +97,21 @@ Please be patient! This process may be time-consuming and stressful, but it is n
 
 ## Installing RStudio
 
-1.  Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and scroll down a little until you see two steps. We already did Step 1!
+1.  **LINUX**: go to step 3 of the same website
 
-2.  Under Step 2, click the blue Download RStudio Desktop button recommended for your computer
+2.  **WINDOWS/MACS**: Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and scroll down a little until you see two steps. We already did Step 1!
 
-    i.  macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!
+    i.  Under Step 2, click the blue Download RStudio Desktop button recommended for your computer
 
-3.  Run the downloaded RStudio Executable file until you hit the "Finish" button. It may be the case that you don't have to click anything at all.
+        a.  macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!
 
-4.  After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.
+    ii. Run the downloaded RStudio Executable file until you hit the "Finish" button. It may be the case that you don't have to click anything at all.
 
+    iii. After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.
+
+    ::: fragment
     ![](figs/02-RStudio_download.png){width="273"}
+    :::
 
 ## Opening RStudio
 
@@ -110,7 +119,7 @@ Please be patient! This process may be time-consuming and stressful, but it is n
 
 -   You may find it easier to put a shortcut somewhere else for easier access (e.g. your dock or home screen)
 
--   To open RStudio, simply double click on the RStudio icon (you do not need to click an the `R` icon)
+-   To open RStudio, simply double click on the RStudio icon (you do not need to click on the `R` icon)
 
     ::: fragment
     ![](figs/02-rstudio_interface.png)
