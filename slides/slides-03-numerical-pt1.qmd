@@ -32,13 +32,27 @@ plot_theme <- theme(text = element_text(size = 16))
 We will be looking at some medical insurance data throughout these slides.
 
 ```{r echo = F}
-insurance <- read_csv("data/insurance.csv") %>%
+insurance <- read_csv("data/insurance.csv") |>
   slice(1:200)
 ```
 
-## Data
+## Variables types
 
-Which of the following variables are numerical?
+-   Variables can be broadly broken into two categories: numerical or categorical
+
+-   **Numerical** variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values
+
+    -   Non-example: zip code
+
+-   A numerical variable is **discrete** if it can only take on finitely many numerical values within a given interval
+
+-   A numerical variable is **continuous** if it can take on any infinitely many values within a given interval
+
+## Example
+
+::: discuss
+Which of the following variables are numerical? Which are discrete vs. continuous?
+:::
 
 ```{r}
 insurance |>
@@ -48,7 +62,7 @@ insurance |>
 
 ## Scatterplots
 
-**Scatterplots** are *bivariate* visualizations that prove a case-by-case view of the data for two numerical variables
+**Scatterplots** are *bivariate* (two-variable) visualizations that prove a case-by-case view of the data for two numerical variables
 
 -   Each point represents the observed pair of values of variables 1 and 2 for each case in the dataset
 
@@ -98,8 +112,10 @@ insurance |>
 
 ## Binning
 
--   Dot plot display the exact value for each observation. Become hard to read when the variable of interest has a wide set of values
--   We will sacrifice a bit of precision for convenience by *binning*: we will consider segmenting the variable into equal-sized *bins* and visualize the value of each observation using its corresponding bin
+-   Dot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values
+-   We will sacrifice a bit of precision for convenience by *binning:*
+    -   Segment the variable into equal-sized bins
+    -   Visualize the value of each observation using its corresponding bin
 -   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5:
     -   \[14, 18), \[18, 22), \[22, 26), ..., \[48, 52)
 -   We tabulate/count up the number of observations that fall into each bin.
@@ -138,10 +154,10 @@ insurance |>
 
 ## Histograms (cont.)
 
--   Histograms provide a view of the **density** of the data; the values the data take on as well as how often
+-   Histograms provide a view of the **density** of the data (the values the data take on as well as how often)
 -   Very helpful for understanding the *shape* of the data distribution
-    -   Distributions are either **symmetric** or **skewed** in a one direction
-    -   Distributions with long tails to the left are called **left-skewed**, whereas distributions with long tails to the right are **right-skewed**
+    1.  Distributions are either **symmetric** or **skewed** in a one direction
+    2.  Distributions with long tails to the left are called **left-skewed**, whereas distributions with long tails to the right are **right-skewed**
 -   Also helpful for identifying **modes** which are prominent peaks in the distribution
     -   Distribution may be **unimodal** (one peak), **bimodal** (two peaks), or **multimodal** (more than two peaks)
     -   Peaks need not be same height in histogram
@@ -184,7 +200,7 @@ Visualizations are great for understanding the distribution of the data, but it 
 
 -   By far the most common way to measure the center of the distribution of numerical data is using the **mean**, also called the **average**
 
--   We use the term **sample mean** when referring to the mean of observed/sampled data, which is typically denoted as $\bar{x}$
+-   We use the term **sample mean** when referring to the mean of sampled data, which is typically denoted as $\bar{x}$
 
     -   $x$ is a placeholder for the variable of interest (e.g. `BMI`, `charges`)
     -   The bar communicates that we are looking at the average
@@ -231,7 +247,7 @@ insurance |>
 
 -   The mean over the entire population is an example of a population parameter. The **population mean** is often denoted $\mu$ (Greek letter mu)
 
--   The sample mean $\bar{x}$ is often used as an estimate for $\mu$
+-   The sample mean $\bar{x}$ is often used as an estimate for $\mu$ (more on this in STAT 311!)
 
 ## Example
 
@@ -247,17 +263,17 @@ $$
 
 ## Means depend on proportions
 
--   ::: discuss
-    What is the average of the following values: $1, 4, 4$?
-    :::
+::: discuss
+-   What is the average of the following values? $\qquad 1, 4, 4$
 
-    -   $\bar{x} = \frac{1+4+4}{3} = 1\left(\frac{1}{3} \right) + 4\left( \frac{2}{3}\right) = \frac{9}{3} = 3$
+-   If instead there were ten 1's and twenty 4's, would the average be the same?
+:::
 
--   ::: discuss
-    If instead there were 10 1's and 20 4's, would the average be the same?
-    :::
+::: notes
+$\bar{x} = \frac{1+4+4}{3} = 1\left(\frac{1}{3} \right) + 4\left( \frac{2}{3}\right) = \frac{9}{3} = 3$
 
-    -   Yes! $\bar{x} = 1\left(\frac{10}{30}\right) + 4 \left(\frac{20}{30} \right) = \frac{90}{30}  = 3$
+$\bar{x} = 1\left(\frac{10}{30}\right) + 4 \left(\frac{20}{30} \right) = \frac{90}{30}  = 3$
+:::
 
 ## Variability
 

@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here!\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -641,7 +641,7 @@
     "href": "slides/slides-03-numerical-pt1.html#scatterplots",
     "title": "Numerical data",
     "section": "Scatterplots",
-    "text": "Scatterplots\nScatterplots are bivariate visualizations that prove a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for each case in the dataset"
+    "text": "Scatterplots\nScatterplots are bivariate (two-variable) visualizations that prove a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for each case in the dataset"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#live-code",
@@ -669,7 +669,7 @@
     "href": "slides/slides-03-numerical-pt1.html#binning",
     "title": "Numerical data",
     "section": "Binning",
-    "text": "Binning\n\nDot plot display the exact value for each observation. Become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning: we will consider segmenting the variable into equal-sized bins and visualize the value of each observation using its corresponding bin\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5:\n\n[14, 18), [18, 22), [22, 26), …, [48, 52)\n\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
+    "text": "Binning\n\nDot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5:\n\n[14, 18), [18, 22), [22, 26), …, [48, 52)\n\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms",
@@ -683,7 +683,7 @@
     "href": "slides/slides-03-numerical-pt1.html#histograms-cont.",
     "title": "Numerical data",
     "section": "Histograms (cont.)",
-    "text": "Histograms (cont.)\n\nHistograms provide a view of the density of the data; the values the data take on as well as how often\nVery helpful for understanding the shape of the data distribution\n\nDistributions are either symmetric or skewed in a one direction\nDistributions with long tails to the left are called left-skewed, whereas distributions with long tails to the right are right-skewed\n\nAlso helpful for identifying modes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height in histogram"
+    "text": "Histograms (cont.)\n\nHistograms provide a view of the density of the data (the values the data take on as well as how often)\nVery helpful for understanding the shape of the data distribution\n\nDistributions are either symmetric or skewed in a one direction\nDistributions with long tails to the left are called left-skewed, whereas distributions with long tails to the right are right-skewed\n\nAlso helpful for identifying modes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height in histogram"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.-1",
@@ -697,28 +697,28 @@
     "href": "slides/slides-03-numerical-pt1.html#mean",
     "title": "Numerical data",
     "section": "Mean",
-    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of observed/sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
+    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#mean-cont.",
     "href": "slides/slides-03-numerical-pt1.html#mean-cont.",
     "title": "Numerical data",
     "section": "Mean (cont.)",
-    "text": "Mean (cont.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe sample mean \\(\\bar{x}\\) is an example of a sample statistic\nThe mean over the entire population is an example of a population parameter. The population mean is often denoted \\(\\mu\\) (Greek letter mu)\nThe sample mean \\(\\bar{x}\\) is often used as an estimate for \\(\\mu\\)"
+    "text": "Mean (cont.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe sample mean \\(\\bar{x}\\) is an example of a sample statistic\nThe mean over the entire population is an example of a population parameter. The population mean is often denoted \\(\\mu\\) (Greek letter mu)\nThe sample mean \\(\\bar{x}\\) is often used as an estimate for \\(\\mu\\) (more on this in STAT 311!)"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#example",
     "href": "slides/slides-03-numerical-pt1.html#example",
     "title": "Numerical data",
     "section": "Example",
-    "text": "Example\nSuppose we have obtained the following data on systolic blood pressure from patients at Porter Hospital:\n\\[\n\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\n\\]\n\nWrite out how you would calculate \\(\\bar{x}\\)\nThen we will use R to calculate the sample mean diastolic blood pressure!"
+    "text": "Example\n\nWhich of the following variables are numerical? Which are discrete vs. continuous?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#means-depend-on-proportions",
     "href": "slides/slides-03-numerical-pt1.html#means-depend-on-proportions",
     "title": "Numerical data",
     "section": "Means depend on proportions",
-    "text": "Means depend on proportions\n\n\nWhat is the average of the following values: \\(1, 4, 4\\)?\n\n\n\\(\\bar{x} = \\frac{1+4+4}{3} = 1\\left(\\frac{1}{3} \\right) + 4\\left( \\frac{2}{3}\\right) = \\frac{9}{3} = 3\\)\n\n\nIf instead there were 10 1’s and 20 4’s, would the average be the same?\n\n\nYes! \\(\\bar{x} = 1\\left(\\frac{10}{30}\\right) + 4 \\left(\\frac{20}{30} \\right) = \\frac{90}{30} = 3\\)"
+    "text": "Means depend on proportions\n\n\nWhat is the average of the following values? \\(\\qquad 1, 4, 4\\)\nIf instead there were ten 1’s and twenty 4’s, would the average be the same?\n\n\n\n\\(\\bar{x} = \\frac{1+4+4}{3} = 1\\left(\\frac{1}{3} \\right) + 4\\left( \\frac{2}{3}\\right) = \\frac{9}{3} = 3\\)\n\\(\\bar{x} = 1\\left(\\frac{10}{30}\\right) + 4 \\left(\\frac{20}{30} \\right) = \\frac{90}{30} = 3\\)"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#variability",
@@ -1685,5 +1685,19 @@
     "title": "Installation Day",
     "section": "",
     "text": "More homework problems released today. All due to Canvas on Monday, 9/16 by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.\nOffice hours reminder!"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#variables-types",
+    "href": "slides/slides-03-numerical-pt1.html#variables-types",
+    "title": "Numerical data",
+    "section": "Variables types",
+    "text": "Variables types\n\nVariables can be broadly broken into two categories: numerical or categorical\nNumerical variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values\n\nNon-example: zip code\n\nA numerical variable is discrete if it can only take on finitely many numerical values within a given interval\nA numerical variable is continuous if it can take on any infinitely many values within a given interval"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#example-1",
+    "href": "slides/slides-03-numerical-pt1.html#example-1",
+    "title": "Numerical data",
+    "section": "Example",
+    "text": "Example\nSuppose we have obtained the following data on systolic blood pressure from patients at Porter Hospital:\n\\[\n\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\n\\]\n\nWrite out how you would calculate \\(\\bar{x}\\)\nThen we will use R to calculate the sample mean diastolic blood pressure!"
   }
 ]
