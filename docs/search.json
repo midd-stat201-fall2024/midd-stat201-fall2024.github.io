@@ -641,7 +641,7 @@
     "href": "slides/slides-03-numerical-pt1.html#scatterplots",
     "title": "Numerical data",
     "section": "Scatterplots",
-    "text": "Scatterplots\nScatterplots are bivariate (two-variable) visualizations that prove a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for each case in the dataset"
+    "text": "Scatterplots\nScatterplots are bivariate (two-variable) visualizations that provide a case-by-case view of the data for two numerical variables\n\nEach point represents the observed pair of values of variables 1 and 2 for a case in the dataset"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#live-code",
@@ -669,7 +669,7 @@
     "href": "slides/slides-03-numerical-pt1.html#binning",
     "title": "Numerical data",
     "section": "Binning",
-    "text": "Binning\n\nDot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5:\n\n[14, 18), [18, 22), [22, 26), …, [48, 52)\n\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
+    "text": "Binning\n\nDot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5: [14, 18), [18, 22), [22, 26), …, [48, 52)\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms",
@@ -739,7 +739,7 @@
     "href": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
     "title": "Numerical data",
     "section": "Variance and standard deviation",
-    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\nThe sample standard deviation \\(s\\) is simply the square root of the sample variance (\\(s = \\sqrt{s^2}\\))\nCalculate the sample variance and standard deviation for the blood pressure data\n\nBy hand\nUsing R"
+    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\nThe sample standard deviation \\(s\\) is the square root of the sample variance (\\(s = \\sqrt{s^2}\\))\nCalculate the sample variance and standard deviation for the blood pressure data\n\nBy hand\nUsing R"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation-cont.",
@@ -1691,7 +1691,7 @@
     "href": "slides/slides-03-numerical-pt1.html#variables-types",
     "title": "Numerical data",
     "section": "Variables types",
-    "text": "Variables types\n\nVariables can be broadly broken into two categories: numerical or categorical\nNumerical variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values\n\nNon-example: zip code\n\nA numerical variable is discrete if it can only take on finitely many numerical values within a given interval\nA numerical variable is continuous if it can take on any infinitely many values within a given interval"
+    "text": "Variables types\n\nVariables can be broadly broken into two categories: numerical (quantitative) or categorical (qualitative)\nNumerical variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values. Two types:\n\nDiscrete if it can only take on finitely many numerical values within a given interval\nContinuous if it can take on any infinitely many values within a given interval\n\nExamples and non-examples?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#example-1",

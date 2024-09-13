@@ -32,21 +32,20 @@ plot_theme <- theme(text = element_text(size = 16))
 We will be looking at some medical insurance data throughout these slides.
 
 ```{r echo = F}
-insurance <- read_csv("data/insurance.csv") |>
-  slice(1:200)
+insurance <- read_csv("data/insurance.csv") 
 ```
 
 ## Variables types
 
--   Variables can be broadly broken into two categories: numerical or categorical
+-   Variables can be broadly broken into two categories: numerical (quantitative) or categorical (qualitative)
 
--   **Numerical** variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values
+-   **Numerical** variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values. Two types:
 
-    -   Non-example: zip code
+    1.  **Discrete** if it can only take on finitely many numerical values within a given interval
 
--   A numerical variable is **discrete** if it can only take on finitely many numerical values within a given interval
+    2.  **Continuous** if it can take on any infinitely many values within a given interval
 
--   A numerical variable is **continuous** if it can take on any infinitely many values within a given interval
+-   Examples and non-examples?
 
 ## Example
 
@@ -62,15 +61,15 @@ insurance |>
 
 ## Scatterplots
 
-**Scatterplots** are *bivariate* (two-variable) visualizations that prove a case-by-case view of the data for two numerical variables
+**Scatterplots** are *bivariate* (two-variable) visualizations that provide a case-by-case view of the data for two numerical variables
 
--   Each point represents the observed pair of values of variables 1 and 2 for each case in the dataset
+-   Each point represents the observed pair of values of variables 1 and 2 for a case in the dataset
 
 ::: fragment
-```{r}
+```{r fig.width=8, fig.height=4, fig.align='center'}
 insurance |>
   ggplot(aes(x = bmi, y = charges))+
-  geom_point() +
+  geom_point(size = 2) +
   ylab("Charges ($)") +
   xlab("Body mass index")  +
   plot_theme
@@ -116,8 +115,7 @@ insurance |>
 -   We will sacrifice a bit of precision for convenience by *binning:*
     -   Segment the variable into equal-sized bins
     -   Visualize the value of each observation using its corresponding bin
--   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5:
-    -   \[14, 18), \[18, 22), \[22, 26), ..., \[48, 52)
+-   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5: \[14, 18), \[18, 22), \[22, 26), ..., \[48, 52)
 -   We tabulate/count up the number of observations that fall into each bin.
 
 ::: fragment
@@ -331,7 +329,7 @@ data.frame(x = x, deviation = x - xbar)
 
     -   Let's talk about this notation and intuition behind this formula. In particular, there are at least two things to note
 
--   The **sample standard deviation** $s$ is simply the square root of the sample variance ($s = \sqrt{s^2}$)
+-   The **sample standard deviation** $s$ is the square root of the sample variance ($s = \sqrt{s^2}$)
 
 -   Calculate the sample variance and standard deviation for the blood pressure data
 
