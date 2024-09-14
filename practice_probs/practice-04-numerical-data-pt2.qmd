@@ -2,12 +2,21 @@
 title: "Numerical data (part 2)"
 subtitle: "Practice problems"
 date: "September 18, 2024"
-format: pdf
+format: 
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
 ---
 
-Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.
+Please work on the practice problems in your group. Problems with an asterisk $^*$ will be assigned to the weekly problem set.
 
-1.  The infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014:
+1.  The infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014. In particular, this is a *relative frequency* histogram, which shows proportions instead of raw counts on the y-axis:
 
     ![](figs/04-infant-mortality.png)
 
@@ -15,7 +24,9 @@ Please work on the practice problems in your group. At least one of the followin
 
     b.  Would you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.
 
-2.  The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
+2.  Suppose that an exam has a total of 100 possible points, and the average score was an 85 with standard deviation of 15. Is the distribution of the scores on this exam symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.
+
+3.  ($^*$) The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
 
     a.  $\frac{\bar{x}}{m} = 1$
 
@@ -23,7 +34,7 @@ Please work on the practice problems in your group. At least one of the followin
 
     c.  $\frac{\bar{x}}{m} > 1$
 
-3.  Returning to the sunflowers:
+4.  Returning to the sunflowers:
 
     a.  Calculate the median number of healthy sunflowers in a grid cell for each of the sampling strategies. How do they compare to the sample means?
 

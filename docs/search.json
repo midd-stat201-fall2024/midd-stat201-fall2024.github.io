@@ -305,7 +305,7 @@
     "href": "slides/slides-04-numerical-pt2.html#recap",
     "title": "Numerical data",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+    "text": "Recap\nWe learned about the sample mean \\(\\bar{x}\\), the sample variance \\(s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_{i} - \\bar{x})^2\\), and the sample standard deviation \\(s = \\sqrt{s^2}\\)\n\nWhy care about standard deviation (SD)? Describes how far data are distributed from their mean\nUsually (but not always!!) about 70% of the data will be within one SD of the mean, and 95% will be within two SDs\n\nThese percentages are not precise, but are useful for intuition\nWe will come back to this later in semester"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#boxplot",
@@ -1755,5 +1755,12 @@
     "title": "Numerical data",
     "section": "Quartiles",
     "text": "Quartiles\n\nThe 25th percentile is the value of data with 25% of values below it. Special name: first quartile \\(Q_{1}\\)\nThe 75th percentile is the value of data with 75% of values below it. Special name: third quartile \\(Q_{3}\\)\n\nWhat percent of the data fall between \\(Q_{1}\\) and \\(Q_{3}\\)? What percent of the data fall between \\(Q_{1}\\) and the median?\n\nHow to calculate? Suppose we have \\(2n\\) (even) or \\(2n + 1\\) (odd) number of values\n\n\\(Q_{1}\\) is the median of the \\(n\\) smallest values\n\\(Q_{3}\\) is the median of the \\(n\\) largest values\n\n\nWhat are \\(Q_{1}\\) and \\(Q_{3}\\) of the data \\(\\boldsymbol{x}\\)?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#more-visualizations-and-statistics",
+    "href": "slides/slides-04-numerical-pt2.html#more-visualizations-and-statistics",
+    "title": "Numerical data",
+    "section": "More visualizations and statistics",
+    "text": "More visualizations and statistics\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
   }
 ]

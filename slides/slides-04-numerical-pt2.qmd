@@ -20,6 +20,18 @@ draft: false
 
 ## Recap
 
+We learned about the sample mean $\bar{x}$, the sample variance $s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_{i} - \bar{x})^2$, and the sample standard deviation $s = \sqrt{s^2}$
+
+-   Why care about standard deviation (SD)? Describes how far data are distributed from their mean
+
+-   Usually (but not always!!) about 70% of the data will be within one SD of the mean, and 95% will be within two SDs
+
+    -   These percentages are not precise, but are useful for intuition
+
+    -   We will come back to this later in semester
+
+## More visualizations and statistics
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
