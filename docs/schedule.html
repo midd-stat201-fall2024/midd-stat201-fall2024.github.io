@@ -219,7 +219,16 @@ ul.task-list li input[type="checkbox"] {
 <td><ul>
 <li><p>Topic: Numerical data (part 1)</p>
 <ul>
-<li>Practice problems</li>
+<li><p>If you’d like to follow alongside me during live code: <a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiU1RBVCAyMDEgTGl2ZSBjb2RlIgphdXRob3I6ICJZb3VyIG5hbWUiCm91dHB1dDogaHRtbF9kb2N1bWVudAotLS0KCiMjIE1vbmRheSwgOS8xNi8yMDI0CgpgYGB7cn0KIyB1cmwgdG8gcmVhZCBkYXRhIGZyb20KdXJsX2ZpbGUgPC0gImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9taWRkLXN0YXQyMDEtZmFsbDIwMjQvbWlkZC1zdGF0MjAxLWZhbGwyMDI0LmdpdGh1Yi5pby9tYWluL2xpdmVfY29kZS9kYXRhL2luc3VyYW5jZS5jc3YiCgojIGlmIHlvdSBkb24ndCBoYXZlIHRoZSByZWFkciBwYWNrYWdlLCBwbGVhc2UgaW5zdGFsbCBpdCEKbGlicmFyeShyZWFkcikKCiMgcmVhZCBkYXRhLCBhbmQgYXNzaWduIHRvIHZhcmlhYmxlIGNhbGxlZCBpbnN1cmFuY2UKaW5zdXJhbmNlIDwtIHJlYWRfY3N2KHVybF9maWxlKQpgYGAKCmBgYHtyfQoKYGBgCg==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'stat201_live_code.Rmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Rmd </button></a></p></li>
+<li><p>Practice problems</p></li>
 </ul></li>
 </ul></td>
 <td></td>

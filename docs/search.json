@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nIf you’d like to follow alongside me during live code:  Rmd \nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -298,49 +298,49 @@
     "href": "coding_practice/coding-practice-03-numerical-pt1.html",
     "title": "Numerical data coding practice",
     "section": "",
-    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in openintro package. Then run the code in the code chunk. We will once again work with the cherry data set.\n\n\n\n\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, access the diameter variable from the cherry data frame. Execute your code.\n\n\n\n\n\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
+    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in openintro package. Then run the code in the code chunk. We will once again work with the cherry data set.\n\n\n\n\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, access the diameter variable from the cherry data frame.\n\n\n\n\n\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#recap",
     "href": "slides/slides-04-numerical-pt2.html#recap",
     "title": "Numerical data",
     "section": "Recap",
-    "text": "Recap\n\n\nRows: 1338 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+    "text": "Recap\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#boxplot",
     "href": "slides/slides-04-numerical-pt2.html#boxplot",
     "title": "Numerical data",
     "section": "Boxplot",
-    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are creating using five statistics and identify unusual observations.\n\n\n\n\n\n\nDoes the orientation (vertical or horizontal) matter?"
+    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are created using five statistics and identify unusual observations.\n\n\nDoes the orientation (vertical or horizontal) matter?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#median",
     "href": "slides/slides-04-numerical-pt2.html#median",
     "title": "Numerical data",
     "section": "Median",
-    "text": "Median\n\nThe (sample) median \\(m\\) is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than \\(m\\) and 50% of the data are greater than \\(m\\).\n\nIf we order the data from smallest to largest, the median is the value in the middle.\nIf the number of observations \\(n\\) is even, then there will be two values in the middle, and the median is taken as their average.\n\nThe median is also known the 50th percentile because 50% of the data fall below it.\n\nRecall the blood pressure data: \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\). What is the median?"
+    "text": "Median\n\nThe (sample) median \\(m\\) is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than \\(m\\) and 50% of the data are greater than \\(m\\).\n\nIf we order the data from smallest to largest, the median is the value in the middle.\nIf the number of observations \\(n\\) is even, then there will be two values in the middle, and the median is taken as their average.\n\n\nConsider the following data: \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\). What is the median?\n\nThe median is also known the 50th percentile: 50% of the data fall below \\(m\\)"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
     "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
     "title": "Numerical data",
-    "section": "Mean vs. median",
-    "text": "Mean vs. median"
+    "section": "Mean vs. Median",
+    "text": "Mean vs. Median\n\nWhich is better? The mean or the median?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#interquartile-range",
     "href": "slides/slides-04-numerical-pt2.html#interquartile-range",
     "title": "Numerical data",
     "section": "Interquartile range",
-    "text": "Interquartile range\n\nThe interquartile range or IQR is a measure of variability in the data. The more variable, the larger the IQR.\nTo calculate the IQR, we need the first quartile \\(Q_{1}\\) (the 25th percentile) and the third quartile \\(Q_{3}\\) (the 75th percentile). Then\n\\[\nIQR = Q_{3} - Q_{1}\n\\]\nWhat percent of the data fall between \\(Q_{1}\\) and \\(Q_{3}\\) and the median \\(m\\)? What percent of the data fall about \\(Q_{1}\\) and the median?\nWhat is the IQR for the blood pressure data? \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\)"
+    "text": "Interquartile range\nThe interquartile range (IQR) is another measure of variability/spread in the data.\n\\[\nIQR = Q_{3} - Q_{1}\n\\]\n\nThe more variable the data, the larger the IQR\nWhat is the IQR of the data \\(\\boldsymbol{x}\\)?\n\n\nIQR are not the values themselves, but rather, the spread of the middle 50% of the data. Interpretation once again depends on the scale of the data.\nQ3 = 119 and Q1 = 113 -> IQR = 6"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
     "href": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
     "title": "Numerical data",
     "section": "Creating the boxplot",
-    "text": "Creating the boxplot\n\nThe “box” part of the boxplot is created using \\(Q_{1}\\), \\(Q_{3}\\), and \\(m\\).\nThen we draw out whiskers from the box that attempt to capture data outside the IQR.\n\nHow long should the whiskers be? There isn’t a fixed rule, but \\(1.5 \\times IQR\\) below the first quartile and above third quartile is common\n\nLastly, we add dots for any points that lie beyond the whiskers\n\nThese points are unusually high/low compared to the rest of the data and are worth identifying as potential outliers\nAn outlier is an observation that appears extreme relative to the rest of the data\n\nLet’s draw the boxplot for the blood pressure data!"
+    "text": "Creating the boxplot\n\nThe “box” part of the boxplot is created using \\(Q_{1}\\), \\(m\\), and \\(Q_{3}\\)\nThen we draw out whiskers from the box that attempt to capture data outside the IQR\n\nHow long should the whiskers be? There isn’t a fixed rule, but \\(1.5 \\times IQR\\) below \\(Q_1\\) and above \\(Q_{3}\\) is common\n\nLastly, we add dots for any cases that lie beyond the whiskers\n\nThese points are unusually high/low compared to the rest of the data and are worth identifying as potential outliers\nAn outlier is an observation that appears extreme relative to the rest of the data\n\nLet’s draw a boxplot for the data \\(\\boldsymbol{x}\\)!"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#a-note-on-outliers",
@@ -361,14 +361,14 @@
     "href": "slides/slides-04-numerical-pt2.html#robust-statistics",
     "title": "Numerical data",
     "section": "Robust statistics",
-    "text": "Robust statistics\n\n\n\n\nIn our observed blood pressure data \\[\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\] we have the following sample statistics:\n\n\\(\\bar{x} =\\) 115.8 , \\(s =\\) 4.4, \\(m =\\) 115.5 , \\(IQR =\\) 5.5\n\n\nSuppose we actually observed an additional data point with a systolic blood pressure of \\(170\\). What are the sample statistics with this additional data point? How do they compare to the values above?\n\n\n\\(\\bar{x}' =\\) 120.7 , \\(s' =\\) 16.9, \\(m' =\\) 116 , \\(IQR' =\\) 6\n\nRobust statistics are statistics (quantities calculated from data) that are minimally affected by extreme values\n\nWhich of the statistics above would be considered robust?"
+    "text": "Robust statistics\n\n\n\n\nIn the data \\(\\boldsymbol{x}\\) that we have been working with, we have the following sample statistics:\n\n\n\\(\\qquad \\bar{x} =\\) _____, \\(s =\\) _____, \\(m =\\) 115.5 , \\(IQR =\\) 6\n\n\n\nSuppose we actually observed an additional data point with a value of \\(170\\). What are the sample statistics with this additional data point? How do they compare to the values above?\n\\(\\bar{x}' =\\) _____, \\(s' =\\) _____, \\(m' =\\) _____, \\(IQR' =\\) _____\n\nRobust statistics are statistics that are minimally affected by extreme values\n\nWhich of the statistics above would be considered robust?\n\n\nWhen should the mean be similar to the median (and the standard deviation similar to the IQR)? Why not compare IQR to the sample variance?\n\n\n\nm’ = 116\nQ1’ = 113, Q3’ = 120, IQR’ = 7"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median-1",
     "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median-1",
     "title": "Numerical data",
     "section": "Mean vs. Median",
-    "text": "Mean vs. Median\nIn the plot below, the orange line denotes the sample mean charges, and the blue line denotes the sample median:\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWhich is better? The mean or the median?"
+    "text": "Mean vs. Median\nLet’s return to the insurance data. In the plot below, the orange line denotes the sample mean charges, and the blue line denotes the sample median:\n\nWhich is better? The mean or the median?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#boxplots-vs-histograms",
@@ -382,7 +382,7 @@
     "href": "slides/slides-04-numerical-pt2.html#transforming-data",
     "title": "Numerical data",
     "section": "Transforming data",
-    "text": "Transforming data\n\nWhen data are strongly skewed or take on an “inconvenient” range of values, we might transform them so they are easier to model\nA transformation rescales the data using a function\n\ne.g. \\(f(x) = e^x\\), \\(f(x) = \\log_{10}(x)\\), \\(f(x) = \\ln(x)\\), \\(f(x) = \\sqrt{x}\\)\nThe exact transformation you choose depends heavily on the data!!"
+    "text": "Transforming data\n\nWhen data are strongly skewed or take on an “inconvenient” range of values, we might transform them so they are easier to work with\nA transformation rescales the data using a function\n\ne.g. \\(f(x) = e^x\\), \\(f(x) = \\log_{10}(x)\\), \\(f(x) = \\ln(x)\\), \\(f(x) = \\sqrt{x}\\)\nThe exact transformation you choose depends heavily on the data!!"
   },
   {
     "objectID": "slides/slides-05-data-vis.html#exploratory-data-analysis",
@@ -648,35 +648,35 @@
     "href": "slides/slides-03-numerical-pt1.html#live-code",
     "title": "Numerical data",
     "section": "Live code",
-    "text": "Live code\n\nBase R\nggplot"
+    "text": "Live code\nIf you’d like to follow along, please download the .Rmd template associated with today’s class! Otherwise, feel free to just watch and try coding on your own later on.\nWe will cover:\n\nScatterplots and histograms in base R"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#scatterplots-cont.",
     "href": "slides/slides-03-numerical-pt1.html#scatterplots-cont.",
     "title": "Numerical data",
     "section": "Scatterplots (cont.)",
-    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\nHow might we improve on this visualization?"
+    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\nHow might we improve on the visualization we coded?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#dot-plots",
     "href": "slides/slides-03-numerical-pt1.html#dot-plots",
     "title": "Numerical data",
     "section": "Dot plots",
-    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable. They are univariate (one-variable) scatterplots.\nIn the following, we have a dot plot of BMI rounded to the nearest integer."
+    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable. They are univariate (one-variable) scatterplots.\nIn the following, we have a dot plot of BMI rounded to the nearest integer.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne dot for each case in our data. What is a disadvantage of dot plots?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#binning",
     "href": "slides/slides-03-numerical-pt1.html#binning",
     "title": "Numerical data",
     "section": "Binning",
-    "text": "Binning\n\nDot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5: [14, 18), [18, 22), [22, 26), …, [48, 52)\nWe tabulate/count up the number of observations that fall into each bin.\n\n\n\n\n# A tibble: 8 × 2\n  bmi_bin  count\n  <chr>    <int>\n1 [15, 19)     5\n2 [19, 23)    12\n3 [23, 27)    35\n4 [27, 31)    58\n5 [31, 35)    41\n6 [35, 39)    35\n7 [39, 43)    13\n8 [49, 52)     1"
+    "text": "Binning\n\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5: [15, 19), [19, 23), [23, 27), …, [49, 53)\n\nConvention of left or right inclusive?\n\nWe tabulate/count up the number of observations that fall into each bin."
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms",
     "href": "slides/slides-03-numerical-pt1.html#histograms",
     "title": "Numerical data",
     "section": "Histograms",
-    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin."
+    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin.\n\n\n\n\n\n\n\n\nbmi_bin\ncount\n\n\n\n\n[15, 19)\n5\n\n\n[19, 23)\n12\n\n\n[23, 27)\n35\n\n\n[27, 31)\n58\n\n\n[31, 35)\n41\n\n\n[35, 39)\n35\n\n\n[39, 43)\n13\n\n\n[49, 52)\n1"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.",
@@ -732,14 +732,14 @@
     "href": "slides/slides-03-numerical-pt1.html#deviation",
     "title": "Numerical data",
     "section": "Deviation",
-    "text": "Deviation\nWe return to the blood pressure data:\n\\[\n\\boldsymbol{x} = 116, 114, 112, 120, 108, 113, 123, 118, 119, 115 \\qquad \\qquad \\qquad \\bar{x} = 115.8\n\\]\n\nWe start with deviation, which is the distance of or difference between an observation from the (sample) mean\n\nHow might we write this using statistical notation?\n\n\n\n\n\n     x deviation\n1  116       0.2\n2  114      -1.8\n3  112      -3.8\n4  120       4.2\n5  108      -7.8\n6  113      -2.8\n7  123       7.2\n8  118       2.2\n9  119       3.2\n10 115      -0.8"
+    "text": "Deviation\nWe begin with deviation, which is the distance or difference between an observation from the (sample) mean\n\nHow might we write this using statistical notation?\nLet’s write out the deviations of our estimated weights"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
     "href": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
     "title": "Numerical data",
     "section": "Variance and standard deviation",
-    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\nThe sample standard deviation \\(s\\) is the square root of the sample variance (\\(s = \\sqrt{s^2}\\))\nCalculate the sample variance and standard deviation for the blood pressure data\n\nBy hand\nUsing R"
+    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\n\nSet-up the calculation of the sample variance for our data\n\n\nI will calculate this in R\n\nThe sample standard deviation \\(s\\) is the square root of the sample variance (\\(s = \\sqrt{s^2}\\))"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation-cont.",
@@ -753,14 +753,14 @@
     "href": "slides/slides-04-numerical-pt2.html#comparing-numerical-data-across-groups",
     "title": "Numerical data",
     "section": "Comparing numerical data across groups",
-    "text": "Comparing numerical data across groups\n\nWhile we haven’t yet discussed categorical data, it is common to want to visualize the distribution of a numerical variable across different groups/levels of a categorical variable\n\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Comparing numerical data across groups\n\nWhile we haven’t yet discussed categorical data, it is common to want to visualize the distribution of a numerical variable across different groups/levels of a categorical variable"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#live-code",
     "href": "slides/slides-04-numerical-pt2.html#live-code",
     "title": "Numerical data",
     "section": "Live code",
-    "text": "Live code"
+    "text": "Live code\n\nmedian()\nBoxplots in base R"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html",
@@ -1698,6 +1698,62 @@
     "href": "slides/slides-03-numerical-pt1.html#example-1",
     "title": "Numerical data",
     "section": "Example",
-    "text": "Example\nSuppose we have obtained the following data on systolic blood pressure from patients at Porter Hospital:\n\\[\n\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\n\\]\n\nWrite out how you would calculate \\(\\bar{x}\\)\nThen we will use R to calculate the sample mean diastolic blood pressure!"
+    "text": "Example\nLet’s calculate the sample mean estimated weight from the data we collected today\n\n\nWrite out how you would calculate \\(\\bar{x}\\)\n\nThen I will use R to calculate the sample mean!"
+  },
+  {
+    "objectID": "live_code/stat201_live_code.html",
+    "href": "live_code/stat201_live_code.html",
+    "title": "STAT 201 Live code",
+    "section": "",
+    "text": "# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv\"\n\n# if you don't have the readr package, please install it!\nlibrary(readr)\n\n# read data, and assign to variable called insurance\ninsurance <- read_csv(url_file)\n\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "live_code/numerical_pt1_live.html",
+    "href": "live_code/numerical_pt1_live.html",
+    "title": "9/16/2024 Live code",
+    "section": "",
+    "text": "# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv\"\n\n# if you don't have the readr package, please install it!\nlibrary(readr)\n\n# read data, and assign to variable called insurance\ninsurance <- read_csv(url_file)\n\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# first argument is x-axis\nplot(insurance$bmi, insurance$charges)\n\n\n\n# make axis labels more informative and add title \nplot(insurance$bmi, insurance$charges, xlab = \"BMI\", ylab = \"Charges ($)\", \n     main = \"Scatterplot of insurance charges by BMI\")"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#creating-visualizations",
+    "href": "slides/slides-03-numerical-pt1.html#creating-visualizations",
+    "title": "Numerical data",
+    "section": "Creating visualizations",
+    "text": "Creating visualizations\nWorking in your groups, create a dot plot and a histogram of the estimated weights from the data we collected today!"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#live-code-1",
+    "href": "slides/slides-03-numerical-pt1.html#live-code-1",
+    "title": "Numerical data",
+    "section": "Live code",
+    "text": "Live code\nFunctions to calculate sample mean, variance, and standard deviation in R:\n\nmean()\nvar()\nsd()"
+  },
+  {
+    "objectID": "live_code/numerical_pt1_live.html#plots-in-base-r",
+    "href": "live_code/numerical_pt1_live.html#plots-in-base-r",
+    "title": "9/16/2024 Live code",
+    "section": "Plots in base R",
+    "text": "Plots in base R\n\n# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv\"\n\n# if you don't have the readr package, please install it!\nlibrary(readr)\n\n# read data, and assign to variable called insurance\ninsurance <- read_csv(url_file)\n\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# scatter plot: first argument is x-axis\nplot(insurance$bmi, insurance$charges)\n\n\n\n# make axis labels more informative, add title, add color for fun\nplot(insurance$bmi, insurance$charges, xlab = \"BMI\", ylab = \"Charges ($)\", \n     main = \"Scatterplot of insurance charges by BMI\",\n     col = \"blue\")\n\n\n\n# make histogram\nhist(insurance$bmi)\n\n\n\n# change numbers of bins. Check Help file!\nhist(insurance$bmi, xlab = \"BMI\", ylab = \"Histogram of BMI\", breaks = 15)"
+  },
+  {
+    "objectID": "live_code/numerical_pt1_live.html#summary-statistics",
+    "href": "live_code/numerical_pt1_live.html#summary-statistics",
+    "title": "9/16/2024 Live code",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\nmean(insurance$bmi)\n\n[1] 30.63417\n\nvar(insurance$bmi)\n\n[1] 31.98109\n\nsd(insurance$bmi)\n\n[1] 5.655182\n\n# confirm\nsqrt(var(insurance$bmi))\n\n[1] 5.655182"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#another-boxplot",
+    "href": "slides/slides-04-numerical-pt2.html#another-boxplot",
+    "title": "Numerical data",
+    "section": "Another boxplot",
+    "text": "Another boxplot\nNow a boxplot of the estimated weights from the previous class!"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#quartiles",
+    "href": "slides/slides-04-numerical-pt2.html#quartiles",
+    "title": "Numerical data",
+    "section": "Quartiles",
+    "text": "Quartiles\n\nThe 25th percentile is the value of data with 25% of values below it. Special name: first quartile \\(Q_{1}\\)\nThe 75th percentile is the value of data with 75% of values below it. Special name: third quartile \\(Q_{3}\\)\n\nWhat percent of the data fall between \\(Q_{1}\\) and \\(Q_{3}\\)? What percent of the data fall between \\(Q_{1}\\) and the median?\n\nHow to calculate? Suppose we have \\(2n\\) (even) or \\(2n + 1\\) (odd) number of values\n\n\\(Q_{1}\\) is the median of the \\(n\\) smallest values\n\\(Q_{3}\\) is the median of the \\(n\\) largest values\n\n\nWhat are \\(Q_{1}\\) and \\(Q_{3}\\) of the data \\(\\boldsymbol{x}\\)?"
   }
 ]

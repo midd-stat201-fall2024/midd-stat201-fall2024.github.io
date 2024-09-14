@@ -18,6 +18,10 @@ editor_options:
 draft: false
 ---
 
+
+# Housekeeping
+
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
@@ -25,7 +29,9 @@ library(readr)
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
-# Housekeeping
+- Problem set 1 due tonight!
+- Office hours today 2-4pm
+- Activity!
 
 # Visualizing numerical data
 
@@ -76,19 +82,13 @@ insurance |>
 ```
 :::
 
-## Live code
-
--   Base R
-
--   ggplot
-
 ## Scatterplots (cont.)
 
 -   How do we determine which variable to put on each axis?
 
 -   What do scatterplots reveal about the data, and how are they useful?
 
--   How might we improve on this visualization?
+-   How might we improve on the visualization we coded?
 
 ## Dot plots
 
@@ -97,7 +97,7 @@ insurance |>
 -   In the following, we have a dot plot of `BMI` rounded to the nearest integer.
 
 ::: fragment
-```{r}
+```{r fig.width=6, fig.height=4, fig.align='center'}
 insurance |>
   mutate(bmi = round(bmi)) |>
   ggplot(aes(x = bmi))+
@@ -109,15 +109,25 @@ insurance |>
 ```
 :::
 
+::: notes
+One dot for each case in our data. What is a disadvantage of dot plots?
+:::
+
 ## Binning
 
--   Dot plots display the exact value for each observation. They become hard to read when the variable of interest has a wide set of values
 -   We will sacrifice a bit of precision for convenience by *binning:*
     -   Segment the variable into equal-sized bins
     -   Visualize the value of each observation using its corresponding bin
--   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5: \[14, 18), \[18, 22), \[22, 26), ..., \[48, 52)
+-   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5: \[15, 19), \[19, 23), \[23, 27), ..., \[49, 53)
+    -   Convention of left or right inclusive?
 -   We tabulate/count up the number of observations that fall into each bin.
 
+## Histograms
+
+**Histograms** are visualizations that display the binned counts as bars for each bin.
+
+::: columns
+::: {.column width="30%"}
 ::: fragment
 ```{r}
 insurance |>
@@ -130,25 +140,27 @@ insurance |>
                     bmi >= 39 & bmi < 43 ~ "[39, 43)",
                     bmi >= 43 & bmi < 49 ~ "[43, 49)",
                     bmi >= 49 & bmi < 53 ~ "[49, 52)")) |>
-  count(bmi_bin, name = "count")
-
+  count(bmi_bin, name = "count") |>
+  kableExtra::kable()
 
 ```
 :::
+:::
 
-## Histograms
-
-**Histograms** are visualizations that display the binned counts as bars for each bin.
-
-```{r}
+::: {.column width="70%"}
+::: fragment
+```{r fig.width=8, fig.height=5, fig.align="center"}
 insurance |>
   ggplot(aes(x = bmi)) +
   geom_histogram(breaks = seq(15, 53, 4)) +
   scale_x_continuous(breaks = seq(15, 50, 5)) +
   scale_y_continuous(breaks = seq(0, 60, 10)) +
   xlab("Body mass index") +
-  plot_theme
+  theme(text = element_text(size = 24))
 ```
+:::
+:::
+:::
 
 ## Histograms (cont.)
 
@@ -175,7 +187,7 @@ insurance |>
   scale_x_continuous(breaks = seq(15, 50, 5)) +
   scale_y_continuous(breaks = seq(0, 60, 10)) +
   xlab("Body mass index") +
-  theme(text=element_text(size = 24))
+  theme(text=element_text(size = 30))
 ```
 :::
 
@@ -185,10 +197,22 @@ insurance |>
   ggplot(aes(x = charges)) +
   geom_histogram(binwidth = 2500) +
   xlab("Charges ($)") +
-  theme(text=element_text(size = 24))
+  theme(text=element_text(size = 30))
 ```
 :::
 :::
+
+## Creating visualizations
+
+Working in your groups, create a dot plot and a histogram of the estimated weights from the data we collected today!
+
+## Live code
+
+If you'd like to follow along, please download the `.Rmd` template associated with today's class! Otherwise, feel free to just watch and try coding on your own later on.
+
+We will cover:
+
+-   Scatterplots and histograms in base `R`
 
 # Summary statistics for numerical data
 
@@ -249,16 +273,16 @@ insurance |>
 
 ## Example
 
-Suppose we have obtained the following data on systolic blood pressure from patients at Porter Hospital:
+Let's calculate the sample mean estimated weight from the data we collected today
 
-$$
-\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115
-$$
+-   ::: discuss
+    Write out how you would calculate $\bar{x}$
+    :::
 
--   Write out how you would calculate $\bar{x}$
+-   Then I will use `R` to calculate the sample mean!
 
--   Then we will use `R` to calculate the sample mean diastolic blood pressure!
-
+```{=html}
+<!--
 ## Means depend on proportions
 
 ::: discuss
@@ -272,6 +296,8 @@ $\bar{x} = \frac{1+4+4}{3} = 1\left(\frac{1}{3} \right) + 4\left( \frac{2}{3}\ri
 
 $\bar{x} = 1\left(\frac{10}{30}\right) + 4 \left(\frac{20}{30} \right) = \frac{90}{30}  = 3$
 :::
+-->
+```
 
 ## Variability
 
@@ -301,23 +327,10 @@ data.frame(x = x, data1 = y1, data2 = y2) |>
 
 ## Deviation
 
-We return to the blood pressure data:
+We begin with **deviation**, which is the distance or difference between an observation from the (sample) mean
 
-$$
-\boldsymbol{x} = 116, 114, 112, 120, 108, 113, 123, 118, 119, 115 \qquad \qquad \qquad \bar{x} = 115.8
-$$
-
--   We start with **deviation**, which is the distance of or difference between an observation from the (sample) mean
-
-    -   How might we write this using statistical notation?
-
-::: fragment
-```{r}
-x <- c(116, 114, 112, 120, 108, 113, 123, 118, 119, 115)
-xbar <- mean(x)
-data.frame(x = x, deviation = x - xbar)
-```
-:::
+-   How might we write this using statistical notation?
+-   Let's write out the deviations of our estimated weights
 
 ## Variance and standard deviation
 
@@ -329,13 +342,13 @@ data.frame(x = x, deviation = x - xbar)
 
     -   Let's talk about this notation and intuition behind this formula. In particular, there are at least two things to note
 
+-   ::: discuss
+    Set-up the calculation of the sample variance for our data
+    :::
+
+    -   I will calculate this in `R`
+
 -   The **sample standard deviation** $s$ is the square root of the sample variance ($s = \sqrt{s^2}$)
-
--   Calculate the sample variance and standard deviation for the blood pressure data
-
-    -   By hand
-
-    -   Using `R`
 
 ## Variance and standard deviation (cont.)
 
@@ -348,3 +361,13 @@ data.frame(x = x, deviation = x - xbar)
 -   ::: discuss
     If the calculation of standard deviation is a more complicated quantity than the variance, why do we bother with standard deviation?
     :::
+
+## Live code
+
+Functions to calculate sample mean, variance, and standard deviation in `R`:
+
+-   `mean()`
+
+-   `var()`
+
+-   `sd()`

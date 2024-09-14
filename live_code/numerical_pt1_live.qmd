@@ -1,0 +1,47 @@
+---
+title: "9/16/2024 Live code"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo = F}
+knitr::opts_chunk$set(fig.width=6, fig.height=4) 
+```
+## Plots in base R
+
+```{r}
+# url to read data from
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv"
+
+# if you don't have the readr package, please install it!
+library(readr)
+
+# read data, and assign to variable called insurance
+insurance <- read_csv(url_file)
+
+# scatter plot: first argument is x-axis
+plot(insurance$bmi, insurance$charges)
+
+# make axis labels more informative, add title, add color for fun
+plot(insurance$bmi, insurance$charges, xlab = "BMI", ylab = "Charges ($)", 
+     main = "Scatterplot of insurance charges by BMI",
+     col = "blue")
+
+# make histogram
+hist(insurance$bmi)
+
+# change numbers of bins. Check Help file!
+hist(insurance$bmi, xlab = "BMI", ylab = "Histogram of BMI", breaks = 15)
+```
+
+## Summary statistics
+
+```{r}
+mean(insurance$bmi)
+var(insurance$bmi)
+sd(insurance$bmi)
+# confirm
+sqrt(var(insurance$bmi))
+```
