@@ -12,15 +12,14 @@ format:
     transition: none
     incremental: true
     scrollable: true
+    chalkboard: true
 editor: visual
 editor_options: 
   chunk_output_type: console
 draft: false
 ---
 
-
 # Housekeeping
-
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -29,17 +28,10 @@ library(readr)
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
-- Problem set 1 due tonight!
-- Office hours today 2-4pm
-- Activity!
-
-# Visualizing numerical data
-
-We will be looking at some medical insurance data throughout these slides.
-
-```{r echo = F}
-insurance <- read_csv("data/insurance.csv") 
-```
+-   Feedback on coding practice
+-   Problem set 1 due tonight!
+-   Office hours today 2-4pm
+-   Activity!
 
 ## Variables types
 
@@ -51,15 +43,20 @@ insurance <- read_csv("data/insurance.csv")
 
     2.  **Continuous** if it can take on any infinitely many values within a given interval
 
+-   **Categorical** variables are essentially everything else (more on this next week!)
+
 -   Examples and non-examples?
 
 ## Example
+
+We will be looking at some medical insurance data throughout these slides.
 
 ::: discuss
 Which of the following variables are numerical? Which are discrete vs. continuous?
 :::
 
 ```{r}
+insurance <- read_csv("data/insurance.csv") 
 insurance |>
   DT::datatable(options = list(pageLength = 5))
 
@@ -88,34 +85,41 @@ insurance |>
 
 -   What do scatterplots reveal about the data, and how are they useful?
 
--   How might we improve on the visualization we coded?
+::: notes
+Associations/patterns (linear, exponential, etc) between two variables. They might not tell the complete story, however!
+
+Positive vs negative associations
+:::
 
 ## Dot plots
 
--   Dot plots are a basic visualization that show the *distribution* of a single variable. They are univariate (one-variable) scatterplots.
+-   Dot plots are a basic visualization that show the *distribution* of a single variable (univariate)
 
 -   In the following, we have a dot plot of `BMI` rounded to the nearest integer.
 
 ::: fragment
 ```{r fig.width=6, fig.height=4, fig.align='center'}
+nb <- 5
 insurance |>
   mutate(bmi = round(bmi)) |>
   ggplot(aes(x = bmi))+
   geom_dotplot(binwidth = 1) +
   xlab("Body mass index")  +
+  scale_x_continuous(n.breaks = 10)+
   ylab("Count") +
-  scale_y_continuous(labels = NULL) +
+  scale_y_continuous(n.breaks = nb,
+                     labels= as.character(seq(0,  6*(nb-1), 6))) +
   plot_theme
 ```
 :::
 
 ::: notes
-One dot for each case in our data. What is a disadvantage of dot plots?
+Typically, one dot for each case in our data. What is a disadvantage of dot plots?
 :::
 
 ## Binning
 
--   We will sacrifice a bit of precision for convenience by *binning:*
+-   We will sacrifice a bit more of precision for convenience by *binning:*
     -   Segment the variable into equal-sized bins
     -   Visualize the value of each observation using its corresponding bin
 -   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5: \[15, 19), \[19, 23), \[23, 27), ..., \[49, 53)
@@ -125,6 +129,8 @@ One dot for each case in our data. What is a disadvantage of dot plots?
 ## Histograms
 
 **Histograms** are visualizations that display the binned counts as bars for each bin.
+
+-   Histograms provide a view of the **density** of the data (the values the data take on as well as how often)
 
 ::: columns
 ::: {.column width="30%"}
@@ -162,20 +168,22 @@ insurance |>
 :::
 :::
 
-## Histograms (cont.)
+## Describing distributions
 
--   Histograms provide a view of the **density** of the data (the values the data take on as well as how often)
--   Very helpful for understanding the *shape* of the data distribution
-    1.  Distributions are either **symmetric** or **skewed** in a one direction
-    2.  Distributions with long tails to the left are called **left-skewed**, whereas distributions with long tails to the right are **right-skewed**
--   Also helpful for identifying **modes** which are prominent peaks in the distribution
+A convenient way to describe a variable's behavior is through the *shape* of its distribution. Using histograms, we should identify:
+
+1.  If the distribution is **symmetric** or **skewed**
+    -   Distributions with long tails to the left are called **left-skewed**
+    -   Distributions with long tails to the right are **right-skewed**
+    -   If not skewed, then the distribution is **symmetric**
+2.  M**odes** which are prominent peaks in the distribution
     -   Distribution may be **unimodal** (one peak), **bimodal** (two peaks), or **multimodal** (more than two peaks)
-    -   Peaks need not be same height in histogram
+    -   Peaks need not be same height
 
 ## Histograms (cont.)
 
 ::: discuss
-How would you describe the shape and modality in the following two histograms?
+How would you describe the shape of the distributions in the following two histograms?
 :::
 
 ::: columns
@@ -216,18 +224,23 @@ We will cover:
 
 # Summary statistics for numerical data
 
-Visualizations are great for understanding the distribution of the data, but it can be extremely useful to obtain more specific, quantitative information about how the data behave.
+Visualizations are great for understanding the shape of a data distribution, but it can be extremely useful to obtain more specific, quantitative information about how the data behave.
+
+In addition to describing the shape, we should also describe:
+
+1.   Center
+2.  Spread
 
 ## Mean
 
--   By far the most common way to measure the center of the distribution of numerical data is using the **mean**, also called the **average**
+-   By far the most common way to measure the center of the distribution of a numerical variable is using the **mean** (also called the **average**)
 
--   We use the term **sample mean** when referring to the mean of sampled data, which is typically denoted as $\bar{x}$
+-   We use the term ***sample*** **mean** when calculating a mean using sampled data. The sample mean is typically denoted as $\bar{x}$
 
     -   $x$ is a placeholder for the variable of interest (e.g. `BMI`, `charges`)
     -   The bar communicates that we are looking at the average
 
--   The (sample) mean is the sum over all the values of the variable, divided by total number of observations $n$:
+-   The sample mean is the sum over all the observed values of the variable, divided by total number of observations $n$:
 
 ::: fragment
 $$\bar{x} = \frac{x_{1} + x_{2} + \ldots x_{n}}{n} = \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
@@ -259,7 +272,8 @@ insurance |>
   xlab("Charges ($)") +
   geom_vline(xintercept = mean(insurance$charges), col = "orange",
              size = 3) +
-  theme(text=element_text(size = 24))
+  theme(text=element_text(size = 24))+
+  labs(caption = "Orange line denotes sample mean")
 ```
 :::
 :::
@@ -298,14 +312,11 @@ $\bar{x} = 1\left(\frac{10}{30}\right) + 4 \left(\frac{20}{30} \right) = \frac{9
 :::
 -->
 ```
-
 ## Variability
-
--   We learned that the mean is a way to describe the center or "average value" of a numerical variable
 
 -   However, at the heart of statistics is also the **variability** or spread of the distribution of the variable
 
--   We will work with variance and standard deviation, which describe how spread out data are *from their mean*
+-   We will work with variance and standard deviation, which are ways to describe how spread out data are *from their mean*
 
 ::: fragment
 ```{r fig.width=8, fig.height=3}
@@ -337,7 +348,7 @@ We begin with **deviation**, which is the distance or difference between an obse
 -   The **sample variance** $s^2$ squares the deviations and takes an average:
 
     $$
-    s^2 = \frac{\sum_{i=1}^{n} (x_{i} - \bar{x})^2}{n-1}
+    s^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_{i} - \bar{x})^2
     $$
 
     -   Let's talk about this notation and intuition behind this formula. In particular, there are at least two things to note
@@ -348,7 +359,7 @@ We begin with **deviation**, which is the distance or difference between an obse
 
     -   I will calculate this in `R`
 
--   The **sample standard deviation** $s$ is the square root of the sample variance ($s = \sqrt{s^2}$)
+-   The **sample standard deviation** $s$ is the simply the square root of the sample variance ($s = \sqrt{s^2}$)
 
 ## Variance and standard deviation (cont.)
 

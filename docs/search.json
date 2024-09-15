@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1)\n\nIf you’d like to follow alongside me during live code:  Rmd \nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Week\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n1\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nIf you’d like to follow alongside me during live code:  Rmd \nPractice problems\n\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -298,7 +298,7 @@
     "href": "coding_practice/coding-practice-03-numerical-pt1.html",
     "title": "Numerical data coding practice",
     "section": "",
-    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in openintro package. Then run the code in the code chunk. We will once again work with the cherry data set.\n\n\n\n\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, access the diameter variable from the cherry data frame.\n\n\n\n\n\nMake a histogram of the diameter of cherry trees. Can you add a title to your plot?\n\n\n\n\n\nMake a scatterplot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
+    "text": "Change your name in the YAML. Be sure to keep the quotation marks!\nIn the following code chunk, load in the openintro package. Then run the code in the code chunk. We will once again work with the cherry data set.\n\n\n\n\n\nRemember that columns of a data frame represent variables. We can access a specific variable by typing the name of the data frame, followed by a dollar sign, and the name of the variable of interest (e.g. dataframe$variable_name). In the code chunk below, write code to find the mean diameter of trees in the cherry data frame.\n\n\n\n\n\nMake a histogram of the diameter of cherry trees. Can you make a nicer title for your plot?\n\n\n\n\n\nMake a scatter plot of the diameter and volume of cherry trees. Put volume on the y-axis. Can you change the labels of the axes to be something nicer?\n\n\n\n\nOnce you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#recap",
@@ -312,7 +312,7 @@
     "href": "slides/slides-04-numerical-pt2.html#boxplot",
     "title": "Numerical data",
     "section": "Boxplot",
-    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are created using five statistics and identify unusual observations.\n\n\nDoes the orientation (vertical or horizontal) matter?"
+    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are created using five statistics and identify unusual observations.\n\n\n\n\n\n\nDoes the orientation (vertical or horizontal) matter?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#median",
@@ -326,7 +326,7 @@
     "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
     "title": "Numerical data",
     "section": "Mean vs. Median",
-    "text": "Mean vs. Median\n\nWhich is better? The mean or the median?"
+    "text": "Mean vs. Median\n\n\n\n\n\nWhich is better? The mean or the median?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#interquartile-range",
@@ -627,7 +627,7 @@
     "href": "practice_probs/practice-04-numerical-data-pt2.html",
     "title": "Numerical data (part 2)",
     "section": "",
-    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nThe infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014:\n\n\nEstimate \\(Q_{1}\\), the median \\(m\\), and \\(Q_{3}\\) from the histogram.\nWould you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.\n\nThe statistic \\(\\frac{\\bar{x}}{m}\\) can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. \\(x_{i} > 0\\) for all observations \\(i = 1,\\ldots, n\\)). What is the expected shape of the distribution under the following conditions? Explain your reasoning.\n\n\\(\\frac{\\bar{x}}{m} = 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)\n\nReturning to the sunflowers:\n\nCalculate the median number of healthy sunflowers in a grid cell for each of the sampling strategies. How do they compare to the sample means?\nPick one of the sampling schemes. Draw out the boxplot for the data you obtained under that sampling scheme."
+    "text": "Please work on the practice problems in your group. Problems with an asterisk \\(^*\\) will be assigned to the weekly problem set.\n\nThe infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014. In particular, this is a relative frequency histogram, which shows proportions instead of raw counts on the y-axis:\n\n\nEstimate \\(Q_{1}\\), the median \\(m\\), and \\(Q_{3}\\) from the histogram.\nWould you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.\n\nSuppose that an exam has a total of 100 possible points, and the average score was an 85 with standard deviation of 15. Is the distribution of the scores on this exam symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.\nFor registered students at universities in the United States, do you expect the average age or the median age to be larger? Why?\n(\\(^*\\)) The statistic \\(\\frac{\\bar{x}}{m}\\) can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. \\(x_{i} > 0\\) for all observations \\(i = 1,\\ldots, n\\)). What is the expected shape of the distribution under the following conditions? Explain your reasoning.\n\n\\(\\frac{\\bar{x}}{m} = 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)\n\\(\\frac{\\bar{x}}{m} > 1\\)"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#data",
@@ -655,35 +655,35 @@
     "href": "slides/slides-03-numerical-pt1.html#scatterplots-cont.",
     "title": "Numerical data",
     "section": "Scatterplots (cont.)",
-    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\nHow might we improve on the visualization we coded?"
+    "text": "Scatterplots (cont.)\n\nHow do we determine which variable to put on each axis?\nWhat do scatterplots reveal about the data, and how are they useful?\n\n\nAssociations/patterns (linear, exponential, etc) between two variables. They might not tell the complete story, however!\nPositive vs negative associations"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#dot-plots",
     "href": "slides/slides-03-numerical-pt1.html#dot-plots",
     "title": "Numerical data",
     "section": "Dot plots",
-    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable. They are univariate (one-variable) scatterplots.\nIn the following, we have a dot plot of BMI rounded to the nearest integer.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne dot for each case in our data. What is a disadvantage of dot plots?"
+    "text": "Dot plots\n\nDot plots are a basic visualization that show the distribution of a single variable (univariate)\nIn the following, we have a dot plot of BMI rounded to the nearest integer.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTypically, one dot for each case in our data. What is a disadvantage of dot plots?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#binning",
     "href": "slides/slides-03-numerical-pt1.html#binning",
     "title": "Numerical data",
     "section": "Binning",
-    "text": "Binning\n\nWe will sacrifice a bit of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5: [15, 19), [19, 23), [23, 27), …, [49, 53)\n\nConvention of left or right inclusive?\n\nWe tabulate/count up the number of observations that fall into each bin."
+    "text": "Binning\n\nWe will sacrifice a bit more of precision for convenience by binning:\n\nSegment the variable into equal-sized bins\nVisualize the value of each observation using its corresponding bin\n\nFor example, the bmi variable has observed values of \\(15.96\\) through \\(49.6\\). Consider the following bins of size 5: [15, 19), [19, 23), [23, 27), …, [49, 53)\n\nConvention of left or right inclusive?\n\nWe tabulate/count up the number of observations that fall into each bin."
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms",
     "href": "slides/slides-03-numerical-pt1.html#histograms",
     "title": "Numerical data",
     "section": "Histograms",
-    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin.\n\n\n\n\n\n\n\n\nbmi_bin\ncount\n\n\n\n\n[15, 19)\n5\n\n\n[19, 23)\n12\n\n\n[23, 27)\n35\n\n\n[27, 31)\n58\n\n\n[31, 35)\n41\n\n\n[35, 39)\n35\n\n\n[39, 43)\n13\n\n\n[49, 52)\n1"
+    "text": "Histograms\nHistograms are visualizations that display the binned counts as bars for each bin.\n\nHistograms provide a view of the density of the data (the values the data take on as well as how often)\n\n\n\n\n\n\n\n\n\nbmi_bin\ncount\n\n\n\n\n[15, 19)\n5\n\n\n[19, 23)\n12\n\n\n[23, 27)\n35\n\n\n[27, 31)\n58\n\n\n[31, 35)\n41\n\n\n[35, 39)\n35\n\n\n[39, 43)\n13\n\n\n[49, 52)\n1"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.",
     "href": "slides/slides-03-numerical-pt1.html#histograms-cont.",
     "title": "Numerical data",
     "section": "Histograms (cont.)",
-    "text": "Histograms (cont.)\n\nHistograms provide a view of the density of the data (the values the data take on as well as how often)\nVery helpful for understanding the shape of the data distribution\n\nDistributions are either symmetric or skewed in a one direction\nDistributions with long tails to the left are called left-skewed, whereas distributions with long tails to the right are right-skewed\n\nAlso helpful for identifying modes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height in histogram"
+    "text": "Histograms (cont.)\n\nHow would you describe the shape of the distributions in the following two histograms?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#histograms-cont.-1",
@@ -697,7 +697,7 @@
     "href": "slides/slides-03-numerical-pt1.html#mean",
     "title": "Numerical data",
     "section": "Mean",
-    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of numerical data is using the mean, also called the average\nWe use the term sample mean when referring to the mean of sampled data, which is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe (sample) mean is the sum over all the values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
+    "text": "Mean\n\nBy far the most common way to measure the center of the distribution of a numerical variable is using the mean (also called the average)\nWe use the term sample mean when calculating a mean using sampled data. The sample mean is typically denoted as \\(\\bar{x}\\)\n\n\\(x\\) is a placeholder for the variable of interest (e.g. BMI, charges)\nThe bar communicates that we are looking at the average\n\nThe sample mean is the sum over all the observed values of the variable, divided by total number of observations \\(n\\):\n\n\n\\[\\bar{x} = \\frac{x_{1} + x_{2} + \\ldots x_{n}}{n} = \\frac{1}{n} \\sum_{i=1}^{n} x_{i}\\]"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#mean-cont.",
@@ -711,7 +711,7 @@
     "href": "slides/slides-03-numerical-pt1.html#example",
     "title": "Numerical data",
     "section": "Example",
-    "text": "Example\n\nWhich of the following variables are numerical? Which are discrete vs. continuous?"
+    "text": "Example\nWe will be looking at some medical insurance data throughout these slides.\n\nWhich of the following variables are numerical? Which are discrete vs. continuous?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#means-depend-on-proportions",
@@ -725,7 +725,7 @@
     "href": "slides/slides-03-numerical-pt1.html#variability",
     "title": "Numerical data",
     "section": "Variability",
-    "text": "Variability\n\nWe learned that the mean is a way to describe the center or “average value” of a numerical variable\nHowever, at the heart of statistics is also the variability or spread of the distribution of the variable\nWe will work with variance and standard deviation, which describe how spread out data are from their mean"
+    "text": "Variability\n\nHowever, at the heart of statistics is also the variability or spread of the distribution of the variable\nWe will work with variance and standard deviation, which are ways to describe how spread out data are from their mean"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#deviation",
@@ -739,7 +739,7 @@
     "href": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation",
     "title": "Numerical data",
     "section": "Variance and standard deviation",
-    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2}{n-1}\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\n\nSet-up the calculation of the sample variance for our data\n\n\nI will calculate this in R\n\nThe sample standard deviation \\(s\\) is the square root of the sample variance (\\(s = \\sqrt{s^2}\\))"
+    "text": "Variance and standard deviation\n\nThe sample variance \\(s^2\\) squares the deviations and takes an average:\n\\[\ns^2 = \\frac{1}{n-1}\\sum_{i=1}^{n} (x_{i} - \\bar{x})^2\n\\]\n\nLet’s talk about this notation and intuition behind this formula. In particular, there are at least two things to note\n\n\nSet-up the calculation of the sample variance for our data\n\n\nI will calculate this in R\n\nThe sample standard deviation \\(s\\) is the simply the square root of the sample variance (\\(s = \\sqrt{s^2}\\))"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#variance-and-standard-deviation-cont.",
@@ -767,7 +767,7 @@
     "href": "slides/slides-06-categorical-data.html",
     "title": "Categorical data",
     "section": "",
-    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\nRows: 1338 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#factoring",
@@ -1691,7 +1691,7 @@
     "href": "slides/slides-03-numerical-pt1.html#variables-types",
     "title": "Numerical data",
     "section": "Variables types",
-    "text": "Variables types\n\nVariables can be broadly broken into two categories: numerical (quantitative) or categorical (qualitative)\nNumerical variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values. Two types:\n\nDiscrete if it can only take on finitely many numerical values within a given interval\nContinuous if it can take on any infinitely many values within a given interval\n\nExamples and non-examples?"
+    "text": "Variables types\n\nVariables can be broadly broken into two categories: numerical (quantitative) or categorical (qualitative)\nNumerical variables take a wide range of numerical values, and it is sensible to add/subtract/do mathematical operations with those values. Two types:\n\nDiscrete if it can only take on finitely many numerical values within a given interval\nContinuous if it can take on any infinitely many values within a given interval\n\nCategorical variables are essentially everything else (more on this next week!)\nExamples and non-examples?"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#example-1",
@@ -1761,7 +1761,7 @@
     "href": "slides/slides-04-numerical-pt2.html#more-visualizations-and-statistics",
     "title": "Numerical data",
     "section": "More visualizations and statistics",
-    "text": "More visualizations and statistics\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+    "text": "More visualizations and statistics\n\n\n\n\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
   },
   {
     "objectID": "slides/slides-05-numerical-data-viz.html#introduction-to-ggplot",
@@ -1846,5 +1846,47 @@
     "title": "Visualizations with ggplot",
     "section": "Additional variables + modifications",
     "text": "Additional variables + modifications\n\nWe emphasize making informative and useful visualizations.\n\nInformative titles and labels\nPlot should tell a meaningful story\n\nDepending on the plot and data, we can map additional variables by:\n\nSpecifying visual cues via aesthetics: color, size, shape, alpha (transparency)\nFaceting (will see this next week)"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html",
+    "href": "slides/slides-04-numerical-pt2.html",
+    "title": "Numerical data",
+    "section": "",
+    "text": "We learned about the sample mean \\(\\bar{x}\\), the sample variance \\(s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_{i} - \\bar{x})^2\\), and the sample standard deviation \\(s = \\sqrt{s^2}\\)\n\nWhy care about standard deviation (SD)? Describes how far data are distributed from their mean\nUsually (but not always!!) about 70% of the data will be within one SD of the mean, and 95% will be within two SDs\n\nThese percentages are not precise, but are useful for intuition\nWe will come back to this later in semester"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#aesthetic-color",
+    "href": "slides/slides-06-categorical-data.html#aesthetic-color",
+    "title": "Categorical data",
+    "section": "Aesthetic: color",
+    "text": "Aesthetic: color"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#aesthetic-shape",
+    "href": "slides/slides-06-categorical-data.html#aesthetic-shape",
+    "title": "Categorical data",
+    "section": "Aesthetic: shape",
+    "text": "Aesthetic: shape"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#facet_wrap",
+    "href": "slides/slides-06-categorical-data.html#facet_wrap",
+    "title": "Categorical data",
+    "section": "facet_wrap()",
+    "text": "facet_wrap()"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#facet_grid",
+    "href": "slides/slides-06-categorical-data.html#facet_grid",
+    "title": "Categorical data",
+    "section": "facet_grid()",
+    "text": "facet_grid()"
+  },
+  {
+    "objectID": "slides/slides-03-numerical-pt1.html#describing-distributions",
+    "href": "slides/slides-03-numerical-pt1.html#describing-distributions",
+    "title": "Numerical data",
+    "section": "Describing distributions",
+    "text": "Describing distributions\nA convenient way to describe a variable’s behavior is through the shape of its distribution. Using histograms, we should identify:\n\nIf the distribution is symmetric or skewed\n\nDistributions with long tails to the left are called left-skewed\nDistributions with long tails to the right are right-skewed\nIf not skewed, then the distribution is symmetric\n\nModes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height"
   }
 ]

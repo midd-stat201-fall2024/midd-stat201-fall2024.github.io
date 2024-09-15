@@ -1,6 +1,6 @@
 ---
 title: "Numerical data (part 1)"
-subtitle: "Practice problems"
+author: "Practice problems"
 date: "September 16, 2024"
 format:
   pdf:
@@ -12,6 +12,7 @@ format:
     geometry:
       - left=1in
       - right=1in
+      - top=1in
 ---
 
 Please work on the practice problems in your group. Problems with an asterisk $^*$ will be assigned to the weekly problem set.
@@ -20,20 +21,24 @@ Please work on the practice problems in your group. Problems with an asterisk $^
 
     ![](figs/03-scatterplots.png)
 
-2.  $^*$ Calculate the average/sample mean in each of the following scenarios:
+2.  A list has 10 entries, and each entry is either a 1, 2, or 3. What must the list be if the average is 3? Give examples of values that the average *cannot* be.
+
+3.  Suppose someone tells you that they have some data where the standard deviation is 10,000. What does this tell you about your data, if anything?
+
+4.  $^*$ Consider the following two sets of data: $$\mathbf{x} =  (1, \ 3,\ 4, \ 5,\  7) \qquad \qquad \qquad  \mathbf{y} =  (6,\ 8,\ 9,\ 10,\ 12)$$
+
+    a.  For each set, find the average and the standard deviation. Show your work by writing out the calculations explicitly. Please use the proper symbols/notation!
+
+    b.  How is the set of data $\mathbf{y}$ related to $\mathbf{x}$? How does this relationship carry over/affect the average and the standard deviation of $\mathbf{y}$ in comparison to those of $\mathbf{x}$?
+
+5.  $^*$ Calculate the sample mean in each of the following scenarios:
 
     a.  Suppose that we have some data where 20% of the data are 1's, 50% are 2's, and 30% are 3's. What is the sample mean?
     b.  A school has two classes, one with 10 students and one with 100 students. What is the average class size?
     c.  A school has two classes, one with 10 students and one with 100 students. What is the average size of the class that a student is enrolled in?
 
-3.  A list has 10 entries, and each entry is either a 1, 2, or 3. What must the list be if the average is 3? Can the average be 4?
-
-4.  $^*$ Consider the following two sets of data:
-
-    $$\mathbf{x} =  (1, \ 3,\ 4, \ 5,\  7) \qquad \qquad \qquad  \mathbf{y} =  (6,\ 8,\ 9,\ 10,\ 12)$$
-
-    a.  For each set, find the average and the standard deviation. Please use the proper symbols/notation!
-
-    b.  How is the set of data $\mathbf{y}$  related to $\mathbf{x}$? How does this relationship carry over/affect the average and the standard deviation of $\mathbf{y}$ in comparison to those of $\mathbf{x}$?
-
+```{=html}
+<!--
 5.  Workers at a particular mining site receive an average of 35 days paid vacation, which is lower than the national average. The manager of this plant is under pressure from a local union to increase the amount of paid time off. However, he does not want to give more days off to the workers because that would be costly. Instead he decides he should fire 10 employees in such a way as to raise the average number of days off that are reported by his employees. In order to achieve this goal, should he fire employees who have the most number of days off, least number of days off, or those who have about the average number of days off?
+-->
+```
