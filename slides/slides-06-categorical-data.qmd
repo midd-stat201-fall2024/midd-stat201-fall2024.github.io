@@ -176,9 +176,7 @@ insurance |>
 -   What does the quantity 0.378 represent?
 -   If we take the proportions row-wise, does each row need to sum to 1?
 -   If we take the proportions row-wise, does each column need to sum to 1?
-
 :::
-
 
 ## Proportions (cont.)
 
@@ -202,8 +200,8 @@ ggplot(insurance, aes(fill = smoker, x = sex)) +
 ## Choosing a bar plot
 
 ::: discuss
-- Using any of the plots below, do you believe the smoker status and sex are associated?
-- When might you prefer to use the stacked, dodged, or standardized bar plot?
+-   Using any of the plots below, do you believe the smoker status and sex are associated?
+-   When might you prefer to use the stacked, dodged, or standardized bar plot?
 :::
 
 ```{r}
@@ -213,3 +211,44 @@ ggpubr::ggarrange(p1,p2,p3, ncol = 2, nrow = 2, common.legend = T, legend = "bot
 ## Factoring
 
 ## Live code
+
+# Visualizing numerical and categorical variables together
+
+## Aesthetic: color
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, 
+                                       col = smoker)) +
+  geom_point()
+```
+
+## Aesthetic: shape
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,
+                                       shape = smoker)) +
+  geom_point()
+```
+
+## facet_wrap()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_wrap(~ smoker)
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_wrap(~ smoker, scales = "free_y")
+```
+
+## facet_grid()
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+  geom_point() +
+  facet_grid(sex ~ smoker)
+```

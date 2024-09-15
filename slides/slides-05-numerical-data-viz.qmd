@@ -11,22 +11,24 @@ format:
     transition: none
     incremental: true
     scrollable: true
+    chalkboard: true
 editor: visual
 editor_options: 
   chunk_output_type: console
 draft: false
 ---
 
+# Housekeeping
+
 ```{r echo = F, warning = F}
 knitr::opts_chunk$set(echo = T)
 library(tidyverse)
 library(readr)
 plot_theme <- theme(text = element_text(size = 16))
-insurance <- read_csv("data/insurance.csv") %>%
-  slice(1:200)
+insurance <- read_csv("data/insurance.csv") 
 ```
 
-# Housekeeping
+-   Observations of Prof. Tang taking place next week
 
 ## Exploratory data analysis
 
@@ -40,15 +42,11 @@ insurance <- read_csv("data/insurance.csv") %>%
 
 ## Tidy data
 
--   The first step of any data/statistical analysis is to understand the data you are working with. This often involves getting the data into `R`
+-   When working with data in `R`, always look at the data to ensure it is in **tidy** format:
 
--   Then, it is a good idea to take a macro-level look at the data to ensure it is in **tidy** format, which means:
+    -   Each row represents an observation, each column represents a variable describing the observations
 
-    -   Each row in the data set represent an observation/case
-
-    -   Each columns represents a variable
-
--   Anscombe data: four datasets with two variables each
+-   `anscombe` data frame: four datasets each with 11 observations each and the same two variables
 
 ::: fragment
 ::: columns
@@ -56,12 +54,12 @@ insurance <- read_csv("data/insurance.csv") %>%
 Non-tidy version:
 
 ```{r echo = F}
-head(anscombe)
+anscombe
 ```
 :::
 
 ::: {.column width="\"50%"}
-Tidy version:
+Tidy version (first 15 rows):
 
 ```{r echo = F}
 library(Tmisc)
@@ -79,7 +77,7 @@ quartet[1:15,]
 
 ## Why do we visualize?
 
--   Summary statistics from each of the four datasets in Anscombe:
+-   Summary statistics from each of the four datasets in `anscombe`:
 
 ::: fragment
 ```{r echo = F}
@@ -93,10 +91,10 @@ quartet %>%
 ```
 :::
 
--   Let's visualize the four data sets. What would be an appropriate type of plot to examine the relationship between the two variables?
+-   Let's visualize the four data sets. What would be an appropriate type of plot to examine the relationship between the two variables `x` and `y`?
 
 ::: fragment
-```{r echo = F}
+```{r echo = F, fig.height=3}
 ggplot(quartet, aes(x = x, y = y)) +
   geom_point() +
   facet_wrap(~ set, ncol = 4) +
@@ -104,53 +102,40 @@ ggplot(quartet, aes(x = x, y = y)) +
 ```
 :::
 
-## Common plots (numerical) in ggplot
+## Introduction to ggplot
 
--   We have learned about histograms, density plots, boxplots, and scatterplots
-
--   Now learn how to create these plots using the `ggplot()` function from the `ggplot2` library
+-   We will learn how to create histograms, box plots, and scatterplots using the `ggplot()` function from the `ggplot2` library
 
     -   Plots are constructed in layers
 
 -   At a *minimum*, we need to specify 1) the dataset, 2) variable(s) from the dataset we'd like to plot, and 3) the type of plot
 
--   This is what the code will generally look like. Values in \< \> denote what you as the coder need to specify.
+    -   How does this differ from what we've seen in the past?
+
+-   This is what the code will generally look like. Values in \< \> and `xxx` denote what you as the coder need to specify.
 
 ::: fragment
 ```{r eval = F}
-ggplot(data = <dataset>, 
-       mapping = aes(x = <x-var>, y = <y-var>)) +
-  geom_xxx() +
+ggplot(data = <dataset>, # specify data frame
+       mapping = aes(x = <x-var>)) + #  specify variables to be used in plot
+  geom_xxx() + # specify plot type
   <other options>
 ```
 :::
 
-::: aside
-New lines and spacing don't impact the execution of code, but are important for good coding style!
-:::
+## Additional variables + modifications
 
-## Country footprint data
+-   We emphasize making informative and useful visualizations.
 
-Data on the ecological footprint by country in 2023
+    -   Informative titles and labels
 
-::: aside
-Data obtained from <https://www.kaggle.com/datasets/jainaru/global-ecological-footprint-2023>
-:::
+    -   Plot should tell a meaningful story
 
-```{r}
-footprint_data <- read_csv("data/countries_footprint.csv")
-footprint_data
-```
+-   Depending on the plot and data, we can map additional variables by:
 
-## Additional variables
+    1.  Specifying visual cues via **aesthetics**: color, size, shape, alpha (transparency)
 
--   Depending on the plot and data, we can map additional variables by using **aesthetics** (color, size, shape, alpha (transparency) or **faceting**
-
-## Modifications
-
--   Adding title
-
--   Changing axis title
+    2.   *Faceting* (will see this next week)
 
 ## Live code
 
@@ -160,50 +145,83 @@ Note: most of the code I will show is included in the remaining slides. However,
 
 ## geom_histogram()
 
-```{r warning = T}
-ggplot(data = insurance, mapping = aes(x = charges)) +
+```{r warning = T, message= T, fig.height = 4}
+ggplot(data = insurance,  mapping = aes(x = charges)) +
   geom_histogram()
 ```
 
+Note the message provided when you execute this code!
+
+## geom_histogram() cont.
+
+To improve on histogram we change the bin width.
+
 ::: columns
 ::: {.column width="50%"}
-```{r warning = T}
-ggplot(data = insurance, mapping = aes(x = charges)) +
+```{r warning = T, `code-line-numbers`="3", eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
   geom_histogram(binwidth = 5000)
+```
+
+```{r warning = T, `code-line-numbers`="3", echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
+  geom_histogram(binwidth = 5000) +
+  theme(text = element_text(size = 25))
 ```
 :::
 
 ::: {.column width="50%"}
-```{r warning = T}
-ggplot(data = insurance, mapping = aes(x = charges)) +
+```{r warning = T, `code-line-numbers`="3", eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
   geom_histogram(bins = 20)
 ```
-:::
-:::
 
-## geom_density()
-
-```{r}
-ggplot(data = insurance, mapping = aes(x = charges)) +
-  geom_density()
+```{r warning = T, `code-line-numbers`="3", echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
+  geom_histogram(bins = 20) +
+  theme(text = element_text(size = 25))
 ```
+:::
+:::
+
 
 ## geom_boxplot()
 
-```{r}
+::: columns
+::: {.column width="60%"}
+```{r fig.height=3, eval = F}
 ggplot(data = insurance, mapping = aes(x = charges)) +
   geom_boxplot()
 ```
 
-## Side-by-side boxplots
+```{r fig.height=3, echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
+  geom_boxplot() +
+  theme(text = element_text(size = 30))
+```
+:::
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = sex, y = charges)) +
+::: {.column width="40%"}
+::: fragment
+```{r fig.height=6, `code-line-numbers`="2", eval = F}
+ggplot(data = insurance, 
+       mapping = aes(y = charges)) +
   geom_boxplot()
 ```
 
-::: aside
-Bivariate plot for a numerical and a categorical variable.
+```{r fig.height=6, echo = F}
+ggplot(data = insurance, 
+       mapping = aes(y = charges)) +
+  geom_boxplot() +
+  theme(text = element_text(size = 35))
+```
+:::
+:::
 :::
 
 ## geom_point()
@@ -213,82 +231,150 @@ ggplot(data = insurance, mapping = aes(x = age, y = charges)) +
   geom_point()
 ```
 
-## Aesthetics
+## Aesthetics: color
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +
+::: columns
+::: {.column width="50%"}
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges, 
+                     col = age)) +
   geom_point()
 ```
 
+```{r echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges, 
+                     col = age)) +
+  geom_point(size = 2)+
+  theme(text =element_text(size = 30))
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
+  geom_point(aes(col = age))
+```
+
+```{r echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
+  geom_point(aes(col = age), size= 2) +
+  theme(text = element_text(size = 30))
+```
+:::
+:::
+:::
+
+## Aesthetics: transparency
+
 ```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age)) +
+#| code-line-numbers: "2"
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, 
+                                       alpha = age)) +
   geom_point()
 ```
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,
-                                       shape = smoker)) +
-  geom_point()
-```
+## Specifying multiple aesthetics
 
 ```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, alpha = age,
-                                       shape = smoker)) +
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age, alpha = age)) +
   geom_point()
 ```
 
 ## When to map to variable
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
+What's going on here?
+
+::: columns
+::: {.column width="50%"}
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
   geom_point(col = "purple")
 ```
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = "purple")) +
-  geom_point()
+```{r echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
+  geom_point(col = "purple", size = 2)+
+  theme(text = element_text(size = 30))
+```
+:::
+
+::: {.column width="50%"}
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
+  geom_point(aes(col = "purple"))
 ```
 
-## facet_wrap()
-
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
-  facet_wrap(~ smoker)
+```{r echo = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi, y = charges)) +
+  geom_point(aes(col = "purple"), size = 2)+
+  theme(text =element_text(size = 30))
 ```
+:::
+:::
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
-  facet_wrap(~ smoker, scales = "free_y")
-```
+-   ::: {style="color: maroon"}
+    Key takeaway: aesthetics should correspond/map to a variable in the data frame
+    :::
 
-## facet_grid()
+    -   "Fixed" visual cues are set outside of `aes()`
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
-  facet_grid(sex ~ smoker)
-```
-
-## Adding titles
+## Adding a title
 
 ```{r}
 ggplot(data = insurance, mapping = aes(x = charges)) +
   geom_histogram() +
-  ggtitle("Histogram of charges")
+  ggtitle("Histogram of charges",
+          subtitle = "In USD")
 ```
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = charges)) +
+## Changing axis labels
+
+By default, axis titles are taken from variable name specified in `aes()`. To change:
+
+::: columns
+::: {.column width="50%"}
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
   geom_histogram() +
   ggtitle("Histogram of charges") +
   xlab("Charges ($)")
 ```
 
-```{r}
+```{r echo = F}
 ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram() +
+  ggtitle("Histogram of charges") +
+  xlab("Charges ($)") +
+  ylab("Count") +
+  theme(text = element_text(size = 25))
+```
+:::
+
+::: {.column width="50%"}
+```{r eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = charges)) +
   geom_histogram() +
   labs(title = "Histogram of charges",
        x = "Charges ($)", y = "Count")
 ```
+
+```{r echo = F}
+ggplot(data = insurance, mapping = aes(x = charges)) +
+  geom_histogram() +
+  labs(title = "Histogram of charges",
+       x = "Charges ($)", y = "Count") +
+  theme(text = element_text(size = 25))
+```
+:::
+:::

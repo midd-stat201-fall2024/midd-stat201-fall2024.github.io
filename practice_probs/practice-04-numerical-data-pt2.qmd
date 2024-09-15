@@ -26,16 +26,12 @@ Please work on the practice problems in your group. Problems with an asterisk $^
 
 2.  Suppose that an exam has a total of 100 possible points, and the average score was an 85 with standard deviation of 15. Is the distribution of the scores on this exam symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.
 
-3.  ($^*$) The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
+3.  For registered students at universities in the United States, do you expect the average age or the median age to be larger? Why?
+
+4.  ($^*$) The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
 
     a.  $\frac{\bar{x}}{m} = 1$
 
     b.  $\frac{\bar{x}}{m} > 1$
 
     c.  $\frac{\bar{x}}{m} > 1$
-
-4.  Returning to the sunflowers:
-
-    a.  Calculate the median number of healthy sunflowers in a grid cell for each of the sampling strategies. How do they compare to the sample means?
-
-    b.  Pick one of the sampling schemes. Draw out the boxplot for the data you obtained under that sampling scheme.
