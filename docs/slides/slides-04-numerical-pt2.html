@@ -156,8 +156,19 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 200 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): sex, smoker, region
+dbl (4): age, bmi, children, charges
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell-output-display">
-<p><img src="slides-04-numerical-pt2_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid" width="960"></p>
+<p><img src="slides-04-numerical-pt2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?</p>
@@ -167,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Another commonly used visualization to display the distribution of a numerical variable is the <strong>boxplot</strong>. Boxplots are created using five statistics and identify unusual observations.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="slides-04-numerical-pt2_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid" width="960"></p>
+<p><img src="slides-04-numerical-pt2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ul>
@@ -237,10 +248,6 @@ IQR = Q_{3} - Q_{1}
 <li><p>Let’s draw a boxplot for the data <span class="math inline">\(\boldsymbol{x}\)</span>!</p></li>
 </ul>
 </section>
-<section id="another-boxplot" class="level2">
-<h2 class="anchored" data-anchor-id="another-boxplot">Another boxplot</h2>
-<p>Now a boxplot of the estimated weights from the previous class!</p>
-</section>
 <section id="a-note-on-outliers" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-on-outliers">A note on outliers</h2>
 <ul>
@@ -298,8 +305,11 @@ IQR = Q_{3} - Q_{1}
 <section id="mean-vs.-median" class="level2">
 <h2 class="anchored" data-anchor-id="mean-vs.-median">Mean vs.&nbsp;Median</h2>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell-output-display">
-<p><img src="slides-04-numerical-pt2_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid" width="960"></p>
+<p><img src="slides-04-numerical-pt2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Which is better? The mean or the median?</p>
@@ -309,8 +319,15 @@ IQR = Q_{3} - Q_{1}
 -   While we haven't yet discussed categorical data, it is common to want to visualize the distribution of a numerical variable across different groups/levels of a categorical variable
 
 ::: {.cell}
+::: {.cell-output .cell-output-stderr}
+```
+
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+:::
+
 ::: {.cell-output-display}
-![](slides-04-numerical-pt2_files/figure-revealjs/unnamed-chunk-6-1.png){width=960}
+![](slides-04-numerical-pt2_files/figure-html/unnamed-chunk-6-1.png){width=672}
 :::
 :::
 
@@ -329,7 +346,7 @@ IQR = Q_{3} - Q_{1}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="slides-04-numerical-pt2_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid" width="960"></p>
+<p><img src="slides-04-numerical-pt2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -345,44 +362,6 @@ IQR = Q_{3} - Q_{1}
 </section>
 
 </main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

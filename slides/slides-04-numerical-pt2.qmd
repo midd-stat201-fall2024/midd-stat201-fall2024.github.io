@@ -132,10 +132,6 @@ Q3 = 119 and Q1 = 113 -\> IQR = 6
 
 -   Let's draw a boxplot for the data $\boldsymbol{x}$!
 
-## Another boxplot
-
-Now a boxplot of the estimated weights from the previous class!
-
 ## A note on outliers
 
 -   ::: discuss
