@@ -1,6 +1,6 @@
 ---
 title: "Numerical data (part 2)"
-subtitle: "Practice problems"
+author: "Practice problems"
 date: "September 18, 2024"
 format: 
   pdf:
@@ -12,6 +12,7 @@ format:
     geometry:
       - left=1in
       - right=1in
+      - top=1in
 ---
 
 Please work on the practice problems in your group. Problems with an asterisk $^*$ will be assigned to the weekly problem set.
@@ -20,9 +21,7 @@ Please work on the practice problems in your group. Problems with an asterisk $^
 
     ![](figs/04-infant-mortality.png)
 
-    a.  Estimate $Q_{1}$, the median $m$, and $Q_{3}$ from the histogram.
-
-    b.  Would you expect the mean of this dataset to be smaller or larger than the median? Explain your reasoning.
+    Estimate $Q_{1}$, the median $m$, and $Q_{3}$ from the histogram.
 
 2.  Suppose that an exam has a total of 100 possible points, and the average score was an 85 with standard deviation of 15. Is the distribution of the scores on this exam symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.
 
@@ -30,8 +29,4 @@ Please work on the practice problems in your group. Problems with an asterisk $^
 
 4.  ($^*$) The statistic $\frac{\bar{x}}{m}$ can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0 (i.e. $x_{i} > 0$ for all observations $i = 1,\ldots, n$). What is the expected shape of the distribution under the following conditions? Explain your reasoning.
 
-    a.  $\frac{\bar{x}}{m} = 1$
-
-    b.  $\frac{\bar{x}}{m} > 1$
-
-    c.  $\frac{\bar{x}}{m} > 1$
+    $$\text{(a)} \ \ \frac{\bar{x}}{m} = 1 \qquad \qquad \text{(b)} \ \ \frac{\bar{x}}{m} > 1 \qquad \qquad \text{(c)} \ \ \frac{\bar{x}}{m} < 1$$

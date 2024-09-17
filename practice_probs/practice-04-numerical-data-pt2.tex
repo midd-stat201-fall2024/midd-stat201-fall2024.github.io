@@ -37,7 +37,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[left=1in,right=1in]{geometry}
+\usepackage[left=1in,right=1in,top=1in]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
@@ -138,6 +138,7 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Numerical data (part 2)},
+  pdfauthor={Practice problems},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -146,19 +147,12 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{Numerical data (part 2)}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Practice problems}
-\author{}
+\author{Practice problems}
 \date{9/18/24}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden, boxrule=0pt, enhanced, sharp corners, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, enhanced, breakable, frame hidden, borderline west={3pt}{0pt}{shadecolor}, interior hidden]}{\end{tcolorbox}}\fi
 
 Please work on the practice problems in your group. Problems with an
 asterisk \(^*\) will be assigned to the weekly problem set.
@@ -176,15 +170,8 @@ asterisk \(^*\) will be assigned to the weekly problem set.
 
   \includegraphics{figs/04-infant-mortality.png}
 
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \item
-    Estimate \(Q_{1}\), the median \(m\), and \(Q_{3}\) from the
-    histogram.
-  \item
-    Would you expect the mean of this dataset to be smaller or larger
-    than the median? Explain your reasoning.
-  \end{enumerate}
+  Estimate \(Q_{1}\), the median \(m\), and \(Q_{3}\) from the
+  histogram.
 \item
   Suppose that an exam has a total of 100 possible points, and the
   average score was an 85 with standard deviation of 15. Is the
@@ -200,15 +187,7 @@ asterisk \(^*\) will be assigned to the weekly problem set.
   \(i = 1,\ldots, n\)). What is the expected shape of the distribution
   under the following conditions? Explain your reasoning.
 
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \item
-    \(\frac{\bar{x}}{m} = 1\)
-  \item
-    \(\frac{\bar{x}}{m} > 1\)
-  \item
-    \(\frac{\bar{x}}{m} > 1\)
-  \end{enumerate}
+  \[\text{(a)} \ \ \frac{\bar{x}}{m} = 1 \qquad \qquad \text{(b)} \ \ \frac{\bar{x}}{m} > 1 \qquad \qquad \text{(c)} \ \ \frac{\bar{x}}{m} < 1\]
 \end{enumerate}
 
 

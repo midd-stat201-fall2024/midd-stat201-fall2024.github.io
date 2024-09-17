@@ -18,7 +18,7 @@ editor_options:
 draft: false
 ---
 
-## Recap
+## Interpreting SD
 
 We learned about the sample mean $\bar{x}$, the sample variance $s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_{i} - \bar{x})^2$, and the sample standard deviation $s = \sqrt{s^2}$
 
@@ -30,7 +30,7 @@ We learned about the sample mean $\bar{x}$, the sample variance $s^2 = \frac{1}{
 
     -   We will come back to this later in semester
 
-## More visualizations and statistics
+## Visualizing SD
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -42,15 +42,42 @@ plot_theme <- theme(text = element_text(size = 16))
 ```{r echo = F}
 insurance <- read_csv("data/insurance.csv")
 
-ggplot(insurance, aes(x = charges)) +
+ggplot(insurance, aes(x = bmi)) +
   geom_histogram() +
-  geom_vline(xintercept = mean(insurance$charges), col = "orange", size = 2) +
+  geom_vline(xintercept = mean(insurance$bmi), col = "orange", size = 2) +
+  geom_vline(xintercept = mean(insurance$bmi) - sd(insurance$bmi), 
+             col = "purple", size = 1, linetype = "dashed")+
+    geom_vline(xintercept = mean(insurance$bmi) + sd(insurance$bmi), 
+             col = "purple", size = 1, linetype = "dashed")+
   theme(text = element_text(size = 20)) +
-  labs(caption = "Orange line denotes sample mean")
+  geom_vline(xintercept = mean(insurance$bmi) - 2*sd(insurance$bmi), 
+             col = "blue", size = 1, linetype = "dashed")+
+    geom_vline(xintercept = mean(insurance$bmi) + 2*sd(insurance$bmi), 
+             col = "blue", size = 1, linetype = "dashed")+
+  theme(text = element_text(size = 20)) +
+  labs(caption = "orange = sample mean, purple = 1 SD, blue = 2 SD")
+
+
   # facet_wrap(~smoker)
 ```
 
+## Visualizing SD (cont.)
+
+```{r}
+ggplot(insurance, aes(x = charges)) +
+  geom_histogram() +
+  geom_vline(xintercept = mean(insurance$charges), col = "orange", size = 2) +
+  geom_vline(xintercept = mean(insurance$charges) - sd(insurance$charges), 
+             col = "purple", size = 1, linetype = "dashed")+
+  geom_vline(xintercept = mean(insurance$charges) + sd(insurance$charges), 
+             col = "purple", size = 1, linetype = "dashed")+
+  theme(text = element_text(size = 20)) +
+  labs(caption = "orange = sample mean, purple = 1 SD")
+```
+
+::: fragment
 We know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn't it be great if we had a visualization that directly displays some summary statistics?
+:::
 
 ## Boxplot
 
@@ -71,13 +98,13 @@ ggplot(insurance, aes(x = charges)) +
 -   The (sample) **median** $m$ is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than $m$ and 50% of the data are greater than $m$.
 
     -   If we order the data from smallest to largest, the median is the value in the middle.
-    -   If the number of observations $n$ is even, then there will be two values in the middle, and the median is taken as their average.
+    -   If the number of observations $n$ is even, then there will be two values in the middle, and the median is taken as their average
 
 -   ::: discuss
-    Consider the following data: $\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115$. What is the median?
+    Consider the following data: $\boldsymbol{x} =116, 114, 112, 121, 108, 113, 129, 118, 119, 115$. What is the median?
     :::
 
--   The median is also known the 50th percentile: 50% of the data fall below $m$
+-   The median is also known the 50th ***percentile*** because 50% of the data fall below $m$
 
 ## Quartiles
 
@@ -107,7 +134,7 @@ $$
 IQR = Q_{3} - Q_{1}
 $$
 
--   The more variable the data, the larger the IQR
+-   If the data are more spread out data, should the IQR increase or decrease?
 -   What is the IQR of the data $\boldsymbol{x}$?
 
 ::: notes
@@ -157,20 +184,20 @@ What characteristics of the distribution are apparent in the histogram and not i
 ## Robust statistics
 
 ```{r}
-x <- c(116, 114, 112, 120, 108, 113, 123, 118, 119, 115)
+x <- c(116, 114, 112, 121, 108, 113, 129, 118, 119, 115)
 x2 <- c(x, 170)
 ```
 
--   In the data $\boldsymbol{x}$ that we have been working with, we have the following sample statistics:
+-   In the data $\boldsymbol{x} = 116, 114, 112, 121, 108, 113, 129, 118, 119, 115$ that we have been working with, we have the following sample statistics:
 
 ::: fragment
-$\qquad \bar{x} =$ \_\_\_\_\_, $s =$ \_\_\_\_\_, $m =$ `r round(median(x), 1)` , $IQR =$ 6
+$\qquad \bar{x} =$ `r round(mean(x),1)`, $s =$ `r round(sd(x),1)`, $m =$ `r round(median(x), 1)` , $IQR =$ 6
 :::
 
 -   ::: discuss
     Suppose we actually observed an additional data point with a value of $170$. What are the sample statistics with this additional data point? How do they compare to the values above?
 
-    $\bar{x}' =$ \_\_\_\_\_, $s' =$ \_\_\_\_\_, $m' =$ \_\_\_\_\_, $IQR' =$ \_\_\_\_\_
+    $\bar{x}' =$ `r round(mean(x2),1)`, $s' =$ `r round(sd(x2),2)`, $m' =$ \_\_\_\_\_, $IQR' =$ \_\_\_\_\_
     :::
 
 -   **Robust statistics** are statistics that are minimally affected by extreme values
@@ -178,13 +205,13 @@ $\qquad \bar{x} =$ \_\_\_\_\_, $s =$ \_\_\_\_\_, $m =$ `r round(median(x), 1)` ,
     -   Which of the statistics above would be considered robust?
 
 -   ::: discuss
-    When should the mean be similar to the median (and the standard deviation similar to the IQR)? Why not compare IQR to the sample variance?
+    When should the mean be similar to the median (and the standard deviation similar to the IQR)?
     :::
 
 ::: notes
 m' = 116
 
-Q1' = 113, Q3' = 120, IQR' = 7
+Q1' = 113, Q3' = 121, IQR' = 8
 :::
 
 ## Mean vs. Median
@@ -192,14 +219,14 @@ Q1' = 113, Q3' = 120, IQR' = 7
 ```{r}
 ggplot(insurance, aes(x = charges)) +
   geom_histogram() +
-  geom_vline(xintercept = mean(insurance$charges), col = "orange") +
-   geom_vline(xintercept = median(insurance$charges), col = "blue")+
+  geom_vline(xintercept = mean(insurance$charges), col = "orange", size = 2) +
+   geom_vline(xintercept = median(insurance$charges), col = "yellow", size =2)+
   plot_theme +
   ggtitle("Insurance charges") +
-  labs(caption = "Orange = sample mean, blue = sample median")
+  labs(caption = "Orange = sample mean, yellow = sample median")
 ```
 
-Which is better? The mean or the median?
+Which is better measure of center? The mean or the median?
 
 ````{=html}
 <!--
@@ -224,8 +251,7 @@ p3 <- ggplot(insurance, aes(x = charges)) +
 
 gridExtra::grid.arrange(grobs =list(p1,p2,p3), ncol = 2)
 ```
--->
-````
+
 
 ## Transforming data
 
@@ -250,6 +276,22 @@ p2<- ggplot(insurance, aes(x = log(charges, base = 10))) +
 
 gridExtra::grid.arrange(grobs =list(p1,p2), ncol = 2)
 ```
+:::
+-->
+````
+
+## Summary
+
+-   Boxplots are another univariate visualization for numerical data
+
+-   Median and IQR are *robust* to outliers, whereas mean and standard deviation are *sensitive* to outliers
+
+-   When should we prefer median over mean (or vice versa)?
+
+::: notes
+Median is more stable; not affected by one single data point. But mean is easier to compute than median since you do not have sort observations. Also, mean has nice theoretical properties (STAT 311). If possible, always good to calculate both!!
+
+Median = what is typical, mean = what you expect. The typical charge amount is around \$9000. But if you're looking at insurance charges, you shouldn't expect to pay that low amount.
 :::
 
 ## Live code

@@ -18,14 +18,14 @@
     "href": "index.html#course-details",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Course details",
-    "text": "Course details\nInstructor: Prof. Becky Tang (she/her)\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2-4pm, Friday 9-10am\n\nTA hours in Quantitative Center in Armstrong Library:\n\nTA Claire Yang: Sunday 7-9, Thursday 7-9\nTA Justin Corke: Thursday 7-9\n\nThe syllabus (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website."
+    "text": "Course details\nInstructor: Prof. Becky Tang (she/her)\n\nOffice: WNS 214\nEmail: btang@middlebury.edu\n\nMeeting times and location:\n\nSection AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104\nSection BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101\n\nOffice hours (both sections welcome):\n\nProf. Tang: Monday 2-4pm, Friday 9-10am\n\nTA hours in Quantitative Center in Armstrong Library:\n\nTA Claire Yang: Sunday 7-9, Thursday 7-9\nTA Justin Corke: Thursday 7-9\n\nThe syllabus (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.\n\nNote the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook."
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2)\n\n\nBasic plots and summary statistics in R\n\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables\n\n\nIntroduction to ggplot\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables\n\n\nIntroduction to ggplot\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -312,28 +312,28 @@
     "href": "slides/slides-04-numerical-pt2.html#boxplot",
     "title": "Numerical data",
     "section": "Boxplot",
-    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are created using five statistics and identify unusual observations.\n\n\n\n\n\n\nDoes the orientation (vertical or horizontal) matter?"
+    "text": "Boxplot\nAnother commonly used visualization to display the distribution of a numerical variable is the boxplot. Boxplots are created using five statistics and identify unusual observations.\n\n\nDoes the orientation (vertical or horizontal) matter?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#median",
     "href": "slides/slides-04-numerical-pt2.html#median",
     "title": "Numerical data",
     "section": "Median",
-    "text": "Median\n\nThe (sample) median \\(m\\) is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than \\(m\\) and 50% of the data are greater than \\(m\\).\n\nIf we order the data from smallest to largest, the median is the value in the middle.\nIf the number of observations \\(n\\) is even, then there will be two values in the middle, and the median is taken as their average.\n\n\nConsider the following data: \\(\\boldsymbol{x} =116, 114, 112, 120, 108, 113, 123, 118, 119, 115\\). What is the median?\n\nThe median is also known the 50th percentile: 50% of the data fall below \\(m\\)"
+    "text": "Median\n\nThe (sample) median \\(m\\) is another common measure of center of a distribution. It is the value of the data distribution where 50% of the data are less than \\(m\\) and 50% of the data are greater than \\(m\\).\n\nIf we order the data from smallest to largest, the median is the value in the middle.\nIf the number of observations \\(n\\) is even, then there will be two values in the middle, and the median is taken as their average\n\n\nConsider the following data: \\(\\boldsymbol{x} =116, 114, 112, 121, 108, 113, 129, 118, 119, 115\\). What is the median?\n\nThe median is also known the 50th percentile because 50% of the data fall below \\(m\\)"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
     "href": "slides/slides-04-numerical-pt2.html#mean-vs.-median",
     "title": "Numerical data",
     "section": "Mean vs. Median",
-    "text": "Mean vs. Median\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWhich is better? The mean or the median?"
+    "text": "Mean vs. Median\n\nWhich is better measure of center? The mean or the median?"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#interquartile-range",
     "href": "slides/slides-04-numerical-pt2.html#interquartile-range",
     "title": "Numerical data",
     "section": "Interquartile range",
-    "text": "Interquartile range\nThe interquartile range (IQR) is another measure of variability/spread in the data.\n\\[\nIQR = Q_{3} - Q_{1}\n\\]\n\nThe more variable the data, the larger the IQR\nWhat is the IQR of the data \\(\\boldsymbol{x}\\)?\n\n\nIQR are not the values themselves, but rather, the spread of the middle 50% of the data. Interpretation once again depends on the scale of the data.\nQ3 = 119 and Q1 = 113 -> IQR = 6"
+    "text": "Interquartile range\nThe interquartile range (IQR) is another measure of variability/spread in the data.\n\\[\nIQR = Q_{3} - Q_{1}\n\\]\n\nIf the data are more spread out data, should the IQR increase or decrease?\nWhat is the IQR of the data \\(\\boldsymbol{x}\\)?\n\n\nIQR are not the values themselves, but rather, the spread of the middle 50% of the data. Interpretation once again depends on the scale of the data.\nQ3 = 119 and Q1 = 113 -> IQR = 6"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
@@ -361,7 +361,7 @@
     "href": "slides/slides-04-numerical-pt2.html#robust-statistics",
     "title": "Numerical data",
     "section": "Robust statistics",
-    "text": "Robust statistics\n\n\n\n\nIn the data \\(\\boldsymbol{x}\\) that we have been working with, we have the following sample statistics:\n\n\n\\(\\qquad \\bar{x} =\\) _____, \\(s =\\) _____, \\(m =\\) 115.5 , \\(IQR =\\) 6\n\n\n\nSuppose we actually observed an additional data point with a value of \\(170\\). What are the sample statistics with this additional data point? How do they compare to the values above?\n\\(\\bar{x}' =\\) _____, \\(s' =\\) _____, \\(m' =\\) _____, \\(IQR' =\\) _____\n\nRobust statistics are statistics that are minimally affected by extreme values\n\nWhich of the statistics above would be considered robust?\n\n\nWhen should the mean be similar to the median (and the standard deviation similar to the IQR)? Why not compare IQR to the sample variance?\n\n\n\nm’ = 116\nQ1’ = 113, Q3’ = 120, IQR’ = 7"
+    "text": "Robust statistics\n\n\n\n\nIn the data \\(\\boldsymbol{x} = 116, 114, 112, 121, 108, 113, 129, 118, 119, 115\\) that we have been working with, we have the following sample statistics:\n\n\n\\(\\qquad \\bar{x} =\\) 116.5, \\(s =\\) 5.8, \\(m =\\) 115.5 , \\(IQR =\\) 6\n\n\n\nSuppose we actually observed an additional data point with a value of \\(170\\). What are the sample statistics with this additional data point? How do they compare to the values above?\n\\(\\bar{x}' =\\) 121.4, \\(s' =\\) 17.03, \\(m' =\\) _____, \\(IQR' =\\) _____\n\nRobust statistics are statistics that are minimally affected by extreme values\n\nWhich of the statistics above would be considered robust?\n\n\nWhen should the mean be similar to the median (and the standard deviation similar to the IQR)?\n\n\n\nm’ = 116\nQ1’ = 113, Q3’ = 121, IQR’ = 8"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#mean-vs.-median-1",
@@ -1761,7 +1761,7 @@
     "href": "slides/slides-04-numerical-pt2.html#more-visualizations-and-statistics",
     "title": "Numerical data",
     "section": "More visualizations and statistics",
-    "text": "More visualizations and statistics\n\n\n\n\n\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+    "text": "More visualizations and statistics\n\n\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
   },
   {
     "objectID": "slides/slides-05-numerical-data-viz.html#introduction-to-ggplot",
@@ -1888,5 +1888,40 @@
     "title": "Numerical data",
     "section": "Describing distributions",
     "text": "Describing distributions\nA convenient way to describe a variable’s behavior is through the shape of its distribution. Using histograms, we should identify:\n\nIf the distribution is symmetric or skewed\n\nDistributions with long tails to the left are called left-skewed\nDistributions with long tails to the right are right-skewed\nIf not skewed, then the distribution is symmetric\n\nModes which are prominent peaks in the distribution\n\nDistribution may be unimodal (one peak), bimodal (two peaks), or multimodal (more than two peaks)\nPeaks need not be same height"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#interpreting-sd",
+    "href": "slides/slides-04-numerical-pt2.html#interpreting-sd",
+    "title": "Numerical data",
+    "section": "Interpreting SD",
+    "text": "Interpreting SD\nWe learned about the sample mean \\(\\bar{x}\\), the sample variance \\(s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_{i} - \\bar{x})^2\\), and the sample standard deviation \\(s = \\sqrt{s^2}\\)\n\nWhy care about standard deviation (SD)? Describes how far data are distributed from their mean\nUsually (but not always!!) about 70% of the data will be within one SD of the mean, and 95% will be within two SDs\n\nThese percentages are not precise, but are useful for intuition\nWe will come back to this later in semester"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#visualizing-sd",
+    "href": "slides/slides-04-numerical-pt2.html#visualizing-sd",
+    "title": "Numerical data",
+    "section": "Visualizing SD",
+    "text": "Visualizing SD"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#visualizing-sd-cont.",
+    "href": "slides/slides-04-numerical-pt2.html#visualizing-sd-cont.",
+    "title": "Numerical data",
+    "section": "Visualizing SD (cont.)",
+    "text": "Visualizing SD (cont.)\n\n\nWe know how to calculate some summary statistics and interpret them alongside the histogram. But wouldn’t it be great if we had a visualization that directly displays some summary statistics?"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#summary",
+    "href": "slides/slides-04-numerical-pt2.html#summary",
+    "title": "Numerical data",
+    "section": "Summary",
+    "text": "Summary\n\nBoxplots are another univariate visualization for numerical data\nMedian and IQR are robust to outliers, whereas mean and standard deviation are sensitive to outliers\nWhen should we prefer median over mean (or vice versa)?\n\n\nMedian is more stable; not affected by one single data point. But mean is easier to compute than median since you do not have sort observations. Also, mean has nice theoretical properties (STAT 311). If possible, always good to calculate both!!\nMedian = what is typical, mean = what you expect. The typical charge amount is around $9000. But if you’re looking at insurance charges, you shouldn’t expect to pay that low amount."
+  },
+  {
+    "objectID": "live_code/numerical_pt2_live.html#boxplot-and-median",
+    "href": "live_code/numerical_pt2_live.html#boxplot-and-median",
+    "title": "9/18/2024 Live code",
+    "section": "Boxplot and median",
+    "text": "Boxplot and median\n\n# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv\"\n\n# if you don't have the readr package, please install it!\nlibrary(readr)\n\n# read data, and assign to variable called insurance\ninsurance <- read_csv(url_file)\n\nRows: 200 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): sex, smoker, region\ndbl (4): age, bmi, children, charges\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# boxplot: first argument is x-axis\nboxplot(insurance$bmi)\n\n\n\n# median\nmedian(insurance$bmi)\n\n[1] 30.2075\n\n# making and sorting vectors\nmy_vec <- c(1, 9, 8, -2, 4)\nsort(my_vec)\n\n[1] -2  1  4  8  9"
   }
 ]
