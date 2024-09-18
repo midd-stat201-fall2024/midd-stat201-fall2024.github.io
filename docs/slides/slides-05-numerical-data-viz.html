@@ -532,6 +532,23 @@
 </div>
 </div>
 </section>
+<section id="inheriting-arguments" class="slide level2">
+<h2>Inheriting arguments</h2>
+<ul>
+<li class="fragment"><p>Many functions related to plotting in ggplot take the form <code>geom_xxx()</code></p></li>
+<li class="fragment"><p>The Help file for these functions show that the first two arguments are <code>mapping</code> and <code>data</code>. These are <em>automatically inherited</em> from the <code>mapping</code> and <code>data</code> arguments in the first layer <code>ggplot()</code> function</p>
+<ul>
+<li class="fragment">i.e.&nbsp;you don’t need to re-specify them, unless you are trying to add a new data frame’s data to your visualization</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/06-geom_help.png" width="456"></p>
+</figure>
+</div>
+</div>
+</section>
 <section id="additional-variables-modifications" class="slide level2">
 <h2>Additional variables + modifications</h2>
 <ul>

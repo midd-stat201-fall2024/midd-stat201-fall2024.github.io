@@ -1,0 +1,34 @@
+---
+title: "Numerical data coding practice"
+author: "Your name"
+date: "Due: 9/18/2024 at 11:59pm"
+output: html_document
+---
+
+1.  Change your name in the YAML. Be sure to keep the quotation marks!
+
+2.  In the following code chunk, load in the `openintro` package. We will once again work with the `cherry` data set.
+
+```{r}
+
+```
+
+3.  In the code chunk below, write code to find the mean and median of the diameter of trees in the `cherry` data frame.
+
+```{r}
+
+```
+
+4.  Make a box plot of the height of cherry trees. Can you make an informative axis label for your plot? Try changing the color of your boxplot by specifying `col = "color name"` in the function. Note that the name of the color must be in quotes! If you're confused, look at the examples in the bottom of the Help file of the appropriate function.
+
+```{r}
+
+```
+
+5.  Make a scatter plot of the diameter and volume of cherry trees. Put volume on the y-axis. Add some nicer labels!
+
+```{r}
+
+```
+
+Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

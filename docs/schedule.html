@@ -235,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 <td><ul>
 <li><p>Topic: <a href="./slides/slides-03-numerical-pt1.html">Numerical data (part 1)</a> (pdf <a href="slides/pdf/slides-03.pdf">here</a>)</p>
 <ul>
-<li><p><a href="./live_code/numerical_pt1_live.html">Live code</a> and associated template: <a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiU1RBVCAyMDEgTGl2ZSBjb2RlIgphdXRob3I6ICJZb3VyIG5hbWUiCm91dHB1dDogaHRtbF9kb2N1bWVudAotLS0KCiMjIE1vbmRheSwgOS8xNi8yMDI0CgpgYGB7cn0KIyB1cmwgdG8gcmVhZCBkYXRhIGZyb20KdXJsX2ZpbGUgPC0gImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9taWRkLXN0YXQyMDEtZmFsbDIwMjQvbWlkZC1zdGF0MjAxLWZhbGwyMDI0LmdpdGh1Yi5pby9tYWluL2xpdmVfY29kZS9kYXRhL2luc3VyYW5jZS5jc3YiCgojIGlmIHlvdSBkb24ndCBoYXZlIHRoZSByZWFkciBwYWNrYWdlLCBwbGVhc2UgaW5zdGFsbCBpdCEKbGlicmFyeShyZWFkcikKCiMgcmVhZCBkYXRhLCBhbmQgYXNzaWduIHRvIHZhcmlhYmxlIGNhbGxlZCBpbnN1cmFuY2UKaW5zdXJhbmNlIDwtIHJlYWRfY3N2KHVybF9maWxlKQpgYGAK').then(res => res.blob()).then(blob => {
+<li><a href="./live_code/numerical_pt1_live.html">Live code</a> and associated template: <a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiU1RBVCAyMDEgTGl2ZSBjb2RlIgphdXRob3I6ICJZb3VyIG5hbWUiCm91dHB1dDogaHRtbF9kb2N1bWVudAotLS0KCiMjIE1vbmRheSwgOS8xNi8yMDI0CgpgYGB7cn0KIyB1cmwgdG8gcmVhZCBkYXRhIGZyb20KdXJsX2ZpbGUgPC0gImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9taWRkLXN0YXQyMDEtZmFsbDIwMjQvbWlkZC1zdGF0MjAxLWZhbGwyMDI0LmdpdGh1Yi5pby9tYWluL2xpdmVfY29kZS9kYXRhL2luc3VyYW5jZS5jc3YiCgojIGlmIHlvdSBkb24ndCBoYXZlIHRoZSByZWFkciBwYWNrYWdlLCBwbGVhc2UgaW5zdGFsbCBpdCEKbGlicmFyeShyZWFkcikKCiMgcmVhZCBkYXRhLCBhbmQgYXNzaWduIHRvIHZhcmlhYmxlIGNhbGxlZCBpbnN1cmFuY2UKaW5zdXJhbmNlIDwtIHJlYWRfY3N2KHVybF9maWxlKQpgYGAK').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -243,8 +243,8 @@ ul.task-list li input[type="checkbox"] {
       a.download = 'stat201_live_code.Rmd'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Rmd </button></a></p></li>
-<li><p><a href="./practice_probs/practice-03-numerical-data-pt1.pdf">Practice problems</a></p></li>
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Rmd </button></a></li>
+<li><a href="./practice_probs/practice-03-numerical-data-pt1.pdf">Practice problems</a></li>
 </ul></li>
 </ul></td>
 <td></td>
@@ -259,12 +259,21 @@ ul.task-list li input[type="checkbox"] {
 <td><ul>
 <li><p>Topic: <a href="./slides/slides-04-numerical-pt2.html">Numerical data (part 2)</a> (pdf <a href="slides/pdf/slides-04.pdf">here</a>)</p>
 <ul>
-<li><p><a href="./live_code/numerical_pt2_live.html">Live code</a></p></li>
-<li><p><a href="./practice_probs/practice-04-numerical-data-pt2.pdf">Practice problems</a></p></li>
+<li><a href="./live_code/numerical_pt2_live.html">Live code</a></li>
+<li><a href="./practice_probs/practice-04-numerical-data-pt2.pdf">Practice problems</a></li>
 </ul></li>
 </ul></td>
 <td><ul>
-<li>Basic plots and summary statistics in R</li>
+<li><p>Basic plots and summary statistics in R</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiTnVtZXJpY2FsIGRhdGEgY29kaW5nIHByYWN0aWNlIgphdXRob3I6ICJZb3VyIG5hbWUiCmRhdGU6ICJEdWU6IDkvMTgvMjAyNCBhdCAxMTo1OXBtIgpvdXRwdXQ6IGh0bWxfZG9jdW1lbnQKLS0tCgoxLiAgQ2hhbmdlIHlvdXIgbmFtZSBpbiB0aGUgWUFNTC4gQmUgc3VyZSB0byBrZWVwIHRoZSBxdW90YXRpb24gbWFya3MhCgoyLiAgSW4gdGhlIGZvbGxvd2luZyBjb2RlIGNodW5rLCBsb2FkIGluIHRoZSBgb3BlbmludHJvYCBwYWNrYWdlLiBXZSB3aWxsIG9uY2UgYWdhaW4gd29yayB3aXRoIHRoZSBgY2hlcnJ5YCBkYXRhIHNldC4KCmBgYHtyfQoKYGBgCgozLiAgSW4gdGhlIGNvZGUgY2h1bmsgYmVsb3csIHdyaXRlIGNvZGUgdG8gZmluZCB0aGUgbWVhbiBhbmQgbWVkaWFuIG9mIHRoZSBkaWFtZXRlciBvZiB0cmVlcyBpbiB0aGUgYGNoZXJyeWAgZGF0YSBmcmFtZS4KCmBgYHtyfQoKYGBgCgo0LiAgTWFrZSBhIGJveCBwbG90IG9mIHRoZSBoZWlnaHQgb2YgY2hlcnJ5IHRyZWVzLiBDYW4geW91IG1ha2UgYW4gaW5mb3JtYXRpdmUgYXhpcyBsYWJlbCBmb3IgeW91ciBwbG90PyBUcnkgY2hhbmdpbmcgdGhlIGNvbG9yIG9mIHlvdXIgYm94cGxvdCBieSBzcGVjaWZ5aW5nIGBjb2wgPSAiY29sb3IgbmFtZSJgIGluIHRoZSBmdW5jdGlvbi4gTm90ZSB0aGF0IHRoZSBuYW1lIG9mIHRoZSBjb2xvciBtdXN0IGJlIGluIHF1b3RlcyEgSWYgeW91J3JlIGNvbmZ1c2VkLCBsb29rIGF0IHRoZSBleGFtcGxlcyBpbiB0aGUgYm90dG9tIG9mIHRoZSBIZWxwIGZpbGUgb2YgdGhlIGFwcHJvcHJpYXRlIGZ1bmN0aW9uLgoKYGBge3J9CgpgYGAKCjUuICBNYWtlIGEgc2NhdHRlciBwbG90IG9mIHRoZSBkaWFtZXRlciBhbmQgdm9sdW1lIG9mIGNoZXJyeSB0cmVlcy4gUHV0IHZvbHVtZSBvbiB0aGUgeS1heGlzLiBBZGQgc29tZSBuaWNlciBsYWJlbHMhCgpgYGB7cn0KCmBgYAoKT25jZSB5b3UncmUgZmluaXNoZWQsIGJlIHN1cmUgdG8ga25pdCBhbmQgc3VibWl0IHRoZSBvdXRwdXQgZmlsZSB0byB0aGUgY29ycmVzcG9uZGluZyBDYW52YXMgYXNzaWdubWVudCEK').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'coding-practice-numerical.Rmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Coding practice </button></a></p></li>
 </ul></td>
 <td></td>
 </tr>

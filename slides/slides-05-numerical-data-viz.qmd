@@ -123,6 +123,18 @@ ggplot(data = <dataset>, # specify data frame
 ```
 :::
 
+## Inheriting arguments
+
+-   Many functions related to plotting in ggplot take the form `geom_xxx()`
+
+-   The Help file for these functions show that the first two arguments are `mapping` and `data`. These are *automatically inherited* from the `mapping` and `data` arguments in the first layer `ggplot()` function
+
+    -   i.e. you don't need to re-specify them, unless you are trying to add a new data frame's data to your visualization
+
+::: fragment
+![](figs/06-geom_help.png){fig-align="center" width="456"}
+:::
+
 ## Additional variables + modifications
 
 -   We emphasize making informative and useful visualizations.
@@ -135,7 +147,7 @@ ggplot(data = <dataset>, # specify data frame
 
     1.  Specifying visual cues via **aesthetics**: color, size, shape, alpha (transparency)
 
-    2.   *Faceting* (will see this next week)
+    2.  *Faceting* (will see this next week)
 
 ## Live code
 
@@ -187,7 +199,6 @@ ggplot(data = insurance,
 ```
 :::
 :::
-
 
 ## geom_boxplot()
 
