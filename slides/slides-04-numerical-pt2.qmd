@@ -116,11 +116,11 @@ ggplot(insurance, aes(x = charges)) +
     What percent of the data fall between $Q_{1}$ and $Q_{3}$? What percent of the data fall between $Q_{1}$ and the median?
     :::
 
--   How to calculate? Suppose we have $2n$ (even) or $2n + 1$ (odd) number of values
+-   How to calculate? Suppose we have $2q$ (even) or $2q + 1$ (odd) number of values
 
-    -   $Q_{1}$ is the median of the $n$ smallest values
+    -   $Q_{1}$ is the median of the $q$ smallest values
 
-    -   $Q_{3}$ is the median of the $n$ largest values
+    -   $Q_{3}$ is the median of the $q$ largest values
 
 -   ::: discuss
     What are $Q_{1}$ and $Q_{3}$ of the data $\boldsymbol{x}$?
@@ -150,6 +150,7 @@ Q3 = 119 and Q1 = 113 -\> IQR = 6
 -   Then we draw out **whiskers** from the box that attempt to capture data outside the IQR
 
     -   How long should the whiskers be? There isn't a fixed rule, but $1.5 \times IQR$ below $Q_1$ and above $Q_{3}$ is common
+    -   We should "cut off" the whiskers to be true to the data
 
 -   Lastly, we add dots for any cases that lie beyond the whiskers
 

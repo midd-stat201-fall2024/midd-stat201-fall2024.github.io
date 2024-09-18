@@ -1,0 +1,40 @@
+---
+title: "ggplot coding practice"
+author: "Your name"
+date: "Due: 9/19/24 at 11:59pm"
+output: html_document
+---
+
+1. Load the tidyverse and openintro packages in the code chunk below. We will work with the `mammals` data from the `openintro` package. Load the data by typing `data(mammals)` right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the variable `mammals` in your Environment.
+
+```{r}
+# packages
+
+# data
+
+
+```
+
+2. Using ggplot, make a scatterplot of the gestation time and life span. (Gestation time is how long a baby is in the uterus.) You should notice that a Warning message appears. Describe in common language what the warning is trying to tell you.
+
+```{r}
+
+```
+
+**Answer:** 
+
+3. Now, let's make your plot from above more presentable. Using the `labs()` function, change the axes on your plots to have better titles that include the units. Also add a title. You may copy and paste your from above to get started. Start practicing good coding style by having line breaks between layers of the code!
+
+```{r}
+
+```
+
+
+4. Let's add color to your plot! Modify your code above to map the color of the points to the total amount of sleep each mammal gets. You might notice that some points are colored gray, instead of blue. Why do you think that is?
+
+**Answer**: 
+
+Once you're finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!
+
+
+

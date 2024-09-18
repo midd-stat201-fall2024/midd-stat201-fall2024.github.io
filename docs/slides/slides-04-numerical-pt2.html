@@ -388,10 +388,10 @@
 <li class="fragment"><div class="discuss">
 <p>What percent of the data fall between <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span>? What percent of the data fall between <span class="math inline">\(Q_{1}\)</span> and the median?</p>
 </div></li>
-<li class="fragment"><p>How to calculate? Suppose we have <span class="math inline">\(2n\)</span> (even) or <span class="math inline">\(2n + 1\)</span> (odd) number of values</p>
+<li class="fragment"><p>How to calculate? Suppose we have <span class="math inline">\(2q\)</span> (even) or <span class="math inline">\(2q + 1\)</span> (odd) number of values</p>
 <ul>
-<li class="fragment"><p><span class="math inline">\(Q_{1}\)</span> is the median of the <span class="math inline">\(n\)</span> smallest values</p></li>
-<li class="fragment"><p><span class="math inline">\(Q_{3}\)</span> is the median of the <span class="math inline">\(n\)</span> largest values</p></li>
+<li class="fragment"><p><span class="math inline">\(Q_{1}\)</span> is the median of the <span class="math inline">\(q\)</span> smallest values</p></li>
+<li class="fragment"><p><span class="math inline">\(Q_{3}\)</span> is the median of the <span class="math inline">\(q\)</span> largest values</p></li>
 </ul></li>
 <li class="fragment"><div class="discuss">
 <p>What are <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span> of the data <span class="math inline">\(\boldsymbol{x}\)</span>?</p>
@@ -430,6 +430,7 @@ IQR = Q_{3} - Q_{1}
 <li class="fragment"><p>Then we draw out <strong>whiskers</strong> from the box that attempt to capture data outside the IQR</p>
 <ul>
 <li class="fragment">How long should the whiskers be? There isn’t a fixed rule, but <span class="math inline">\(1.5 \times IQR\)</span> below <span class="math inline">\(Q_1\)</span> and above <span class="math inline">\(Q_{3}\)</span> is common</li>
+<li class="fragment">We should “cut off” the whiskers to be true to the data</li>
 </ul></li>
 <li class="fragment"><p>Lastly, we add dots for any cases that lie beyond the whiskers</p>
 <ul>
