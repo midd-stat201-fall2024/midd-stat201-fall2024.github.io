@@ -28,6 +28,8 @@ plot_theme <- theme(text = element_text(size = 16))
 insurance <- read_csv("data/insurance.csv") 
 ```
 
+-   TA hours tonight 7-9pm, Sunday 7-9pm
+-   Office hours tomorrow 2-4pm
 -   Observations of Prof. Tang taking place next week
 
 ## Exploratory data analysis

@@ -1,0 +1,61 @@
+---
+title: "Problem Set 2: R"
+author: "Your name here"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Throughout this assignment, try to pay attention to practicing good coding style by having each layer of ggplot code be on its own line.
+
+1.  Change your name in the YAML. Then load in the `tidyverse` and `openintro` packages in the code chunk below. We will work with the `starbucks` data from the `openintro` package.
+
+```{r message = FALSE}
+# load packages here
+
+```
+
+2.  Notice in the code chunk above, the code chunk header reads {r message = FALSE} instead of the usual {r}. Knit this file, and briefly study the output. Then delete the message = FALSE and knit again. What is this argument is doing? Once you've answered this, put the message = FALSE back!
+
+**Answer**:
+
+3.  Write code that creates a variable for the average number of calories in a Starbucks food item.
+
+```{r}
+
+```
+
+
+4.  In the following code chunk, use ggplot code to create a boxplot of the amount of calories in Starbucks food items. You should note that that one of the axes has tick marks/break points that are meaningless. Add to your plot the appropriate choice of the following two functions `scale_x_continuous` or `scale_y_continuous()`, then set the `breaks` argument to get rid of the breaks (maybe looks at its Help file).
+
+```{r}
+
+```
+
+
+
+5.  Using ggplot, create a histogram of the calories in Starbucks food items. Change the binwidth to make a more "pleasing" plot. Add an informative title.
+
+```{r}
+
+```
+
+6.  To your code above, add the function layer `geom_vline()` to add a vertical line that displays the mean number of calories (you may want to refer to the Help file). You should use the variable you created in number 3. Make this line a color of your choice. Then, add a caption that provides a brief description of what the line represents.
+
+7.  Using the plots you created, along with some summary statistics, describe the distribution of calories in Starbucks food items. Make sure you discuss shape, center, spread, and potential outliers.
+
+**Answer**:
+
+8.  Now create a scatterplot in ggplot with calories on the y-axis. For the x-axis variable, choose a variable that displays a strong association with calories. You may have to play around a bit! Add an informative title and change the x-axis variable to include the units (grams).
+
+```{r}
+
+```
+
+9.  In the code above, color the points by another numerical variable in the data set. Then, add a layer of code using the function `scale_color_viridis_c()`. When you run this code, you'll notice that this function changes the color palette to something called the Viridis color palette. Play around with different palettes by looking to the Help file for this function and looking at the *option* parameter. Choose one of the eight options!
+
+10. Briefly interpret this last plot you created. This may include discussing associations/trends/patterns (or lack thereof)!
+
+**Answer**:
+
+Once you're done, knit this file one more time, and submit the outputted HTML file to Canvas alongside the other homework problems.

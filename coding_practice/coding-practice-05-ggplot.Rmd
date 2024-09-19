@@ -5,13 +5,14 @@ date: "Due: 9/19/24 at 11:59pm"
 output: html_document
 ---
 
-1. Load the tidyverse and openintro packages in the code chunk below. We will work with the `mammals` data from the `openintro` package. Load the data by typing `data(mammals)` right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the variable `mammals` in your Environment.
+1. Load the tidyverse and openintro packages in the code chunk below. We will work with the `mammals` data from the `openintro` package.
+
+If you want to see the data frame, type `View(mammals)` in the **Console**. That will open up a new tab with the data frame in this Source pane.
 
 ```{r}
 # packages
 
 # data
-
 
 ```
 
