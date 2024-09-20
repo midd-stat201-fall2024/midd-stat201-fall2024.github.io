@@ -557,56 +557,56 @@
     "href": "slides/slides-06-categorical-data.html#contingency-tables",
     "title": "Categorical data",
     "section": "Contingency tables",
-    "text": "Contingency tables\n\nPerhaps we are interested in examining the distribution of two categorical variables at the same time\nWe can summarize the distribution using a two-way table of counts known as a contingency table, where each value in the table count the number of times a particular combination of variable 1 and variable 2 outcomes/levels occurred\n\n\n\n`summarise()` has grouped output by 'smoker'. You can override using the\n`.groups` argument.\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28\n\n\n\n\n\n\n\nNote: can easily obtain the distribution of just one of the variables by looking row-wise or column-wise\n\nWe essentially convert the contingency table to a visualization to visualize the distribution of two categorical variables"
+    "text": "Contingency tables\n\nPerhaps we are interested in examining the distribution of two categorical variables at the same time\nWe can summarize the distribution using a two-way table of counts known as a contingency table, where each value in the table count the number of times a particular combination of variable 1 and variable 2 outcomes/levels occurred\n\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28\n\n\n\n\n\n\n\nNote: can easily obtain the distribution of just one of the variables by looking row-wise or column-wise\n\nWe essentially convert the contingency table to a visualization to visualize the distribution of two categorical variables"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#dodged-bar-plot",
     "href": "slides/slides-06-categorical-data.html#dodged-bar-plot",
     "title": "Categorical data",
     "section": "Dodged bar plot",
-    "text": "Dodged bar plot\nThe dodged bar plot directly converts the contingency table to a visualization.\n\n\n\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+    "text": "Dodged bar plot\nThe dodged bar plot directly converts the contingency table to a visualization.\n\n\n\n\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#stacked-bar-plot",
     "href": "slides/slides-06-categorical-data.html#stacked-bar-plot",
     "title": "Categorical data",
     "section": "Stacked bar plot",
-    "text": "Stacked bar plot\nThe stacked bar plot looks at the counts either row-wise or column-wise.\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+    "text": "Stacked bar plot\n\n\nThe stacked bar plot looks at the counts either row-wise or column-wise.\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#proportions",
     "href": "slides/slides-06-categorical-data.html#proportions",
     "title": "Categorical data",
     "section": "Proportions",
-    "text": "Proportions\nTo obtain our final bar plot, we must first convert to the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another. In the following, we obtain row proportions:\n\n\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28\n\n\n\n\n\n\n\n\n`summarise()` has grouped output by 'smoker'. You can override using the\n`.groups` argument.\n\n\n\nRow-wise proportions\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n0.561\n0.439\n\n\nyes\n0.378\n0.622\n\n\n\n\n\n\n\n\n\nWhat does the quantity 0.378 represent?\nIf we take the proportions row-wise, does each row need to sum to 1?\nIf we take the proportions row-wise, does each column need to sum to 1?"
+    "text": "Proportions\nCan convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.\nIn the following, we obtain row-wise proportions:\n\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28 \n  \n\n\n\n\n\n\n\n\n\n\nRow-wise proportions\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    0.561 \n    0.439 \n  \n  \n    yes \n    0.378 \n    0.622 \n  \n\n\n\n\n\n\n\n\n\n\nWhat does the quantity 0.378 represent?\nIf we take the proportions row-wise, does each row need to sum to 1?\nIf we take the proportions row-wise, does each column need to sum to 1?"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#proportions-cont.",
     "href": "slides/slides-06-categorical-data.html#proportions-cont.",
     "title": "Categorical data",
     "section": "Proportions (cont.)",
-    "text": "Proportions (cont.)\nSet-up how you would find the column-wise proportions using this contingency table\n\n\n\nContingency table\n\n\nsmoker\nfemale\nmale\n\n\n\n\nno\n87\n68\n\n\nyes\n17\n28"
+    "text": "Proportions (cont.)\n\nSet up how to find the column-wise proportions using our contingency table\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#standardized-bar-plot",
     "href": "slides/slides-06-categorical-data.html#standardized-bar-plot",
     "title": "Categorical data",
     "section": "Standardized bar plot",
-    "text": "Standardized bar plot\nThe standardized bar plot visualizes the row-wise or column-wise proportions."
+    "text": "Standardized bar plot\nThe standardized bar plot visualizes these row-wise or column-wise proportions."
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#choosing-a-bar-plot",
     "href": "slides/slides-06-categorical-data.html#choosing-a-bar-plot",
     "title": "Categorical data",
     "section": "Choosing a bar plot",
-    "text": "Choosing a bar plot\n\n\nUsing any of the plots below, do you believe the smoker status and sex are associated?\nWhen might you prefer to use the stacked, dodged, or standardized bar plot?"
+    "text": "Choosing a bar plot\n\n\n\nUsing any of the plots, do you believe the smoker status and sex are associated?\nWhen might you prefer to use the stacked, dodged, or standardized bar plot?"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#live-code",
     "href": "slides/slides-06-categorical-data.html#live-code",
     "title": "Categorical data",
     "section": "Live code",
-    "text": "Live code"
+    "text": "Live code\n\nBar plots\nAesthetics: fill, shape\nFaceting"
   },
   {
     "objectID": "live_code/dplyr.html",
@@ -1859,28 +1859,28 @@
     "href": "slides/slides-06-categorical-data.html#aesthetic-color",
     "title": "Categorical data",
     "section": "Aesthetic: color",
-    "text": "Aesthetic: color"
+    "text": "Aesthetic: color\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +\n  geom_point() \n\n\n\nWhat do you notice about the legend for color?"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#aesthetic-shape",
     "href": "slides/slides-06-categorical-data.html#aesthetic-shape",
     "title": "Categorical data",
     "section": "Aesthetic: shape",
-    "text": "Aesthetic: shape"
+    "text": "Aesthetic: shape\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, shape = smoker)) +\n  geom_point()"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#facet_wrap",
     "href": "slides/slides-06-categorical-data.html#facet_wrap",
     "title": "Categorical data",
     "section": "facet_wrap()",
-    "text": "facet_wrap()"
+    "text": "facet_wrap()\n\n\n\nggplot(data = insurance, \n       mapping = aes(x = bmi)) +\n  geom_histogram() +\n  facet_wrap(~ smoker) \n\n\n\n\n\n\n\n\n\nggplot(data = insurance, \n       mapping = aes(x = bmi)) +\n  geom_histogram() +\n  facet_wrap(~ smoker, scales = \"free_y\")"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#facet_grid",
     "href": "slides/slides-06-categorical-data.html#facet_grid",
     "title": "Categorical data",
     "section": "facet_grid()",
-    "text": "facet_grid()"
+    "text": "facet_grid()\n\nggplot(data = insurance, mapping = aes(x = bmi)) +\n  geom_histogram() +\n  facet_grid(sex ~ smoker)"
   },
   {
     "objectID": "slides/slides-03-numerical-pt1.html#describing-distributions",
@@ -1958,5 +1958,68 @@
     "title": "ggplot coding practice",
     "section": "",
     "text": "Load the tidyverse and openintro packages in the code chunk below. We will work with the mammals data from the openintro package.\n\nIf you want to see the data frame, type View(mammals) in the Console. That will open up a new tab with the data frame in this Source pane.\n\n# packages\n\n# data\n\n\nUsing ggplot, make a scatterplot of the gestation time and life span. (Gestation time is how long a baby is in the uterus.) You should notice that a Warning message appears. Describe in common language what the warning is trying to tell you.\n\n\n\n\nAnswer:\n\nNow, let’s make your plot from above more presentable. Using the labs() function, change the axes on your plots to have better titles that include the units. Also add a title. You may copy and paste your from above to get started. Start practicing good coding style by having line breaks between layers of the code!\n\n\n\n\n\nLet’s add color to your plot! Modify your code above to map the color of the points to the total amount of sleep each mammal gets. You might notice that some points are colored gray, instead of blue. Why do you think that is?\n\nAnswer:\nOnce you’re finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#categorical-data",
+    "href": "slides/slides-06-categorical-data.html#categorical-data",
+    "title": "Categorical data",
+    "section": "Categorical data",
+    "text": "Categorical data\n\nRecall that a variable is either numerical or categorical\nCategorical variables are variables that can take one of a limited (usually fixed) number of possible values, known as levels\n\nRepresent data that can be divided into groups\n\nTwo types:\n\nOrdinal: the levels have a special ordering\nNominal: the levels don’t have an ordering\n\nWe will almost exclusively treat our categorical variables as nominal in this class\n\n\nExamples and non-examples?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#insurance-data",
+    "href": "slides/slides-06-categorical-data.html#insurance-data",
+    "title": "Categorical data",
+    "section": "Insurance data",
+    "text": "Insurance data"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#univariate",
+    "href": "slides/slides-06-categorical-data.html#univariate",
+    "title": "Categorical data",
+    "section": "Univariate",
+    "text": "Univariate\nIf we are interested in understanding the distribution of a single categorical variable, it is common to:\n\n\n\n\nDisplay a frequency table, which is a table of counts of each level\n\n\n\n# A tibble: 2 × 2\n  smoker     n\n  <chr>  <int>\n1 no       155\n2 yes       45\n\n\n\n\n\n\nVisualize the data through a bar plot, where different levels are displayed on one axis and the counts are portrayed on the other"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#univariate-eda",
+    "href": "slides/slides-06-categorical-data.html#univariate-eda",
+    "title": "Categorical data",
+    "section": "Univariate EDA",
+    "text": "Univariate EDA\nIf we are interested in understanding the distribution of a single categorical variable, it is common to:\n\n\n\nDisplay a frequency table, which is a table of counts of each level\n\n\n# A tibble: 2 × 2\n  smoker     n\n  <chr>  <int>\n1 no       155\n2 yes       45\n\n\n\n\n\nCreate a bar plot, where different levels are displayed on one axis and the counts are portrayed on the other\n\n\n\n\n\n\n\n\n\nHow do bar plots differ from histograms?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#bivariate-eda",
+    "href": "slides/slides-06-categorical-data.html#bivariate-eda",
+    "title": "Categorical data",
+    "section": "Bivariate EDA",
+    "text": "Bivariate EDA\n\nPerhaps we are interested in examining the distribution of two categorical variables at the same time\nSummarize the distribution using a two-way table known as a contingency table:\n\nEach value in the table counts the number of times a particular combination of variable 1 and variable 2 levels occurred in data\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28 \n  \n\n\n\n\n\n\n\n\nHow can we use contingency table to obtain the distribution of just one of the variables?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#visualizing-numerical-and-categorical",
+    "href": "slides/slides-06-categorical-data.html#visualizing-numerical-and-categorical",
+    "title": "Categorical data",
+    "section": "Visualizing numerical and categorical",
+    "text": "Visualizing numerical and categorical\n\nggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +\n  geom_point() \n\n\n\nWhat do you notice about the legend for color?"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#bar-plot-univariate",
+    "href": "slides/slides-06-categorical-data.html#bar-plot-univariate",
+    "title": "Categorical data",
+    "section": "Bar plot (univariate)",
+    "text": "Bar plot (univariate)\n\nggplot(data = insurance, mapping = aes(x = smoker)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#bivariate-bar-plots",
+    "href": "slides/slides-06-categorical-data.html#bivariate-bar-plots",
+    "title": "Categorical data",
+    "section": "Bivariate bar plots",
+    "text": "Bivariate bar plots\n\n\n\nggplot(insurance, aes(x = smoker, fill = sex)) +\n  geom_bar(position = \"dodge\")  \n\n\n\n\n\n\n\n\nggplot(insurance, aes(x = smoker, fill = sex)) +\n  geom_bar(position = \"stack\") # this is default"
+  },
+  {
+    "objectID": "slides/slides-06-categorical-data.html#bivariate-bar-plots-cont.",
+    "href": "slides/slides-06-categorical-data.html#bivariate-bar-plots-cont.",
+    "title": "Categorical data",
+    "section": "Bivariate bar plots (cont.)",
+    "text": "Bivariate bar plots (cont.)\n\nggplot(insurance, aes(x = smoker, fill = sex)) +\n  geom_bar(position = \"fill\")"
   }
 ]

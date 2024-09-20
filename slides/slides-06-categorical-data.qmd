@@ -18,86 +18,103 @@ editor_options:
 draft: false
 ---
 
+# Housekeeping
+
 ```{r echo = F, warning = F}
 knitr::opts_chunk$set(echo = F)
 library(tidyverse)
 library(readr)
 library(knitr)
-plot_theme <- theme(text = element_text(size = 16))
-insurance <- read_csv("data/insurance.csv") %>%
-  slice(1:200)
+plot_theme <- theme(text = element_text(size = 24))
+insurance <- read_csv("data/insurance.csv")
 ```
 
-# Housekeeping
+-   Problem set 2 due tonight! Please be sure to submit both written and knitted HTML parts.
+-   Office hours tonight 2-4pm
+-   Reminder about TA hours
 
-# Categorical data
+## Categorical data
 
-To visualize the distribution of a categorical variable, we are simple display the counts of different categories/groups/levels within a categorical variable
+-   Recall that a variable is either numerical or categorical
 
-## Looking at your data
+-   **Categorical** variables are variables that can take one of a limited (usually fixed) number of possible values, known as **levels**
 
-Is your data tidy, or do you have a table of counts (i.e. a frequency table)?
+    -   Represent data that can be divided into groups
 
-```{r echo = F}
-fruits <- tibble(
-  fruit = c("apple", "apple", "orange", "apple", "orange")
-)
-fruits_counted <- tibble(
-  fruit = c("apple", "orange"),
-  number = c(3, 2)
-)
+-   Two types:
+
+    -   **Ordinal**: the levels have a special ordering
+
+    -   **Nominal**: the levels don't have an ordering
+
+        -   We will almost exclusively treat our categorical variables as nominal in this class
+
+-   Examples and non-examples?
+
+## Insurance data
+
+```{r}
+insurance |>
+  DT::datatable(options = list(pageLength = 5))
 ```
+
+## Univariate EDA
+
+If we are interested in understanding the distribution of a single categorical variable, it is common to:
 
 ::: columns
-::: {.column width="50%"}
-```{r}
-fruits
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-fruits_counted
-```
-:::
-:::
-
-## Univariate visualizations
-
-If we are interested in visualizing the distribution of a single categorical variable, it is common to use a **barplot**, where the different levels are displayed on ones axis and the counts of each level are portrayed on the the other axis.
+::: {.column width="30%"}
+::: fragment
+Display a **frequency table**, which is a table of counts of each level
 
 ```{r}
 insurance |>
   count(smoker)
 ```
+:::
+:::
+
+::: {.column width="70%"}
+::: fragment
+Create a **bar plot**, where different levels are displayed on one axis and the counts are portrayed on the other
 
 ```{r}
 ggplot(insurance, aes(x = smoker)) +
   geom_bar() +
   plot_theme
 ```
+:::
+:::
+:::
 
-## Contingency tables
+::: notes
+How do bar plots differ from histograms?
+:::
+
+## Bivariate EDA
 
 -   Perhaps we are interested in examining the distribution of two categorical variables at the same time
 
--   We can summarize the distribution using a two-way table of counts known as a **contingency table**, where each value in the table count the number of times a particular combination of variable 1 and variable 2 outcomes/levels occurred
+-   Summarize the distribution using a two-way table known as a **contingency table**:
 
-    ::: fragment
-    ```{r}
-    ct <- insurance |>
-      group_by(smoker, sex) |>
-      summarise(n = n()) |>
-      spread(sex, n) |>
-      ungroup() |>
-      kable(caption = "Contingency table")
-    ct
-    ```
+    -   Each value in the table counts the number of times a particular combination of variable 1 and variable 2 levels occurred in data
+
+        ::: fragment
+        ```{r}
+        ct <- insurance |>
+          group_by(smoker, sex) |>
+          summarise(n = n()) |>
+          spread(sex, n) |>
+          ungroup() |>
+          kable(caption = "Contingency table") |>
+          kableExtra::column_spec(1, border_right = T)
+        ct
+        ```
+        :::
+
+-   ::: discuss
+    How can we use contingency table to obtain the distribution of just one of the variables?
     :::
-
-    -   Note: can easily obtain the distribution of just one of the variables by looking row-wise or column-wise
-
--   We essentially convert the contingency table to a visualization to visualize the distribution of two categorical variables
 
 ## Dodged bar plot
 
@@ -107,29 +124,46 @@ The **dodged bar plot** directly converts the contingency table to a visualizati
 p1 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
   geom_bar(position = "dodge") +
   ggtitle("Dodged bar plot") +
-  theme(text = element_text(size = 24))
+  theme(text = element_text(size = 30))
 p2 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
   geom_bar() +
   ggtitle("Stacked bar plot") +
-  theme(text = element_text(size = 24))
+  theme(text = element_text(size = 30))
 p3 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
   geom_bar(position = "fill") +
   ggtitle("Standardized bar plot")  +
-  theme(text = element_text(size = 24))
+  theme(text = element_text(size = 30))
 ```
 
+::: columns
+::: {.column width="50%"}
 ```{r}
 ct
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r}
 p1
 ```
+:::
+:::
+:::
 
 ## Stacked bar plot
 
+::: columns
+::: {.column width="60%"}
 The **stacked bar plot** looks at the counts either row-wise or column-wise.
+:::
 
+::: {.column width="40%"}
 ```{r}
 ct
 ```
+:::
+:::
 
 ::: columns
 ::: {.column width="50%"}
@@ -142,14 +176,17 @@ p2
 ```{r fig.height=8}
 ggplot(insurance, aes(fill = smoker, x = sex)) +
   geom_bar() +
-  ggtitle("Stacked bar plot") 
+  ggtitle("Stacked bar plot") +
+  theme(text =element_text(size = 30))
 ```
 :::
 :::
 
 ## Proportions
 
-To obtain our final bar plot, we must first convert to the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another. In the following, we obtain **row proportions**:
+Can convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.
+
+In the following, we obtain **row-wise proportions**:
 
 ::: columns
 ::: {.column width="50%"}
@@ -167,20 +204,25 @@ insurance |>
   group_by(smoker) |>
   mutate(n = round(n/sum(n), 3)) |>
   spread(sex, n)  |>
-  kable(caption = "Row-wise proportions")
+  kable(caption = "Row-wise proportions") |>
+  kableExtra::column_spec(1, border_right = T)
 ```
 :::
 :::
 
+::: fragment
 ::: discuss
 -   What does the quantity 0.378 represent?
 -   If we take the proportions row-wise, does each row need to sum to 1?
 -   If we take the proportions row-wise, does each column need to sum to 1?
 :::
+:::
 
 ## Proportions (cont.)
 
-Set-up how you would find the column-wise proportions using this contingency table
+::: discuss
+Set up how to find the column-wise proportions using our contingency table
+:::
 
 ```{r}
 ct
@@ -188,7 +230,7 @@ ct
 
 ## Standardized bar plot
 
-The **standardized bar plot** visualizes the row-wise or column-wise proportions.
+The **standardized bar plot** visualizes these row-wise or column-wise proportions.
 
 ```{r}
 ggplot(insurance, aes(fill = smoker, x = sex)) +
@@ -199,56 +241,165 @@ ggplot(insurance, aes(fill = smoker, x = sex)) +
 
 ## Choosing a bar plot
 
+```{r fig.align='center'}
+ggpubr::ggarrange(p1 + ggtitle("Dodged"),
+                  p2 + ggtitle("Stacked"),
+                  p3 + ggtitle("Standardized"), ncol = 3, nrow = 1,
+                  common.legend = T, legend = "bottom", widths = c(2,2,2))
+```
+
 ::: discuss
--   Using any of the plots below, do you believe the smoker status and sex are associated?
+-   Using any of the plots, do you believe the smoker status and sex are associated?
 -   When might you prefer to use the stacked, dodged, or standardized bar plot?
 :::
-
-```{r}
-ggpubr::ggarrange(p1,p2,p3, ncol = 2, nrow = 2, common.legend = T, legend = "bottom")
-```
 
 ## Factoring
 
 ## Live code
 
-# Visualizing numerical and categorical variables together
+- Bar plots
+- Aesthetics: fill, shape
+- Faceting
 
-## Aesthetic: color
+## Bar plot (univariate)
+
+```{r echo = T}
+ggplot(data = insurance, mapping = aes(x = smoker)) +
+  geom_bar()
+```
+
+## Bivariate bar plots
+
+::: columns
+::: {.column width="50%"}
+```{r eval = F, echo = T}
+ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar(position = "dodge")  
+```
+```{r fig.height=10}
+ggplot(insurance, 
+       aes(x = smoker, fill = sex)) +
+  geom_bar(position = "dodge")  +
+  theme(text = element_text(size = 30))
+```
+:::
+
+::: {.column width="50%"}
+```{r echo = T, eval = F}
+ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar(position = "stack") # this is default
+```
+
+```{r fig.height=10}
+ggplot(insurance, 
+       aes(x = smoker, fill = sex)) +
+  geom_bar(position = "stack") +
+  theme(text = element_text(size = 30))
+```
+:::
+:::
+
+## Bivariate bar plots (cont.)
+
+```{r eval = F, echo = T}
+ggplot(insurance, aes(x = smoker, fill = sex)) +
+  geom_bar(position = "fill")
+```
 
 ```{r}
+ggplot(insurance,  aes(x = smoker, fill = sex)) +
+  geom_bar(position = "fill") +
+  theme(text = element_text(size = 30))
+```
+
+
+
+
+
+
+
+
+## Visualizing numerical and categorical
+
+```{r eval = F, echo = T}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = smoker)) +
+  geom_point() 
+```
+
+```{r echo = F}
 ggplot(data = insurance, mapping = aes(x = bmi, y = charges, 
                                        col = smoker)) +
-  geom_point()
+  geom_point(size = 2) +
+  theme(text = element_text(size = 30))
 ```
+
+::: {style="color: maroon"}
+What do you notice about the legend for color?
+:::
 
 ## Aesthetic: shape
 
-```{r}
-#| code-line-numbers: "2"
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age,
-                                       shape = smoker)) +
+```{r echo = T, eval = F}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, shape = smoker)) +
   geom_point()
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi, y = charges, shape = smoker)) +
+  geom_point(size = 2) +
+  theme(text = element_text(size = 30))
 ```
 
 ## facet_wrap()
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
-  facet_wrap(~ smoker)
+::: columns
+::: {.column width="50%"}
+```{r echo = T, eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi)) +
+  geom_histogram() +
+  facet_wrap(~ smoker) 
 ```
 
 ```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
+ggplot(data = insurance, 
+       mapping = aes(x = bmi)) +
+  geom_histogram() +
+  facet_wrap(~ smoker) +
+  theme(text = element_text(size = 25))
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+```{r echo = T, eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = bmi)) +
+  geom_histogram() +
   facet_wrap(~ smoker, scales = "free_y")
 ```
 
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi)) +
+  geom_histogram() +
+  facet_wrap(~ smoker, scales = "free_y") +
+  theme(text = element_text(size = 25))
+```
+:::
+:::
+:::
+
 ## facet_grid()
 
-```{r}
-ggplot(data = insurance, mapping = aes(x = bmi, y = charges)) +
-  geom_point() +
+```{r echo = T, eval = F}
+ggplot(data = insurance, mapping = aes(x = bmi)) +
+  geom_histogram() +
   facet_grid(sex ~ smoker)
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = bmi)) +
+  geom_histogram() +
+  facet_grid(sex ~ smoker) +
+  theme(text = element_text(size = 25))
 ```
