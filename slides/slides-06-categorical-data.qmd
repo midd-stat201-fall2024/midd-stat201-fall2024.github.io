@@ -30,7 +30,7 @@ insurance <- read_csv("data/insurance.csv")
 ```
 
 -   Problem set 2 due tonight! Please be sure to submit both written and knitted HTML parts.
--   Office hours tonight 2-4pm
+-   Office hours today 2-4pm
 -   Reminder about TA hours
 
 ## Categorical data
@@ -63,7 +63,7 @@ insurance |>
 If we are interested in understanding the distribution of a single categorical variable, it is common to:
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="40%"}
 ::: fragment
 Display a **frequency table**, which is a table of counts of each level
 
@@ -74,7 +74,7 @@ insurance |>
 :::
 :::
 
-::: {.column width="70%"}
+::: {.column width="60%"}
 ::: fragment
 Create a **bar plot**, where different levels are displayed on one axis and the counts are portrayed on the other
 
@@ -167,12 +167,15 @@ ct
 
 ::: columns
 ::: {.column width="50%"}
+::: fragment
 ```{r fig.height=8}
 p2
 ```
 :::
+:::
 
 ::: {.column width="50%"}
+::: fragment
 ```{r fig.height=8}
 ggplot(insurance, aes(fill = smoker, x = sex)) +
   geom_bar() +
@@ -181,12 +184,11 @@ ggplot(insurance, aes(fill = smoker, x = sex)) +
 ```
 :::
 :::
+:::
 
 ## Proportions
 
 Can convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.
-
-In the following, we obtain **row-wise proportions**:
 
 ::: columns
 ::: {.column width="50%"}
@@ -196,6 +198,7 @@ ct
 :::
 
 ::: {.column width="50%"}
+::: fragment
 ```{r}
 insurance |>
   group_by(smoker, sex) |>
@@ -207,6 +210,7 @@ insurance |>
   kable(caption = "Row-wise proportions") |>
   kableExtra::column_spec(1, border_right = T)
 ```
+:::
 :::
 :::
 
@@ -257,9 +261,9 @@ ggpubr::ggarrange(p1 + ggtitle("Dodged"),
 
 ## Live code
 
-- Bar plots
-- Aesthetics: fill, shape
-- Faceting
+-   Bar plots
+-   Aesthetics: fill, shape
+-   Faceting
 
 ## Bar plot (univariate)
 
@@ -267,6 +271,10 @@ ggpubr::ggarrange(p1 + ggtitle("Dodged"),
 ggplot(data = insurance, mapping = aes(x = smoker)) +
   geom_bar()
 ```
+
+::: {style="color: maroon"}
+Note: if your data are already in the form of frequency table, we should use `geom_col()` instead!
+:::
 
 ## Bivariate bar plots
 
@@ -276,6 +284,7 @@ ggplot(data = insurance, mapping = aes(x = smoker)) +
 ggplot(insurance, aes(x = smoker, fill = sex)) +
   geom_bar(position = "dodge")  
 ```
+
 ```{r fig.height=10}
 ggplot(insurance, 
        aes(x = smoker, fill = sex)) +
@@ -312,12 +321,7 @@ ggplot(insurance,  aes(x = smoker, fill = sex)) +
   theme(text = element_text(size = 30))
 ```
 
-
-
-
-
-
-
+How might we make the bars horizontal instead of vertical?
 
 ## Visualizing numerical and categorical
 
@@ -351,6 +355,8 @@ ggplot(data = insurance, mapping = aes(x = bmi, y = charges, shape = smoker)) +
 ```
 
 ## facet_wrap()
+
+Faceting is used when we want to split a particular visualization by the values of another (categorical) variable
 
 ::: columns
 ::: {.column width="50%"}

@@ -578,7 +578,7 @@
     "href": "slides/slides-06-categorical-data.html#proportions",
     "title": "Categorical data",
     "section": "Proportions",
-    "text": "Proportions\nCan convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.\nIn the following, we obtain row-wise proportions:\n\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28 \n  \n\n\n\n\n\n\n\n\n\n\nRow-wise proportions\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    0.561 \n    0.439 \n  \n  \n    yes \n    0.378 \n    0.622 \n  \n\n\n\n\n\n\n\n\n\n\nWhat does the quantity 0.378 represent?\nIf we take the proportions row-wise, does each row need to sum to 1?\nIf we take the proportions row-wise, does each column need to sum to 1?"
+    "text": "Proportions\nCan convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.\n\n\n\n\n\n\nContingency table\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    87 \n    68 \n  \n  \n    yes \n    17 \n    28 \n  \n\n\n\n\n\n\n\n\n\n\n\nRow-wise proportions\n \n  \n    smoker \n    female \n    male \n  \n \n\n  \n    no \n    0.561 \n    0.439 \n  \n  \n    yes \n    0.378 \n    0.622 \n  \n\n\n\n\n\n\n\n\n\n\n\nWhat does the quantity 0.378 represent?\nIf we take the proportions row-wise, does each row need to sum to 1?\nIf we take the proportions row-wise, does each column need to sum to 1?"
   },
   {
     "objectID": "slides/slides-06-categorical-data.html#proportions-cont.",
