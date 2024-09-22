@@ -1,7 +1,6 @@
 ---
 title: "Data wrangling with dplyr"
-subtitle: "Part 1"
-date: "September 23, 2024"
+date: "September 25, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -23,30 +22,15 @@ knitr::opts_chunk$set(echo = T)
 library(tidyverse)
 library(readr)
 library(knitr)
-plot_theme <- theme(text = element_text(size = 16))
-insurance <- read_csv("data/insurance.csv") %>%
-  slice(1:200)
+plot_theme <- theme(text = element_text(size = 24))
+insurance <- read_csv("data/insurance.csv")
 ```
-
-# Housekeeping
-
-## Working dataset
-
-Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
-
--   Let's go ahead and pull to get the data locally
-
--   Then open a new `.Rmd` to work in
-
--   Let's load in the data together and take a quick look at it before diving into data wrangling
-
-# Data wrangling
 
 ## Grammar of data wrangling
 
--   **Data frames** are objects in R that store tabular data in tidy form
+-   Recall: data frames are objects in R that store tabular data in tidy form
 
--   The `dplyr` package uses the concept of functions as verbs that manipulate **data frames**
+-   The `dplyr` package uses the concept of functions as verbs that manipulate data frames
 
     -   `select()`: pick columns by name
     -   `slice()`: pick rows using indices
@@ -61,14 +45,16 @@ Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://ww
 
 1.  The first argument is *always* a data frame
 2.  Subsequent argument(s) say what to do with that data frame
-    i.  We connect lines to code using a *pipe* operator (more on pipes in the next few slides)
-3.  Always return a data frame
+    i.  We connect lines to code using a *pipe* operator (see next slide)
+3.  *Always* return a data frame, unless specifically told otherwise
 
 ## Pipes
 
 -   In programming, a **pipe** is a technique for passing information from one process to another
 
-    -   In `dplyr`, the pipes are coded as `%>%` or `|>`
+-   In `dplyr`, the pipes are coded as `|>` (or `%>%`)
+
+    -   Vertical bar followed by greater than sign
 
 -   We can think about pipes as following a sequence of actions which provide a more natural and easier to read structure
 
@@ -102,9 +88,9 @@ find("car_keys") |>
 
 ## Logical operators in R
 
-It is common to compare two quantities using logical operators. All of these operators will return a **boolean** `TRUE` or `FALSE`.
+It is common to compare two quantities using logical operators. All of these operators will return a **logical** `TRUE` or `FALSE`.
 
-Here are list of some common ones:
+Here are list of some common operators:
 
 -   `<`: less than
 
@@ -128,7 +114,7 @@ Here are list of some common ones:
 
 ## Logical operators (cont.)
 
-We may always want to know if a certain quantity "behaves" a certain way:
+We might also want to know if a certain quantity "behaves" a certain way. The following also return logical outputs:
 
 -   `is.na(x)`: test if `x` is `NA`
 
@@ -136,17 +122,22 @@ We may always want to know if a certain quantity "behaves" a certain way:
 
 -   `!x`: not `x`
 
-## Commenting code
 
-Recall that in `R`, we can comment out lines of code using the `#` symbol. The line of code will still be displayed, but it will not execute:
 
 ```{r echo = T, eval = T}
-1 + 1
-# 2 * 1
+is.na("apple")
 3 %in% 1:10
+!TRUE
 ```
 
+
 ## Live code
+
+Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+
+-   Copy and paste the following code into a code chunk in your live code! 
+-   We will load in the data together and take a quick look at it before diving into data wrangling
+
 
 ## Piping to ggplot
 

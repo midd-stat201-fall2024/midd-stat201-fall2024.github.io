@@ -409,3 +409,20 @@ ggplot(data = insurance, mapping = aes(x = bmi)) +
   facet_grid(sex ~ smoker) +
   theme(text = element_text(size = 25))
 ```
+
+## Side-by-side box plots
+
+```{r echo = T, eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = smoker, y = bmi)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(data = insurance, 
+      mapping = aes(x = smoker, y = bmi)) +
+  geom_boxplot()+
+  theme(text = element_text(size = 25))
+```
+
+Like faceting, but only for box plots.

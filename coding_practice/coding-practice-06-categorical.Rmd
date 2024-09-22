@@ -1,0 +1,52 @@
+---
+title: "Categorical data coding practice"
+author: "Your name"
+date: "Due: 9/23/24 at 11:59pm"
+output: html_document
+---
+
+```{r}
+# load additional packages here
+library(readr)
+
+```
+
+1.  In the code chunk above, add a line of code to load in the package necessary for working with ggplot. Also change your name in the YAML.
+
+2.  We will be working with data you gave me from the start-of-semester study survey! In the following code, I would like you to delete the underscores and replace them with a variable name of your choice. The variable name should be meaningful to you, but also not too long.
+
+Then run the code chunk and take a look at the data!
+
+```{r eval=FALSE}
+# url to read data from
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/stat201_f24_data.csv"
+
+____ <- read_csv(url_file)
+```
+
+3.  Do students take the 9:45 section because they want to get more sleep? Create boxplots of the average number of hours of sleep students get per night, split by the different sections. *Note there are two ways to do this!*
+
+Then interpret your visualization in the context of my "research question".
+
+```{r}
+
+```
+
+**Answer**:
+
+4.  Pick two categorical variables of your choice. Using an appropriate type of bar plot, compare the distribution of one variable across the distribution of the second variable. That is, do the frequencies of occurrences of the levels of one variable depend on/change with the levels of the second variable?
+
+```{r}
+
+
+```
+
+**Answer**:
+
+5.  We will change the colors in our bar plot! Look at the Help file for the function `scale_fill_brewer()`. You should see many options of different palettes. Add this function to your code above (use good coding style!), and set the palette argument to one of the palette names. Play around until you've settled on one!
+
+6.  You used the function `scale_fill_brewer()` above, but there is a similar function called `scale_color_brewer()`. Why do you think we used the first function and not the second? (You can explore this by changing your code above to `scale_color_brewer` and seeing what happens. Be sure to revert back to `scale_fill_brewer` before submitting!)
+
+**Answer**:
+
+Once you're finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!
