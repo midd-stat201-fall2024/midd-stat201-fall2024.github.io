@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your name">
-<meta name="dcterms.date" content="2024-08-15">
 
 <title>STAT 201: Intro. to Statistics and Data Science - Data wrangling coding practice</title>
 <style>
@@ -196,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 15, 2024</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -207,28 +206,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <ol type="1">
-<li>Load in the <code>tidyverse</code> and <code>openintro</code> packages the in the code chunk below. We will work with the <code>starbucks</code> data from the <code>openintro</code> package. Load the data by typing <code>data(starbucks)</code> right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the word <code>starbucks</code> in your Environment.</li>
+<li>Load in the <code>tidyverse</code> and <code>openintro</code> packages the in the code chunk below. We will once again work with the <code>starbucks</code> data from the <code>openintro</code> package. Remember that if you want to look at the data, you can type <code>View(&lt;data frame name&gt;)</code> in the <em>Console</em>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages here</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load data here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
-<li><p>Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.</p>
-<div class="cell">
-
-</div></li>
-<li><p>One gram of protein contains 4 calories. Wrangle the data to add a new variable called <code>prop_protein</code> which represents the proportion of the item’s calories that are due to protein. Store the resulting data frame as a new variable called <code>starbucks_new</code>.</p>
-<div class="cell">
-
-</div></li>
-<li><p>Using your <code>starbucks_new</code> data frame from the previous step, display a table/data frame that shows the median proportion of calories that come from protein for each <code>type</code> of item.</p>
-<div class="cell">
-
-</div></li>
+<li>Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.</li>
 </ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>One gram of protein contains 4 calories. Wrangle the data to add a new variable called <code>prop_protein</code> which represents the proportion of the item’s calories that are due to protein. Store the resulting data frame as a new variable called <code>starbucks_new</code>.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="4" type="1">
+<li>Using your <code>starbucks_new</code> data frame from the previous step, display a summary table/data frame that shows the median proportion of calories that come from protein for each <code>type</code> of Starbucks item in <em>ascending</em> order.</li>
+</ol>
+<div class="cell">
+
+</div>
 <p>Once you’re finished, be sure to knit and submit the output file to the corresponding Canvas assignment!</p>
 
 

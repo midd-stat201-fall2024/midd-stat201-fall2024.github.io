@@ -15,7 +15,7 @@ library(readr)
 
 2.  We will be working with data you gave me from the start-of-semester study survey! In the following code, I would like you to delete the underscores and replace them with a variable name of your choice. The variable name should be meaningful to you, but also not too long.
 
-Then run the code chunk and take a look at the data!
+Then run the code chunk and take a look at the data! **Then delete the argument eval = FALSE in the code chunk header!!** That argument tells RStudio to not evaluate that particular code chunk when knitting, but we definitely want to evaluate this as this is how where our data gets loaded in!
 
 ```{r eval=FALSE}
 # url to read data from

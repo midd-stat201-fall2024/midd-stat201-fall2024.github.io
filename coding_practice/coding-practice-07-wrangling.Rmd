@@ -1,39 +1,34 @@
 ---
 title: "Data wrangling coding practice"
 author: "Your name"
-date: "2024-08-15"
+date: "Due: 09/25/24 at 11:59pm"
 output: html_document
 ---
 
-
-
-1.  Load in the `tidyverse` and `openintro` packages the in the code chunk below. We will work with the `starbucks` data from the `openintro` package. Load the data by typing `data(starbucks)` right underneath where you loaded the packages. Then run the code chunk, and take a quick look at the data by clicking twice on the word `starbucks` in your Environment.
+1.  Load in the `tidyverse` and `openintro` packages the in the code chunk below. We will once again work with the `starbucks` data from the `openintro` package. Remember that if you want to look at the data, you can type `View(<data frame name>)` in the *Console*.
 
 ```{r}
 # load packages here
-
-
-# load data here
 
 ```
 
 2.  Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.
 
-    ```{r}
+```{r}
 
-    ```
+```
 
 3.  One gram of protein contains 4 calories. Wrangle the data to add a new variable called `prop_protein` which represents the proportion of the item's calories that are due to protein. Store the resulting data frame as a new variable called `starbucks_new`.
 
-    ```{r}
+```{r}
 
 
-    ```
+```
 
-4.  Using your `starbucks_new` data frame from the previous step, display a table/data frame that shows the median proportion of calories that come from protein for each `type` of item.
+4.  Using your `starbucks_new` data frame from the previous step, display a summary table/data frame that shows the median proportion of calories that come from protein for each `type` of Starbucks item in *ascending* order.
 
-    ```{r}
+```{r}
 
-    ```
+```
 
 Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!

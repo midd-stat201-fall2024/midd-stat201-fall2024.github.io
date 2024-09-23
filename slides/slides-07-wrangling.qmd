@@ -122,22 +122,24 @@ We might also want to know if a certain quantity "behaves" a certain way. The fo
 
 -   `!x`: not `x`
 
-
-
 ```{r echo = T, eval = T}
 is.na("apple")
 3 %in% 1:10
 !TRUE
 ```
 
-
 ## Live code
 
 Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
 
--   Copy and paste the following code into a code chunk in your live code! 
--   We will load in the data together and take a quick look at it before diving into data wrangling
+-   Copy and paste the following code into a code chunk in your live code! We will load in the data together and take a quick look at it before diving into data wrangling
 
+::: fragment
+```{r eval = F, echo = T}
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
+```
+:::
 
 ## Piping to ggplot
 

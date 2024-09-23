@@ -6,12 +6,14 @@ format:
     code-line-numbers: true
 ---
 
+Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+
 ```{r library-data, message= F}
 library(tidyverse)
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
 
-## modify this line accordingly!
-datascience <- read_csv("data/datascience_survey_subset.csv")
-
+datascience <- read_csv(url_file)
 ```
 
 **By default, all `dplyr` functions expect the first argument to be a data frame.**

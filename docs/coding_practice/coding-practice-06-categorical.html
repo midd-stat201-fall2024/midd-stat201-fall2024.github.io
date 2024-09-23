@@ -213,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>In the code chunk above, add a line of code to load in the package necessary for working with ggplot. Also change your name in the YAML.</p></li>
 <li><p>We will be working with data you gave me from the start-of-semester study survey! In the following code, I would like you to delete the underscores and replace them with a variable name of your choice. The variable name should be meaningful to you, but also not too long.</p></li>
 </ol>
-<p>Then run the code chunk and take a look at the data!</p>
+<p>Then run the code chunk and take a look at the data! <strong>Then delete the argument eval = FALSE in the code chunk header!!</strong> That argument tells RStudio to not evaluate that particular code chunk when knitting, but we definitely want to evaluate this as this is how where our data gets loaded in!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># url to read data from</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/stat201_f24_data.csv"</span></span>

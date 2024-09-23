@@ -991,35 +991,35 @@
     "href": "slides/slides-07-wrangling.html#grammar-of-data-wrangling",
     "title": "Data wrangling with dplyr",
     "section": "Grammar of data wrangling",
-    "text": "Grammar of data wrangling\n\nData frames are objects in R that store tabular data in tidy form\nThe dplyr package uses the concept of functions as verbs that manipulate data frames\n\nselect(): pick columns by name\nslice(): pick rows using indices\nfilters(): pick rows matching criteria\ndistinct(): filter for unique rows\nmutate(): add new variables as columns\nsummarise(): reduce variables to quantitative values\ngroup_by(): for grouped operations based on a variable\nand many more!!!"
+    "text": "Grammar of data wrangling\n\nRecall: data frames are objects in R that store tabular data in tidy form\nThe dplyr package uses the concept of functions as verbs that manipulate data frames\n\nselect(): pick columns by name\nslice(): pick rows using indices\nfilters(): pick rows matching criteria\ndistinct(): filter for unique rows\nmutate(): add new variables as columns\nsummarise(): reduce variables to quantitative values\ngroup_by(): for grouped operations based on a variable\nand many more!!!"
   },
   {
     "objectID": "slides/slides-07-wrangling.html#rules-of-dplyr-functions",
     "href": "slides/slides-07-wrangling.html#rules-of-dplyr-functions",
     "title": "Data wrangling with dplyr",
     "section": "Rules of dplyr functions",
-    "text": "Rules of dplyr functions\n\nThe first argument is always a data frame\nSubsequent argument(s) say what to do with that data frame\n\nWe connect lines to code using a pipe operator (more on pipes in the next few slides)\n\nAlways return a data frame"
+    "text": "Rules of dplyr functions\n\nThe first argument is always a data frame\nSubsequent argument(s) say what to do with that data frame\n\nWe connect lines to code using a pipe operator (see next slide)\n\nAlways return a data frame, unless specifically told otherwise"
   },
   {
     "objectID": "slides/slides-07-wrangling.html#pipes",
     "href": "slides/slides-07-wrangling.html#pipes",
     "title": "Data wrangling with dplyr",
     "section": "Pipes",
-    "text": "Pipes\n\nIn programming, a pipe is a technique for passing information from one process to another\n\nIn dplyr, the pipes are coded as %>% or |>\n\nWe can think about pipes as following a sequence of actions which provide a more natural and easier to read structure\nFor example: suppose that in order to get to work, I need to find my car keys, start my car, drive to work, and then park my car\n\n\n\n\nExpressed as a set of nested R pseudocode, this might look like:\n\n\n\npark(drive(start_car(find(\"car_keys\")), \n           to = \"work\"))\n\n\n\n\nExpressed using pipes, this might look like:\n\n\n\nfind(\"car_keys\") |>\n  start_car() |>\n  drive(to = \"work\") |>\n  park"
+    "text": "Pipes\n\nIn programming, a pipe is a technique for passing information from one process to another\nIn dplyr, the pipes are coded as |> (or %>%)\n\nVertical bar followed by greater than sign\n\nWe can think about pipes as following a sequence of actions which provide a more natural and easier to read structure\nFor example: suppose that in order to get to work, I need to find my car keys, start my car, drive to work, and then park my car\n\n\n\n\nExpressed as a set of nested R pseudocode, this might look like:\n\n\n\npark(drive(start_car(find(\"car_keys\")), \n           to = \"work\"))\n\n\n\n\nExpressed using pipes, this might look like:\n\n\n\nfind(\"car_keys\") |>\n  start_car() |>\n  drive(to = \"work\") |>\n  park"
   },
   {
     "objectID": "slides/slides-07-wrangling.html#logical-operators-in-r",
     "href": "slides/slides-07-wrangling.html#logical-operators-in-r",
     "title": "Data wrangling with dplyr",
     "section": "Logical operators in R",
-    "text": "Logical operators in R\nIt is common to compare two quantities using logical operators. All of these operators will return a boolean TRUE or FALSE.\nHere are list of some common ones:\n\n<: less than\n<=: less than or equal to\n>: greater than\n>=: greater than or equal to\n==: (exactly) equal to\n!=: not equal to\n\n\n\n1 < 4\n\n[1] TRUE\n\n2 == 3\n\n[1] FALSE"
+    "text": "Logical operators in R\nIt is common to compare two quantities using logical operators. All of these operators will return a logical TRUE or FALSE.\nHere are list of some common operators:\n\n<: less than\n<=: less than or equal to\n>: greater than\n>=: greater than or equal to\n==: (exactly) equal to\n!=: not equal to\n\n\n\n1 < 4\n\n[1] TRUE\n\n2 == 3\n\n[1] FALSE"
   },
   {
     "objectID": "slides/slides-07-wrangling.html#logical-operators-cont.",
     "href": "slides/slides-07-wrangling.html#logical-operators-cont.",
     "title": "Data wrangling with dplyr",
     "section": "Logical operators (cont.)",
-    "text": "Logical operators (cont.)\nWe may always want to know if a certain quantity “behaves” a certain way:\n\nis.na(x): test if x is NA\nx %in% y: test if x is in y\n!x: not x"
+    "text": "Logical operators (cont.)\nWe might also want to know if a certain quantity “behaves” a certain way. The following also return logical outputs:\n\nis.na(x): test if x is NA\nx %in% y: test if x is in y\n!x: not x\n\n\nis.na(\"apple\")\n\n[1] FALSE\n\n3 %in% 1:10\n\n[1] TRUE\n\n!TRUE\n\n[1] FALSE"
   },
   {
     "objectID": "slides/slides-07-wrangling.html#commenting-code",
@@ -1033,7 +1033,7 @@
     "href": "slides/slides-07-wrangling.html#live-code",
     "title": "Data wrangling with dplyr",
     "section": "Live code",
-    "text": "Live code"
+    "text": "Live code\nData from Kaggle: In 2017, Kaggle conducted an industry-wide survey to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.\n\nCopy and paste the following code into a code chunk in your live code! We will load in the data together and take a quick look at it before diving into data wrangling\n\n\n\nlibrary(readr)\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv\""
   },
   {
     "objectID": "slides/slides-07-wrangling.html#piping-to-ggplot",
@@ -1327,7 +1327,7 @@
     "href": "live_code/data_wrangling.html",
     "title": "Data wrangling with dplyr",
     "section": "",
-    "text": "library(tidyverse)\n\n## modify this line accordingly!\ndatascience <- read_csv(\"data/datascience_survey_subset.csv\")\nBy default, all dplyr functions expect the first argument to be a data frame."
+    "text": "Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an industry-wide survey to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.\nBy default, all dplyr functions expect the first argument to be a data frame."
   },
   {
     "objectID": "live_code/data_wrangling.html#selecting-columns",
@@ -2034,6 +2034,6 @@
     "href": "coding_practice/coding-practice-06-categorical.html",
     "title": "Categorical data coding practice",
     "section": "",
-    "text": "# load additional packages here\nlibrary(readr)\n\n\nIn the code chunk above, add a line of code to load in the package necessary for working with ggplot. Also change your name in the YAML.\nWe will be working with data you gave me from the start-of-semester study survey! In the following code, I would like you to delete the underscores and replace them with a variable name of your choice. The variable name should be meaningful to you, but also not too long.\n\nThen run the code chunk and take a look at the data!\n\n# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/stat201_f24_data.csv\"\n\n____ <- read_csv(url_file)\n\n\nDo students take the 9:45 section because they want to get more sleep? Create boxplots of the average number of hours of sleep students get per night, split by the different sections. Note there are two ways to do this!\n\nThen interpret your visualization in the context of my “research question”.\n\n\n\nAnswer:\n\nPick two categorical variables of your choice. Using an appropriate type of bar plot, compare the distribution of one variable across the distribution of the second variable. That is, do the frequencies of occurrences of the levels of one variable depend on/change with the levels of the second variable?\n\n\n\n\nAnswer:\n\nWe will change the colors in our bar plot! Look at the Help file for the function scale_fill_brewer(). You should see many options of different palettes. Add this function to your code above (use good coding style!), and set the palette argument to one of the palette names. Play around until you’ve settled on one!\nYou used the function scale_fill_brewer() above, but there is a similar function called scale_color_brewer(). Why do you think we used the first function and not the second? (You can explore this by changing your code above to scale_color_brewer and seeing what happens. Be sure to revert back to scale_fill_brewer before submitting!)\n\nAnswer:\nOnce you’re finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!"
+    "text": "# load additional packages here\nlibrary(readr)\n\n\nIn the code chunk above, add a line of code to load in the package necessary for working with ggplot. Also change your name in the YAML.\nWe will be working with data you gave me from the start-of-semester study survey! In the following code, I would like you to delete the underscores and replace them with a variable name of your choice. The variable name should be meaningful to you, but also not too long.\n\nThen run the code chunk and take a look at the data! Then delete the argument eval = FALSE in the code chunk header!! That argument tells RStudio to not evaluate that particular code chunk when knitting, but we definitely want to evaluate this as this is how where our data gets loaded in!\n\n# url to read data from\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/stat201_f24_data.csv\"\n\n____ <- read_csv(url_file)\n\n\nDo students take the 9:45 section because they want to get more sleep? Create boxplots of the average number of hours of sleep students get per night, split by the different sections. Note there are two ways to do this!\n\nThen interpret your visualization in the context of my “research question”.\n\n\n\nAnswer:\n\nPick two categorical variables of your choice. Using an appropriate type of bar plot, compare the distribution of one variable across the distribution of the second variable. That is, do the frequencies of occurrences of the levels of one variable depend on/change with the levels of the second variable?\n\n\n\n\nAnswer:\n\nWe will change the colors in our bar plot! Look at the Help file for the function scale_fill_brewer(). You should see many options of different palettes. Add this function to your code above (use good coding style!), and set the palette argument to one of the palette names. Play around until you’ve settled on one!\nYou used the function scale_fill_brewer() above, but there is a similar function called scale_color_brewer(). Why do you think we used the first function and not the second? (You can explore this by changing your code above to scale_color_brewer and seeing what happens. Be sure to revert back to scale_fill_brewer before submitting!)\n\nAnswer:\nOnce you’re finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!"
   }
 ]
