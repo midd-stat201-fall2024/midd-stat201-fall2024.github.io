@@ -1,0 +1,148 @@
+---
+title: "STAT 201: Problem Set 3 (R)"
+author: "Your name"
+date: "Due: 9/30/2024 at 11:59pm"
+output: html_document
+---
+
+In January 2017, Buzzfeed published an article titled [“These Nobel Prize Winners Show Why Immigration Is So Important For American Science”](https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science). In the article they explore where many Nobel laureates in the sciences were born and where they lived when they won their prize.
+
+In this homework we will work with the data about Nobel laureates to recreate/update some of their visualizations with new data as well as explore new questions.
+
+```{r message = F}
+library(readr)
+# add more packages here as necessary
+
+
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/nobel.csv"
+nobel <- read_csv(url_file)
+```
+
+0.  Change your name in the YAML and add the package(s) necessary for creating ggplots and wrangling data in the code chunk above. Then run the code chunk to load in the data.
+
+A description of the variables in the `nobel` data are as follows:
+
+-   `id`: ID number
+-   `firstname`: first name (and possible middle initial) of laureate
+-   `surname`: last name/surname
+-   `year`: the year the prize was awarded
+-   `category`: category of prize (Chemistry, Economics, Literature, Peace, Physics, or Medicine)
+-   `born_year`: year laureate was born
+-   `died_year`: year laureate died
+-   `affiliation`: affiliation of laureate at time of winning
+-   `city`: city of laureate in prize year
+-   `country`: country where laureate was based in prize year
+-   `gender`: gender or laureate (male, female, or org, where org represents an organization)
+-   `born_city`: city where laureate was born
+-   `born_country`: country where laureate was born
+-   `born_country_code`: two-letter country code of `born_country`
+-   `died_city`: city were laureate died
+-   `died_country`: country where laureate died
+-   `died_country_code`: two-letter country code of `died_country`
+-   `share`: reciprocal of the portion of prize awarded to the laureate
+-   `motivation`: motivation for recognition
+
+There are a few other variables ending in `_original` which correspond to locations whose names changed after the prize was given. The values in these columns are the original names of the locations at the time of the award. We won't need to work with these variables.
+
+1.  Display a summary table of the sample average and standard deviation of the ages of Nobel laureates at the time of receiving the prize. Do this in a single pipeline by:
+
+-   Creating a new variable that represents the age of the laureate when they one their prize, calculated as the year they received the award minus the year they were born
+-   Filtering to only retain observations for which your newly calculated age variable is available
+-   Writing code to actually create the summary statistics
+
+Be sure to explicitly set/define the column titles of your summary table. Then interpret these statistics (particularly the standard deviation) in context.
+
+```{r}
+
+```
+
+**Answer:**
+
+2.  Create a new data frame called `nobel_living` that filters for the following criteria:
+
+-   laureates for whom `country` is available
+-   laureates who are people as opposed to organizations
+-   laureates who are still alive
+
+```{r}
+
+```
+
+Use code to confirm that you have 250 laureates in your new data frame:
+
+```{r}
+
+```
+
+3.  **Buzzfeed's Claim #1: "Most living Nobel laureates were based in the US when they won their prizes”.** Let’s see if that’s true.
+
+Modify (i.e. store/assign over) your `nobel_living` data frame by creating a new variable called `country_us`. The variable should equal:
+
+-   "USA" if the laureate's `country` value is indeed the "USA"
+-   "Other" is the laureate's `country` value is not "USA"
+
+You will have to use the `if_else()` function. Take a look at its Help file (and in particular, its examples).
+
+```{r}
+
+
+```
+
+*Now would be a good time to knit your work to save the progress and make sure everything is working!*
+
+4.  Create a new data frame called `nobel_living_science` that only retains observations with laureates from the Physics, Chemistry, Medicine, and Economics categories from the `nobel_living` data frame.
+
+```{r}
+
+
+```
+
+5.  Using the data frame `nobel_living_science`, create a faceted bar plot with horizontal bars that visualizes the relationship between 1) the category of prize and 2) whether the laureate was in the US when they won the Nobel prize. Note: Your visualization should be faceted by category. For each facet you should have two bars, one for winners in the US and one for Other.
+
+Interpret your visualization, and say a few words about whether the Buzzfeed Claim #1 is supported by the data.
+
+```{r}
+
+
+```
+
+**Answer:**
+
+*Now would be a good time to knit your work to save the progress and make sure everything is working!*
+
+6.  **Buzzfeed's Claim #2: "But of those US-based Nobel laureates, many were born in other countries."** Let's investigate this second claim!
+
+Create a new variable called `born_country_us` that has the value "USA" if the laureate is born in the US, and "Other" if not. Be sure to save the variable to the data frame by storing the output back into `nobel_living_science`.
+
+```{r}
+
+
+```
+
+7.  Let's improve on our previous visualization here. Visualize the relationship between where the laureate was based when they won the Nobel Prize and where they were born, split by category. Your final visualization should:
+
+-   contain a facet for each category
+-   within each facet, have a bar for whether the laureate won the award in the US or not
+-   within each bar, display whether the laureate was born in the US or not
+
+Based on your visualization, do the data appear to support Buzzfeed’s Claim #2? Explain your reasoning in a few sentences.
+
+```{r}
+
+
+```
+
+**Answer:**
+
+8.  We will explore where the non-US laureates were born. In a single pipeline starting with `nobel_living_science`, filter for laureates who were living in the US when they won their prize but where born outside of the US. Then create a frequency table for their birth country, only displaying the top eight countries.
+
+```{r}
+
+
+```
+
+9.  Finally, go to the Buzzfeed website linked at the top (copy and paste the URL into Chrome or Safari) and compare your frequency table from the previous exercise to their bar plot. The numbers and ordering might not be the same. Why do you think that is?
+
+**Answer:**
+
+Once you're finished, knit once more. Be sure to submitted the outputted HTML file to Canvas.

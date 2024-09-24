@@ -12,7 +12,6 @@ If you want to see the data frame, type `View(mammals)` in the **Console**. That
 ```{r}
 # packages
 
-# data
 
 ```
 

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-09-25">
 
 <title>STAT 201: Intro. to Statistics and Data Science - Data wrangling with dplyr</title>
 <style>
@@ -194,8 +195,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#summarising-for-summary-statistics" id="toc-summarising-for-summary-statistics" class="nav-link" data-scroll-target="#summarising-for-summary-statistics">Summarising for summary statistics</a></li>
-  <li><a href="#remember-to-save-over-data-frames-for-future-use" id="toc-remember-to-save-over-data-frames-for-future-use" class="nav-link" data-scroll-target="#remember-to-save-over-data-frames-for-future-use">Remember to save over data frames for future use!</a></li>
-  <li><a href="#grouping-by-grouped-operations" id="toc-grouping-by-grouped-operations" class="nav-link" data-scroll-target="#grouping-by-grouped-operations">Grouping by grouped operations</a></li>
   </ul>
 </nav>
     </div>
@@ -212,6 +211,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 25, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -219,13 +224,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p><strong>Don’t forget to load the <code>tidyverse</code> package, which includes <code>dplyr</code>!</strong></p>
 <p>Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an <a href="https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/">industry-wide survey</a> to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-3"><a href="#cb1-3"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>datascience <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>datascience <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>By default, all <code>dplyr</code> functions expect the first argument to be a data frame.</strong></p>
 <section id="selecting-columns" class="level2 page-columns page-full">
@@ -836,56 +841,6 @@ Check
 </div>
 <div class="callout-body-container callout-body">
 <p>What happens if you type <code>summarise(mean(Age))</code> instead? You’ll note that the calculation becomes the column title.</p>
-</div>
-</div>
-</section>
-<section id="remember-to-save-over-data-frames-for-future-use" class="level2">
-<h2 class="anchored" data-anchor-id="remember-to-save-over-data-frames-for-future-use">Remember to save over data frames for future use!</h2>
-<p>Often, we wrangle a data frame because we want certain variables to exist for future analyses. When we have modify a data frame for several future analyses, we should <em>save over/store back into</em> the same data frame with our new operations. As an example, in the following code, I am creating a new variable called <code>age_months</code> that represents the age in months.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(<span class="at">age_months =</span> Age <span class="sc">*</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now suppose I want to visualize this variable:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datascience, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> age_months))<span class="sc">+</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `geom_histogram()`:
-! Problem while computing aesthetics.
-ℹ Error occurred in the 1st layer.
-Caused by error:
-! object 'age_months' not found</code></pre>
-</div>
-</div>
-<p>It’s complaining because the data frame <code>datascience</code> does not have a variable called <code>age_months</code>! We need to store over the previous version to make sure we “save our work”:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>datascience <span class="ot">&lt;-</span> datascience <span class="sc">|&gt;</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">mutate</span>(<span class="at">age_months =</span> Age <span class="sc">*</span> <span class="dv">12</span>)</span>
-<span id="cb42-3"><a href="#cb42-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datascience, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> age_months))<span class="sc">+</span></span>
-<span id="cb42-4"><a href="#cb42-4"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="data_wrangling_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="grouping-by-grouped-operations" class="level2">
-<h2 class="anchored" data-anchor-id="grouping-by-grouped-operations">Grouping by grouped operations</h2>
-<p>Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The <code>group_by()</code> function tells <code>R</code> to treat each unique level as a separate data set.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">group_by</span>(EmploymentStatus) <span class="sc">|&gt;</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  EmploymentStatus                                     mean_age
-  &lt;chr&gt;                                                   &lt;dbl&gt;
-1 Employed full-time                                       34.3
-2 Employed part-time                                       29.5
-3 Independent contractor, freelancer, or self-employed     39.0</code></pre>
 </div>
 </div>
 

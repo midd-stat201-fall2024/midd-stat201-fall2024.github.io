@@ -8,7 +8,7 @@
 
 <meta name="author" content="Your name">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Data wrangling coding practice</title>
+<title>STAT 201: Intro. to Statistics and Data Science - STAT 201: Problem Set 3 (R)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data wrangling coding practice</h1>
+<h1 class="title">STAT 201: Problem Set 3 (R)</h1>
 </div>
 
 
@@ -205,38 +205,129 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<ol type="1">
-<li>Load in the <code>tidyverse</code> and <code>openintro</code> packages the in the code chunk below. We will once again work with the <code>starbucks</code> data from the <code>openintro</code> package. Remember that if you want to look at the data, you can type <code>View(data frame name)</code> in the <em>Console</em>.</li>
-</ol>
+<p>In January 2017, Buzzfeed published an article titled <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science">“These Nobel Prize Winners Show Why Immigration Is So Important For American Science”</a>. In the article they explore where many Nobel laureates in the sciences were born and where they lived when they won their prize.</p>
+<p>In this homework we will work with the data about Nobel laureates to recreate/update some of their visualizations with new data as well as explore new questions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add more packages here as necessary</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/nobel.csv"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>nobel <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and their calorie content.</li>
+<ol start="0" type="1">
+<li>Change your name in the YAML and add the package(s) necessary for creating ggplots and wrangling data in the code chunk above. Then run the code chunk to load in the data.</li>
 </ol>
+<p>A description of the variables in the <code>nobel</code> data are as follows:</p>
+<ul>
+<li><code>id</code>: ID number</li>
+<li><code>firstname</code>: first name (and possible middle initial) of laureate</li>
+<li><code>surname</code>: last name/surname</li>
+<li><code>year</code>: the year the prize was awarded</li>
+<li><code>category</code>: category of prize (Chemistry, Economics, Literature, Peace, Physics, or Medicine)</li>
+<li><code>born_year</code>: year laureate was born</li>
+<li><code>died_year</code>: year laureate died</li>
+<li><code>affiliation</code>: affiliation of laureate at time of winning</li>
+<li><code>city</code>: city of laureate in prize year</li>
+<li><code>country</code>: country where laureate was based in prize year</li>
+<li><code>gender</code>: gender or laureate (male, female, or org, where org represents an organization)</li>
+<li><code>born_city</code>: city where laureate was born</li>
+<li><code>born_country</code>: country where laureate was born</li>
+<li><code>born_country_code</code>: two-letter country code of <code>born_country</code></li>
+<li><code>died_city</code>: city were laureate died</li>
+<li><code>died_country</code>: country where laureate died</li>
+<li><code>died_country_code</code>: two-letter country code of <code>died_country</code></li>
+<li><code>share</code>: reciprocal of the portion of prize awarded to the laureate</li>
+<li><code>motivation</code>: motivation for recognition</li>
+</ul>
+<p>There are a few other variables ending in <code>_original</code> which correspond to locations whose names changed after the prize was given. The values in these columns are the original names of the locations at the time of the award. We won’t need to work with these variables.</p>
+<ol type="1">
+<li>Display a summary table of the sample average and standard deviation of the ages of Nobel laureates at the time of receiving the prize. Do this in a single pipeline by:</li>
+</ol>
+<ul>
+<li>Creating a new variable that represents the age of the laureate when they one their prize, calculated as the year they received the award minus the year they were born</li>
+<li>Filtering to only retain observations for which your newly calculated age variable is available</li>
+<li>Writing code to actually create the summary statistics</li>
+</ul>
+<p>Be sure to explicitly set/define the column titles of your summary table. Then interpret these statistics (particularly the standard deviation) in context.</p>
+<div class="cell">
+
+</div>
+<p><strong>Answer:</strong></p>
+<ol start="2" type="1">
+<li>Create a new data frame called <code>nobel_living</code> that filters for the following criteria:</li>
+</ol>
+<ul>
+<li>laureates for whom <code>country</code> is available</li>
+<li>laureates who are people as opposed to organizations</li>
+<li>laureates who are still alive</li>
+</ul>
+<div class="cell">
+
+</div>
+<p>Use code to confirm that you have 250 laureates in your new data frame:</p>
 <div class="cell">
 
 </div>
 <ol start="3" type="1">
-<li>Wrangle the data to display all the sandwich items in the data set.</li>
+<li><strong>Buzzfeed’s Claim #1: “Most living Nobel laureates were based in the US when they won their prizes”.</strong> Let’s see if that’s true.</li>
 </ol>
+<p>Modify (i.e.&nbsp;store/assign over) your <code>nobel_living</code> data frame by creating a new variable called <code>country_us</code>. The variable should equal:</p>
+<ul>
+<li>“USA” if the laureate’s <code>country</code> value is indeed the “USA”</li>
+<li>“Other” is the laureate’s <code>country</code> value is not “USA”</li>
+</ul>
+<p>You will have to use the <code>if_else()</code> function. Take a look at its Help file (and in particular, its examples).</p>
 <div class="cell">
 
 </div>
+<p><em>Now would be a good time to knit your work to save the progress and make sure everything is working!</em></p>
 <ol start="4" type="1">
-<li>Three macronutrients serve as sources of calories (i.e.&nbsp;energy) in food: carbohydrates, proteins, and fat. Carbohydrates contain 4 calories per gram, proteins contain 4 calories per gram, and fats contain 9 calories per gram.</li>
+<li>Create a new data frame called <code>nobel_living_science</code> that only retains observations with laureates from the Physics, Chemistry, Medicine, and Economics categories from the <code>nobel_living</code> data frame.</li>
 </ol>
-<p>Wrangle the data to add a new variable called <code>theoretical_cals</code> which represents the number of calories each item in the <code>starbucks</code> data theoretically should have based on its levels of carbohydrates, protein, and fat. Store the resulting data frame as a new data frame called <code>starbucks_new</code>.</p>
 <div class="cell">
 
 </div>
 <ol start="5" type="1">
-<li>Using your <code>starbucks_new</code> data frame from the previous step, display a summary table/data frame that shows the standard deviation of the differences between the reported calories and theoretical calories. Make sure to specify an informative/nicer name in your summary table.</li>
+<li>Using the data frame <code>nobel_living_science</code>, create a faceted bar plot with horizontal bars that visualizes the relationship between 1) the category of prize and 2) whether the laureate was in the US when they won the Nobel prize. Note: Your visualization should be faceted by category. For each facet you should have two bars, one for winners in the US and one for Other.</li>
+</ol>
+<p>Interpret your visualization, and say a few words about whether the Buzzfeed Claim #1 is supported by the data.</p>
+<div class="cell">
+
+</div>
+<p><strong>Answer:</strong></p>
+<p><em>Now would be a good time to knit your work to save the progress and make sure everything is working!</em></p>
+<ol start="6" type="1">
+<li><strong>Buzzfeed’s Claim #2: “But of those US-based Nobel laureates, many were born in other countries.”</strong> Let’s investigate this second claim!</li>
+</ol>
+<p>Create a new variable called <code>born_country_us</code> that has the value “USA” if the laureate is born in the US, and “Other” if not. Be sure to save the variable to the data frame by storing the output back into <code>nobel_living_science</code>.</p>
+<div class="cell">
+
+</div>
+<ol start="7" type="1">
+<li>Let’s improve on our previous visualization here. Visualize the relationship between where the laureate was based when they won the Nobel Prize and where they were born, split by category. Your final visualization should:</li>
+</ol>
+<ul>
+<li>contain a facet for each category</li>
+<li>within each facet, have a bar for whether the laureate won the award in the US or not</li>
+<li>within each bar, display whether the laureate was born in the US or not</li>
+</ul>
+<p>Based on your visualization, do the data appear to support Buzzfeed’s Claim #2? Explain your reasoning in a few sentences.</p>
+<div class="cell">
+
+</div>
+<p><strong>Answer:</strong></p>
+<ol start="8" type="1">
+<li>We will explore where the non-US laureates were born. In a single pipeline starting with <code>nobel_living_science</code>, filter for laureates who were living in the US when they won their prize but where born outside of the US. Then create a frequency table for their birth country, only displaying the top eight countries.</li>
 </ol>
 <div class="cell">
 
 </div>
-<p>Once you’re finished, be sure to knit and submit the outputted HTML file to the corresponding Canvas assignment!</p>
+<ol start="9" type="1">
+<li>Finally, go to the Buzzfeed website linked at the top (copy and paste the URL into Chrome or Safari) and compare your frequency table from the previous exercise to their bar plot. The numbers and ordering might not be the same. Why do you think that is?</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<p>Once you’re finished, knit once more. Be sure to submitted the outputted HTML file to Canvas.</p>
 
 
 

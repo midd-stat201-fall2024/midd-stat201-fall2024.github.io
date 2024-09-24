@@ -5,30 +5,37 @@ date: "Due: 09/25/24 at 11:59pm"
 output: html_document
 ---
 
-1.  Load in the `tidyverse` and `openintro` packages the in the code chunk below. We will once again work with the `starbucks` data from the `openintro` package. Remember that if you want to look at the data, you can type `View(<data frame name>)` in the *Console*.
+1.  Load in the `tidyverse` and `openintro` packages the in the code chunk below. We will once again work with the `starbucks` data from the `openintro` package. Remember that if you want to look at the data, you can type `View(data frame name)` in the *Console*.
 
 ```{r}
 # load packages here
 
 ```
 
-2.  Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and the calorie content.
+2.  Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and their calorie content.
 
 ```{r}
 
 ```
 
-3.  One gram of protein contains 4 calories. Wrangle the data to add a new variable called `prop_protein` which represents the proportion of the item's calories that are due to protein. Store the resulting data frame as a new variable called `starbucks_new`.
-
-```{r}
-
-
-```
-
-4.  Using your `starbucks_new` data frame from the previous step, display a summary table/data frame that shows the median proportion of calories that come from protein for each `type` of Starbucks item in *ascending* order.
+3.  Wrangle the data to display all the sandwich items in the data set.
 
 ```{r}
 
 ```
 
-Once you're finished, be sure to knit and submit the output file to the corresponding Canvas assignment!
+4.  Three macronutrients serve as sources of calories (i.e. energy) in food: carbohydrates, proteins, and fat. Carbohydrates contain 4 calories per gram, proteins contain 4 calories per gram, and fats contain 9 calories per gram.
+
+Wrangle the data to add a new variable called `theoretical_cals` which represents the number of calories each item in the `starbucks` data theoretically should have based on its levels of carbohydrates, protein, and fat. Store the resulting data frame as a new data frame called `starbucks_new`.
+
+```{r}
+
+```
+
+5.  Using your `starbucks_new` data frame from the previous step, display a summary table/data frame that shows the standard deviation of the differences between the reported calories and theoretical calories. Make sure to specify an informative/nicer name in your summary table.
+
+```{r}
+
+```
+
+Once you're finished, be sure to knit and submit the outputted HTML file to the corresponding Canvas assignment!

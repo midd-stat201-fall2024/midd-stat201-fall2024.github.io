@@ -17,6 +17,9 @@ editor_options:
 draft: false
 ---
 
+
+
+## Grammar of data wrangling
 ```{r echo = F, warning = F}
 knitr::opts_chunk$set(echo = T)
 library(tidyverse)
@@ -25,9 +28,6 @@ library(knitr)
 plot_theme <- theme(text = element_text(size = 24))
 insurance <- read_csv("data/insurance.csv")
 ```
-
-## Grammar of data wrangling
-
 -   Recall: data frames are objects in R that store tabular data in tidy form
 
 -   The `dplyr` package uses the concept of functions as verbs that manipulate data frames
@@ -52,9 +52,9 @@ insurance <- read_csv("data/insurance.csv")
 
 -   In programming, a **pipe** is a technique for passing information from one process to another
 
--   In `dplyr`, the pipes are coded as `|>` (or `%>%`)
+-   In `dplyr`, the pipes are coded as `|>` (i.e. vertical bar and greater than sign)
 
-    -   Vertical bar followed by greater than sign
+    -   Not to be confused with `+`
 
 -   We can think about pipes as following a sequence of actions which provide a more natural and easier to read structure
 
@@ -62,7 +62,7 @@ insurance <- read_csv("data/insurance.csv")
 
 ::: columns
 ::: {.column width="50%"}
--   Expressed as a set of nested `R` pseudocode, this might look like:
+-   Expressed as a set of nested `R` pseudocode, this may look like:
 
 ::: fragment
 ```{r eval = F}
@@ -73,14 +73,14 @@ park(drive(start_car(find("car_keys")),
 :::
 
 ::: {.column width="50%"}
--   Expressed using pipes, this might look like:
+-   Expressed using pipes, this may look like:
 
 ::: fragment
 ```{r eval = F}
 find("car_keys") |>
   start_car() |>
   drive(to = "work") |>
-  park
+  park()
 ```
 :::
 :::
@@ -88,9 +88,7 @@ find("car_keys") |>
 
 ## Logical operators in R
 
-It is common to compare two quantities using logical operators. All of these operators will return a **logical** `TRUE` or `FALSE`.
-
-Here are list of some common operators:
+It is common to compare two quantities using logical operators. All of these operators will return a **logical** `TRUE` or `FALSE`. List of some common operators:
 
 -   `<`: less than
 
@@ -107,8 +105,18 @@ Here are list of some common operators:
 ::: fragment
 ```{r echo = T, eval = T}
 1 < 4
-2 == 3
+```
+:::
 
+::: fragment
+```{r echo = T, eval = T}
+2==3
+```
+:::
+
+::: fragment
+```{r echo = T, eval = T}
+2!=3
 ```
 :::
 
@@ -122,53 +130,40 @@ We might also want to know if a certain quantity "behaves" a certain way. The fo
 
 -   `!x`: not `x`
 
+::: fragment
+```{r echo = T, eval = T}
+is.na(NA)
+```
+:::
+
+::: fragment
 ```{r echo = T, eval = T}
 is.na("apple")
+```
+:::
+
+::: fragment
+```{r echo = T, eval = T}
 3 %in% 1:10
+```
+:::
+
+::: fragment
+```{r echo = T, eval = T}
+
 !TRUE
 ```
+:::
 
 ## Live code
 
 Data from Kaggle: In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
 
--   Copy and paste the following code into a code chunk in your live code! We will load in the data together and take a quick look at it before diving into data wrangling
+Copy and paste the following code into a code chunk in your live code! We will load in the data together and take a quick look at it before diving into data wrangling
 
-::: fragment
 ```{r eval = F, echo = T}
 library(readr)
 url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
 ```
-:::
 
-## Piping to ggplot
 
--   Remember that when creating plots, the `ggplot()` function expect a data frame as its first argument
-
--   We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons)
-
-    1.  Wrangle the data, store the resulting data frame with a new variable name, and then refer to that data frame with `ggplot()`, or
-
-        ::: fragment
-        ```{r eval = F}
-        df_new <- df |>
-          mutate(age_months = age*12)
-        ggplot(df_new, aes(x = age_months)) +
-          geom_histogram()
-        ```
-        :::
-
-    2.  Wrangle the data, and then directly pipe the result into `ggplot()`
-
-        ::: fragment
-        ```{r eval = F}
-        df |>
-          mutate(age_months = age*12) |>
-          ggplot(aes(x = age_months)) +
-          geom_histogram()
-        ```
-        :::
-
--   ::: discuss
-    When do we use `|>` and when do we use `+` to connect lines of code?
-    :::

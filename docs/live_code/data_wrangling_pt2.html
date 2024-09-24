@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name">
+<meta name="dcterms.date" content="2024-09-26">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Data wrangling coding practice</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Data wrangling with dplyr (cont.)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -126,7 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -172,30 +172,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#grouping-by-grouped-operations" id="toc-grouping-by-grouped-operations" class="nav-link active" data-scroll-target="#grouping-by-grouped-operations">Grouping by grouped operations</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#remember-to-save-over-data-frames-for-future-use" id="toc-remember-to-save-over-data-frames-for-future-use" class="nav-link" data-scroll-target="#remember-to-save-over-data-frames-for-future-use">Remember to save over data frames for future use!</a></li>
+  <li><a href="#piping-to-ggplot" id="toc-piping-to-ggplot" class="nav-link" data-scroll-target="#piping-to-ggplot">Piping to ggplot()</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data wrangling coding practice</h1>
+<h1 class="title">Data wrangling with dplyr (cont.)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your name </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">September 26, 2024</p>
     </div>
   </div>
   
@@ -205,40 +210,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p><strong>Don’t forget to load the <code>tidyverse</code> package!</strong></p>
+<p>Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an <a href="https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/">industry-wide survey</a> to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>datascience <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="grouping-by-grouped-operations" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-by-grouped-operations">Grouping by grouped operations</h2>
+<p>Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The <code>group_by()</code> function tells <code>R</code> to treat each unique level as a separate data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">group_by</span>(EmploymentStatus) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(Age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  EmploymentStatus                                     mean_age
+  &lt;chr&gt;                                                   &lt;dbl&gt;
+1 Employed full-time                                       34.3
+2 Employed part-time                                       29.5
+3 Independent contractor, freelancer, or self-employed     39.0</code></pre>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>Write code to create a summary table reporting the average age of survey respondents for each category of formal education, in descending order.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">group_by</span>(FormalEducation) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">summarise</span>(<span class="at">avg_age =</span> <span class="fu">mean</span>(Age)) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="remember-to-save-over-data-frames-for-future-use" class="level2">
+<h2 class="anchored" data-anchor-id="remember-to-save-over-data-frames-for-future-use">Remember to save over data frames for future use!</h2>
+<p>Often, we wrangle a data frame because we want certain variables to exist for future analyses. When we have modify a data frame for several future analyses, we should <em>save over/store back into</em> the same data frame with our new operations. As an example, in the following code, I am creating a new variable called <code>age_months</code> that represents the age in months.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">age_months =</span> Age <span class="sc">*</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now suppose I want to work with this variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">summarise</span>(<span class="at">mean_age_months =</span> <span class="fu">mean</span>(age_months))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `summarise()`:
+ℹ In argument: `mean_age_months = mean(age_months)`.
+Caused by error:
+! object 'age_months' not found</code></pre>
+</div>
+</div>
+<p>It’s complaining because the data frame <code>datascience</code> does not have a variable called <code>age_months</code>! We need to store over the previous version to make sure we “save our work”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>datascience <span class="ot">&lt;-</span> datascience <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">mutate</span>(<span class="at">age_months =</span> Age <span class="sc">*</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="piping-to-ggplot" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="piping-to-ggplot">Piping to ggplot()</h2>
+<p>Remember that when creating plots, <code>ggplot()</code> expects a data frame as its first argument.</p>
+<p>We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):</p>
 <ol type="1">
-<li>Load in the <code>tidyverse</code> and <code>openintro</code> packages the in the code chunk below. We will once again work with the <code>starbucks</code> data from the <code>openintro</code> package. Remember that if you want to look at the data, you can type <code>View(data frame name)</code> in the <em>Console</em>.</li>
+<li>Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with <code>ggplot()</code></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>datascience_india <span class="ot">&lt;-</span> datascience <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"India"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datascience_india, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_wrangling_pt2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="576"></p>
+</div>
 </div>
 <ol start="2" type="1">
-<li>Wrangle the data to display the five items with the highest amount of calories. Only display the name of the items and their calorie content.</li>
+<li>Wrangle the original data, and then directly pipe the result into <code>ggplot()</code>, which knows to expect a data frame as its first argument:</li>
 </ol>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Notice that we don't specify the data parameter in ggplot()!</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>datascience <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(Country <span class="sc">==</span> <span class="st">"India"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span> </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_wrangling_pt2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="576"></p>
 </div>
-<ol start="3" type="1">
-<li>Wrangle the data to display all the sandwich items in the data set.</li>
-</ol>
-<div class="cell">
-
 </div>
-<ol start="4" type="1">
-<li>Three macronutrients serve as sources of calories (i.e.&nbsp;energy) in food: carbohydrates, proteins, and fat. Carbohydrates contain 4 calories per gram, proteins contain 4 calories per gram, and fats contain 9 calories per gram.</li>
-</ol>
-<p>Wrangle the data to add a new variable called <code>theoretical_cals</code> which represents the number of calories each item in the <code>starbucks</code> data theoretically should have based on its levels of carbohydrates, protein, and fat. Store the resulting data frame as a new data frame called <code>starbucks_new</code>.</p>
-<div class="cell">
-
-</div>
-<ol start="5" type="1">
-<li>Using your <code>starbucks_new</code> data frame from the previous step, display a summary table/data frame that shows the standard deviation of the differences between the reported calories and theoretical calories. Make sure to specify an informative/nicer name in your summary table.</li>
-</ol>
-<div class="cell">
-
-</div>
-<p>Once you’re finished, be sure to knit and submit the outputted HTML file to the corresponding Canvas assignment!</p>
 
 
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>When do we use <code>|&gt;</code> and when do we use <code>+</code> to connect lines of code?</p>
+</div></div></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

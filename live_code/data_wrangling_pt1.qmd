@@ -1,10 +1,13 @@
 ---
 title: "Data wrangling with dplyr"
+date: "September 25, 2024"
 format:
   html:
     toc: true
     code-line-numbers: true
 ---
+
+**Don't forget to load the `tidyverse` package, which includes `dplyr`!**
 
 Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
 
@@ -12,7 +15,6 @@ Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted
 library(tidyverse)
 library(readr)
 url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
-
 datascience <- read_csv(url_file)
 ```
 
@@ -84,7 +86,7 @@ datascience |>
 
 ## Arranging rows
 
-We might want to re-arrange rows in ascending or descending order according to a certain variable:
+We might want to re-arrange rows in ascending or descending order according to a certain variable. The `arrange()` function does this, and requires specifying at least one variable to arrange by:
 
 ```{r}
 datascience |>
@@ -98,7 +100,7 @@ By default, `arrange()` will reorder in ascending order. If we'd like to go in d
 
 ## Slicing for certain row numbers
 
-Remember, data frames are in tabular format. So each row has a certain index, as does each column. The first row in index 1, the second row index 2, etc.
+Remember, data frames are in tabular format. So each row has a certain index, as does each column. The first row is index 1, the second row index 2, etc.
 
 The `slice()` function expects a vector of row indices to retain:
 
@@ -117,7 +119,7 @@ What is the difference between `select()` and `slice()`?
 
 The `slice()` function is nice, but unless the rows of your data frame are ordered meaningfully, its actual utility is limited. We might want to look at a set of the cases in which a certain condition is met.
 
-In the following code, we only retain the observations where the person's `Major` was Computer Science:
+In the following code, we use the `filter()` function to only retain the observations where the person's `Major` was Computer Science. This function requires specifying a *logical condition*, and keeps observations in which the condition is met (i.e. TRUE).
 
 ```{r}
 datascience |>
@@ -129,7 +131,7 @@ datascience |>
 ::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
 
-We can also filter for more than one condition at once. Within `filter()`, the comma `,` specifies that all conditions must be true. It can be read as "and":
+We can also filter for more than one condition at once. Within `filter()`, the comma `,` specifies that all conditions must be true. It can be read as "and". In the following code, we retain cases where someone's major was Computer Science *and* they were 30 years old at the time of filling out the survey.
 
 ```{r}
 datascience |>
@@ -157,6 +159,8 @@ datascience |>
 
 ## Distinct to filter for unique rows
 
+The `distinct()` function requires specifying variables in the data frame, and the function will keep only unique/distinct instances of the variable(s). Unless otherwise specified, it will drop all the other variables.
+
 ```{r}
 datascience |>
   distinct(FormalEducation)
@@ -174,7 +178,12 @@ What variables are by default included in the output from `distinct()`?
 
 ## Mutate to add a new variable
 
-It is typical for us to want to add variables to a given data frame. We do this with the `mutate()` function. We must specify the name of the new variable and how to calculate the value of that variable for each observation:
+It is typical for us to want to add variables to a given data frame. We do this with the `mutate()` function. We must specify:
+
+1. The name of the new variable and
+2. How to calculate the value of that new variable for each observation. This will typically involve operations involving variables already present in the data frame.
+
+We link the two with an equals sign. 
 
 ```{r}
 datascience %>%
@@ -256,20 +265,10 @@ datascience |>
 You can obtain multiple summary statistics at once by separating the desired summary statistics with commas.
 :::
 
-The `summarise()` function changes the data frame entirely. It collapses rows down to a single/multiple summary statistic, and removes all columns that are irrelevant to the calculation.
+The `summarise()` function changes the data frame entirely. It collapses rows down to a summary statistic, and removes all columns that are irrelevant to the calculation.
 
 ::: callout-tip
 ## Check
 
-What happens if you type `summarise(mean(Age))` instead?
+What happens if you type `summarise(mean(Age))` instead? You'll note that the calculation becomes the column title.
 :::
-
-## Grouping by grouped operations
-
-Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The `group_by()` function tells `R` to treat each unique level as a separate data set.
-
-```{r}
-datascience |>
-  group_by(EmploymentStatus) |>
-  summarise(mean_age = mean(Age))
-```

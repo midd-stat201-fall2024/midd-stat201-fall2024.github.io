@@ -1,0 +1,98 @@
+---
+title: "Data wrangling with dplyr (cont.)"
+date: "September 26, 2024"
+format:
+  html:
+    toc: true
+    code-line-numbers: true
+---
+
+**Don't forget to load the `tidyverse` package!**
+
+Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+
+```{r library-data, message= F}
+library(tidyverse)
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
+
+datascience <- read_csv(url_file)
+```
+
+## Grouping by grouped operations
+
+Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The `group_by()` function tells `R` to treat each unique level as a separate data set.
+
+```{r}
+datascience |>
+  group_by(EmploymentStatus) |>
+  summarise(mean_age = mean(Age))
+```
+
+## Practice
+
+Write code to create a summary table reporting the average age of survey respondents for each category of formal education, in descending order.
+
+```{r eval = F}
+#| code-fold: true
+datascience |>
+  group_by(FormalEducation) |>
+  summarise(avg_age = mean(Age)) |>
+  arrange(desc(avg_age))
+```
+
+## Remember to save over data frames for future use!
+
+Often, we wrangle a data frame because we want certain variables to exist for future analyses. When we have modify a data frame for several future analyses, we should *save over/store back into* the same data frame with our new operations. As an example, in the following code, I am creating a new variable called `age_months` that represents the age in months.
+
+```{r eval = F}
+datascience |>
+  mutate(age_months = Age * 12)
+```
+
+Now suppose I want to work with this variable:
+
+```{r error = T}
+datascience |>
+  summarise(mean_age_months = mean(age_months))
+```
+
+It's complaining because the data frame `datascience` does not have a variable called `age_months`! We need to store over the previous version to make sure we "save our work":
+
+```{r}
+datascience <- datascience |>
+  mutate(age_months = Age * 12)
+```
+
+## Piping to ggplot()
+
+Remember that when creating plots, `ggplot()` expects a data frame as its first argument.
+
+We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):
+
+ 1.  Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with `ggplot()`
+
+```{r eval = T, fig.width=6, fig.height=4}
+datascience_india <- datascience |>
+  filter(Country == "India")
+
+ggplot(data = datascience_india, mapping = aes(x = Age)) +
+  geom_histogram(bins = 20)
+```
+
+2. Wrangle the original data, and then directly pipe the result into `ggplot()`, which knows to expect a data frame as its first argument:
+
+```{r eval = T, fig.width=6, fig.height=4}
+# Notice that we don't specify the data parameter in ggplot()!
+datascience |>
+  filter(Country == "India") |>
+  ggplot(mapping = aes(x = Age)) + 
+  geom_histogram(bins = 20)
+```
+
+::: column-margin
+When do we use `|>` and when do we use `+` to connect lines of code?
+:::
+
+
+
