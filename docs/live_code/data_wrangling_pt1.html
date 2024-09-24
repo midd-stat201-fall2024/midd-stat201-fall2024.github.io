@@ -229,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a>datascience <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>By default, all <code>dplyr</code> functions expect the first argument to be a data frame.</strong></p>
@@ -241,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">select</span>(datascience, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 1
+<pre><code># A tibble: 102 × 1
      Age
    &lt;dbl&gt;
  1    56
@@ -253,8 +253,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  7    29
  8    35
  9    37
-10    31
-# ℹ 2,278 more rows</code></pre>
+10    36
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 <p>…but it’s preferable to take advantage of piping in order to make code more readable:</p>
@@ -262,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">select</span>(Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 1
+<pre><code># A tibble: 102 × 1
      Age
    &lt;dbl&gt;
  1    56
@@ -274,8 +274,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  7    29
  8    35
  9    37
-10    31
-# ℹ 2,278 more rows</code></pre>
+10    36
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 
@@ -284,7 +284,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="1">
 <li>Start with the data frame <code>datascience</code></li>
 <li>Pipe (<code>|&gt;</code>) the data frame to the <code>select()</code> function and specify that we want the variable <code>Age</code></li>
-<li>The result is a data frame with 2288 rows and 1 column with the <code>Age</code> variable</li>
+<li>The result is a data frame with 102 rows and 1 column with the <code>Age</code> variable</li>
 </ol>
 </div></div><div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -317,7 +317,7 @@ Expand
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">select</span>(Age, Major)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 2
+<pre><code># A tibble: 102 × 2
      Age Major                                                       
    &lt;dbl&gt; &lt;chr&gt;                                                       
  1    56 Mathematics or statistics                                   
@@ -329,8 +329,8 @@ Expand
  7    29 Computer Science                                            
  8    35 Physics                                                     
  9    37 Electrical Engineering                                      
-10    31 Computer Science                                            
-# ℹ 2,278 more rows</code></pre>
+10    36 Information technology, networking, or system administration
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -350,22 +350,22 @@ Check
 <h3 class="anchored" data-anchor-id="a-range-of-variables">A range of variables</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">select</span>(Gender<span class="sc">:</span>EmploymentStatus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">select</span>(Gender<span class="sc">:</span>Major)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 3
-   Gender   Age EmploymentStatus                                    
-   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                                               
- 1 Male      56 Independent contractor, freelancer, or self-employed
- 2 Male      33 Employed full-time                                  
- 3 Male      26 Employed full-time                                  
- 4 Male      25 Employed part-time                                  
- 5 Male      33 Employed full-time                                  
- 6 Male      22 Employed full-time                                  
- 7 Male      29 Employed full-time                                  
- 8 Male      35 Employed full-time                                  
- 9 Male      37 Employed full-time                                  
-10 Male      31 Employed part-time                                  
-# ℹ 2,278 more rows</code></pre>
+<pre><code># A tibble: 102 × 3
+   Gender   Age Major                                                       
+   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                                                       
+ 1 Male      56 Mathematics or statistics                                   
+ 2 Male      33 Other                                                       
+ 3 Male      26 Computer Science                                            
+ 4 Male      25 Physics                                                     
+ 5 Male      33 Electrical Engineering                                      
+ 6 Male      22 Information technology, networking, or system administration
+ 7 Male      29 Computer Science                                            
+ 8 Male      35 Physics                                                     
+ 9 Male      37 Electrical Engineering                                      
+10 Male      36 Information technology, networking, or system administration
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -375,24 +375,21 @@ Check
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>Country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 16
-   Gender   Age EmploymentStatus          EmployerIndustry FormalEducation Major
-   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                     &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
- 1 Male      56 Independent contractor, … Mix of fields    Master's degree Math…
- 2 Male      33 Employed full-time        Internet-based   Bachelor's deg… Other
- 3 Male      26 Employed full-time        Financial        Master's degree Comp…
- 4 Male      25 Employed part-time        Academic         Bachelor's deg… Phys…
- 5 Male      33 Employed full-time        Telecommunicati… Doctoral degree Elec…
- 6 Male      22 Employed full-time        Mix of fields    Bachelor's deg… Info…
- 7 Male      29 Employed full-time        Pharmaceutical   Master's degree Comp…
- 8 Male      35 Employed full-time        Technology       Doctoral degree Phys…
- 9 Male      37 Employed full-time        Technology       Master's degree Elec…
-10 Male      31 Employed part-time        Technology       Doctoral degree Comp…
-# ℹ 2,278 more rows
-# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
-#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
-#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
-#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 102 × 7
+   Gender   Age Major    FormalEducation CompensationAmount CompensationCurrency
+   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;                        &lt;dbl&gt; &lt;chr&gt;               
+ 1 Male      56 Mathema… Master's degree             250000 USD                 
+ 2 Male      33 Other    Bachelor's deg…            1200000 RUB                 
+ 3 Male      26 Compute… Master's degree            1100000 TWD                 
+ 4 Male      25 Physics  Bachelor's deg…              20000 USD                 
+ 5 Male      33 Electri… Doctoral degree             100000 USD                 
+ 6 Male      22 Informa… Bachelor's deg…             624000 RUB                 
+ 7 Male      29 Compute… Master's degree             126000 PLN                 
+ 8 Male      35 Physics  Doctoral degree             133000 USD                 
+ 9 Male      37 Electri… Master's degree              80000 USD                 
+10 Male      36 Informa… Master's degree              80000 AUD                 
+# ℹ 92 more rows
+# ℹ 1 more variable: LanguageRecommendation &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -409,20 +406,20 @@ Check
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">select</span>(Age, Major) <span class="sc">|&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">arrange</span>(Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 2
+<pre><code># A tibble: 102 × 2
      Age Major                                                       
    &lt;dbl&gt; &lt;chr&gt;                                                       
- 1     0 Mathematics or statistics                                   
- 2     1 Other                                                       
- 3    19 Computer Science                                            
- 4    19 Biology                                                     
- 5    20 Information technology, networking, or system administration
- 6    20 Mathematics or statistics                                   
- 7    20 Computer Science                                            
- 8    20 Mathematics or statistics                                   
- 9    21 Other                                                       
-10    21 Computer Science                                            
-# ℹ 2,278 more rows</code></pre>
+ 1    21 Computer Science                                            
+ 2    21 Computer Science                                            
+ 3    22 Information technology, networking, or system administration
+ 4    22 Computer Science                                            
+ 5    22 Computer Science                                            
+ 6    22 Computer Science                                            
+ 7    22 Computer Science                                            
+ 8    22 Computer Science                                            
+ 9    22 Computer Science                                            
+10    23 Biology                                                     
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 
@@ -437,18 +434,15 @@ Check
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 17
-  Country   Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major
-  &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
-1 United S… Male      56 Independent con… Mix of fields    Master's degree Math…
-2 Russia    Male      33 Employed full-t… Internet-based   Bachelor's deg… Other
-3 Taiwan    Male      26 Employed full-t… Financial        Master's degree Comp…
-4 United S… Male      25 Employed part-t… Academic         Bachelor's deg… Phys…
-5 United S… Male      33 Employed full-t… Telecommunicati… Doctoral degree Elec…
-# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
-#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
-#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
-#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 5 × 8
+  Country       Gender   Age Major            FormalEducation CompensationAmount
+  &lt;chr&gt;         &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;                        &lt;dbl&gt;
+1 United States Male      56 Mathematics or … Master's degree             250000
+2 Russia        Male      33 Other            Bachelor's deg…            1200000
+3 Taiwan        Male      26 Computer Science Master's degree            1100000
+4 United States Male      25 Physics          Bachelor's deg…              20000
+5 United States Male      33 Electrical Engi… Doctoral degree             100000
+# ℹ 2 more variables: CompensationCurrency &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -473,24 +467,21 @@ Check
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(Major <span class="sc">==</span> <span class="st">"Computer Science"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 681 × 17
-   Country  Gender   Age EmploymentStatus EmployerIndustry FormalEducation Major
-   &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;
- 1 Taiwan   Male      26 Employed full-t… Financial        Master's degree Comp…
- 2 Poland   Male      29 Employed full-t… Pharmaceutical   Master's degree Comp…
- 3 Iran     Male      31 Employed part-t… Technology       Doctoral degree Comp…
- 4 Brazil   Male      25 Employed full-t… Academic         Master's degree Comp…
- 5 Brazil   Male      32 Employed full-t… Academic         Master's degree Comp…
- 6 Russia   Male      31 Independent con… CRM/Marketing    Some college/u… Comp…
- 7 India    Male      23 Employed full-t… Technology       Master's degree Comp…
- 8 Canada   Male      52 Employed full-t… Academic         Bachelor's deg… Comp…
- 9 Russia   Male      26 Independent con… Military/Securi… Bachelor's deg… Comp…
-10 Czech R… Male      25 Independent con… Internet-based   Master's degree Comp…
-# ℹ 671 more rows
-# ℹ 10 more variables: CompensationAmount &lt;dbl&gt;, CompensationCurrency &lt;chr&gt;,
-#   CurrentJobTitle &lt;chr&gt;, TitleFit &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;,
-#   DataScienceIdentity &lt;chr&gt;, WorkDataVisualizations &lt;chr&gt;,
-#   JobSatisfaction &lt;chr&gt;, JobSatisfaction2 &lt;dbl&gt;, ConversionUSD &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 35 × 8
+   Country                 Gender   Age Major FormalEducation CompensationAmount
+   &lt;chr&gt;                   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;                        &lt;dbl&gt;
+ 1 Taiwan                  Male      26 Comp… Master's degree            1100000
+ 2 Poland                  Male      29 Comp… Master's degree             126000
+ 3 India                   Male      34 Comp… Master's degree            2300000
+ 4 Russia                  Male      22 Comp… Bachelor's deg…             528000
+ 5 People 's Republic of … Male      28 Comp… Master's degree              70000
+ 6 Russia                  Male      34 Comp… Some college/u…            1500000
+ 7 Russia                  Male      22 Comp… Master's degree              70000
+ 8 Italy                   Male      22 Comp… Bachelor's deg…              10000
+ 9 India                   Male      23 Comp… Bachelor's deg…             400000
+10 Other                   Male      32 Comp… Master's degree            1200000
+# ℹ 25 more rows
+# ℹ 2 more variables: CompensationCurrency &lt;chr&gt;, LanguageRecommendation &lt;chr&gt;</code></pre>
 </div>
 </div>
 <section id="multiple-conditions" class="level3">
@@ -514,20 +505,12 @@ Expand
 <span id="cb18-3"><a href="#cb18-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 2
-   Major              Age
-   &lt;chr&gt;            &lt;dbl&gt;
- 1 Computer Science    30
- 2 Computer Science    30
- 3 Computer Science    30
- 4 Computer Science    30
- 5 Computer Science    30
- 6 Computer Science    30
- 7 Computer Science    30
- 8 Computer Science    30
- 9 Computer Science    30
-10 Computer Science    30
-# ℹ 26 more rows</code></pre>
+<pre><code># A tibble: 3 × 2
+  Major              Age
+  &lt;chr&gt;            &lt;dbl&gt;
+1 Computer Science    30
+2 Computer Science    30
+3 Computer Science    30</code></pre>
 </div>
 </div>
 <p>If we just need at least one of multiple conditions to be true, we can use the <code>|</code> operator which stands for “or”:</p>
@@ -537,20 +520,20 @@ Expand
 <span id="cb20-3"><a href="#cb20-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 765 × 2
+<pre><code># A tibble: 36 × 2
    Major              Age
    &lt;chr&gt;            &lt;dbl&gt;
  1 Computer Science    26
  2 Computer Science    29
- 3 Computer Science    31
- 4 Computer Science    25
- 5 Computer Science    32
- 6 Computer Science    31
- 7 A social science    30
- 8 Computer Science    23
- 9 Biology             30
-10 Computer Science    52
-# ℹ 755 more rows</code></pre>
+ 3 Computer Science    34
+ 4 Computer Science    22
+ 5 Computer Science    28
+ 6 Computer Science    34
+ 7 Computer Science    22
+ 8 Computer Science    22
+ 9 Computer Science    23
+10 Computer Science    32
+# ℹ 26 more rows</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -559,20 +542,12 @@ Expand
 <span id="cb22-3"><a href="#cb22-3"></a>         Age <span class="sc">==</span> <span class="dv">30</span>) <span class="sc">|&gt;</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">select</span>(Major, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 44 × 2
-   Major              Age
-   &lt;chr&gt;            &lt;dbl&gt;
- 1 Computer Science    30
- 2 Computer Science    30
- 3 Computer Science    30
- 4 Computer Science    30
- 5 Computer Science    30
- 6 Computer Science    30
- 7 Computer Science    30
- 8 Computer Science    30
- 9 Other               30
-10 Computer Science    30
-# ℹ 34 more rows</code></pre>
+<pre><code># A tibble: 3 × 2
+  Major              Age
+  &lt;chr&gt;            &lt;dbl&gt;
+1 Computer Science    30
+2 Computer Science    30
+3 Computer Science    30</code></pre>
 </div>
 </div>
 </div>
@@ -587,33 +562,32 @@ Expand
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">distinct</span>(FormalEducation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 1
+<pre><code># A tibble: 4 × 1
   FormalEducation                                                  
   &lt;chr&gt;                                                            
 1 Master's degree                                                  
 2 Bachelor's degree                                                
 3 Doctoral degree                                                  
-4 Some college/university study without earning a bachelor's degree
-5 I prefer not to answer                                           </code></pre>
+4 Some college/university study without earning a bachelor's degree</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>datascience <span class="sc">|&gt;</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">distinct</span>(FormalEducation, Major) <span class="sc">|&gt;</span></span>
 <span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">arrange</span>(FormalEducation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 58 × 2
+<pre><code># A tibble: 29 × 2
    FormalEducation   Major                                                      
    &lt;chr&gt;             &lt;chr&gt;                                                      
  1 Bachelor's degree Other                                                      
  2 Bachelor's degree Physics                                                    
  3 Bachelor's degree Information technology, networking, or system administrati…
- 4 Bachelor's degree A social science                                           
- 5 Bachelor's degree Electrical Engineering                                     
- 6 Bachelor's degree Mathematics or statistics                                  
- 7 Bachelor's degree Computer Science                                           
+ 4 Bachelor's degree Computer Science                                           
+ 5 Bachelor's degree Biology                                                    
+ 6 Bachelor's degree A humanities discipline                                    
+ 7 Bachelor's degree Electrical Engineering                                     
  8 Bachelor's degree Engineering (non-computer focused)                         
- 9 Bachelor's degree A humanities discipline                                    
-10 Bachelor's degree Management information systems                             
-# ℹ 48 more rows</code></pre>
+ 9 Bachelor's degree Mathematics or statistics                                  
+10 Doctoral degree   Electrical Engineering                                     
+# ℹ 19 more rows</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -643,7 +617,7 @@ Check
 <span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">mutate</span>(<span class="at">compensation_1k =</span> CompensationAmount<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">select</span>(CompensationAmount, compensation_1k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,288 × 2
+<pre><code># A tibble: 102 × 2
    CompensationAmount compensation_1k
                 &lt;dbl&gt;           &lt;dbl&gt;
  1             250000             250
@@ -655,8 +629,8 @@ Check
  7             126000             126
  8             133000             133
  9              80000              80
-10              15000              15
-# ℹ 2,278 more rows</code></pre>
+10              80000              80
+# ℹ 92 more rows</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -678,27 +652,19 @@ Check
 <p>We can count the number of instances we observed each level of a given categorical variable:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">count</span>(EmployerIndustry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">count</span>(LanguageRecommendation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 2
-   EmployerIndustry                     n
-   &lt;chr&gt;                            &lt;int&gt;
- 1 Academic                           478
- 2 CRM/Marketing                       70
- 3 Financial                          211
- 4 Government                         137
- 5 Hospitality/Entertainment/Sports    27
- 6 Insurance                           68
- 7 Internet-based                     134
- 8 Manufacturing                       75
- 9 Military/Security                   35
-10 Mix of fields                      195
-11 Non-profit                          35
-12 Other                              198
-13 Pharmaceutical                      54
-14 Retail                              61
-15 Technology                         445
-16 Telecommunications                  65</code></pre>
+<pre><code># A tibble: 8 × 2
+  LanguageRecommendation     n
+  &lt;chr&gt;                  &lt;int&gt;
+1 C/C++/C#                   3
+2 Haskell                    1
+3 Matlab                     3
+4 Other                      1
+5 Python                    66
+6 R                         19
+7 SQL                        6
+8 Scala                      3</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -732,53 +698,37 @@ Expand
 <p>Note that the following chunks of code do the same thing. One of them takes advantage of an additional argument in <code>count()</code>, whereas the other block of the uses an additional function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">count</span>(EmployerIndustry, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">count</span>(LanguageRecommendation, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 2
-   EmployerIndustry                     n
-   &lt;chr&gt;                            &lt;int&gt;
- 1 Academic                           478
- 2 Technology                         445
- 3 Financial                          211
- 4 Other                              198
- 5 Mix of fields                      195
- 6 Government                         137
- 7 Internet-based                     134
- 8 Manufacturing                       75
- 9 CRM/Marketing                       70
-10 Insurance                           68
-11 Telecommunications                  65
-12 Retail                              61
-13 Pharmaceutical                      54
-14 Military/Security                   35
-15 Non-profit                          35
-16 Hospitality/Entertainment/Sports    27</code></pre>
+<pre><code># A tibble: 8 × 2
+  LanguageRecommendation     n
+  &lt;chr&gt;                  &lt;int&gt;
+1 Python                    66
+2 R                         19
+3 SQL                        6
+4 C/C++/C#                   3
+5 Matlab                     3
+6 Scala                      3
+7 Haskell                    1
+8 Other                      1</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>datascience <span class="sc">|&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">count</span>(EmployerIndustry) <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">count</span>(LanguageRecommendation) <span class="sc">|&gt;</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 2
-   EmployerIndustry                     n
-   &lt;chr&gt;                            &lt;int&gt;
- 1 Academic                           478
- 2 Technology                         445
- 3 Financial                          211
- 4 Other                              198
- 5 Mix of fields                      195
- 6 Government                         137
- 7 Internet-based                     134
- 8 Manufacturing                       75
- 9 CRM/Marketing                       70
-10 Insurance                           68
-11 Telecommunications                  65
-12 Retail                              61
-13 Pharmaceutical                      54
-14 Military/Security                   35
-15 Non-profit                          35
-16 Hospitality/Entertainment/Sports    27</code></pre>
+<pre><code># A tibble: 8 × 2
+  LanguageRecommendation     n
+  &lt;chr&gt;                  &lt;int&gt;
+1 Python                    66
+2 R                         19
+3 SQL                        6
+4 C/C++/C#                   3
+5 Matlab                     3
+6 Scala                      3
+7 Haskell                    1
+8 Other                      1</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -823,7 +773,7 @@ Check
 <pre><code># A tibble: 1 × 1
   mean_age
      &lt;dbl&gt;
-1     34.4</code></pre>
+1     32.8</code></pre>
 </div>
 </div>
 

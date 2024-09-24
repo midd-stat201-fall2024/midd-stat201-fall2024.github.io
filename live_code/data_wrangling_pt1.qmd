@@ -14,7 +14,7 @@ Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted
 ```{r library-data, message= F}
 library(tidyverse)
 library(readr)
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
 datascience <- read_csv(url_file)
 ```
 
@@ -73,7 +73,7 @@ What happens if we swap the order of the variable names?
 
 ```{r}
 datascience |>
-  select(Gender:EmploymentStatus)
+  select(Gender:Major)
 ```
 
 ### Excluding variables
@@ -203,7 +203,7 @@ We can count the number of instances we observed each level of a given categoric
 
 ```{r}
 datascience |>
-  count(EmployerIndustry)
+  count(LanguageRecommendation)
 ```
 
 ::: callout-tip
@@ -223,12 +223,12 @@ Note that the following chunks of code do the same thing. One of them takes adva
 
 ```{r}
 datascience |>
-  count(EmployerIndustry, sort = T)
+  count(LanguageRecommendation, sort = T)
 ```
 
 ```{r}
 datascience |>
-  count(EmployerIndustry) |>
+  count(LanguageRecommendation) |>
   arrange(desc(n))
 ```
 

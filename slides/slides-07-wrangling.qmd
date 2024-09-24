@@ -17,9 +17,8 @@ editor_options:
 draft: false
 ---
 
-
-
 ## Grammar of data wrangling
+
 ```{r echo = F, warning = F}
 knitr::opts_chunk$set(echo = T)
 library(tidyverse)
@@ -28,6 +27,7 @@ library(knitr)
 plot_theme <- theme(text = element_text(size = 24))
 insurance <- read_csv("data/insurance.csv")
 ```
+
 -   Recall: data frames are objects in R that store tabular data in tidy form
 
 -   The `dplyr` package uses the concept of functions as verbs that manipulate data frames
@@ -163,7 +163,5 @@ Copy and paste the following code into a code chunk in your live code! We will l
 
 ```{r eval = F, echo = T}
 library(readr)
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
 ```
-
-
