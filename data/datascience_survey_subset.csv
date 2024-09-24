@@ -1,104 +1,104 @@
-Country,Gender,Age,Major,EmploymentStatus,FormalEducation,CompensationAmount,CompensationCurrency,LanguageRecommendation
-United States,Male,56,Mathematics or statistics,"Independent contractor, freelancer, or self-employed",Master's degree,250000,USD,Python
-Russia,Male,33,Other,Employed full-time,Bachelor's degree,1200000,RUB,Python
-Taiwan,Male,26,Computer Science,Employed full-time,Master's degree,1100000,TWD,Python
-United States,Male,25,Physics,Employed part-time,Bachelor's degree,20000,USD,Python
-United States,Male,33,Electrical Engineering,Employed full-time,Doctoral degree,100000,USD,Matlab
-Russia,Male,22,"Information technology, networking, or system administration",Employed full-time,Bachelor's degree,624000,RUB,Python
-Poland,Male,29,Computer Science,Employed full-time,Master's degree,126000,PLN,Python
-United States,Male,35,Physics,Employed full-time,Doctoral degree,133000,USD,Python
-Sweden,Male,37,Electrical Engineering,Employed full-time,Master's degree,80000,USD,Python
-Australia,Male,36,"Information technology, networking, or system administration",Employed full-time,Master's degree,80000,AUD,C/C++/C#
-India,Male,34,Computer Science,Employed full-time,Master's degree,2300000,INR,SQL
-Poland,Male,27,Other,Employed full-time,Master's degree,84000,PLN,Python
-People 's Republic of China,Male,41,Other,"Independent contractor, freelancer, or self-employed",Bachelor's degree,300000,CNY,R
-Mexico,Male,54,Electrical Engineering,"Independent contractor, freelancer, or self-employed",Master's degree,100000,MXN,R
-Russia,Male,22,Computer Science,Employed full-time,Bachelor's degree,528000,RUB,Haskell
-People 's Republic of China,Male,28,Computer Science,Employed full-time,Master's degree,70000,USD,Python
-India,Male,24,Electrical Engineering,Employed full-time,Master's degree,1150000,INR,Python
-Russia,Male,34,Computer Science,Employed full-time,Some college/university study without earning a bachelor's degree,1500000,RUB,Python
-United Kingdom,Male,23,Biology,Employed full-time,Bachelor's degree,25000,GBP,R
-Spain,Female,61,Mathematics or statistics,Employed full-time,Doctoral degree,72000,EUR,Python
-Russia,Male,22,Computer Science,Employed full-time,Master's degree,70000,RUB,R
-United Kingdom,Male,60,A humanities discipline,Employed full-time,Bachelor's degree,55000,GBP,Python
-Other,Male,49,Engineering (non-computer focused),"Independent contractor, freelancer, or self-employed",Master's degree,20000,USD,Python
-France,Female,38,Electrical Engineering,Employed full-time,Doctoral degree,53000,EUR,Python
-Australia,Male,28,Mathematics or statistics,Employed full-time,Master's degree,135000,AUD,Python
-Other,A different identity,99,"Information technology, networking, or system administration",Employed full-time,Bachelor's degree,15000,EUR,SQL
-India,Male,23,Electrical Engineering,Employed full-time,Bachelor's degree,67000,INR,Python
-India,Male,26,Electrical Engineering,Employed full-time,Doctoral degree,336000,INR,Python
-France,Male,39,Physics,Employed full-time,Master's degree,110000,EUR,Python
-Other,Male,34,Mathematics or statistics,Employed full-time,Master's degree,100000,EUR,C/C++/C#
-Italy,Male,35,Biology,Employed full-time,Doctoral degree,30000,EUR,Python
-People 's Republic of China,Male,33,"Information technology, networking, or system administration",Employed full-time,Bachelor's degree,200000,CNY,SQL
-Italy,Male,22,Computer Science,Employed part-time,Bachelor's degree,10000,EUR,Python
-Australia,Male,50,"Information technology, networking, or system administration","Independent contractor, freelancer, or self-employed",Bachelor's degree,100000,AUD,R
-South Africa,Female,37,Mathematics or statistics,Employed full-time,Master's degree,600000,ZAR,R
-France,Male,35,Engineering (non-computer focused),"Independent contractor, freelancer, or self-employed",Master's degree,80000,EUR,Python
-India,Male,27,Engineering (non-computer focused),Employed full-time,Bachelor's degree,600000,INR,Python
-Russia,Male,27,Mathematics or statistics,"Independent contractor, freelancer, or self-employed",Bachelor's degree,5000,USD,C/C++/C#
-India,Male,23,Computer Science,Employed full-time,Bachelor's degree,400000,INR,Python
-Other,Male,32,Computer Science,Employed full-time,Master's degree,1200000,RUB,Python
-Russia,Male,30,Computer Science,"Independent contractor, freelancer, or self-employed",Master's degree,30000,USD,Python
-Singapore,Female,31,Mathematics or statistics,Employed full-time,Master's degree,55200,SGD,Scala
-France,Male,25,Mathematics or statistics,Employed full-time,Master's degree,47000,EUR,R
-Russia,Male,23,"Information technology, networking, or system administration",Employed part-time,Some college/university study without earning a bachelor's degree,256,RUB,Python
-France,Female,25,Management information systems,Employed full-time,Master's degree,36000,EUR,SQL
-Finland,Male,35,Engineering (non-computer focused),Employed full-time,Master's degree,50000,EUR,R
-Poland,Male,22,Computer Science,Employed part-time,Some college/university study without earning a bachelor's degree,3000,PLN,Python
-United Kingdom,Female,33,"Information technology, networking, or system administration",Employed full-time,Bachelor's degree,40000,GBP,Python
-Japan,Male,40,Electrical Engineering,Employed full-time,Bachelor's degree,7000000,JPY,Python
-Mexico,Male,24,Computer Science,Employed part-time,Some college/university study without earning a bachelor's degree,96200,MXN,Python
-Russia,Male,21,Computer Science,Employed part-time,Bachelor's degree,60000,RUB,Python
-India,Male,26,Computer Science,"Independent contractor, freelancer, or self-employed",Master's degree,700000,INR,R
-India,Male,41,"Information technology, networking, or system administration",Employed full-time,Master's degree,70000,INR,Python
-France,Female,26,Mathematics or statistics,Employed full-time,Master's degree,43000,EUR,R
-India,Male,40,Physics,Employed full-time,Doctoral degree,50000,INR,Python
-Other,Female,35,Fine arts or performing arts,Employed part-time,Doctoral degree,12400,EUR,R
-People 's Republic of China,Male,32,Mathematics or statistics,Employed full-time,Bachelor's degree,500000,CNY,Python
-Republic of China,Male,24,Other,Employed full-time,Bachelor's degree,150000,CNY,Python
-Russia,Male,35,"Information technology, networking, or system administration",Employed full-time,Bachelor's degree,45000,USD,SQL
-Taiwan,Male,47,Electrical Engineering,Employed full-time,Master's degree,120000,USD,Python
-Spain,Male,49,Computer Science,Employed full-time,Master's degree,60000,EUR,Python
-Spain,Male,23,Electrical Engineering,Employed full-time,Master's degree,12000,EUR,Python
-Taiwan,Male,32,Computer Science,Employed full-time,Doctoral degree,1000000,USD,Python
-Netherlands,Male,52,Electrical Engineering,"Independent contractor, freelancer, or self-employed",Master's degree,60000,EUR,Python
-India,Male,22,Computer Science,Employed full-time,Bachelor's degree,25000,INR,Other
-France,Male,24,"Information technology, networking, or system administration",Employed full-time,Doctoral degree,24000,EUR,Python
-India,Male,23,Electrical Engineering,Employed full-time,Bachelor's degree,39600,SGD,Matlab
-Russia,Male,25,Electrical Engineering,Employed full-time,Master's degree,73000,RUB,Python
-France,Male,32,Mathematics or statistics,Employed full-time,Master's degree,42000,EUR,R
-Romania,Female,29,Other,Employed full-time,Master's degree,30000,EUR,R
-Netherlands,Male,34,A social science,Employed full-time,Doctoral degree,50000,EUR,R
-Russia,Male,21,Computer Science,Employed full-time,Bachelor's degree,20400,EUR,Python
-Republic of China,Male,26,Electrical Engineering,Employed full-time,Master's degree,10000,CNY,Python
-Other,Male,29,Mathematics or statistics,Employed full-time,Master's degree,485,USD,R
-United Kingdom,Male,35,Computer Science,Employed full-time,Master's degree,50000,GBP,Python
-India,Male,23,Computer Science,Employed full-time,Bachelor's degree,2250000,INR,Python
-Germany,Male,40,Computer Science,Employed full-time,Master's degree,50000,EUR,R
-Japan,Male,27,Biology,Employed full-time,Master's degree,650,JPY,Python
-India,Male,28,Computer Science,Employed full-time,Master's degree,10000,USD,SQL
-Netherlands,Male,73,Electrical Engineering,Employed full-time,Bachelor's degree,40000,EUR,Scala
-India,Male,23,Mathematics or statistics,"Independent contractor, freelancer, or self-employed",Bachelor's degree,2000,USD,Python
-Italy,Male,25,Computer Science,Employed full-time,Master's degree,12000,EUR,Python
-Spain,Male,32,Computer Science,Employed full-time,Doctoral degree,15000,EUR,Python
-India,Male,23,Electrical Engineering,Employed full-time,Bachelor's degree,400000,INR,Python
-India,Female,30,Mathematics or statistics,Employed full-time,Doctoral degree,650000,INR,R
-India,Male,24,Computer Science,Employed full-time,Bachelor's degree,1600000,INR,Python
-Switzerland,Female,33,Other,Employed full-time,Master's degree,150000,CHF,Python
-France,Male,23,Computer Science,Employed full-time,Master's degree,6000,EUR,Python
-Russia,Male,23,Mathematics or statistics,Employed full-time,Master's degree,1380000,RUB,Python
-Ukraine,Male,32,Computer Science,Employed full-time,Master's degree,45000,USD,Python
-Russia,Male,50,Physics,Employed full-time,Doctoral degree,33000,USD,R
-Nigeria,Male,29,Mathematics or statistics,Employed full-time,Master's degree,36000,USD,Python
-South Korea,Male,39,Computer Science,Employed full-time,Master's degree,15000,USD,Python
-Netherlands,Male,46,Computer Science,"Independent contractor, freelancer, or self-employed",Master's degree,150000,EUR,Python
-India,Male,30,Computer Science,Employed full-time,Doctoral degree,60000,INR,Python
-United Kingdom,Male,27,Other,Employed full-time,Bachelor's degree,30000,GBP,Python
-India,Male,23,Computer Science,Employed full-time,Bachelor's degree,2000000,INR,Python
-Spain,Male,37,Computer Science,Employed full-time,Master's degree,33000,EUR,Python
-India,Male,39,Other,Employed full-time,Doctoral degree,1500000,INR,Matlab
-India,Male,30,Computer Science,"Independent contractor, freelancer, or self-employed",Master's degree,400000,INR,Python
-India,Male,22,Computer Science,Employed full-time,Bachelor's degree,575000,INR,Python
-India,Male,40,Engineering (non-computer focused),Employed full-time,Bachelor's degree,2600000,INR,R
-India,Male,25,Computer Science,Employed full-time,Bachelor's degree,23000000,INR,Scala
+Country,Gender,Age,Major,FormalEducation,CompensationAmount,CompensationCurrency,LanguageRecommendation
+United States,Male,56,Mathematics or statistics,Master's degree,250000,USD,Python
+Russia,Male,33,Other,Bachelor's degree,1200000,RUB,Python
+Taiwan,Male,26,Computer Science,Master's degree,1100000,TWD,Python
+United States,Male,25,Physics,Bachelor's degree,20000,USD,Python
+United States,Male,33,Electrical Engineering,Doctoral degree,100000,USD,Matlab
+Russia,Male,22,"Information technology, networking, or system administration",Bachelor's degree,624000,RUB,Python
+Poland,Male,29,Computer Science,Master's degree,126000,PLN,Python
+United States,Male,35,Physics,Doctoral degree,133000,USD,Python
+Sweden,Male,37,Electrical Engineering,Master's degree,80000,USD,Python
+Australia,Male,36,"Information technology, networking, or system administration",Master's degree,80000,AUD,C/C++/C#
+India,Male,34,Computer Science,Master's degree,2300000,INR,SQL
+Poland,Male,27,Other,Master's degree,84000,PLN,Python
+People 's Republic of China,Male,41,Other,Bachelor's degree,300000,CNY,R
+Mexico,Male,54,Electrical Engineering,Master's degree,100000,MXN,R
+Russia,Male,22,Computer Science,Bachelor's degree,528000,RUB,Haskell
+People 's Republic of China,Male,28,Computer Science,Master's degree,70000,USD,Python
+India,Male,24,Electrical Engineering,Master's degree,1150000,INR,Python
+Russia,Male,34,Computer Science,Some college/university study without earning a bachelor's degree,1500000,RUB,Python
+United Kingdom,Male,23,Biology,Bachelor's degree,25000,GBP,R
+Spain,Female,61,Mathematics or statistics,Doctoral degree,72000,EUR,Python
+Russia,Male,22,Computer Science,Master's degree,70000,RUB,R
+United Kingdom,Male,60,A humanities discipline,Bachelor's degree,55000,GBP,Python
+Other,Male,49,Engineering (non-computer focused),Master's degree,20000,USD,Python
+France,Female,38,Electrical Engineering,Doctoral degree,53000,EUR,Python
+Australia,Male,28,Mathematics or statistics,Master's degree,135000,AUD,Python
+Other,A different identity,99,"Information technology, networking, or system administration",Bachelor's degree,15000,EUR,SQL
+India,Male,23,Electrical Engineering,Bachelor's degree,67000,INR,Python
+India,Male,26,Electrical Engineering,Doctoral degree,336000,INR,Python
+France,Male,39,Physics,Master's degree,110000,EUR,Python
+Other,Male,34,Mathematics or statistics,Master's degree,100000,EUR,C/C++/C#
+Italy,Male,35,Biology,Doctoral degree,30000,EUR,Python
+People 's Republic of China,Male,33,"Information technology, networking, or system administration",Bachelor's degree,200000,CNY,SQL
+Italy,Male,22,Computer Science,Bachelor's degree,10000,EUR,Python
+Australia,Male,50,"Information technology, networking, or system administration",Bachelor's degree,100000,AUD,R
+South Africa,Female,37,Mathematics or statistics,Master's degree,600000,ZAR,R
+France,Male,35,Engineering (non-computer focused),Master's degree,80000,EUR,Python
+India,Male,27,Engineering (non-computer focused),Bachelor's degree,600000,INR,Python
+Russia,Male,27,Mathematics or statistics,Bachelor's degree,5000,USD,C/C++/C#
+India,Male,23,Computer Science,Bachelor's degree,400000,INR,Python
+Other,Male,32,Computer Science,Master's degree,1200000,RUB,Python
+Russia,Male,30,Computer Science,Master's degree,30000,USD,Python
+Singapore,Female,31,Mathematics or statistics,Master's degree,55200,SGD,Scala
+France,Male,25,Mathematics or statistics,Master's degree,47000,EUR,R
+Russia,Male,23,"Information technology, networking, or system administration",Some college/university study without earning a bachelor's degree,256,RUB,Python
+France,Female,25,Management information systems,Master's degree,36000,EUR,SQL
+Finland,Male,35,Engineering (non-computer focused),Master's degree,50000,EUR,R
+Poland,Male,22,Computer Science,Some college/university study without earning a bachelor's degree,3000,PLN,Python
+United Kingdom,Female,33,"Information technology, networking, or system administration",Bachelor's degree,40000,GBP,Python
+Japan,Male,40,Electrical Engineering,Bachelor's degree,7000000,JPY,Python
+Mexico,Male,24,Computer Science,Some college/university study without earning a bachelor's degree,96200,MXN,Python
+Russia,Male,21,Computer Science,Bachelor's degree,60000,RUB,Python
+India,Male,26,Computer Science,Master's degree,700000,INR,R
+India,Male,41,"Information technology, networking, or system administration",Master's degree,70000,INR,Python
+France,Female,26,Mathematics or statistics,Master's degree,43000,EUR,R
+India,Male,40,Physics,Doctoral degree,50000,INR,Python
+Other,Female,35,Fine arts or performing arts,Doctoral degree,12400,EUR,R
+People 's Republic of China,Male,32,Mathematics or statistics,Bachelor's degree,500000,CNY,Python
+Republic of China,Male,24,Other,Bachelor's degree,150000,CNY,Python
+Russia,Male,35,"Information technology, networking, or system administration",Bachelor's degree,45000,USD,SQL
+Taiwan,Male,47,Electrical Engineering,Master's degree,120000,USD,Python
+Spain,Male,49,Computer Science,Master's degree,60000,EUR,Python
+Spain,Male,23,Electrical Engineering,Master's degree,12000,EUR,Python
+Taiwan,Male,32,Computer Science,Doctoral degree,1000000,USD,Python
+Netherlands,Male,52,Electrical Engineering,Master's degree,60000,EUR,Python
+India,Male,22,Computer Science,Bachelor's degree,25000,INR,Other
+France,Male,24,"Information technology, networking, or system administration",Doctoral degree,24000,EUR,Python
+India,Male,23,Electrical Engineering,Bachelor's degree,39600,SGD,Matlab
+Russia,Male,25,Electrical Engineering,Master's degree,73000,RUB,Python
+France,Male,32,Mathematics or statistics,Master's degree,42000,EUR,R
+Romania,Female,29,Other,Master's degree,30000,EUR,R
+Netherlands,Male,34,A social science,Doctoral degree,50000,EUR,R
+Russia,Male,21,Computer Science,Bachelor's degree,20400,EUR,Python
+Republic of China,Male,26,Electrical Engineering,Master's degree,10000,CNY,Python
+Other,Male,29,Mathematics or statistics,Master's degree,485,USD,R
+United Kingdom,Male,35,Computer Science,Master's degree,50000,GBP,Python
+India,Male,23,Computer Science,Bachelor's degree,2250000,INR,Python
+Germany,Male,40,Computer Science,Master's degree,50000,EUR,R
+Japan,Male,27,Biology,Master's degree,650,JPY,Python
+India,Male,28,Computer Science,Master's degree,10000,USD,SQL
+Netherlands,Male,73,Electrical Engineering,Bachelor's degree,40000,EUR,Scala
+India,Male,23,Mathematics or statistics,Bachelor's degree,2000,USD,Python
+Italy,Male,25,Computer Science,Master's degree,12000,EUR,Python
+Spain,Male,32,Computer Science,Doctoral degree,15000,EUR,Python
+India,Male,23,Electrical Engineering,Bachelor's degree,400000,INR,Python
+India,Female,30,Mathematics or statistics,Doctoral degree,650000,INR,R
+India,Male,24,Computer Science,Bachelor's degree,1600000,INR,Python
+Switzerland,Female,33,Other,Master's degree,150000,CHF,Python
+France,Male,23,Computer Science,Master's degree,6000,EUR,Python
+Russia,Male,23,Mathematics or statistics,Master's degree,1380000,RUB,Python
+Ukraine,Male,32,Computer Science,Master's degree,45000,USD,Python
+Russia,Male,50,Physics,Doctoral degree,33000,USD,R
+Nigeria,Male,29,Mathematics or statistics,Master's degree,36000,USD,Python
+South Korea,Male,39,Computer Science,Master's degree,15000,USD,Python
+Netherlands,Male,46,Computer Science,Master's degree,150000,EUR,Python
+India,Male,30,Computer Science,Doctoral degree,60000,INR,Python
+United Kingdom,Male,27,Other,Bachelor's degree,30000,GBP,Python
+India,Male,23,Computer Science,Bachelor's degree,2000000,INR,Python
+Spain,Male,37,Computer Science,Master's degree,33000,EUR,Python
+India,Male,39,Other,Doctoral degree,1500000,INR,Matlab
+India,Male,30,Computer Science,Master's degree,400000,INR,Python
+India,Male,22,Computer Science,Bachelor's degree,575000,INR,Python
+India,Male,40,Engineering (non-computer focused),Bachelor's degree,2600000,INR,R
+India,Male,25,Computer Science,Bachelor's degree,23000000,INR,Scala
