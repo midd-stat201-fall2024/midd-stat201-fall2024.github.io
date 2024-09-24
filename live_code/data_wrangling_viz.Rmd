@@ -10,7 +10,7 @@ output: html_document
 library(tidyverse)
 
 ## modify this line accordingly!
-datascience <- read_csv("data/datascience_survey_subset.csv")
+datascience <- read_csv("data/datascience_survey.csv")
 ```
 
 ## Warm-up exercises
