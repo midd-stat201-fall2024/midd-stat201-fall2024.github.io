@@ -14,10 +14,31 @@ Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted
 ```{r library-data, message= F}
 library(tidyverse)
 library(readr)
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/datascience_survey_subset.csv"
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
 
 datascience <- read_csv(url_file)
 ```
+
+## Warm-up/Recap:
+
+Write code to determine many different programming languages were recommended in the data:
+
+```{r eval = FALSE}
+#| code-fold: true
+datascience |>
+  distinct(LanguageRecommendation) |>
+  nrow()
+```
+
+Display a data frame of the respondents who were living in the United States and were at most 35 years old at the time of taking the survey.
+
+```{r eval = FALSE}
+#| code-fold: true
+datascience |>
+  filter(Country == "United States", Age <= 35)
+```
+
+
 
 ## Grouping by grouped operations
 
@@ -25,43 +46,28 @@ Sometimes, we want to look at a given statistic or create a new variable focusin
 
 ```{r}
 datascience |>
-  group_by(EmploymentStatus) |>
+  group_by(FormalEducation) |>
   summarise(mean_age = mean(Age))
 ```
 
-## Practice
-
-Write code to create a summary table reporting the average age of survey respondents for each category of formal education, in descending order.
-
-```{r eval = F}
-#| code-fold: true
-datascience |>
-  group_by(FormalEducation) |>
-  summarise(avg_age = mean(Age)) |>
-  arrange(desc(avg_age))
-```
-
-## Remember to save over data frames for future use!
-
-Often, we wrangle a data frame because we want certain variables to exist for future analyses. When we have modify a data frame for several future analyses, we should *save over/store back into* the same data frame with our new operations. As an example, in the following code, I am creating a new variable called `age_months` that represents the age in months.
-
-```{r eval = F}
-datascience |>
-  mutate(age_months = Age * 12)
-```
-
-Now suppose I want to work with this variable:
-
-```{r error = T}
-datascience |>
-  summarise(mean_age_months = mean(age_months))
-```
-
-It's complaining because the data frame `datascience` does not have a variable called `age_months`! We need to store over the previous version to make sure we "save our work":
+It's always important to `ungroup()` after using `group_by()`! Otherwise, the grouping with carry on and could lead to potential errors in your future wrangling! Notice the differences in the outputs in the following examples: 
 
 ```{r}
-datascience <- datascience |>
-  mutate(age_months = Age * 12)
+datascience |>
+  group_by(Major) |>
+  mutate(mean_age = mean(Age))|>
+  mutate(mean_comp = mean(CompensationAmount)) |>
+  ungroup() |>
+  select(Major, mean_age, mean_comp) |>
+  arrange(Major)
+
+datascience |>
+  group_by(Major) |>
+  mutate(mean_age = mean(Age)) |>
+  ungroup() |>
+  mutate(mean_comp = mean(CompensationAmount)) |>
+  select(Major, mean_age, mean_comp) |>
+  arrange(Major)
 ```
 
 ## Piping to ggplot()
@@ -72,7 +78,7 @@ We may sometimes need to wrangle data prior to visualizing it. We have two optio
 
  1.  Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with `ggplot()`
 
-```{r eval = T, fig.width=6, fig.height=4}
+```{r eval = T, fig.width=6, fig.height=3.75}
 datascience_india <- datascience |>
   filter(Country == "India")
 
@@ -82,7 +88,7 @@ ggplot(data = datascience_india, mapping = aes(x = Age)) +
 
 2. Wrangle the original data, and then directly pipe the result into `ggplot()`, which knows to expect a data frame as its first argument:
 
-```{r eval = T, fig.width=6, fig.height=4}
+```{r eval = T, fig.width=6, fig.height=3.75}
 # Notice that we don't specify the data parameter in ggplot()!
 datascience |>
   filter(Country == "India") |>
