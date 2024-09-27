@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-23">
+<meta name="dcterms.date" content="2024-09-30">
 
 <title>STAT 201: Intro. to Statistics and Data Science - Probability basics</title>
 <style>
@@ -96,11 +96,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Textbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text">GitHub</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://middlebury.instructure.com/"><i class="bi bi-bar-chart-fill" role="img">
 </i> 
  <span class="menu-text">Canvas</span></a>
@@ -133,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2024</p>
+      <p class="date">September 30, 2024</p>
     </div>
   </div>
   
@@ -148,25 +143,39 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="probability-basics" class="level1">
 <h1>Probability basics</h1>
+<p>We spend a whole semester on this in MATH/STAT 310!</p>
 <section id="key-terms" class="level2">
 <h2 class="anchored" data-anchor-id="key-terms">Key terms</h2>
 <ul>
-<li><p><strong>Random process</strong>: a situation in which the particular <em>outcome</em> is random/not known ahead of time</p>
+<li><p><strong>Random process</strong>: a situation in which a particular result, called an <strong>outcome</strong>, is random/not known ahead of time</p>
 <ul>
-<li>Examples: rolling die, sports game, if a treatment is effective</li>
+<li>Examples: flipping a coin, rolling six-sided die, sports game, if a treatment is effective</li>
 </ul></li>
 <li><p>A <strong>sample space</strong> <span class="math inline">\(S\)</span> is the set of all possible outcomes of the random process</p>
 <ul>
 <li><div class="discuss">
-<p>What are the sample spaces above for the above examples?</p>
+<p>What are possible sample spaces for the above examples?</p>
 </div></li>
 </ul></li>
 <li><p>An <strong>event</strong> is a set of outcomes from a random process</p></li>
-<li><p>A <strong>random variable</strong> is a function from a sample space to the real numbers</p>
+</ul>
+</section>
+<section id="random-variable" class="level2">
+<h2 class="anchored" data-anchor-id="random-variable">Random variable</h2>
 <ul>
-<li><p>Often denoted with a capitol letter like <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span></p></li>
-<li><p><strong>NOTE</strong>: we will focus on <em>discrete</em> random variables for now</p></li>
+<li><p>A <strong>random variable</strong> is a variable whose value is unknown and depends on random events</p>
+<ul>
+<li>Often denoted with a capital letter like <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span></li>
 </ul></li>
+<li><p>There are two types: discrete and continuous (just like in numeric variables)</p>
+<ul>
+<li><p><strong>Discrete</strong>: represents random process where sample space is countable (i.e.&nbsp;finite, or distinct counts)</p></li>
+<li><p><strong>Continuous</strong>: sample space is uncountable (i.e.&nbsp;can take on any value within a specified interval with infinite number of possible values)</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>NOTE</strong>: we will focus on <em>discrete</em> random variables for now</li>
 </ul>
 </section>
 <section id="probability" class="level2">
@@ -175,26 +184,33 @@ ul.task-list li input[type="checkbox"] {
 <li><p>For us, the <strong>probability</strong> of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times</p>
 <ul>
 <li><p>Probability is used to express the likelihood that some outcome or event will or will not occur</p></li>
-<li><p>Defined as a proportion</p></li>
+<li><p>Think of as a proportion</p></li>
 </ul></li>
-<li><p>Let <span class="math inline">\(A\)</span> denote some outcome or event. We denote the probability of <span class="math inline">\(A\)</span> occurring as <span class="math inline">\(P(A)\)</span> or <span class="math inline">\(Pr(A)\)</span>.</p>
+<li><p>Let <span class="math inline">\(A\)</span> denote some outcome or event. We denote the probability of <span class="math inline">\(A\)</span> occurring as <span class="math inline">\(\text{P}(A)\)</span> or <span class="math inline">\(\text{Pr}(A)\)</span>.</p>
 <ul>
 <li><div class="discuss">
-<p>What sorts of values can <span class="math inline">\(P(A)\)</span> take on?</p>
+<p>What sorts of values can <span class="math inline">\(\text{P}(A)\)</span> take on?</p>
 </div></li>
 </ul></li>
-<li><p>When the sample space <span class="math inline">\(S\)</span> is discrete with a finite size, then <span class="math inline">\(Pr(A) = \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}\)</span></p></li>
+<li><p>When the sample space <span class="math inline">\(S\)</span> is discrete with a finite size, then <span class="math inline">\(\text{Pr}(A) = \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}\)</span></p></li>
 </ul>
 </section>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
-<p>Let the random process be the outcome from rolling a fair, six-sided die. Let <span class="math inline">\(X\)</span> be the value of the die.</p>
+<p>Let the random process rolling a fair, six-sided die. Let <span class="math inline">\(X\)</span> a random variable representing the value of the die.</p>
 <ul>
-<li><p>What is <span class="math inline">\(Pr(X = 1)\)</span>?</p></li>
-<li><p>What is <span class="math inline">\(Pr(X = 6)\)</span>?</p></li>
-<li><p>What is <span class="math inline">\(Pr(X = 1 \text{ or } 2 \text{ or }... \text{ or } 6)\)</span>?</p></li>
-<li><p>What is <span class="math inline">\(Pr(X = 1 \text{ and } 2)\)</span>?</p></li>
+<li><p>For each of the following, determine the outcome(s) and event under consideration, along with the value of the probability itself:</p>
+<ul>
+<li><span class="math inline">\(\text{Pr}(X = 1)\)</span></li>
+<li><span class="math inline">\(\text{Pr}(X = 1 \text{ and } 2)\)</span></li>
+<li><span class="math inline">\(\text{Pr}(X \text{ is even})\)</span></li>
+</ul></li>
 </ul>
+<div class="notes">
+<p>Convince ourselves that <span class="math inline">\(X\)</span> is a RV. Recall: sample space is 1,..,6.</p>
+<p>Possible outcome is 1, and an event would be <span class="math inline">\(X=1\)</span>; the RV being 1.</p>
+<p>Possible event is 1 or 2.</p>
+</div>
 </section>
 <section id="operations-with-events" class="level2">
 <h2 class="anchored" data-anchor-id="operations-with-events">Operations with events</h2>
@@ -203,7 +219,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p>The <strong>intersection</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is denoted as <span class="math inline">\(A \cap B\)</span>, and is the set of outcomes that belong to <em>both</em> events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></p></li>
 <li><p>The <strong>union</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is denoted as <span class="math inline">\(A \cap B\)</span>, and is the set of outcomes that belong to <span class="math inline">\(A\)</span> and/or <span class="math inline">\(B\)</span></p></li>
 </ul>
-<p>Venn diagrams for visualizing probabilities.</p>
+<div class="fragment">
+<p>When we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!</p>
+</div>
 </section>
 <section id="addition-rule" class="level2">
 <h2 class="anchored" data-anchor-id="addition-rule">Addition rule</h2>

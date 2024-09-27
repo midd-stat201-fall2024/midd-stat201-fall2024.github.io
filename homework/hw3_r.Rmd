@@ -68,7 +68,7 @@ Be sure to explicitly set/define the column titles of your summary table. Then i
 
 ```
 
-Use code to confirm that you have 250 laureates in your new data frame:
+Use code to confirm that you have 247 laureates in your new data frame:
 
 ```{r}
 

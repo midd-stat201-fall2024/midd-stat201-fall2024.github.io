@@ -1,7 +1,7 @@
 ---
 title: "Probability basics"
 subtitle: "Part 1"
-date: "September 23, 2024"
+date: "September 30, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -22,25 +22,37 @@ draft: false
 
 # Probability basics
 
+We spend a whole semester on this in MATH/STAT 310!
+
 ## Key terms
 
--   **Random process**: a situation in which the particular *outcome* is random/not known ahead of time
+-   **Random process**: a situation in which a particular result, called an **outcome**, is random/not known ahead of time
 
-    -   Examples: rolling die, sports game, if a treatment is effective
+    -   Examples: flipping a coin, rolling six-sided die, sports game, if a treatment is effective
 
 -   A **sample space** $S$ is the set of all possible outcomes of the random process
 
     -   ::: discuss
-        What are the sample spaces above for the above examples?
+        What are possible sample spaces for the above examples?
         :::
 
 -   An **event** is a set of outcomes from a random process
 
--   A **random variable** is a function from a sample space to the real numbers
+## Random variable
 
-    -   Often denoted with a capitol letter like $X$ or $Y$
+-   A **random variable** is a variable whose value is unknown and depends on random events
 
-    -   **NOTE**: we will focus on *discrete* random variables for now
+    -   Often denoted with a capital letter like $X$ or $Y$
+
+-   There are two types: discrete and continuous (just like in numeric variables)
+
+    -   **Discrete**: represents random process where sample space is countable (i.e. finite, or distinct counts)
+
+    -   **Continuous**: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)
+
+<!-- -->
+
+-   **NOTE**: we will focus on *discrete* random variables for now
 
 ## Probability
 
@@ -48,27 +60,33 @@ draft: false
 
     -   Probability is used to express the likelihood that some outcome or event will or will not occur
 
-    -   Defined as a proportion
+    -   Think of as a proportion
 
--   Let $A$ denote some outcome or event. We denote the probability of $A$ occurring as $P(A)$ or $Pr(A)$.
+-   Let $A$ denote some outcome or event. We denote the probability of $A$ occurring as $\text{P}(A)$ or $\text{Pr}(A)$.
 
     -   ::: discuss
-        What sorts of values can $P(A)$ take on?
+        What sorts of values can $\text{P}(A)$ take on?
         :::
 
--   When the sample space $S$ is discrete with a finite size, then $Pr(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}$
+-   When the sample space $S$ is discrete with a finite size, then $\text{Pr}(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}$
 
 ## Example
 
-Let the random process be the outcome from rolling a fair, six-sided die. Let $X$ be the value of the die.
+Let the random process rolling a fair, six-sided die. Let $X$ a random variable representing the value of the die.
 
--   What is $Pr(X = 1)$?
+-   For each of the following, determine the outcome(s) and event under consideration, along with the value of the probability itself:
 
--   What is $Pr(X = 6)$?
+    -   $\text{Pr}(X = 1)$
+    -   $\text{Pr}(X = 1 \text{ and } 2)$
+    -   $\text{Pr}(X \text{ is even})$
 
--   What is $Pr(X = 1 \text{ or } 2 \text{ or }... \text{ or } 6)$?
+::: notes
+Convince ourselves that $X$ is a RV. Recall: sample space is 1,..,6.
 
--   What is $Pr(X = 1 \text{ and } 2)$?
+Possible outcome is 1, and an event would be $X=1$; the RV being 1.
+
+Possible event is 1 or 2.
+:::
 
 ## Operations with events
 
@@ -78,7 +96,9 @@ Let $A$ and $B$ be two possible events.
 
 -   The **union** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to $A$ and/or $B$
 
-Venn diagrams for visualizing probabilities.
+::: fragment
+When we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!
+:::
 
 ## Addition rule
 
@@ -179,7 +199,6 @@ The probability distribution of a discrete random variable must satisfy the foll
 -   More generally, if $P(A \cap B) = Pr(A) \times Pr(B)$ and $A$ and $B$ are events from the same process, then $A$ and $B$ are independent.
 
     -   This is known as the **multiplication rule**
-
 
 ## Practice
 

@@ -1,7 +1,7 @@
 ---
 title: "Probability"
 subtitle: "Practice problems"
-date: "September 23, 2024"
+date: "September 30, 2024"
 format: pdf
 ---
 
