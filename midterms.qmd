@@ -12,6 +12,8 @@ title: "Midterms"
 
     -   You will notbe asked to write code, but you may be asked to read or critique it
 
+-   **Important**: Prof. Tang will be proctoring the exam
+
 -   You will not have a problem set assigned this week!
 
 -   Prof. Tang will move Friday's office hours to Wednesday 10/09 3-4pm instead.
