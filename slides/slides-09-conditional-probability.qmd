@@ -1,6 +1,6 @@
 ---
 title: "Conditional probability"
-date: "September 23, 2024"
+date: "October 2, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -48,21 +48,21 @@ Source: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/>
 ::: discuss
 Define events $A$ = died and $B$ = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:
 
--   $P(A)$
+-   $\text{P}(A)$
 
--   $P(A \cap B)$
+-   $\text{P}(A \cap B)$
 
--   $P(A \cup B^c)$
+-   $\text{P}(A \cup B^c)$
 :::
 :::
 
 ## Marginal and joint probabilities
 
--   $P(A)$ is an example of a **marginal probability**, which is a probability involving a single random process
+1.  $\text{P}(A)$ is an example of a **marginal probability**, which is a probability involving a single random process
 
     -   From the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities
 
--   $P(A \cap B)$ is an example of a **joint probability**, which is a probability of events for two or more random variables or processes
+2.  $\text{P}(A \cap B)$ and $\text{P}(A \cup B^c)$ are examples of a **joint probability**, which is a probability of events for two or more random variables or processes
 
     -   From the contingency table, we use specific cells and the overall total to obtain marginal probabilities
 
@@ -79,8 +79,9 @@ In simple cases, we can obtain the marginal distribution from joint distribution
 
 ::: fragment
 $$\begin{align*}
-P(\text{does not drink coffee}) &= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
-&\quad P(\text{does not drink coffee} \ \cap \text{ died}) \\
+\text{P}(B) =\text{P}(\text{does not drink coffee}) &= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
+&\quad \text{P}(\text{does not drink coffee} \ \cap \text{ died}) \\
+&= \text{P}(B \cap A) + \text{P}(B \cap A^c) \\
 &= \frac{5438}{69164 } + \frac{1039}{69164} \\
 &= 0.0936
 \end{align*}
@@ -89,15 +90,10 @@ $$
 
 ## Conditional probability
 
--   The probability that an event will occur *given* that another event has already occurred is a **conditional probability**.
-
+3.  The probability that an event will occur *given* that another event has already occurred is a **conditional probability**.
     -   E.g. Given that it rained yesterday, what is the probability that it will rain today?
-
     -   It is called "conditional" because we calculate a probability under a specific condition
-
--   The conditional probability of event $A$ given event $B$ is written as $P(A|B)$, where the vertical bar "\|" is read as "given"
-
-    -   Not to be confused with the coding `|` which is "or"
+        -   Nnot to be confused with the coding `|` which is "or"
 
 -   We can easily obtain conditional probabilities from contingency tables!
 
@@ -110,42 +106,73 @@ $$
 | **Drinks coffee regularly**    | 24934       | 3601 | 28535     |
 | **Total**                      | 60084       | 9080 | 69164     |
 
-What is the conditional probability of dying given that someone does not drink coffee?
+::: fragment
+::: discuss
+Recall events $A$ = died and $B$ = non-coffee drinker. Write $\text{P}()$ notation for conditional probability of dying given that someone does not drink coffee, and then obtain this probability.
+:::
+:::
 
-## Conditional probability formula
+## General multiplication rule
 
--   What happens if we don't have counts? We will see that conditional, joint, and marginal probabilities are related
--   For any events $A$ and $B$:
+Conditional, joint, and marginal probabilities are related via the **general multiplication rule**\*:
 
 ::: fragment
 $$
-P(A| B) = \frac{P(A \cap B)}{P(B)}
+\text{P}(A \cap B) =
 $$
 :::
 
--   Let $A$ be the event that someone died, and $B$ the event that someone does not drink coffee.
-    -   Use the above formula to obtain $P(A|B)$
-    -   Come up with a formula for $P(B|A)$ and calculate this conditional probability for the problem at hand.
--   Note: complement rule holds for conditional probabilities if we condition on the same information: $P(A|B) = 1 - P(A^c | B)$
+-   Very useful for finding probability that two events will happen.
+
+    -   Example: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly without replacement. What is the probability of drawing the red ticket first and then the orange ticket?
 
 ## Independence and conditional probabilities
 
--   What happens if we re-arrange the formula on the previous slide? We obtain (this is known as the **general multiplication rule**)
+-   Recall, events $A$ and $B$ are independent when what is true about their joint probability?
 
-::: fragment
-$$
-P(A \cap B) = P(A|B) \times P(B)
-$$
-:::
-
--   Recall, $A$ and $B$ are independent when what is true?
-
--   Putting these two components together, what is another way to determine if events $A$ and $B$ are independent?
+-   Using the general multiplication rule, what is another way to determine if events $A$ and $B$ are independent?
 
     -   Why does this make sense "intuitively"?
 
 -   ::: discuss
     Using this new test of independence, are dying and abstaining from coffee independent events?
+    :::
+
+## Conditional probability formula
+
+We can re-arrange the general multiplication formula to obtain the following general formula for conditional probability. For any events $A$ and $B$:
+
+::: fragment
+$$
+\text{P}(A| B) = \frac{\text{P}(A \cap B)}{\text{P}(B)}
+$$
+:::
+
+-   ::: discuss
+    Recall $A$ is the event that someone died, and $B$ the event that someone does not drink coffee.
+
+    -   Use the above formula to obtain $\text{P}(A|B)$
+    -   Come up with a formula for $\text{P}(B|A)$ and calculate this conditional probability for the problem at hand.
+    :::
+
+-   ::: {style="color: maroon"}
+    Note: complement rule holds for conditional probabilities if we condition on the *same* information: $\text{P}(A|B) = 1 - \text{P}(A^c | B)$
+    :::
+
+## Tree diagram
+
+Tool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let's do an example:
+
+-   A class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?
+
+-   ::: discuss
+    Using $\text{P}()$ notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?
+    :::
+
+-   Let's construct our tree!
+
+-   ::: discuss
+    In the diagram tree, where are the three types of probabilities appearing?
     :::
 
 # Bayes' Rule
@@ -154,7 +181,7 @@ $$
 
 -   As we saw before, the two conditional probabilities $P(A|B)$ and $P(B|A)$ are not the same. But are they related in some way?
 
--   Yes! Using Bayes' rule:
+-   **Bayes' rule**:
 
 ::: fragment
 $$
@@ -174,15 +201,25 @@ $$
 
 ## Bayes' Theorem (more general)
 
--   Suppose we have two processes, each with their own sample spaces $S_{1}$ and $S_{2}$.
+-   Suppose we have a random process and have a defined event $B$
 
--   Further suppose we can break up $S_{1}$ into $k$ disjoint outcomes $A_{1}, A_{2}, \ldots, A_{k}$
+-   Further suppose we can break up the sample space into $k$ disjoint/mutually exclusive outcomes or events $A_{1}, A_{2}, \ldots, A_{k}$
+
+    -   The $A_{i}$ may or may not intersect with $B$
+
+-   Without loss of generality, suppose we want $\text{P}(A_{1} | B)$
 
 -   **Bayes' Theorem** states:
 
     $$\begin{align*}
-    P(\text{outcome } &A_{1} \text{ of process } 1 | \text{outcome } B \text{ of process } 2) = \\ &\frac{P(B|A_{1}) P(A_{1})}{P(B|A_{1}) P(A_{1}) + P(B | A_{2}) P(A_{2}) + \ldots + P(B | A_{k} ) P(A_{k})}
+    \text{P}(A_{1} |  B ) &= \frac{\text{P}(A_{1} \cap B)}{\text{P}(B)}\\
+    &= \frac{\text{P}(B|A_{1})\text{P}(A_{1})}{\text{P}(B\cap A_{1}) + \text{P}(B \cap A_{2}) + \ldots + \text{P}(B \cap A_{k})} \\
+    &=\frac{\text{P}(B|A_{1}) \text{P}(A_{1})}{\text{P}(B|A_{1}) \text{P}(A_{1}) + \text{P}(B | A_{2}) \text{P}(A_{2}) + \ldots + \text{P}(B | A_{k} ) \text{P}(A_{k})}
     \end{align*}$$
+
+::: notes
+Blob picture. How would this change if we wanted $P(A_{2} | B)$ instead?
+:::
 
 ## Example
 

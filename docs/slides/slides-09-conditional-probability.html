@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-23">
+<meta name="dcterms.date" content="2024-10-02">
 
 <title>STAT 201: Intro. to Statistics and Data Science - Conditional probability</title>
 <style>
@@ -96,11 +96,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Textbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text">GitHub</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://middlebury.instructure.com/"><i class="bi bi-bar-chart-fill" role="img">
 </i> 
  <span class="menu-text">Canvas</span></a>
@@ -132,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2024</p>
+      <p class="date">October 2, 2024</p>
     </div>
   </div>
   
@@ -205,25 +200,25 @@ ul.task-list li input[type="checkbox"] {
 <div class="discuss">
 <p>Define events <span class="math inline">\(A\)</span> = died and <span class="math inline">\(B\)</span> = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:</p>
 <ul>
-<li><p><span class="math inline">\(P(A)\)</span></p></li>
-<li><p><span class="math inline">\(P(A \cap B)\)</span></p></li>
-<li><p><span class="math inline">\(P(A \cup B^c)\)</span></p></li>
+<li><p><span class="math inline">\(\text{P}(A)\)</span></p></li>
+<li><p><span class="math inline">\(\text{P}(A \cap B)\)</span></p></li>
+<li><p><span class="math inline">\(\text{P}(A \cup B^c)\)</span></p></li>
 </ul>
 </div>
 </div>
 </section>
 <section id="marginal-and-joint-probabilities" class="level2">
 <h2 class="anchored" data-anchor-id="marginal-and-joint-probabilities">Marginal and joint probabilities</h2>
-<ul>
-<li><p><span class="math inline">\(P(A)\)</span> is an example of a <strong>marginal probability</strong>, which is a probability involving a single random process</p>
+<ol type="1">
+<li><p><span class="math inline">\(\text{P}(A)\)</span> is an example of a <strong>marginal probability</strong>, which is a probability involving a single random process</p>
 <ul>
 <li>From the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities</li>
 </ul></li>
-<li><p><span class="math inline">\(P(A \cap B)\)</span> is an example of a <strong>joint probability</strong>, which is a probability of events for two or more random variables or processes</p>
+<li><p><span class="math inline">\(\text{P}(A \cap B)\)</span> and <span class="math inline">\(\text{P}(A \cup B^c)\)</span> are examples of a <strong>joint probability</strong>, which is a probability of events for two or more random variables or processes</p>
 <ul>
 <li>From the contingency table, we use specific cells and the overall total to obtain marginal probabilities</li>
 </ul></li>
-</ul>
+</ol>
 </section>
 <section id="marginal-from-joint" class="level2">
 <h2 class="anchored" data-anchor-id="marginal-from-joint">Marginal from joint</h2>
@@ -266,8 +261,9 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <div class="fragment">
 <p><span class="math display">\[\begin{align*}
-P(\text{does not drink coffee}) &amp;= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
-&amp;\quad P(\text{does not drink coffee} \ \cap \text{ died}) \\
+\text{P}(B) =\text{P}(\text{does not drink coffee}) &amp;= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
+&amp;\quad \text{P}(\text{does not drink coffee} \ \cap \text{ died}) \\
+&amp;= \text{P}(B \cap A) + \text{P}(B \cap A^c) \\
 &amp;= \frac{5438}{69164 } + \frac{1039}{69164} \\
 &amp;= 0.0936
 \end{align*}
@@ -276,17 +272,18 @@ P(\text{does not drink coffee}) &amp;= P(\text{does not drink coffee} \ \cap \te
 </section>
 <section id="conditional-probability" class="level2">
 <h2 class="anchored" data-anchor-id="conditional-probability">Conditional probability</h2>
+<ol start="3" type="1">
+<li>The probability that an event will occur <em>given</em> that another event has already occurred is a <strong>conditional probability</strong>.
 <ul>
-<li><p>The probability that an event will occur <em>given</em> that another event has already occurred is a <strong>conditional probability</strong>.</p>
+<li>E.g. Given that it rained yesterday, what is the probability that it will rain today?</li>
+<li>It is called “conditional” because we calculate a probability under a specific condition
 <ul>
-<li><p>E.g. Given that it rained yesterday, what is the probability that it will rain today?</p></li>
-<li><p>It is called “conditional” because we calculate a probability under a specific condition</p></li>
+<li>Nnot to be confused with the coding <code>|</code> which is “or”</li>
 </ul></li>
-<li><p>The conditional probability of event <span class="math inline">\(A\)</span> given event <span class="math inline">\(B\)</span> is written as <span class="math inline">\(P(A|B)\)</span>, where the vertical bar “|” is read as “given”</p>
-<ul>
-<li>Not to be confused with the coding <code>|</code> which is “or”</li>
 </ul></li>
-<li><p>We can easily obtain conditional probabilities from contingency tables!</p></li>
+</ol>
+<ul>
+<li>We can easily obtain conditional probabilities from contingency tables!</li>
 </ul>
 </section>
 <section id="conditional-probability-with-contingency-tables" class="level2">
@@ -327,46 +324,72 @@ P(\text{does not drink coffee}) &amp;= P(\text{does not drink coffee} \ \cap \te
 </tr>
 </tbody>
 </table>
-<p>What is the conditional probability of dying given that someone does not drink coffee?</p>
+<div class="fragment">
+<div class="discuss">
+<p>Recall events <span class="math inline">\(A\)</span> = died and <span class="math inline">\(B\)</span> = non-coffee drinker. Write <span class="math inline">\(\text{P}()\)</span> notation for conditional probability of dying given that someone does not drink coffee, and then obtain this probability.</p>
+</div>
+</div>
 </section>
-<section id="conditional-probability-formula" class="level2">
-<h2 class="anchored" data-anchor-id="conditional-probability-formula">Conditional probability formula</h2>
-<ul>
-<li>What happens if we don’t have counts? We will see that conditional, joint, and marginal probabilities are related</li>
-<li>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</li>
-</ul>
+<section id="general-multiplication-rule" class="level2">
+<h2 class="anchored" data-anchor-id="general-multiplication-rule">General multiplication rule</h2>
+<p>Conditional, joint, and marginal probabilities are related via the <strong>general multiplication rule</strong>*:</p>
 <div class="fragment">
 <p><span class="math display">\[
-P(A| B) = \frac{P(A \cap B)}{P(B)}
+\text{P}(A \cap B) =
 \]</span></p>
 </div>
 <ul>
-<li>Let <span class="math inline">\(A\)</span> be the event that someone died, and <span class="math inline">\(B\)</span> the event that someone does not drink coffee.
+<li><p>Very useful for finding probability that two events will happen.</p>
 <ul>
-<li>Use the above formula to obtain <span class="math inline">\(P(A|B)\)</span></li>
-<li>Come up with a formula for <span class="math inline">\(P(B|A)\)</span> and calculate this conditional probability for the problem at hand.</li>
+<li>Example: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly without replacement. What is the probability of drawing the red ticket first and then the orange ticket?</li>
 </ul></li>
-<li>Note: complement rule holds for conditional probabilities if we condition on the same information: <span class="math inline">\(P(A|B) = 1 - P(A^c | B)\)</span></li>
 </ul>
 </section>
 <section id="independence-and-conditional-probabilities" class="level2">
 <h2 class="anchored" data-anchor-id="independence-and-conditional-probabilities">Independence and conditional probabilities</h2>
 <ul>
-<li>What happens if we re-arrange the formula on the previous slide? We obtain (this is known as the <strong>general multiplication rule</strong>)</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-P(A \cap B) = P(A|B) \times P(B)
-\]</span></p>
-</div>
-<ul>
-<li><p>Recall, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent when what is true?</p></li>
-<li><p>Putting these two components together, what is another way to determine if events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent?</p>
+<li><p>Recall, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent when what is true about their joint probability?</p></li>
+<li><p>Using the general multiplication rule, what is another way to determine if events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent?</p>
 <ul>
 <li>Why does this make sense “intuitively”?</li>
 </ul></li>
 <li><div class="discuss">
 <p>Using this new test of independence, are dying and abstaining from coffee independent events?</p>
+</div></li>
+</ul>
+</section>
+<section id="conditional-probability-formula" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-probability-formula">Conditional probability formula</h2>
+<p>We can re-arrange the general multiplication formula to obtain the following general formula for conditional probability. For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
+<div class="fragment">
+<p><span class="math display">\[
+\text{P}(A| B) = \frac{\text{P}(A \cap B)}{\text{P}(B)}
+\]</span></p>
+</div>
+<ul>
+<li><div class="discuss">
+<p>Recall <span class="math inline">\(A\)</span> is the event that someone died, and <span class="math inline">\(B\)</span> the event that someone does not drink coffee.</p>
+<ul>
+<li>Use the above formula to obtain <span class="math inline">\(\text{P}(A|B)\)</span></li>
+<li>Come up with a formula for <span class="math inline">\(\text{P}(B|A)\)</span> and calculate this conditional probability for the problem at hand.</li>
+</ul>
+</div></li>
+<li><div style="color: maroon">
+<p>Note: complement rule holds for conditional probabilities if we condition on the <em>same</em> information: <span class="math inline">\(\text{P}(A|B) = 1 - \text{P}(A^c | B)\)</span></p>
+</div></li>
+</ul>
+</section>
+<section id="tree-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="tree-diagram">Tree diagram</h2>
+<p>Tool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:</p>
+<ul>
+<li><p>A class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?</p></li>
+<li><div class="discuss">
+<p>Using <span class="math inline">\(\text{P}()\)</span> notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?</p>
+</div></li>
+<li><p>Let’s construct our tree!</p></li>
+<li><div class="discuss">
+<p>In the diagram tree, where are the three types of probabilities appearing?</p>
 </div></li>
 </ul>
 </section>
@@ -377,7 +400,7 @@ P(A \cap B) = P(A|B) \times P(B)
 <h2 class="anchored" data-anchor-id="bayes-rule-1">Bayes’ Rule</h2>
 <ul>
 <li><p>As we saw before, the two conditional probabilities <span class="math inline">\(P(A|B)\)</span> and <span class="math inline">\(P(B|A)\)</span> are not the same. But are they related in some way?</p></li>
-<li><p>Yes! Using Bayes’ rule:</p></li>
+<li><p><strong>Bayes’ rule</strong>:</p></li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
@@ -399,13 +422,22 @@ P(A|B) =
 <section id="bayes-theorem-more-general" class="level2">
 <h2 class="anchored" data-anchor-id="bayes-theorem-more-general">Bayes’ Theorem (more general)</h2>
 <ul>
-<li><p>Suppose we have two processes, each with their own sample spaces <span class="math inline">\(S_{1}\)</span> and <span class="math inline">\(S_{2}\)</span>.</p></li>
-<li><p>Further suppose we can break up <span class="math inline">\(S_{1}\)</span> into <span class="math inline">\(k\)</span> disjoint outcomes <span class="math inline">\(A_{1}, A_{2}, \ldots, A_{k}\)</span></p></li>
+<li><p>Suppose we have a random process and have a defined event <span class="math inline">\(B\)</span></p></li>
+<li><p>Further suppose we can break up the sample space into <span class="math inline">\(k\)</span> disjoint/mutually exclusive outcomes or events <span class="math inline">\(A_{1}, A_{2}, \ldots, A_{k}\)</span></p>
+<ul>
+<li>The <span class="math inline">\(A_{i}\)</span> may or may not intersect with <span class="math inline">\(B\)</span></li>
+</ul></li>
+<li><p>Without loss of generality, suppose we want <span class="math inline">\(\text{P}(A_{1} | B)\)</span></p></li>
 <li><p><strong>Bayes’ Theorem</strong> states:</p>
 <p><span class="math display">\[\begin{align*}
-P(\text{outcome } &amp;A_{1} \text{ of process } 1 | \text{outcome } B \text{ of process } 2) = \\ &amp;\frac{P(B|A_{1}) P(A_{1})}{P(B|A_{1}) P(A_{1}) + P(B | A_{2}) P(A_{2}) + \ldots + P(B | A_{k} ) P(A_{k})}
+\text{P}(A_{1} |  B ) &amp;= \frac{\text{P}(A_{1} \cap B)}{\text{P}(B)}\\
+&amp;= \frac{\text{P}(B|A_{1})\text{P}(A_{1})}{\text{P}(B\cap A_{1}) + \text{P}(B \cap A_{2}) + \ldots + \text{P}(B \cap A_{k})} \\
+&amp;=\frac{\text{P}(B|A_{1}) \text{P}(A_{1})}{\text{P}(B|A_{1}) \text{P}(A_{1}) + \text{P}(B | A_{2}) \text{P}(A_{2}) + \ldots + \text{P}(B | A_{k} ) \text{P}(A_{k})}
 \end{align*}\]</span></p></li>
 </ul>
+<div class="notes">
+<p>Blob picture. How would this change if we wanted <span class="math inline">\(P(A_{2} | B)\)</span> instead?</p>
+</div>
 </section>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>

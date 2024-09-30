@@ -1,6 +1,6 @@
 ---
 title: "Simpson's paradox"
-date: "September 23, 2024"
+date: "October 3, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -17,6 +17,8 @@ editor_options:
 draft: false
 ---
 
+# Housekeeping
+
 ```{r echo = F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
@@ -26,8 +28,6 @@ set.seed(1)
 admissions <- read_csv("data/ucb_admissions.csv") |>
   sample_frac()
 ```
-
-# Housekeeping
 
 # Brief recap
 
@@ -190,3 +190,107 @@ ggplot() +
 :::
 :::
 :::
+
+## Misc. live code
+
+```{r message= F, echo = T}
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv"
+insurance <- read_csv(url_file)
+```
+
+We will return to `insurance` data to learn about:
+
+-   Using wrangling to obtain probabilities
+
+-   `case_when()` to create more complex categorical variables
+
+## Wrangling for probabilities
+
+::: columns
+::: {.column width="50%"}
+What is probability that someone is a smoker?
+
+```{r eval = T, echo = T}
+insurance |>
+  count(smoker) |>
+  mutate(prob = n/sum(n)) |>
+  select(-n)
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+What is the probability that someone is a smoker, conditioned on sex?
+
+```{r eval = T, echo = T}
+insurance |>
+  count(smoker, sex) |>
+  group_by(sex) |>
+  mutate(prob = n/sum(n)) |>
+  select(-n)
+```
+:::
+:::
+:::
+
+## More complex categorical variables
+
+Suppose I want to create a new variable representing the categories of BMI, constructed as follows:
+
+-   underweight if someone's BMI is less than 18.5
+-   healthy if BMI is 18.5 to less than 25
+-   overweight if BMI is 25 to less than 30
+-   obese if BMI is 30 or greater
+
+::: fragment
+```{r eval = F, echo = T}
+# option 1 (awful): nested if_else()
+insurance |>
+  mutate(bmi_cat = if_else(bmi < 18.5, "under",
+                           if_else(bmi >= 18.5 & bmi < 25, "healthy",
+                                   if_else(...))))
+```
+:::
+
+## case_when()
+
+We will use the `case_when()` function which generalizes `if_else()`. 
+We use the following notation:  `<logical condition> ~ <value of variable>`. Different "ifs" are separated by commas, and the logical conditions are checked sequentially.
+
+::: columns
+::: {.column width="50%"}
+```{r echo = T, eval = T}
+insurance |>
+  mutate(bmi_cat = case_when(
+    bmi < 18.5 ~ "under",
+    bmi >= 18.5 & bmi < 25 ~ "healthy",
+    bmi >= 25 & bmi < 30 ~ "over",
+    bmi >= 30 ~ "obese"
+  )) |>
+  select(bmi, bmi_cat) |>
+  slice(1:5)
+```
+:::
+
+::: {.column width="50%"}
+```{r echo = T, eval = T}
+#| code-line-numbers: "1,2,8"
+# The following is also acceptable, but 
+# relies on sequential ordering:
+insurance |>
+  mutate(bmi_cat = case_when(
+    bmi < 18.5 ~ "under",
+    bmi >= 18.5 & bmi < 25 ~ "healthy",
+    bmi >= 25 & bmi < 30 ~ "over",
+    T ~ "obese" 
+  )) |>
+  select(bmi, bmi_cat) |>
+  slice(1:5)
+```
+:::
+:::
+
+
+
+

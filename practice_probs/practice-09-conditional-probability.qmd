@@ -1,8 +1,18 @@
 ---
 title: "Conditional probability"
-subtitle: "Practice problems"
-date: "September 23, 2024"
-format: pdf
+author: "Practice problems"
+date: "October 2, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
 ---
 
 ```{r echo = F, message = F, warning = F}
@@ -11,20 +21,27 @@ library(openintro)
 library(knitr)
 ```
 
-Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.
-
 1.  Suppose we have an event $A$ from one random process and an event $B$ from a second random process such that $P(A) = 0.3$, $P(B) = 0.7$, and $P(A \cap B) = 0.1$.
 
     a.  Are the random processes independent?
     b.  What is $P(A|B)$?
 
-2.  Assortative mating is a nonrandom mating pattern where individuals with similar genotypes and/or phenotypes mate with one another more frequently than what would be expected under a random mating pattern. Researchers studying this topic collected data on eye colors of 204 Scandinavian men and their female partners. The table below summarizes the results. For simplicity, we only include heterosexual relationships in this exercise.
+2.  Assortative mating is a nonrandom mating pattern where individuals with similar genotypes and/or phenotypes mate with one another more frequently than what would be expected under a random mating pattern. Researchers studying this topic collected the following data on eye colors of 204 Scandinavian men and their female partners. For simplicity, we only include heterosexual relationships in this exercise.
 
     ![](/practice_probs/figs/09-eyes.png){width="330"}
 
-    a.  What is the probability that a randomly chosen male respondent or his partner has blue eyes?
+    a.  Find the probability that a randomly chosen male respondent or his partner has blue eyes.
     b.  What is the probability that a randomly chosen male respondent with blue eyes has a partner with blue eyes?
     c.  What is the probability that a randomly chosen male respondent with brown eyes has a partner with blue eyes? What about the probability of a randomly chosen male respondent with green eyes having a partner with blue eyes?
     d.  Does it appear that the eye colors of male respondents and their partners are independent? Explain your reasoning.
 
-3.  After an introductory statistics course, 80% of students can successfully construct box plots. Of those who can construct box plots, 86% passed, while only 65% of those students who could not construct box plots passed. Calculate the probability that a student is able to construct a box plot if it is known that he passed.
+3.  $^*$ To get to Middlebury College, a professor uses their car 30% of the time, walks 20% of the time, and bikes 50% of the time. They are late 5% when walking, 10% of the time when driving (because this is Vermont and people stop for all pedestrians), and 2% of the time when biking.
+
+    a.  What is the probability the professor drove to work if they were late?
+    b.  What is the probability the professor walked to work if they were on time?
+
+```{=html}
+!<--
+3.  After an introductory statistics course, 80% of students can successfully construct box plots. Of those who can construct box plots, 86% passed, while only 65% of those students who could not construct box plots passed. Calculate the probability that a student is able to construct a box plot if it is known that they passed.
+-->
+```

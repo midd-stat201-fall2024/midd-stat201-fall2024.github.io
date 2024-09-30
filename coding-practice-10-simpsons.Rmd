@@ -1,0 +1,57 @@
+---
+title: "Conditional probabilities coding practice"
+author: "Your name"
+date: "2024-10-03"
+output: html_document
+---
+
+Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.
+
+The data is in the mosaicData package. *You will have to install the package first!* Then run the following code:
+
+```{r message=FALSE}
+library(tidyverse)
+library(mosaicData)
+```
+
+We will work with the `Whickham` data. You should open its Help file and take a view of the data before proceeding. Note that "factor" can be though of as a categorical variable. **Make sure you understand the data before proceeding!**
+
+*Discuss with your group: What would you expect the relationship between smoking status and health outcome to be?*
+
+1.  Create an appropriate visualization depicting the relationship between smoking status and health outcome.
+
+```{r}
+
+```
+
+2.  Using wrangling code, calculate the conditional probabilities of death of each smoking status. Please report only the probabilities for when `outcome` is Dead.
+
+```{r}
+
+```
+
+*With your group, briefly describe the relationship and whether or not it is what you expected. You may want to discuss the visualization from the previous exercise as well.*
+
+3.  Create a new variable for future use called `age_cat` that takes the values as follows:
+
+-   "18-44": if someone is less than or equal to 44 years old
+-   "45-64": if someone is between 45 and 64 years old, inclusive
+-   "65+": if someone is older than 64
+
+```{r}
+
+```
+
+4.  Re-create your first visualization, this time faceting by `age_cat`. You are welcome to copy-paste code if that is helpful.
+
+```{r}
+
+```
+
+5.  Extend your table from above by breaking it down by age category. You are welcome to copy-paste code if that is helpful.
+
+```{r}
+
+```
+
+*With your group, compare the two visualizations and the two summary tables. What changed, and what might explain the change?*

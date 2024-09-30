@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics\n\nIntroduce Midterm 1\n\n\n\n\n\n\nW 10/02\nTopic: Conditional probability\n\n\n\n\n\nR 10/03\nTopic: Simpson’s paradox\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability\n\nPractice problems\n\n\n\n\n\n\nR 10/03\nTopic: Simpson’s paradox\n\nMore practice with wrangling (tentative)\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\n\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -1054,7 +1054,7 @@
     "href": "slides/slides-08-probability.html#probability",
     "title": "Probability basics",
     "section": "Probability",
-    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\n\n\nWhat sorts of values can \\(\\text{P}(A)\\) take on?\n\n\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} } = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ size of } S}\\)"
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} } = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ size of } S}\\)"
   },
   {
     "objectID": "slides/slides-08-probability.html#example",
@@ -1075,63 +1075,63 @@
     "href": "slides/slides-08-probability.html#addition-rule",
     "title": "Probability basics",
     "section": "Addition rule",
-    "text": "Addition rule\nLet \\(A\\) and \\(B\\) be two possible events. Then the probability that at least one will occur is:\n\\[\nP(A \\cap B) = P(A) + P(B) - P(A \\cup B)\n\\]\n\nExample: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).\n\nSuppose we randomly draw one card from the shuffled deck.\nLet \\(A\\) be the event that the card is a spade.\nLet \\(B\\) be the event that the card is a face card (Jack, Queen or King).\nFind \\(P(A \\cup B)\\)."
+    "text": "Addition rule\nLet \\(A\\) and \\(B\\) be two possible events. Then the addition rule states that the probability that at least one will occur is:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\\]\n\nVenn diagram\nExample: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).\n\nSuppose we randomly draw one card from the shuffled deck.\nLet \\(A\\) be the event that the card is a spade.\nLet \\(B\\) be the event that the card is a face card (Jack, Queen or King).\nFind \\(P(A \\cup B)\\)."
   },
   {
     "objectID": "slides/slides-08-probability.html#disjoint-events",
     "href": "slides/slides-08-probability.html#disjoint-events",
     "title": "Probability basics",
     "section": "Disjoint events",
-    "text": "Disjoint events\nTwo events are called disjoint or mutually exclusive if they cannot both happen.\n\n\n\nIf our random process is rolling a six-sided die, what are some example of disjoint events?\nIf \\(A\\) and \\(B\\) are disjoint, what is \\(P(A \\cap B)\\)?\nIf \\(A\\) and \\(B\\) are disjoint, what is \\(P(A \\cup B)\\)?"
+    "text": "Disjoint events\nTwo events are disjoint or mutually exclusive if they cannot simultaneously happen.\n\nThat is, if \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cap B) = ?\\)\n\nIf our random process is rolling a six-sided die one time, what are some examples of disjoint events?"
   },
   {
     "objectID": "slides/slides-08-probability.html#rules-of-probability",
     "href": "slides/slides-08-probability.html#rules-of-probability",
     "title": "Probability basics",
     "section": "Rules of probability",
-    "text": "Rules of probability"
+    "text": "Rules of probability\nKolmogorov axioms\n\nThe probability of any event is non-negative real number\nThe probability of the entire sample space 1\nIf \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cup B) = \\text{Pr}(A) + \\text{Pr}(B)\\)\n\n\nThese axioms imply that all probabilities are between 0 and 1 inclusive, and lead to some important rules!"
   },
   {
     "objectID": "slides/slides-08-probability.html#probability-distributions",
     "href": "slides/slides-08-probability.html#probability-distributions",
     "title": "Probability basics",
     "section": "Probability distributions",
-    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability"
+    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability\n\n\n\n\n\n\n\n\n\n\n\nWhy not include 1 or 13?"
   },
   {
     "objectID": "slides/slides-08-probability.html#probability-distributions-cont.",
     "href": "slides/slides-08-probability.html#probability-distributions-cont.",
     "title": "Probability basics",
     "section": "Probability distributions (cont.)",
-    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable must satisfy the following three rules:\n\nThe outcomes listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1"
+    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable must satisfy the following three rules:\n\nThe outcomes listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1\n\n\nLet’s confirm that the distribution we found on the previous slide satisfies these rules!"
   },
   {
     "objectID": "slides/slides-08-probability.html#complement",
     "href": "slides/slides-08-probability.html#complement",
     "title": "Probability basics",
     "section": "Complement",
-    "text": "Complement\n\nThe complement of an event \\(A\\) is the set of all outcomes in \\(S\\) that are not in \\(A\\)\n\nDenoted as \\(A^c\\)\n\nContinuing the dice example, if \\(A\\) is the event that a 1 or 2 is rolled, what is \\(A^c\\)?\n\nWhat is \\(P(A \\cup A^c)\\)? Why?\n\nWe can use the above to obtain the complement rule\n\nLet our random process be the sum of two dice. What is the probability that…\n\nthe sum of the dice is \\(not\\) 6?\nthe sum is at least 4?"
+    "text": "Complement\n\nThe complement of an event \\(A\\) is the set of all outcomes in \\(S\\) that are not in \\(A\\)\n\nDenoted as \\(A^c\\)\n\nContinuing the dice example, if \\(A\\) is the event that a 1 or 2 is rolled, what is \\(A^c\\)?\nComplement rule: \\(\\text{Pr}(A^c) = 1 - \\text{Pr}(A)\\)\n\nLet our random process be the sum of two dice. What is the probability that…\n\nthe sum of the dice is \\(not\\) 6?\nthe sum is at least 4?"
   },
   {
     "objectID": "slides/slides-08-probability.html#demorgans-laws",
     "href": "slides/slides-08-probability.html#demorgans-laws",
     "title": "Probability basics",
     "section": "DeMorgan’s Laws",
-    "text": "DeMorgan’s Laws\n\nComplement of union: \\((A \\cup B)^c = \\ ?\\)\nComplement of intersection: \\((A \\cap B)^c = \\ ?\\)"
+    "text": "DeMorgan’s Laws\nLet’s use Venn diagrams to try and determine formulas for the following:\n\nComplement of union: \\((A \\cup B)^c = \\ ?\\)\nComplement of intersection: \\((A \\cap B)^c = \\ ?\\)"
   },
   {
     "objectID": "slides/slides-08-probability.html#independence",
     "href": "slides/slides-08-probability.html#independence",
     "title": "Probability basics",
     "section": "Independence",
-    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\n(Non) Examples?\n\nIf \\(A\\) and \\(B\\) are independent events from two different and independent processes, then \\(Pr(A \\cap B) = Pr(A) \\times Pr(B)\\)\n\nThis extends to more than two independent processes\n\nMore generally, if \\(P(A \\cap B) = Pr(A) \\times Pr(B)\\) and \\(A\\) and \\(B\\) are events from the same process, then \\(A\\) and \\(B\\) are independent.\n\nThis is known as the multiplication rule"
+    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\nExamples and non-examples? How to formalize this?\n\nIf \\(A\\) and \\(B\\) are independent events from two different and independent processes, then \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\)\nMore generally, if \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\) and \\(A\\) and \\(B\\) are events from the same process, then \\(A\\) and \\(B\\) are independent.\n\nThis is known as the multiplication rule for independent events"
   },
   {
     "objectID": "slides/slides-08-probability.html#practice",
     "href": "slides/slides-08-probability.html#practice",
     "title": "Probability basics",
     "section": "Practice",
-    "text": "Practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political afilliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
+    "text": "Practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political affiliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
   },
   {
     "objectID": "slides/slides-08-probability.html#more-practice",
@@ -1152,63 +1152,63 @@
     "href": "slides/slides-09-conditional-probability.html#practice",
     "title": "Conditional probability",
     "section": "Practice",
-    "text": "Practice\n\n\n\n\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\nDefine events \\(A\\) = died and \\(B\\) = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:\n\n\\(P(A)\\)\n\\(P(A \\cap B)\\)\n\\(P(A \\cup B^c)\\)"
+    "text": "Practice\n\n\n\n\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\nDefine events \\(A\\) = died and \\(B\\) = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:\n\n\\(\\text{P}(A)\\)\n\\(\\text{P}(A \\cap B)\\)\n\\(\\text{P}(A \\cup B^c)\\)"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
     "href": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
     "title": "Conditional probability",
     "section": "Marginal and joint probabilities",
-    "text": "Marginal and joint probabilities\n\n\\(P(A)\\) is an example of a marginal probability, which is a probability involving a single random process\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(P(A \\cap B)\\) is an example of a joint probability, which is a probability of events for two or more random variables or processes\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
+    "text": "Marginal and joint probabilities\n\n\\(\\text{P}(A)\\) is an example of a marginal probability, which is a probability involving a single random process\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(\\text{P}(A \\cap B)\\) and \\(\\text{P}(A \\cup B^c)\\) are examples of a joint probability, which is a probability of events for two or more random variables or processes\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#marginal-from-joint",
     "href": "slides/slides-09-conditional-probability.html#marginal-from-joint",
     "title": "Conditional probability",
     "section": "Marginal from joint",
-    "text": "Marginal from joint\nIn simple cases, we can obtain the marginal distribution from joint distributions. You already did this!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\nP(\\text{does not drink coffee}) &= P(\\text{does not drink coffee} \\ \\cap \\text{ did not die}) + \\\\\n&\\quad P(\\text{does not drink coffee} \\ \\cap \\text{ died}) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
+    "text": "Marginal from joint\nIn simple cases, we can obtain the marginal distribution from joint distributions. You already did this!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\n\\text{P}(B) =\\text{P}(\\text{does not drink coffee}) &= P(\\text{does not drink coffee} \\ \\cap \\text{ did not die}) + \\\\\n&\\quad \\text{P}(\\text{does not drink coffee} \\ \\cap \\text{ died}) \\\\\n&= \\text{P}(B \\cap A) + \\text{P}(B \\cap A^c) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability",
     "title": "Conditional probability",
     "section": "Conditional probability",
-    "text": "Conditional probability\n\nThe probability that an event will occur given that another event has already occurred is a conditional probability.\n\nE.g. Given that it rained yesterday, what is the probability that it will rain today?\nIt is called “conditional” because we calculate a probability under a specific condition\n\nThe conditional probability of event \\(A\\) given event \\(B\\) is written as \\(P(A|B)\\), where the vertical bar “|” is read as “given”\n\nNot to be confused with the coding | which is “or”\n\nWe can easily obtain conditional probabilities from contingency tables!"
+    "text": "Conditional probability\n\nThe probability that an event will occur given that another event has already occurred is a conditional probability.\n\nE.g. Given that it rained yesterday, what is the probability that it will rain today?\nIt is called “conditional” because we calculate a probability under a specific condition\n\nNnot to be confused with the coding | which is “or”\n\n\n\n\nWe can easily obtain conditional probabilities from contingency tables!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
     "title": "Conditional probability",
     "section": "Conditional probability with contingency tables",
-    "text": "Conditional probability with contingency tables\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\nWhat is the conditional probability of dying given that someone does not drink coffee?"
+    "text": "Conditional probability with contingency tables\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\nRecall events \\(A\\) = died and \\(B\\) = non-coffee drinker. Write \\(\\text{P}()\\) notation for conditional probability of dying given that someone does not drink coffee, and then obtain this probability."
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
     "title": "Conditional probability",
     "section": "Conditional probability formula",
-    "text": "Conditional probability formula\n\nWhat happens if we don’t have counts? We will see that conditional, joint, and marginal probabilities are related\nFor any events \\(A\\) and \\(B\\):\n\n\n\\[\nP(A| B) = \\frac{P(A \\cap B)}{P(B)}\n\\]\n\n\nLet \\(A\\) be the event that someone died, and \\(B\\) the event that someone does not drink coffee.\n\nUse the above formula to obtain \\(P(A|B)\\)\nCome up with a formula for \\(P(B|A)\\) and calculate this conditional probability for the problem at hand.\n\nNote: complement rule holds for conditional probabilities if we condition on the same information: \\(P(A|B) = 1 - P(A^c | B)\\)"
+    "text": "Conditional probability formula\nWe can re-arrange the general multiplication formula to obtain the following general formula for conditional probability. For any events \\(A\\) and \\(B\\):\n\n\\[\n\\text{P}(A| B) = \\frac{\\text{P}(A \\cap B)}{\\text{P}(B)}\n\\]\n\n\n\nRecall \\(A\\) is the event that someone died, and \\(B\\) the event that someone does not drink coffee.\n\nUse the above formula to obtain \\(\\text{P}(A|B)\\)\nCome up with a formula for \\(\\text{P}(B|A)\\) and calculate this conditional probability for the problem at hand.\n\n\n\nNote: complement rule holds for conditional probabilities if we condition on the same information: \\(\\text{P}(A|B) = 1 - \\text{P}(A^c | B)\\)"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#independence-and-conditional-probabilities",
     "href": "slides/slides-09-conditional-probability.html#independence-and-conditional-probabilities",
     "title": "Conditional probability",
     "section": "Independence and conditional probabilities",
-    "text": "Independence and conditional probabilities\n\nWhat happens if we re-arrange the formula on the previous slide? We obtain (this is known as the general multiplication rule)\n\n\n\\[\nP(A \\cap B) = P(A|B) \\times P(B)\n\\]\n\n\nRecall, \\(A\\) and \\(B\\) are independent when what is true?\nPutting these two components together, what is another way to determine if events \\(A\\) and \\(B\\) are independent?\n\nWhy does this make sense “intuitively”?\n\n\nUsing this new test of independence, are dying and abstaining from coffee independent events?"
+    "text": "Independence and conditional probabilities\n\nRecall, events \\(A\\) and \\(B\\) are independent when what is true about their joint probability?\nUsing the general multiplication rule, what is another way to determine if events \\(A\\) and \\(B\\) are independent?\n\nWhy does this make sense “intuitively”?\n\n\nUsing this new test of independence, are dying and abstaining from coffee independent events?"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#bayes-rule-1",
     "href": "slides/slides-09-conditional-probability.html#bayes-rule-1",
     "title": "Conditional probability",
     "section": "Bayes’ Rule",
-    "text": "Bayes’ Rule\n\nAs we saw before, the two conditional probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are not the same. But are they related in some way?\nYes! Using Bayes’ rule:\n\n\n\\[\nP(A|B) =\n\\]\n\n\nCan we go even further?\n\n\n\\[\nP(A|B) =\n\\]\n\n\nWhy is this seemingly more complicated formula useful?"
+    "text": "Bayes’ Rule\n\nAs we saw before, the two conditional probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are not the same. But are they related in some way?\nBayes’ rule:\n\n\n\\[\nP(A|B) =\n\\]\n\n\nCan we go even further?\n\n\n\\[\nP(A|B) =\n\\]\n\n\nWhy is this seemingly more complicated formula useful?"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
     "href": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
     "title": "Conditional probability",
     "section": "Bayes’ Theorem (more general)",
-    "text": "Bayes’ Theorem (more general)\n\nSuppose we have two processes, each with their own sample spaces \\(S_{1}\\) and \\(S_{2}\\).\nFurther suppose we can break up \\(S_{1}\\) into \\(k\\) disjoint outcomes \\(A_{1}, A_{2}, \\ldots, A_{k}\\)\nBayes’ Theorem states:\n\\[\\begin{align*}\nP(\\text{outcome } &A_{1} \\text{ of process } 1 | \\text{outcome } B \\text{ of process } 2) = \\\\ &\\frac{P(B|A_{1}) P(A_{1})}{P(B|A_{1}) P(A_{1}) + P(B | A_{2}) P(A_{2}) + \\ldots + P(B | A_{k} ) P(A_{k})}\n\\end{align*}\\]"
+    "text": "Bayes’ Theorem (more general)\n\nSuppose we have a random process and have a defined event \\(B\\)\nFurther suppose we can break up the sample space into \\(k\\) disjoint/mutually exclusive outcomes or events \\(A_{1}, A_{2}, \\ldots, A_{k}\\)\n\nThe \\(A_{i}\\) may or may not intersect with \\(B\\)\n\nWithout loss of generality, suppose we want \\(\\text{P}(A_{1} | B)\\)\nBayes’ Theorem states:\n\\[\\begin{align*}\n\\text{P}(A_{1} |  B ) &= \\frac{\\text{P}(A_{1} \\cap B)}{\\text{P}(B)}\\\\\n&= \\frac{\\text{P}(B|A_{1})\\text{P}(A_{1})}{\\text{P}(B\\cap A_{1}) + \\text{P}(B \\cap A_{2}) + \\ldots + \\text{P}(B \\cap A_{k})} \\\\\n&=\\frac{\\text{P}(B|A_{1}) \\text{P}(A_{1})}{\\text{P}(B|A_{1}) \\text{P}(A_{1}) + \\text{P}(B | A_{2}) \\text{P}(A_{2}) + \\ldots + \\text{P}(B | A_{k} ) \\text{P}(A_{k})}\n\\end{align*}\\]\n\n\nBlob picture. How would this change if we wanted \\(P(A_{2} | B)\\) instead?"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#diagnostic-testing-example",
@@ -1285,7 +1285,7 @@
     "href": "practice_probs/practice-08-probability.html",
     "title": "Probability",
     "section": "",
-    "text": "Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.\n\nIf events \\(A\\) and \\(B\\) are disjoint:\n\nWhat must \\(P(A \\cap B)\\) equal, and why?\nWhat is a simple formula for \\(P(A \\cup B)\\)?\n\nIn a multiple choice exam, there are 5 questions and 4 choices for each question. Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:\n\nthe first question Nancy gets correct is the 5th question?\nNancy gets all of the questions right?\nNancy gets at least one question right?\n\nIn the following figure, the sample space is the set of outcomes \\(S = \\{1,2,3,4,5,6\\}\\). We define three different events \\(A\\), \\(B\\) and \\(D\\) as denoted by the color and circling.\n\n\nWhich pairs of events are disjoint?\nSuppose we have a random process whose sample space is \\(S\\) as defined above. Also suppose that \\(P(A) = 0.3\\), \\(P(B) = 0.2\\), and the probability of observing a 1 is \\(0.1\\). Based on this information, create a table that represents a valid probability distribution for this random process."
+    "text": "If events \\(A\\) and \\(B\\) are disjoint, what is a simple formula for \\(P(A \\cup B)\\)?\n(\\(^*\\)) The American Community Survey (ACS) is an ongoing survey that provides data every year to give communities the current information they need to plan investments and services. The 2010 ACS estimated that 14.6% of Americans live below the poverty line, 20.7% speak a language other than English (i.e. a foreign language) at home, and 4.2% fall into both categories.\n\nAre living below the poverty line and speaking a foreign language at home disjoint?\nDraw a Venn diagram summarizing the probabilities and their associated probabilities. Be sure to complete the diagram by including a ``bounding box”.\nWhat percent of Americans live below the poverty line and only speak English at home?\nWhat percent of Americans live below the poverty line or speak a foreign language at home?\nWhat percent of Americans live below the poverty line and only speak English at home?\nIs the event that someone lives below the poverty line independent of the event that the person speaks a foreign language at home?\n\nIn a multiple choice exam, there are 5 questions and 4 choices for each question. Nancy has not studied for the exam at all and decides to randomly guess the answers. What is the probability that:\n\nthe first question Nancy gets correct is the 5th question? State any assumptions that you make.\nNancy gets all of the questions right?\nNancy gets at least one question right?"
   },
   {
     "objectID": "practice_probs/practice-09-conditional-probability.html",
@@ -2244,6 +2244,55 @@
     "href": "slides/slides-08-probability.html#random-variable",
     "title": "Probability basics",
     "section": "Random variable",
-    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is countable (i.e. finite, or distinct counts)\nContinuous: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)\n\n\n\n\nNOTE: we will focus on discrete random variables for now"
+    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is countable (i.e. finite, or distinct counts)\nContinuous: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)\n\nNOTE: we will focus on discrete random variables for now"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#misc.-live-code",
+    "href": "slides/slides-10-simpsons.html#misc.-live-code",
+    "title": "Simpson’s paradox",
+    "section": "Misc. live code",
+    "text": "Misc. live code\n\nlibrary(readr)\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv\"\ninsurance <- read_csv(url_file)\n\nWe will return to insurance data to learn about:\n\nUsing wrangling to obtain probabilities\ncase_when() to create more complex categorical variables"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#wrangling-for-probabilities",
+    "href": "slides/slides-10-simpsons.html#wrangling-for-probabilities",
+    "title": "Simpson’s paradox",
+    "section": "Wrangling for probabilities",
+    "text": "Wrangling for probabilities\n\n\nWhat is probability that someone is a smoker?\n\ninsurance |>\n  count(smoker) |>\n  mutate(prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 2 × 2\n  smoker  prob\n  <chr>  <dbl>\n1 no     0.775\n2 yes    0.225\n\n\n\n\nWhat is the probability that someone is a smoker, conditioned on sex?\n\ninsurance |>\n  count(smoker, sex) |>\n  group_by(sex) |>\n  mutate(prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 4 × 3\n# Groups:   sex [2]\n  smoker sex     prob\n  <chr>  <chr>  <dbl>\n1 no     female 0.837\n2 no     male   0.708\n3 yes    female 0.163\n4 yes    male   0.292"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#case_when",
+    "href": "slides/slides-10-simpsons.html#case_when",
+    "title": "Simpson’s paradox",
+    "section": "case_when()",
+    "text": "case_when()\nWe will use the case_when() function which generalizes if_else(). We use the following notation: <logical condition> ~ <value of variable>. Different “ifs” are separated by commas, and the logical conditions are checked sequentially.\n\n\n\ninsurance |>\n  mutate(bmi_cat = case_when(\n    bmi < 18.5 ~ \"under\",\n    bmi >= 18.5 & bmi < 25 ~ \"healthy\",\n    bmi >= 25 & bmi < 30 ~ \"over\",\n    bmi >= 30 ~ \"obese\"\n  )) |>\n  select(bmi, bmi_cat) |>\n  slice(1:5)\n\n# A tibble: 5 × 2\n    bmi bmi_cat\n  <dbl> <chr>  \n1  27.9 over   \n2  33.8 obese  \n3  33   obese  \n4  22.7 healthy\n5  28.9 over   \n\n\n\n\n# The following is also acceptable, but \n# relies on sequential ordering:\ninsurance |>\n  mutate(bmi_cat = case_when(\n    bmi < 18.5 ~ \"under\",\n    bmi >= 18.5 & bmi < 25 ~ \"healthy\",\n    bmi >= 25 & bmi < 30 ~ \"over\",\n    T ~ \"obese\" \n  )) |>\n  select(bmi, bmi_cat) |>\n  slice(1:5)\n\n# A tibble: 5 × 2\n    bmi bmi_cat\n  <dbl> <chr>  \n1  27.9 over   \n2  33.8 obese  \n3  33   obese  \n4  22.7 healthy\n5  28.9 over"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#more-complex-categorical-variables",
+    "href": "slides/slides-10-simpsons.html#more-complex-categorical-variables",
+    "title": "Simpson’s paradox",
+    "section": "More complex categorical variables",
+    "text": "More complex categorical variables\nSuppose I want to create a new variable representing the categories of BMI, constructed as follows:\n\nunderweight if someone’s BMI is less than 18.5\nhealthy if BMI is 18.5 to less than 25\noverweight if BMI is 25 to less than 30\nobese if BMI is 30 or greater\n\n\n\n# option 1 (awful): nested if_else()\ninsurance |>\n  mutate(bmi_cat = if_else(bmi < 18.5, \"under\",\n                           if_else(bmi >= 18.5 & bmi < 25, \"healthy\",\n                                   if_else(...))))"
+  },
+  {
+    "objectID": "coding-practice-10-simpsons.html",
+    "href": "coding-practice-10-simpsons.html",
+    "title": "Conditional probabilities coding practice",
+    "section": "",
+    "text": "Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.\nThe data is in the mosaicData package. You will have to install the package first! Then run the following code:\n\nlibrary(tidyverse)\nlibrary(mosaicData)\n\nWe will work with the Whickham data. You should open its Help file and take a view of the data before proceeding. Note that “factor” can be though of as a categorical variable. Make sure you understand the data before proceeding!\nDiscuss with your group: What would you expect the relationship between smoking status and health outcome to be?\n\nCreate an appropriate visualization depicting the relationship between smoking status and health outcome.\n\n\n\n\n\nUsing wrangling code, calculate the conditional probabilities of death of each smoking status. Please report only the probabilities for when outcome is Dead.\n\n\n\n\nWith your group, briefly describe the relationship and whether or not it is what you expected. You may want to discuss the visualization from the previous exercise as well.\n\nCreate a new variable for future use called age_cat that takes the values as follows:\n\n\n“18-44”: if someone is less than or equal to 44 years old\n“45-64”: if someone is between 45 and 64 years old, inclusive\n“65+”: if someone is older than 64\n\n\n\n\n\nRe-create your first visualization, this time faceting by age_cat. You are welcome to copy-paste code if that is helpful.\n\n\n\n\n\nExtend your table from above by breaking it down by age category. You are welcome to copy-paste code if that is helpful.\n\n\n\n\nWith your group, compare the two visualizations and the two summary tables. What changed, and what might explain the change?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#general-multiplication-rule",
+    "href": "slides/slides-09-conditional-probability.html#general-multiplication-rule",
+    "title": "Conditional probability",
+    "section": "General multiplication rule",
+    "text": "General multiplication rule\nConditional, joint, and marginal probabilities are related via the general multiplication rule*:\n\n\\[\n\\text{P}(A \\cap B) =\n\\]\n\n\nVery useful for finding probability that two events will happen.\n\nExample: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly without replacement. What is the probability of drawing the red ticket first and then the orange ticket?"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#tree-diagram",
+    "href": "slides/slides-09-conditional-probability.html#tree-diagram",
+    "title": "Conditional probability",
+    "section": "Tree diagram",
+    "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?\n\nLet’s construct our tree!\n\nIn the diagram tree, where are the three types of probabilities appearing?"
   }
 ]
