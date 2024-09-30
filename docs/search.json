@@ -1054,7 +1054,7 @@
     "href": "slides/slides-08-probability.html#probability",
     "title": "Probability basics",
     "section": "Probability",
-    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} } = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ size of } S}\\)"
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} }\\)"
   },
   {
     "objectID": "slides/slides-08-probability.html#example",
@@ -1068,7 +1068,7 @@
     "href": "slides/slides-08-probability.html#operations-with-events",
     "title": "Probability basics",
     "section": "Operations with events",
-    "text": "Operations with events\nLet \\(A\\) and \\(B\\) be two possible events.\n\nThe intersection of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to both events \\(A\\) and \\(B\\)\nThe union of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to \\(A\\) and/or \\(B\\)\n\n\nWhen we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!"
+    "text": "Operations with events\nLet \\(A\\) and \\(B\\) be two possible events.\n\nThe intersection of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to both events \\(A\\) and \\(B\\)\nThe union of \\(A\\) and \\(B\\) is denoted as \\(A \\cup B\\), and is the set of outcomes that belong to \\(A\\) and/or \\(B\\)\n\n\nWhen we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!"
   },
   {
     "objectID": "slides/slides-08-probability.html#addition-rule",

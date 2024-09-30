@@ -62,7 +62,7 @@ We spend a whole semester on this in MATH/STAT 310!
 
 -   Let $A$ denote some outcome or event. We denote the probability of $A$ occurring as $\text{P}(A)$ or $\text{Pr}(A)$.
 
--   When the sample space $S$ is discrete with a finite size, then $\text{Pr}(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} } = \frac{\text{ number of outcomes favorable to } A}{\text{ size of } S}$
+-   When the sample space $S$ is discrete with a finite size, then $\text{Pr}(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} }$
 
 ## Example
 
@@ -88,7 +88,7 @@ Let $A$ and $B$ be two possible events.
 
 -   The **intersection** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to *both* events $A$ and $B$
 
--   The **union** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to $A$ and/or $B$
+-   The **union** of $A$ and $B$ is denoted as $A \cup B$, and is the set of outcomes that belong to $A$ and/or $B$
 
 ::: fragment
 When we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!
