@@ -1,0 +1,27 @@
+---
+title: "Midterms"
+---
+
+## Midterm 1 {#midterm1}
+
+### Logistics
+
+-   **When and where**: Thursday, October 10 during class (75 minutes)
+
+-   **What**: content through end of Week 4 (i.e. through Simpson's Paradox)
+
+    -   You will notbe asked to write code, but you may be asked to read or critique it
+
+-   You will not have a problem set assigned this week!
+
+-   Prof. Tang will move Friday's office hours to Wednesday 10/09 3-4pm instead.
+
+## Preparation
+
+-   The best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don't understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!
+
+-   Another way to prepare is to create your own study guide with summaries and examples of important concepts. As you study, it would be a good diea to compile a list of questions that you might have.
+
+-   Work on the practice problems that were distributed at the end of classes but not assigned.
+
+-   For extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.

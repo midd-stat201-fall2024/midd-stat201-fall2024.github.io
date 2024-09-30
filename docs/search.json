@@ -2294,5 +2294,26 @@
     "title": "Conditional probability",
     "section": "Tree diagram",
     "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?\n\nLet’s construct our tree!\n\nIn the diagram tree, where are the three types of probabilities appearing?"
+  },
+  {
+    "objectID": "midterms.html",
+    "href": "midterms.html",
+    "title": "Midterms",
+    "section": "",
+    "text": "When and where: Thursday, October 10 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nYou will notbe asked to write code, but you may be asked to read or critique it\n\nYou will not have a problem set assigned this week!\nProf. Tang will move Friday’s office hours to Wednesday 10/09 3-4pm instead."
+  },
+  {
+    "objectID": "midterms.html#preparation",
+    "href": "midterms.html#preparation",
+    "title": "Midterms",
+    "section": "Preparation",
+    "text": "Preparation\n\nThe best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!\nAnother way to prepare is to create your own study guide with summaries and examples of important concepts. As you study, it would be a good diea to compile a list of questions that you might have.\nWork on the practice problems that were distributed at the end of classes but not assigned.\nFor extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm."
+  },
+  {
+    "objectID": "index.html#announcements",
+    "href": "index.html#announcements",
+    "title": "Advanced Introduction to Statistics and Data Science",
+    "section": "Announcements",
+    "text": "Announcements\n\nMidterm 1 details announced!\nMath & Stats Department Colloquium this Friday 10/04\n\nSpeaker: Prof. Tang\nWhen/where: WNS 105 from 12:30-1:30 on Friday (pizza provided)\nWhat: Learning from monitoring networks: using statistics to aid multi-scale ecological analysis\n\nAssociation for Women in Mathematics first meeting this Friday, 10/04 from 3-4 in WNS 104"
   }
 ]

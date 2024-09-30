@@ -6,6 +6,22 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 ------------------------------------------------------------------------
 
+## Announcements
+
+-   [Midterm 1](midterms.qmd) details announced!
+
+-   Math & Stats Department Colloquium this Friday 10/04
+
+    -   Speaker: Prof. Tang
+
+    -   When/where: WNS 105 from 12:30-1:30 on Friday (pizza provided)
+
+    -   What: [Learning from monitoring networks: using statistics to aid multi-scale ecological analysis](https://www.middlebury.edu/events/event/learning-monitoring-networks-using-statistics-aid-multi-scale-ecological-analysis)
+
+-   Association for Women in Mathematics first meeting this Friday, 10/04 from 3-4 in WNS 104
+
+------------------------------------------------------------------------
+
 ## Course details
 
 **Instructor:** Prof. Becky Tang (she/her)
@@ -29,4 +45,4 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
 
-- Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.
+-   Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.

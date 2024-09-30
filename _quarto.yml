@@ -10,6 +10,8 @@ website:
         text: "Home"
       - file: schedule.qmd
         text: "Schedule"
+      - file: midterms.qmd
+        text: "Midterms"
     right:
       - icon: book-half
         text: "Textbook"
