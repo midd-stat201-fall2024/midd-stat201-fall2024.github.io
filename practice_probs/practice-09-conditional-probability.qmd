@@ -39,9 +39,3 @@ library(knitr)
 
     a.  What is the probability the professor drove to work if they were late?
     b.  What is the probability the professor walked to work if they were on time?
-
-```{=html}
-!<--
-3.  After an introductory statistics course, 80% of students can successfully construct box plots. Of those who can construct box plots, 86% passed, while only 65% of those students who could not construct box plots passed. Calculate the probability that a student is able to construct a box plot if it is known that they passed.
--->
-```

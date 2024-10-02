@@ -37,7 +37,7 @@ admissions <- read_csv("data/ucb_admissions.csv") |>
 
 -   What is a confounding variable?
 
-## Probability
+## UC Berkeley admissions
 
 Observational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley
 
@@ -48,16 +48,18 @@ Observational study on sex bias based on Fall 1973 admissions data to the gradua
 | **Total** | 5232  | 7531 | 12763 |
 
 ::: discuss
--   What is the probability of admission?
+1.  What is the probability of admission for a randomly selected applicant?
 
--   What is the probability of admission among men? Among women?
+2.  What is the probability of admission among men? Among women?
+
+3.  Are the probabilities you found marginal, joint, or conditional probabilities?
 :::
 
-::: fragment
+:::: fragment
 ::: discuss
 Suppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?
 :::
-:::
+::::
 
 ::: fragment
 ```{r}
@@ -73,27 +75,79 @@ admissions |>
 
 ## Dive into data
 
-We have more nuanced data about the graduate admissions: we know the department that each person was applied to. We will consider the six largest departments: A, B, C, D, E, F
+We have more nuanced data about the graduate admissions: we know the department that each person was applied to.
+
+We will consider the six largest departments: A, B, C, D, E, F
+
+-   The first six observations in the data frame are as follows:
 
 ::: fragment
+```{r echo = T}
+head(admissions)
+```
+:::
+
+-   What sort of table of summary statistics would be interesting to display? How do we go about coding it?
+
+## Frequency tables
+
+::::: columns
+::: {.column width="50%"}
+Female applicants:
+
 ```{r}
 admissions |>
-  count(Decision, Gender, Dept) |>
-  pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  filter(Gender == "Female") |> 
+  count(Dept) |>
+  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
   kableExtra::kable()
 
 ```
 :::
 
-## Live code
+::: {.column width="50%"}
+Male applicants:
 
-The first six observations in the data frame are as follows:
+```{r}
+admissions |>
+  filter(Gender == "Male") |> 
+  count(Dept) |>
+  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  kableExtra::kable()
 
-```{r echo = T}
-head(admissions)
 ```
+:::
+:::::
 
--   What sort of table of summary statistics would be interesting to display? How do we go about coding it?
+## More-detailed frequency tables
+
+::::: columns
+::: {.column width="50%"}
+Female applicants:
+
+```{r}
+admissions |>
+  filter(Gender == "Female") |> 
+  count(Dept, Decision) |>
+  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  kableExtra::kable()
+
+```
+:::
+
+::: {.column width="50%"}
+Male applicants:
+
+```{r}
+admissions |>
+  filter(Gender == "Male") |> 
+  count(Dept, Decision) |>
+  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  kableExtra::kable()
+
+```
+:::
+:::::
 
 ## Visualize
 
@@ -126,33 +180,51 @@ admissions |>
 ```
 
 ::: discuss
--   Are the departments uniform in their admission rates?
+-   Are all departments uniform in admission rates?
 -   Do admissions still seem biased against women applicants?
 :::
 
 ## What's going on?
 
--   But wait... Didn't we see that the men were way more likely to be admitted than women?
+:::::: columns
+::: {.column width="50%"}
+-   But wait... didn't we start by noting that men were way more likely to be admitted than women?
 
 -   The first two departments (A and B) are easy to get into
 
     -   What percentage of men applied to department A?
 
     -   What percentage of women applied to departments C-F?
-
-::: discuss
--   In one sentence, what is the "punch line"?
--   What is the confounding variable?
 :::
+
+:::: {.column width="50%"}
+-   ::: discuss
+    Wrangle the data to show for each gender, the proportion/percentage of applicants each department received.
+    :::
+
+::: fragment
+```{r}
+admissions |>
+  count(Gender, Dept) |>
+  group_by(Gender) |>
+  mutate(prop_apply = n /sum(n)) |>
+  ungroup() |>
+  arrange(Gender, Dept) |>
+  select(-n) 
+```
+:::
+::::
+::::::
 
 ## Simpson's paradox
 
 The UC Berkeley admissions observational study is an example of **Simpson's paradox**: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable
 
 -   In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables
+-   What was the confounding variable here?
 
-::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 ::: fragment
 ```{r}
 df <- tribble(
@@ -173,9 +245,9 @@ ggplot() +
   theme(text = element_text(size = 20))
 ```
 :::
-:::
+::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r  echo=FALSE, message=FALSE}
 ggplot() +
@@ -188,8 +260,8 @@ ggplot() +
   theme(text = element_text(size = 20))
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 ## Misc. live code
 
@@ -207,7 +279,7 @@ We will return to `insurance` data to learn about:
 
 ## Wrangling for probabilities
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 What is probability that someone is a smoker?
 
@@ -219,7 +291,7 @@ insurance |>
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 What is the probability that someone is a smoker, conditioned on sex?
 
@@ -231,8 +303,8 @@ insurance |>
   select(-n)
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## More complex categorical variables
 
@@ -255,10 +327,9 @@ insurance |>
 
 ## case_when()
 
-We will use the `case_when()` function which generalizes `if_else()`. 
-We use the following notation:  `<logical condition> ~ <value of variable>`. Different "ifs" are separated by commas, and the logical conditions are checked sequentially.
+We will use the `case_when()` function which generalizes `if_else()`. We use the following notation: `<logical condition> ~ <value of variable>`. Different "ifs" are separated by commas, and the logical conditions are checked sequentially.
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r echo = T, eval = T}
 insurance |>
@@ -289,8 +360,4 @@ insurance |>
   slice(1:5)
 ```
 :::
-:::
-
-
-
-
+:::::

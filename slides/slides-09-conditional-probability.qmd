@@ -17,17 +17,23 @@ editor_options:
 draft: false
 ---
 
-# Housekeeping
+## Recap
 
-# Three types of probability
+-   Two events are disjoint/mutually exclusive if they do not have any overlapping outcomes
+
+-   Addition rule: $\text{Pr}(A \cup B) =$
+
+-   Complement rule: $\text{Pr}(A^c) =$
 
 ## Probabilities with contingency tables
 
 -   As we saw in the previous class, sometimes the probabilities of events are quite clear to calculate (e.g. dice rolls or drawing cards)
 
--   But oftentimes we have to use data to try and estimate probabilities (e.g. the Pew Research survey)
+-   But oftentimes we have to use data to try and estimate probabilities
 
--   When we have two (or more) variables, we often want to understand the relationships between them
+    -   Why? Some probabilities are not known, and we use proportions from data as a proxy
+
+-   When we have two (or more) variables, we often want to understand the relationships between them (e.g. $A \cap B$)
 
 ## Practice
 
@@ -44,9 +50,9 @@ Source: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/>
 | **Total**                      | 60084       | 9080 | 69164     |
 :::
 
-::: fragment
+:::: fragment
 ::: discuss
-Define events $A$ = died and $B$ = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:
+Define events $A$ = died and $B$ = non-coffee drinker. Calculate/set-up the calculations for the following for a randomly selected person in the cohort:
 
 -   $\text{P}(A)$
 
@@ -54,21 +60,37 @@ Define events $A$ = died and $B$ = non-coffee drinker. Calculate the following f
 
 -   $\text{P}(A \cup B^c)$
 :::
-:::
+::::
+
+# Three types of probability
 
 ## Marginal and joint probabilities
 
-1.  $\text{P}(A)$ is an example of a **marginal probability**, which is a probability involving a single random process
+1.  $\text{P}(A)$ is an example of a **marginal probability**, which is a probability involving a single event
 
     -   From the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities
 
-2.  $\text{P}(A \cap B)$ and $\text{P}(A \cup B^c)$ are examples of a **joint probability**, which is a probability of events for two or more random variables or processes
+2.  $\text{P}(A \cap B)$ and $\text{P}(A \cup B^c)$ are examples of a **joint probability**, which is a probability involving two or more events that have yet to occur
 
     -   From the contingency table, we use specific cells and the overall total to obtain marginal probabilities
 
+## Law of Total Probability
+
+-   Let $A$ be an event, then let $\{B_{1},B_{2},\ldots, B_{k}\}$ be a set of mutually exclusive events whose union comprises their entire sample space $S$
+
+-   Then **Law of Total Probability (LoTP)** says:
+
+::: fragment
+$$
+\text{Pr}(A) = \text{Pr}(A \cap B_{1} ) + \text{Pr}(A \cap B_{2}) + \ldots + \text{Pr}(A \cap B_{k})
+$$
+:::
+
+-   Blob picture
+
 ## Marginal from joint
 
-In simple cases, we can obtain the marginal distribution from joint distributions. You already did this!
+Using LoTP, we can obtain the marginal probabilities from joint probabilities (which some of you intuitively did)!
 
 |                                | Did not die | Died | **Total** |
 |--------------------------------|-------------|------|-----------|
@@ -79,8 +101,8 @@ In simple cases, we can obtain the marginal distribution from joint distribution
 
 ::: fragment
 $$\begin{align*}
-\text{P}(B) =\text{P}(\text{does not drink coffee}) &= P(\text{does not drink coffee} \ \cap \text{ did not die}) + \\
-&\quad \text{P}(\text{does not drink coffee} \ \cap \text{ died}) \\
+\text{P}(B) &=\text{P}(\text{no coffee}) \\
+&\overset{\text{LoTP}}{=} \text{P}(\text{no coffee} \ \cap \text{ did not die}) + \text{P}(\text{no coffee} \ \cap \text{ died})  \\
 &= \text{P}(B \cap A) + \text{P}(B \cap A^c) \\
 &= \frac{5438}{69164 } + \frac{1039}{69164} \\
 &= 0.0936
@@ -90,11 +112,13 @@ $$
 
 ## Conditional probability
 
-3.  The probability that an event will occur *given* that another event has already occurred is a **conditional probability**.
+3.  **Conditional probability:** a probability that an event will occur *given* that another event has already occurred
     -   E.g. Given that it rained yesterday, what is the probability that it will rain today?
     -   It is called "conditional" because we calculate a probability under a specific condition
-        -   Nnot to be confused with the coding `|` which is "or"
 
+-   $\text{Pr}(A | B)$ : probability of $A$ given $B$
+    -   Not to be confused with the coding `|` which is "or"
+    -   Appears to involve two events, but we assume that the event that is conditioned on (in this case $B$) *has already happened*
 -   We can easily obtain conditional probabilities from contingency tables!
 
 ## Conditional probability with contingency tables
@@ -106,15 +130,17 @@ $$
 | **Drinks coffee regularly**    | 24934       | 3601 | 28535     |
 | **Total**                      | 60084       | 9080 | 69164     |
 
-::: fragment
+-   From contingency table, we use specific cells and row or column totals to obtain conditional probabilities
+
+:::: fragment
 ::: discuss
-Recall events $A$ = died and $B$ = non-coffee drinker. Write $\text{P}()$ notation for conditional probability of dying given that someone does not drink coffee, and then obtain this probability.
+Recall events $A$ = died and $B$ = non-coffee drinker. Write $\text{P}()$ notation for the conditional probability of dying given that someone does not drink coffee, and then obtain this probability.
 :::
-:::
+::::
 
 ## General multiplication rule
 
-Conditional, joint, and marginal probabilities are related via the **general multiplication rule**\*:
+Conditional, joint, and marginal probabilities are related via the **general multiplication rule**:
 
 ::: fragment
 $$
@@ -122,9 +148,11 @@ $$
 $$
 :::
 
--   Very useful for finding probability that two events will happen.
+-   Let's see this in the coffee example!
 
-    -   Example: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly without replacement. What is the probability of drawing the red ticket first and then the orange ticket?
+-   Very useful for finding probability that two events will happen in sequence.
+
+    -   Example: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly one-at-a-time without replacement. What is the probability of drawing the red ticket first and then the orange ticket?
 
 ## Independence and conditional probabilities
 
@@ -149,10 +177,7 @@ $$
 :::
 
 -   ::: discuss
-    Recall $A$ is the event that someone died, and $B$ the event that someone does not drink coffee.
-
-    -   Use the above formula to obtain $\text{P}(A|B)$
-    -   Come up with a formula for $\text{P}(B|A)$ and calculate this conditional probability for the problem at hand.
+    Come up with a similar formula for $\text{P}(B|A)$
     :::
 
 -   ::: {style="color: maroon"}
@@ -163,17 +188,19 @@ $$
 
 Tool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let's do an example:
 
--   A class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?
+-   A class has a midterm and a final exam. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?
 
 -   ::: discuss
-    Using $\text{P}()$ notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?
+    Using $\text{P}()$ notation, what probability are we interested in? What probabilities do we need to calculate along the way?
     :::
 
 -   Let's construct our tree!
 
 -   ::: discuss
-    In the diagram tree, where are the three types of probabilities appearing?
+    In the tree diagram, where are the three types of probabilities appearing?
     :::
+
+# 
 
 # Bayes' Rule
 
@@ -185,15 +212,7 @@ Tool to organize outcomes and probabilities around the structure of the data. Us
 
 ::: fragment
 $$
-P(A|B) =
-$$
-:::
-
--   Can we go even further?
-
-::: fragment
-$$
-P(A|B) =
+\text{P}(A|B) =
 $$
 :::
 
@@ -201,24 +220,24 @@ $$
 
 ## Bayes' Theorem (more general)
 
--   Suppose we have a random process and have a defined event $B$
+-   Suppose we have a random process and have a defined event $A$
 
--   Further suppose we can break up the sample space into $k$ disjoint/mutually exclusive outcomes or events $A_{1}, A_{2}, \ldots, A_{k}$
+-   Further suppose we can break up the sample space into $k$ disjoint/mutually exclusive outcomes or events $B_{1}, B_{2}, \ldots, B_{k}$
 
-    -   The $A_{i}$ may or may not intersect with $B$
-
--   Without loss of generality, suppose we want $\text{P}(A_{1} | B)$
+-   Without loss of generality, suppose we want $\text{P}(B_{1} | A)$
 
 -   **Bayes' Theorem** states:
 
     $$\begin{align*}
-    \text{P}(A_{1} |  B ) &= \frac{\text{P}(A_{1} \cap B)}{\text{P}(B)}\\
-    &= \frac{\text{P}(B|A_{1})\text{P}(A_{1})}{\text{P}(B\cap A_{1}) + \text{P}(B \cap A_{2}) + \ldots + \text{P}(B \cap A_{k})} \\
-    &=\frac{\text{P}(B|A_{1}) \text{P}(A_{1})}{\text{P}(B|A_{1}) \text{P}(A_{1}) + \text{P}(B | A_{2}) \text{P}(A_{2}) + \ldots + \text{P}(B | A_{k} ) \text{P}(A_{k})}
+    \text{P}(B_{1} |  A ) &= \frac{\text{P}(A|B_{1}) \text{P}(B_{1})}{\text{P}(A)}\qquad \qquad\qquad \qquad \text{(Bayes' Rule)} \\
+    &= \frac{\text{P}(A|B_{1})\text{P}(B_{1})}{\text{P}(A\cap B_{1}) + \text{P}(A \cap B_{2}) + \ldots + \text{P}(A \cap B_{k})} \qquad \qquad \text{(LoTP)} \\
+    &=\frac{\text{P}(A|B_{1}) \text{P}(B_{1})}{\text{P}(A|B_{1}) \text{P}(B_{1}) + \text{P}(A | B_{2}) \text{P}(B_{2}) + \ldots + \text{P}(A | B_{k} ) \text{P}(B_{k})}
     \end{align*}$$
 
 ::: notes
-Blob picture. How would this change if we wanted $P(A_{2} | B)$ instead?
+How would this change if we wanted $P(A_{2} | B)$ instead?
+
+Why is this important? We want P(B_i \| A), but sometimes we only have probabilities in the other order of conditioning!
 :::
 
 ## Example

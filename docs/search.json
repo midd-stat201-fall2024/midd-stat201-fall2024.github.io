@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability\n\nPractice problems\n\n\n\n\n\n\nR 10/03\nTopic: Simpson’s paradox\n\nMore practice with wrangling (tentative)\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\n\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\n\n\n\nR 10/03\nTopic: Simpson’s paradox\n\nMore practice with wrangling (tentative)\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\n\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -1145,49 +1145,49 @@
     "href": "slides/slides-09-conditional-probability.html#probabilities-with-contingency-tables",
     "title": "Conditional probability",
     "section": "Probabilities with contingency tables",
-    "text": "Probabilities with contingency tables\n\nAs we saw in the previous class, sometimes the probabilities of events are quite clear to calculate (e.g. dice rolls or drawing cards)\nBut oftentimes we have to use data to try and estimate probabilities (e.g. the Pew Research survey)\nWhen we have two (or more) variables, we often want to understand the relationships between them"
+    "text": "Probabilities with contingency tables\n\nAs we saw in the previous class, sometimes the probabilities of events are quite clear to calculate (e.g. dice rolls or drawing cards)\nBut oftentimes we have to use data to try and estimate probabilities\n\nWhy? Some probabilities are not known, and we use proportions from data as a proxy\n\nWhen we have two (or more) variables, we often want to understand the relationships between them (e.g. \\(A \\cap B\\))"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#practice",
     "href": "slides/slides-09-conditional-probability.html#practice",
     "title": "Conditional probability",
     "section": "Practice",
-    "text": "Practice\n\n\n\n\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\nDefine events \\(A\\) = died and \\(B\\) = non-coffee drinker. Calculate the following for a randomly selected person in the cohort:\n\n\\(\\text{P}(A)\\)\n\\(\\text{P}(A \\cap B)\\)\n\\(\\text{P}(A \\cup B^c)\\)"
+    "text": "Practice\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\nDefine events \\(A\\) = died and \\(B\\) = non-coffee drinker. Calculate/set-up the calculations for the following for a randomly selected person in the cohort:\n\n\\(\\text{P}(A)\\)\n\\(\\text{P}(A \\cap B)\\)\n\\(\\text{P}(A \\cup B^c)\\)"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
     "href": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
     "title": "Conditional probability",
     "section": "Marginal and joint probabilities",
-    "text": "Marginal and joint probabilities\n\n\\(\\text{P}(A)\\) is an example of a marginal probability, which is a probability involving a single random process\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(\\text{P}(A \\cap B)\\) and \\(\\text{P}(A \\cup B^c)\\) are examples of a joint probability, which is a probability of events for two or more random variables or processes\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
+    "text": "Marginal and joint probabilities\n\n\\(\\text{P}(A)\\) is an example of a marginal probability, which is a probability involving a single event\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(\\text{P}(A \\cap B)\\) and \\(\\text{P}(A \\cup B^c)\\) are examples of a joint probability, which is a probability involving two or more events that have yet to occur\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#marginal-from-joint",
     "href": "slides/slides-09-conditional-probability.html#marginal-from-joint",
     "title": "Conditional probability",
     "section": "Marginal from joint",
-    "text": "Marginal from joint\nIn simple cases, we can obtain the marginal distribution from joint distributions. You already did this!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\n\\text{P}(B) =\\text{P}(\\text{does not drink coffee}) &= P(\\text{does not drink coffee} \\ \\cap \\text{ did not die}) + \\\\\n&\\quad \\text{P}(\\text{does not drink coffee} \\ \\cap \\text{ died}) \\\\\n&= \\text{P}(B \\cap A) + \\text{P}(B \\cap A^c) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
+    "text": "Marginal from joint\nUsing LoTP, we can obtain the marginal probabilities from joint probabilities (which some of you intuitively did)!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\n\\text{P}(B) &=\\text{P}(\\text{no coffee}) \\\\\n&\\overset{\\text{LoTP}}{=} \\text{P}(\\text{no coffee} \\ \\cap \\text{ did not die}) + \\text{P}(\\text{no coffee} \\ \\cap \\text{ died})  \\\\\n&= \\text{P}(B \\cap A) + \\text{P}(B \\cap A^c) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability",
     "title": "Conditional probability",
     "section": "Conditional probability",
-    "text": "Conditional probability\n\nThe probability that an event will occur given that another event has already occurred is a conditional probability.\n\nE.g. Given that it rained yesterday, what is the probability that it will rain today?\nIt is called “conditional” because we calculate a probability under a specific condition\n\nNnot to be confused with the coding | which is “or”\n\n\n\n\nWe can easily obtain conditional probabilities from contingency tables!"
+    "text": "Conditional probability\n\nConditional probability: a probability that an event will occur given that another event has already occurred\n\nE.g. Given that it rained yesterday, what is the probability that it will rain today?\nIt is called “conditional” because we calculate a probability under a specific condition\n\n\n\n\\(\\text{Pr}(A | B)\\) : probability of \\(A\\) given \\(B\\)\n\nNot to be confused with the coding | which is “or”\nAppears to involve two events, but we assume that the event that is conditioned on (in this case \\(B\\)) has already happened\n\nWe can easily obtain conditional probabilities from contingency tables!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability-with-contingency-tables",
     "title": "Conditional probability",
     "section": "Conditional probability with contingency tables",
-    "text": "Conditional probability with contingency tables\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\nRecall events \\(A\\) = died and \\(B\\) = non-coffee drinker. Write \\(\\text{P}()\\) notation for conditional probability of dying given that someone does not drink coffee, and then obtain this probability."
+    "text": "Conditional probability with contingency tables\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\nFrom contingency table, we use specific cells and row or column totals to obtain conditional probabilities\n\n\n\nRecall events \\(A\\) = died and \\(B\\) = non-coffee drinker. Write \\(\\text{P}()\\) notation for the conditional probability of dying given that someone does not drink coffee, and then obtain this probability."
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
     "href": "slides/slides-09-conditional-probability.html#conditional-probability-formula",
     "title": "Conditional probability",
     "section": "Conditional probability formula",
-    "text": "Conditional probability formula\nWe can re-arrange the general multiplication formula to obtain the following general formula for conditional probability. For any events \\(A\\) and \\(B\\):\n\n\\[\n\\text{P}(A| B) = \\frac{\\text{P}(A \\cap B)}{\\text{P}(B)}\n\\]\n\n\n\nRecall \\(A\\) is the event that someone died, and \\(B\\) the event that someone does not drink coffee.\n\nUse the above formula to obtain \\(\\text{P}(A|B)\\)\nCome up with a formula for \\(\\text{P}(B|A)\\) and calculate this conditional probability for the problem at hand.\n\n\n\nNote: complement rule holds for conditional probabilities if we condition on the same information: \\(\\text{P}(A|B) = 1 - \\text{P}(A^c | B)\\)"
+    "text": "Conditional probability formula\nWe can re-arrange the general multiplication formula to obtain the following general formula for conditional probability. For any events \\(A\\) and \\(B\\):\n\n\\[\n\\text{P}(A| B) = \\frac{\\text{P}(A \\cap B)}{\\text{P}(B)}\n\\]\n\n\n\nCome up with a similar formula for \\(\\text{P}(B|A)\\)\n\n\nNote: complement rule holds for conditional probabilities if we condition on the same information: \\(\\text{P}(A|B) = 1 - \\text{P}(A^c | B)\\)"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#independence-and-conditional-probabilities",
@@ -1201,14 +1201,14 @@
     "href": "slides/slides-09-conditional-probability.html#bayes-rule-1",
     "title": "Conditional probability",
     "section": "Bayes’ Rule",
-    "text": "Bayes’ Rule\n\nAs we saw before, the two conditional probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are not the same. But are they related in some way?\nBayes’ rule:\n\n\n\\[\nP(A|B) =\n\\]\n\n\nCan we go even further?\n\n\n\\[\nP(A|B) =\n\\]\n\n\nWhy is this seemingly more complicated formula useful?"
+    "text": "Bayes’ Rule\n\nAs we saw before, the two conditional probabilities \\(P(A|B)\\) and \\(P(B|A)\\) are not the same. But are they related in some way?\nBayes’ rule:\n\n\n\\[\n\\text{P}(A|B) =\n\\]\n\n\nWhy is this seemingly more complicated formula useful?"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
     "href": "slides/slides-09-conditional-probability.html#bayes-theorem-more-general",
     "title": "Conditional probability",
     "section": "Bayes’ Theorem (more general)",
-    "text": "Bayes’ Theorem (more general)\n\nSuppose we have a random process and have a defined event \\(B\\)\nFurther suppose we can break up the sample space into \\(k\\) disjoint/mutually exclusive outcomes or events \\(A_{1}, A_{2}, \\ldots, A_{k}\\)\n\nThe \\(A_{i}\\) may or may not intersect with \\(B\\)\n\nWithout loss of generality, suppose we want \\(\\text{P}(A_{1} | B)\\)\nBayes’ Theorem states:\n\\[\\begin{align*}\n\\text{P}(A_{1} |  B ) &= \\frac{\\text{P}(A_{1} \\cap B)}{\\text{P}(B)}\\\\\n&= \\frac{\\text{P}(B|A_{1})\\text{P}(A_{1})}{\\text{P}(B\\cap A_{1}) + \\text{P}(B \\cap A_{2}) + \\ldots + \\text{P}(B \\cap A_{k})} \\\\\n&=\\frac{\\text{P}(B|A_{1}) \\text{P}(A_{1})}{\\text{P}(B|A_{1}) \\text{P}(A_{1}) + \\text{P}(B | A_{2}) \\text{P}(A_{2}) + \\ldots + \\text{P}(B | A_{k} ) \\text{P}(A_{k})}\n\\end{align*}\\]\n\n\nBlob picture. How would this change if we wanted \\(P(A_{2} | B)\\) instead?"
+    "text": "Bayes’ Theorem (more general)\n\nSuppose we have a random process and have a defined event \\(A\\)\nFurther suppose we can break up the sample space into \\(k\\) disjoint/mutually exclusive outcomes or events \\(B_{1}, B_{2}, \\ldots, B_{k}\\)\nWithout loss of generality, suppose we want \\(\\text{P}(B_{1} | A)\\)\nBayes’ Theorem states:\n\\[\\begin{align*}\n\\text{P}(B_{1} |  A ) &= \\frac{\\text{P}(A|B_{1}) \\text{P}(B_{1})}{\\text{P}(A)}\\qquad \\qquad\\qquad \\qquad \\text{(Bayes' Rule)} \\\\\n&= \\frac{\\text{P}(A|B_{1})\\text{P}(B_{1})}{\\text{P}(A\\cap B_{1}) + \\text{P}(A \\cap B_{2}) + \\ldots + \\text{P}(A \\cap B_{k})} \\qquad \\qquad \\text{(LoTP)} \\\\\n&=\\frac{\\text{P}(A|B_{1}) \\text{P}(B_{1})}{\\text{P}(A|B_{1}) \\text{P}(B_{1}) + \\text{P}(A | B_{2}) \\text{P}(B_{2}) + \\ldots + \\text{P}(A | B_{k} ) \\text{P}(B_{k})}\n\\end{align*}\\]\n\n\nHow would this change if we wanted \\(P(A_{2} | B)\\) instead?\nWhy is this important? We want P(B_i | A), but sometimes we only have probabilities in the other order of conditioning!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#diagnostic-testing-example",
@@ -1236,21 +1236,21 @@
     "href": "slides/slides-10-simpsons.html#probability",
     "title": "Simpson’s paradox",
     "section": "Probability",
-    "text": "Probability\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability of admission?\nWhat is the probability of admission among men? Among women?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
+    "text": "Probability\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\nRows: applicant gender. Columns: application results.\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability of admission for a randomly selected applicant?\nWhat is the probability of admission among men? Among women?\nAre the probabilities you found marginal, joint, or conditional probabilities?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#dive-into-data",
     "href": "slides/slides-10-simpsons.html#dive-into-data",
     "title": "Simpson’s paradox",
     "section": "Dive into data",
-    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to. We will consider the six largest departments: A, B, C, D, E, F\n\n\n\n\n\n\nDept\nFemale: Admit\nMale: Admit\nFemale: Reject\nMale: Reject\n\n\n\n\nA\n89\n512\n19\n313\n\n\nB\n17\n353\n8\n207\n\n\nC\n202\n120\n391\n205\n\n\nD\n131\n138\n244\n279\n\n\nE\n94\n53\n299\n138\n\n\nF\n24\n22\n317\n351"
+    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to.\nWe will consider the six largest departments: A, B, C, D, E, F\n\nThe first six observations in the data frame are as follows:\n\n\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\n\nWhat sort of table of summary statistics would be interesting to display? How do we go about coding it?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#live-code",
     "href": "slides/slides-10-simpsons.html#live-code",
     "title": "Simpson’s paradox",
     "section": "Live code",
-    "text": "Live code\nThe first six observations in the data frame are as follows:\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\nWhat sort of table of summary statistics would be interesting to display? How do we go about coding it?"
+    "text": "Live code\n\n\nFemale applicants:\n\n\n\n\n\nDept\nDecision\nn\n\n\n\n\nA\nAdmit\n89\n\n\nA\nReject\n19\n\n\nB\nAdmit\n17\n\n\nB\nReject\n8\n\n\nC\nAdmit\n202\n\n\nC\nReject\n391\n\n\nD\nAdmit\n131\n\n\nD\nReject\n244\n\n\nE\nAdmit\n94\n\n\nE\nReject\n299\n\n\nF\nAdmit\n24\n\n\nF\nReject\n317\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nDecision\nn\n\n\n\n\nA\nAdmit\n512\n\n\nA\nReject\n313\n\n\nB\nAdmit\n353\n\n\nB\nReject\n207\n\n\nC\nAdmit\n120\n\n\nC\nReject\n205\n\n\nD\nAdmit\n138\n\n\nD\nReject\n279\n\n\nE\nAdmit\n53\n\n\nE\nReject\n138\n\n\nF\nAdmit\n22\n\n\nF\nReject\n351"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#visualize",
@@ -1264,21 +1264,21 @@
     "href": "slides/slides-10-simpsons.html#closer-look",
     "title": "Simpson’s paradox",
     "section": "Closer look",
-    "text": "Closer look\n\n\n\n\n\nDept\nFemale_p_admit\nMale_p_admit\nFemale_Total\nMale_Total\n\n\n\n\nA\n0.82\n0.62\n108\n825\n\n\nB\n0.68\n0.63\n25\n560\n\n\nC\n0.34\n0.37\n593\n325\n\n\nD\n0.35\n0.33\n375\n417\n\n\nE\n0.24\n0.28\n393\n191\n\n\nF\n0.07\n0.06\n341\n373\n\n\n\n\n\n\n\nAre the departments uniform in their admission rates?\nDo admissions still seem biased against women applicants?"
+    "text": "Closer look\n\n\n\n\n\nDept\nFemale_p_admit\nMale_p_admit\nFemale_Total\nMale_Total\n\n\n\n\nA\n0.82\n0.62\n108\n825\n\n\nB\n0.68\n0.63\n25\n560\n\n\nC\n0.34\n0.37\n593\n325\n\n\nD\n0.35\n0.33\n375\n417\n\n\nE\n0.24\n0.28\n393\n191\n\n\nF\n0.07\n0.06\n341\n373\n\n\n\n\n\n\n\nAre all departments uniform in admission rates?\nDo admissions still seem biased against women applicants?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#whats-going-on",
     "href": "slides/slides-10-simpsons.html#whats-going-on",
     "title": "Simpson’s paradox",
     "section": "What’s going on?",
-    "text": "What’s going on?\n\nBut wait… Didn’t we see that the men were way more likely to be admitted than women?\nThe first two departments (A and B) are easy to get into\n\nWhat percentage of men applied to department A?\nWhat percentage of women applied to departments C-F?\n\n\n\n\nIn one sentence, what is the “punch line”?\nWhat is the confounding variable?"
+    "text": "What’s going on?\n\n\n\nBut wait… didn’t we start by noting that men were way more likely to be admitted than women?\nThe first two departments (A and B) are easy to get into\n\nWhat percentage of men applied to department A?\nWhat percentage of women applied to departments C-F?\n\n\n\n\n\nWrangle the data to show for each gender, the proportion/percentage of applicants each department received.\n\n\n\n\n\n# A tibble: 12 × 3\n   Gender Dept  prop_apply\n   <chr>  <chr>      <dbl>\n 1 Female A         0.0589\n 2 Female B         0.0136\n 3 Female C         0.323 \n 4 Female D         0.204 \n 5 Female E         0.214 \n 6 Female F         0.186 \n 7 Male   A         0.307 \n 8 Male   B         0.208 \n 9 Male   C         0.121 \n10 Male   D         0.155 \n11 Male   E         0.0710\n12 Male   F         0.139"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#simpsons-paradox",
     "href": "slides/slides-10-simpsons.html#simpsons-paradox",
     "title": "Simpson’s paradox",
     "section": "Simpson’s paradox",
-    "text": "Simpson’s paradox\nThe UC Berkeley admissions observational study is an example of Simpson’s paradox: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable\n\nIn other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables"
+    "text": "Simpson’s paradox\nThe UC Berkeley admissions observational study is an example of Simpson’s paradox: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable\n\nIn other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables\nWhat was the confounding variable here?"
   },
   {
     "objectID": "practice_probs/practice-08-probability.html",
@@ -2286,14 +2286,14 @@
     "href": "slides/slides-09-conditional-probability.html#general-multiplication-rule",
     "title": "Conditional probability",
     "section": "General multiplication rule",
-    "text": "General multiplication rule\nConditional, joint, and marginal probabilities are related via the general multiplication rule*:\n\n\\[\n\\text{P}(A \\cap B) =\n\\]\n\n\nVery useful for finding probability that two events will happen.\n\nExample: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly without replacement. What is the probability of drawing the red ticket first and then the orange ticket?"
+    "text": "General multiplication rule\nConditional, joint, and marginal probabilities are related via the general multiplication rule:\n\n\\[\n\\text{P}(A \\cap B) =\n\\]\n\n\nLet’s see this in the coffee example!\nVery useful for finding probability that two events will happen in sequence.\n\nExample: A box has three tickets, colored red, orange, yellow. We will draw two tickets randomly one-at-a-time without replacement. What is the probability of drawing the red ticket first and then the orange ticket?"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#tree-diagram",
     "href": "slides/slides-09-conditional-probability.html#tree-diagram",
     "title": "Conditional probability",
     "section": "Tree diagram",
-    "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exams. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate the desired probability?\n\nLet’s construct our tree!\n\nIn the diagram tree, where are the three types of probabilities appearing?"
+    "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exam. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate along the way?\n\nLet’s construct our tree!\n\nIn the tree diagram, where are the three types of probabilities appearing?"
   },
   {
     "objectID": "midterms.html",
@@ -2315,5 +2315,47 @@
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
     "text": "Announcements\n\nMidterm 1 details announced!\nMath & Stats Department Colloquium this Friday 10/04\n\nSpeaker: Prof. Tang\nWhen/where: WNS 105 from 12:30-1:30 on Friday (pizza provided)\nWhat: Learning from monitoring networks: using statistics to aid multi-scale ecological analysis\n\nAssociation for Women in Mathematics first meeting this Friday, 10/04 from 3-4 in WNS 104"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#recap",
+    "href": "slides/slides-09-conditional-probability.html#recap",
+    "title": "Conditional probability",
+    "section": "Recap",
+    "text": "Recap\n\nTwo events are disjoint/mutually exclusive if they do not have any overlapping outcomes\nAddition rule: \\(\\text{Pr}(A \\cup B) =\\)\nComplement rule: \\(\\text{Pr}(A^c) =\\)"
+  },
+  {
+    "objectID": "slides/slides-09-conditional-probability.html#law-of-total-probability",
+    "href": "slides/slides-09-conditional-probability.html#law-of-total-probability",
+    "title": "Conditional probability",
+    "section": "Law of Total Probability",
+    "text": "Law of Total Probability\n\nLet \\(A\\) be an event, then let \\(\\{B_{1},B_{2},\\ldots, B_{k}\\}\\) be a set of mutually exclusive events whose union comprises their entire sample space \\(S\\)\nThen Law of Total Probability (LoTP) says:\n\n\n\\[\n\\text{Pr}(A) = \\text{Pr}(A \\cap B_{1} ) + \\text{Pr}(A \\cap B_{2}) + \\ldots + \\text{Pr}(A \\cap B_{k})\n\\]\n\n\nBlob picture"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#uc-berkeley-admissions",
+    "href": "slides/slides-10-simpsons.html#uc-berkeley-admissions",
+    "title": "Simpson’s paradox",
+    "section": "UC Berkeley admissions",
+    "text": "UC Berkeley admissions\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability of admission for a randomly selected applicant?\nWhat is the probability of admission among men? Among women?\nAre the probabilities you found marginal, joint, or conditional probabilities?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#section",
+    "href": "slides/slides-10-simpsons.html#section",
+    "title": "Simpson’s paradox",
+    "section": "",
+    "text": "Dept\nFemale: Admit\nMale: Admit\nFemale: Reject\nMale: Reject\n\n\n\n\nA\n89\n512\n19\n313\n\n\nB\n17\n353\n8\n207\n\n\nC\n202\n120\n391\n205\n\n\nD\n131\n138\n244\n279\n\n\nE\n94\n53\n299\n138\n\n\nF\n24\n22\n317\n351"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#frequency-tables",
+    "href": "slides/slides-10-simpsons.html#frequency-tables",
+    "title": "Simpson’s paradox",
+    "section": "Frequency tables",
+    "text": "Frequency tables\n\n\nFemale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n108\n\n\nB\n25\n\n\nC\n593\n\n\nD\n375\n\n\nE\n393\n\n\nF\n341\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n825\n\n\nB\n560\n\n\nC\n325\n\n\nD\n417\n\n\nE\n191\n\n\nF\n373"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#more-detailed-frequency-tables",
+    "href": "slides/slides-10-simpsons.html#more-detailed-frequency-tables",
+    "title": "Simpson’s paradox",
+    "section": "More-detailed frequency tables",
+    "text": "More-detailed frequency tables\n\n\nFemale applicants:\n\n\n\n\n\nDept\nDecision\nn\n\n\n\n\nA\nAdmit\n89\n\n\nA\nReject\n19\n\n\nB\nAdmit\n17\n\n\nB\nReject\n8\n\n\nC\nAdmit\n202\n\n\nC\nReject\n391\n\n\nD\nAdmit\n131\n\n\nD\nReject\n244\n\n\nE\nAdmit\n94\n\n\nE\nReject\n299\n\n\nF\nAdmit\n24\n\n\nF\nReject\n317\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nDecision\nn\n\n\n\n\nA\nAdmit\n512\n\n\nA\nReject\n313\n\n\nB\nAdmit\n353\n\n\nB\nReject\n207\n\n\nC\nAdmit\n120\n\n\nC\nReject\n205\n\n\nD\nAdmit\n138\n\n\nD\nReject\n279\n\n\nE\nAdmit\n53\n\n\nE\nReject\n138\n\n\nF\nAdmit\n22\n\n\nF\nReject\n351"
   }
 ]

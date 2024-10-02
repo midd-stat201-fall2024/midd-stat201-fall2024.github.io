@@ -414,8 +414,8 @@
 <li class="fragment"><p>What is a confounding variable?</p></li>
 </ul>
 </section>
-<section id="probability" class="slide level2">
-<h2>Probability</h2>
+<section id="uc-berkeley-admissions" class="slide level2">
+<h2>UC Berkeley admissions</h2>
 <p>Observational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley</p>
 <table>
 <thead>
@@ -448,10 +448,11 @@
 </tbody>
 </table>
 <div class="discuss">
-<ul>
-<li class="fragment"><p>What is the probability of admission?</p></li>
+<ol type="1">
+<li class="fragment"><p>What is the probability of admission for a randomly selected applicant?</p></li>
 <li class="fragment"><p>What is the probability of admission among men? Among women?</p></li>
-</ul>
+<li class="fragment"><p>Are the probabilities you found marginal, joint, or conditional probabilities?</p></li>
+</ol>
 </div>
 <div class="fragment">
 <div class="discuss">
@@ -473,72 +474,12 @@
 </section>
 <section id="dive-into-data" class="slide level2">
 <h2>Dive into data</h2>
-<p>We have more nuanced data about the graduate admissions: we know the department that each person was applied to. We will consider the six largest departments: A, B, C, D, E, F</p>
+<p>We have more nuanced data about the graduate admissions: we know the department that each person was applied to.</p>
+<p>We will consider the six largest departments: A, B, C, D, E, F</p>
+<ul>
+<li class="fragment">The first six observations in the data frame are as follows:</li>
+</ul>
 <div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Dept</th>
-<th style="text-align: right;">Female: Admit</th>
-<th style="text-align: right;">Male: Admit</th>
-<th style="text-align: right;">Female: Reject</th>
-<th style="text-align: right;">Male: Reject</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: right;">89</td>
-<td style="text-align: right;">512</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">313</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">353</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">207</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">C</td>
-<td style="text-align: right;">202</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: right;">391</td>
-<td style="text-align: right;">205</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">D</td>
-<td style="text-align: right;">131</td>
-<td style="text-align: right;">138</td>
-<td style="text-align: right;">244</td>
-<td style="text-align: right;">279</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">E</td>
-<td style="text-align: right;">94</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">299</td>
-<td style="text-align: right;">138</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">317</td>
-<td style="text-align: right;">351</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="live-code" class="slide level2">
-<h2>Live code</h2>
-<p>The first six observations in the data frame are as follows:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">head</span>(admissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -553,14 +494,261 @@
 6 Reject   Male   F    </code></pre>
 </div>
 </div>
+</div>
 <ul>
 <li class="fragment">What sort of table of summary statistics would be interesting to display? How do we go about coding it?</li>
 </ul>
 </section>
+<section id="frequency-tables" class="slide level2">
+<h2>Frequency tables</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Female applicants:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dept</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">593</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">375</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">393</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">341</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Male applicants:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dept</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">825</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">560</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">325</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">417</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">191</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">373</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-detailed-frequency-tables" class="slide level2">
+<h2>More-detailed frequency tables</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Female applicants:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dept</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">202</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">391</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">131</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">244</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">299</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">317</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Male applicants:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dept</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">512</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">313</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">353</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">207</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">205</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">138</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">279</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Admit</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Reject</td>
+<td style="text-align: right;">351</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="visualize" class="slide level2">
 <h2>Visualize</h2>
 
-<img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="closer-look" class="slide level2">
 <h2>Closer look</h2>
 <div class="cell">
@@ -624,26 +812,51 @@
 </div>
 <div class="discuss">
 <ul>
-<li class="fragment">Are the departments uniform in their admission rates?</li>
+<li class="fragment">Are all departments uniform in admission rates?</li>
 <li class="fragment">Do admissions still seem biased against women applicants?</li>
 </ul>
 </div>
 </section>
 <section id="whats-going-on" class="slide level2">
 <h2>What’s going on?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><p>But wait… Didn’t we see that the men were way more likely to be admitted than women?</p></li>
+<li class="fragment"><p>But wait… didn’t we start by noting that men were way more likely to be admitted than women?</p></li>
 <li class="fragment"><p>The first two departments (A and B) are easy to get into</p>
 <ul>
 <li class="fragment"><p>What percentage of men applied to department A?</p></li>
 <li class="fragment"><p>What percentage of women applied to departments C-F?</p></li>
 </ul></li>
 </ul>
-<div class="discuss">
+</div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">In one sentence, what is the “punch line”?</li>
-<li class="fragment">What is the confounding variable?</li>
+<li class="fragment"><div class="discuss">
+<p>Wrangle the data to show for each gender, the proportion/percentage of applicants each department received.</p>
+</div></li>
 </ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   Gender Dept  prop_apply
+   &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;
+ 1 Female A         0.0589
+ 2 Female B         0.0136
+ 3 Female C         0.323 
+ 4 Female D         0.204 
+ 5 Female E         0.214 
+ 6 Female F         0.186 
+ 7 Male   A         0.307 
+ 8 Male   B         0.208 
+ 9 Male   C         0.121 
+10 Male   D         0.155 
+11 Male   E         0.0710
+12 Male   F         0.139 </code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="simpsons-paradox" class="slide level2">
@@ -651,13 +864,14 @@
 <p>The UC Berkeley admissions observational study is an example of <strong>Simpson’s paradox</strong>: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable</p>
 <ul>
 <li class="fragment">In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables</li>
+<li class="fragment">What was the confounding variable here?</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -665,7 +879,7 @@
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -675,9 +889,9 @@
 <section id="misc.-live-code" class="slide level2">
 <h2>Misc. live code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv"</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>insurance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>insurance <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We will return to <code>insurance</code> data to learn about:</p>
 <ul>
@@ -691,10 +905,10 @@
 <div class="column" style="width:50%;">
 <p>What is probability that someone is a smoker?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>insurance <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">count</span>(smoker) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>insurance <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">count</span>(smoker) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   smoker  prob
@@ -707,11 +921,11 @@
 <div class="fragment">
 <p>What is the probability that someone is a smoker, conditioned on sex?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>insurance <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">count</span>(smoker, sex) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>insurance <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">count</span>(smoker, sex) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
 # Groups:   sex [2]
@@ -738,11 +952,11 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># option 1 (awful): nested if_else()</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>insurance <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">if_else</span>(bmi <span class="sc">&lt;</span> <span class="fl">18.5</span>, <span class="st">"under"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4"></a>                           <span class="fu">if_else</span>(bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span>, <span class="st">"healthy"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5"></a>                                   <span class="fu">if_else</span>(...))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># option 1 (awful): nested if_else()</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>insurance <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">if_else</span>(bmi <span class="sc">&lt;</span> <span class="fl">18.5</span>, <span class="st">"under"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>                           <span class="fu">if_else</span>(bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span>, <span class="st">"healthy"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>                                   <span class="fu">if_else</span>(...))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -752,15 +966,15 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>insurance <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">"under"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"healthy"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"over"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"obese"</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">select</span>(bmi, bmi_cat) <span class="sc">|&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>insurance <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">"under"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"healthy"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"over"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"obese"</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="fu">select</span>(bmi, bmi_cat) <span class="sc">|&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
     bmi bmi_cat
@@ -774,17 +988,17 @@
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="1,2,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># The following is also acceptable, but </span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># relies on sequential ordering:</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>insurance <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">"under"</span>,</span>
-<span id="cb11-6"><a href="#cb11-6"></a>    bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"healthy"</span>,</span>
-<span id="cb11-7"><a href="#cb11-7"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"over"</span>,</span>
-<span id="cb11-8"><a href="#cb11-8"></a>    T <span class="sc">~</span> <span class="st">"obese"</span> </span>
-<span id="cb11-9"><a href="#cb11-9"></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a>  <span class="fu">select</span>(bmi, bmi_cat) <span class="sc">|&gt;</span></span>
-<span id="cb11-11"><a href="#cb11-11"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="1,2,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># The following is also acceptable, but </span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># relies on sequential ordering:</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>insurance <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">mutate</span>(<span class="at">bmi_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">"under"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>    bmi <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"healthy"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    bmi <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"over"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8"></a>    T <span class="sc">~</span> <span class="st">"obese"</span> </span>
+<span id="cb12-9"><a href="#cb12-9"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a>  <span class="fu">select</span>(bmi, bmi_cat) <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
     bmi bmi_cat
