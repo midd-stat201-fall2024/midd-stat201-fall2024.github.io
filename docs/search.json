@@ -1159,7 +1159,7 @@
     "href": "slides/slides-09-conditional-probability.html#marginal-and-joint-probabilities",
     "title": "Conditional probability",
     "section": "Marginal and joint probabilities",
-    "text": "Marginal and joint probabilities\n\n\\(\\text{P}(A)\\) is an example of a marginal probability, which is a probability involving a single event\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(\\text{P}(A \\cap B)\\) and \\(\\text{P}(A \\cup B^c)\\) are examples of a joint probability, which is a probability involving two or more events that have yet to occur\n\nFrom the contingency table, we use specific cells and the overall total to obtain marginal probabilities"
+    "text": "Marginal and joint probabilities\n\n\\(\\text{P}(A)\\) is an example of a marginal probability, which is a probability involving a single event\n\nFrom the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities\n\n\\(\\text{P}(A \\cap B)\\) and \\(\\text{P}(A \\cup B^c)\\) are examples of a joint probability, which is a probability involving two or more events that have yet to occur\n\nFrom the contingency table, we use specific cells and the overall total to obtain joint probabilities"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#marginal-from-joint",

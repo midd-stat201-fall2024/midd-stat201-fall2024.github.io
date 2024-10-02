@@ -72,7 +72,7 @@ Define events $A$ = died and $B$ = non-coffee drinker. Calculate/set-up the calc
 
 2.  $\text{P}(A \cap B)$ and $\text{P}(A \cup B^c)$ are examples of a **joint probability**, which is a probability involving two or more events that have yet to occur
 
-    -   From the contingency table, we use specific cells and the overall total to obtain marginal probabilities
+    -   From the contingency table, we use specific cells and the overall total to obtain joint probabilities
 
 ## Law of Total Probability
 
