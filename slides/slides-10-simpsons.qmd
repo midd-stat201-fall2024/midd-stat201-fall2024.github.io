@@ -19,6 +19,10 @@ draft: false
 
 # Housekeeping
 
+- Homework 4 due this Saturday at 11:59pm
+
+- Content through today is fair game for Midterm 1
+
 ```{r echo = F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
@@ -87,7 +91,7 @@ head(admissions)
 ```
 :::
 
--   What sort of table of summary statistics would be interesting to display? How do we go about coding it?
+-   What sort of EDA would be interesting/appropriate for these data?
 
 ## Frequency tables
 
@@ -130,7 +134,8 @@ admissions |>
   filter(Gender == "Female") |> 
   count(Dept, Decision) |>
   # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
-  kableExtra::kable()
+  kableExtra::kable()|>
+  kableExtra::kable_styling(font_size = 25)
 
 ```
 :::
@@ -142,8 +147,8 @@ Male applicants:
 admissions |>
   filter(Gender == "Male") |> 
   count(Dept, Decision) |>
-  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
-  kableExtra::kable()
+  kableExtra::kable()|>
+  kableExtra::kable_styling(font_size = 25)
 
 ```
 :::
@@ -161,6 +166,8 @@ admissions |>
 
 ## Closer look
 
+::::: columns
+::: {.column width="50%"}
 ```{r}
 df1 <- admissions |> 
   count(Dept, Gender,name = "Total")
@@ -173,16 +180,25 @@ admissions |>
   filter(Decision == "Admit") |>
   rename("p_admit" = "prop")|>
   select(-n, -Decision) |>
-  right_join(df1) |>
-  pivot_wider(names_from = Gender, values_from = c(p_admit, Total),
-              names_glue = "{Gender}_{.value}") |>
-  kableExtra::kable(digits = 2)
+  # right_join(df1) |>
+  #pivot_wider(names_from = Gender, values_from = c(p_admit, Total),
+  #            names_glue = "{Gender}_{.value}") |>
+  kableExtra::kable(digits = 2)|>
+  kableExtra::kable_styling(font_size = 25)
 ```
+:::
 
+::: {.column width="50%"}
 ::: discuss
 -   Are all departments uniform in admission rates?
--   Do admissions still seem biased against women applicants?
+-   Do admissions still seem biased against female applicants?
 :::
+:::
+:::::
+
+
+
+
 
 ## What's going on?
 
@@ -192,15 +208,11 @@ admissions |>
 
 -   The first two departments (A and B) are easy to get into
 
-    -   What percentage of men applied to department A?
+-  The following table shows for each gender, the proportion of applicants each department received.
 
-    -   What percentage of women applied to departments C-F?
 :::
 
 :::: {.column width="50%"}
--   ::: discuss
-    Wrangle the data to show for each gender, the proportion/percentage of applicants each department received.
-    :::
 
 ::: fragment
 ```{r}
@@ -210,18 +222,27 @@ admissions |>
   mutate(prop_apply = n /sum(n)) |>
   ungroup() |>
   arrange(Gender, Dept) |>
-  select(-n) 
+  select(-n) |>
+  kableExtra::kable(digits = 2)|>
+  kableExtra::kable_styling(font_size = 20)
 ```
 :::
+
+::: fragment
+::: {.discuss}
+What do you notice?
+:::
+:::
+
 ::::
 ::::::
 
 ## Simpson's paradox
 
-The UC Berkeley admissions observational study is an example of **Simpson's paradox**: when omitting one explanatory variable affects the measure/degree of association between another explanatory variable and a response variable
+The UC Berkeley admissions observational study is an example of **Simpson's paradox**: when omitting one explanatory variable causes the measure/degree of association between another explanatory variable and a response variable to reverse or disappear
 
--   In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other two variables
--   What was the confounding variable here?
+-   In other words, the inclusion/exclusion of a third variable in the analysis can change the apparent relationship between the other two variables
+-   What was the confounding variable in UC Berkeley study?
 
 ::::::: columns
 :::: {.column width="50%"}

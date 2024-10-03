@@ -46,3 +46,7 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
 
 -   Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.
+
+------------------------------------------------------------------------
+
+-   `ggplot2` [cheat sheet](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf)

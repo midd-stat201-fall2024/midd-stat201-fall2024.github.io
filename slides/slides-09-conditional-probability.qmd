@@ -188,7 +188,7 @@ $$
 
 Tool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let's do an example:
 
--   A class has a midterm and a final exam. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received and A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?
+-   A class has a midterm and a final exam. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received an A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?
 
 -   ::: discuss
     Using $\text{P}()$ notation, what probability are we interested in? What probabilities do we need to calculate along the way?
