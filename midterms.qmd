@@ -18,6 +18,10 @@ title: "Midterms"
 
 -   Prof. Tang will move Friday's office hours to Wednesday 10/09 3-4pm instead.
 
+-   ::: {style="color: maroon"}
+    You should bring a calculator to the midterm. If you do not have one, the department can provide very basic calculators.
+    :::
+
 ## Preparation
 
 -   The best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don't understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!
