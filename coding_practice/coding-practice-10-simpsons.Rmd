@@ -18,13 +18,13 @@ We will work with the `Whickham` data. You should open its Help file and take a 
 
 *Discuss with your group: What would you expect the relationship between smoking status and health outcome to be?*
 
-1.  Create an appropriate visualization depicting the relationship between smoking status and health outcome.
+1.  Create an appropriate visualization depicting the relationship between smoking status and health outcome. Make sure you have informative labels and titles.
 
 ```{r}
 
 ```
 
-2.  Using wrangling code, calculate the conditional probabilities of death of each smoking status. Please report only the probabilities for when `outcome` is Dead.
+2.  Using wrangling code, calculate the conditional probabilities of death of each smoking status. Your resulting table/data frame should only retain the variables for smoke status, outcome, and the conditional probabilities in a meaningful order. Also, please report only the probabilities for when `outcome` is Dead.
 
 ```{r}
 
@@ -42,13 +42,13 @@ We will work with the `Whickham` data. You should open its Help file and take a 
 
 ```
 
-4.  Re-create your first visualization from Exercise 1, this time faceting by `age_cat`.
+4.  Re-create your first visualization from Exercise 1, this time faceting by `age_cat`. Make sure you have informative labels and titles.
 
 ```{r}
 
 ```
 
-5.  Elaborate on your table from Exercise 2 above by breaking it down by age category.
+5.  Elaborate on your table from Exercise 2 above by breaking it down by age category. Your resulting table/data frame should only retain the variables for smoke status, age category, outcome, and the conditional probabilities in a meaningful order. Once again, please report only the probabilities for when `outcome` is Dead.
 
 ```{r}
 
