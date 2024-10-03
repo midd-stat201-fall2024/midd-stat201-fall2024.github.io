@@ -1264,14 +1264,14 @@
     "href": "slides/slides-10-simpsons.html#closer-look",
     "title": "Simpson’s paradox",
     "section": "Closer look",
-    "text": "Closer look\n\n\n\n\n\n\n \n  \n    Dept \n    Gender \n    p_admit \n  \n \n\n  \n    A \n    Female \n    0.82 \n  \n  \n    A \n    Male \n    0.62 \n  \n  \n    B \n    Female \n    0.68 \n  \n  \n    B \n    Male \n    0.63 \n  \n  \n    C \n    Female \n    0.34 \n  \n  \n    C \n    Male \n    0.37 \n  \n  \n    D \n    Female \n    0.35 \n  \n  \n    D \n    Male \n    0.33 \n  \n  \n    E \n    Female \n    0.24 \n  \n  \n    E \n    Male \n    0.28 \n  \n  \n    F \n    Female \n    0.07 \n  \n  \n    F \n    Male \n    0.06 \n  \n\n\n\n\n\n\n\n\nAre all departments uniform in admission rates?\nDo admissions still seem biased against female applicants?"
+    "text": "Closer look\nProbability of admission conditioning on gender and department:\n\n\n\n\n\n\n \n  \n    Dept \n    Gender \n    cond_prob_admit \n  \n \n\n  \n    A \n    Female \n    0.82 \n  \n  \n    A \n    Male \n    0.62 \n  \n  \n    B \n    Female \n    0.68 \n  \n  \n    B \n    Male \n    0.63 \n  \n  \n    C \n    Female \n    0.34 \n  \n  \n    C \n    Male \n    0.37 \n  \n  \n    D \n    Female \n    0.35 \n  \n  \n    D \n    Male \n    0.33 \n  \n  \n    E \n    Female \n    0.24 \n  \n  \n    E \n    Male \n    0.28 \n  \n  \n    F \n    Female \n    0.07 \n  \n  \n    F \n    Male \n    0.06 \n  \n\n\n\n\n\n\n\n\nAre all departments uniform in admission rates?\nDo admissions still seem biased against female applicants?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#whats-going-on",
     "href": "slides/slides-10-simpsons.html#whats-going-on",
     "title": "Simpson’s paradox",
     "section": "What’s going on?",
-    "text": "What’s going on?\n\n\n\nBut wait… didn’t we start by noting that men were way more likely to be admitted than women?\nThe first two departments (A and B) are easy to get into\nThe following table shows for each gender, the proportion of applicants each department received.\n\n\n\n\n\n\n\n \n  \n    Gender \n    Dept \n    prop_apply \n  \n \n\n  \n    Female \n    A \n    0.06 \n  \n  \n    Female \n    B \n    0.01 \n  \n  \n    Female \n    C \n    0.32 \n  \n  \n    Female \n    D \n    0.20 \n  \n  \n    Female \n    E \n    0.21 \n  \n  \n    Female \n    F \n    0.19 \n  \n  \n    Male \n    A \n    0.31 \n  \n  \n    Male \n    B \n    0.21 \n  \n  \n    Male \n    C \n    0.12 \n  \n  \n    Male \n    D \n    0.15 \n  \n  \n    Male \n    E \n    0.07 \n  \n  \n    Male \n    F \n    0.14 \n  \n\n\n\n\n\n\n\n\nWhat do you notice?"
+    "text": "What’s going on?\n\n\n\nBut wait… didn’t we start by noting that men were way more likely to be admitted than women?\nThe first two departments (A and B) are easy to get into\nThe following table shows for each gender, the proportion of applicants each department received.\n\n\n\n\n\n\n\n \n  \n    Gender \n    Dept \n    cond_prop \n  \n \n\n  \n    Female \n    A \n    0.059 \n  \n  \n    Female \n    B \n    0.014 \n  \n  \n    Female \n    C \n    0.323 \n  \n  \n    Female \n    D \n    0.204 \n  \n  \n    Female \n    E \n    0.214 \n  \n  \n    Female \n    F \n    0.186 \n  \n  \n    Male \n    A \n    0.307 \n  \n  \n    Male \n    B \n    0.208 \n  \n  \n    Male \n    C \n    0.121 \n  \n  \n    Male \n    D \n    0.155 \n  \n  \n    Male \n    E \n    0.071 \n  \n  \n    Male \n    F \n    0.139 \n  \n\n\n\n\n\n\n\n\nWhat do you notice?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#simpsons-paradox",
@@ -2258,7 +2258,7 @@
     "href": "slides/slides-10-simpsons.html#wrangling-for-probabilities",
     "title": "Simpson’s paradox",
     "section": "Wrangling for probabilities",
-    "text": "Wrangling for probabilities\n\n\nWhat is probability that someone is a smoker?\n\ninsurance |>\n  count(smoker) |>\n  mutate(prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 2 × 2\n  smoker  prob\n  <chr>  <dbl>\n1 no     0.775\n2 yes    0.225\n\n\n\n\nWhat is the probability that someone is a smoker, conditioned on sex?\n\ninsurance |>\n  count(smoker, sex) |>\n  group_by(sex) |>\n  mutate(prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 4 × 3\n# Groups:   sex [2]\n  smoker sex     prob\n  <chr>  <chr>  <dbl>\n1 no     female 0.837\n2 no     male   0.708\n3 yes    female 0.163\n4 yes    male   0.292"
+    "text": "Wrangling for probabilities\n\n\nWhat is probability that someone is a smoker?\n\ninsurance |>\n  count(smoker) |>\n  mutate(prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 2 × 2\n  smoker  prob\n  <chr>  <dbl>\n1 no     0.775\n2 yes    0.225\n\n\n\n\nWhat is the probability that someone is a smoker, conditioned on sex?\n\ninsurance |>\n  count(smoker, sex) |>\n  group_by(sex) |>\n  mutate(cond_prob = n/sum(n)) |>\n  select(-n)\n\n# A tibble: 4 × 3\n# Groups:   sex [2]\n  smoker sex    cond_prob\n  <chr>  <chr>      <dbl>\n1 no     female     0.837\n2 no     male       0.708\n3 yes    female     0.163\n4 yes    male       0.292"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#case_when",

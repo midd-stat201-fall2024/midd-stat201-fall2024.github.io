@@ -769,6 +769,7 @@
 <img data-src="slides-10-simpsons_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="closer-look" class="slide level2">
 <h2>Closer look</h2>
+<p>Probability of admission conditioning on gender and department:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -779,7 +780,7 @@
   <tr>
    <th style="text-align:left;"> Dept </th>
    <th style="text-align:left;"> Gender </th>
-   <th style="text-align:right;"> p_admit </th>
+   <th style="text-align:right;"> cond_prob_admit </th>
   </tr>
  </thead>
 <tbody>
@@ -872,74 +873,74 @@
 <div class="cell">
 <div class="cell-output-display">
 
-<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 23px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Gender </th>
    <th style="text-align:left;"> Dept </th>
-   <th style="text-align:right;"> prop_apply </th>
+   <th style="text-align:right;"> cond_prop </th>
   </tr>
  </thead>
 <tbody>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> A </td>
-   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.059 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> B </td>
-   <td style="text-align:right;"> 0.01 </td>
+   <td style="text-align:right;"> 0.014 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> C </td>
-   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:right;"> 0.323 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> D </td>
-   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.204 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> E </td>
-   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.214 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Female </td>
    <td style="text-align:left;"> F </td>
-   <td style="text-align:right;"> 0.19 </td>
+   <td style="text-align:right;"> 0.186 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> A </td>
-   <td style="text-align:right;"> 0.31 </td>
+   <td style="text-align:right;"> 0.307 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> B </td>
-   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.208 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> C </td>
-   <td style="text-align:right;"> 0.12 </td>
+   <td style="text-align:right;"> 0.121 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> D </td>
-   <td style="text-align:right;"> 0.15 </td>
+   <td style="text-align:right;"> 0.155 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> E </td>
-   <td style="text-align:right;"> 0.07 </td>
+   <td style="text-align:right;"> 0.071 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Male </td>
    <td style="text-align:left;"> F </td>
-   <td style="text-align:right;"> 0.14 </td>
+   <td style="text-align:right;"> 0.139 </td>
   </tr>
 </tbody>
 </table>
@@ -1020,17 +1021,17 @@
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>insurance <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">count</span>(smoker, sex) <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">cond_prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
 # Groups:   sex [2]
-  smoker sex     prob
-  &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
-1 no     female 0.837
-2 no     male   0.708
-3 yes    female 0.163
-4 yes    male   0.292</code></pre>
+  smoker sex    cond_prob
+  &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;
+1 no     female     0.837
+2 no     male       0.708
+3 yes    female     0.163
+4 yes    male       0.292</code></pre>
 </div>
 </div>
 </div>
