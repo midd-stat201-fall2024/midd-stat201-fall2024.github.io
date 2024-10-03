@@ -10,7 +10,7 @@ title: "Midterms"
 
 -   **What**: content through end of Week 4 (i.e. through Simpson's Paradox)
 
-    -   You will notbe asked to write code, but you may be asked to read or critique it
+    -   You will not be asked to write code, but you may be asked to read or critique it
 
 -   **Important**: Prof. Tang will be proctoring the exam
 

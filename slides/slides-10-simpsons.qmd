@@ -19,9 +19,9 @@ draft: false
 
 # Housekeeping
 
-- Homework 4 due this Saturday at 11:59pm
+-   Homework 4 due this Saturday at 11:59pm
 
-- Content through today is fair game for Midterm 1
+-   Content through today is fair game for Midterm 1
 
 ```{r echo = F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -65,6 +65,8 @@ Suppose we want to understand the relationship between gender and admission deci
 :::
 ::::
 
+## UC Berkeley admissions (cont.)
+
 ::: fragment
 ```{r}
 admissions |>
@@ -91,9 +93,13 @@ head(admissions)
 ```
 :::
 
--   What sort of EDA would be interesting/appropriate for these data?
+-   ::: discuss
+    What sort of EDA would be interesting/appropriate for these data?
+    :::
 
 ## Frequency tables
+
+Number of applicants by department:
 
 ::::: columns
 ::: {.column width="50%"}
@@ -124,6 +130,8 @@ admissions |>
 :::::
 
 ## More-detailed frequency tables
+
+Number of applicants by department and admission status:
 
 ::::: columns
 ::: {.column width="50%"}
@@ -166,7 +174,7 @@ admissions |>
 
 ## Closer look
 
-::::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r}
 df1 <- admissions |> 
@@ -188,32 +196,26 @@ admissions |>
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: discuss
 -   Are all departments uniform in admission rates?
 -   Do admissions still seem biased against female applicants?
 :::
-:::
-:::::
-
-
-
-
+::::
+::::::
 
 ## What's going on?
 
-:::::: columns
+:::::::: columns
 ::: {.column width="50%"}
 -   But wait... didn't we start by noting that men were way more likely to be admitted than women?
 
 -   The first two departments (A and B) are easy to get into
 
--  The following table shows for each gender, the proportion of applicants each department received.
-
+-   The following table shows for each gender, the proportion of applicants each department received.
 :::
 
-:::: {.column width="50%"}
-
+:::::: {.column width="50%"}
 ::: fragment
 ```{r}
 admissions |>
@@ -228,14 +230,13 @@ admissions |>
 ```
 :::
 
-::: fragment
-::: {.discuss}
+:::: fragment
+::: discuss
 What do you notice?
 :::
-:::
-
 ::::
 ::::::
+::::::::
 
 ## Simpson's paradox
 

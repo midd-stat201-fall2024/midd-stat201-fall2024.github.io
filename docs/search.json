@@ -1243,7 +1243,7 @@
     "href": "slides/slides-10-simpsons.html#dive-into-data",
     "title": "Simpson’s paradox",
     "section": "Dive into data",
-    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to.\nWe will consider the six largest departments: A, B, C, D, E, F\n\nThe first six observations in the data frame are as follows:\n\n\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\n\nWhat sort of EDA would be interesting/appropriate for these data?"
+    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to.\nWe will consider the six largest departments: A, B, C, D, E, F\n\nThe first six observations in the data frame are as follows:\n\n\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\n\n\nWhat sort of EDA would be interesting/appropriate for these data?"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#live-code",
@@ -2300,7 +2300,7 @@
     "href": "midterms.html",
     "title": "Midterms",
     "section": "",
-    "text": "When and where: Thursday, October 10 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nYou will notbe asked to write code, but you may be asked to read or critique it\n\nImportant: Prof. Tang will be proctoring the exam\nYou will not have a problem set assigned this week!\nProf. Tang will move Friday’s office hours to Wednesday 10/09 3-4pm instead.\n\nYou should bring a calculator to the midterm. If you do not have one, the department can provide very basic calculators."
+    "text": "When and where: Thursday, October 10 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nYou will not be asked to write code, but you may be asked to read or critique it\n\nImportant: Prof. Tang will be proctoring the exam\nYou will not have a problem set assigned this week!\nProf. Tang will move Friday’s office hours to Wednesday 10/09 3-4pm instead.\n\nYou should bring a calculator to the midterm. If you do not have one, the department can provide very basic calculators."
   },
   {
     "objectID": "midterms.html#preparation",
@@ -2349,14 +2349,14 @@
     "href": "slides/slides-10-simpsons.html#frequency-tables",
     "title": "Simpson’s paradox",
     "section": "Frequency tables",
-    "text": "Frequency tables\n\n\nFemale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n108\n\n\nB\n25\n\n\nC\n593\n\n\nD\n375\n\n\nE\n393\n\n\nF\n341\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n825\n\n\nB\n560\n\n\nC\n325\n\n\nD\n417\n\n\nE\n191\n\n\nF\n373"
+    "text": "Frequency tables\nNumber of applicants by department:\n\n\nFemale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n108\n\n\nB\n25\n\n\nC\n593\n\n\nD\n375\n\n\nE\n393\n\n\nF\n341\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n825\n\n\nB\n560\n\n\nC\n325\n\n\nD\n417\n\n\nE\n191\n\n\nF\n373"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#more-detailed-frequency-tables",
     "href": "slides/slides-10-simpsons.html#more-detailed-frequency-tables",
     "title": "Simpson’s paradox",
     "section": "More-detailed frequency tables",
-    "text": "More-detailed frequency tables\n\n\nFemale applicants:\n\n\n\n\n \n  \n    Dept \n    Decision \n    n \n  \n \n\n  \n    A \n    Admit \n    89 \n  \n  \n    A \n    Reject \n    19 \n  \n  \n    B \n    Admit \n    17 \n  \n  \n    B \n    Reject \n    8 \n  \n  \n    C \n    Admit \n    202 \n  \n  \n    C \n    Reject \n    391 \n  \n  \n    D \n    Admit \n    131 \n  \n  \n    D \n    Reject \n    244 \n  \n  \n    E \n    Admit \n    94 \n  \n  \n    E \n    Reject \n    299 \n  \n  \n    F \n    Admit \n    24 \n  \n  \n    F \n    Reject \n    317 \n  \n\n\n\n\n\n\nMale applicants:\n\n\n\n\n \n  \n    Dept \n    Decision \n    n \n  \n \n\n  \n    A \n    Admit \n    512 \n  \n  \n    A \n    Reject \n    313 \n  \n  \n    B \n    Admit \n    353 \n  \n  \n    B \n    Reject \n    207 \n  \n  \n    C \n    Admit \n    120 \n  \n  \n    C \n    Reject \n    205 \n  \n  \n    D \n    Admit \n    138 \n  \n  \n    D \n    Reject \n    279 \n  \n  \n    E \n    Admit \n    53 \n  \n  \n    E \n    Reject \n    138 \n  \n  \n    F \n    Admit \n    22 \n  \n  \n    F \n    Reject \n    351"
+    "text": "More-detailed frequency tables\nNumber of applicants by department and admission status:\n\n\nFemale applicants:\n\n\n\n\n \n  \n    Dept \n    Decision \n    n \n  \n \n\n  \n    A \n    Admit \n    89 \n  \n  \n    A \n    Reject \n    19 \n  \n  \n    B \n    Admit \n    17 \n  \n  \n    B \n    Reject \n    8 \n  \n  \n    C \n    Admit \n    202 \n  \n  \n    C \n    Reject \n    391 \n  \n  \n    D \n    Admit \n    131 \n  \n  \n    D \n    Reject \n    244 \n  \n  \n    E \n    Admit \n    94 \n  \n  \n    E \n    Reject \n    299 \n  \n  \n    F \n    Admit \n    24 \n  \n  \n    F \n    Reject \n    317 \n  \n\n\n\n\n\n\nMale applicants:\n\n\n\n\n \n  \n    Dept \n    Decision \n    n \n  \n \n\n  \n    A \n    Admit \n    512 \n  \n  \n    A \n    Reject \n    313 \n  \n  \n    B \n    Admit \n    353 \n  \n  \n    B \n    Reject \n    207 \n  \n  \n    C \n    Admit \n    120 \n  \n  \n    C \n    Reject \n    205 \n  \n  \n    D \n    Admit \n    138 \n  \n  \n    D \n    Reject \n    279 \n  \n  \n    E \n    Admit \n    53 \n  \n  \n    E \n    Reject \n    138 \n  \n  \n    F \n    Admit \n    22 \n  \n  \n    F \n    Reject \n    351"
   },
   {
     "objectID": "coding_practice/coding-practice-10-simpsons.html",
@@ -2364,5 +2364,12 @@
     "title": "Conditional probabilities coding practice",
     "section": "",
     "text": "Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.\nThe data is in the mosaicData package. You may have to install the package first! Then run the following code:\n\nlibrary(tidyverse)\nlibrary(mosaicData)\n\nWe will work with the Whickham data. You should open its Help file and take a view of the data before proceeding. Note that “factor” can be though of as a categorical variable. Make sure you understand the data before proceeding!\nDiscuss with your group: What would you expect the relationship between smoking status and health outcome to be?\n\nCreate an appropriate visualization depicting the relationship between smoking status and health outcome.\n\n\n\n\n\nUsing wrangling code, calculate the conditional probabilities of death of each smoking status. Please report only the probabilities for when outcome is Dead.\n\n\n\n\nWith your group, briefly describe the relationship and whether or not it is what you expected. You may want to discuss the visualization from the previous exercise as well.\n\nUsing case_when(), create a new variable for future use called age_cat that takes the values as follows:\n\n\n“18-44”: if someone is less than or equal to 44 years old\n“45-64”: if someone is between 45 and 64 years old, inclusive\n“65+”: if someone is older than 64\n\n\n\n\n\nRe-create your first visualization from Exercise 1, this time faceting by age_cat.\n\n\n\n\n\nElaborate on your table from Exercise 2 above by breaking it down by age category.\n\n\n\n\nWith your group, compare the two visualizations and the two summary tables. What changed, and what might explain the change?\nAnswer:\nWhen finished, knit one more time and submit the HTML to Canvas!"
+  },
+  {
+    "objectID": "slides/slides-10-simpsons.html#uc-berkeley-admissions-cont.",
+    "href": "slides/slides-10-simpsons.html#uc-berkeley-admissions-cont.",
+    "title": "Simpson’s paradox",
+    "section": "UC Berkeley admissions (cont.)",
+    "text": "UC Berkeley admissions (cont.)"
   }
 ]
