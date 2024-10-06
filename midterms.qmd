@@ -31,3 +31,5 @@ title: "Midterms"
 -   Work on the practice problems that were distributed at the end of classes but not assigned.
 
 -   For extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.
+
+    -   [Extra problems here](midterm1_review_probs.pdf)

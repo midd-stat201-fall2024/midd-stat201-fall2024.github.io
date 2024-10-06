@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-07">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Midterms</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Bootstrap Confidence Intervals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,6 +60,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -69,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT 201: Intro. to Statistics and Data Science</span>
     </a>
   </div>
@@ -79,15 +81,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html">
+    <a class="nav-link" href="../schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./midterms.html" aria-current="page">
+    <a class="nav-link" href="../midterms.html">
  <span class="menu-text">Midterms</span></a>
   </li>  
 </ul>
@@ -118,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Midterms</h1>
+<h1 class="title">Bootstrap Confidence Intervals</h1>
 </div>
 
 
@@ -126,6 +128,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 7, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -133,36 +141,120 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="midterm1" class="level2">
-<h2 class="anchored" data-anchor-id="midterm1">Midterm 1</h2>
-<section id="logistics" class="level3">
-<h3 class="anchored" data-anchor-id="logistics">Logistics</h3>
+<section id="housekeeping" class="level2">
+<h2 class="anchored" data-anchor-id="housekeeping">Housekeeping</h2>
 <ul>
-<li><p><strong>When and where</strong>: Thursday, October 10 during class (75 minutes)</p></li>
-<li><p><strong>What</strong>: content through end of Week 4 (i.e.&nbsp;through Simpson’s Paradox)</p>
+<li>Office hours 3-4pm</li>
+<li>Midterm tomorrows! Bring a calculator.</li>
+</ul>
+<div class="cell">
+
+</div>
+</section>
+<section id="bootstrap-recap" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-recap">Bootstrap recap</h2>
+<ol type="1">
+<li>Assume we have a sample <span class="math inline">\(x_{1}, x_{2}, \ldots, x_{n}\)</span> from the population. Call this sample <span class="math inline">\(\vec{x}\)</span>. Note the sample size is <span class="math inline">\(n\)</span></li>
+<li>Choose a large number <span class="math inline">\(B\)</span>. For <span class="math inline">\(b\)</span> in <span class="math inline">\(1,2, \ldots, B\)</span>:
+<ol type="i">
+<li>Resample: take a sample of size <span class="math inline">\(n\)</span> with <em>replacement</em> from <span class="math inline">\(\vec{x}\)</span>. Call this set of resampled data <span class="math inline">\(\vec{x}^*_{b}\)</span></li>
+<li>Calculate: calculate and record the statistic of interest from <span class="math inline">\(\vec{x}^{*}_{b}\)</span></li>
+</ol></li>
+</ol>
+<div class="fragment">
+<p>At the end of this procedure, we will have a distribution of <strong>resample or bootstrap statistics</strong></p>
+</div>
+</section>
+<section id="confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals">Confidence intervals</h2>
 <ul>
-<li>You will not be asked to write code, but you may be asked to read or critique it</li>
+<li><p>Due to variability, we recognize that point estimate will rarely (if ever) equal population parameter</p></li>
+<li><p>Rather than report a single number, why not report a range of values?</p>
+<ul>
+<li><p>Analogy: would you rather go fishing with a single pole or a large net?</p></li>
+<li><p>A range of plausible values gives us a good chance at capturing the parameter</p></li>
 </ul></li>
-<li><p><strong>Important</strong>: Prof.&nbsp;Tang will be proctoring the exam</p></li>
-<li><p>You will not have a problem set assigned this week!</p></li>
-<li><p>Prof.&nbsp;Tang will move Friday’s office hours to Wednesday 10/09 3-4pm instead.</p></li>
-<li><div style="color: maroon">
-<p>You should bring a calculator to the midterm. If you do not have one, the department can provide very basic calculators.</p>
+<li><p>A confidence interval provides such a range of values (more rigorous definition coming soon)</p>
+<ul>
+<li>Specifies a lower and upper bound</li>
+</ul></li>
+</ul>
+</section>
+<section id="bootstrap-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-distribution">Bootstrap distribution</h2>
+<div class="cell">
+
+</div>
+<p>Let’s continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from <span class="math inline">\(B=\)</span> 5000 iterations:</p>
+<div class="cell">
+
+</div>
+<ul>
+<li>Where is the bootstrap distribution centered?</li>
+</ul>
+</section>
+<section id="bootstrap-percentile-interval" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-percentile-interval">Bootstrap percentile interval</h2>
+<ul>
+<li><p>Confidence intervals are not unique! Depending on the method you use, you might get different intervals</p></li>
+<li><p>The <span class="math inline">\(\gamma \times 100\)</span>% <strong>bootstrap percentile interval</strong> is obtained by finding the bounds of the middle <span class="math inline">\(\gamma \times 100\)</span>% of the bootstrap distribution</p>
+<ul>
+<li><div class="discuss">
+<p>e.g.&nbsp;If I want a 90% bootstrap percentile interval, where would the bounds be?</p>
 </div></li>
+</ul></li>
+<li><p>Called “percentile interval” because the bounds are the <span class="math inline">\((1-\gamma)/2\)</span> and <span class="math inline">\((1+\gamma)/2\)</span> percentiles of the bootstrap distribution</p>
+<ul>
+<li>e.g.&nbsp;if <span class="math inline">\(\gamma = 0.90\)</span>, then the bounds would be <span class="math inline">\((1-0.90)/2 = 0.05\)</span> and <span class="math inline">\((1+0.90)/2 = 0.95\)</span> percentiles</li>
+</ul></li>
+<li><p>For our purposes, “bootstrap confidence interval” will be equivalent to “bootstrap percentile interval”</p></li>
 </ul>
 </section>
+<section id="obtaining-bootstrap-confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="obtaining-bootstrap-confidence-interval">Obtaining bootstrap confidence interval</h2>
+<div class="cell">
+
+</div>
 </section>
-<section id="preparation" class="level2">
-<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
+<section id="interpreting-a-confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-a-confidence-interval">Interpreting a confidence interval</h2>
 <ul>
-<li><p>The best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!</p></li>
-<li><p>Another way to prepare is to create your own study guide with summaries and examples of important concepts. As you study, it would be a good diea to compile a list of questions that you might have.</p></li>
-<li><p>Work on the practice problems that were distributed at the end of classes but not assigned.</p></li>
-<li><p>For extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.</p>
+<li><p>Our __% confidence intervals is: . Does this mean there is a ___% chance/probability that the true mean lies in the interval?</p>
 <ul>
-<li><a href="midterm1_review_probs.pdf">Extra problems here</a></li>
+<li><div style="color: maroon">
+<p>Answer: NO</p>
+</div></li>
+</ul></li>
+<li><p>Remember: bootstrap distribution is based on our original sample</p>
+<ul>
+<li>If we started with a different original sample, then maybe our estimated ___% confidence interval would have also been different</li>
+</ul></li>
+<li><p>What a confidence interval represents (CI): if we take many independent repeated samples from this population using the same method and calculate a <span class="math inline">\(\gamma \times 100\)</span> % CI for the parameter in the exact same way, then we would <em>expect</em> <span class="math inline">\(\gamma \times 100\)</span> % of these intervals to contain the parameter</p>
+<ul>
+<li><p><span class="math inline">\(\gamma\)</span> represents the long-run proportion of CIs that theoretically contain the true parameter</p></li>
+<li><p>However, we never know if any particular interval(s) actually do!</p></li>
 </ul></li>
 </ul>
+</section>
+<section id="interpreting-a-confidence-interval-cont." class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-a-confidence-interval-cont.">Interpreting a confidence interval (cont.)</h2>
+<ul>
+<li><p>Correct interpretation (generic): We are <span class="math inline">\(\gamma \times 100\)</span> % confident that the population parameter is between the lower bound and upper bound.</p>
+<ul>
+<li><div class="discuss">
+<p>Interpret our bootstrap CI in context</p>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="remarks" class="level2">
+<h2 class="anchored" data-anchor-id="remarks">Remarks</h2>
+<ul>
+<li>What is a virtue of a “good” confidence interval?</li>
+</ul>
+</section>
+<section id="your-turn" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn">Your turn!</h2>
 
 
 </section>

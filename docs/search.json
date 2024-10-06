@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\n\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2307,14 +2307,14 @@
     "href": "midterms.html#preparation",
     "title": "Midterms",
     "section": "Preparation",
-    "text": "Preparation\n\nThe best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!\nAnother way to prepare is to create your own study guide with summaries and examples of important concepts. As you study, it would be a good diea to compile a list of questions that you might have.\nWork on the practice problems that were distributed at the end of classes but not assigned.\nFor extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm."
+    "text": "Preparation\n\nThe best preparation you can do for the midterm is to go back through your notes and homework and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Canvas. For the concepts that you need to practice more, try more problems (see below)!\nAnother way to prepare is to create your own study guide with summaries and examples of important concepts. As you study, it would be a good diea to compile a list of questions that you might have.\nWork on the practice problems that were distributed at the end of classes but not assigned.\nFor extra practice, additional review problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nExtra problems here"
   },
   {
     "objectID": "index.html#announcements",
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1 details announced!\nMath & Stats Department Colloquium this Friday 10/04\n\nSpeaker: Prof. Tang\nWhen/where: WNS 105 from 12:30-1:30 on Friday (pizza provided)\nWhat: Learning from monitoring networks: using statistics to aid multi-scale ecological analysis\n\nAssociation for Women in Mathematics first meeting this Friday, 10/04 from 3-4 in WNS 104"
+    "text": "Announcements\n\nMidterm 1 details announced!\n\nRemember: Friday office hours switched to Wednesday 3-4pm"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -2363,7 +2363,7 @@
     "href": "coding_practice/coding-practice-10-simpsons.html",
     "title": "Conditional probabilities coding practice",
     "section": "",
-    "text": "Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.\nThe data is in the mosaicData package. You may have to install the package first! Then run the following code:\n\nlibrary(tidyverse)\nlibrary(mosaicData)\n\nWe will work with the Whickham data. You should open its Help file and take a view of the data before proceeding. Note that “factor” can be though of as a categorical variable. Make sure you understand the data before proceeding!\nDiscuss with your group: What would you expect the relationship between smoking status and health outcome to be?\n\nCreate an appropriate visualization depicting the relationship between smoking status and health outcome.\n\n\n\n\n\nUsing wrangling code, calculate the conditional probabilities of death of each smoking status. Please report only the probabilities for when outcome is Dead.\n\n\n\n\nWith your group, briefly describe the relationship and whether or not it is what you expected. You may want to discuss the visualization from the previous exercise as well.\n\nUsing case_when(), create a new variable for future use called age_cat that takes the values as follows:\n\n\n“18-44”: if someone is less than or equal to 44 years old\n“45-64”: if someone is between 45 and 64 years old, inclusive\n“65+”: if someone is older than 64\n\n\n\n\n\nRe-create your first visualization from Exercise 1, this time faceting by age_cat.\n\n\n\n\n\nElaborate on your table from Exercise 2 above by breaking it down by age category.\n\n\n\n\nWith your group, compare the two visualizations and the two summary tables. What changed, and what might explain the change?\nAnswer:\nWhen finished, knit one more time and submit the HTML to Canvas!"
+    "text": "Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.\nThe data is in the mosaicData package. You may have to install the package first! Then run the following code:\n\nlibrary(tidyverse)\nlibrary(mosaicData)\n\nWe will work with the Whickham data. You should open its Help file and take a view of the data before proceeding. Note that “factor” can be though of as a categorical variable. Make sure you understand the data before proceeding!\nDiscuss with your group: What would you expect the relationship between smoking status and health outcome to be?\n\nCreate an appropriate visualization depicting the relationship between smoking status and health outcome. Make sure you have informative labels and titles.\n\n\n\n\n\nUsing wrangling code, calculate the conditional probabilities of death of each smoking status. Your resulting table/data frame should only retain the variables for smoke status, outcome, and the conditional probabilities in a meaningful order. Also, please report only the probabilities for when outcome is Dead.\n\n\n\n\nWith your group, briefly describe the relationship and whether or not it is what you expected. You may want to discuss the visualization from the previous exercise as well.\n\nUsing case_when(), create a new variable for future use called age_cat that takes the values as follows:\n\n\n“18-44”: if someone is less than or equal to 44 years old\n“45-64”: if someone is between 45 and 64 years old, inclusive\n“65+”: if someone is older than 64\n\n\n\n\n\nRe-create your first visualization from Exercise 1, this time faceting by age_cat. Make sure you have informative labels and titles.\n\n\n\n\n\nElaborate on your table from Exercise 2 above by breaking it down by age category. Your resulting table/data frame should only retain the variables for smoke status, age category, outcome, and the conditional probabilities in a meaningful order. Once again, please report only the probabilities for when outcome is Dead.\n\n\n\n\nWith your group, compare the two visualizations and the two summary tables. What changed, and what might explain the change?\nAnswer:\nWhen finished, knit one more time and submit the HTML to Canvas!"
   },
   {
     "objectID": "slides/slides-10-simpsons.html#uc-berkeley-admissions-cont.",
@@ -2371,5 +2371,173 @@
     "title": "Simpson’s paradox",
     "section": "UC Berkeley admissions (cont.)",
     "text": "UC Berkeley admissions (cont.)"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#where-we-are-going",
+    "href": "slides/slides-11-bootstrap.html#where-we-are-going",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Where we are going",
+    "text": "Where we are going\nWe are leaving the world of EDA and beginning to enter the world of inference and modeling!\n\nWant to answer questions about a population, but must rely on a sample\nCollect data from sample –> calculate statistics\nWhat can we say about the statistics?\nData are random! So how sure are we about our conclusions?\n\n\nStatistics starts here!"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#inferential-questions",
+    "href": "slides/slides-11-bootstrap.html#inferential-questions",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Inferential questions",
+    "text": "Inferential questions\n\nI want to know the true average number of hours of sleep Middlebury students get a night. Based on a sample of students, what might be a “good estimate” of the true average?\nIs the true average number of of hours of Middlebury students get a night less than 7 hours?\n\nQuestions here are about population parameter (in this case, \\(\\mu\\))\nAll we have access to is the data \\(x_{1}, x_{2},\\ldots, x_{n}\\) from which we can calculate some statistics"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#activity",
+    "href": "slides/slides-11-bootstrap.html#activity",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Activity",
+    "text": "Activity\n\nTarget population:\nSampling method:\nPopulation parameter:\nStatistics we can calculate:"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#variability-of-statistic",
+    "href": "slides/slides-11-bootstrap.html#variability-of-statistic",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Variability of statistic",
+    "text": "Variability of statistic\n\nTwo datasets collected under identical procedures will differ. As a result, value of the point estimate we obtain are also different\n\nActivity cont.\n\nThus, there exists the notion of a sampling distribution of the statistic: how the statistic behaves under multiple iterations of the same data collection procedure\n\nThe variability associated with the sampling distribution of the statistic is called the standard error\n\nNote: “error” \\(\\neq\\) bad\n\nThis is in contrast to the standard deviation, which describes variability in the individual data points and not the statistic"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#sampling-distribution",
+    "href": "slides/slides-11-bootstrap.html#sampling-distribution",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Sampling distribution",
+    "text": "Sampling distribution\n\nOf course, sampling distribution depends on underlying distribution of the population\nSometimes, we assume that the population/data have a very specific behavior, and this allows us to exactly define/quantify the sampling distribution\n\nWe will see this in a couple of weeks\n\nIf we don’t want to make assumptions, what do we do?\n\nCould conduct a census! That way we can answer any questions we want about the population. But that’s impractical…\nHow to obtain more samples cheaply and quickly?"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#procedure",
+    "href": "slides/slides-11-bootstrap.html#procedure",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Procedure",
+    "text": "Procedure\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\vec{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\vec{x}\\). Call this set of resampled data \\(\\vec{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\vec{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#activity-1",
+    "href": "slides/slides-11-bootstrap.html#activity-1",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Activity",
+    "text": "Activity"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#why-resample-with-replacement",
+    "href": "slides/slides-11-bootstrap.html#why-resample-with-replacement",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Why resample with replacement?",
+    "text": "Why resample with replacement?\n\nWe want to understand the sampling error of the sampling distribution!\n\nWhat would the bootstrap samples \\(\\vec{x}^*_b\\) look like if we sampled without replacement?\n\n\nSamplign with replacement -> zero variation in the resampled statistics\n\nResampling with replacement will give us “new” datasets that are similar to original sample distribution but not exactly the same!"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#remarks",
+    "href": "slides/slides-11-bootstrap.html#remarks",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Remarks",
+    "text": "Remarks\n\n\nRelies on having a representative original sample!\n\n\nResampling from initial sample should be roughly equivalent to sampling directly from the population\n\nRequires computational tools!\n\nWe need \\(B\\) to be large enough to accurately capture variability. \\(B=5000\\) or \\(B=10000\\) sufficient in this class\nMore complex problems will require larger \\(B\\)\n\nBootstrapping can fail!\nBootstrapping is not a solution to small sample sizes!!"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#point-estimate",
+    "href": "slides/slides-11-bootstrap.html#point-estimate",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Point estimate",
+    "text": "Point estimate\n\n\\(\\bar{x}\\) is often times a sensible estimate for \\(\\mu\\)\n\\(\\bar{x}\\) is an example of a point estimate: a single number used to estimate a true but unknown population parameter\n\ni.e. a point estimate is a statistic with a specific purpose\nOther examples include \\(s\\) for \\(\\sigma\\), observed proportion \\(\\hat{p}\\) for true proportion \\(p\\),\n\n\nWhat are desirable characteristics of a “good” point estimate?\n\n\nDo we believe that \\(\\bar{x} = \\mu\\)?"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html#demonstration",
+    "href": "slides/slides-11-bootstrap.html#demonstration",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "Demonstration",
+    "text": "Demonstration\n\nActivity cont.\nLive code demonstration"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#housekeeping",
+    "href": "slides/slides-12-bootstrap_ci.html#housekeeping",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nOffice hours 3-4pm\nMidterm tomorrows! Bring a calculator."
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-recap",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap recap",
+    "text": "Bootstrap recap\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\vec{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\vec{x}\\). Call this set of resampled data \\(\\vec{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\vec{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#confidence-intervals",
+    "href": "slides/slides-12-bootstrap_ci.html#confidence-intervals",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\nDue to variability, we recognize that point estimate will rarely (if ever) equal population parameter\nRather than report a single number, why not report a range of values?\n\nAnalogy: would you rather go fishing with a single pole or a large net?\nA range of plausible values gives us a good chance at capturing the parameter\n\nA confidence interval provides such a range of values (more rigorous definition coming soon)\n\nSpecifies a lower and upper bound"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-confidence-intervals",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-confidence-intervals",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap confidence intervals",
+    "text": "Bootstrap confidence intervals\n\n\n\nLet’s continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from \\(B=\\) 5000 iterations:"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-distribution",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-distribution",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap distribution",
+    "text": "Bootstrap distribution\n\n\n\nLet’s continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from \\(B=\\) 5000 iterations:\n\n\n\n\nWhere is the bootstrap distribution centered?"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-percentile-interval",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-percentile-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap percentile interval",
+    "text": "Bootstrap percentile interval\n\nConfidence intervals are not unique! Depending on the method you use, you might get different intervals\nThe \\(\\gamma \\times 100\\)% bootstrap percentile interval is obtained by finding the bounds of the middle \\(\\gamma \\times 100\\)% of the bootstrap distribution\n\n\ne.g. If I want a 90% bootstrap percentile interval, where would the bounds be?\n\n\nCalled “percentile interval” because the bounds are the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the bootstrap distribution\n\ne.g. if \\(\\gamma = 0.90\\), then the bounds would be \\((1-0.90)/2 = 0.05\\) and \\((1+0.90)/2 = 0.95\\) percentiles\n\nFor our purposes, “bootstrap confidence interval” will be equivalent to “bootstrap percentile interval”"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval",
+    "href": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Interpreting a confidence interval",
+    "text": "Interpreting a confidence interval\n\nOur __% confidence intervals is: . Does this mean there is a ___% chance/probability that the true mean lies in the interval?\n\n\nAnswer: NO\n\n\nRemember: bootstrap distribution is based on our original sample\n\nIf we started with a different original sample, then maybe our estimated ___% confidence interval would have also been different\n\nWhat a confidence interval represents (CI): if we take many independent repeated samples from this population using the same method and calculate a \\(\\gamma \\times 100\\) % CI for the parameter in the exact same way, then we would expect \\(\\gamma \\times 100\\) % of these intervals to contain the parameter\n\n\\(\\gamma\\) represents the long-run proportion of CIs that theoretically contain the true parameter\nHowever, we never know if any particular interval(s) actually do!"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
+    "href": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Interpreting a confidence interval (cont.)",
+    "text": "Interpreting a confidence interval (cont.)\n\nCorrect interpretation (generic): We are \\(\\gamma \\times 100\\) % confident that the population parameter is between the lower bound and upper bound.\n\n\nInterpret our bootstrap CI in context"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
+    "href": "slides/slides-12-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Obtaining bootstrap confidence interval",
+    "text": "Obtaining bootstrap confidence interval"
+  },
+  {
+    "objectID": "slides/slides-11-bootstrap.html",
+    "href": "slides/slides-11-bootstrap.html",
+    "title": "Variability of statistic + Intro to Bootstrap",
+    "section": "",
+    "text": "Midterm review problems released\nWednesday office hours 3-4pm\nMidterm this Thursday in class! Bring a calculator.\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\nRows: 4526 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): Decision, Gender, Dept\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nWe are leaving the world of EDA and beginning to enter the world of inference and modeling!\n\nWant to answer questions about a population, but must rely on a sample\nCollect data from sample –> calculate statistics\nWhat can we say about the statistics?\nData are random! So how sure are we about our conclusions?\n\n\nStatistics starts here!\n\n\n\n\nStatistical inference is the process of using sample data to make conclusions about the underlying population the sample came from\n\nEstimation: using the sample to estimate a plausible values for the unknown parameter\nTesting: evaluating whether our observed sample provides evidence for or against some claim about the population\n\n\n\n\n\nI want to know the true average number of hours of sleep Middlebury students get a night. Based on a sample of students, what might be a “good estimate” of the true average?\nIs the true average number of of hours of Middlebury students get a night less than 7 hours?\n\nQuestions here are about population parameter (in this case, \\(\\mu\\))\nAll we have access to is the data \\(x_{1}, x_{2},\\ldots, x_{n}\\) from which we can calculate some statistics\n\n\n\n\n\n\nTarget population:\nSampling method:\nPopulation parameter:\nStatistics we can calculate:\n\n\n\n\n\n\\(\\bar{x}\\) is often times a sensible estimate for \\(\\mu\\)\n\\(\\bar{x}\\) is an example of a point estimate: a single number used to estimate a true but unknown population parameter\n\ni.e. a point estimate is a statistic with a specific purpose\nOther examples include \\(s\\) for \\(\\sigma\\), observed proportion \\(\\hat{p}\\) for true proportion \\(p\\),\n\n\nWhat are desirable characteristics of a “good” point estimate?\n\n\nDo we believe that \\(\\bar{x} = \\mu\\)?\n\n\n\n\n\n\nTwo datasets collected under identical procedures will differ. As a result, value of the point estimate we obtain are also different\n\nActivity cont.\n\nThus, there exists the notion of a sampling distribution of the statistic: how the statistic behaves under repeated random samples obtained via the same sampling procedure\n\nThe variability associated with the sampling distribution of the statistic is called the standard error\n\nNote: “error” \\(\\neq\\) bad\n\nThis is in contrast to the standard deviation, which describes variability in the individual data points and not the statistic\n\nPopulation distribution vs. sample distribution vs. sampling distribution\n\n\n\n\n\nOf course, sampling distribution of the statistic depends on underlying distribution of the population\nSometimes, we assume that the population/data have a very specific behavior, and this allows us to exactly define/quantify the sampling distribution\n\nWe will see this in a couple of weeks\n\nIf we don’t want to make assumptions, what do we do?\n\nCould conduct a census! That way we can answer any questions we want about the population. But that’s impractical…\nHow to obtain more samples cheaply and quickly?"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html",
+    "href": "slides/slides-12-bootstrap_ci.html",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "",
+    "text": "Office hours 3-4pm\nMidterm tomorrows! Bring a calculator."
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#remarks",
+    "href": "slides/slides-12-bootstrap_ci.html#remarks",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Remarks",
+    "text": "Remarks\n\nWhat is a virtue of a “good” confidence interval?"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#your-turn",
+    "href": "slides/slides-12-bootstrap_ci.html#your-turn",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Your turn!",
+    "text": "Your turn!"
   }
 ]

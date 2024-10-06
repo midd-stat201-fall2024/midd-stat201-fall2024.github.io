@@ -10,15 +10,7 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 -   [Midterm 1](midterms.qmd) details announced!
 
--   Math & Stats Department Colloquium this Friday 10/04
-
-    -   Speaker: Prof. Tang
-
-    -   When/where: WNS 105 from 12:30-1:30 on Friday (pizza provided)
-
-    -   What: [Learning from monitoring networks: using statistics to aid multi-scale ecological analysis](https://www.middlebury.edu/events/event/learning-monitoring-networks-using-statistics-aid-multi-scale-ecological-analysis)
-
--   Association for Women in Mathematics first meeting this Friday, 10/04 from 3-4 in WNS 104
+    -   Remember: Friday office hours switched to Wednesday 3-4pm
 
 ------------------------------------------------------------------------
 

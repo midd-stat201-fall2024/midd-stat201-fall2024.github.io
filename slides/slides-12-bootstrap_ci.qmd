@@ -1,0 +1,123 @@
+---
+title: "Bootstrap Confidence Intervals"
+date: "October 7, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+-   Office hours 3-4pm
+-   Midterm tomorrows! Bring a calculator.
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(readr)
+plot_theme <- theme(text = element_text(size = 24))
+```
+
+## Bootstrap recap
+
+1.  Assume we have a sample $x_{1}, x_{2}, \ldots, x_{n}$ from the population. Call this sample $\vec{x}$. Note the sample size is $n$
+2.  Choose a large number $B$. For $b$ in $1,2, \ldots, B$:
+    i.  Resample: take a sample of size $n$ with *replacement* from $\vec{x}$. Call this set of resampled data $\vec{x}^*_{b}$
+    ii. Calculate: calculate and record the statistic of interest from $\vec{x}^{*}_{b}$
+
+::: fragment
+At the end of this procedure, we will have a distribution of **resample or bootstrap statistics**
+:::
+
+## Confidence intervals
+
+-   Due to variability, we recognize that point estimate will rarely (if ever) equal population parameter
+
+-   Rather than report a single number, why not report a range of values?
+
+    -   Analogy: would you rather go fishing with a single pole or a large net?
+
+    -   A range of plausible values gives us a good chance at capturing the parameter
+
+-   A confidence interval provides such a range of values (more rigorous definition coming soon)
+
+    -   Specifies a lower and upper bound
+
+## Bootstrap distribution
+
+```{r}
+B <- 5000
+```
+
+Let's continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from $B=$ `r B` iterations:
+
+```{r}
+# bootstrap dist of sample means
+```
+
+-   Where is the bootstrap distribution centered?
+
+## Bootstrap percentile interval
+
+-   Confidence intervals are not unique! Depending on the method you use, you might get different intervals
+
+-   The $\gamma \times 100$% **bootstrap percentile interval** is obtained by finding the bounds of the middle $\gamma \times 100$% of the bootstrap distribution
+
+    -   ::: discuss
+        e.g. If I want a 90% bootstrap percentile interval, where would the bounds be?
+        :::
+
+-   Called "percentile interval" because the bounds are the $(1-\gamma)/2$ and $(1+\gamma)/2$ percentiles of the bootstrap distribution
+
+    -   e.g. if $\gamma = 0.90$, then the bounds would be $(1-0.90)/2 = 0.05$ and $(1+0.90)/2 = 0.95$ percentiles
+
+-   For our purposes, "bootstrap confidence interval" will be equivalent to "bootstrap percentile interval"
+
+## Obtaining bootstrap confidence interval
+
+```{r}
+# data frame containing our bootstrap statistics
+```
+
+## Interpreting a confidence interval
+
+-   Our \_\_% confidence intervals is: . Does this mean there is a \_\_\_% chance/probability that the true mean lies in the interval?
+
+    -   ::: {style="color: maroon"}
+        Answer: NO
+        :::
+
+-   Remember: bootstrap distribution is based on our original sample
+
+    -   If we started with a different original sample, then maybe our estimated \_\_\_% confidence interval would have also been different
+
+-   What a confidence interval represents (CI): if we take many independent repeated samples from this population using the same method and calculate a $\gamma \times 100$ % CI for the parameter in the exact same way, then we would *expect* $\gamma \times 100$ % of these intervals to contain the parameter
+
+    -   $\gamma$ represents the long-run proportion of CIs that theoretically contain the true parameter
+
+    -   However, we never know if any particular interval(s) actually do!
+
+## Interpreting a confidence interval (cont.)
+
+-   Correct interpretation (generic): We are $\gamma \times 100$ % confident that the population parameter is between the lower bound and upper bound.
+
+    -   ::: discuss
+        Interpret our bootstrap CI in context
+        :::
+
+## Remarks
+
+-   What is a virtue of a "good" confidence interval?
+
+## Your turn!
