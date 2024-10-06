@@ -20,7 +20,8 @@ draft: false
 # Housekeeping
 
 -   Midterm review problems released
--   Wednesday office hours 3-4pm
+    -   Please also review your previous problem sets!
+-   Office hours today 2-4pm and Wednesday 3-4pm
 -   Midterm this Thursday in class! Bring a calculator.
 
 ```{r echo = F}
@@ -53,9 +54,9 @@ Statistics starts here!
 
 **Statistical inference** is the process of using sample data to make conclusions about the underlying population the sample came from
 
--   Estimation: using the sample to estimate a plausible values for the unknown parameter
+-   **Estimation**: using the sample to estimate a plausible values for the unknown parameter
 
--   Testing: evaluating whether our observed sample provides evidence for or against some claim about the population
+-   **Testing**: evaluating whether our observed sample provides evidence for or against some claim about the population
 
 ## Estimation questions
 
