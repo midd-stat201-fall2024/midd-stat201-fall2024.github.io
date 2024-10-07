@@ -1,0 +1,34 @@
+---
+title: "Bootstrap distribution"
+date: "October 7, 2024"
+---
+
+
+```{r message = F}
+library(tidyverse)
+# our original sample
+x_orig <- c(1, 1, 1, 0, 1)
+
+# sample size stored as variable for reproducibility
+n <- length(x_orig)
+
+# number of bootstrap samples to take
+B <- 1000
+
+# vector to store bootstrap statistics. Starts off as vector full of NAs of length B
+bootstrap_props <- rep(NA, B)
+
+for(b in 1:B){
+  # resample
+  x_boot <- sample(x = x_orig, size = n, replace = TRUE)
+  
+  # calculate and store bootstrap statistic
+  bootstrap_props[b] <- mean(x_boot)
+}
+
+# visualize
+data.frame(props = bootstrap_props) |>
+  ggplot(aes(x = props))+
+  geom_histogram(binwidth =  0.2 ) +
+  labs(title = "Bootstrap distribution of sample proportions")
+```
