@@ -17,6 +17,20 @@ editor_options:
 draft: false
 ---
 
+## Activity
+
+While you're coming into the room, please take:
+
+-   1 pink card
+
+-   1 white card
+
+1.  On the pink card, write down an estimate of the average number of hours of sleep you received *this past week*.
+
+2.  On white card, write a 1 if this number you wrote down on the pink card is greater than or equal to 7, and a 0 otherwise
+
+3.  Then bring these to Prof. Tang
+
 # Housekeeping
 
 -   Midterm review problems released
@@ -60,11 +74,15 @@ Statistics starts here!
 
 ## Estimation questions
 
--   I want to know the true average number of hours of sleep Middlebury students get a night. Based on a sample of students, what might be a "good estimate" of the true average?
+-   I want to know the true average number of hours of sleep Middlebury students get a night.
 
--   Is the true average number of of hours of Middlebury students get a night less than 7 hours?
+    -   Based on a sample of students, what might be a "good estimate" of the true average?
 
-    -   Questions here are about population parameter (in this case, $\mu$)
+-   What proportion of Middlebury students get a night less than 7 hours?
+
+    -   Based on a sample of students, what might be a "good estimate" of the true proportion?
+
+-   Questions here are about population parameter
 
     -   All we have access to is the data $x_{1}, x_{2},\ldots, x_{n}$ from which we can calculate some statistics
 
@@ -92,7 +110,7 @@ Statistics starts here!
     What are desirable characteristics of a "good" point estimate?
     :::
 
-    -   Do we believe that $\bar{x} = \mu$?
+    -   Do we believe that $\bar{x} = \mu$ or $\hat{p} = p$?
 
 ## Variability of statistic
 

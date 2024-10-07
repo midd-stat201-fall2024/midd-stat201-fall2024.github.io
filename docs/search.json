@@ -2391,7 +2391,7 @@
     "href": "slides/slides-11-bootstrap.html#activity",
     "title": "Variability of statistic + Intro to Bootstrap",
     "section": "Activity",
-    "text": "Activity\n\nTarget population:\nSampling method:\nPopulation parameter:\nStatistics we can calculate:"
+    "text": "Activity\nWhile you’re coming into the room, please take:\n\n1 pink card\n1 white card\n\n\nOn the pink card, write down an estimate of the average number of hours of sleep you received this past week.\nOn white card, write a 1 if this number you wrote down on the pink card is greater than or equal to 7, and a 0 otherwise\nThen bring these to Prof. Tang"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html#variability-of-statistic",
@@ -2419,7 +2419,7 @@
     "href": "slides/slides-11-bootstrap.html#activity-1",
     "title": "Variability of statistic + Intro to Bootstrap",
     "section": "Activity",
-    "text": "Activity"
+    "text": "Activity\n\nTarget population:\nSampling method:\nPopulation parameter:\nStatistics we can calculate:"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html#why-resample-with-replacement",
@@ -2440,7 +2440,7 @@
     "href": "slides/slides-11-bootstrap.html#point-estimate",
     "title": "Variability of statistic + Intro to Bootstrap",
     "section": "Point estimate",
-    "text": "Point estimate\n\n\\(\\bar{x}\\) is often times a sensible estimate for \\(\\mu\\)\n\\(\\bar{x}\\) is an example of a point estimate: a single number used to estimate a true but unknown population parameter\n\ni.e. a point estimate is a statistic with a specific purpose\nOther examples include \\(s\\) for \\(\\sigma\\), observed proportion \\(\\hat{p}\\) for true proportion \\(p\\),\n\n\nWhat are desirable characteristics of a “good” point estimate?\n\n\nDo we believe that \\(\\bar{x} = \\mu\\)?"
+    "text": "Point estimate\n\n\\(\\bar{x}\\) is often times a sensible estimate for \\(\\mu\\)\n\\(\\bar{x}\\) is an example of a point estimate: a single number used to estimate a true but unknown population parameter\n\ni.e. a point estimate is a statistic with a specific purpose\nOther examples include \\(s\\) for \\(\\sigma\\), observed proportion \\(\\hat{p}\\) for true proportion \\(p\\),\n\n\nWhat are desirable characteristics of a “good” point estimate?\n\n\nDo we believe that \\(\\bar{x} = \\mu\\) or \\(\\hat{p} = p\\)?"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html#demonstration",
@@ -2552,6 +2552,6 @@
     "href": "slides/slides-11-bootstrap.html#estimation-questions",
     "title": "Variability of statistic + Intro to Bootstrap",
     "section": "Estimation questions",
-    "text": "Estimation questions\n\nI want to know the true average number of hours of sleep Middlebury students get a night. Based on a sample of students, what might be a “good estimate” of the true average?\nIs the true average number of of hours of Middlebury students get a night less than 7 hours?\n\nQuestions here are about population parameter (in this case, \\(\\mu\\))\nAll we have access to is the data \\(x_{1}, x_{2},\\ldots, x_{n}\\) from which we can calculate some statistics"
+    "text": "Estimation questions\n\nI want to know the true average number of hours of sleep Middlebury students get a night.\n\nBased on a sample of students, what might be a “good estimate” of the true average?\n\nWhat proportion of Middlebury students get a night less than 7 hours?\n\nBased on a sample of students, what might be a “good estimate” of the true proportion?\n\nQuestions here are about population parameter\n\nAll we have access to is the data \\(x_{1}, x_{2},\\ldots, x_{n}\\) from which we can calculate some statistics"
   }
 ]
