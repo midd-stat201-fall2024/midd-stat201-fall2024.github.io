@@ -171,7 +171,7 @@ At the end of this procedure, we will have a distribution of **resample or boots
     What would the bootstrap samples $\vec{x}^*_b$ look like if we sampled *without* replacement?
     :::
 
-    -   Samplign with replacement -\> zero variation in the resampled statistics
+    -   Sampling without replacement -\> zero variation in the resampled statistics
 
 -   Resampling with replacement will give us "new" datasets that are similar to original sample distribution but not exactly the same!
 

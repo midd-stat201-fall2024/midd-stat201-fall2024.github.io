@@ -2426,7 +2426,7 @@
     "href": "slides/slides-11-bootstrap.html#why-resample-with-replacement",
     "title": "Variability of statistic + Intro to Bootstrap",
     "section": "Why resample with replacement?",
-    "text": "Why resample with replacement?\n\nWe want to understand the sampling error of the sampling distribution!\n\nWhat would the bootstrap samples \\(\\vec{x}^*_b\\) look like if we sampled without replacement?\n\n\nSamplign with replacement -> zero variation in the resampled statistics\n\nResampling with replacement will give us “new” datasets that are similar to original sample distribution but not exactly the same!"
+    "text": "Why resample with replacement?\n\nWe want to understand the sampling error of the sampling distribution!\n\nWhat would the bootstrap samples \\(\\vec{x}^*_b\\) look like if we sampled without replacement?\n\n\nSampling without replacement -> zero variation in the resampled statistics\n\nResampling with replacement will give us “new” datasets that are similar to original sample distribution but not exactly the same!"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html#remarks",
