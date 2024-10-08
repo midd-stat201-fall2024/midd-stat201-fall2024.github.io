@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals\n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2461,14 +2461,14 @@
     "href": "slides/slides-12-bootstrap_ci.html#bootstrap-recap",
     "title": "Bootstrap Confidence Intervals",
     "section": "Bootstrap recap",
-    "text": "Bootstrap recap\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\vec{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\vec{x}\\). Call this set of resampled data \\(\\vec{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\vec{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
+    "text": "Bootstrap recap\nTaking new samples each time is costly! Bootstrap distribution is an approximation of the sampling distribution of the statistic!\nProcedure:\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\vec{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\vec{x}\\). Call this set of resampled data \\(\\vec{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\vec{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#confidence-intervals",
     "href": "slides/slides-12-bootstrap_ci.html#confidence-intervals",
     "title": "Bootstrap Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nDue to variability, we recognize that point estimate will rarely (if ever) equal population parameter\nRather than report a single number, why not report a range of values?\n\nAnalogy: would you rather go fishing with a single pole or a large net?\nA range of plausible values gives us a good chance at capturing the parameter\n\nA confidence interval provides such a range of values (more rigorous definition coming soon)\n\nSpecifies a lower and upper bound"
+    "text": "Confidence intervals\n\nAnalogy: would you rather go fishing with a single pole or a large net?\n\nA range of plausible values gives us a better chance at capturing the parameter\n\nA confidence interval provides such a range of values (more rigorous definition coming soon)\n\n“Interval” = we specify a lower bound and an upper bound\nConfidence intervals are not unique! Depending on the method you use, you might get different intervals"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-confidence-intervals",
@@ -2482,35 +2482,35 @@
     "href": "slides/slides-12-bootstrap_ci.html#bootstrap-distribution",
     "title": "Bootstrap Confidence Intervals",
     "section": "Bootstrap distribution",
-    "text": "Bootstrap distribution\n\n\n\nLet’s continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from \\(B=\\) 5000 iterations:\n\n\n\n\nWhere is the bootstrap distribution centered?"
+    "text": "Bootstrap distribution\n\n\n\nLet’s continue with the data collected from our activity. We have the following bootstrap distribution of sample proportions, obtained from \\(B=\\) 5000 iterations:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere is the bootstrap distribution centered?"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-percentile-interval",
     "href": "slides/slides-12-bootstrap_ci.html#bootstrap-percentile-interval",
     "title": "Bootstrap Confidence Intervals",
     "section": "Bootstrap percentile interval",
-    "text": "Bootstrap percentile interval\n\nConfidence intervals are not unique! Depending on the method you use, you might get different intervals\nThe \\(\\gamma \\times 100\\)% bootstrap percentile interval is obtained by finding the bounds of the middle \\(\\gamma \\times 100\\)% of the bootstrap distribution\n\n\ne.g. If I want a 90% bootstrap percentile interval, where would the bounds be?\n\n\nCalled “percentile interval” because the bounds are the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the bootstrap distribution\n\ne.g. if \\(\\gamma = 0.90\\), then the bounds would be \\((1-0.90)/2 = 0.05\\) and \\((1+0.90)/2 = 0.95\\) percentiles\n\nFor our purposes, “bootstrap confidence interval” will be equivalent to “bootstrap percentile interval”"
+    "text": "Bootstrap percentile interval\n\nThe \\(\\gamma \\times 100\\)% bootstrap percentile interval is obtained by finding the bounds of the middle \\(\\gamma \\times 100\\)% of the bootstrap distribution\n\n\ne.g. If I want a 90% bootstrap percentile interval, where would the bounds be?\n\n\nCalled “percentile interval” because the bounds are the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the bootstrap distribution\n\ne.g. if \\(\\gamma = 0.80\\), then the bounds would be \\((1-0.80)/2 = 0.10\\) and \\((1+0.80)/2 = 0.90\\) percentiles\n\nFor our purposes, “bootstrap confidence interval” will be equivalent to “bootstrap percentile interval”"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval",
     "href": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval",
     "title": "Bootstrap Confidence Intervals",
     "section": "Interpreting a confidence interval",
-    "text": "Interpreting a confidence interval\n\nOur __% confidence intervals is: . Does this mean there is a ___% chance/probability that the true mean lies in the interval?\n\n\nAnswer: NO\n\n\nRemember: bootstrap distribution is based on our original sample\n\nIf we started with a different original sample, then maybe our estimated ___% confidence interval would have also been different\n\nWhat a confidence interval represents (CI): if we take many independent repeated samples from this population using the same method and calculate a \\(\\gamma \\times 100\\) % CI for the parameter in the exact same way, then we would expect \\(\\gamma \\times 100\\) % of these intervals to contain the parameter\n\n\\(\\gamma\\) represents the long-run proportion of CIs that theoretically contain the true parameter\nHowever, we never know if any particular interval(s) actually do!"
+    "text": "Interpreting a confidence interval\n\nOur 90% confidence interval is: (0.3, 0.8) or (0.5, 0.9). Does this mean there is a 90% chance/probability that the true proportion lies in the interval?\n\n\nAnswer: NO\n\n\nRemember: bootstrap distribution is based on our original sample\n\nIf we started with a different original sample \\(\\vec{x}\\), then our estimated 90% confidence interval would also be different\n\n\nWhat a confidence interval (CI) represents: if we take many independent repeated samples from this population using the same method and calculate a \\(\\gamma \\times 100\\) % CI for the parameter in the exact same way, then in theory, \\(\\gamma \\times 100\\) % of these intervals should capture/contain the parameter\n\n\n\\(\\gamma\\) represents the long-run proportion of CIs that theoretically contain the true parameter\nHowever, we never know if any particular interval(s) actually do!"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
     "href": "slides/slides-12-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
     "title": "Bootstrap Confidence Intervals",
     "section": "Interpreting a confidence interval (cont.)",
-    "text": "Interpreting a confidence interval (cont.)\n\nCorrect interpretation (generic): We are \\(\\gamma \\times 100\\) % confident that the population parameter is between the lower bound and upper bound.\n\n\nInterpret our bootstrap CI in context"
+    "text": "Interpreting a confidence interval (cont.)\n\nCorrect interpretation (generic): We are \\(\\gamma \\times 100\\) % confident that the population parameter is between the lower bound and upper bound.\n\n\nInterpret our bootstrap CI in context\n\nAgain: why is this interpretation incorrect? “There is a 90% chance/probability that the true parameter value lies in the interval.”"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
     "href": "slides/slides-12-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
     "title": "Bootstrap Confidence Intervals",
     "section": "Obtaining bootstrap confidence interval",
-    "text": "Obtaining bootstrap confidence interval"
+    "text": "Obtaining bootstrap confidence interval\n\n\nSection A 90% confidence interval for \\(p_{A}\\): (0.3, 0.8)\nSection B 90% confidence interval for \\(p_{B}\\): (0.5, 0.9)"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html",
@@ -2531,7 +2531,7 @@
     "href": "slides/slides-12-bootstrap_ci.html#remarks",
     "title": "Bootstrap Confidence Intervals",
     "section": "Remarks",
-    "text": "Remarks\n\nWhat is a virtue of a “good” confidence interval?"
+    "text": "Remarks\n\n\nWhat is a virtue of a “good” confidence interval?\n\n\nHow do you expect the interval to change as the original sample size \\(n\\) changes?\nHow do you expect the interval to change as level of confidence \\(\\gamma\\) changes?\n\nOnce again, relies on a representative original sample!"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#your-turn",
@@ -2559,6 +2559,83 @@
     "href": "live_code/bootstrap_dist.html",
     "title": "Bootstrap distribution",
     "section": "",
-    "text": "library(tidyverse)\n# our original sample\nx_orig <- c(1, 1, 1, 0, 1)\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 1000\n\n# vector to store bootstrap statistics. Starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\nfor(b in 1:B){\n  x_boot <- sample(x = x_orig, size = n, replace = TRUE)\n  bootstrap_props[b] <- mean(x_boot)\n}\n\n# visualize\ndata.frame(props = bootstrap_props) |>\n  ggplot(aes(x = props))+\n  geom_histogram(binwidth =  0.2 ) +\n  labs(title = \"Bootstrap distribution of sample proportions\")"
+    "text": "library(tidyverse)\n# our original sample\nx_orig <- c(1, 1, 1, 0, 1)\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 1000\n\n# vector to store bootstrap statistics. Starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\nfor(b in 1:B){\n  # resample\n  x_boot <- sample(x = x_orig, size = n, replace = TRUE)\n  \n  # calculate and store bootstrap statistic\n  bootstrap_props[b] <- mean(x_boot)\n}\n\n# visualize\ndata.frame(props = bootstrap_props) |>\n  ggplot(aes(x = props))+\n  geom_histogram(binwidth =  0.2 ) +\n  labs(title = \"Bootstrap distribution of sample proportions\")"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#why-bootstrap",
+    "href": "slides/slides-12-bootstrap_ci.html#why-bootstrap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Why bootstrap?",
+    "text": "Why bootstrap?\n\nSample distribution describes how statistic behaves under repeated sampling from population\nLet’s continue with the data collected from our activity.\n\nI repeatedly take SRS of \\(n=5\\) values from the population and calculate \\(\\hat{p}\\). Sampling distribution of \\(\\hat{p}\\) is as follows:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTaking new samples each time is costly! Bootstrap distribution is an approximation of the sampling distribution of the statistic"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-procedure-recap",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-procedure-recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap procedure recap",
+    "text": "Bootstrap procedure recap\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\vec{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\vec{x}\\). Call this set of resampled data \\(\\vec{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\vec{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-distribution-from-activity",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-distribution-from-activity",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap distribution from activity",
+    "text": "Bootstrap distribution from activity\n\n\n\nWe have the following bootstrap distribution of sample proportions, obtained from \\(B=\\) 5000 iterations:"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#bootstrap-dist.-continued",
+    "href": "slides/slides-12-bootstrap_ci.html#bootstrap-dist.-continued",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap dist. continued",
+    "text": "Bootstrap dist. continued\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice where the bootstrap distribution is centered\nWhat do we do with the bootstrap distribution?"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#answering-estimation-question",
+    "href": "slides/slides-12-bootstrap_ci.html#answering-estimation-question",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Answering estimation question",
+    "text": "Answering estimation question\nRecall our research question: What proportion of STAT 201A/STAT 201B students get at least 7 hours of sleep a night?\n\nCould respond using our single point estimate: \\(\\hat{p}_{A} = 0.6\\) or \\(\\hat{p}_{B} = 0.7\\)\nBut due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter\nRather than report a single number, why not report a range of values?\n\n\nThis is possible only if we have a distribution to work with!!"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#recap",
+    "href": "slides/slides-12-bootstrap_ci.html#recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Recap",
+    "text": "Recap\n\nSampling distribution describes how statistic behaves under repeated sampling from population\nLet’s return to the data collected from our activity.\n\nI will repeatedly take SRS of \\(n=10\\) values from the population (call this \\(\\vec{x}\\)) and calculate \\(\\hat{p}\\). Sampling distribution of \\(\\hat{p}\\) is as follows:"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals",
+    "href": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Comparing confidence intervals",
+    "text": "Comparing confidence intervals\nComparing changes in \\(\\gamma \\times 100\\) % CI for sample sizes: \\(n = 5\\), \\(n = 10\\), and \\(n = 17\\):\n\n\n\n\n\n\n\n\n\n\n\nWhat do you notice?\n\n\n\n\n\nSection A\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.2, 1)\n\n\nn = 10\n(0.3, 0.8)\n\n\nn = 17\n(0.41, 0.76)\n\n\n\n\n\n\nSection B\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.4, 1)\n\n\nn = 10\n(0.5, 0.9)\n\n\nn = 17\n(0.53, 0.88)"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals-1",
+    "href": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals-1",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Comparing confidence intervals",
+    "text": "Comparing confidence intervals\nWhat do you think happens as we increase \\(\\gamma\\) from \\(0\\) to \\(1\\)?\n\nYour turn to try!"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals-cont.",
+    "href": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals-cont.",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Comparing confidence intervals (cont.)",
+    "text": "Comparing confidence intervals (cont.)\nYou will investigate what happens as we move \\(\\gamma\\) between \\(0\\) to \\(1\\)!"
+  },
+  {
+    "objectID": "slides/slides-12-bootstrap_ci.html#live-code-your-turn",
+    "href": "slides/slides-12-bootstrap_ci.html#live-code-your-turn",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Live code + your turn!",
+    "text": "Live code + your turn!\n\nLive code:\n\nin-line code\n\nYou will investigate what happens as we move \\(\\gamma\\) between \\(0\\) to \\(1\\)!"
+  },
+  {
+    "objectID": "coding_practice/coding-practice-12-bootstrap.html",
+    "href": "coding_practice/coding-practice-12-bootstrap.html",
+    "title": "Bootstrap confidence intervals",
+    "section": "",
+    "text": "We will work with the average hours of sleep each class reported. In the following code chunk, please delete the line of code that does not correspond to your section.\n\nlibrary(tidyverse)\nlibrary(readr)\n\n# SECTION A DATA\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/sectionA_week4_sleep.csv\"\n\n# SECTION B DATA \nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/sectionB_week4_sleep.csv\"\n\n\nsleep <- read_csv(url_file)\n\nWe will intialize a pseudo-random-number-generator using the set.seed() function. You can choose any whole number to input as the parameter to this function. If I have the same seed and code and you, then I can reproduce the same random results.\n\nset.seed(201)\n\n\nCreate a variable that represents and stores the target sample size: 10. Then, take a random sample of size 10 of sleep hours from our population. Store your sample into a variable called x.\n\n\n# create a variable for sample size\n\n# obtain and store our sample\n\n\nWe will take 5000 bootstrap iterations. Store this value as a variable for reproducibility.\n\n\n# store number of bootstrap iterations\n\n\nObtain a bootstrap distribution of sample means using your original sample. Remember to store the bootstrap statistics somewhere! Please use a meaningful variable name. It may be useful to look at and modify the live code from previous class (on website)\n\n\n\n\n\nThe quantile() function obtains percentiles for us. It requires two arguments: a numeric vector and a percentile level (between 0 and 1). For example, quantile(x, 0.5) finds the 50-th percentile of the vector x.\n\nUsing this function, obtain the bounds for a 80%, 90%, and 99% bootstrap confidence interval, respectively. Store these bounds as variables.\n\n# 80%\n\n# 90%\n\n# 99%\n\n\nReport the three confidence intervals here in the format of (lower, upper) using in-line code.\n\n80% CI:\n90%: CI:\n99% CI:\n\nHow do the confidence interval widths change as the level of confidence increases?\n\nAnswer:\n\nInterpret one of your confidence intervals in context. Use in-line code in your answer.\n\nAnswer:"
   }
 ]

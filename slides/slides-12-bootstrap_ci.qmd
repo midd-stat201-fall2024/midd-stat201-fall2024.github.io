@@ -1,6 +1,6 @@
 ---
 title: "Bootstrap Confidence Intervals"
-date: "October 7, 2024"
+date: "October 9, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -27,9 +27,81 @@ knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
 library(readr)
 plot_theme <- theme(text = element_text(size = 24))
+
+get_bootstrap <- function(x, n, B, stat){
+  bootstrap_stats <- rep(NA, B)
+  for(b in 1:B){
+    # resample
+    x_boot <- sample(x = x, size = n, replace = TRUE)
+    # calculate and store bootstrap statistic
+    if(stat %in% c("mean", "prop")){
+      bootstrap_stats[b] <- mean(x_boot)
+    }
+  }
+  bootstrap_stats
+}
 ```
 
+## Recap
+
+-   Sampling distribution describes how statistic behaves under repeated sampling from population
+-   Let's return to the data collected from our activity.
+    -   I will repeatedly take SRS of $n=10$ values from the population (call this $\vec{x}$) and calculate $\hat{p}$. Sampling distribution of $\hat{p}$ is as follows:
+
+```{r}
+set.seed(1)
+pop_a <- c(rep(1, 12), rep(0, 8)); mu_a <- mean(pop_a)
+pop_b <- c(rep(1,18), rep(0, 8)); mu_b <- mean(pop_b)
+n <- 10
+G <- 5000
+prop_a <- prop_b <- rep(NA, G)
+for(i in 1:G){
+  prop_a[i] <- mean(sample(pop_a, n, replace = F))
+  prop_b[i] <- mean(sample(pop_b, n, replace = F))
+}
+```
+
+::: {.fragment}
+::::: columns
+::: {.column width="50%"}
+```{r fig.height = 6}
+df_a <- data.frame(props = prop_a)
+col <- "purple"
+ggplot(df_a, aes(x = props)) +
+  geom_histogram(bins = 6, col = "white") +
+  labs(title = "Sampling dist. of sample proportions",
+       subtitle = "STAT 201A",
+       x = "Proportion",
+       caption = paste(col, "line = true proportion"))+
+  theme(text = element_text(size = 30)) +
+  scale_x_continuous(breaks = seq(0,1,0.2)) +
+  geom_vline(xintercept = mu_a, col = col, size = 3)
+```
+:::
+
+::: {.column width="50%"}
+```{r fig.height = 6}
+df_b <- data.frame(props = prop_b)
+ggplot(df_b, aes(x = props)) +
+  geom_histogram(bins = 6, col = "white") +
+  labs(title = "Sampling dist. of sample proportions",
+       subtitle = "STAT 201B",
+       x = "Proportion",
+       caption = paste(col, "line = true proportion")) +
+  theme(text = element_text(size = 30)) +
+  scale_x_continuous(breaks = seq(0,1,0.2)) +
+  geom_vline(xintercept = mu_b, col = col, size = 3)
+```
+:::
+:::::
+
+:::
+
 ## Bootstrap recap
+
+Taking new samples each time is costly! Bootstrap distribution is an *approximation* of the sampling distribution of the statistic!
+
+Procedure:
 
 1.  Assume we have a sample $x_{1}, x_{2}, \ldots, x_{n}$ from the population. Call this sample $\vec{x}$. Note the sample size is $n$
 2.  Choose a large number $B$. For $b$ in $1,2, \ldots, B$:
@@ -40,37 +112,101 @@ plot_theme <- theme(text = element_text(size = 24))
 At the end of this procedure, we will have a distribution of **resample or bootstrap statistics**
 :::
 
-## Confidence intervals
-
--   Due to variability, we recognize that point estimate will rarely (if ever) equal population parameter
-
--   Rather than report a single number, why not report a range of values?
-
-    -   Analogy: would you rather go fishing with a single pole or a large net?
-
-    -   A range of plausible values gives us a good chance at capturing the parameter
-
--   A confidence interval provides such a range of values (more rigorous definition coming soon)
-
-    -   Specifies a lower and upper bound
-
-## Bootstrap distribution
+## Bootstrap distribution from activity
 
 ```{r}
 B <- 5000
 ```
 
-Let's continue with the data collected from our activity. We have the following bootstrap distribution of sample means, obtained from $B=$ `r B` iterations:
+We have the following bootstrap distribution of sample proportions, obtained from $B=$ `r B` iterations:
 
-```{r}
+```{r echo = F}
+n_a <- n_b <- n
+x_a <- sample(pop_a, n_a)
+x_b <- sample(pop_b, n_b)
 # bootstrap dist of sample means
 ```
 
--   Where is the bootstrap distribution centered?
+::::: columns
+::: {.column width="50%"}
+```{r fig.height = 8}
+bootstrap_props_a <- get_bootstrap(x_a, n_a, B, "prop")
+df_a <- data.frame(props = bootstrap_props_a)
+p_a <- ggplot(df_a, aes(x = props)) +
+  geom_histogram(bins = 6, col = "white") +
+  labs(title = "Bootstrap dist. of sample proportions",
+       subtitle = "STAT 201A",
+       x = "Proportion") +
+  theme(text = element_text(size = 32)) +
+  scale_x_continuous(breaks = seq(0,1,0.2))
+```
+:::
+
+::: {.column width="50%"}
+```{r fig.height=8}
+bootstrap_props_b <- get_bootstrap(x_b, n_b, B, "prop")
+
+df_b <- data.frame(props = bootstrap_props_b)
+p_b <- ggplot(df_b, aes(x = props)) +
+  geom_histogram(binwidth = 0.2, col = "white") +
+  labs(title = "Bootstrap dist. of sample proportions",
+       subtitle = "STAT 201B",
+       x = "Proportion")+
+  theme(text = element_text(size = 32))+
+  scale_x_continuous(breaks = seq(0,1,0.2))
+```
+:::
+:::::
+
+## Bootstrap dist. continued
+
+::::: columns
+::: {.column width="50%"}
+```{r fig.height = 8}
+col <- "pink"
+p_a +
+  geom_vline(xintercept = mean(x_a), col = col, size = 3) +
+  labs(caption = paste0(col, " line = observed proportion"))
+```
+:::
+
+::: {.column width="50%"}
+```{r fig.height=8}
+col <- "pink"
+p_b +
+  geom_vline(xintercept = mean(x_b), col = col, size = 3) +
+  labs(caption = paste0(col, " line = observed proportion"))
+```
+:::
+:::::
+
+-   Notice where the bootstrap distribution is centered
+-   What do we do with the bootstrap distribution?
+
+## Answering estimation question
+
+Recall our research question: What proportion of STAT 201A/STAT 201B students get at least 7 hours of sleep a night?
+
+-   Could respond using our single point estimate: $\hat{p}_{A} = `r mean(x_a)`$ or $\hat{p}_{B} = `r mean(x_b)`$
+-   But due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter
+-   Rather than report a single number, why not report a range of values?
+    -   ::: {style="color: maroon"}
+        This is possible only if we have a distribution to work with!!
+        :::
+
+## Confidence intervals
+
+-   Analogy: would you rather go fishing with a single pole or a large net?
+
+    -   A range of plausible values gives us a better chance at capturing the parameter
+
+-   A confidence interval provides such a range of values (more rigorous definition coming soon)
+
+    -   "Interval" = we specify a lower bound and an upper bound
+
+    -   Confidence intervals are not unique! Depending on the method you use, you might get different intervals
 
 ## Bootstrap percentile interval
-
--   Confidence intervals are not unique! Depending on the method you use, you might get different intervals
 
 -   The $\gamma \times 100$% **bootstrap percentile interval** is obtained by finding the bounds of the middle $\gamma \times 100$% of the bootstrap distribution
 
@@ -80,7 +216,7 @@ Let's continue with the data collected from our activity. We have the following 
 
 -   Called "percentile interval" because the bounds are the $(1-\gamma)/2$ and $(1+\gamma)/2$ percentiles of the bootstrap distribution
 
-    -   e.g. if $\gamma = 0.90$, then the bounds would be $(1-0.90)/2 = 0.05$ and $(1+0.90)/2 = 0.95$ percentiles
+    -   e.g. if $\gamma = 0.80$, then the bounds would be $(1-0.80)/2 = 0.10$ and $(1+0.80)/2 = 0.90$ percentiles
 
 -   For our purposes, "bootstrap confidence interval" will be equivalent to "bootstrap percentile interval"
 
@@ -88,11 +224,36 @@ Let's continue with the data collected from our activity. We have the following 
 
 ```{r}
 # data frame containing our bootstrap statistics
+gamma <- 0.9
+df_temp <- rbind(mutate(df_a, section = "Section A"),
+      mutate(df_b, section = "Section B"))
+bounds <- df_temp |>
+  group_by(section) |>
+  summarise(lb = quantile(props, (1-gamma)/2), ub = quantile(props, (1+gamma)/2)) |>
+  ungroup() |>
+  data.frame()
+
+df_temp |>
+  ggplot(aes(x = props)) +
+  geom_histogram(binwidth = 0.1, col = "white")+
+  facet_wrap( ~ section) +
+  geom_vline(data = bounds, mapping = aes(xintercept = lb), col = "orange",
+             size = 2)+
+  geom_vline(data = bounds, mapping = aes(xintercept = ub), col = "orange",
+             size = 2)+
+  scale_x_continuous(breaks = seq(0,1,0.2)) +
+  labs(caption = paste0("orange lines denote ",gamma*100, "% bootstrap CI"), x = "proportion")+
+  theme(text = element_text(size = 24))
+
 ```
+
+-   Section A `r gamma*100`% confidence interval for $p_{A}$: (`r bounds[1,]$lb`, `r bounds[1,]$ub`)
+
+-   Section B `r gamma*100`% confidence interval for $p_{B}$: (`r bounds[2,]$lb`, `r bounds[2,]$ub`)
 
 ## Interpreting a confidence interval
 
--   Our \_\_% confidence intervals is: . Does this mean there is a \_\_\_% chance/probability that the true mean lies in the interval?
+-   Our `r gamma*100`% confidence interval is: (`r bounds[1,]$lb`, `r bounds[1,]$ub`) or (`r bounds[2,]$lb`, `r bounds[2,]$ub`). Does this mean there is a `r gamma*100`% chance/probability that the true proportion lies in the interval?
 
     -   ::: {style="color: maroon"}
         Answer: NO
@@ -100,9 +261,11 @@ Let's continue with the data collected from our activity. We have the following 
 
 -   Remember: bootstrap distribution is based on our original sample
 
-    -   If we started with a different original sample, then maybe our estimated \_\_\_% confidence interval would have also been different
+    -   If we started with a different original sample $\vec{x}$, then our estimated `r gamma*100`% confidence interval would also be different
 
--   What a confidence interval represents (CI): if we take many independent repeated samples from this population using the same method and calculate a $\gamma \times 100$ % CI for the parameter in the exact same way, then we would *expect* $\gamma \times 100$ % of these intervals to contain the parameter
+-   ::: {style="color: maroon"}
+    What a confidence interval (CI) represents: if we take many independent repeated samples from this population using the same method and calculate a $\gamma \times 100$ % CI for the parameter in the exact same way, then in theory, $\gamma \times 100$ % of these intervals should capture/contain the parameter
+    :::
 
     -   $\gamma$ represents the long-run proportion of CIs that theoretically contain the true parameter
 
@@ -116,8 +279,93 @@ Let's continue with the data collected from our activity. We have the following 
         Interpret our bootstrap CI in context
         :::
 
+    -   Again: why is this interpretation **incorrect**? "There is a `r gamma*100`% chance/probability that the true parameter value lies in the interval."
+
 ## Remarks
 
--   What is a virtue of a "good" confidence interval?
+-   ::: discuss
+    What is a virtue of a "good" confidence interval?
+    :::
 
-## Your turn!
+-   ::: discuss
+    How do you expect the interval to change as the original sample size $n$ changes?
+
+    How do you expect the interval to change as level of confidence $\gamma$ changes?
+    :::
+    
+- Once again, relies on a representative original sample! 
+
+## Comparing confidence intervals
+
+Comparing changes in $\gamma \times 100$ % CI for sample sizes: $n = 5$, $n = 10$, and $n = 17$:
+
+```{r}
+n2 <- 17
+n1 <- 5
+df_all <- rbind(mutate(df_a, n = n_a, section = "A"), 
+                mutate(df_b, n = n_b, section = "B"),
+                data.frame(props = get_bootstrap(x_a, n2, B, "prop"), n = n2, section = "A"),
+                data.frame(props = get_bootstrap(x_a, n1, B, "prop"), n = n1, section = "A"),
+                data.frame(props = get_bootstrap(x_b, n2, B, "prop"), n = n2, section = "B"),
+                data.frame(props = get_bootstrap(x_b, n1, B, "prop"), n = n1, section = "B")) |>
+  mutate(n_lab = paste0("n = ", n)) |>
+    mutate(n_lab = factor(n_lab, levels = paste0("n = ", sort(c(n2,n1,n_a)))))
+
+
+bounds <- df_all |>
+  group_by(n_lab, section) |>
+  summarise(lb = quantile(props, (1-gamma)/2), ub = quantile(props, (1+gamma)/2))  |>
+  ungroup() |>
+  data.frame()
+
+
+```
+
+::::: columns
+::: {.column width="70%"}
+```{r fig.height=6}
+df_all |>
+  ggplot(aes(x = props)) +
+  geom_histogram(binwidth = 0.1, col = "white")+
+  facet_grid( n_lab ~ section) +
+  geom_vline(data = bounds, mapping = aes(xintercept = lb), col = "orange", size = 2)+
+  geom_vline(data = bounds, mapping = aes(xintercept = ub), col = "orange",
+             size = 2)+
+  scale_x_continuous(breaks = seq(0,1,0.2)) +
+  theme(text = element_text(size = 25)) +
+    labs(caption = paste0("orange lines denote ",gamma*100, "% bootstrap CI"), x = "proportion")
+```
+
+::: {.discuss}
+What do you notice?
+:::
+
+:::
+
+::: {.column width="30%"}
+```{r}
+bounds |>
+  filter(section == "A") |>
+  rename("n" = n_lab)|>
+  mutate(interval = paste0("(", round(lb, 2), ", ", round(ub, 2), ")")) |>
+  select(n, interval) |>
+  kableExtra::kable(caption = "Section A" )
+  
+bounds |>
+  filter(section == "B") |>
+  rename("n" = n_lab)|>
+  mutate(interval = paste0("(", round(lb, 2), ", ", round(ub, 2), ")"))|>
+  select(n, interval) |>
+  kableExtra::kable(caption = "Section B" )
+```
+:::
+:::::
+
+
+## Live code + your turn!
+
+-   Live code:
+
+    -   in-line code
+
+-   You will investigate what happens as we move $\gamma$ between $0$ to $1$!

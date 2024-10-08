@@ -1,0 +1,77 @@
+---
+title: "Bootstrap confidence intervals"
+author: "Your name"
+date: "Due: 10/14/24 at 11:59pm"
+output: html_document
+---
+
+We will work with the average hours of sleep each class reported. In the following code chunk, please delete the line of code that does not correspond to your section.
+
+```{r message=FALSE}
+library(tidyverse)
+library(readr)
+
+# SECTION A DATA
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/sectionA_week4_sleep.csv"
+
+# SECTION B DATA 
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/sectionB_week4_sleep.csv"
+
+
+sleep <- read_csv(url_file)
+```
+
+We will intialize a pseudo-random-number-generator using the `set.seed()` function. You can choose any whole number to input as the parameter to this function. If I have the same seed and code and you, then I can reproduce the same random results.
+
+```{r}
+set.seed(201)
+```
+
+1.  Create a variable that represents and stores the target sample size: 10. Then, take a random sample of size 10 of sleep hours from our population. Store your sample into a variable called `x`.
+
+```{r}
+# create a variable for sample size
+
+# obtain and store our sample
+
+```
+
+2.  We will take 5000 bootstrap iterations. Store this value as a variable for reproducibility.
+
+```{r}
+# store number of bootstrap iterations
+```
+
+3.  Obtain a bootstrap distribution of sample means using your original sample. *Remember to store the bootstrap statistics somewhere! Please use a meaningful variable name.* It may be useful to look at and modify the live code from previous class (on website)
+
+```{r}
+
+```
+
+4.  The `quantile()` function obtains percentiles for us. It requires two arguments: a numeric vector and a percentile level (between 0 and 1). For example, `quantile(x, 0.5)` finds the 50-th percentile of the vector `x`.
+
+Using this function, obtain the bounds for a 80%, 90%, and 99% bootstrap confidence interval, respectively. Store these bounds as variables.
+
+```{r}
+# 80%
+
+# 90%
+
+# 99%
+```
+
+5. Report the three confidence intervals here in the format of (lower, upper) *using in-line code*. 
+
+80% CI:
+
+90%: CI:
+
+99% CI: 
+
+6.  How do the confidence interval widths change as the level of confidence increases?
+
+**Answer:**
+
+7.  Interpret one of your confidence intervals in context. *Use in-line code in your answer.*
+
+**Answer:**
