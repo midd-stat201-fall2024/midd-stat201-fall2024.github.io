@@ -8,9 +8,11 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 ## Announcements
 
--   [Midterm 1](midterms.qmd) details announced!
+-   Week 6 modified office hours:
 
-    -   Remember: Friday office hours switched to Wednesday 3-4pm
+    -   Monday 10/14: 2-3pm only
+
+    -   Friday 10/18: 10:30am-12:00pm
 
 ------------------------------------------------------------------------
 
