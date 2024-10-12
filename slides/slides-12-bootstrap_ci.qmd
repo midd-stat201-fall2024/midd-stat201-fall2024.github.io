@@ -121,6 +121,7 @@ B <- 5000
 We have the following bootstrap distribution of sample proportions, obtained from $B=$ `r B` iterations:
 
 ```{r echo = F}
+# set.seed(1)
 n_a <- n_b <- n
 x_a <- sample(pop_a, n_a)
 x_b <- sample(pop_b, n_b)

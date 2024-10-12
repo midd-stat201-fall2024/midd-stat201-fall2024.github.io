@@ -1,0 +1,363 @@
+---
+title: "Introduction to Hypothesis Testing"
+date: "October 14, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+-   Office hours change this week
+-   Mid-semester feedback survey results
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(readr)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+
+get_bootstrap <- function(x, n, B, stat){
+  bootstrap_stats <- rep(NA, B)
+  for(b in 1:B){
+    # resample
+    x_boot <- sample(x = x, size = n, replace = TRUE)
+    # calculate and store bootstrap statistic
+    if(stat %in% c("mean", "prop")){
+      bootstrap_stats[b] <- mean(x_boot)
+    }
+  }
+  bootstrap_stats
+}
+```
+
+## Testing
+
+We are now entering into second branch of inference-related tasks: testing.
+
+-   We have some "claim"/question about the target population, and we use sampled data to provide evidence for or against the claim/question.
+
+-   Especially important in experiments where we want to learn the effect of some new drug
+
+-   We will use the *hypothesis testing framework* to formalize the process of making decisions about research claims.
+
+    -   Because claim is about target population, we will almost always formulate claims in terms of population parameters
+
+    -   Then we use sample statistics to provide the evidence for/against
+
+## Step 1: Define hypotheses
+
+A **hypothesis test** is a statistical technique used to evaluate competing claims using data
+
+-   We define hypotheses to translate our research question/claim into statistical notation
+
+-   We always define two hypotheses *in context*: a null hypothesis and an alternative hypothesis
+
+-   **Null hypothesis** $H_{0}$: the hypothesis that represents "business as usual"/status quo/nothing unusual or noteworthy
+
+-   **Alternative hypothesis** $H_{A}$: claim the researchers want to demonstrate
+
+::: fragment
+It will not always be obvious what $H_{0}$ should be, but you will develop intuition for this over time!
+:::
+
+## Defining hypotheses in context
+
+Research question: do the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep?
+
+-   Define $p$ as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average
+
+<!-- -->
+
+-   $H_{0}$: $p \geq 0.5$
+
+-   $H_{A}$: $p < 0.5$
+
+## Step 2: Collect and summarize data
+
+Suppose I collect a sample of $n= 10$ students from each class:
+
+```{r}
+n <- 10
+pop_a <- c(rep(1, 12), rep(0, 8));
+x_a <- c(1, 1, 0, 1, 0, 1, 1, 1, 0, 0); p_a <- mean(x_a)
+pop_b <- c(rep(1,18), rep(0, 8)); 
+x_b <- c(1, 1, 1, 1, 1, 0, 0, 0, 1, 1); p_b <- mean(x_b)
+```
+
+::::: columns
+::: {.column width="50%"}
+In STAT 201A sample: `r sum(x_a == 1)` students received at least 7 hours of sleep, and `r sum(x_a == 0)` received less than 7 hours
+
+-   Sample statistic: $\hat{p}$: `r round(p_a,2)`
+:::
+
+::: {.column width="50%"}
+In STAT 201B sample: `r sum(x_b == 1)` students received at least 7 hours of sleep, and `r sum(x_b == 0)` received less than 7 hours
+
+-   Sample statistic: $\hat{p}$: `r round(p_b, 2)`
+:::
+:::::
+
+-   ::: discuss
+    Are we prepared to answer our research question based on this evidence?
+    :::
+
+-   Due to variability in data and $\hat{p}$ we should ask: do the data provide ***convincing evidence*** that the majority of students get at least 7 hours of sleep?
+
+## Step 3: Determine if we have "convincing evidence"
+
+"Convincing evidence" for us means that it would be [highly unlikely]{.underline} to observe the data we did (or data even more extreme) ***if*** $H_{0}$ were true!
+
+-   We will calculate a **p-value**: the probability of observing data as or more extreme than we did *assuming* $H_{0}$ true
+
+    -   Note: p is not the same as true proportion $p$!
+
+-   [Highly unlikely]{.underline} is vague and needs to defined by the researcher, ideally before seeing data.
+
+    -   If we want to answer the research question with a binary yes/no, we need some threshold to compare the p-value to. This is called a **significance level** $\alpha$
+
+    -   Common choices are $\alpha = 0.05$, $\alpha = 0.01$ (more on this later)!
+
+-   For our example, we will choose $\alpha = 0.05$
+
+## How to obtain p-value?
+
+-   How to obtain this probability? It depends!
+
+    -   Option 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)
+
+    -   Option 2: if we don't want to make assumptions, why not apply the bootstrap technique and simulate?
+
+        -   We will call this option "simulating under $H_{0}$"
+
+-   ::: {style="color: maroon"}
+    This is the step that requires the most "work", and what exactly you do will depend on the the type of data and the research question/claim you have
+    :::
+
+-   Remark: hypothesis tests, like confidence intervals, are not unique!
+
+## Simulating under $H_{0}$ (step 3 cont.)
+
+-   We have to simulate our data under the assumption that $H_{0}$ is true (recall $H_0$: $p \leq 0.5$)
+
+-   Imagine a big bowl of marbles with orange and blue marbles.
+
+    -   Orange marbles = people who got at least 7 hours
+
+    -   Blue marbles = people who got less than 7 hours
+
+-   What proportion of the marbles in the bowl should be orange vs blue?
+
+    -   **To simulate under** $H_{0}$, no more than 50% of the marbles should be orange.
+
+        -   We want convincing evidence even in the most "borderline" case, so we will choose 50% of the marbles to be orange.
+
+-   This resulting bowl of marbles is our **null distribution**: what the population would look like if $H_{0}$ were true
+
+## Simulating under $H_{0}$ (step 3 cont.)
+
+-   We now replicate our original sample, this time sampling from this null distribution
+
+    -   We repeatedly take samples from the null distribution, using original sample size $n =$ `r n`
+
+    -   For each sample, calculate the simulated proportion of orange marbles, $\hat{p}_{sim}$
+
+::: fragment
+```{r echo = T}
+set.seed(2)
+B <- 5000
+n <- 10
+p_null_vec <- rep(NA, B)
+for(b in 1:B){
+  null_samp <- sample(c("orange", "blue"), size = n, replace = T, prob = c(0.5, 0.5))
+  p_null_vec[b] <- sum(null_samp == "orange")/n
+}
+```
+:::
+
+-   Let's talk about what we're doing in lines 6 and 7!
+
+## Null distribution of statistic
+
+Repeating this many times, we can visualize the distribution of $\hat{p}_{sim}$ assuming $H_{0}$ true:
+
+```{r}
+null_dist <- data.frame(p_null = p_null_vec) |>
+  ggplot(aes(x = p_null)) +
+  geom_histogram(binwidth = 0.1,col = "white")+
+  scale_x_continuous(breaks = seq(0,1,0.1)) +
+  labs(x = "Null distribution for sample proportion") +
+  theme(text = element_text(size = 25))
+null_dist 
+```
+
+-   The resulting distribution is the called the **null distribution** for the particular sample statistic
+
+-   ::: discuss
+    Where is the null distribution of $\hat{p}$ centered? Why does that "make sense"?
+    :::
+
+## Comparing null to observed
+
+Let's return to our original goal of Step 3! We need to find the **p-value**: the probability of observing data as or more extreme as ours, assuming $H_{0}$ were true.
+
+-   Our observed data were $\hat{p} =$ `r p_a` (STAT 201A) or $\hat{p} =$ `r p_b` (STAT 201B)
+
+-   $H_{0}$: $p \leq 0.5$ and $H_{A}$: $p > 0.5$
+
+-   ::: discuss
+    What does "as or more extreme" mean in this context?
+
+    How can we use the null distribution to obtain this probability?
+    :::
+
+:::::: fragment
+::::: columns
+::: {.column width="50%"}
+```{r}
+null_dist +
+  labs(title = "Section A",caption = "pink line = observed sample proportion") +
+  geom_vline(xintercept = p_a, col = "pink", size = 2)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+null_dist +
+  labs(title = "Section B", caption = "pink line = observed sample proportion") +
+  geom_vline(xintercept = p_b, col = "pink", size = 2)
+```
+:::
+:::::
+::::::
+
+## Obtain p-value (step 3 cont.)
+
+We can directly obtain the p-value using our null distribution and observed $\hat{p}$!
+
+-   We find the proportion of simulated sample proportions that were "as or more extreme" as our observed proportion of $\hat{p} =$ `r p_a` or $\hat{p} =$ `r p_b`
+
+:::::: fragment
+::::: columns
+::: {.column width="50%"}
+```{r}
+data.frame(p_null = p_null_vec) |>
+  mutate(greater = p_null >= p_a) |>
+  ggplot(aes(x = p_null, fill = greater)) +
+  geom_histogram(binwidth = 0.1,col = "white", alpha = 0.5)+
+  scale_x_continuous(breaks = seq(0,1,0.1)) +
+  labs(x = "Null distribution for sample proportion") +
+  theme(text = element_text(size = 25)) +
+  labs(title = "Section A") +
+  # geom_vline(xintercept = p_a, col = "pink", size = 2) +
+  scale_fill_manual(values = c("grey30", "pink"))+
+  guides(fill = "none")
+
+p_val_a <- sum(p_null_vec >= p_a)/B
+```
+
+-   Out of `r B` replications, we saw `r sum(p_null_vec >= p_a)` instances $\hat{p}_{sim} \geq \hat{p}$
+-   p-value is $\frac{ `r sum(p_null_vec >= p_a)`}{`r B`} \approx$ `r round(p_val_a, 2)`
+:::
+
+::: {.column width="50%"}
+```{r}
+data.frame(p_null = p_null_vec) |>
+  mutate(greater = p_null >= p_b) |>
+  ggplot(aes(x = p_null, fill = greater)) +
+  geom_histogram(binwidth = 0.1,col = "white", alpha = 0.5)+
+  scale_x_continuous(breaks = seq(0,1,0.1)) +
+  labs(x = "Null distribution for sample proportion") +
+  theme(text = element_text(size = 25)) +
+  labs(title = "Section B") +
+  # geom_vline(xintercept = p_b, col = "pink", size = 2) +
+  scale_fill_manual(values = c("grey30", "pink"))+
+  guides(fill = "none")
+
+p_val_b <- sum(p_null_vec >= p_b)/B
+```
+
+-   Out of `r B` replications, we saw `r sum(p_null_vec >= p_b)` instances of $\hat{p}_{sim} \geq \hat{p}$
+-   p-value is $\frac{ `r sum(p_null_vec >= p_b)`}{`r B`} \approx$ `r round(p_val_b, 2)`
+:::
+:::::
+::::::
+
+## Step 4: Interpret p-value and make decision
+
+1.  Interpret the p-value in context
+
+    -   ::: discuss
+        Assuming $H_{0}$ true, the probability of observing a sample proportion as or more extreme as ours (`r p_a` or `r p_b`) is `r round(p_val_a, 2)` or `r round(p_val_b, 2)`
+        :::
+
+2.  Make a decision about research claim/question by comparing p-value to significance level $\alpha$
+
+    -   If p-value $< \alpha$, we *reject* $H_{0}$ (it was highly unlikely to observe our data given our selected threshold)
+
+    -   If p-value $\geq \alpha$, we *fail to reject* $H_{0}$ (we did not have enough evidence against the null)
+
+        -   ::: {style="color: maroon"}
+            Note: we never "accept $H_{A}$"!
+            :::
+
+    -   ::: discuss
+        Since our p value is less than $\alpha = 0.05$, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep.
+        :::
+
+## Summary of testing framework
+
+Four steps for hypothesis test:
+
+1.  Define null and alternative hypotheses $H_{0}$ and $H_{A}$ in context
+2.  Collect data and set significance level $\alpha$
+3.  Obtain p-value by modeling randomness that would occur if the $H_{0}$ were true
+    -   We did this using by simulating under the null distribution
+4.  Interpret p-value and make a decision in context
+
+## Errors in decision
+
+-   In Step 4, we make a decision but it could be wrong! (Unfortunately, we will never know)
+
+-   We always fall into one of the following four scenarios:
+
+::: fragment
+![](figs/13-error_table_empty.png){fig-align="center"}
+:::
+
+-   ::: discuss
+    Identify which cells are good scenarios, and which are bad
+    :::
+
+## Errors in decision
+
+![](figs/13-error_table_filled.png)
+
+-   ::: discuss
+    What kind of error could we have made in our example?
+    :::
+
+-   It is important to weight the consequences of making each type of error!
+
+    -   We have some control in this. How?
+
+## Comprehension questions
+
+-   What are the similarities/differences between the bootstrap distribution of a sample statistic and the simulated null distribution?
+
+-   Do you understand what a p-value represents, and how we obtain it from the null distribution?
+
+-   What role does $\alpha$ play? Why is it important to set $\alpha$ early on?

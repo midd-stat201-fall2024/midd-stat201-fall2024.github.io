@@ -1,0 +1,529 @@
+---
+title: "Hypothesis Testing with Randomization"
+date: "October 14, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+-   Office hours change this week
+-   Mid-semester feedback survey results
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(openintro)
+library(readr)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+
+get_bootstrap <- function(x, n, B, stat){
+  bootstrap_stats <- rep(NA, B)
+  for(b in 1:B){
+    # resample
+    x_boot <- sample(x = x, size = n, replace = TRUE)
+    # calculate and store bootstrap statistic
+    if(stat %in% c("mean", "prop")){
+      bootstrap_stats[b] <- mean(x_boot)
+    }
+  }
+  bootstrap_stats
+}
+```
+
+## Recap
+
+Four steps for hypothesis test:
+
+1.  Define null and alternative hypotheses $H_{0}$ and $H_{A}$ in context
+2.  Collect data and set significance level $\alpha$
+3.  Obtain p-value by modeling randomness that would occur if the $H_{0}$ were true
+    -   We did this using by simulating under the null distribution
+4.  Interpret p-value and make a decision in context
+
+## Where we're going today
+
+-   We will see another kind of hypothesis for different type of research question
+
+-   Hypothesis testing framework is the same, but will change how we obtain null distribution
+
+-   Try to see the big picture
+
+# Test of independence
+
+## Running example: sex discrimination study
+
+-   Note: this study considered sex as binary "male" or "female", and did not take into consideration gender identities
+
+-   Participants in the study were 48 bank supervisors who identified as male and were attending a management institute at UNC in 1972
+
+    -   Each supervisor was asked to assume the role of personnel director of a bank
+
+    -   They were each given a file to judge whether the person in the file should be promoted
+
+    -   The files were identical, except half of them indicated that the candidate was male, and the other half were indicated as female
+
+    -   Files were randomly assigned to bank managers
+
+    -   ::: discuss
+        Experiment or observational study?
+        :::
+
+-   ::: {style="color: maroon"}
+    Research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
+    :::
+
+## Defining hypotheses
+
+::: {style="color: maroon"}
+Research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
+:::
+
+-   ::: discuss
+    What is/are the variables(s) here? What types of variables are they?
+    :::
+
+-   We need to construct hypotheses where $H_{0}$ is "status quo" and $H_{A}$ is the claim researchers have
+
+-   $H_{0}$: the variables `sex` and `decision` are independent.
+
+    -   i.e. any observed difference in promotion rates is due to variability
+
+-   $H_{A}$: the variables `sex` and `decision` are *not* independent, and equally-qualified female personnel are less likely to be promoted than male personnel
+
+## Data
+
+For each of the 48 supervisors, the following were recorded:
+
+-   The sex of the candidate in the file (male/female)
+
+-   The decision (promote/not promote)
+
+```{r}
+sex <- c(rep("male", 24), rep('female', 24))
+decision <- c(rep("promote", 21), rep("not promote", 3), rep("promote", 14), rep("not promote", 10))
+discrimination <- data.frame(sex, decision) 
+
+ct <- discrimination |>
+  group_by(sex, decision) |>
+  summarise(n = n()) |>
+  spread(decision, n) |>
+  ungroup() |>
+  mutate(total = `not promote`+ promote)
+
+ct <- ct |>
+  rbind(c("total", colSums(ct[-1])))
+
+ct <- ct |> 
+  kable() |>
+  column_spec(1, border_right = T)
+ct
+```
+
+-   Are we prepared to answer our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
+
+    -   ::: div
+        What evidence do we have?
+        :::
+
+## Data (cont.)
+
+Conditional probability of getting promoted by sex:
+
+```{r echo = T, eval = F}
+discrimination |>
+  count(sex, decision) |>
+  group_by(sex) |>
+  mutate(cond_prob = n/sum(n)) |>
+  filter(decision == "promote") |>
+  select(-n)
+```
+
+```{r}
+props <- discrimination |>
+  count(sex, decision) |>
+  group_by(sex) |>
+  mutate(cond_prob = n/sum(n)) |>
+  filter(decision == "promote") |>
+  select(-n)
+p_f <- props |>
+  filter(sex == "female") |>
+  pull(cond_prob)
+p_m <- props |>
+  filter(sex == "male") |>
+  pull(cond_prob)
+props
+```
+
+-   Is the observed difference `r p_f - p_m` convincing evidence? We need to examine variability in the data, assuming $H_{0}$ true.
+
+-   Let's set $\alpha = 0.05$
+
+## Simulate under null
+
+-   Simulating under $H_{0}$ means operating in a hypothetical word where `sex` and `decision` are independent.
+
+    -   This means that knowing the `sex` of the candidate should have no bearing on the `decision` to promote or not
+
+-   We will perform a simulation called a **randomization test** where we randomly re-assign `decision` and `sex` outcome pairs to see what would have happened if the bankers' decisions had been independent of `sex`
+
+## Randomization test
+
+```{r}
+ct
+```
+
+-  Write down "promote" on `r sum(decision == "promote")` cards and "not promote" on `r sum(decision == "not promote")` cards
+
+-   Then repeat the following several times:
+
+    -   Thoroughly shuffle these `r length(decision)` cards.
+
+    -   Deal out a stack of `r sum(sex == "male")` cards to represent males, and the remaining `r sum(sex == "female")` cards to represent females
+
+        -   This is how we simulate independence under $H_{0}$
+
+    -   Calculate the proportion of "promote" cards in each stack, $\hat{p}_{m, sim}$ and $\hat{p}_{f, sim}$
+
+    -   Calculate and record the difference $\hat{p}_{f,sim} - \hat{p}_{m,sim}$ (order of difference doesn't matter so long as you are consistent)
+
+## Randomization test (activity)
+
+Try it!
+
+## Randomization test (code)
+
+Let's perform one iteration of the simulation.
+
+```{r echo = T}
+# reproducibility
+set.seed(1)
+n_promote <- sum(discrimination$decision == "promote")
+n_not_promote <- sum(discrimination$decision == "not promote")
+n_female <- sum(discrimination$sex == "female")
+n_male <- sum(discrimination$sex == "male")
+
+# create cards
+cards <- c(rep("promote", n_promote), rep("not promote", n_not_promote))
+
+# shuffle cards
+shuffled <- sample(cards)
+```
+
+```{r}
+df_null <- data.frame(decision = shuffled) |>
+  mutate(sex = c(rep("male", n_male), rep("female", n_female))) 
+
+props_null <- df_null |>
+  count(sex, decision) |>
+  group_by(sex) |>
+  mutate(cond_prob = n/sum(n)) |>
+  filter(decision == "promote") |>
+  pull(cond_prob)
+ct_null <- df_null |>
+  group_by(sex, decision) |>
+  summarise(n = n()) |>
+  spread(decision, n) |>
+  ungroup() |>
+  mutate(total = `not promote`+ promote)
+
+ct_null <- ct_null |>
+  rbind(c("total", colSums(ct_null[-1])))
+
+ct_null <- ct_null |> 
+  kable() |>
+  column_spec(1, border_right = T)
+ct_null
+```
+
+-   Under this simulation, `r props_null[1]` of females were promoted, and `r props_null[2]` of males were promoted. Simulated difference: `r props_null[1] - props_null[2]`
+
+## Null distribution
+
+```{r}
+B <- 300
+props_diff_vec <- rep(NA, B)
+
+for(b in 1:B){
+  shuffled <- sample(cards)
+  males <- shuffled[1:n_male]
+  females <- shuffled[-c(1:n_male)]
+  props_diff_vec[b] <- mean(females == "promote") - mean(males == "promote")
+}
+```
+
+Repeat the previous `r B` times:
+
+```{r fig.height=8}
+null_dist <- data.frame(prop_diff = props_diff_vec)|>
+  mutate(extreme = prop_diff <= (p_f - p_m))
+null_dist |>
+  ggplot(aes(x = prop_diff)) +
+  geom_dotplot(dotsize= 0.3, fill = "grey") +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(x = "Null distribution of difference in promotion rates (female - male)") +
+  theme(text = element_text(size= 20))
+p_val <- mean(null_dist$extreme)
+```
+
+## Obtain p-value
+
+Recall, the observed difference in our data was $\hat{p}_{f} - \hat{p}_{m} =$ `r p_f - p_m`.
+
+-   p-value is probability of observing data as or more extreme than our original data, given $H_{0}$ true.
+
+-   ::: discuss
+    Where does "as or more extreme" correspond to on our plot?
+    :::
+
+:::::: columns
+:::: {.column width="60%"}
+::: fragment
+```{r fig.height = 6.2}
+null_dist |>
+  ggplot(aes(x = prop_diff, fill = extreme)) +
+  geom_dotplot(dotsize= 0.28) +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(x = "Null distribution of difference in promotion rates (female - male)") +
+  theme(text = element_text(size= 24)) +
+  guides(fill = "none") +
+  scale_fill_manual(values = c("grey", "pink"))
+```
+:::
+::::
+
+::: {.column width="40%"}
+-   Out of `r B` simulations under $H_{0}$, `r sum(null_dist$extreme)` resulted in difference in promotion rates as or more extreme than our observed
+-   So the p-value is `r p_val`
+:::
+::::::
+
+## Making conclusion
+
+Our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
+
+-   $H_{0}$: `sex` and `decision` are independent
+-   $H_{A}$: `sex` and `decision` are not independent and equally-qualified female personnel are less likely to get promoted than male personnel by male supervisors
+-   $\alpha = 0.05$
+
+::: discuss
+-   Interpret our p-value in context.
+
+-   Make a decision in response to the research question.
+:::
+
+## Making conclusion (answer)
+
+-   Assuming that `sex` and `decision` are independent, the probability of observing a difference in promotion rates as or more extreme as we did is `r p_val`.
+
+-   Because the observed p-value of `r p_val` is less than our significant level 0.5, we reject $H_{0}$. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.
+
+# Comparing two proportions
+
+## Running example: CPR
+
+An experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:
+
+-   treatment group: receive a blood thinner
+
+-   control group: do not receive a blood thinner
+
+For each patient, the outcome recorded was whether they survived for at least 24 hours.
+
+```{r}
+ct <- cpr |>
+  mutate(group = as.character(group))|>
+  group_by(group, outcome) |>
+  summarise(n = n()) |>
+  spread(outcome, n) |>
+  ungroup() |>
+  mutate(total = survived + died)
+
+ct <- ct |>
+  rbind(c("total", colSums(ct[-1])))
+
+ct <- ct |> 
+  kable() |>
+  column_spec(1, border_right = T)
+ct
+```
+
+-   ::: discuss
+    What is/are the variables(s) here? What types of variables are they?
+    :::
+
+## Defining hypotheses
+
+The researchers are interested in learning if the blood thinner treatment was effective.
+
+::: discuss
+In words, try to determine $H_{0}$ and $H_{A}$.
+:::
+
+-   Let $p_{T}$ and $p_{C}$ denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively
+
+::::: columns
+::: {.column width="33%"}
+-   $H_{0}$: $p_{T} \leq p_{C}$
+
+-   $H_{A}$: $p_{T} > p_{C}$
+:::
+
+::: {.column width="33%"}
+-   $H_{0}$: $p_{T} - p_{C} \leq 0$
+
+-   $H_{A}$: $p_{T} - p_{C}> 0$
+:::
+:::::
+
+## Collect data
+
+Using the data, obtain the observed difference in sample proportions.
+
+```{r}
+ct
+```
+
+:::::: columns
+:::: {.column width="60%"}
+::: fragment
+```{r echo = T}
+p_hat_c <- cpr |>
+  filter(group == "control") |>
+  summarise(p = mean(outcome == "survived")) |>
+  pull()
+p_hat_t <- cpr |>
+  filter(group == "treatment") |>
+  summarise(p = mean(outcome == "survived")) |>
+  pull()
+obs_diff <- p_hat_t - p_hat_c
+```
+:::
+::::
+
+::: {.column width="40%"}
+-   $\hat{p}_{C} = \frac{`r sum(cpr$group == "control" & cpr$outcome == "survived")`}{`r sum(cpr$group == "control")`} =$ `r p_hat_c`
+
+-   $\hat{p}_{T} = \frac{`r sum(cpr$group == "treatment" & cpr$outcome == "survived")`}{`r sum(cpr$group == "treatment")`} =$ `r p_hat_t`
+
+-   Observed difference: $\hat{p}_{T} - \hat{p}_{C} = `r obs_diff`$
+:::
+::::::
+
+-   Is this "convincing evidence" that blood thinner usage after CPR is effective?
+
+-   Set $\alpha = 0.05$
+
+## Simulate under null
+
+-   We will once again perform a *randomization* text to try and simulate the difference in proportions under $H_{0}$
+
+    -   Under $H_{0}$, treatment group is no better than control group, so let's simulate assuming that outcome and treatment are independent
+
+-   Write down `died` on `r sum(cpr$outcome == "died")` cards, and `survived` on `r sum(cpr$outcome == "survived")` cards. Then repeat several times:
+
+    -   Shuffle cards well
+
+    -   Deal out `r sum(cpr$group == "control")` to be Control group, and remaining `r sum(cpr$group == "treatment")` to be Treatment group
+
+    -   Calculate proportions of survival $\hat{p}_{C, sim}$ and $\hat{p}_{T, sim}$
+
+    -   Obtain and record the simulated difference $\hat{p}_{T, sim} - \hat{p}_{C, sim}$
+
+## Simulate under null (code)
+
+```{r echo = T}
+set.seed(310)
+n_t <- sum(cpr$group == "treatment")
+n_c <- sum(cpr$group == "control")
+n_died <- sum(cpr$outcome == "died")
+n_survived <- sum(cpr$outcome == "survived")
+
+# make my cards
+cards <- c(rep("died", n_died), rep("survived", n_survived))
+
+B <- 300
+diff_sims <- rep(NA , B)
+for(b in 1:B){
+  # shuffle cards
+  shuffled <- sample(cards)
+  
+  # deal out n_c cards to control group
+  control_sim <- shuffled[1:n_c]
+  
+  # deal out remaining n_t cards to treatment group
+  treat_sim <- shuffled[-c(1:n_c)]
+  
+  # calculate proportion of survival in each group
+  p_c_sim <- mean(control_sim == "survived")
+  p_t_sim <- mean(treat_sim == "survived")
+  
+  # calculate difference and store
+  diff_sims[b] <- p_t_sim - p_c_sim
+}
+
+```
+
+## Visualizing null distribution
+
+```{r fig.height=8}
+diff_prop_null <- data.frame(diffs = diff_sims) |>
+  mutate(extreme = diffs >= obs_diff) 
+diff_prop_null |>
+  ggplot(aes(x = diffs))+
+  geom_dotplot(dotsize= 0.35, fill = "grey") +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(x = "Null distribution of difference in survival rates (treat - control)") +
+  theme(text = element_text(size= 24))
+```
+
+## Calculate p-value
+
+::::: columns
+::: {.column width="60%"}
+```{r fig.height=8}
+diff_prop_null |>
+  ggplot(aes(x = diffs, fill = extreme))+
+  geom_dotplot(dotsize= 0.35) +
+  scale_y_continuous(NULL, breaks = NULL) +
+  guides(fill = "none") +
+  scale_fill_manual(values = c("grey", "pink"))+
+  labs(x = "Difference in proportions (null distribution)") +
+  theme(text = element_text(size= 24))
+
+n_extreme <- sum(diff_prop_null$extreme)
+p_val <- round(mean(diff_prop_null$extreme), 3)
+```
+:::
+
+::: {.column width="40%"}
+-   We observed `r n_extreme` out of `r B` simulations where the difference in proportions under $H_{0}$ was as or more extreme than our observed difference of `r obs_diff`
+
+-   So p-value is `r p_val`
+:::
+:::::
+
+## Interpret and make conclusion
+
+The researchers are interested in learning if the blood thinner treatment was effective.
+
+Our p-value is `r p_val` and our selected significance level was $\alpha = 0.05$.
+
+::: discuss
+-   Interpret our p-value in text
+
+-   Make a conclusion about the research question in context.
+:::
