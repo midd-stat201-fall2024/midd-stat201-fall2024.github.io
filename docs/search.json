@@ -2839,7 +2839,7 @@
     "href": "slides/slides-13-intro-testing.html#summary-of-testing-framework",
     "title": "Introduction to Hypothesis Testing",
     "section": "Summary of testing framework",
-    "text": "Summary of testing framework\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain p-value\n\nWe did this using by simulating under the null distribution\n\nInterpret p-value and make a decision in context"
+    "text": "Summary of testing framework\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain p-value by modeling randomness that would occur if the \\(H_{0}\\) were true\n\nWe did this using by simulating under the null distribution\n\nInterpret p-value and make a decision in context"
   },
   {
     "objectID": "slides/slides-13-intro-testing.html#errors-in-decision",
