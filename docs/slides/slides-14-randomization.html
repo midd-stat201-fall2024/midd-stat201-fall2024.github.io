@@ -677,7 +677,7 @@
 <div class="cell">
 
 </div>
-<p>Repeat the previous 300 times:</p>
+<p>Repeat the previous 1000 times:</p>
 
 <img data-src="slides-14-randomization_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="obtain-p-value" class="slide level2">
@@ -700,8 +700,8 @@
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li class="fragment">Out of 300 simulations under <span class="math inline">\(H_{0}\)</span>, 11 resulted in difference in promotion rates as or more extreme than our observed</li>
-<li class="fragment">So the p-value is 0.0366667</li>
+<li class="fragment">Out of 1000 simulations under <span class="math inline">\(H_{0}\)</span>, 29 resulted in difference in promotion rates as or more extreme than our observed</li>
+<li class="fragment">So the p-value is 0.029</li>
 </ul>
 </div>
 </div>
@@ -724,8 +724,8 @@
 <section id="making-conclusion-answer" class="slide level2">
 <h2>Making conclusion (answer)</h2>
 <ul>
-<li class="fragment"><p>Assuming that <code>sex</code> and <code>decision</code> are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.0366667.</p></li>
-<li class="fragment"><p>Because the observed p-value of 0.0366667 is less than our significant level 0.5, we reject <span class="math inline">\(H_{0}\)</span>. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.</p></li>
+<li class="fragment"><p>Assuming that <code>sex</code> and <code>decision</code> are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.029.</p></li>
+<li class="fragment"><p>Because the observed p-value of 0.029 is less than our significant level 0.5, we reject <span class="math inline">\(H_{0}\)</span>. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.</p></li>
 </ul>
 </section></section>
 <section>
@@ -901,21 +901,21 @@
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co"># make my cards</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a>cards <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"died"</span>, n_died), <span class="fu">rep</span>(<span class="st">"survived"</span>, n_survived))</span>
 <span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>B <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a>diff_sims <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span> , B)</span>
 <span id="cb5-12"><a href="#cb5-12"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
 <span id="cb5-13"><a href="#cb5-13"></a>  <span class="co"># shuffle cards</span></span>
 <span id="cb5-14"><a href="#cb5-14"></a>  shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(cards)</span>
 <span id="cb5-15"><a href="#cb5-15"></a>  </span>
-<span id="cb5-16"><a href="#cb5-16"></a>  <span class="co"># deal out n_c cards to control group</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_c]</span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="co"># deal out n_t cards to treatment group</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_t]</span>
 <span id="cb5-18"><a href="#cb5-18"></a>  </span>
-<span id="cb5-19"><a href="#cb5-19"></a>  <span class="co"># deal out remaining n_t cards to treatment group</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_c)]</span>
+<span id="cb5-19"><a href="#cb5-19"></a>  <span class="co"># deal out remaining n_c cards to control group</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_t)]</span>
 <span id="cb5-21"><a href="#cb5-21"></a>  </span>
 <span id="cb5-22"><a href="#cb5-22"></a>  <span class="co"># calculate proportion of survival in each group</span></span>
-<span id="cb5-23"><a href="#cb5-23"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
-<span id="cb5-24"><a href="#cb5-24"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
+<span id="cb5-23"><a href="#cb5-23"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
 <span id="cb5-25"><a href="#cb5-25"></a>  </span>
 <span id="cb5-26"><a href="#cb5-26"></a>  <span class="co"># calculate difference and store</span></span>
 <span id="cb5-27"><a href="#cb5-27"></a>  diff_sims[b] <span class="ot">&lt;-</span> p_t_sim <span class="sc">-</span> p_c_sim</span>
@@ -937,8 +937,8 @@
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li class="fragment"><p>We observed 35 out of 300 simulations where the difference in proportions under <span class="math inline">\(H_{0}\)</span> was as or more extreme than our observed difference of 0.13</p></li>
-<li class="fragment"><p>So p-value is 0.117</p></li>
+<li class="fragment"><p>We observed 107 out of 1000 simulations where the difference in proportions under <span class="math inline">\(H_{0}\)</span> was as or more extreme than our observed difference of 0.13</p></li>
+<li class="fragment"><p>So p-value is 0.107</p></li>
 </ul>
 </div>
 </div>
@@ -946,7 +946,7 @@
 <section id="interpret-and-make-conclusion" class="slide level2">
 <h2>Interpret and make conclusion</h2>
 <p>The researchers are interested in learning if the blood thinner treatment was effective.</p>
-<p>Our p-value is 0.117 and our selected significance level was <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p>Our p-value is 0.107 and our selected significance level was <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <div class="discuss">
 <ul>
 <li class="fragment"><p>Interpret our p-value in text</p></li>

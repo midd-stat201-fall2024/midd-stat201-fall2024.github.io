@@ -1,0 +1,62 @@
+---
+title: "Null distribution of sample proportion"
+date: "October 14, 2024"
+---
+
+```{r message = F}
+library(tidyverse)
+```
+
+Define $p$ as the true proportion of students who get at least 7 hours of sleep on average. Our hypotheses were:
+
+$H_{0}$: $p \leq 0.5$
+
+$H_{A}$: $p > 0.5$
+
+## Simulating null distribution
+
+The example below demonstrates how to obtain a null distribution for $\hat{p}$ under $H_{0}$. We said:
+
+-   pink slips represent students who get at least 7 hours, and
+
+-   purple slips represent students who do not get at least 7 hours
+
+```{r}
+set.seed(2)
+B <- 5000
+n <- 10
+p_null_vec <- rep(NA, B)
+for(b in 1:B){
+  null_samp <- sample(x = c("pink", "purple"),
+                      size = n, 
+                      replace = T, 
+                      prob = c(0.5, 0.5)) 
+  
+  p_null_vec[b] <- sum(null_samp == "pink")/n
+}
+```
+
+The code above repeatedly for `r B` iterations draws a new sample of size `r n` from the world assuming $H_{0}$ is true (in this case, $p = 0.5$). At every iteration, we record the proportion of pink slips in the sample of size `r n` to represent the proportion of people who got at least 7 hours of sleep.
+
+## Visualizing null distribution
+
+We can visualize the null distribution by:
+
+1.  Creating a data frame of our vector of simulated null statistics `p_null_vec`
+2.  Piping into `ggplot()`
+
+::: column-margin
+`data.frame(<variable name> = <vector>)`creates a data frame from vectors, and we can set the column/variable names.
+
+In the code here, `data.frame(p_sim = p_null_vec)` creates a data frame with a variable called `p_sim`. The values that comprise that variable come from `p_null_vec`.
+:::
+
+```{r fig.height=4}
+null_df <- data.frame(p_sim = p_null_vec)
+ggplot(null_df, aes(x = p_sim))+
+  geom_histogram(binwidth = 0.1,col = "white")+
+  labs(x = "Null dist. of proportion of students getting at least 7 hours") +
+  theme_minimal()
+```
+
+We can add a vertical line to our plot to show where the observed $\hat{p}$ falls in the null distribution.

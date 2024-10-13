@@ -46,51 +46,13 @@ opts_chunk$set(fig.width=12, fig.height=4)
 
     c.  The histogram below shows the distribution of 1000 simulated proportions under $H_{0}$. Estimate the p-value using the plot and use it to evaluate your hypotheses (i.e. make a conclusion). Assume a significance level of 0.05.
 
-        ```{r echo = F}
-        set.seed(3)
-        B <- 1000
-        p_sims <- rep(NA , B)
-        for(b in 1:B){
-          samp <- sample(c("defund", "not defund"), size = 650, prob = c(0.2, 0.8), replace = T)
-          p_sims[b] <- mean(samp == "defund")
-        }
-        data.frame(props = p_sims) |>
-          ggplot(aes(x= props)) +
-          geom_histogram(bins = 20, col = "white") +
-          theme_minimal() +
-          labs(x = "Null dist. of proportion supporting proposal to defund") +
-              theme(text =element_text(size = 18))
-        ```
+        ![](images/13-defund.png){width="389"}
 
 4.  $(^*)$ In a large university where 60% of the full-time students are employed at least 5 hours per week, the members of the Statistics Department faculty wonder if the same proportion of their students work at least 5 hours per week. They randomly sample 25 of their majors and find that 12 of the students work 5 or more hours per week.
 
     Two sampling distributions were created to describe the variability in the proportion of statistics majors who work at least 5 hours per week: a null distribution and a bootstrap distribution. In both cases, $B=1000$ simulations were generated.
 
-    ```{r echo = F}
-    library(patchwork)
-    set.seed(1)
-    B <- 1000
-    n <- 25
-    null_vec <- boot_vec <- rep(NA, B)
-    for(b in 1:B){
-      # null dist
-      null_vec[b] <- mean(sample(c("work", "no work"), size = n, replace = T, prob = c(0.6, 0.4)) == "work")
-      boot_vec[b] <- mean(sample(c(rep("work", 12), rep("no work", 13)), size = n, replace = T) == "work")
-    }
-    p1 <- data.frame(prop = null_vec) |>
-      ggplot(aes(x = prop)) +
-      geom_histogram(color = "white", binwidth = 0.05) +
-      theme_minimal() +
-      labs(x = "Prop. who work at least 5 hours", title = "Null distribution") +
-      theme(text =element_text(size = 18))
-    p2 <- data.frame(prop = boot_vec) |>
-      ggplot(aes(x = prop)) +
-      geom_histogram(color = "white", binwidth = 0.05) +
-      theme_minimal() +
-      labs(x = "Prop. who work at least 5 hours", title = "Bootstrap distribution") +
-      theme(text =element_text(size = 18))
-    p1+ p2
-    ```
+    ![](images/13-hours.png)
 
     a.  Which distribution(s) was/were obtained by sampling with replacement, and which distribution(s) was/were obtained by sampling without replacement?
 
@@ -110,32 +72,16 @@ opts_chunk$set(fig.width=12, fig.height=4)
 
     c.  The histogram below shows the distribution of 1000 simulated proportions under $H_{0}$. Estimate the p-value using the plot and use it to evaluate Joe's hypotheses (i.e. make a conclusion). Assume a significance level of 0.05.
 
+        ![](images/13-divorce.png){width="436"}
+
+    d.  Joe has some free time and also created a 90% bootstrap confidence interval for the divorce rate.
+
         ```{r echo = F}
-        set.seed(4)
+        source("../stat201_fns.R")
         B <- 1000
-        p_sims <- rep(NA , B)
-        for(b in 1:B){
-          samp <- sample(c("yes", "no"), size = 323, prob = c(0.14, 0.86), replace = T)
-          p_sims[b] <- mean(samp == "yes")
-        }
-        data.frame(props = p_sims) |>
-          ggplot(aes(x= props)) +
-          geom_histogram(binwidth = 0.01, col = "white") +
-          theme_minimal() +
-          labs(x = "Null dist. of divorce rate") +
-              theme(text =element_text(size = 18))
-        ```
-
-    d.  Joe is some free time and also created a 90% bootstrap confidence interval for the divorce rate.
-
-        ```{r echo = F}
-        x <- c(rep("yes", 55), rep("no", 323-55))
+        x <- c(rep(1, 55), rep(0, 323-55))
         n <- length(x)
-        boot <- rep(NA, B)
-        for(b in 1:B){
-          x_samp <- sample(x, length(x), replace = T)
-          boot[b] <- mean(x_samp == "yes")
-        }
+        boot <- bootstrap_prop(n, B, x, 2)
         lb <- quantile(boot, 0.05)
         ub <- quantile(boot, 0.95)
         ```

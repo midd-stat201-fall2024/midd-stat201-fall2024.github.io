@@ -29,19 +29,7 @@ library(openintro)
 library(readr)
 library(kableExtra)
 plot_theme <- theme(text = element_text(size = 24))
-
-get_bootstrap <- function(x, n, B, stat){
-  bootstrap_stats <- rep(NA, B)
-  for(b in 1:B){
-    # resample
-    x_boot <- sample(x = x, size = n, replace = TRUE)
-    # calculate and store bootstrap statistic
-    if(stat %in% c("mean", "prop")){
-      bootstrap_stats[b] <- mean(x_boot)
-    }
-  }
-  bootstrap_stats
-}
+source("../stat201_fns.R")
 ```
 
 ## Recap
@@ -254,15 +242,9 @@ ct_null
 ## Null distribution
 
 ```{r}
-B <- 300
+B <- 1000
 props_diff_vec <- rep(NA, B)
-
-for(b in 1:B){
-  shuffled <- sample(cards)
-  males <- shuffled[1:n_male]
-  females <- shuffled[-c(1:n_male)]
-  props_diff_vec[b] <- mean(females == "promote") - mean(males == "promote")
-}
+props_diff_vec <- ht_independence(n_promote, n_not_promote, n_female, n_male, B, 1)
 ```
 
 Repeat the previous `r B` times:
@@ -272,8 +254,7 @@ null_dist <- data.frame(prop_diff = props_diff_vec)|>
   mutate(extreme = prop_diff <= (p_f - p_m))
 null_dist |>
   ggplot(aes(x = prop_diff)) +
-  geom_dotplot(dotsize= 0.3, fill = "grey") +
-  scale_y_continuous(NULL, breaks = NULL) +
+  geom_histogram(binwidth = 0.05, center = 0.025, col = "white") +
   labs(x = "Null distribution of difference in promotion rates (female - male)") +
   theme(text = element_text(size= 20))
 p_val <- mean(null_dist$extreme)
@@ -295,12 +276,11 @@ Recall, the observed difference in our data was $\hat{p}_{f} - \hat{p}_{m} =$ `r
 ```{r fig.height = 6.2}
 null_dist |>
   ggplot(aes(x = prop_diff, fill = extreme)) +
-  geom_dotplot(dotsize= 0.28) +
-  scale_y_continuous(NULL, breaks = NULL) +
-  labs(x = "Null distribution of difference in promotion rates (female - male)") +
+  geom_histogram(binwidth = 0.05, center = 0.025, col = "white") +
+  labs(x = "Null dist. of difference in promotion rates (female - male)") +
   theme(text = element_text(size= 24)) +
   guides(fill = "none") +
-  scale_fill_manual(values = c("grey", "pink"))
+  scale_fill_manual(values = c("grey30", "magenta"))
 ```
 :::
 ::::
@@ -455,21 +435,21 @@ n_survived <- sum(cpr$outcome == "survived")
 # make my cards
 cards <- c(rep("died", n_died), rep("survived", n_survived))
 
-B <- 300
+B <- 1000
 diff_sims <- rep(NA , B)
 for(b in 1:B){
   # shuffle cards
   shuffled <- sample(cards)
   
-  # deal out n_c cards to control group
-  control_sim <- shuffled[1:n_c]
+  # deal out n_t cards to treatment group
+  control_sim <- shuffled[1:n_t]
   
-  # deal out remaining n_t cards to treatment group
-  treat_sim <- shuffled[-c(1:n_c)]
+  # deal out remaining n_c cards to control group
+  treat_sim <- shuffled[-c(1:n_t)]
   
   # calculate proportion of survival in each group
-  p_c_sim <- mean(control_sim == "survived")
   p_t_sim <- mean(treat_sim == "survived")
+  p_c_sim <- mean(control_sim == "survived")
   
   # calculate difference and store
   diff_sims[b] <- p_t_sim - p_c_sim
@@ -484,9 +464,8 @@ diff_prop_null <- data.frame(diffs = diff_sims) |>
   mutate(extreme = diffs >= obs_diff) 
 diff_prop_null |>
   ggplot(aes(x = diffs))+
-  geom_dotplot(dotsize= 0.35, fill = "grey") +
-  scale_y_continuous(NULL, breaks = NULL) +
-  labs(x = "Null distribution of difference in survival rates (treat - control)") +
+  geom_histogram(binwidth = 0.025, center = 0.0125, col = "white")+
+  labs(x = "Null dist. of difference in survival rates (treat - control)") +
   theme(text = element_text(size= 24))
 ```
 
@@ -497,11 +476,10 @@ diff_prop_null |>
 ```{r fig.height=8}
 diff_prop_null |>
   ggplot(aes(x = diffs, fill = extreme))+
-  geom_dotplot(dotsize= 0.35) +
-  scale_y_continuous(NULL, breaks = NULL) +
+  geom_histogram(binwidth = 0.025, center = 0.0125, col = "white")+
   guides(fill = "none") +
-  scale_fill_manual(values = c("grey", "pink"))+
-  labs(x = "Difference in proportions (null distribution)") +
+  scale_fill_manual(values = c("grey30", "magenta"))+
+  labs(x = "Null dist. of difference in survival rates (treat - control)") +
   theme(text = element_text(size= 24))
 
 n_extreme <- sum(diff_prop_null$extreme)

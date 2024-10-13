@@ -153,58 +153,62 @@ In STAT 201B sample: `r sum(x_b == 1)` students received at least 7 hours of sle
 
 -   We have to simulate our data under the assumption that $H_{0}$ is true (recall $H_0$: $p \leq 0.5$)
 
--   Imagine a big bowl of marbles with orange and blue marbles.
+-   Imagine a big bag with pink and purple slips of paper
 
-    -   Orange marbles = people who got at least 7 hours
+    -   Pink = people who got at least 7 hours of sleep
 
-    -   Blue marbles = people who got less than 7 hours
+    -   Purple = people who got less than 7 hours
 
--   What proportion of the marbles in the bowl should be orange vs blue?
+-   What proportion of the slips in the bowl should be pink vs purple?
 
-    -   **To simulate under** $H_{0}$, no more than 50% of the marbles should be orange.
+    -   **To simulate under** $H_{0}$, no more than 50% of the slip should be pink
 
-        -   We want convincing evidence even in the most "borderline" case, so we will choose 50% of the marbles to be orange.
-
--   This resulting bowl of marbles is our **null distribution**: what the population would look like if $H_{0}$ were true
+        -   We want convincing evidence even in the most "borderline" case, so we will choose 50% of the slips to be pink.
 
 ## Simulating under $H_{0}$ (step 3 cont.)
 
--   We now replicate our original sample, this time sampling from this null distribution
+-   Activity: we now replicate our original sample, this time sampling from this bag of paper slips
 
     -   We repeatedly take samples from the null distribution, using original sample size $n =$ `r n`
 
-    -   For each sample, calculate the simulated proportion of orange marbles, $\hat{p}_{sim}$
+    -   For each sample, calculate the simulated proportion of pink slips, $\hat{p}_{sim}$
+
+-   Live code?
 
 ::: fragment
 ```{r echo = T}
-set.seed(2)
-B <- 5000
-n <- 10
-p_null_vec <- rep(NA, B)
+set.seed(2) # reproducibility
+B <- 5000 # number of simulations to do to gather enough evidence
+n <- 10 # size of our original sample
+p_null_vec <- rep(NA, B) # vector to store the simulated proportions
 for(b in 1:B){
-  null_samp <- sample(c("orange", "blue"), size = n, replace = T, prob = c(0.5, 0.5))
-  p_null_vec[b] <- sum(null_samp == "orange")/n
+  # sample() takes a random sample
+  null_samp <- sample(x = c("pink", "purple"), # pink and purple slips
+                      size = n, # sample of size n
+                      replace = T, # tell R that my bowl has infinitely many marbles 
+                      prob = c(0.5, 0.5)) # 50% of slips are pink and 50% are purple
+  
+  # calculate and store the proportion of pink slips in this simulation
+  p_null_vec[b] <- sum(null_samp == "pink")/n
 }
 ```
 :::
 
--   Let's talk about what we're doing in lines 6 and 7!
-
 ## Null distribution of statistic
 
-Repeating this many times, we can visualize the distribution of $\hat{p}_{sim}$ assuming $H_{0}$ true:
+We can visualize the distribution of $\hat{p}_{sim}$ assuming $H_{0}$ true:
 
 ```{r}
 null_dist <- data.frame(p_null = p_null_vec) |>
   ggplot(aes(x = p_null)) +
   geom_histogram(binwidth = 0.1,col = "white")+
   scale_x_continuous(breaks = seq(0,1,0.1)) +
-  labs(x = "Null distribution for sample proportion") +
+  labs(x = "Null distribution of sample proportion") +
   theme(text = element_text(size = 25))
 null_dist 
 ```
 
--   The resulting distribution is the called the **null distribution** for the particular sample statistic
+-   This is called the **null distribution** of the sample statistic, which is the distribution of the statistic assuming $H_{0}$ is true
 
 -   ::: discuss
     Where is the null distribution of $\hat{p}$ centered? Why does that "make sense"?
@@ -246,9 +250,7 @@ null_dist +
 
 ## Obtain p-value (step 3 cont.)
 
-We can directly obtain the p-value using our null distribution and observed $\hat{p}$!
-
--   We find the proportion of simulated sample proportions that were "as or more extreme" as our observed proportion of $\hat{p} =$ `r p_a` or $\hat{p} =$ `r p_b`
+We can directly obtain (technically estimate) the p-value using our null distribution and our observed $\hat{p}$!
 
 :::::: fragment
 ::::: columns
@@ -269,7 +271,7 @@ data.frame(p_null = p_null_vec) |>
 p_val_a <- sum(p_null_vec >= p_a)/B
 ```
 
--   Out of `r B` replications, we saw `r sum(p_null_vec >= p_a)` instances $\hat{p}_{sim} \geq \hat{p}$
+-   Out of `r B` replications, we saw `r sum(p_null_vec >= p_a)` instances of $\hat{p}_{sim} \geq \hat{p}$
 -   p-value is $\frac{ `r sum(p_null_vec >= p_a)`}{`r B`} \approx$ `r round(p_val_a, 2)`
 :::
 
@@ -324,7 +326,7 @@ Four steps for hypothesis test:
 
 1.  Define null and alternative hypotheses $H_{0}$ and $H_{A}$ in context
 2.  Collect data and set significance level $\alpha$
-3.  Obtain p-value by modeling randomness that would occur if the $H_{0}$ were true
+3.  Obtain/estimate p-value by modeling randomness that would occur if the $H_{0}$ were true
     -   We did this using by simulating under the null distribution
 4.  Interpret p-value and make a decision in context
 

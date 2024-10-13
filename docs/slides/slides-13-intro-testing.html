@@ -507,52 +507,55 @@
 <h2>Simulating under <span class="math inline">\(H_{0}\)</span> (step 3 cont.)</h2>
 <ul>
 <li class="fragment"><p>We have to simulate our data under the assumption that <span class="math inline">\(H_{0}\)</span> is true (recall <span class="math inline">\(H_0\)</span>: <span class="math inline">\(p \leq 0.5\)</span>)</p></li>
-<li class="fragment"><p>Imagine a big bowl of marbles with orange and blue marbles.</p>
+<li class="fragment"><p>Imagine a big bag with pink and purple slips of paper</p>
 <ul>
-<li class="fragment"><p>Orange marbles = people who got at least 7 hours</p></li>
-<li class="fragment"><p>Blue marbles = people who got less than 7 hours</p></li>
+<li class="fragment"><p>Pink = people who got at least 7 hours of sleep</p></li>
+<li class="fragment"><p>Purple = people who got less than 7 hours</p></li>
 </ul></li>
-<li class="fragment"><p>What proportion of the marbles in the bowl should be orange vs blue?</p>
+<li class="fragment"><p>What proportion of the slips in the bowl should be pink vs purple?</p>
 <ul>
-<li class="fragment"><p><strong>To simulate under</strong> <span class="math inline">\(H_{0}\)</span>, no more than 50% of the marbles should be orange.</p>
+<li class="fragment"><p><strong>To simulate under</strong> <span class="math inline">\(H_{0}\)</span>, no more than 50% of the slip should be pink</p>
 <ul>
-<li class="fragment">We want convincing evidence even in the most “borderline” case, so we will choose 50% of the marbles to be orange.</li>
+<li class="fragment">We want convincing evidence even in the most “borderline” case, so we will choose 50% of the slips to be pink.</li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>This resulting bowl of marbles is our <strong>null distribution</strong>: what the population would look like if <span class="math inline">\(H_{0}\)</span> were true</p></li>
 </ul>
 </section>
 <section id="simulating-under-h_0-step-3-cont.-1" class="slide level2">
 <h2>Simulating under <span class="math inline">\(H_{0}\)</span> (step 3 cont.)</h2>
 <ul>
-<li class="fragment"><p>We now replicate our original sample, this time sampling from this null distribution</p>
+<li class="fragment"><p>Activity: we now replicate our original sample, this time sampling from this bag of paper slips</p>
 <ul>
 <li class="fragment"><p>We repeatedly take samples from the null distribution, using original sample size <span class="math inline">\(n =\)</span> 10</p></li>
-<li class="fragment"><p>For each sample, calculate the simulated proportion of orange marbles, <span class="math inline">\(\hat{p}_{sim}\)</span></p></li>
+<li class="fragment"><p>For each sample, calculate the simulated proportion of pink slips, <span class="math inline">\(\hat{p}_{sim}\)</span></p></li>
 </ul></li>
+<li class="fragment"><p>Live code?</p></li>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>B <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>p_null_vec <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, B)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) <span class="co"># reproducibility</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>B <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="co"># number of simulations to do to gather enough evidence</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># size of our original sample</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>p_null_vec <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, B) <span class="co"># vector to store the simulated proportions</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  null_samp <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"blue"</span>), <span class="at">size =</span> n, <span class="at">replace =</span> T, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
-<span id="cb1-7"><a href="#cb1-7"></a>  p_null_vec[b] <span class="ot">&lt;-</span> <span class="fu">sum</span>(null_samp <span class="sc">==</span> <span class="st">"orange"</span>)<span class="sc">/</span>n</span>
-<span id="cb1-8"><a href="#cb1-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="co"># sample() takes a random sample</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  null_samp <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"pink"</span>, <span class="st">"purple"</span>), <span class="co"># pink and purple slips</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>                      <span class="at">size =</span> n, <span class="co"># sample of size n</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>                      <span class="at">replace =</span> T, <span class="co"># tell R that my bowl has infinitely many marbles </span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>                      <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>)) <span class="co"># 50% of slips are pink and 50% are purple</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  </span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="co"># calculate and store the proportion of pink slips in this simulation</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  p_null_vec[b] <span class="ot">&lt;-</span> <span class="fu">sum</span>(null_samp <span class="sc">==</span> <span class="st">"pink"</span>)<span class="sc">/</span>n</span>
+<span id="cb1-14"><a href="#cb1-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<ul>
-<li class="fragment">Let’s talk about what we’re doing in lines 6 and 7!</li>
-</ul>
 </section>
 <section id="null-distribution-of-statistic" class="slide level2">
 <h2>Null distribution of statistic</h2>
-<p>Repeating this many times, we can visualize the distribution of <span class="math inline">\(\hat{p}_{sim}\)</span> assuming <span class="math inline">\(H_{0}\)</span> true:</p>
+<p>We can visualize the distribution of <span class="math inline">\(\hat{p}_{sim}\)</span> assuming <span class="math inline">\(H_{0}\)</span> true:</p>
 
 <img data-src="slides-13-intro-testing_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p>The resulting distribution is the called the <strong>null distribution</strong> for the particular sample statistic</p></li>
+<li class="fragment"><p>This is called the <strong>null distribution</strong> of the sample statistic, which is the distribution of the statistic assuming <span class="math inline">\(H_{0}\)</span> is true</p></li>
 <li class="fragment"><div class="discuss">
 <p>Where is the null distribution of <span class="math inline">\(\hat{p}\)</span> centered? Why does that “make sense”?</p>
 </div></li>
@@ -589,10 +592,7 @@
 </section>
 <section id="obtain-p-value-step-3-cont." class="slide level2">
 <h2>Obtain p-value (step 3 cont.)</h2>
-<p>We can directly obtain the p-value using our null distribution and observed <span class="math inline">\(\hat{p}\)</span>!</p>
-<ul>
-<li class="fragment">We find the proportion of simulated sample proportions that were “as or more extreme” as our observed proportion of <span class="math inline">\(\hat{p} =\)</span> 0.6 or <span class="math inline">\(\hat{p} =\)</span> 0.7</li>
-</ul>
+<p>We can directly obtain (technically estimate) the p-value using our null distribution and our observed <span class="math inline">\(\hat{p}\)</span>!</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -602,7 +602,7 @@
 </div>
 </div>
 <ul>
-<li class="fragment">Out of 5000 replications, we saw 1946 instances <span class="math inline">\(\hat{p}_{sim} \geq \hat{p}\)</span></li>
+<li class="fragment">Out of 5000 replications, we saw 1946 instances of <span class="math inline">\(\hat{p}_{sim} \geq \hat{p}\)</span></li>
 <li class="fragment">p-value is <span class="math inline">\(\frac{ 1946}{5000} \approx\)</span> 0.39</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -649,7 +649,7 @@
 <ol type="1">
 <li class="fragment">Define null and alternative hypotheses <span class="math inline">\(H_{0}\)</span> and <span class="math inline">\(H_{A}\)</span> in context</li>
 <li class="fragment">Collect data and set significance level <span class="math inline">\(\alpha\)</span></li>
-<li class="fragment">Obtain p-value by modeling randomness that would occur if the <span class="math inline">\(H_{0}\)</span> were true
+<li class="fragment">Obtain/estimate p-value by modeling randomness that would occur if the <span class="math inline">\(H_{0}\)</span> were true
 <ul>
 <li class="fragment">We did this using by simulating under the null distribution</li>
 </ul></li>
