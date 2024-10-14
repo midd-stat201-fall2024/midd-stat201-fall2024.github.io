@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nWeek 6 modified office hours:\n\nMonday 10/14: 2-3pm only\nFriday 10/18: 10:30am-12:00pm"
+    "text": "Announcements\n\nWeek 6 modified office hours:\n\nMonday 10/14: 2-3pm, 4:00-5:00pmish\nFriday 10/18: 10:30am-12:00pm"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -2685,7 +2685,7 @@
     "href": "slides/slides-13-intro-testing.html#defining-hypotheses-in-context",
     "title": "Introduction to Hypothesis Testing",
     "section": "Defining hypotheses in context",
-    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\geq 0.5\\)\n\\(H_{A}\\): \\(p < 0.5\\)"
+    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\leq 0.5\\)\n\\(H_{A}\\): \\(p > 0.5\\)"
   },
   {
     "objectID": "slides/slides-13-intro-testing.html#step-2-collect-data-and-calculate-sample-statistics",

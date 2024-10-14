@@ -81,9 +81,9 @@ Research question: do the majority of STAT 201A/STAT 201B students get more than
 
 <!-- -->
 
--   $H_{0}$: $p \geq 0.5$
+-   $H_{0}$: $p \leq 0.5$
 
--   $H_{A}$: $p < 0.5$
+-   $H_{A}$: $p > 0.5$
 
 ## Step 2: Collect and summarize data
 
