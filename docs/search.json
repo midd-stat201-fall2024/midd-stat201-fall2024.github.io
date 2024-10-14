@@ -2685,7 +2685,7 @@
     "href": "slides/slides-13-intro-testing.html#defining-hypotheses-in-context",
     "title": "Introduction to Hypothesis Testing",
     "section": "Defining hypotheses in context",
-    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\leq 0.5\\)\n\\(H_{A}\\): \\(p > 0.5\\)"
+    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get at least 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\leq 0.5\\)\n\\(H_{A}\\): \\(p > 0.5\\)"
   },
   {
     "objectID": "slides/slides-13-intro-testing.html#step-2-collect-data-and-calculate-sample-statistics",
@@ -2769,7 +2769,7 @@
     "href": "slides/slides-13-intro-testing.html#step-4-interpret-p-value-and-make-decision",
     "title": "Introduction to Hypothesis Testing",
     "section": "Step 4: Interpret p-value and make decision",
-    "text": "Step 4: Interpret p-value and make decision\n\nInterpret the p-value in context\n\n\nAssuming \\(H_{0}\\) true, the probability of observing a sample proportion as or more extreme as ours (0.6 or 0.7) is 0.39 or 0.17\n\n\nMake a decision about research claim/question by comparing p-value to significance level \\(\\alpha\\)\n\nIf p-value \\(< \\alpha\\), we reject \\(H_{0}\\) (it was highly unlikely to observe our data given our selected threshold)\nIf p-value \\(\\geq \\alpha\\), we fail to reject \\(H_{0}\\) (we did not have enough evidence against the null)\n\n\nNote: we never “accept \\(H_{A}\\)”!\n\n\n\nSince our p value is less than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep."
+    "text": "Step 4: Interpret p-value and make decision\n\nInterpret the p-value in context\n\n\nAssuming \\(H_{0}\\) true, the probability of observing a sample proportion as or more extreme as ours (0.6 or 0.7) is 0.39 or 0.17\n\n\nMake a decision about research claim/question by comparing p-value to significance level \\(\\alpha\\)\n\nIf p-value \\(< \\alpha\\), we reject \\(H_{0}\\) (it was highly unlikely to observe our data given our selected threshold)\nIf p-value \\(\\geq \\alpha\\), we fail to reject \\(H_{0}\\) (we did not have enough evidence against the null)\n\n\nNote: we never “accept \\(H_{A}\\)”!\n\n\n\nSince our p value is greater than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep."
   },
   {
     "objectID": "slides/slides-13-intro-testing.html#summary",

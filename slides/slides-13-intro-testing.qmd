@@ -75,7 +75,7 @@ It will not always be obvious what $H_{0}$ should be, but you will develop intui
 
 ## Defining hypotheses in context
 
-Research question: do the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep?
+Research question: do the majority of STAT 201A/STAT 201B students get at least 7 hours of sleep?
 
 -   Define $p$ as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average
 
@@ -317,7 +317,7 @@ p_val_b <- sum(p_null_vec >= p_b)/B
             :::
 
     -   ::: discuss
-        Since our p value is less than $\alpha = 0.05$, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep.
+        Since our p value is greater than $\alpha = 0.05$, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep.
         :::
 
 ## Summary of testing framework
