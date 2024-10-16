@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nLive code\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization\n\n\n\n\n\n\nR 10/18\n\nTopic: HTs with randomization (cont.)\n\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\n\n\n\nR 10/18\n\nTopic: HTs with randomization (cont.)\n\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nWeek 6 modified office hours:\n\nMonday 10/14: 2-3pm, 4:00-5:00pmish\nFriday 10/18: 10:30am-12:00pm"
+    "text": "Announcements\n\nWeek 6 modified office hours:\n\nMonday 10/14: 2-3pm, 4:00-5:00pmish\nFriday 10/18: 10:30am-12:00pm\n\nAdd your R questions here!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -2762,7 +2762,7 @@
     "href": "slides/slides-13-intro-testing.html#how-to-obtain-p-value",
     "title": "Introduction to Hypothesis Testing",
     "section": "How to obtain p-value?",
-    "text": "How to obtain p-value?\n\nHow to obtain this probability? It depends!\n\nOption 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)\nOption 2: if we don’t want to make assumptions, why not apply the bootstrap technique and simulate?\n\nWe will call this option “simulating under \\(H_{0}\\)”\n\n\n\nThis is the step that requires the most “work”, and what exactly you do will depend on the the type of data and the research question/claim you have\n\nRemark: hypothesis tests, like confidence intervals, are not unique!"
+    "text": "How to obtain p-value?\n\nHow to obtain this probability? It depends!\n\nOption 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)\nOption 2: if we don’t want to make assumptions, why not simulate?\n\nWe will call this option “simulating under \\(H_{0}\\)”\n\n\n\nThis is the step that requires the most “work”, and what exactly you do will depend on the the type of data and the research question/claim you have\n\nRemark: hypothesis tests, like confidence intervals, are not unique!"
   },
   {
     "objectID": "slides/slides-13-intro-testing.html#step-4-interpret-p-value-and-make-decision",
@@ -2783,14 +2783,14 @@
     "href": "slides/slides-14-randomization.html#housekeeping",
     "title": "Hypothesis Testing with Randomization",
     "section": "Housekeeping",
-    "text": "Housekeeping\n\nOffice hours change this week\nMid-semester feedback survey results"
+    "text": "Housekeeping\n\nOffice hours change this week"
   },
   {
     "objectID": "slides/slides-14-randomization.html#recap",
     "href": "slides/slides-14-randomization.html#recap",
     "title": "Hypothesis Testing with Randomization",
     "section": "Recap",
-    "text": "Recap\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain p-value by modeling randomness that would occur if the \\(H_{0}\\) were true\n\nWe did this using by simulating under the null distribution\n\nInterpret p-value and make a decision in context"
+    "text": "Recap\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain p-value by modeling randomness that would occur if \\(H_{0}\\) was true\n\nWe did this using by simulating under the null distribution\n\nReport p-value and make a decision and conclusion in context"
   },
   {
     "objectID": "slides/slides-14-randomization.html#running-example-sex-discrimination-study",
@@ -2811,7 +2811,7 @@
     "href": "slides/slides-14-randomization.html#data",
     "title": "Hypothesis Testing with Randomization",
     "section": "Data",
-    "text": "Data\nFor each of the 48 supervisors, the following were recorded:\n\nThe sex of the candidate in the file (male/female)\nThe decision (promote/not promote)\n\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nAre we prepared to answer our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?\n\n\nWhat evidence do we have?"
+    "text": "Data\nFor each of the 48 supervisors, the following were recorded:\n\nThe sex of the candidate in the file (male/female)\nThe decision (promote/not promote)\n\n\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\n\nAre we prepared to answer our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?\n\n\nWhat evidence do we have?"
   },
   {
     "objectID": "slides/slides-14-randomization.html#data-cont.",
@@ -2853,98 +2853,98 @@
     "href": "slides/slides-13-intro-testing.html#errors-in-decision-1",
     "title": "Introduction to Hypothesis Testing",
     "section": "Errors in decision",
-    "text": "Errors in decision\n\n\n\nWhat kind of error could we have made in our example?\n\nIt is important to weight the consequences of making each type of error!\n\nWe have some control in this. How?"
+    "text": "Errors in decision\n\n\n\nWhat kind of error could we have made in our example?\n\nIt is important to weight the consequences of making each type of error!\n\nWe have some control in this - how? Through \\(\\alpha\\)!"
   },
   {
     "objectID": "slides/slides-14-randomization.html#running-example-cpr",
     "href": "slides/slides-14-randomization.html#running-example-cpr",
     "title": "Hypothesis Testing with Randomization",
     "section": "Running example: CPR",
-    "text": "Running example: CPR\nAn experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:\n\ntreatment group: receive a blood thinner\ncontrol group: do not receive a blood thinner\n\nFor each patient, the outcome recorded was whether they survived for at least 24 hours.\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\nWhat is/are the variables(s) here? What types of variables are they?"
+    "text": "Running example: CPR\nAn experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:\n\ntreatment group: received a blood thinner\ncontrol group: did not receive a blood thinner\n\n\nFor each patient, the outcome recorded was whether they survived for at least 24 hours.\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\n\nWhat is/are the variables(s) here? What types of variables are they?"
   },
   {
     "objectID": "slides/slides-14-randomization.html#collect-data",
     "href": "slides/slides-14-randomization.html#collect-data",
     "title": "Hypothesis Testing with Randomization",
     "section": "Collect data",
-    "text": "Collect data\nUsing the data, obtain the observed difference in sample proportions.\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\n\n\np_hat_c <- cpr |>\n  filter(group == \"control\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull()\np_hat_t <- cpr |>\n  filter(group == \"treatment\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull()\nobs_diff <- p_hat_t - p_hat_c\n\n\n\n\n\\(\\hat{p}_{C} = \\frac{11}{50} =\\) 0.22\n\\(\\hat{p}_{T} = \\frac{14}{40} =\\) 0.35\nObserved difference: \\(\\hat{p}_{T} - \\hat{p}_{C} = 0.13\\)\n\n\n\n\nIs this “convincing evidence” that blood thinner usage after CPR is effective?\nSet \\(\\alpha = 0.05\\)"
+    "text": "Collect data\nUsing the data, obtain the observed difference in sample proportions.\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\n\n\np_hat_c <- cpr |>\n  filter(group == \"control\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull()\np_hat_t <- cpr |>\n  filter(group == \"treatment\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull()\nobs_diff <- p_hat_t - p_hat_c\n\n\n\n\n\\(\\hat{p}_{C} = \\frac{11}{50} = 0.22\\)\n\\(\\hat{p}_{T} = \\frac{14}{40} = 0.35\\)\nObserved difference: \\(\\hat{p}_{T} - \\hat{p}_{C} = 0.13\\)\n\n\n\n\nIs this “convincing evidence” that blood thinner usage after CPR is effective?\nSet \\(\\alpha = 0.05\\)"
   },
   {
     "objectID": "slides/slides-14-randomization.html#defining-hypotheses-1",
     "href": "slides/slides-14-randomization.html#defining-hypotheses-1",
     "title": "Hypothesis Testing with Randomization",
     "section": "Defining hypotheses",
-    "text": "Defining hypotheses\nThe researchers are interested in learning if the blood thinner treatment was effective.\n\nIn words, try to determine \\(H_{0}\\) and \\(H_{A}\\).\n\n\nLet \\(p_{T}\\) and \\(p_{C}\\) denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively\n\n\n\n\n\\(H_{0}\\): \\(p_{T} \\leq p_{C}\\)\n\\(H_{A}\\): \\(p_{T} > p_{C}\\)\n\n\n\n\\(H_{0}\\): \\(p_{T} - p_{C} \\leq 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C}> 0\\)"
+    "text": "Defining hypotheses\nThe researchers are interested in learning if the blood thinner treatment was effective.\n\nIn words, try to determine \\(H_{0}\\) and \\(H_{A}\\).\n\n\nLet \\(p_{T}\\) and \\(p_{C}\\) denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively\n\n\n\n\nOption 1\n\n\\(H_{0}\\): \\(p_{T} \\leq p_{C}\\)\n\\(H_{A}\\): \\(p_{T} > p_{C}\\)\n\n\n\n\nOption 2 (preferred)\n\n\\(H_{0}\\): \\(p_{T} - p_{C} \\leq 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C}> 0\\)"
   },
   {
     "objectID": "slides/slides-14-randomization.html#simulate-under-null",
     "href": "slides/slides-14-randomization.html#simulate-under-null",
     "title": "Hypothesis Testing with Randomization",
     "section": "Simulate under null",
-    "text": "Simulate under null\n\nSimulating under \\(H_{0}\\) means operating in a hypothetical word where sex and decision are independent.\n\nThis means that knowing the sex of the candidate should have no bearing on the decision to promote or not\n\nWe will perform a simulation called a randomization test where we randomly re-assign decision and sex outcome pairs to see what would have happened if the bankers’ decisions had been independent of sex"
+    "text": "Simulate under null\n\nSimulating under \\(H_{0}\\) means operating in a hypothetical word where sex and decision are independent.\n\nThis means that knowing the sex of the candidate should have no bearing on the decision to promote or not\n\nWe will perform a simulation called a randomization test where we randomly re-assign decision and sex outcome pairs to see what would have happened if the bankers’ decision had been independent of candidate’s sex (i.e. if \\(H_{0}\\) true)"
   },
   {
     "objectID": "slides/slides-14-randomization.html#visualizing-null-distribution",
     "href": "slides/slides-14-randomization.html#visualizing-null-distribution",
     "title": "Hypothesis Testing with Randomization",
     "section": "Visualizing null distribution",
-    "text": "Visualizing null distribution"
+    "text": "Visualizing null distribution\n\n\nHow would we obtain the p-value in this problem?"
   },
   {
     "objectID": "slides/slides-14-randomization.html#calculate-p-value",
     "href": "slides/slides-14-randomization.html#calculate-p-value",
     "title": "Hypothesis Testing with Randomization",
     "section": "Calculate p-value",
-    "text": "Calculate p-value\n\n\n\n\n\n\n\n\n\nWe observed 107 out of 1000 simulations where the difference in proportions under \\(H_{0}\\) was as or more extreme than our observed difference of 0.13\nSo p-value is 0.107"
+    "text": "Calculate p-value\n\n\n\n\n\n\n\n\n\nWe observed 148 out of 1000 simulations where the difference in proportions under \\(H_{0}\\) was as or more extreme than our observed difference of 0.13\nSo p-value is 0.148"
   },
   {
     "objectID": "slides/slides-14-randomization.html#interpret-and-make-conclusion",
     "href": "slides/slides-14-randomization.html#interpret-and-make-conclusion",
     "title": "Hypothesis Testing with Randomization",
     "section": "Interpret and make conclusion",
-    "text": "Interpret and make conclusion\nThe researchers are interested in learning if the blood thinner treatment was effective.\nOur p-value is 0.107 and our selected significance level was \\(\\alpha = 0.05\\).\n\n\nInterpret our p-value in text\nMake a conclusion about the research question in context."
+    "text": "Interpret and make conclusion\nThe researchers are interested in learning if the blood thinner treatment was effective.\nOur p-value is 0.148 and our selected significance level was \\(\\alpha = 0.05\\).\n\n\nMake a decision and conclusion about the research question in context."
   },
   {
     "objectID": "slides/slides-14-randomization.html#simulate-under-null-code",
     "href": "slides/slides-14-randomization.html#simulate-under-null-code",
     "title": "Hypothesis Testing with Randomization",
     "section": "Simulate under null (code)",
-    "text": "Simulate under null (code)\n\nset.seed(310)\nn_t <- sum(cpr$group == \"treatment\")\nn_c <- sum(cpr$group == \"control\")\nn_died <- sum(cpr$outcome == \"died\")\nn_survived <- sum(cpr$outcome == \"survived\")\n\n# make my cards\ncards <- c(rep(\"died\", n_died), rep(\"survived\", n_survived))\n\nB <- 1000\ndiff_sims <- rep(NA , B)\nfor(b in 1:B){\n  # shuffle cards\n  shuffled <- sample(cards)\n  \n  # deal out n_t cards to treatment group\n  control_sim <- shuffled[1:n_t]\n  \n  # deal out remaining n_c cards to control group\n  treat_sim <- shuffled[-c(1:n_t)]\n  \n  # calculate proportion of survival in each group\n  p_t_sim <- mean(treat_sim == \"survived\")\n  p_c_sim <- mean(control_sim == \"survived\")\n  \n  # calculate difference and store\n  diff_sims[b] <- p_t_sim - p_c_sim\n}"
+    "text": "Simulate under null (code)\nLive code"
   },
   {
     "objectID": "slides/slides-14-randomization.html#where-were-going-today",
     "href": "slides/slides-14-randomization.html#where-were-going-today",
     "title": "Hypothesis Testing with Randomization",
     "section": "Where we’re going today",
-    "text": "Where we’re going today\n\nWe will see another kind of hypothesis for different type of research question\nHypothesis testing framework is the same, but will change how we obtain null distribution\nTry to see the big picture"
+    "text": "Where we’re going today\n\nWe will see another kinds of hypotheses for different types of research questions\nHypothesis testing framework is the same, but will change how we obtain null distribution\nTry to see the big picture"
   },
   {
     "objectID": "slides/slides-14-randomization.html#randomization-test",
     "href": "slides/slides-14-randomization.html#randomization-test",
     "title": "Hypothesis Testing with Randomization",
     "section": "Randomization test",
-    "text": "Randomization test\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nWrite down “promote” on 35 cards and “not promote” on 13 cards\nThen repeat the following several times:\n\nThoroughly shuffle these 48 cards.\nDeal out a stack of 24 cards to represent males, and the remaining 24 cards to represent females\n\nThis is how we simulate independence under \\(H_{0}\\)\n\nCalculate the proportion of “promote” cards in each stack, \\(\\hat{p}_{m, sim}\\) and \\(\\hat{p}_{f, sim}\\)\nCalculate and record the difference \\(\\hat{p}_{f,sim} - \\hat{p}_{m,sim}\\) (order of difference doesn’t matter so long as you are consistent)"
+    "text": "Randomization test\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nWrite down “promote” on 35 cards and “not promote” on 13 cards. Repeat the following:\n\nThoroughly shuffle these 48 cards.\nDeal out a stack of 24 cards to represent males, and the remaining 24 cards to represent females\n\nThis is how we simulate independence under \\(H_{0}\\)\n\nCalculate the proportion of “promote” cards in each stack, \\(\\hat{p}_{m, sim}\\) and \\(\\hat{p}_{f, sim}\\)\nCalculate and record the difference \\(\\hat{p}_{f,sim} - \\hat{p}_{m,sim}\\) (order of difference doesn’t matter so long as you are consistent)"
   },
   {
     "objectID": "slides/slides-14-randomization.html#randomization-test-code",
     "href": "slides/slides-14-randomization.html#randomization-test-code",
     "title": "Hypothesis Testing with Randomization",
     "section": "Randomization test (code)",
-    "text": "Randomization test (code)\nLet’s perform one iteration of the simulation.\n\n# reproducibility\nset.seed(1)\nn_promote <- sum(discrimination$decision == \"promote\")\nn_not_promote <- sum(discrimination$decision == \"not promote\")\nn_female <- sum(discrimination$sex == \"female\")\nn_male <- sum(discrimination$sex == \"male\")\n\n# create cards\ncards <- c(rep(\"promote\", n_promote), rep(\"not promote\", n_not_promote))\n\n# shuffle cards\nshuffled <- sample(cards)\n\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    7 \n    17 \n    24 \n  \n  \n    male \n    6 \n    18 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nUnder this simulation, 0.7083333 of females were promoted, and 0.75 of males were promoted. Simulated difference: -0.0416667"
+    "text": "Randomization test (code)\nLet’s perform one iteration of the simulation.\n\n# reproducibility\nset.seed(1)\nn_female <- sum(discrimination$sex == \"female\")\nn_male <- sum(discrimination$sex == \"male\")\n\n# create cards\ncards <- discrimination$decision\n\n# shuffle cards\nshuffled <- sample(cards)\n\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    8 \n    16 \n    24 \n  \n  \n    male \n    5 \n    19 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nUnder this simulation, 0.6666667 of females were promoted, and 0.7916667 of males were promoted. Simulated difference: -0.125"
   },
   {
     "objectID": "slides/slides-14-randomization.html#null-distribution",
     "href": "slides/slides-14-randomization.html#null-distribution",
     "title": "Hypothesis Testing with Randomization",
     "section": "Null distribution",
-    "text": "Null distribution\n\n\n\nRepeat the previous 1000 times:"
+    "text": "Null distribution\n\n\n\nRepeat the previous step 1000 times:"
   },
   {
     "objectID": "slides/slides-14-randomization.html#obtain-p-value",
     "href": "slides/slides-14-randomization.html#obtain-p-value",
     "title": "Hypothesis Testing with Randomization",
     "section": "Obtain p-value",
-    "text": "Obtain p-value\nRecall, the observed difference in our data was \\(\\hat{p}_{f} - \\hat{p}_{m} =\\) -0.2916667.\n\np-value is probability of observing data as or more extreme than our original data, given \\(H_{0}\\) true.\n\nWhere does “as or more extreme” correspond to on our plot?\n\n\n\n\n\n\n\n\n\n\n\n\n\nOut of 1000 simulations under \\(H_{0}\\), 29 resulted in difference in promotion rates as or more extreme than our observed\nSo the p-value is 0.029"
+    "text": "Obtain p-value\nRecall, the observed difference in our data was \\(\\hat{p}_{f} - \\hat{p}_{m} =\\) -0.2916667.\n\np-value is probability of observing data as or more extreme than our original data, given \\(H_{0}\\) true.\n\nWhere does “as or more extreme” correspond to on our plot?\n\n\n\n\n\n\n\n\n\n\n\n\n\nOut of 1000 simulations under \\(H_{0}\\), 29 resulted in a difference in promotion rates as or more extreme than our observed\nSo the p-value is 0.029"
   },
   {
     "objectID": "slides/slides-14-randomization.html#making-conclusion",
@@ -2958,14 +2958,14 @@
     "href": "slides/slides-14-randomization.html#making-conclusion-answer",
     "title": "Hypothesis Testing with Randomization",
     "section": "Making conclusion (answer)",
-    "text": "Making conclusion (answer)\n\nAssuming that sex and decision are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.029.\nBecause the observed p-value of 0.029 is less than our significant level 0.5, we reject \\(H_{0}\\). The data provide strong evidence of sex discrimination against female candidates by the male supervisors."
+    "text": "Making conclusion (answer)\n\nAssuming that sex and decision are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.029.\nBecause the observed p-value of 0.029 is less than our significant level 0.05, we reject \\(H_{0}\\). The data provide strong evidence of sex discrimination against female candidates by the male supervisors.\n\nWhat kind of error could we have made?"
   },
   {
     "objectID": "slides/slides-14-randomization.html#simulate-under-null-1",
     "href": "slides/slides-14-randomization.html#simulate-under-null-1",
     "title": "Hypothesis Testing with Randomization",
     "section": "Simulate under null",
-    "text": "Simulate under null\n\nWe will once again perform a randomization text to try and simulate the difference in proportions under \\(H_{0}\\)\n\nUnder \\(H_{0}\\), treatment group is no better than control group, so let’s simulate assuming that outcome and treatment are independent\n\nWrite down died on 65 cards, and survived on 25 cards. Then repeat several times:\n\nShuffle cards well\nDeal out 50 to be Control group, and remaining 40 to be Treatment group\nCalculate proportions of survival \\(\\hat{p}_{C, sim}\\) and \\(\\hat{p}_{T, sim}\\)\nObtain and record the simulated difference \\(\\hat{p}_{T, sim} - \\hat{p}_{C, sim}\\)"
+    "text": "Simulate under null\n\nWe will once again perform a randomization test to try and simulate the difference in proportions under \\(H_{0}\\)\n\nUnder \\(H_{0}\\), treatment group is no better than control group, so let’s simulate assuming that outcome and treatment are independent\n\nWrite down died on 65 cards, and survived on 25 cards. Then repeat several times:\n\nShuffle cards well\nDeal out 50 to be Control group, and remaining 40 to be Treatment group\nCalculate proportions of survival \\(\\hat{p}_{C, sim}\\) and \\(\\hat{p}_{T, sim}\\)\nObtain and record the simulated difference \\(\\hat{p}_{T, sim} - \\hat{p}_{C, sim}\\)"
   },
   {
     "objectID": "slides/slides-14-randomization.html#randomization-test-activity",
@@ -3001,5 +3001,152 @@
     "title": "Hypothesis testing",
     "section": "",
     "text": "For each of the research statements below, determine whether it represents a null hypothesis claim or an alternative hypothesis claim.\n\nThe number of hours that grade-school children spend doing homework predicts their future success on standardized tests.\nKing cheetahs on average run the same speed as standard spotted cheetahs.\nFor a particular student, the probability of correctly answer a 5-option multiple choice test is larger than 0.2 (i.e. better than guessing)\nThe probability of getting in a car accident is the same if using a cell phone then if not using a cell phone.\n\nWrite out the null and alternative hypotheses in words and also in statistical notation for each of the following situations. When writing in statistical notation, be sure to define quantities in context.\n\nNew York is known as “the city that never sleeps”. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Does these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night?\nA study suggests that 25% of 25 year-olds have gotten married. You believe that this is incorrect and decide to collect your own data to conduct a hypothesis test.\n\nA Survey USA poll conducted in Seattle, WA in May 2021 reports that of the 650 respondents (adults living in this area), 159 support proposals to defund police departments.\n\nA journals writing a news story on the poll results wants to use the headline: “More than 1 in 5 adults living in Seattle support proposals to defund police departments”. You caution the journalist that they should first conduct a hypothesis test to see if the poll data provide convincing evidence for this claim. Write the hypotheses for this test using proper notation, defining any necessary quantities.\nDescribe in words a simulation scheme that would be appropriate for this situation. Also describe how the p-value can be calculated using the simulation results.\nThe histogram below shows the distribution of 1000 simulated proportions under \\(H_{0}\\). Estimate the p-value using the plot and use it to evaluate your hypotheses (i.e. make a conclusion). Assume a significance level of 0.05.\n\n\n\\((^*)\\) In a large university where 60% of the full-time students are employed at least 5 hours per week, the members of the Statistics Department faculty wonder if the same proportion of their students work at least 5 hours per week. They randomly sample 25 of their majors and find that 12 of the students work 5 or more hours per week.\nTwo sampling distributions were created to describe the variability in the proportion of statistics majors who work at least 5 hours per week: a null distribution and a bootstrap distribution. In both cases, \\(B=1000\\) simulations were generated.\n\n\nWhich distribution(s) was/were obtained by sampling with replacement, and which distribution(s) was/were obtained by sampling without replacement?\nEstimate the standard error of the simulated proportions based on each distribution. Are the two standard errors you estimated roughly equal?\nUsing the appropriate histogram, test the claim that 70% of statistics majors, like their peers, work at least 5 hours per week. State the hypotheses, find the p-value, and conclude in the context of the problem. Use a significance level of 0.10.\nUsing the appropriate histogram, find a 90% bootstrap confidence interval for the true proportions of statistics majors who work at least 5 hours per week. Interpret the confidence interval in the context of the problem.\nBriefly comment on how your conclusions in (c) and (d) compare.\n\nA study conducted in 2020 found that the U.S. adjusted divorce rate was 14 per 1000 married women. Joe is suspicious and disagrees with the stated divorce rate. Joe somehow collected data from 323 married or previously-married women, and asked them if they had a divorce in 2020. 55 of the women responded that they indeed had a divorce in 2020.\n\nWrite out the hypotheses corresponding to this scenario.\nDescribe in words a simulation scheme that would be appropriate for this situation. Also describe how the p-value can be calculated using the simulation results.\nThe histogram below shows the distribution of 1000 simulated proportions under \\(H_{0}\\). Estimate the p-value using the plot and use it to evaluate Joe’s hypotheses (i.e. make a conclusion). Assume a significance level of 0.05.\n\nJoe is some free time and also created a 90% bootstrap confidence interval for the divorce rate.\n\n\n\nHe obtained the following interval: (0.136, 0.204). Interpret this interval in context.\nBased on this interval, would it be appropriate for Joe to conclude that the study’s reported rate was wrong? Explain your reasoning.\nHow do your conclusions from (c) and (e) compare?"
+  },
+  {
+    "objectID": "slides/slides-14-randomization.html#making-decision-and-conclusion",
+    "href": "slides/slides-14-randomization.html#making-decision-and-conclusion",
+    "title": "Hypothesis Testing with Randomization",
+    "section": "Making decision and conclusion",
+    "text": "Making decision and conclusion\nOur research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?\n\n\\(H_{0}\\): sex and decision are independent\n\\(H_{A}\\): sex and decision are not independent and equally-qualified female personnel are less likely to get promoted than male personnel by male supervisors\n\\(\\alpha = 0.05\\)\n\n\n\nInterpret our p-value in context.\nMake a decision and conclusion in response to the research question."
+  },
+  {
+    "objectID": "slides/slides-14-randomization.html#making-decision-and-conclusion-answer",
+    "href": "slides/slides-14-randomization.html#making-decision-and-conclusion-answer",
+    "title": "Hypothesis Testing with Randomization",
+    "section": "Making decision and conclusion (answer)",
+    "text": "Making decision and conclusion (answer)\n\nAssuming that sex and decision are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.029.\nBecause the observed p-value of 0.029 is less than our significant level 0.05, we reject \\(H_{0}\\). The data provide strong evidence of sex discrimination against female candidates by the male supervisors.\n\nWhat kind of error could we have made?"
+  },
+  {
+    "objectID": "slides/slides-14-randomization.html#comprehension-questions",
+    "href": "slides/slides-14-randomization.html#comprehension-questions",
+    "title": "Hypothesis Testing with Randomization",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhat were the similarities and differences between:\n\nhypothesis test for independence\nhypothesis test for two proportions\n\nHow do the randomization tests today differ from the test for one proportion that we learned last class?"
+  },
+  {
+    "objectID": "live_code/randomization_two_props.html",
+    "href": "live_code/randomization_two_props.html",
+    "title": "Null distribution for difference in proportions",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)\nWe are using the cpr data from the openintro library. Define \\(p_{T}\\) as the proportion of people who received the treatment who survived, \\(p_{C}\\) as the proportion of people who received the control who survived. Our hypotheses were:\n\\(H_{0}\\): \\(p_{T} - p_{C} \\leq 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C} > 0\\)"
+  },
+  {
+    "objectID": "live_code/randomization_two_props.html#simulating-null-distribution",
+    "href": "live_code/randomization_two_props.html#simulating-null-distribution",
+    "title": "Null distribution for difference in proportions",
+    "section": "Simulating null distribution",
+    "text": "Simulating null distribution\nWe will store some values as objects in R for reproducibility.\n\n# store number of treatment and control observations from original sample\ncpr$group == \"treatment\"\n\n [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE\n[49] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n[61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n[73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n[85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\n\nn_t <- sum(cpr$group == \"treatment\")\nn_c <- sum(cpr$group == \"control\")\n\n# get the observed outcomes as a vector\noutcomes <- cpr$outcome\n\n# get observed difference in proportions\nobs_diff <- cpr |>\n  group_by(group) |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull(p) |>\n  diff() # defaults to taking second value minus first\n\nobs_diff\n\n[1] 0.13\n\n\nNow we will perform the randomization test!\n\n\nIf you only pass in a vector as the argument to sample() without specifying the size of the sample, you will get a shuffled version of the vector back as output. That is, the function will resample without replacement from the vector, with the size being the same size as the vector.\n\nset.seed(310)\nB <- 1000\ndiff_sims <- rep(NA , B)\nfor(b in 1:B){\n  # shuffle the outcomes. See comment for more details.\n  shuffled <- sample(outcomes)\n  \n  # deal out n_t cards to treatment group\n  treat_sim <- shuffled[1:n_t]\n  \n  # deal out remaining n_c cards to control group\n  control_sim <- shuffled[-c(1:n_t)]\n  \n  # calculate proportion of survival in each group\n  p_t_sim <- sum(treat_sim == \"survived\")/n_t\n  p_c_sim <- sum(control_sim == \"survived\")/n_c\n  \n  # calculate difference and store. \n  # I will do treatment - control because it mirrors how obs_diff is calculated\n  diff_sims[b] <- p_t_sim - p_c_sim\n}"
+  },
+  {
+    "objectID": "slides/slides-14-randomization.html",
+    "href": "slides/slides-14-randomization.html",
+    "title": "Hypothesis Testing with Randomization",
+    "section": "",
+    "text": "Office hours change this week\nMid-semester feedback survey results"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#housekeeping",
+    "href": "slides/slides-15-single-mean.html#housekeeping",
+    "title": "Hypothesis testing for a mean",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nOffice hours tomorrow: 10:30am-12:00pm"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#recap",
+    "href": "slides/slides-15-single-mean.html#recap",
+    "title": "Hypothesis testing for a mean",
+    "section": "Recap",
+    "text": "Recap\n\nWe have seen how to perform hypothesis tests for questions involving the following:\n\nA single proportion (STAT 201 sleep)\nIndependence of two categorical variables (banker sex discrimination)\n\nThink of as one population\n\nDifference in two proportions (blood thinner)\n\nThink of as two populations\n\n\nWe are now going to see another hypothesis test, this time for numerical data"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#running-example-form-hypotheses",
+    "href": "slides/slides-15-single-mean.html#running-example-form-hypotheses",
+    "title": "Hypothesis testing for a mean",
+    "section": "Running example + form hypotheses",
+    "text": "Running example + form hypotheses\nWe will use the duke_forest dataset provided in openintro. It provides data on some houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.\n\nBefore we look at the data, we should form our hypotheses. Suppose I am interested in learning if the average price of houses in Duke Forest is $500,000 or not.\n\nWhat might our hypotheses be?\n\n\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\), where \\(\\mu\\) is the average house of prices in Duke Forest in $10,000"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#collect-data",
+    "href": "slides/slides-15-single-mean.html#collect-data",
+    "title": "Hypothesis testing for a mean",
+    "section": "Collect data",
+    "text": "Collect data\n\n\n\n\n\n\n\n\nThe observed/sample mean housing price is $55.99 from a sample of 98 houses.\n\nNow we must determine if we have “convincing evidence”! Choose \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#simulating-null-distribution",
+    "href": "slides/slides-15-single-mean.html#simulating-null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Simulating null distribution",
+    "text": "Simulating null distribution\nTo simulate from the null distribution, we need to operate in a world where \\(H_{0}\\) is true\n\nSo, I need to repeatedly simulate data sets of size 98 where the true mean is \\(50\\), without change anything else about the data sets.\nIf I don’t want to make any assumptions about how the data behave, how might I do that?"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#bootstrap-to-the-rescue",
+    "href": "slides/slides-15-single-mean.html#bootstrap-to-the-rescue",
+    "title": "Hypothesis testing for a mean",
+    "section": "Bootstrap to the rescue",
+    "text": "Bootstrap to the rescue\n\nRecall the bootstrap: we repeatedly took resamples with replacement from our original data, of same size as original data\n\nAssuming the original data was representative, each one of these bootstrapped data sets gives us a plausible “new” sample of data, from which we can calculate statistics of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere is the bootstrap distribution centered? Why does this make sense?"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#bootstrap-to-null-distribution",
+    "href": "slides/slides-15-single-mean.html#bootstrap-to-null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Bootstrap to null distribution",
+    "text": "Bootstrap to null distribution\n\n\n\n\n\n\n\n\n\nThis is not the null distribution! The null distribution should be centered at \\(\\mu_{0} = 50\\).\nHowever, the null distribution should have the same variability in \\(\\bar{x}\\) as the bootstrap distribution.\n\n\n\n\nSo to get the null distribution, why not just shift the bootstrap distribution to be centered where we want it to be?"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#shifting-to-the-bootstrap-distribution",
+    "href": "slides/slides-15-single-mean.html#shifting-to-the-bootstrap-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Shifting to the bootstrap distribution",
+    "text": "Shifting to the bootstrap distribution\n\nIn this example, bootstrap distribution is centered at \\(\\bar{x} = 55.99\\)\nIn order to center this distribution at \\(\\mu_{0} = 50\\), just subtract \\(55.99 - 50 = 5.99\\) to every single bootstrapped mean\n\nThis will give us a simulated distribution for \\(\\bar{x}\\) centered at 500000, which is exactly the null distribution!\nWe call this “shifting the bootstrap distribution”, because we simply shift where the bootstrap distribution is centered"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#null-distribution",
+    "href": "slides/slides-15-single-mean.html#null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Null distribution",
+    "text": "Null distribution\n\n\n\n\n\n\n\nNotice where the distributions are centered"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#obtain-the-p-value",
+    "href": "slides/slides-15-single-mean.html#obtain-the-p-value",
+    "title": "Hypothesis testing for a mean",
+    "section": "Obtain the p-value",
+    "text": "Obtain the p-value\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\)\nOur observed sample mean housing price is 55.99.\n\n\n\n\n\n\nWhat does it mean to be “as or more extreme” now?"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#two-sided-alternative-hypothesis",
+    "href": "slides/slides-15-single-mean.html#two-sided-alternative-hypothesis",
+    "title": "Hypothesis testing for a mean",
+    "section": "Two-sided alternative hypothesis",
+    "text": "Two-sided alternative hypothesis\n\nThis is the first time we’ve seen a two-sided hypothesis\nSince the alternative is “double sided”, we can be extreme in both the positive and negative direction!"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#obtain-the-p-value-cont.",
+    "href": "slides/slides-15-single-mean.html#obtain-the-p-value-cont.",
+    "title": "Hypothesis testing for a mean",
+    "section": "Obtain the p-value (cont.)",
+    "text": "Obtain the p-value (cont.)\nLet \\(d\\) represent the amount we shifted the distribution by:\n\\[d = 55.99 - 50 = 5.99\\]\nSimulated means as or more extreme than \\(\\mu_{0} + d\\) and \\(\\mu_{0} -d\\) will contribute:\n\n\n\n\n\n\n\n\n\n\n49 out of 5000 simulated sample means are as or more extreme than the observed \\(\\bar{x}\\)\np-value \\(\\approx 0.0098\\)"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#make-decision-and-conclusion",
+    "href": "slides/slides-15-single-mean.html#make-decision-and-conclusion",
+    "title": "Hypothesis testing for a mean",
+    "section": "Make decision and conclusion",
+    "text": "Make decision and conclusion\n\nMake a decision and conclusion in the context of the research question.\n\n\nSince our p-value of 0.0098 is less than the significance level of 0.05, we reject \\(H_{0}\\). We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not $50k."
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html",
+    "href": "slides/slides-15-single-mean.html",
+    "title": "Hypothesis testing for a mean",
+    "section": "",
+    "text": "Office hours tomorrow: 10:30am-12:00pm"
+  },
+  {
+    "objectID": "slides/slides-15-single-mean.html#comprehension-questions",
+    "href": "slides/slides-15-single-mean.html#comprehension-questions",
+    "title": "Hypothesis testing for a mean",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhy did we shift the bootstrap distribution?\nHow do we estimate the p-value in the case of a two-sided alternative hypothesis?"
   }
 ]

@@ -1,0 +1,77 @@
+---
+title: "Null distribution for difference in proportions"
+date: "October 16, 2024"
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+We are using the `cpr` data from the `openintro` library. Define $p_{T}$ as the proportion of people who received the treatment who survived, $p_{C}$ as the proportion of people who received the control who survived. Our hypotheses were:
+
+$H_{0}$: $p_{T} - p_{C} \leq 0$
+
+$H_{A}$: $p_{T} - p_{C} > 0$
+
+## Simulating null distribution
+
+We will store some values as objects in R for reproducibility.
+
+```{r}
+# store number of treatment and control observations from original sample
+cpr$group == "treatment"
+n_t <- sum(cpr$group == "treatment")
+n_c <- sum(cpr$group == "control")
+
+# get the observed outcomes as a vector
+outcomes <- cpr$outcome
+
+# get observed difference in proportions
+obs_diff <- cpr |>
+  group_by(group) |>
+  summarise(p = mean(outcome == "survived")) |>
+  pull(p) |>
+  diff() # defaults to taking second value minus first
+
+obs_diff
+```
+
+Now we will perform the randomization test!
+
+::: column-margin
+If you only pass in a vector as the argument to `sample()` without specifying the size of the sample, you will get a shuffled version of the vector back as output. That is, the function will resample without replacement from the vector, with the size being the same size as the vector.
+:::
+
+```{r}
+set.seed(310)
+B <- 1000
+diff_sims <- rep(NA , B)
+for(b in 1:B){
+  # shuffle the outcomes. See comment for more details.
+  shuffled <- sample(outcomes)
+  
+  # deal out n_t cards to treatment group
+  treat_sim <- shuffled[1:n_t]
+  
+  # deal out remaining n_c cards to control group
+  control_sim <- shuffled[-c(1:n_t)]
+  
+  # calculate proportion of survival in each group
+  p_t_sim <- sum(treat_sim == "survived")/n_t
+  p_c_sim <- sum(control_sim == "survived")/n_c
+  
+  # calculate difference and store. 
+  # I will do treatment - control because it mirrors how obs_diff is calculated
+  diff_sims[b] <- p_t_sim - p_c_sim
+}
+```
+
+```{r echo = F, fig.height=4}
+data.frame(diffs = diff_sims) |>
+  ggplot(aes(x = diffs)) +
+  geom_histogram(binwidth = 0.025, center = 0.0125, col = "white")+
+  labs(x = "Null dist. of difference in survival rates (treat - control)", caption = "Vertical line = observed difference") +
+  theme(text = element_text(size= 16)) +
+  geom_vline(xintercept = obs_diff, col = "magenta")
+```

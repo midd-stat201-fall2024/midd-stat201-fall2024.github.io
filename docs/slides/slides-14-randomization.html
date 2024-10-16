@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
-  <meta name="dcterms.date" content="2024-10-14">
+  <meta name="dcterms.date" content="2024-10-16">
   <title>STAT 201: Intro. to Statistics and Data Science - Hypothesis Testing with Randomization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -397,35 +397,21 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">10/14/24</p>
+  <p class="date">10/16/24</p>
 </section>
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
 <li class="fragment">Office hours change this week</li>
-<li class="fragment">Mid-semester feedback survey results</li>
 </ul>
 <div class="cell">
 
 </div>
 </section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
-<p>Four steps for hypothesis test:</p>
-<ol type="1">
-<li class="fragment">Define null and alternative hypotheses <span class="math inline">\(H_{0}\)</span> and <span class="math inline">\(H_{A}\)</span> in context</li>
-<li class="fragment">Collect data and set significance level <span class="math inline">\(\alpha\)</span></li>
-<li class="fragment">Obtain p-value by modeling randomness that would occur if the <span class="math inline">\(H_{0}\)</span> were true
-<ul>
-<li class="fragment">We did this using by simulating under the null distribution</li>
-</ul></li>
-<li class="fragment">Interpret p-value and make a decision in context</li>
-</ol>
-</section>
 <section id="where-were-going-today" class="slide level2">
 <h2>Where we’re going today</h2>
 <ul>
-<li class="fragment"><p>We will see another kind of hypothesis for different type of research question</p></li>
+<li class="fragment"><p>We will see another kinds of hypotheses for different types of research questions</p></li>
 <li class="fragment"><p>Hypothesis testing framework is the same, but will change how we obtain null distribution</p></li>
 <li class="fragment"><p>Try to see the big picture</p></li>
 </ul>
@@ -478,6 +464,7 @@
 <li class="fragment"><p>The sex of the candidate in the file (male/female)</p></li>
 <li class="fragment"><p>The decision (promote/not promote)</p></li>
 </ul>
+<div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
 
@@ -512,6 +499,7 @@
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 <ul>
@@ -556,7 +544,7 @@
 <ul>
 <li class="fragment">This means that knowing the <code>sex</code> of the candidate should have no bearing on the <code>decision</code> to promote or not</li>
 </ul></li>
-<li class="fragment"><p>We will perform a simulation called a <strong>randomization test</strong> where we randomly re-assign <code>decision</code> and <code>sex</code> outcome pairs to see what would have happened if the bankers’ decisions had been independent of <code>sex</code></p></li>
+<li class="fragment"><p>We will perform a simulation called a <strong>randomization test</strong> where we randomly re-assign <code>decision</code> and <code>sex</code> outcome pairs to see what would have happened if the bankers’ <code>decision</code> had been independent of candidate’s <code>sex</code> (i.e.&nbsp;if <span class="math inline">\(H_{0}\)</span> true)</p></li>
 </ul>
 </section>
 <section id="randomization-test" class="slide level2">
@@ -598,8 +586,7 @@
 </div>
 </div>
 <ul>
-<li class="fragment"><p>Write down “promote” on 35 cards and “not promote” on 13 cards</p></li>
-<li class="fragment"><p>Then repeat the following several times:</p>
+<li class="fragment"><p>Write down “promote” on 35 cards and “not promote” on 13 cards. Repeat the following:</p>
 <ul>
 <li class="fragment"><p>Thoroughly shuffle these 48 cards.</p></li>
 <li class="fragment"><p>Deal out a stack of 24 cards to represent males, and the remaining 24 cards to represent females</p>
@@ -621,16 +608,14 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># reproducibility</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>n_promote <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>decision <span class="sc">==</span> <span class="st">"promote"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>n_not_promote <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>decision <span class="sc">==</span> <span class="st">"not promote"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>n_female <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>n_male <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"male"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># create cards</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>cards <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"promote"</span>, n_promote), <span class="fu">rep</span>(<span class="st">"not promote"</span>, n_not_promote))</span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># shuffle cards</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a>shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(cards)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>n_female <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>n_male <span class="ot">&lt;-</span> <span class="fu">sum</span>(discrimination<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"male"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># create cards</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>cards <span class="ot">&lt;-</span> discrimination<span class="sc">$</span>decision</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># shuffle cards</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(cards)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -647,14 +632,14 @@
 <tbody>
   <tr>
    <td style="text-align:left;border-right:1px solid;"> female </td>
-   <td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> 17 </td>
+   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:left;"> 16 </td>
    <td style="text-align:left;"> 24 </td>
   </tr>
   <tr>
    <td style="text-align:left;border-right:1px solid;"> male </td>
-   <td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> 18 </td>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 19 </td>
    <td style="text-align:left;"> 24 </td>
   </tr>
   <tr>
@@ -669,7 +654,7 @@
 </div>
 </div>
 <ul>
-<li class="fragment">Under this simulation, 0.7083333 of females were promoted, and 0.75 of males were promoted. Simulated difference: -0.0416667</li>
+<li class="fragment">Under this simulation, 0.6666667 of females were promoted, and 0.7916667 of males were promoted. Simulated difference: -0.125</li>
 </ul>
 </section>
 <section id="null-distribution" class="slide level2">
@@ -677,7 +662,7 @@
 <div class="cell">
 
 </div>
-<p>Repeat the previous 1000 times:</p>
+<p>Repeat the previous step 1000 times:</p>
 
 <img data-src="slides-14-randomization_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="obtain-p-value" class="slide level2">
@@ -700,14 +685,14 @@
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li class="fragment">Out of 1000 simulations under <span class="math inline">\(H_{0}\)</span>, 29 resulted in difference in promotion rates as or more extreme than our observed</li>
+<li class="fragment">Out of 1000 simulations under <span class="math inline">\(H_{0}\)</span>, 29 resulted in a difference in promotion rates as or more extreme than our observed</li>
 <li class="fragment">So the p-value is 0.029</li>
 </ul>
 </div>
 </div>
 </section>
-<section id="making-conclusion" class="slide level2">
-<h2>Making conclusion</h2>
+<section id="making-decision-and-conclusion" class="slide level2">
+<h2>Making decision and conclusion</h2>
 <p>Our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?</p>
 <ul>
 <li class="fragment"><span class="math inline">\(H_{0}\)</span>: <code>sex</code> and <code>decision</code> are independent</li>
@@ -717,15 +702,18 @@
 <div class="discuss">
 <ul>
 <li class="fragment"><p>Interpret our p-value in context.</p></li>
-<li class="fragment"><p>Make a decision in response to the research question.</p></li>
+<li class="fragment"><p>Make a decision and conclusion in response to the research question.</p></li>
 </ul>
 </div>
 </section>
-<section id="making-conclusion-answer" class="slide level2">
-<h2>Making conclusion (answer)</h2>
+<section id="making-decision-and-conclusion-answer" class="slide level2">
+<h2>Making decision and conclusion (answer)</h2>
 <ul>
 <li class="fragment"><p>Assuming that <code>sex</code> and <code>decision</code> are independent, the probability of observing a difference in promotion rates as or more extreme as we did is 0.029.</p></li>
-<li class="fragment"><p>Because the observed p-value of 0.029 is less than our significant level 0.5, we reject <span class="math inline">\(H_{0}\)</span>. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.</p></li>
+<li class="fragment"><p>Because the observed p-value of 0.029 is less than our significant level 0.05, we reject <span class="math inline">\(H_{0}\)</span>. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.</p></li>
+<li class="fragment"><div class="discuss">
+<p>What kind of error could we have made?</p>
+</div></li>
 </ul>
 </section></section>
 <section>
@@ -737,9 +725,10 @@
 <h2>Running example: CPR</h2>
 <p>An experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:</p>
 <ul>
-<li class="fragment"><p>treatment group: receive a blood thinner</p></li>
-<li class="fragment"><p>control group: do not receive a blood thinner</p></li>
+<li class="fragment"><p>treatment group: received a blood thinner</p></li>
+<li class="fragment"><p>control group: did not receive a blood thinner</p></li>
 </ul>
+<div class="fragment">
 <p>For each patient, the outcome recorded was whether they survived for at least 24 hours.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -777,6 +766,7 @@
 
 </div>
 </div>
+</div>
 <ul>
 <li class="fragment"><div class="discuss">
 <p>What is/are the variables(s) here? What types of variables are they?</p>
@@ -793,16 +783,22 @@
 <li class="fragment">Let <span class="math inline">\(p_{T}\)</span> and <span class="math inline">\(p_{C}\)</span> denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively</li>
 </ul>
 <div class="columns">
-<div class="column" style="width:33%;">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<p>Option 1</p>
 <ul>
 <li class="fragment"><p><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(p_{T} \leq p_{C}\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(p_{T} &gt; p_{C}\)</span></p></li>
 </ul>
-</div><div class="column" style="width:33%;">
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p>Option 2 (preferred)</p>
 <ul>
 <li class="fragment"><p><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(p_{T} - p_{C} \leq 0\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(p_{T} - p_{C}&gt; 0\)</span></p></li>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -862,8 +858,8 @@
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li class="fragment"><p><span class="math inline">\(\hat{p}_{C} = \frac{11}{50} =\)</span> 0.22</p></li>
-<li class="fragment"><p><span class="math inline">\(\hat{p}_{T} = \frac{14}{40} =\)</span> 0.35</p></li>
+<li class="fragment"><p><span class="math inline">\(\hat{p}_{C} = \frac{11}{50} = 0.22\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\hat{p}_{T} = \frac{14}{40} = 0.35\)</span></p></li>
 <li class="fragment"><p>Observed difference: <span class="math inline">\(\hat{p}_{T} - \hat{p}_{C} = 0.13\)</span></p></li>
 </ul>
 </div>
@@ -876,7 +872,7 @@
 <section id="simulate-under-null-1" class="slide level2">
 <h2>Simulate under null</h2>
 <ul>
-<li class="fragment"><p>We will once again perform a <em>randomization</em> text to try and simulate the difference in proportions under <span class="math inline">\(H_{0}\)</span></p>
+<li class="fragment"><p>We will once again perform a <em>randomization</em> test to try and simulate the difference in proportions under <span class="math inline">\(H_{0}\)</span></p>
 <ul>
 <li class="fragment">Under <span class="math inline">\(H_{0}\)</span>, treatment group is no better than control group, so let’s simulate assuming that outcome and treatment are independent</li>
 </ul></li>
@@ -891,41 +887,18 @@
 </section>
 <section id="simulate-under-null-code" class="slide level2">
 <h2>Simulate under null (code)</h2>
+<p>Live code</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">set.seed</span>(<span class="dv">310</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>n_t <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"treatment"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>n_c <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"control"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>n_died <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>outcome <span class="sc">==</span> <span class="st">"died"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>n_survived <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>outcome <span class="sc">==</span> <span class="st">"survived"</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># make my cards</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>cards <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"died"</span>, n_died), <span class="fu">rep</span>(<span class="st">"survived"</span>, n_survived))</span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>diff_sims <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span> , B)</span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
-<span id="cb5-13"><a href="#cb5-13"></a>  <span class="co"># shuffle cards</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a>  shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(cards)</span>
-<span id="cb5-15"><a href="#cb5-15"></a>  </span>
-<span id="cb5-16"><a href="#cb5-16"></a>  <span class="co"># deal out n_t cards to treatment group</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_t]</span>
-<span id="cb5-18"><a href="#cb5-18"></a>  </span>
-<span id="cb5-19"><a href="#cb5-19"></a>  <span class="co"># deal out remaining n_c cards to control group</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_t)]</span>
-<span id="cb5-21"><a href="#cb5-21"></a>  </span>
-<span id="cb5-22"><a href="#cb5-22"></a>  <span class="co"># calculate proportion of survival in each group</span></span>
-<span id="cb5-23"><a href="#cb5-23"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
-<span id="cb5-24"><a href="#cb5-24"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">mean</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)</span>
-<span id="cb5-25"><a href="#cb5-25"></a>  </span>
-<span id="cb5-26"><a href="#cb5-26"></a>  <span class="co"># calculate difference and store</span></span>
-<span id="cb5-27"><a href="#cb5-27"></a>  diff_sims[b] <span class="ot">&lt;-</span> p_t_sim <span class="sc">-</span> p_c_sim</span>
-<span id="cb5-28"><a href="#cb5-28"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 </section>
 <section id="visualizing-null-distribution" class="slide level2">
 <h2>Visualizing null distribution</h2>
 
-<img data-src="slides-14-randomization_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides-14-randomization_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><div class="discuss">
+<p>How would we obtain the p-value in this problem?</p>
+</div>
+</section>
 <section id="calculate-p-value" class="slide level2">
 <h2>Calculate p-value</h2>
 <div class="columns">
@@ -937,8 +910,8 @@
 </div>
 </div><div class="column" style="width:40%;">
 <ul>
-<li class="fragment"><p>We observed 107 out of 1000 simulations where the difference in proportions under <span class="math inline">\(H_{0}\)</span> was as or more extreme than our observed difference of 0.13</p></li>
-<li class="fragment"><p>So p-value is 0.107</p></li>
+<li class="fragment"><p>We observed 148 out of 1000 simulations where the difference in proportions under <span class="math inline">\(H_{0}\)</span> was as or more extreme than our observed difference of 0.13</p></li>
+<li class="fragment"><p>So p-value is 0.148</p></li>
 </ul>
 </div>
 </div>
@@ -946,13 +919,23 @@
 <section id="interpret-and-make-conclusion" class="slide level2">
 <h2>Interpret and make conclusion</h2>
 <p>The researchers are interested in learning if the blood thinner treatment was effective.</p>
-<p>Our p-value is 0.107 and our selected significance level was <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p>Our p-value is 0.148 and our selected significance level was <span class="math inline">\(\alpha = 0.05\)</span>.</p>
 <div class="discuss">
 <ul>
-<li class="fragment"><p>Interpret our p-value in text</p></li>
-<li class="fragment"><p>Make a conclusion about the research question in context.</p></li>
+<li class="fragment">Make a decision and conclusion about the research question in context.</li>
 </ul>
 </div>
+</section>
+<section id="comprehension-questions" class="slide level2">
+<h2>Comprehension questions</h2>
+<ul>
+<li class="fragment"><p>What were the similarities and differences between:</p>
+<ul>
+<li class="fragment"><p>hypothesis test for independence</p></li>
+<li class="fragment"><p>hypothesis test for two proportions</p></li>
+</ul></li>
+<li class="fragment"><p>How do the randomization tests today differ from the test for one proportion that we learned last class?</p></li>
+</ul>
 
 <div class="footer footer-default">
 

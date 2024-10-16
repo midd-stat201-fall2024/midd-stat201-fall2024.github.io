@@ -139,7 +139,7 @@ In STAT 201B sample: `r sum(x_b == 1)` students received at least 7 hours of sle
 
     -   Option 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)
 
-    -   Option 2: if we don't want to make assumptions, why not apply the bootstrap technique and simulate?
+    -   Option 2: if we don't want to make assumptions, why not simulate?
 
         -   We will call this option "simulating under $H_{0}$"
 
@@ -354,7 +354,7 @@ Four steps for hypothesis test:
 
 -   It is important to weight the consequences of making each type of error!
 
-    -   We have some control in this. How?
+    -   We have some control in this - how? Through $\alpha$!
 
 ## Comprehension questions
 

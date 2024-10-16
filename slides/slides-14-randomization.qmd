@@ -1,6 +1,6 @@
 ---
 title: "Hypothesis Testing with Randomization"
-date: "October 14, 2024"
+date: "October 16, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -20,7 +20,6 @@ draft: false
 ## Housekeeping
 
 -   Office hours change this week
--   Mid-semester feedback survey results
 
 ```{r echo = F, message= F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -32,19 +31,10 @@ plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
-## Recap
-
-Four steps for hypothesis test:
-
-1.  Define null and alternative hypotheses $H_{0}$ and $H_{A}$ in context
-2.  Collect data and set significance level $\alpha$
-3.  Obtain p-value by modeling randomness that would occur if the $H_{0}$ were true
-    -   We did this using by simulating under the null distribution
-4.  Interpret p-value and make a decision in context
 
 ## Where we're going today
 
--   We will see another kind of hypothesis for different type of research question
+-   We will see another kinds of hypotheses for different types of research questions
 
 -   Hypothesis testing framework is the same, but will change how we obtain null distribution
 
@@ -100,6 +90,7 @@ For each of the 48 supervisors, the following were recorded:
 
 -   The decision (promote/not promote)
 
+::: fragment
 ```{r}
 sex <- c(rep("male", 24), rep('female', 24))
 decision <- c(rep("promote", 21), rep("not promote", 3), rep("promote", 14), rep("not promote", 10))
@@ -120,6 +111,7 @@ ct <- ct |>
   column_spec(1, border_right = T)
 ct
 ```
+:::
 
 -   Are we prepared to answer our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
 
@@ -166,7 +158,7 @@ props
 
     -   This means that knowing the `sex` of the candidate should have no bearing on the `decision` to promote or not
 
--   We will perform a simulation called a **randomization test** where we randomly re-assign `decision` and `sex` outcome pairs to see what would have happened if the bankers' decisions had been independent of `sex`
+-   We will perform a simulation called a **randomization test** where we randomly re-assign `decision` and `sex` outcome pairs to see what would have happened if the bankers' `decision` had been independent of candidate's `sex` (i.e. if $H_{0}$ true)
 
 ## Randomization test
 
@@ -174,9 +166,7 @@ props
 ct
 ```
 
--  Write down "promote" on `r sum(decision == "promote")` cards and "not promote" on `r sum(decision == "not promote")` cards
-
--   Then repeat the following several times:
+-   Write down "promote" on `r sum(decision == "promote")` cards and "not promote" on `r sum(decision == "not promote")` cards. Repeat the following:
 
     -   Thoroughly shuffle these `r length(decision)` cards.
 
@@ -199,13 +189,11 @@ Let's perform one iteration of the simulation.
 ```{r echo = T}
 # reproducibility
 set.seed(1)
-n_promote <- sum(discrimination$decision == "promote")
-n_not_promote <- sum(discrimination$decision == "not promote")
 n_female <- sum(discrimination$sex == "female")
 n_male <- sum(discrimination$sex == "male")
 
 # create cards
-cards <- c(rep("promote", n_promote), rep("not promote", n_not_promote))
+cards <- discrimination$decision
 
 # shuffle cards
 shuffled <- sample(cards)
@@ -244,10 +232,12 @@ ct_null
 ```{r}
 B <- 1000
 props_diff_vec <- rep(NA, B)
+n_promote <- sum(discrimination$decision == "promote")
+n_not_promote <- sum(discrimination$decision == "not promote")
 props_diff_vec <- ht_independence(n_promote, n_not_promote, n_female, n_male, B, 1)
 ```
 
-Repeat the previous `r B` times:
+Repeat the previous step `r B` times:
 
 ```{r fig.height=8}
 null_dist <- data.frame(prop_diff = props_diff_vec)|>
@@ -286,12 +276,12 @@ null_dist |>
 ::::
 
 ::: {.column width="40%"}
--   Out of `r B` simulations under $H_{0}$, `r sum(null_dist$extreme)` resulted in difference in promotion rates as or more extreme than our observed
+-   Out of `r B` simulations under $H_{0}$, `r sum(null_dist$extreme)` resulted in a difference in promotion rates as or more extreme than our observed
 -   So the p-value is `r p_val`
 :::
 ::::::
 
-## Making conclusion
+## Making decision and conclusion
 
 Our research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?
 
@@ -302,14 +292,18 @@ Our research question: Are individuals who identify their sex as female discrimi
 ::: discuss
 -   Interpret our p-value in context.
 
--   Make a decision in response to the research question.
+-   Make a decision and conclusion in response to the research question.
 :::
 
-## Making conclusion (answer)
+## Making decision and conclusion (answer)
 
 -   Assuming that `sex` and `decision` are independent, the probability of observing a difference in promotion rates as or more extreme as we did is `r p_val`.
 
--   Because the observed p-value of `r p_val` is less than our significant level 0.5, we reject $H_{0}$. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.
+-   Because the observed p-value of `r p_val` is less than our significant level 0.05, we reject $H_{0}$. The data provide strong evidence of sex discrimination against female candidates by the male supervisors.
+
+-   ::: discuss
+    What kind of error could we have made?
+    :::
 
 # Comparing two proportions
 
@@ -317,10 +311,11 @@ Our research question: Are individuals who identify their sex as female discrimi
 
 An experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:
 
--   treatment group: receive a blood thinner
+-   treatment group: received a blood thinner
 
--   control group: do not receive a blood thinner
+-   control group: did not receive a blood thinner
 
+::: fragment
 For each patient, the outcome recorded was whether they survived for at least 24 hours.
 
 ```{r}
@@ -340,6 +335,7 @@ ct <- ct |>
   column_spec(1, border_right = T)
 ct
 ```
+:::
 
 -   ::: discuss
     What is/are the variables(s) here? What types of variables are they?
@@ -355,19 +351,27 @@ In words, try to determine $H_{0}$ and $H_{A}$.
 
 -   Let $p_{T}$ and $p_{C}$ denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively
 
-::::: columns
-::: {.column width="33%"}
+::::::: columns
+:::: {.column width="50%"}
+::: fragment
+Option 1
+
 -   $H_{0}$: $p_{T} \leq p_{C}$
 
 -   $H_{A}$: $p_{T} > p_{C}$
 :::
+::::
 
-::: {.column width="33%"}
+:::: {.column width="50%"}
+::: fragment
+Option 2 (preferred)
+
 -   $H_{0}$: $p_{T} - p_{C} \leq 0$
 
 -   $H_{A}$: $p_{T} - p_{C}> 0$
 :::
-:::::
+::::
+:::::::
 
 ## Collect data
 
@@ -375,6 +379,8 @@ Using the data, obtain the observed difference in sample proportions.
 
 ```{r}
 ct
+counts <- cpr |>
+  count(group, outcome) 
 ```
 
 :::::: columns
@@ -395,9 +401,9 @@ obs_diff <- p_hat_t - p_hat_c
 ::::
 
 ::: {.column width="40%"}
--   $\hat{p}_{C} = \frac{`r sum(cpr$group == "control" & cpr$outcome == "survived")`}{`r sum(cpr$group == "control")`} =$ `r p_hat_c`
+-   $\hat{p}_{C} = \frac{`r counts |> filter(group == "control", outcome == "survived") |> pull(n)`}{`r counts |> filter(group == "control") |> pull(n) |> sum()`} = `r p_hat_c`$
 
--   $\hat{p}_{T} = \frac{`r sum(cpr$group == "treatment" & cpr$outcome == "survived")`}{`r sum(cpr$group == "treatment")`} =$ `r p_hat_t`
+-   $\hat{p}_{T} = \frac{`r counts |> filter(group == "treatment", outcome == "survived") |> pull(n)`}{`r counts |> filter(group == "treatment") |> pull(n) |> sum()`} = `r p_hat_t`$
 
 -   Observed difference: $\hat{p}_{T} - \hat{p}_{C} = `r obs_diff`$
 :::
@@ -409,7 +415,7 @@ obs_diff <- p_hat_t - p_hat_c
 
 ## Simulate under null
 
--   We will once again perform a *randomization* text to try and simulate the difference in proportions under $H_{0}$
+-   We will once again perform a *randomization* test to try and simulate the difference in proportions under $H_{0}$
 
     -   Under $H_{0}$, treatment group is no better than control group, so let's simulate assuming that outcome and treatment are independent
 
@@ -425,15 +431,15 @@ obs_diff <- p_hat_t - p_hat_c
 
 ## Simulate under null (code)
 
-```{r echo = T}
+Live code
+
+```{r echo = F}
 set.seed(310)
 n_t <- sum(cpr$group == "treatment")
 n_c <- sum(cpr$group == "control")
-n_died <- sum(cpr$outcome == "died")
-n_survived <- sum(cpr$outcome == "survived")
 
 # make my cards
-cards <- c(rep("died", n_died), rep("survived", n_survived))
+cards <- cpr$outcome
 
 B <- 1000
 diff_sims <- rep(NA , B)
@@ -442,10 +448,10 @@ for(b in 1:B){
   shuffled <- sample(cards)
   
   # deal out n_t cards to treatment group
-  control_sim <- shuffled[1:n_t]
+  treat_sim <- shuffled[1:n_t]
   
   # deal out remaining n_c cards to control group
-  treat_sim <- shuffled[-c(1:n_t)]
+  control_sim <- shuffled[-c(1:n_t)]
   
   # calculate proportion of survival in each group
   p_t_sim <- mean(treat_sim == "survived")
@@ -468,6 +474,10 @@ diff_prop_null |>
   labs(x = "Null dist. of difference in survival rates (treat - control)") +
   theme(text = element_text(size= 24))
 ```
+
+::: discuss
+How would we obtain the p-value in this problem?
+:::
 
 ## Calculate p-value
 
@@ -501,7 +511,15 @@ The researchers are interested in learning if the blood thinner treatment was ef
 Our p-value is `r p_val` and our selected significance level was $\alpha = 0.05$.
 
 ::: discuss
--   Interpret our p-value in text
-
--   Make a conclusion about the research question in context.
+-   Make a decision and conclusion about the research question in context.
 :::
+
+## Comprehension questions
+
+-   What were the similarities and differences between:
+
+    -   hypothesis test for independence
+
+    -   hypothesis test for two proportions
+
+-   How do the randomization tests today differ from the test for one proportion that we learned last class?

@@ -32,6 +32,25 @@ bootstrap_prop <- function(n, B, x, seed = 1){
   ret
 }
 
+bootstrap_mean <- function(n, B, x, seed = 1){
+  ret <- rep(NA, B)
+  for(b in 1:B){
+    xsamp <- sample(x, n, replace = T)
+    ret[b] <- mean(xsamp)
+  }
+  ret
+}
+
+bootstap_diff_props <- function(n1, n2, x1, x2, B, seed = 1){
+  ret <- rep(NA, B)
+  for(b in 1:B){
+    x1samp <- sample(x1, n1, replace = T)
+    x2samp <- sample(x2, n2, replace = T)
+    ret[b] <- mean(x1samp == 1) - mean(x2samp == 1)
+  }
+  ret
+}
+
 
 
 
