@@ -1,0 +1,60 @@
+---
+title: "Misc. hypothesis testing practice"
+author: "Practice problems"
+date: "October 17, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r echo = F, message = F, warning = F}
+library(tidyverse)
+library(openintro)
+library(knitr)
+opts_chunk$set(fig.width=12, fig.height=4) 
+```
+
+1.  For each of the statements (a) - (d), indicate if they are true or false interpretation of the following confidence interval. If false, provide or a reason or correction to the misinterpretation.
+
+    "You collect a large sample and calculate a 95% confidence interval for the average number of cans of soda consumed annually per adult to be (440, 520), i.e. on average, adults in the US consume just under two cans of soda per day".
+
+    a.  95% of adults in the US consume between 440 and 520 cans of soda per year.
+    b.  There is a 95% chance that the true population average per adult yearly soda consumption is between 440 and 520 cans.
+    c.  The true population average per adult soda consumption is between 440 and 520 cans, with 95% confidence.
+    d.  The average soda consumption of the people who were is sampled is between 440 and 520 cans of soda per year, with 95% confidence.
+
+2.  A food safety inspector is called upon to investigate a restaurant with a few customer reports of poor sanitation practices. The food safety inspector uses a hypothesis testing framework to evaluate whether regulations are not being met. If the inspector determines the restaurant is in gross violation, its license to serve food will be revoked.
+
+    a.  Write the hypotheses in words (no population parameters necessary).
+    b.  What is a Type I error in this context?
+    c.  What is a Type II error in this context?
+    d.  Which error is more problematic for the restaurant owner? For the diners? Why?
+    e.  Do you think the diners would prefer a higher or lower significance level $\alpha$ compared to what the restaurant owner prefers? Explain.
+
+3.  Consider the following simple random sample $x = (47, 4, 92, 47, 12, 8)$.
+
+    Which of the following sets of values could be a possible bootstrap sample from the observe data above? If a set of values could not be a bootstrap sample, determine why not.
+
+    a.  $(47, 47, 47, 47, 47, 47)$
+    b.  $(92, 4, 13,8, 47, 4)$
+    c.  $(4, 8, 12, 12, 47)$
+    d.  $(12, 4, 8, 8, 92, 12)$
+    e.  $(8, 47, 12, 12, 8, 4, 92)$
+
+4.  For each of the following statements (a)-(e), indicate if they are a true or false interpretation of the p-value. If false, provide a reason or correction to the misinterpretation.
+
+    "You are wondering if the average amount of cereal in a 10 oz. cereal box is greater than 10 oz. You collect 50 boxes of cereal marketed as 10 oz, conduct simulation-based hypothesis test, and obtain a p-value of 0.23."
+
+    a.  The probability that the average weight of all cereal boxes is 10 oz. is 0.23.
+    b.  The probability that the average weight of all cereal boxes is something greater than 10 oz. is 0.23.
+    c.  Because the p-value is 0.23, the average weight of all cereal boxes is 10 oz.
+    d.  Because the p-value is small, the population average must be just barely about 10 oz.
+    e.  If $H_{0}$ is true, the probability of observing another sample with an average as or more extreme as the data is 0.23.

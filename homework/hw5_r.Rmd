@@ -48,7 +48,7 @@ $H_{0}$:
 
 $H_{1}$:
 
-2.  Describe in words how you would obtain 5000 simulations from the null distribution. (*Hint: this should be very similar to the CPR example.*) Then, describe how you would estimate the p-value using this null distribution. Be as specific as possible!
+2.  Describe in words how you would obtain 5000 simulations from the null distribution using a randomization test. (*Hint: this should be very similar to the sex discrimination or the CPR example.*) Then, describe how you would estimate the p-value using this null distribution. Be as specific as possible!
 
 **Answer**:
 
@@ -63,7 +63,7 @@ $H_{1}$:
 
 ```
 
-4.  Simulate the null distribution according to your description above. Store the results into a vector called `null_dist_pt1`. 
+4.  Simulate the null distribution according to your description above. Store the results into a vector called `null_dist_pt1`.
 
 ```{r}
 # set a seed using the set.seed() function
@@ -76,11 +76,11 @@ $H_{1}$:
 
 ```
 
-**Answer:** 
+**Answer:**
 
 6.  What is the probability you’ve made a Type 1 error? If you cannot tell for sure, explain why. Similarly, what is the probability you’ve made a Type 2 error? If you cannot tell for sure, explain why.
 
-**Answer:** 
+**Answer:**
 
 ## Part 2
 
@@ -88,13 +88,13 @@ We will now answer the following question: is there enough evidence to suggest t
 
 7.  Write out the null and alternative hypotheses for this question using symbols, defining any quantities as necessary.
 
-**Answer:** 
+**Answer:**
 
 8.  Describe in words how you would obtain 5000 simulations from the null distribution. Then, describe how you would estimate the p-value using this null distribution. Be as specific as possible!
 
 **Answer:**
 
-9.  To make your life easier, create the following objects/variables. 
+9.  To make your life easier, create the following objects/variables.
 
 -   `hnr_pd`: a vector of HNR for the PD patients only (you may want to use some combination of `filter()` and `pull()` to obtain this)
 
@@ -114,7 +114,7 @@ We will now answer the following question: is there enough evidence to suggest t
 
 ```
 
-10.  Visualize your null distribution. Make sure your visualization has informative axis labels and/or title.
+10. Visualize your null distribution. Make sure your visualization has informative axis labels and/or title.
 
 ```{r}
 
@@ -126,4 +126,4 @@ We will now answer the following question: is there enough evidence to suggest t
 
 ```
 
-**Answer:** 
+**Answer:**
