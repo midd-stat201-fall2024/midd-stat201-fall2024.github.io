@@ -3063,14 +3063,14 @@
     "href": "slides/slides-15-single-mean.html#running-example-form-hypotheses",
     "title": "Hypothesis testing for a mean",
     "section": "Running example + form hypotheses",
-    "text": "Running example + form hypotheses\nWe will use the duke_forest dataset provided in openintro. It provides data on some houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.\n\nBefore we look at the data, we should form our hypotheses. Suppose I am interested in learning if the average price of houses in Duke Forest is $500,000 or not.\n\nWhat might our hypotheses be?\n\n\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\), where \\(\\mu\\) is the average house of prices in Duke Forest in $10,000"
+    "text": "Running example + form hypotheses\nWe will use the duke_forest dataset provided in openintro. It provides data on some houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.\n\nBefore we look at the data, we should form our hypotheses. Suppose I am interested in learning if the average price of houses in Duke Forest is $500,000 or not.\n\nWhat might our hypotheses be?\n\n\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\), where \\(\\mu\\) is the average house of prices in Duke Forest in $10,000\nTerminology: I will refer to \\(\\mu_{0} = 50\\) as my “null hypothesized value”. (i.e. the specific value of \\(\\mu\\) in \\(H_{0}\\))"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#collect-data",
     "href": "slides/slides-15-single-mean.html#collect-data",
     "title": "Hypothesis testing for a mean",
     "section": "Collect data",
-    "text": "Collect data\n\n\n\n\n\n\n\n\nThe observed/sample mean housing price is $55.99 from a sample of 98 houses.\n\nNow we must determine if we have “convincing evidence”! Choose \\(\\alpha = 0.05\\)"
+    "text": "Collect data\n\n\n\n\nThe observed/sample mean housing price is $55.99k from a sample of 98 houses.\n\nNow we must determine if we have “convincing evidence”! Choose \\(\\alpha = 0.05\\)"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#simulating-null-distribution",
@@ -3084,7 +3084,7 @@
     "href": "slides/slides-15-single-mean.html#bootstrap-to-the-rescue",
     "title": "Hypothesis testing for a mean",
     "section": "Bootstrap to the rescue",
-    "text": "Bootstrap to the rescue\n\nRecall the bootstrap: we repeatedly took resamples with replacement from our original data, of same size as original data\n\nAssuming the original data was representative, each one of these bootstrapped data sets gives us a plausible “new” sample of data, from which we can calculate statistics of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere is the bootstrap distribution centered? Why does this make sense?"
+    "text": "Bootstrap to the rescue\n\nRecall the bootstrap: we repeatedly took resamples with replacement from our original data, of same size as original data\n\nAssuming the original data was representative, each one of these bootstrapped data sets gives us a plausible “new” sample of data, from which we can calculate statistics of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\nReminder ourselves: Where is the bootstrap distribution centered?"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#bootstrap-to-null-distribution",
@@ -3098,21 +3098,21 @@
     "href": "slides/slides-15-single-mean.html#shifting-to-the-bootstrap-distribution",
     "title": "Hypothesis testing for a mean",
     "section": "Shifting to the bootstrap distribution",
-    "text": "Shifting to the bootstrap distribution\n\nIn this example, bootstrap distribution is centered at \\(\\bar{x} = 55.99\\)\nIn order to center this distribution at \\(\\mu_{0} = 50\\), just subtract \\(55.99 - 50 = 5.99\\) to every single bootstrapped mean\n\nThis will give us a simulated distribution for \\(\\bar{x}\\) centered at 500000, which is exactly the null distribution!\nWe call this “shifting the bootstrap distribution”, because we simply shift where the bootstrap distribution is centered"
+    "text": "Shifting to the bootstrap distribution\n\nIn this example, bootstrap distribution is centered at \\(\\bar{x} = 55.99\\)\nIn order to center this distribution at \\(\\mu_{0} = 50\\), just subtract \\(55.99 - 50 = 5.99\\) from every single bootstrapped mean\n\nThis will give us a simulated distribution for \\(\\bar{x}\\) centered at \\(\\mu_{0} = 50\\), which is exactly the null distribution!\n\nWe call this “shifting the bootstrap distribution”, because we simply shift where the bootstrap distribution is centered"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#null-distribution",
     "href": "slides/slides-15-single-mean.html#null-distribution",
     "title": "Hypothesis testing for a mean",
     "section": "Null distribution",
-    "text": "Null distribution\n\n\n\n\n\n\n\nNotice where the distributions are centered"
+    "text": "Null distribution\n\n\n\nNotice where the distributions are centered"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#obtain-the-p-value",
     "href": "slides/slides-15-single-mean.html#obtain-the-p-value",
     "title": "Hypothesis testing for a mean",
     "section": "Obtain the p-value",
-    "text": "Obtain the p-value\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\)\nOur observed sample mean housing price is 55.99.\n\n\n\n\n\n\nWhat does it mean to be “as or more extreme” now?"
+    "text": "Obtain the p-value\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\)\nOur observed sample mean housing price is 55.99.\n\n\nWhat does it mean to be “as or more extreme” now?"
   },
   {
     "objectID": "slides/slides-15-single-mean.html#two-sided-alternative-hypothesis",
