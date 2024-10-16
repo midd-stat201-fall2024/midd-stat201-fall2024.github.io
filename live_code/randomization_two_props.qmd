@@ -1,5 +1,5 @@
 ---
-title: "Null distribution for difference in proportions"
+title: "Randomization for difference in proportions"
 date: "October 16, 2024"
 ---
 
@@ -8,24 +8,23 @@ library(tidyverse)
 library(openintro)
 ```
 
-We are using the `cpr` data from the `openintro` library. Define $p_{T}$ as the proportion of people who received the treatment who survived, $p_{C}$ as the proportion of people who received the control who survived. Our hypotheses were:
+We are using the `cpr` data from the `openintro` library. Define $p_{T}$ as the proportion of treatment group who survived, $p_{C}$ as the proportion of control group who survived. Our hypotheses were:
 
-$H_{0}$: $p_{T} - p_{C} \leq 0$
-
-$H_{A}$: $p_{T} - p_{C} > 0$
+$H_{0}$: $p_{T} - p_{C} \leq 0$ versus $H_{A}$: $p_{T} - p_{C} > 0$
 
 ## Simulating null distribution
 
 We will store some values as objects in R for reproducibility.
 
 ```{r}
-# store number of treatment and control observations from original sample
-cpr$group == "treatment"
-n_t <- sum(cpr$group == "treatment")
-n_c <- sum(cpr$group == "control")
-
 # get the observed outcomes as a vector
 outcomes <- cpr$outcome
+
+# store number of treatment and control observations from original sample
+n_t <- sum(cpr$group == "treatment")
+n_t
+n_c <- sum(cpr$group == "control")
+n_c
 
 # get observed difference in proportions
 obs_diff <- cpr |>
@@ -51,7 +50,7 @@ for(b in 1:B){
   # shuffle the outcomes. See comment for more details.
   shuffled <- sample(outcomes)
   
-  # deal out n_t cards to treatment group
+  # deal out first n_t cards to treatment group
   treat_sim <- shuffled[1:n_t]
   
   # deal out remaining n_c cards to control group
@@ -67,7 +66,7 @@ for(b in 1:B){
 }
 ```
 
-```{r echo = F, fig.height=4}
+```{r echo = F, fig.height=3, echo = F}
 data.frame(diffs = diff_sims) |>
   ggplot(aes(x = diffs)) +
   geom_histogram(binwidth = 0.025, center = 0.0125, col = "white")+

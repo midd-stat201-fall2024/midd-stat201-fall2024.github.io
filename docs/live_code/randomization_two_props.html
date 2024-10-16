@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-10-16">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Null distribution for difference in proportions</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Randomization for difference in proportions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Null distribution for difference in proportions</h1>
+<h1 class="title">Randomization for difference in proportions</h1>
 </div>
 
 
@@ -209,39 +209,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We are using the <code>cpr</code> data from the <code>openintro</code> library. Define <span class="math inline">\(p_{T}\)</span> as the proportion of people who received the treatment who survived, <span class="math inline">\(p_{C}\)</span> as the proportion of people who received the control who survived. Our hypotheses were:</p>
-<p><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(p_{T} - p_{C} \leq 0\)</span></p>
-<p><span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(p_{T} - p_{C} &gt; 0\)</span></p>
+<p>We are using the <code>cpr</code> data from the <code>openintro</code> library. Define <span class="math inline">\(p_{T}\)</span> as the proportion of treatment group who survived, <span class="math inline">\(p_{C}\)</span> as the proportion of control group who survived. Our hypotheses were:</p>
+<p><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(p_{T} - p_{C} \leq 0\)</span> versus <span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(p_{T} - p_{C} &gt; 0\)</span></p>
 <section id="simulating-null-distribution" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="simulating-null-distribution">Simulating null distribution</h2>
 <p>We will store some values as objects in R for reproducibility.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># store number of treatment and control observations from original sample</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"treatment"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the observed outcomes as a vector</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>outcomes <span class="ot">&lt;-</span> cpr<span class="sc">$</span>outcome</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># store number of treatment and control observations from original sample</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n_t <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"treatment"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>n_t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-[13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-[25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-[37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-[49] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-[61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-[73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-[85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre><code>[1] 40</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_t <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"treatment"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_c <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"control"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get the observed outcomes as a vector</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>outcomes <span class="ot">&lt;-</span> cpr<span class="sc">$</span>outcome</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get observed difference in proportions</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> cpr <span class="sc">|&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">p =</span> <span class="fu">mean</span>(outcome <span class="sc">==</span> <span class="st">"survived"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p) <span class="sc">|&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diff</span>() <span class="co"># defaults to taking second value minus first</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>obs_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_c <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"control"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get observed difference in proportions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> cpr <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">p =</span> <span class="fu">mean</span>(outcome <span class="sc">==</span> <span class="st">"survived"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diff</span>() <span class="co"># defaults to taking second value minus first</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>obs_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.13</code></pre>
 </div>
@@ -251,27 +246,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="no-row-height column-margin column-container"><div class="">
 <p>If you only pass in a vector as the argument to <code>sample()</code> without specifying the size of the sample, you will get a shuffled version of the vector back as output. That is, the function will resample without replacement from the vector, with the size being the same size as the vector.</p>
 </div></div><div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">310</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>diff_sims <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span> , B)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># shuffle the outcomes. See comment for more details.</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(outcomes)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out n_t cards to treatment group</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_t]</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out remaining n_c cards to control group</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_t)]</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate proportion of survival in each group</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_t</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_c</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate difference and store. </span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I will do treatment - control because it mirrors how obs_diff is calculated</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  diff_sims[b] <span class="ot">&lt;-</span> p_t_sim <span class="sc">-</span> p_c_sim</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">310</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>diff_sims <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span> , B)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># shuffle the outcomes. See comment for more details.</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(outcomes)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out first n_t cards to treatment group</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_t]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out remaining n_c cards to control group</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_t)]</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate proportion of survival in each group</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_t</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_c</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate difference and store. </span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I will do treatment - control because it mirrors how obs_diff is calculated</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  diff_sims[b] <span class="ot">&lt;-</span> p_t_sim <span class="sc">-</span> p_c_sim</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
