@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-16">
+<meta name="author" content="Your name here">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Randomization for difference in proportions</title>
+<title>STAT 201: Intro. to Statistics and Data Science - STAT 201: Problem Set 5 (R)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -177,25 +177,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Randomization for difference in proportions</h1>
+<h1 class="title">STAT 201: Problem Set 5 (R)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your name here </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2024</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -205,88 +210,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p><strong>In every code chunk where you perform random sampling, set a seed at the top of the chunk. I don’t care what seed you choose so long as you set a seed!</strong></p>
+<p><strong>Make your code as reproducible as possible. You should avoid “hard-coding” values. Instead, store values as variables for future use.</strong></p>
+<p><strong>Note</strong>: you will practice typing in mathematical notation in the narrative using Latex. To write the greek letter mu, type in <span class="math inline">\(\mu\)</span> in the narrative. You can add subscropts like this: <span class="math inline">\(\mu_{H}\)</span>. To write a “does not equal” sign, type <span class="math inline">\(\neq\)</span> into the narrative.</p>
+<p>The dataset is adapted from Little et al.&nbsp;(2007), and contains voice measurements from individuals both with and without Parkinson’s Disease (PD), a progressive neurological disorder that affects the motor system. The aim of Little et al.’s study was to examine whether they could diagnose PD by examining the spectral (sound-wave) properties of patients’ voices.</p>
+<p>147 measurements were taken from patients with PD, and 48 measurements were taken from healthy controls. For the purposes of this lab, you may assume that measurements are representative of the underlying populations (PD vs.&nbsp;healthy).</p>
+<p>The variables in the dataset are as follows:</p>
+<ul>
+<li><code>clip</code>: ID of the recording</li>
+<li><code>jitter</code>: a measure of variation in fundamental frequency</li>
+<li><code>shimmer</code>: a measure of variation in amplitude</li>
+<li><code>hnr</code>: a ratio of total components vs.&nbsp;noise in the voice recording</li>
+<li><code>status</code>: PD vs.&nbsp;Healthy</li>
+<li><code>avg.f.q</code>: 1, 2, or 3, corresponding to average vocal fundamental frequency (1 = low, 2 = mid, 3 = high)</li>
+</ul>
+<p>The data are stored in a variable called <code>parksinsons</code>. Run the following code chunk and take a look at the data before getting started.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.width=</span><span class="dv">12</span>, <span class="at">fig.height=</span><span class="dv">4</span>) </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load data here</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>parkinsons <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We are using the <code>cpr</code> data from the <code>openintro</code> library. Define <span class="math inline">\(p_{T}\)</span> as the proportion of treatment group who survived, <span class="math inline">\(p_{C}\)</span> as the proportion of control group who survived. Our hypotheses were:</p>
-<p><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(p_{T} - p_{C} \leq 0\)</span> versus <span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(p_{T} - p_{C} &gt; 0\)</span></p>
-<section id="simulating-null-distribution" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="simulating-null-distribution">Simulating null distribution</h2>
-<p>We will store some values as objects in R for reproducibility.</p>
+<section id="part-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<p>Researchers suspect that patients with PD are less able to control their vocal muscles, and thus may have a greater voice jitter compared to healthy volunteers. Thus, they are interested in whether the mean jitter in voice recordings among patients with PD is greater than the mean jitter in voice recordings among healthy patients. The researchers select the 0.01 significance level.</p>
+<ol type="1">
+<li>Write out the null hypothesis and alternative hypotheses for the question in symbols, defining quantities when necessary.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<p><span class="math inline">\(H_{0}\)</span>:</p>
+<p><span class="math inline">\(H_{1}\)</span>:</p>
+<ol start="2" type="1">
+<li>Describe in words how you would obtain 5000 simulations from the null distribution. (<em>Hint: this should be very similar to the CPR example.</em>) Then, describe how you would estimate the p-value using this null distribution. Be as specific as possible!</li>
+</ol>
+<p><strong>Answer</strong>:</p>
+<ol start="3" type="1">
+<li>It will be helpful to define some variables here. To make your life easier, create objects/variables to represent the following quantities:
+<ul>
+<li><p>The number of healthy patients</p></li>
+<li><p>The number of PD patients</p></li>
+<li><p>The vector of voice jitters</p></li>
+</ul></li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the observed outcomes as a vector</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>outcomes <span class="ot">&lt;-</span> cpr<span class="sc">$</span>outcome</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># store number of treatment and control observations from original sample</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n_t <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"treatment"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>n_t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 40</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_c <span class="ot">&lt;-</span> <span class="fu">sum</span>(cpr<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"control"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 50</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get observed difference in proportions</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> cpr <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">p =</span> <span class="fu">mean</span>(outcome <span class="sc">==</span> <span class="st">"survived"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p) <span class="sc">|&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diff</span>() <span class="co"># defaults to taking second value minus first</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>obs_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.13</code></pre>
-</div>
-</div>
-<p>Now we will perform the randomization test!</p>
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p>If you only pass in a vector as the argument to <code>sample()</code> without specifying the size of the sample, you will get a shuffled version of the vector back as output. That is, the function will resample without replacement from the vector, with the size being the same size as the vector.</p>
-</div></div><div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">310</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>diff_sims <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span> , B)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># shuffle the outcomes. See comment for more details.</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  shuffled <span class="ot">&lt;-</span> <span class="fu">sample</span>(outcomes)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out first n_t cards to treatment group</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  treat_sim <span class="ot">&lt;-</span> shuffled[<span class="dv">1</span><span class="sc">:</span>n_t]</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># deal out remaining n_c cards to control group</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  control_sim <span class="ot">&lt;-</span> shuffled[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>n_t)]</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate proportion of survival in each group</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  p_t_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(treat_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_t</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  p_c_sim <span class="ot">&lt;-</span> <span class="fu">sum</span>(control_sim <span class="sc">==</span> <span class="st">"survived"</span>)<span class="sc">/</span>n_c</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate difference and store. </span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I will do treatment - control because it mirrors how obs_diff is calculated</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  diff_sims[b] <span class="ot">&lt;-</span> p_t_sim <span class="sc">-</span> p_c_sim</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="visualize-null-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-null-distribution">Visualize null distribution</h2>
+<ol start="4" type="1">
+<li>Simulate the null distribution according to your description above. Store the results into a vector called <code>null_dist_pt1</code>.</li>
+</ol>
 <div class="cell">
-<div class="cell-output-display">
-<p><img src="randomization_two_props_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set a seed using the set.seed() function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="obtain-p-value" class="level2">
-<h2 class="anchored" data-anchor-id="obtain-p-value">Obtain p-value</h2>
-<p>We need to find how many simulated null differences in proportions were greater than or equal to our observed difference of <code>obs_diff</code> = 0.13.</p>
+<ol start="5" type="1">
+<li>What is your p-value, decision, and conclusion in context of the research question? Use in-line code for reproducibility.</li>
+</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_val <span class="ot">&lt;-</span> <span class="fu">sum</span>(diff_sims <span class="sc">&gt;=</span> obs_diff) <span class="sc">/</span> B</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p_val</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.148</code></pre>
+
 </div>
+<p><strong>Answer:</strong></p>
+<ol start="6" type="1">
+<li>What is the probability you’ve made a Type 1 error? If you cannot tell for sure, explain why. Similarly, what is the probability you’ve made a Type 2 error? If you cannot tell for sure, explain why.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+<p>We will now answer the following question: is there enough evidence to suggest that the mean HNR in the voice recordings of the PD patients is significantly different from 21.5 at the <span class="math inline">\(\alpha=\)</span> 0.10 significance level?</p>
+<ol start="7" type="1">
+<li>Write out the null and alternative hypotheses for this question using symbols, defining any quantities as necessary.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol start="8" type="1">
+<li>Describe in words how you would obtain 5000 simulations from the null distribution. Then, describe how you would estimate the p-value using this null distribution. Be as specific as possible!</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol start="9" type="1">
+<li>To make your life easier, create the following objects/variables.</li>
+</ol>
+<ul>
+<li><p><code>hnr_pd</code>: a vector of HNR for the PD patients only (you may want to use some combination of <code>filter()</code> and <code>pull()</code> to obtain this)</p></li>
+<li><p><code>n_pd</code>: the number of PD patients</p></li>
+<li><p><code>xbar_pd</code>: the observed/sample mean HNR of PD patients</p></li>
+<li><p><code>mu_h0</code>: the null hypothesized value for the population parameter</p></li>
+</ul>
+<div class="cell">
+
 </div>
+<ol start="9" type="1">
+<li>Simulate the null distribution according to your description above. Store the results into a vector called <code>null_dist_pt2</code>.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="10" type="1">
+<li>Visualize your null distribution. Make sure your visualization has informative axis labels and/or title.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="11" type="1">
+<li>Estimate the p-value. Then answer the following: what is your p-value, decision, and conclusion in the context of the research question? Use in-line code for reproducibility!</li>
+</ol>
+<div class="cell">
+
+</div>
+<p><strong>Answer:</strong></p>
 
 
 </section>

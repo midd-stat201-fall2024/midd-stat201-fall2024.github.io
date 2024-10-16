@@ -66,6 +66,8 @@ for(b in 1:B){
 }
 ```
 
+## Visualize null distribution
+
 ```{r echo = F, fig.height=3, echo = F}
 data.frame(diffs = diff_sims) |>
   ggplot(aes(x = diffs)) +
@@ -73,4 +75,13 @@ data.frame(diffs = diff_sims) |>
   labs(x = "Null dist. of difference in survival rates (treat - control)", caption = "Vertical line = observed difference") +
   theme(text = element_text(size= 16)) +
   geom_vline(xintercept = obs_diff, col = "magenta")
+```
+
+## Obtain p-value
+
+We need to find how many simulated null differences in proportions were greater than or equal to our observed difference of `obs_diff` = `r obs_diff`.
+
+```{r}
+p_val <- sum(diff_sims >= obs_diff) / B
+p_val
 ```
