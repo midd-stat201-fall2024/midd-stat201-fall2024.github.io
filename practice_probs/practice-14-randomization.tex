@@ -152,65 +152,12 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Understanding cultural differences in tobacco use across different
-  demographic groups can lead to improved health care education and
-  treatment. A recent study dis-aggregated tobacco use across Asian
-  American ethnic groups, including Asian-Indian (n = 4373), Chinese (n
-  = 4736), and Filipino (n = 4912), in comparison to non-Hispanic Whites
-  (n = 275025). The number of current smokers in each group at the time
-  of study was reported as:
-
-  \begin{itemize}
-  \item
-    Asian-Indian: 223
-  \item
-    Chinese: 279
-  \item
-    Filipino: 609
-  \item
-    non-Hispanic Whites: 50880
-  \end{itemize}
-
-  To determine whether the proportion of Asian-Indian Americans who are
-  current smokers is different from the proportion of Chinese Americans
-  who are smokers, a randomization simulation was performed.
-
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \item
-    Using both symbols and words, provide the parameter and statistic of
-    interest for this study. Do you know the numerical value of either
-    the parameter or statistic of interest? If so, provide it.
-  \item
-    The histogram below provides the simulated null distribution
-    obtained from 1000 repetitions. Estimate the standard error.
-
-    \includegraphics[width=3.65625in,height=\textheight]{images/14-asian-tobacco-null.png}
-  \item
-    Consider the hypothesis test to determine if there is a difference
-    in proportion of Asian-Indian Americans as compared to Chinese
-    Americans who are current smokers. Write out the null and
-    alternative hypotheses, and estimate a p-value using the
-    randomization histogram from (b). If the significance level is
-    \(\alpha = 0.05\), what is your decision and conclusion in the
-    context of the problem?
-  \item
-    Now consider the following bootstrap distribution of the difference
-    in sample proportions of current smokers (Filipino Americans minus
-    Chinese Americans) in 1000 repetitions. Find a 95\% bootstrap
-    confidence interval for the true difference in the proportion of
-    current smokers in the population. Interpret the interval in the
-    context of the problem, assuming our sample is representative.
-
-    \includegraphics[width=3.63542in,height=\textheight]{images/14-asian-tobacco-boot.png}
-  \end{enumerate}
-\item
-  The Stanford University Heart Transplant Study was conduct to
+  The Stanford University Heart Transplant Study was conducted to
   determine whether an experimental heart transplant program increased
   lifespan. Each patient entering the program was designated an official
   heart transplant candidate, meaning that they were gravely ill and
@@ -263,6 +210,59 @@
     \includegraphics[width=4.51042in,height=\textheight]{images/14-heart-transplant-null.png}
   \item
     Suggest a more informative x-axis label for the plot above.
+  \end{enumerate}
+\item
+  Understanding cultural differences in tobacco use across different
+  demographic groups can lead to improved health care education and
+  treatment. A recent study dis-aggregated tobacco use across Asian
+  American ethnic groups, including Asian-Indian (n = 4373), Chinese (n
+  = 4736), and Filipino (n = 4912), in comparison to non-Hispanic Whites
+  (n = 275025). The number of current smokers in each group at the time
+  of study was reported as:
+
+  \begin{itemize}
+  \item
+    Asian-Indian: 223
+  \item
+    Chinese: 279
+  \item
+    Filipino: 609
+  \item
+    non-Hispanic Whites: 50880
+  \end{itemize}
+
+  To determine whether the proportion of Asian-Indian Americans who are
+  current smokers is different from the proportion of Chinese Americans
+  who are smokers, a randomization simulation was performed.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Using both symbols and words, provide the parameter and statistic of
+    interest for this study. Do you know the numerical value of either
+    the parameter or statistic of interest? If so, provide it.
+  \item
+    The histogram below provides the simulated null distribution
+    obtained from 1000 repetitions. Estimate the standard error.
+
+    \includegraphics[width=3.65625in,height=\textheight]{images/14-asian-tobacco-null.png}
+  \item
+    Consider the hypothesis test to determine if there is a difference
+    in proportion of Asian-Indian Americans as compared to Chinese
+    Americans who are current smokers. Write out the null and
+    alternative hypotheses, and estimate a p-value using the
+    randomization histogram from (b). If the significance level is
+    \(\alpha = 0.05\), what is your decision and conclusion in the
+    context of the problem?
+  \item
+    Now consider the following bootstrap distribution of the difference
+    in sample proportions of current smokers (Filipino Americans minus
+    Chinese Americans) in 1000 repetitions. Find a 95\% bootstrap
+    confidence interval for the true difference in the proportion of
+    current smokers in the population. Interpret the interval in the
+    context of the problem, assuming our sample is representative.
+
+    \includegraphics[width=3.63542in,height=\textheight]{images/14-asian-tobacco-boot.png}
   \end{enumerate}
 \end{enumerate}
 
