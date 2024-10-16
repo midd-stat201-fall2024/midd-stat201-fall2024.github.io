@@ -317,7 +317,7 @@ p_val_b <- sum(p_null_vec >= p_b)/B
             :::
 
     -   ::: discuss
-        Since our p value is greater than $\alpha = 0.05$, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get less than 7 hours of sleep.
+        Since our p value is greater than $\alpha = 0.05$, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep.
         :::
 
 ## Summary of testing framework
