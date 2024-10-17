@@ -154,13 +154,20 @@ p1 +
     -   ::: {style="color: maroon"}
         We call this "shifting the bootstrap distribution", because we simply shift where the bootstrap distribution is centered
         :::
+        
+::: {.fragment}
+```{r echo = T}
+mu0 <- 50
+# how much to shift by, where xbar is sample mean housing prices
+shift <- xbar - mu0
+# shift my vector of bootstrapped sample means
+null_dist <- boot_means - shift
+```
+:::
 
 ## Null distribution
 
 ```{r}
-mu0 <- 50
-shift <- xbar - mu0
-null_dist <- boot_means - shift
 null_dist_df <- data.frame(means = null_dist) |>
   mutate(extreme = (means >= mu0 + shift) | (means <= mu0 - shift)  )
 p2 <-  null_dist_df |>
@@ -207,22 +214,21 @@ p2 +
 
 ## Obtain the p-value (cont.)
 
-Let $d$ represent the amount we shifted the distribution by:
+Let $shift$ represent the amount we shifted the distribution by:
 
-$$d = `r xbar` - 50 = `r xbar - 50`$$
+$$shift = `r xbar` - 50 = `r xbar - 50`$$
 
-Simulated means as or more extreme than $\mu_{0} + d$ and $\mu_{0} -d$ will contribute:
+Simulated means as or more extreme than $\mu_{0} + shift$ or $\mu_{0} - shift$ will contribute:
 
-:::::: fragment
-::::: columns
-::: {.column width="60%"}
-```{r fig.height=7}
+::: fragment
+
+```{r fig.height=3}
 null_dist_df |>
   ggplot(aes(x = means, fill = extreme)) +
   geom_histogram(col = "white", binwidth = 1, center = 0.5) +
   labs(title = "Null distribution", x = "Mean housing prices ($10k)")  +
   theme_minimal()+
-  theme(text = element_text(size = 28)) +
+  theme(text = element_text(size = 20)) +
   scale_fill_manual(values = c("grey30", "magenta")) +
   guides(fill = "none")
 
@@ -230,13 +236,11 @@ p_val <- mean(null_dist_df$extreme)
 ```
 :::
 
-::: {.column width="40%"}
--   `r sum(null_dist_df$extreme)` out of `r B` simulated sample means are as or more extreme than the observed $\bar{x}$
-
--   p-value $\approx `r p_val`$
+::: {.fragment}
+```{r echo = T}
+sum( (null_dist >= mu0 + shift) | (null_dist <= mu0 - shift))/B
+```
 :::
-:::::
-::::::
 
 ## Make decision and conclusion
 
