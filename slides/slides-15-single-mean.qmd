@@ -248,7 +248,7 @@ sum( (null_dist >= mu0 + shift) | (null_dist <= mu0 - shift))/B
 Make a decision and conclusion in the context of the research question.
 :::
 
--   Since our p-value of `r p_val` is less than the significance level of 0.05, we reject $H_{0}$. We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not \$50k.
+-   Since our p-value of `r p_val` is less than the significance level of 0.05, we reject $H_{0}$. We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not \$500k.
 
 ## Comprehension questions
 

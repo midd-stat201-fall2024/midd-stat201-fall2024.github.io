@@ -3133,7 +3133,7 @@
     "href": "slides/slides-15-single-mean.html#make-decision-and-conclusion",
     "title": "Hypothesis testing for a mean",
     "section": "Make decision and conclusion",
-    "text": "Make decision and conclusion\n\nMake a decision and conclusion in the context of the research question.\n\n\nSince our p-value of 0.0098 is less than the significance level of 0.05, we reject \\(H_{0}\\). We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not $50k."
+    "text": "Make decision and conclusion\n\nMake a decision and conclusion in the context of the research question.\n\n\nSince our p-value of 0.0098 is less than the significance level of 0.05, we reject \\(H_{0}\\). We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not $500k."
   },
   {
     "objectID": "slides/slides-15-single-mean.html",
