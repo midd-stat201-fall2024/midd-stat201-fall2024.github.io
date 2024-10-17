@@ -27,12 +27,20 @@ n_c <- sum(cpr$group == "control")
 n_c
 
 # get observed difference in proportions
+
+# option 1
 obs_diff <- cpr |>
   group_by(group) |>
   summarise(p = mean(outcome == "survived")) |>
   pull(p) |>
   diff() # defaults to taking second value minus first
 
+# option 2
+cond_probs <- cpr |>
+  group_by(group) |>
+  summarise(p = mean(outcome == "survived")) |>
+  pull(p)
+obs_dff <- cond_probs[2] - cond_probs[1]
 obs_diff
 ```
 
