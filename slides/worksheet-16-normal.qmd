@@ -1,0 +1,231 @@
+---
+title: "Normal distribution"
+editor_options: 
+  chunk_output_type: console
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{title}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r message= F, echo = F}
+library(tidyverse)
+library(patchwork)
+knitr::opts_chunk$set(echo = F) 
+```
+
+```{r message=FALSE}
+funcShaded <- function(x, lower_bound = -Inf, upper_bound = Inf) {
+    y = dnorm(x, mean = mu, sd = sd)
+    y[x < lower_bound] <- NA
+    y[x > upper_bound] <- NA
+    return(y)
+}
+base <- ggplot()+
+    theme_minimal()
+p_norms <- base +
+  geom_function(aes(color = "normal1"), fun = dnorm) +
+  geom_function(aes(color = "normal2"), fun = dnorm, args = list(mean = 2) ) +
+  geom_function(aes(color = "normal3"), fun = dnorm, args = list(mean = 0, sd = 2)) +
+  xlim(-6,6) +
+  labs(x="x", y = expression(f(x ~ ";"~ mu, sigma)))+
+  scale_color_manual(values= c("magenta", "goldenrod", "blue"), labels = c("\n\n", "\n\n", "\n\n")) +
+  theme(legend.title = element_blank(), legend.key.width = unit(2, "line"), text=element_text(size = 16))
+
+
+mu <- 0
+sd <- 1
+labs <- c(expression(mu - 3*sigma), expression(mu - 2*sigma),
+          expression(mu - sigma),expression(mu ),
+          expression(mu + sigma),expression(mu + 2*sigma),
+          expression(mu +3*sigma))
+df <- data.frame(x = c(-3,-2,-1,1,2,3))|>
+  mutate(y = dnorm(x))
+p68 <- base + 
+    stat_function(fun = dnorm, args = list(mean = mu, sd = sd)) + 
+    stat_function(fun = funcShaded, args = list(lower_bound = -1, upper_bound = 1),  geom = "area", fill = "#84CA72", alpha = .8) +
+     stat_function(fun = funcShaded, args = list(lower_bound = -2, upper_bound = 2),  geom = "area", fill = "#84CA72", alpha = .5)  +
+     stat_function(fun = funcShaded, args = list(lower_bound = -3, upper_bound = 3),  geom = "area", fill = "#84CA72", alpha = .4) +
+  scale_x_continuous(limits = c(-5,5), breaks = -3:3, labels = labs, minor_breaks = NULL)  +
+  theme(text= element_text(size = 15))+
+  geom_segment(data = df, aes(x=x, y=y, xend = x, yend = 0), col = "#84CA72")+
+    labs(x="x", y = expression(f(x ~ ";"~ mu, sigma))) +
+  scale_y_continuous(breaks = NULL)
+
+p_std <- base +
+  geom_function(fun = dnorm) +
+  scale_x_continuous(limits = c(-3.5,3.5),breaks = -3:3, minor_breaks = NULL)+
+      labs(x="x", y = expression(f(x ~ ";"~ 0, 1)))+
+  scale_y_continuous(labels = NULL)
+
+p_empty <- base + 
+  geom_function(fun = dnorm)+
+  scale_x_continuous(limits = c(-3.5,3.5),breaks = -3:3, labels = NULL, minor_breaks = NULL)+
+  geom_hline(yintercept = 0, col = "grey30", linewidth = 0.2)+
+      labs(x= NULL, y = expression(f(x ~ ";"~ mu, sigma)))+
+  scale_y_continuous(labels = NULL)
+
+perc <- 0.25
+ub <- qnorm(perc)
+p_perc1 <- p_empty +
+  stat_function(fun = funcShaded, args = list(upper_bound = ub),  geom = "area", fill = "#84CA72", alpha = .5)+
+  annotate("text", label = as.character(perc), x = ub - 0.65, y = 0.05)
+
+perc <- 0.6
+ub <- qnorm(perc)
+p_perc2 <-p_empty +
+  stat_function(fun = funcShaded, args = list(lower_bound = ub),  geom = "area", fill = "#84CA72", alpha = .5)+
+  annotate("text", label = as.character(1-perc), x = ub + 0.65, y = 0.1)
+```
+
+```{r fig.height=3}
+p_norms
+```
+
+## 68-95-99.7 rules
+
+```{r fig.height=3}
+p68
+```
+
+## Finding areas
+
+Suppose $X \sim N(0,1)$
+
+::: {layout-ncol="3"}
+Area less than -2 and greater than 2.
+
+Area between 0 and 1.
+
+Area to the right of 1.
+
+```{r fig.height=1.5, fig.width=2}
+p_std  
+```
+
+```{r fig.height=1.5, fig.width=2}
+p_std 
+```
+
+```{r fig.height=1.5, fig.width=2}
+p_std 
+```
+
+$\quad$
+
+$\quad$
+
+$\quad$
+
+$\text{P}(\qquad\qquad\qquad) \approx$
+
+$\quad$
+
+$\quad$
+:::
+
+\vspace{4cm}
+
+## Z-score problem
+
+The distribution of SAT and ACT scores are both nearly Normal. The SAT has a mean of 1100 and standard deviation of 200, while the ACT has a mean of 21 and standard deviation of 6. Suppose Ann scored 1300 on her SAT and Tom scored 24 on his ACT. Who performed better?
+
+```{r fig.height=3, fig.width=4}
+p_sat <- base +
+  geom_function(fun = dnorm, args = list(mean = 1100, sd = 200))+
+  scale_x_continuous(limits = c(500, 1700), breaks = seq(700, 1500, 200)) +
+  labs(x = "SAT scores", y = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  theme(#panel.grid.major =  element_blank(),
+        # panel.grid.minor =element_blank(),
+        axis.line = element_line(colour = "black"),
+        axis.ticks.length.x = unit(.25, "cm"))
+
+p_act <- base +
+  geom_function(fun = dnorm, args = list(mean = 21, sd = 6))+
+  scale_x_continuous(limits = c(8, 34), breaks = seq(9, 33,6)) +
+  labs(x = "ACT scores", y = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  theme(#panel.grid.major =  element_blank(),
+        # panel.grid.minor =element_blank(),
+        axis.line = element_line(colour = "black"),
+        axis.ticks.length.x = unit(.25, "cm"))
+p_sat / p_act
+```
+
+\clearpage
+
+## Percentiles
+
+::: {layout-ncol="2"}
+```{r fig.height=2}
+p_perc1
+```
+
+```{r fig.height=2}
+p_perc2
+```
+
+```{r echo = T, eval = F}
+qnorm(0.25, mean = mu, sd = sigma)
+```
+
+```{r echo = T, eval = F}
+
+```
+:::
+
+## Percentile problems
+
+Suppose SAT scores are Normally distributed with mean 1100 and standard deviation 200.
+
+1.  Edward earned a 1030 on his SAT. We will find his percentile using code in two ways.
+    a.  First, draw a picture representing what we want to find. Then write code to find the percentile.
+    b.  Find Edward's z-score. Write another line of code to find the percentile.
+2.  What is the 97.5th percentile for SAT scores?
+    a.  Write code to answer this question.
+    b.  Write a different line of code to answer this question that involves a z-score.
+3.  Unrelated to SAT scores: consider the standard normal $N(0,1)$ distribution. The 25th percentile of this distribution is `r round(qnorm(0.25))`. Without doing any work beyond drawing a picture, what is the 75th percentile of the distribution?
+
+\clearpage
+
+## Practice problems
+
+1.  True or false? Briefly explain why.
+
+    Among applicants to one law school, the average LSAT was about 169, the standard deviation about 9, and the highest score was 178. The distribution of the LSAT scores follows the normal curve.
+
+2.  In a law school class, the entering students averaged 160 on the LSAT. The variance was 64. The histogram of LSAT scores followed the normal curve reasonable well.
+
+    a.  About what percentage of the class scores below 152?
+
+    b.  One student was 0.5 standard deviations above average on the LSAT. About what percentage of the students had lower scores than he did?
+
+3.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
+
+    a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
+
+    b.  Write the probability of interest in $P()$ form. Then write the `R` code necessary to find this probability, and actually execute the code to obtain the probability.
+
+    c.  Confirm your solution in (b) by transforming to z-scores first, then using code again to obtain the probability.
+
+4.  Consider the same scenario as in 3. Without using any code than what is provided below, find the 60th percentile for the weight of 10-year-old girls.
+
+    ```{r echo = T}
+    qnorm(0.6, mean = 0, sd = 1)
+    ```
+
+<!-- -->
+
+5.  The length of human pregnancies from contraception to birth varies according to a distribution that is approximately normal with mean 266 days and standard deviation 16 days. Without using code, obtain the following:
+
+    a.  Between what values do the lengths of the middle 95% of all pregnancies fall?
+
+    b.  How short are the shortest 2.5% of all pregnancies? How long do the longest 2.5% last?

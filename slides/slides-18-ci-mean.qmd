@@ -1,0 +1,403 @@
+---
+title: "Confidence Intervals for a Mean"
+date: "October 24, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+-   
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(openintro)
+library(readr)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+source("../stat201_fns.R")
+```
+
+## Recap
+
+-   Central Limit Theorem: if we have a sufficiently large sample of $n$ independent observations from a population with mean $\mu$ and standard deviation $\sigma$, then $\bar{X} \overset{\cdot}{\sim} N(\mu, \sigma/\sqrt{n})$
+
+-   When considering the special case of sample proportions, if success-failure condition is met, we have $\hat{p} \overset{\cdot}{\sim} N(p, \sqrt{p(1-p)/n})$
+
+-   To obtain a $\gamma\times 100\%$ CI for a mean, we use
+
+    ::: fragment
+    $$
+    \text{point estimate} \pm \text{critical value} \times \text{SE} 
+    $$
+    :::
+
+    -   But sometimes we need to replace the standard error with an estimate
+
+## Checking normality
+
+-   Remember, CLT requires a sufficiently large sample size $n$ or assumption of Normality of the underlying data.
+
+-   No perfect way to check Normality, but rule of thumb:
+
+    -   If $n$ small: we should check that there are no clear outliers in the data. Slight skew okay (and probably expected)
+
+    -   If $n$ large: doesn't matter!
+
+## CI for a single mean (known variance)
+
+-   If CLT holds, then we know
+
+    $$
+    \bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)
+    $$
+
+-   So our $\gamma \times 100\%$ CI for $\mu$ is:
+
+    $$
+    \text{point estimate} \pm \underbrace{\text{critical value} \times \text{SE}}_{\text{Margin of Error}} = \bar{x} \pm z_{(1+\gamma)/2}^* \times \frac{\sigma}{\sqrt{n}}
+    $$
+
+## Example: age at marriage
+
+```{r}
+set.seed(2)
+n <- 25
+sd_age <- round(sd(age_at_mar$age), 2)
+x <- sample(age_at_mar$age, n)
+xbar <- mean(x)
+s_age <- round(sd(x),2)
+se <- sd_age / sqrt(n)
+```
+
+In 2006-2010, the CDC conducted a survey asking US women their age at first marriage. The standard deviation of the response as `r sd_age` years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was `r xbar`.
+
+::::::: columns
+::: {.column width="50%"}
+```{r}
+ggplot(data.frame(x), aes(x=x)) +
+  geom_histogram(binwidth = 2, col = "white") +
+  labs(x = "Age at first marriage") +
+  theme_minimal() +
+  theme(text =element_text(size = 22))
+```
+:::
+
+::::: {.column width="50%"}
+::: {.fragment style="color: maroon"}
+We will construct an 80% confidence interval for the mean age of US women at first marriage.
+:::
+
+::: discuss
+-   Are conditions of CLT met?
+
+-   If so, what does CLT tell us?
+:::
+:::::
+:::::::
+
+## Example: age at marriage (cont.)
+
+```{r}
+zstar90 <- round(qnorm(0.9), 2)
+ci <- round(xbar +  zstar90*se*c(-1,1), 2)
+```
+
+By CLT, $\bar{X} \overset{\cdot}{\sim}N(\mu, `r sd_age`/\sqrt{`r n`}) = N(\mu, `r se`)$
+
+::: {style="color: maroon"}
+We will construct an 80% confidence interval for the mean age of US women at first marriage.
+:::
+
+-   Collect necessary components:
+
+    1.  Point estimate: $\bar{x} = `r xbar`$
+    2.  Standard error: $`r se`$
+    3.  Critical value: $z_{0.9}^{*} =$ `qnorm(0.9, 0, 1)` $= `r zstar90`$
+
+-   So our 80% confidence interval is:
+
+    $$
+    `r xbar` \pm `r round(qnorm(0.9),2)` \times `r se` = (`r ci[1]`, `r ci[2]`)
+    $$
+
+    -   ::: discuss
+        Interpret this interval!
+        :::
+
+## Utility of this model
+
+-   The previous formula for CI for $\mu$ only applies if $\sigma$ is known
+
+-   But wait...
+
+    -   Want to construct a CI for the mean $\mu$ because we don't know its value
+
+    -   If we don't know $\mu$, it seems highly unlikely that we would know $\sigma$!
+
+-   So in practice, we will have to estimate standard error for $\bar{X}$:
+
+::: fragment
+$$
+    \widehat{\text{SE}}(\bar{X}) = \frac{s}{\sqrt{n}}
+$$
+
+where $s$ is the observed sample standard deviation
+:::
+
+-   Similar to CI for $p$, we replaced $p$ with $\hat{p}$ in the standard error
+
+## Variance issue
+
+-   Replacing $s$ for $\sigma$ works well enough when $n$ is large so we can estimate $\sigma$ accurately
+
+-   However, estimating variance is very hard when $n$ is small
+
+-   So if $n$ small and $\sigma$ unknown, we ***cannot*** use the Normal approximation to model $\bar{X}$ for inferential tasks
+
+-   Instead, we will use a new distribution for inference calculations, called the $t$-distribution
+
+## Quick remarks
+
+-   If $n$ small, $\sigma$ unknown, but underlying distribution is Normal, then CLT says $\bar{X} \sim N(\mu, \sigma/\sqrt{n})$ exactly
+
+    -   BUT in order to use this result for CIs, we need to know $\sigma$
+
+## $t$-distribution
+
+-   The $t$-distribution is symmetric and bell-curved (like the Normal distribution)
+
+-   Has "thicker tails" than the Normal distribution (the tails decay more slowly)
+
+:::::: columns
+:::: {.column width="60%"}
+::: fragment
+```{r}
+ggplot() +
+  stat_function(fun = dnorm, aes(col = "N(0,1)"), linetype = "dashed", linewidth = 2) +
+  stat_function(fun = dt, args = list(df = 1), aes(col = "t (df = 1)"), linewidth = 2) +
+    stat_function(fun = dt, args = list(df = 2), aes(col = "t (df = 2)"), linewidth = 2) +
+    stat_function(fun = dt, args = list(df = 10), aes(col = "t (df = 20)"), linewidth = 2) +
+  scale_x_continuous(limits = c(-4,4), breaks = -4:4) +
+  theme_minimal() +
+  labs(color = "Distribution", y = "density", x = "x") +
+  theme(text = element_text(size = 24))
+```
+:::
+::::
+
+::: {.column width="40%"}
+-   $t$ distribution is always centered at 0
+-   One parameter: **degrees of freedom (df)** defines exact shape of the $t$
+    -   Denoted $t_{df}$ (e.g. $t_{1}$ or $t_{20}$)
+    -   As df increase, $t$ resembles the $N(0,1)$. When $df \geq 30$, the $t$ is nearly identical to $N(0,1)$
+:::
+::::::
+
+## Working with $t$ distribution
+
+```{r}
+ub <- -1.5
+p <- 0.7
+df <- 2
+```
+
+Let's draw pictures for the following:
+
+-   What proportion of the $t_{`r df`}$-distribution falls below `r ub`?
+
+-   What value of the $t_{`r df`}$-distribution has $`r p*100`$ area lying below it?
+
+## $t$ distribution in `R`
+
+-   We use `pnorm(<x>, mean, sd)` and `qnorm(<percent>, mean, sd)` to find probabilities and percentiles for the Normal distribution
+
+-   Analogous functions for $t$ distribution: `pt(<x>, df)` and `qt(<percent>, df)`
+
+::::::::: columns
+::::: {.column width="50%"}
+::: fragment
+```{r}
+funcShaded_t <- function(x, lower_bound = -Inf, upper_bound = Inf) {
+    y = dt(x, df = df)
+    y[x < lower_bound] <- NA
+    y[x > upper_bound] <- NA
+    return(y)
+}
+
+
+ggplot() +
+  stat_function(fun = dt, args = list(df = 2)) +
+  scale_x_continuous(limits = c(-4,4), breaks = -4:4) +
+  theme_minimal() +
+  labs(title = (expression(t[2])), y = "density", x = "x") +
+  theme(text = element_text(size = 28)) +
+  stat_function(fun = funcShaded_t, args = list( upper_bound = ub),  geom = "area", fill = "#84CA72", alpha = .8)  +
+  annotate("text", label = "?", x = ub - 0.75, y = 0.02, size = 15 )
+
+prob <- pt(ub, df)
+```
+:::
+
+::: fragment
+`pt(`r ub`,df =`r df`)` = `r prob`
+:::
+:::::
+
+::::: {.column width="50%"}
+::: fragment
+```{r}
+ub <- qt(p, df)
+ggplot() +
+  stat_function(fun = dt, args = list(df = 2)) +
+  scale_x_continuous(limits = c(-4,4), breaks = -4:4) +
+  theme_minimal() +
+  labs(title = (expression(t[2])), y = "density", x = "x") +
+  theme(text = element_text(size = 28)) +
+  stat_function(fun = funcShaded_t, args = list( upper_bound = ub),  geom = "area", fill = "#84CA72", alpha = .8) +
+   annotate("text", label = as.character(p), x = ub - 0.75, y = 0.15, size = 15)
+```
+:::
+
+::: fragment
+`qt(`r p`, df =`r df`)` = `r ub`
+:::
+:::::
+:::::::::
+
+## CI for a single mean (unknown variance)
+
+-   Still require independent observations and one of:
+
+    -   Normal data
+
+    -   large $n$
+
+    -   small $n$ with approximate normality
+
+-   Formula for $\gamma \times 100\%$ CI is same, but we simply change what goes into the margin of error.
+
+::: fragment
+$$
+\text{point estimate} \pm t^*_{df} \times \hat{SE} = \bar{x} \pm t_{df}^* \times \frac{s}{\sqrt{n}}
+$$
+:::
+
+-   $df = n-1$
+
+-   critical value $t^*_{df}$ = $(1+\gamma)/2$ percentile of the $t_{df}$ distribution
+
+## Example: age at marriage (cont.)
+
+Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don't know $\sigma$.
+
+::: fragment
+In our sample of $n = 25$ women, we observed a sample mean of $xbar$ years and standard deviation of $s = `r s_age`$ years.
+:::
+
+```{r}
+se_hat <- s_age/ sqrt(n)
+df <- n-1
+tstar90 <- round(qt(0.9, df), 2)
+ci_t <- round(xbar + tstar90*se_hat*c(-1,1), 2)
+```
+
+1.  Point estimate: $\bar{x} = `r xbar`$
+2.  Standard error: $\widehat{SE} = `r s_age`/\sqrt{`r n`} = `r se_hat`$
+3.  Critical value:
+    -   $df = n-1 = `r df`$
+    -   $t_{`r df`}^*$ = `qt(0.9, df =`r df`)` = `r tstar90`
+
+::: fragment
+So our 80% confidence interval for $\mu$ is:
+
+$$
+`r xbar` \pm `r tstar90` \times `r se_hat` = (`r ci_t[1]`, `r ci_t[2]`)
+$$
+:::
+
+## Comparing CIs
+
+::::: columns
+::: {.column width="50%"}
+Known variance:
+
+80% CI: (`r ci`)
+:::
+
+::: {.column width="50%"}
+Unknown variance:
+
+80% CI: (`r ci_t`)
+:::
+:::::
+
+-   ::: discuss
+    How do the two intervals compare?
+    :::
+
+-   Interpretation of CI does not change even if we use a different model!
+
+## Examples 
+
+Assume that all conditions necessary for inference are satisfied.
+
+::::::::: columns
+:::: {.column width="33%"}
+::: {style="font-size:75%"}
+`qnorm(0.90)` = `r round(qnorm(0.90, mean = 0, sd = 1),2)`
+
+`qnorm(0.95)` = `r round(qnorm(0.95, mean = 0, sd = 1),2)`
+
+`qnorm(0.975)` = `r round(qnorm(0.975, mean = 0, sd = 1),2)`
+:::
+::::
+
+:::: {.column width="33%"}
+::: {style="font-size:75%"}
+`qt(0.90, df = 35)` = `r round(qt(0.90, df = 35), 2)`
+
+`qt(0.95, df = 35)` = `r round(qt(0.95, df = 35), 2)`
+
+`qt(0.975, df = 35)` = `r round(qt(0.975, df = 35), 2)`
+:::
+::::
+
+:::: {.column width="33%"}
+::: {style="font-size:75%"}
+`qt(0.90, df = 36)` = `r round(qt(0.90, df = 36), 2)`
+
+`qt(0.95, df = 36)` = `r round(qt(0.95, df = 36), 2)`
+
+`qt(0.975, df = 36)` = `r round(qt(0.975, df = 36), 2)`
+:::
+::::
+:::::::::
+
+
+::: {style="font-size:85%"}
+
+1.  A 90% confidence interval for a population mean $\mu$ is given as $(18.985, 21.015)$. The interval was obtained based on a SRS for 36 observations. Calculate the sample mean and sample standard deviation.
+
+2.  The standard deviation for students at particular Ivy League college is 250 points. Two students, Raina and Luke, want to estimate the average SAT score of students at this college. They want their margin of error to be no more than 25 points.
+
+    a.  Raina wants to use a 90% confidence level. How large a sample does Raina need to collect?
+
+    b.  Luke wants to use a 95% confidence level. Without calculations, determine whether Luke's sample should be larger or smaller than Raina's. Explain your reasoning.
+
+    c.  Calculate the minimum sample size for Luke.
+:::
+

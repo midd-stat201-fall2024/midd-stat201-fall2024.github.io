@@ -1,0 +1,35 @@
+---
+title: "CLT and CIs for proportion"
+author: "Practice problems"
+date: "October 23, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r echo = F, message = F, warning = F}
+library(tidyverse)
+library(openintro)
+library(knitr)
+opts_chunk$set(fig.width=12, fig.height=4) 
+```
+
+1.  A survey found that American families generate an average of 17.2 pounds of glass garbage each year. Assume that the standard deviation is 2.5 pounds.
+
+    Suppose we randomly survey 40 families. Set up a calculation for (and if you have access to R, actually calculate) the probability that the mean of glass garbage of these 40 families is less than 18 pounds.
+
+2.  Define what a sampling distribution of the sample distribution is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when $p=0.2$.
+
+3.  A survey of 1509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.
+
+    a.  Is this sample a representative sample from the population of all high school seniors in the US? Explain.
+    b.  Suppose the conditions for inference are met, regardless of your answer in (a). Using a mathematical model, construct a 90% confidence interval for the proportion of high school seniors who are fairly certain they will participate in a study abroad program in college. Interpret this interval in context.
+    c.  Based on this interval, would it be appropriate to claim that the majority of high school seniors are fairly certain they will participate in a study abroad program in college?

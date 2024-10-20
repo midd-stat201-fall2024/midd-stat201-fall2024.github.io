@@ -1,0 +1,55 @@
+---
+title: "Normal distribution"
+author: "Practice problems"
+date: "October 21, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r echo = F, message = F, warning = F}
+library(tidyverse)
+library(openintro)
+library(knitr)
+opts_chunk$set(fig.width=12, fig.height=4) 
+```
+
+1.  True or false? Briefly explain why.
+
+    Among applicants to one law school, the average LSAT was about 169, the standard deviation about 9, and the highest score was 178. The distribution of the LSAT scores follows the normal curve.
+
+2.  In a law school class, the entering students averaged 160 on the LSAT. The variance was 64. The histogram of LSAT scores followed the normal curve reasonable well.
+
+    a.  About what percentage of the class scores below 152?
+
+    b.  One student was 0.5 standard deviations above average on the LSAT. About what percentage of the students had lower scores than he did?
+
+<!-- -->
+
+3.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
+
+    a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
+
+    b.  Write the probability of interest in $P()$ form. Then write the `R` code necessary to find this probability, and actually execute the code to obtain the probability.
+
+    c.  Confirm your solution in (b) by transforming to z-scores first, then using code again to obtain the probability.
+
+4.  Consider the same scenario as in 3. Without using any code than what is provided below, find the 60th percentile for the weight of 10-year-old girls.
+
+    ```{r echo = T}
+    qnorm(0.6, mean = 0, sd = 1)
+    ```
+
+5.  The length of human pregnancies from contraception to birth varies according to a distribution that is approximately normal with mean 266 days and standard deviation 16 days. Without using code, obtain the following:
+
+    a.  Between what values do the lengths of the middle 95% of all pregnancies fall?
+
+    b.  How short are the shortest 2.5% of all pregnancies? How long do the longest 2.5% last?
