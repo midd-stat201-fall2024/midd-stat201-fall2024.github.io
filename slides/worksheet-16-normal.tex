@@ -191,7 +191,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, frame hidden, boxrule=0pt, interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
 
 \includegraphics{worksheet-16-normal_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
@@ -436,17 +436,11 @@ deviation 200.
 
 \clearpage
 
-\hypertarget{practice-problems}{%
-\subsection{Practice problems}\label{practice-problems}}
+\hypertarget{some-practice-problems}{%
+\subsection{Some practice problems}\label{some-practice-problems}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\item
-  True or false? Briefly explain why.
-
-  Among applicants to one law school, the average LSAT was about 169,
-  the standard deviation about 9, and the highest score was 178. The
-  distribution of the LSAT scores follows the normal curve.
 \item
   In a law school class, the entering students averaged 160 on the LSAT.
   The variance was 64. The histogram of LSAT scores followed the normal
@@ -480,7 +474,7 @@ deviation 200.
     using code again to obtain the probability.
   \end{enumerate}
 \item
-  Consider the same scenario as in 3. Without using any code than what
+  Consider the same scenario as in 2. Without using any code than what
   is provided below, find the 60th percentile for the weight of
   10-year-old girls.
 
@@ -493,25 +487,26 @@ deviation 200.
 \begin{verbatim}
 [1] 0.2533471
 \end{verbatim}
-\end{enumerate}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
 \item
-  The length of human pregnancies from contraception to birth varies
-  according to a distribution that is approximately normal with mean 266
-  days and standard deviation 16 days. Without using code, obtain the
-  following:
+  \((^*)\) Suppose body temperatures are Normally distributed with mean
+  \(98.6^\circ\) F and standard deviation of \(0.7^\circ\) F. Assuming
+  this is true, answer the following:
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \item
-    Between what values do the lengths of the middle 95\% of all
-    pregnancies fall?
+    Fevers \(103^\circ\) F or higher are considered dangerous. What
+    fraction of people would be expected to have such high a fever?
   \item
-    How short are the shortest 2.5\% of all pregnancies? How long do the
-    longest 2.5\% last?
+    According to quick Google search, a range for low-grade fever is
+    between \(99.5^\circ\) F and \(100.3^\circ\) F. What is the
+    probability of having a low-grade fever?
+  \item
+    What body temperatures would you consider as unusually low? Briefly
+    explain why.
+  \item
+    Provide two intervals that each capture/contain 80\% of body
+    temperatures.
   \end{enumerate}
 \end{enumerate}
 

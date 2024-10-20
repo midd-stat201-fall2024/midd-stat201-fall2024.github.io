@@ -196,19 +196,15 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
 
 \clearpage
 
-## Practice problems
+## Some practice problems
 
-1.  True or false? Briefly explain why.
-
-    Among applicants to one law school, the average LSAT was about 169, the standard deviation about 9, and the highest score was 178. The distribution of the LSAT scores follows the normal curve.
-
-2.  In a law school class, the entering students averaged 160 on the LSAT. The variance was 64. The histogram of LSAT scores followed the normal curve reasonable well.
+1.  In a law school class, the entering students averaged 160 on the LSAT. The variance was 64. The histogram of LSAT scores followed the normal curve reasonable well.
 
     a.  About what percentage of the class scores below 152?
 
     b.  One student was 0.5 standard deviations above average on the LSAT. About what percentage of the students had lower scores than he did?
 
-3.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
+2.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
 
     a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
 
@@ -216,16 +212,18 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
 
     c.  Confirm your solution in (b) by transforming to z-scores first, then using code again to obtain the probability.
 
-4.  Consider the same scenario as in 3. Without using any code than what is provided below, find the 60th percentile for the weight of 10-year-old girls.
+3.  Consider the same scenario as in 2. Without using any code than what is provided below, find the 60th percentile for the weight of 10-year-old girls.
 
     ```{r echo = T}
     qnorm(0.6, mean = 0, sd = 1)
     ```
 
-<!-- -->
+4.  $(^*)$ Suppose body temperatures are Normally distributed with mean $98.6^\circ$ F and standard deviation of $0.7^\circ$ F. Assuming this is true, answer the following:
 
-5.  The length of human pregnancies from contraception to birth varies according to a distribution that is approximately normal with mean 266 days and standard deviation 16 days. Without using code, obtain the following:
+    a.  Fevers $103^\circ$ F or higher are considered dangerous. What fraction of people would be expected to have such high a fever?
 
-    a.  Between what values do the lengths of the middle 95% of all pregnancies fall?
+    b.  According to quick Google search, a range for low-grade fever is between $99.5^\circ$ F and $100.3^\circ$ F. What is the probability of having a low-grade fever?
 
-    b.  How short are the shortest 2.5% of all pregnancies? How long do the longest 2.5% last?
+    c.  What body temperatures would you consider as unusually low? Briefly explain why.
+
+    d.  Provide two intervals that each capture/contain 80% of body temperatures.
