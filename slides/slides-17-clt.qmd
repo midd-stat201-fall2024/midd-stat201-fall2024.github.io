@@ -68,11 +68,29 @@ source("../stat201_fns.R")
 -   **Remark #1**: does not require any assumption about how the data $x_{1},\ldots, x_{n}$ behave so long as the following assumptions hold:
 
     1.  Independent samples: usually achieved by random sampling
-    2.  Sufficiently large sample size $n$. Typically, $n \geq 30$ will be fine.
+    2.  Sufficiently large sample size $n$, where large is in relation to total size of population
 
 -   **Remark #2**: if the data $x_{1},\ldots, x_{n}$ are indeed Normally distributed and independent, then the distribution of sample means is *exactly* Normal, even for small $n$
 
-    -   Thus, if $n$ is small, we should check if the data appear *approximately* Normal in order to use the CLT.
+    -   For this reason, if $n$ is small we require the data to be Normal
+
+    -   How to know? We replace (2) above with the **normality condition**:
+
+        -   If $n$ is small $(n < 30)$: we assume data are approximately normal if there are no clear outliers
+
+        -   If $n$ is larger $(30 \leq n < ?)$: we assume data are approximately normal if there are no particularly extreme outliers
+
+## Normality condition
+
+::: discuss
+Do you believe the large sample size/normality condition is satisified in the following two samples?
+:::
+
+![](figs/16-normality.png){width="562"}
+
+-   Sample 1: small $n < 30$. But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.
+
+-   Sample 2: larger $n \geq 30$. Even though $n$ is larger, there is a particularly extreme outlier, so I would say normality condition is not met.
 
 ## Activity
 
@@ -104,14 +122,14 @@ What is the sampling distribution of the sample mean heights?
 
 ## Height example: solution
 
--   We have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal.
+-   We have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal
 
 -   So by the CLT: $\bar{X} \overset{\cdot}{\sim} N\left(`r mu`, \frac{`r sigma`}{\sqrt{`r n`}}\right)$
 
--   If the data instead looked like the following, given the small sample size, I would not feel comfortable using the CLT
+-   If the data instead looked like the following, there are no clear outliers so I would still say Normality condition satisfied:
 
     ```{r fig.height = 3.5}
-    set.seed(6)
+    set.seed(22)
     n <- 20
     x <- sample(nba_heights$h_in, n)
     ggplot(data.frame(x), aes(x = x)) +
@@ -353,4 +371,4 @@ Find a 90% confidence interval for the true proportion of town residents in favo
 
 -   What are the assumptions of the CLT?
 
--    How do we construct a $\gamma \times 100\%$ confidence interval?
+-   How do we construct a $\gamma \times 100\%$ confidence interval?

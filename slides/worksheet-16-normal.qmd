@@ -192,7 +192,7 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
 2.  What is the 97.5th percentile for SAT scores?
     a.  Write code to answer this question.
     b.  Write a different line of code to answer this question that involves a z-score.
-3.  Unrelated to SAT scores: consider the standard normal $N(0,1)$ distribution. The 25th percentile of this distribution is `r round(qnorm(0.25))`. Without doing any work beyond drawing a picture, what is the 75th percentile of the distribution?
+3.  Unrelated to SAT scores: consider the standard normal $N(0,1)$ distribution. The 25th percentile of this distribution is `r round(qnorm(0.25), 2)`. Without doing any work beyond drawing a picture, what is the 75th percentile of the distribution?
 
 \clearpage
 
