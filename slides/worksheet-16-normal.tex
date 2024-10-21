@@ -116,8 +116,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\setkomafont{title}{\small}
-\setkomafont{date}{\small}
+\setkomafont{title}{\small} \setkomafont{date}{\small}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \makeatother
@@ -191,7 +190,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, sharp corners, boxrule=0pt, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, breakable, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, frame hidden, interior hidden]}{\end{tcolorbox}}\fi
 
 \includegraphics{worksheet-16-normal_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
@@ -457,8 +456,8 @@ deviation 200.
 \item
   Weights of 10-year-old girls are known to be Normally distributed with
   mean of 70 pounds and standard deviation of 13 pounds. Find the
-  probability that a 10-year-old girl with weighs between 60 and 85
-  pounds two ways:
+  probability that a 10-year-old girl weighs between 60 and 85 pounds
+  two ways:
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}

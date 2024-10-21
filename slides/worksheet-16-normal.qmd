@@ -6,7 +6,7 @@ format:
   pdf:
     keep-tex: true
     include-in-header:
-      text: |
+      text: 
         \setkomafont{title}{\small}
         \setkomafont{date}{\small}
     geometry:
@@ -204,7 +204,7 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
 
     b.  One student was 0.5 standard deviations above average on the LSAT. About what percentage of the students had lower scores than he did?
 
-2.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
+2.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl weighs between 60 and 85 pounds two ways:
 
     a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
 
