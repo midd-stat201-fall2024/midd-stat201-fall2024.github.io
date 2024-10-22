@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models\n\n\n\n\n\nR 10/24\nTopic: CIs with mathematical models (cont.)\n\nIntroduce final project\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\n\n\n\nR 10/24\nTopic: CIs with mathematical models (cont.)\n\nIntroduce final project\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -3217,7 +3217,7 @@
     "href": "slides/slides-17-clt.html#recap",
     "title": "Central Limit Theorem",
     "section": "Recap",
-    "text": "Recap\n\nNormal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nZ score standardizes observations to allow for easier comparison: \\(\\text{z-score} = \\frac{x- \\mu}{\\sigma}\\)"
+    "text": "Recap\n\n\n\n\nNormal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nz-score standardizes observations to allow for easier comparison: \\(z = \\frac{x- \\mu}{\\sigma}\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#where-were-going",
@@ -3259,21 +3259,21 @@
     "href": "slides/slides-17-clt.html#example",
     "title": "Central Limit Theorem",
     "section": "Example",
-    "text": "Example\nConsider taking a poll (i.e. random sample) of 100 registered voters in a town and asking them if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nFind a 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\nConditions for CLT met?\n\nIndependence: random sample\nSuccess-failure condition: \\(100(0.6) = 60\\) and \\(100(0.4) = 40\\) both \\(\\geq 10\\)"
+    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions for CLT met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}) = 100(0.4) = 40 \\geq 10\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#height-example",
     "href": "slides/slides-17-clt.html#height-example",
     "title": "Central Limit Theorem",
     "section": "Height example",
-    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a standard deviation of 3.57 inches. We randomly sample \\(20\\) of these players and record their heights (see histogram).\n\n\n\n\n\n\n\nWhat is the sampling distribution of the sample mean heights?"
+    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a standard deviation of 3.57 inches. We randomly sample \\(20\\) of these players and record their heights.\n\n\n\nWhat is the sampling distribution of the sample mean heights?"
   },
   {
     "objectID": "slides/slides-17-clt.html#height-example-solution",
     "href": "slides/slides-17-clt.html#height-example-solution",
     "title": "Central Limit Theorem",
     "section": "Height example: solution",
-    "text": "Height example: solution\n\nWe have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal\nSo by the CLT: \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(79.21, \\frac{3.57}{\\sqrt{20}}\\right)\\)\nIf the data instead looked like the following, there are no clear outliers so I would still say Normality condition satisfied:"
+    "text": "Height example: solution\n\nWe have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal (no clear outliers).\nCLT applies! By CLT: \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(79.21, \\frac{3.57}{\\sqrt{20}}\\right)\\)\nIf the data instead looked like the following, I would say normality condition is violated:"
   },
   {
     "objectID": "slides/slides-17-clt.html#bank-example",
@@ -3287,42 +3287,42 @@
     "href": "slides/slides-17-clt.html#bank-example-solution",
     "title": "Central Limit Theorem",
     "section": "Bank example: solution",
-    "text": "Bank example: solution\n\nWe want \\(\\text{Pr}(\\bar{X} < 4)\\)\nConditions for CLT met: independence (random sample) and sufficiently large sample size \\((n=36)\\).\n\nSo by CLT, \\(\\bar{X} \\overset{\\cdot}{\\sim}N(5, \\frac{6}{\\sqrt{36}}) = N(5, 1)\\)\n\nUsing 68-95-99.7 rule, probability that the average service time of all these customers is less than 4 minutes is about \\(1 - (0.34 + 0.5) = 0.16\\)"
+    "text": "Bank example: solution\n\nWe want \\(\\text{Pr}(\\bar{X} < 4)\\)\nConditions for CLT met: independence (random sample) and sufficiently large sample size \\((n=36)\\).\n\nSo by CLT, \\(\\bar{X} \\overset{\\cdot}{\\sim}N(5, \\frac{6}{\\sqrt{36}}) = N(5, 1)\\)\n\nUsing 68-95-99.7 rule, probability that the average service time of all these customers is less than 4 minutes is about \\(1 - (0.34 + 0.5) = 0.16\\)\n\npnorm(4, 5, 1) = 0.159"
   },
   {
     "objectID": "slides/slides-17-clt.html#mms-example",
     "href": "slides/slides-17-clt.html#mms-example",
     "title": "Central Limit Theorem",
     "section": "M&M’s example",
-    "text": "M&M’s example\nMars, Inc. is the company that makes M&M’s. In 2008, Mars changed their color distribution to have 13% red candies.\n\n\nLet \\(p\\) be the proportion of red M&M’s in a random sample of \\(n\\) M&M’s. If we take random samples of size \\(n = 100\\), what is the distribution of \\(\\hat{p}\\)? What if \\(n = 10\\)?"
+    "text": "M&M’s example\nMars, Inc. is the company that makes M&M’s. In 2008, Mars changed their color distribution to have 13% red candies.\n\n\nLet \\(p\\) be the proportion of red M&M’s in a random sample of \\(n\\) M&M’s. What is the distribution of \\(\\hat{p}\\) if we take random sample of size:\n\n\\(n = 100\\)\n\\(n = 10\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#why-is-clt-so-important",
     "href": "slides/slides-17-clt.html#why-is-clt-so-important",
     "title": "Central Limit Theorem",
     "section": "Why is CLT so important?",
-    "text": "Why is CLT so important?\n\nLet’s statisticians safely assume that the mean’s sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.\nCan be applied to both continuous and discrete numeric data!\nDoes not depend on the underlying distribution of the data.\n\n\nFor many of these reasons, we can use the CLT for inference!"
+    "text": "Why is CLT so important?\n\nAllows statisticians safely assume that the mean’s sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.\nCan be applied to both continuous and discrete numeric data!\nDoes not depend on the underlying distribution of the data.\n\n\nFor many of these reasons, we can use the CLT for inference!"
   },
   {
     "objectID": "slides/slides-17-clt.html#clt-assumptions",
     "href": "slides/slides-17-clt.html#clt-assumptions",
     "title": "Central Limit Theorem",
     "section": "CLT assumptions",
-    "text": "CLT assumptions\n\nRemark #1: does not require any assumption about how the data \\(x_{1},\\ldots, x_{n}\\) behave so long as the following assumptions hold:\n\nIndependent samples: usually achieved by random sampling\nSufficiently large sample size \\(n\\), where large is in relation to total size of population\n\nRemark #2: if the data \\(x_{1},\\ldots, x_{n}\\) are indeed Normally distributed and independent, then the distribution of sample means is exactly Normal, even for small \\(n\\)\n\nFor this reason, if \\(n\\) is small we require the data to be Normal\nHow to know? We replace (2) above with the normality condition:\n\nIf \\(n\\) is small \\((n < 30)\\): we assume data are approximately normal if there are no clear outliers\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): we assume data are approximately normal if there are no particularly extreme outliers"
+    "text": "CLT assumptions\n\nRemark #1: does not require any assumption about how the data \\(x_{1},\\ldots, x_{n}\\) behave so long as the following assumptions hold:\n\nIndependent samples: usually achieved by random sampling\nSufficiently large sample size \\(n\\), where large is in relation to total size of population\n\nRemark #2: if the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of sample means is exactly Normal, even for small \\(n\\)\n\nFor this reason, if \\(n\\) is small we require the data to be Normal\nHow to know? We replace (2) above with the normality condition:\n\nIf \\(n\\) is small \\((n < 30)\\): we assume data are approximately normal if there are no clear outliers\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): we assume data are approximately normal if there are no particularly extreme outliers"
   },
   {
     "objectID": "slides/slides-17-clt.html#clt-for-proportions",
     "href": "slides/slides-17-clt.html#clt-for-proportions",
     "title": "Central Limit Theorem",
     "section": "CLT for proportions",
-    "text": "CLT for proportions\n\\[\n\\hat{p} = \\frac{1}{n}\\sum_{i=1}^{n} x_{i} \\qquad \\qquad x_{i} =\\{0, 1\\}\n\\]\n\nWe see that \\(\\hat{p}\\) is a sample mean! So the CLT applies to proportions as well!\n\nTypically, \\(x_{i} = 1\\) is read as “success” and \\(x_{i} = 0\\) as “failure”, so \\(p\\) is probability/proportion of success\n\nCLT for sample proportions: if we have \\(n\\) independent binary observations with \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\), then:\n\n\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\n\nWhat do the conditions \\(np \\geq 10\\) and \\(n(1-p)\\geq 10\\) mean?\n\nFor this reason, this is called the “success-failure” condition for CLT for proportions"
+    "text": "CLT for proportions\nCLT for sample proportions: if we have \\(n\\) independent binary observations with \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\), then:\n\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\n\nWhat do the conditions \\(np \\geq 10\\) and \\(n(1-p)\\geq 10\\) mean?\n\nFor this reason, this is called the “success-failure” condition for CLT for proportions"
   },
   {
     "objectID": "slides/slides-17-clt.html#mms-example-solution",
     "href": "slides/slides-17-clt.html#mms-example-solution",
     "title": "Central Limit Theorem",
     "section": "M&M’s example: solution",
-    "text": "M&M’s example: solution\n\nWe have independence via random sample\n\n\n\n\nIf \\(n= 100\\):\n\n\\(np = 100(0.13) = 13 \\geq 10\\)\n\\(n(1-p) = 100(0.87) = 87 \\geq 10\\)\n\nSo by CLT:\n\n\n\\[\n\\begin{align*}\n\\hat{p} &\\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{100}}\\right) \\\\\n&= N(0.13, 0.034 )\n\\end{align*}\n\\]\n\n\n\nIf \\(n = 10\\):\n\n\\(np = 10(0.13) = 1.3 < 10\\)\n\nSo the conditions for CLT are not met and I should not proceed."
+    "text": "M&M’s example: solution\nWe have independence due to the random sample. Need to check success-failure condition:\n\n\n\nIf \\(n= 100\\):\n\n\\(np = 100(0.13) = 13 \\geq 10\\)\n\\(n(1-p) = 100(0.87) = 87 \\geq 10\\)\n\nSo CLT applies:\n\n\n\\[\n\\begin{align*}\n\\hat{p} &\\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{100}}\\right) \\\\\n&= N(0.13, 0.034 )\n\\end{align*}\n\\]\n\n\n\nIf \\(n = 10\\):\n\n\\(np = 10(0.13) = 1.3 < 10\\)\n\nSuccess-failure condition not met. Cannot use CLT."
   },
   {
     "objectID": "slides/slides-17-clt.html#mms-example-cont.",
@@ -3336,7 +3336,7 @@
     "href": "slides/slides-17-clt.html#mathematical-cis",
     "title": "Central Limit Theorem",
     "section": "Mathematical CIs",
-    "text": "Mathematical CIs\n\nRather than using simulation techniques (i.e. bootstrap) to obtain the sampling distribution, the CLT gives us the sampling distribution of a mean “for free”\n\n(assuming conditions are met)\n\nFormula for a \\(\\gamma \\times 100\\%\\) confidence interval:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}}\n\\]\n\npoint estimate: the statistic from our observed data (e.g. \\(\\hat{p}\\) and \\(\\bar{x}\\))\nSE: standard error of the statistic\ncritical value: quantity that guarantees the \\(\\gamma\\times 100\\). This will vary depending on your data/assumptions\n\nCome take STAT 311 if you want to know how we get this formula!"
+    "text": "Mathematical CIs\n\nRather than using simulation techniques (i.e. bootstrap) to obtain the sampling distribution, the CLT gives us the sampling distribution of a mean “for free”\n\n(assuming conditions are met)\n\nFormula for a (symmetric) \\(\\gamma \\times 100\\%\\) confidence interval:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}}\n\\]\n\npoint estimate: the “best guess” statistic from our observed data (e.g. \\(\\hat{p}\\) and \\(\\bar{x}\\))\nSE: standard error of the statistic\ncritical value: percentile that guarantees the \\(\\gamma\\times 100\\). This will vary depending on your data/assumptions"
   },
   {
     "objectID": "slides/slides-17-clt.html#ci-for-a-single-proportion",
@@ -3350,28 +3350,28 @@
     "href": "slides/slides-17-clt.html#critical-value",
     "title": "Central Limit Theorem",
     "section": "Critical value",
-    "text": "Critical value\n\nSo \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\right)\\)\nIf we want a \\(\\gamma \\times 100\\%\\) CI for \\(p\\), then let’s find the bounds of the middle \\(\\gamma \\times 100\\%\\) of the Normal distribution above!\n\nThese are the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles\nBut…we still don’t know \\(p\\)\n\n\n\nCritical value: instead, we use the percentiles of the standard normal \\(N(0,1)\\) distribution: \\(z_{(1-\\gamma)/2}^{*}\\) and \\(z_{(1+\\gamma)/2}^{*}\\)\n\nSince the normal distribution is symmetric, \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
+    "text": "Critical value\n\nAt this point: \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\right)\\)\nIf we want a \\(\\gamma \\times 100\\%\\) CI for \\(p\\), we just need the bounds of the middle \\(\\gamma \\times 100\\%\\) of the Normal distribution above!\n\nThese are the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles\nBut…we still don’t know \\(p\\)\n\n\n\nCritical value: instead, we use the percentiles of the standard normal \\(N(0,1)\\) distribution: \\(z_{(1-\\gamma)/2}^{*}\\) and \\(z_{(1+\\gamma)/2}^{*}\\)\n\nSince the normal distribution is symmetric, \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#example-cont.",
     "href": "slides/slides-17-clt.html#example-cont.",
     "title": "Central Limit Theorem",
     "section": "Example (cont.)",
-    "text": "Example (cont.)\n\nGathering components for CI:\n\nPoint estimate: \\(\\hat{p}\\) = 0.6\nStandard error: \\(\\text{SE}(\\hat{p}) \\approx \\sqrt{0.6(0.4)/100} \\approx 0.049\\)\nCritical value: \\(z_{0.95}^{*} =\\) qnorm(0.95, mean = 0, sd = 1) \\(\\approx 1.645\\)\n\nSo our 90% confidence interval for \\(p\\) is:\n\\[\n0.6 \\pm 1.645(0.049) = (0.519, 0.681)\n\\]\n\nInterpret the confidence interval in context!"
+    "text": "Example (cont.)\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\nGathering components for CI:\n\n\nPoint estimate: \\(\\hat{p}\\) = 0.6\nStandard error: \\(\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{0.6(0.4)}{100}} \\approx 0.049\\)\n\nCritical value: what percentiles do we want?\n\n\n\\(z_{0.95}^{*} =\\) qnorm(0.95, mean = 0, sd = 1) \\(\\approx 1.645\\)\n\n\n\nSo our 90% confidence interval for \\(p\\) is:\n\\[\n0.6 \\pm 1.645(0.049) = (0.519, 0.681)\n\\]\n\n\n\nInterpret the confidence interval in context!"
   },
   {
     "objectID": "slides/slides-17-clt.html#towards-a-ci-for-a-single-proportion",
     "href": "slides/slides-17-clt.html#towards-a-ci-for-a-single-proportion",
     "title": "Central Limit Theorem",
     "section": "Towards a CI for a single proportion",
-    "text": "Towards a CI for a single proportion\nSuppose that I have a sample of \\(n\\) binary values, and I would like to obtain a \\(\\gamma \\times 100\\%\\) confidence interval for the probability of success \\(p\\).\n\nIf assumptions of CLT for sample proportions hold:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\nHow do we know if success-failure condition holds without knowing \\(p\\)? Let’s use our best guess: \\(\\hat{p}\\)\n\nSo need \\(n\\hat{p}\\) and \\(n(1-\\hat{p})\\) both \\(\\geq 10\\)\n\n\n\nPoint estimate: observed \\(\\hat{p}\\) from our sample\nStandard error: \\(\\sqrt{p(1-p)/n}\\)\n\nBut we still don’t have \\(p\\)! Instead use the following approximation for CI: \\(\\text{SE}(\\hat{p}) \\approx \\sqrt{\\hat{p}(1-\\hat{p})/n}\\)"
+    "text": "Towards a CI for a single proportion\nSuppose that I have a sample of \\(n\\) binary (0/1) values. I want a \\(\\gamma \\times 100\\%\\) confidence interval for the probability of success \\(p\\) using the sample.\n\nIf assumptions of CLT for sample proportions hold, then we know\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\nWe can use/manipulate this result to obtain a confidence interval for the unknown \\(p\\)!\nHow do we know if success-failure condition holds without knowing \\(p\\)?\n\nLet’s use our best guess: \\(\\hat{p}\\)\nSuccess-failure condition for inference: \\(n\\hat{p}\\) and \\(n(1-\\hat{p})\\) both \\(\\geq 10\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#ci-for-single-proportion",
     "href": "slides/slides-17-clt.html#ci-for-single-proportion",
     "title": "Central Limit Theorem",
     "section": "CI for single proportion",
-    "text": "CI for single proportion\nSo the formula for a \\(\\gamma\\times 100\\%\\) CI for \\(\\hat{p}\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical values are obtained from \\(N(0,1)\\) distribution"
+    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(\\hat{p}\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution\n\n\nCome take STAT 311 to see why this is our CI!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#housekeeping",
@@ -3490,7 +3490,7 @@
     "href": "practice_probs/practice-17-clt.html",
     "title": "CLT and CIs for proportion",
     "section": "",
-    "text": "A survey found that American families generate an average of 17.2 pounds of glass garbage each year. Assume that the standard deviation is 2.5 pounds.\nSuppose we randomly survey 40 families. Set up a calculation for (and if you have access to R, actually calculate) the probability that the mean of glass garbage of these 40 families is less than 18 pounds.\nDefine what a sampling distribution of the sample distribution is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when \\(p=0.2\\).\nA survey of 1509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.\n\nIs this sample a representative sample from the population of all high school seniors in the US? Explain.\nSuppose the conditions for inference are met, regardless of your answer in (a). Using a mathematical model, construct a 90% confidence interval for the proportion of high school seniors who are fairly certain they will participate in a study abroad program in college. Interpret this interval in context.\nBased on this interval, would it be appropriate to claim that the majority of high school seniors are fairly certain they will participate in a study abroad program in college?"
+    "text": "A survey found that American families generate an average of 17.2 pounds of glass garbage each year. Assume that the standard deviation is 2.5 pounds.\nSuppose we randomly survey 40 families. Set up a calculation for (and if you have access to R, actually calculate) the probability that the mean of glass garbage of these 40 families is less than 18 pounds.\nDefine what a sampling distribution of the sample distribution is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when \\(p=0.2\\).\nA survey of 1509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.\n\nIs this sample a representative sample from the population of all high school seniors in the US? Explain.\nSuppose the conditions for inference are met, regardless of your answer in (a). Using a mathematical model, construct a 90% confidence interval for the proportion of high school seniors who are fairly certain they will participate in a study abroad program in college. Interpret this interval in context.\nBased on this interval, would it be appropriate to claim that the majority of high school seniors are fairly certain they will participate in a study abroad program in college?\n\n\\((^*)\\) The average teacher salary in Vermont is $62,483. Suppose that the distribution of teacher salaries is approximately normal with standard deviation $7000.\n\nWhat is the probability that a randomly selected Vermont teacher makes less than $60,000 per year?\nIf we randomly sample 25 Vermont teachers and obtain their salaries, what is the probability that the mean of their salaries is less than $60,000 per year?\nCompare the probabilities in (a) and (b), and explain mathematically why one is larger than the other.\nHow would your answers to (a) and (b) change if the distribution of teacher salaries was not normal?"
   },
   {
     "objectID": "slides/slides-17-clt.html",
@@ -3504,13 +3504,34 @@
     "href": "slides/slides-17-clt.html#comprehension-questions",
     "title": "Central Limit Theorem",
     "section": "Comprehension questions",
-    "text": "Comprehension questions\n\nWhat is the main takeaway of the CLT?\nWhat are the assumptions of the CLT?\nHow do we construct a \\(\\gamma \\times 100\\%\\) confidence interval?"
+    "text": "Comprehension questions\n\nWhat is the main takeaway of the CLT?\nWhat are the assumptions of the CLT?\nHow do we construct a \\(\\gamma \\times 100\\%\\) confidence interval using a mathematical model?"
   },
   {
     "objectID": "slides/slides-17-clt.html#normality-condition",
     "href": "slides/slides-17-clt.html#normality-condition",
     "title": "Central Limit Theorem",
     "section": "Normality condition",
-    "text": "Normality condition\n\nDo you believe the large sample size/normality condition is satisified in the following two samples?\n\n\n\nSample 1: small \\(n < 30\\). But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.\nSample 2: larger \\(n \\geq 30\\). Even though \\(n\\) is larger, there is a particularly extreme outlier, so I would say normality condition is not met."
+    "text": "Normality condition\n\nDo you believe the large sample size/normality condition is satisified in the following two samples?\n\n\n\n\n\n\nSample 1: small \\(n < 30\\). But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.\nSample 2: larger \\(n \\geq 30\\). Even though \\(n\\) is larger, there is a particularly extreme outlier, so I would say normality condition is not met."
+  },
+  {
+    "objectID": "slides/slides-17-clt.html#proportion-as-a-mean",
+    "href": "slides/slides-17-clt.html#proportion-as-a-mean",
+    "title": "Central Limit Theorem",
+    "section": "Proportion as a mean",
+    "text": "Proportion as a mean\nRemember \\(\\hat{p}\\) is a sample mean! So the CLT applies to proportions as well!\n\\[\n\\hat{p} = \\frac{1}{n}\\sum_{i=1}^{n} x_{i} \\qquad \\qquad x_{i} =\\{0, 1\\}\n\\]\n\nTypically, \\(x_{i} = 1\\) is read as “success” and \\(x_{i} = 0\\) as “failure”, so \\(p\\) is the population-level probability of success"
+  },
+  {
+    "objectID": "slides/slides-17-clt.html#towards-a-ci-for-a-single-proportion-cont.",
+    "href": "slides/slides-17-clt.html#towards-a-ci-for-a-single-proportion-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Towards a CI for a single proportion (cont.)",
+    "text": "Towards a CI for a single proportion (cont.)\n\nPoint estimate: observed \\(\\hat{p}\\) from our sample\nStandard error: \\(\\sqrt{p(1-p)/n}\\)\n\nBut we still don’t have \\(p\\)!\nInstead, use the following approximation for CI:\n\n\n\n\\[\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\) part, we use the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
+  },
+  {
+    "objectID": "slides/slides-17-clt.html#warm-up",
+    "href": "slides/slides-17-clt.html#warm-up",
+    "title": "Central Limit Theorem",
+    "section": "Warm-up",
+    "text": "Warm-up\n\nLet \\(Z \\sim N(0,1)\\). If the 10th percentile of \\(Z\\) is -1.28, what is the 90th percentile?\nLet \\(X \\sim N(0,2)\\). If the 10th percentile of \\(X\\) is -2.56, what is the 90th percentile? Or can you not say without code?\nLet \\(Y \\sim N(2,1)\\). If the 10th percentile of \\(Y\\) is 0.72, what is the 90th percentile? Or can you not say without code?"
   }
 ]

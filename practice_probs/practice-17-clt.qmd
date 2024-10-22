@@ -33,3 +33,13 @@ opts_chunk$set(fig.width=12, fig.height=4)
     a.  Is this sample a representative sample from the population of all high school seniors in the US? Explain.
     b.  Suppose the conditions for inference are met, regardless of your answer in (a). Using a mathematical model, construct a 90% confidence interval for the proportion of high school seniors who are fairly certain they will participate in a study abroad program in college. Interpret this interval in context.
     c.  Based on this interval, would it be appropriate to claim that the majority of high school seniors are fairly certain they will participate in a study abroad program in college?
+
+4.  $(^*)$ The average teacher salary in Vermont is \$62,483. Suppose that the distribution of teacher salaries is approximately normal with standard deviation \$7000.
+
+    a.  What is the probability that a randomly selected Vermont teacher makes less than \$60,000 per year?
+
+    b.  If we randomly sample 25 Vermont teachers and obtain their salaries, what is the probability that the mean of their salaries is less than \$60,000 per year?
+
+    c.  Compare the probabilities in (a) and (b), and explain mathematically why one is larger than the other.
+
+    d.  How would your answers to (a) and (b) change if the distribution of teacher salaries was not normal?

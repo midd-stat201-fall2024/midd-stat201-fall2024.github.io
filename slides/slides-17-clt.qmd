@@ -17,9 +17,8 @@ editor_options:
 draft: false
 ---
 
-## Housekeeping
 
--   Office hours tomorrow: 10:30am-12:00pm
+## Recap
 
 ```{r echo = F, message= F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -31,8 +30,6 @@ plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
-## Recap
-
 -   Normal distribution: symmetric, bell-shaped curve that is described by mean $\mu$ and standard deviation $\sigma$
 
     -   Common model used to describe behavior of continuous variables
@@ -41,7 +38,15 @@ source("../stat201_fns.R")
 
 -   68-95-99.7 rule
 
--   Z score standardizes observations to allow for easier comparison: $\text{z-score} = \frac{x- \mu}{\sigma}$
+-   z-score standardizes observations to allow for easier comparison: $z = \frac{x- \mu}{\sigma}$
+
+## Warm-up
+
+-   Let $Z \sim N(0,1)$. If the 10th percentile of $Z$ is `r round(qnorm(0.1), 2)`, what is the 90th percentile?
+
+-   Let $X \sim N(0,2)$. If the 10th percentile of $X$ is `r round(qnorm(0.1, 0, 2), 2)`, what is the 90th percentile? Or can you not say without code?
+
+-   Let $Y \sim N(2,1)$. If the 10th percentile of $Y$ is `r round(qnorm(0.1, 2, 1), 2)`, what is the 90th percentile? Or can you not say without code?
 
 ## Where we're going
 
@@ -70,7 +75,7 @@ source("../stat201_fns.R")
     1.  Independent samples: usually achieved by random sampling
     2.  Sufficiently large sample size $n$, where large is in relation to total size of population
 
--   **Remark #2**: if the data $x_{1},\ldots, x_{n}$ are indeed Normally distributed and independent, then the distribution of sample means is *exactly* Normal, even for small $n$
+-   **Remark #2**: if the data $x_{1},\ldots, x_{n}$ are known to be Normal and independent, then the distribution of sample means is *exactly* Normal, even for small $n$
 
     -   For this reason, if $n$ is small we require the data to be Normal
 
@@ -86,11 +91,17 @@ source("../stat201_fns.R")
 Do you believe the large sample size/normality condition is satisified in the following two samples?
 :::
 
-![](figs/16-normality.png){width="562"}
+::::: columns
+::: {.column width="65%"}
+![](figs/16-normality.png){width="600"}
+:::
 
+::: {.column width="35%"}
 -   Sample 1: small $n < 30$. But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.
 
 -   Sample 2: larger $n \geq 30$. Even though $n$ is larger, there is a particularly extreme outlier, so I would say normality condition is not met.
+:::
+:::::
 
 ## Activity
 
@@ -101,7 +112,7 @@ mu <- round(mean(nba_heights$h_in), 2)
 sigma <- round(sd(nba_heights$h_in), 2)
 ```
 
-The average height of all NBA players in the 2008-9 season is `r mu` inches, with a standard deviation of `r sigma` inches. We randomly sample $20$ of these players and record their heights (see histogram).
+The average height of all NBA players in the 2008-9 season is `r mu` inches, with a standard deviation of `r sigma` inches. We randomly sample $20$ of these players and record their heights.
 
 ```{r}
 set.seed(16)
@@ -122,16 +133,20 @@ What is the sampling distribution of the sample mean heights?
 
 ## Height example: solution
 
--   We have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal
+-   We have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal (no clear outliers).
 
--   So by the CLT: $\bar{X} \overset{\cdot}{\sim} N\left(`r mu`, \frac{`r sigma`}{\sqrt{`r n`}}\right)$
+-   CLT applies! By CLT: $\bar{X} \overset{\cdot}{\sim} N\left(`r mu`, \frac{`r sigma`}{\sqrt{`r n`}}\right)$
 
--   If the data instead looked like the following, there are no clear outliers so I would still say Normality condition satisfied:
+-   If the data instead looked like the following, I would say normality condition is violated:
 
-    ```{r fig.height = 3.5}
-    set.seed(22)
-    n <- 20
-    x <- sample(nba_heights$h_in, n)
+    ```{r fig.height = 3}
+    set.seed(2)
+    height_sort <- nba_heights |>
+      arrange(desc(h_in)) |>
+      slice(1:100) |>
+      sample_n(n-1) |>
+      pull(h_in)
+    x <- c(height_sort, min(nba_heights$h_in))
     ggplot(data.frame(x), aes(x = x)) +
       geom_histogram(bins = 10, color = "white") +
       labs(x = "Player height (in)") +
@@ -157,15 +172,21 @@ Assume that a bank currently has 36 customers in it, and all customers are indep
 
 -   Using 68-95-99.7 rule, probability that the average service time of all these customers is less than 4 minutes is about $1 - (0.34 + 0.5) = 0.16$
 
-## CLT for proportions
+    - `pnorm(4, 5, 1)` = `r round(pnorm(4,5,1), 3)`
+
+## Proportion as a mean
+
+Remember $\hat{p}$ is a sample mean! So the CLT applies to proportions as well!
 
 $$
 \hat{p} = \frac{1}{n}\sum_{i=1}^{n} x_{i} \qquad \qquad x_{i} =\{0, 1\}
 $$
 
--   We see that $\hat{p}$ is a sample mean! So the CLT applies to proportions as well!
-    -   Typically, $x_{i} = 1$ is read as "success" and $x_{i} = 0$ as "failure", so $p$ is probability/proportion of success
--   **CLT for sample proportions**: if we have $n$ independent binary observations with $np \geq 10$ and $n(1-p) \geq 10$, then:
+-   Typically, $x_{i} = 1$ is read as "success" and $x_{i} = 0$ as "failure", so $p$ is the population-level probability of success
+
+## CLT for proportions
+
+**CLT for sample proportions**: if we have $n$ independent binary observations with $np \geq 10$ and $n(1-p) \geq 10$, then:
 
 ::: fragment
 $$
@@ -185,23 +206,27 @@ Mars, Inc. is the company that makes M&M's. In 2008, Mars changed their color di
 
 :::: fragment
 ::: discuss
-Let $p$ be the proportion of red M&M's in a random sample of $n$ M&M's. If we take random samples of size $n = 100$, what is the distribution of $\hat{p}$? What if $n = 10$?
+Let $p$ be the proportion of red M&M's in a random sample of $n$ M&M's. What is the distribution of $\hat{p}$ if we take random sample of size:
+
+-   $n = 100$
+
+-   $n = 10$
 :::
 ::::
 
 ## M&M's example: solution
 
--   We have independence via random sample
+We have independence due to the random sample. Need to check success-failure condition:
 
 :::::: columns
 :::: {.column width="50%"}
--   If $n= 100$:
+-   **If** $n= 100$**:**
 
     -   $np = 100(0.13) = 13 \geq 10$
 
     -   $n(1-p) = 100(0.87) = 87 \geq 10$
 
--   So by CLT:
+-   So CLT applies:
 
 ::: fragment
 $$
@@ -214,9 +239,9 @@ $$
 ::::
 
 ::: {.column width="50%"}
--   If $n = 10$:
+-   **If** $n = 10$**:**
     -   $np = 10(0.13) = 1.3 < 10$
--   So the conditions for CLT are not met and I should not proceed.
+-   Success-failure condition not met. Cannot use CLT.
 :::
 ::::::
 
@@ -257,7 +282,7 @@ data.frame(prop1, prop2, prop3, prop4) |>
 
 ## Why is CLT so important?
 
-1.  Let's statisticians safely assume that the mean's sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.
+1.  Allows statisticians safely assume that the mean's sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.
 
 2.  Can be applied to both continuous and discrete numeric data!
 
@@ -273,97 +298,125 @@ data.frame(prop1, prop2, prop3, prop4) |>
 
     -   (assuming conditions are met)
 
--   Formula for a $\gamma \times 100\%$ confidence interval:
+-   Formula for a (symmetric) $\gamma \times 100\%$ confidence interval:
 
     $$
     \text{point estimate} \pm \underbrace{\text{critical value} \times \text{SE}}_{\text{Margin of Error}}
     $$
 
-    1.  point estimate: the statistic from our observed data (e.g. $\hat{p}$ and $\bar{x}$)
+    1.  **point estimate**: the "best guess" statistic from our observed data (e.g. $\hat{p}$ and $\bar{x}$)
 
-    2.  SE: standard error of the statistic
+    2.  **SE**: standard error of the statistic
 
-    3.  critical value: quantity that guarantees the $\gamma\times 100$. This will vary depending on your data/assumptions
-
--   Come take STAT 311 if you want to know how we get this formula!
+    3.  **critical value**: percentile that guarantees the $\gamma\times 100$. This will vary depending on your data/assumptions
 
 ## Towards a CI for a single proportion
 
-Suppose that I have a sample of $n$ binary values, and I would like to obtain a $\gamma \times 100\%$ confidence interval for the probability of success $p$.
+Suppose that I have a sample of $n$ binary (0/1) values. I want a $\gamma \times 100\%$ confidence interval for the probability of success $p$ using the sample.
 
 ::: fragment
-If assumptions of CLT for sample proportions hold:
+[**If**]{.underline} assumptions of CLT for sample proportions hold, then we know
 
 $$
 \hat{p} \overset{\cdot}{\sim} N\left(p, \sqrt{\frac{p(1-p)}{n}}\right)
 $$
 :::
 
--   How do we know if success-failure condition holds without knowing $p$? Let's use our best guess: $\hat{p}$
+-   We can use/manipulate this result to obtain a confidence interval for the unknown $p$!
 
-    -   So need $n\hat{p}$ and $n(1-\hat{p})$ both $\geq 10$
+-   How do we know if success-failure condition holds without knowing $p$?
+
+    -   Let's use our best guess: $\hat{p}$
+
+    -   Success-failure condition *for inference*: $n\hat{p}$ and $n(1-\hat{p})$ both $\geq 10$
+
+## Towards a CI for a single proportion (cont.)
 
 1.  Point estimate: observed $\hat{p}$ from our sample
 
 2.  Standard error: $\sqrt{p(1-p)/n}$
 
-    -   But we still don't have $p$! Instead use the following approximation for CI: $\text{SE}(\hat{p}) \approx \sqrt{\hat{p}(1-\hat{p})/n}$
+    -   But we still don't have $p$!
 
-## Critical value
+    -   Instead, use the following approximation for CI:
 
--   So $\hat{p} \overset{\cdot}{\sim} N\left(p, \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \right)$
+::: fragment
+$$\text{SE}(\hat{p}) \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+:::
 
--   If we want a $\gamma \times 100\%$ CI for $p$, then let's find the bounds of the middle $\gamma \times 100\%$ of the Normal distribution above!
+3.  Critical value: to obtain the middle $\gamma \times 100\%$ part, we use the $(1-\gamma)/2$ and $(1+\gamma)/2$ percentiles of the $N(0,1)$ distribution
 
-    -   These are the $(1-\gamma)/2$ and $(1+\gamma)/2$ percentiles
+    -   $z_{(1-\gamma)/2}^{*}$ (lower bound) and $z_{(1+\gamma)/2}^{*}$ (upper bound)
 
-    -   But...we still don't know $p$
-
-3.  Critical value: instead, we use the percentiles of the standard normal $N(0,1)$ distribution: $z_{(1-\gamma)/2}^{*}$ and $z_{(1+\gamma)/2}^{*}$
-
-    -   Since the normal distribution is symmetric, $z_{(1+\gamma)/2}^{*} = - z_{(1-\gamma)/2}^{*}$
+    -   Note: $z_{(1+\gamma)/2}^{*} = - z_{(1-\gamma)/2}^{*}$
 
 ## CI for single proportion
 
-So the formula for a $\gamma\times 100\%$ CI for $\hat{p}$ is:
+So the formula for a (symmetric) $\gamma\times 100\%$ CI for $\hat{p}$ is:
 
 ::: fragment
 $$
-\hat{p} \pm z_{(1+\gamma)/2}^{*}\times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} 
-$$where the critical values are obtained from $N(0,1)$ distribution
+\hat{p} \pm z_{(1+\gamma)/2}^{*}\times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$where the critical value is obtained from $N(0,1)$ distribution
+:::
+
+::: {.fragment style="color: maroon"}
+Come take STAT 311 to see why this is our CI!
 :::
 
 ## Example
 
-Consider taking a poll (i.e. random sample) of 100 registered voters in a town and asking them if they support legalized marijuana. It was found that 60% of respondents were in support.
+A poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.
 
-::: {style="color: maroon"}
-Find a 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.
+::: discuss
+What is the population parameter? What is the point estimate/statistic?
 :::
 
--   Conditions for CLT met?
+::: {.fragment style="color: maroon"}
+Find a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.
+:::
+
+-   ::: discuss
+    Conditions for CLT met?
+    :::
 
     -   Independence: random sample
 
-    -   Success-failure condition: $100(0.6) = 60$ and $100(0.4) = 40$ both $\geq 10$
+    -   Success-failure condition: $n\hat{p} =100(0.6) = 60 \geq 10$ and $n(1-\hat{p}) = 100(0.4) = 40 \geq 10$
 
 ## Example (cont.)
 
--   Gathering components for CI:
+::: {.fragment style="color: maroon"}
+Find a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.
+:::
 
-    1.  Point estimate: $\hat{p}$ = 0.6
-    2.  Standard error: $\text{SE}(\hat{p}) \approx \sqrt{0.6(0.4)/100} \approx 0.049$
-    3.  Critical value: $z_{0.95}^{*} =$ `qnorm(0.95, mean = 0, sd = 1)` $\approx 1.645$
+::: fragment
+Gathering components for CI:
+:::
 
--   So our 90% confidence interval for $p$ is:
+1.  Point estimate: $\hat{p}$ = 0.6
 
-    $$
-    0.6 \pm 1.645(0.049) = (0.519, 0.681)
-    $$
+2.  Standard error: $\text{SE}(\hat{p}) \approx \sqrt{\frac{0.6(0.4)}{100}} \approx 0.049$
 
--   ::: discuss
-    Interpret the confidence interval in context!
+3.  ::: discuss
+    Critical value: what percentiles do we want?
     :::
+
+    -   $z_{0.95}^{*} =$ `qnorm(0.95, mean = 0, sd = 1)` $\approx 1.645$
+
+::: fragment
+So our 90% confidence interval for $p$ is:
+
+$$
+0.6 \pm 1.645(0.049) = (0.519, 0.681)
+$$
+:::
+
+:::: fragment
+::: discuss
+Interpret the confidence interval in context!
+:::
+::::
 
 ## Comprehension questions
 
@@ -371,4 +424,4 @@ Find a 90% confidence interval for the true proportion of town residents in favo
 
 -   What are the assumptions of the CLT?
 
--   How do we construct a $\gamma \times 100\%$ confidence interval?
+-   How do we construct a $\gamma \times 100\%$ confidence interval using a mathematical model?
