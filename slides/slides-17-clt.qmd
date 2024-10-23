@@ -17,7 +17,6 @@ editor_options:
 draft: false
 ---
 
-
 ## Recap
 
 ```{r echo = F, message= F}
@@ -58,7 +57,7 @@ source("../stat201_fns.R")
 
 ## Central Limit Theorem (CLT)
 
--   Assume that you have a **sufficiently large** sample of $n$ **independent** values from a population with mean $\mu$ and standard deviation $\sigma$.
+-   Assume that you have a **sufficiently large** sample of $n$ **independent** values $x_{1},\ldots, x_{n}$ from a population with mean $\mu$ and standard deviation $\sigma$.
 
 -   Then the distribution of sample means is approximately Normal:
 
@@ -172,7 +171,7 @@ Assume that a bank currently has 36 customers in it, and all customers are indep
 
 -   Using 68-95-99.7 rule, probability that the average service time of all these customers is less than 4 minutes is about $1 - (0.34 + 0.5) = 0.16$
 
-    - `pnorm(4, 5, 1)` = `r round(pnorm(4,5,1), 3)`
+    -   `pnorm(4, 5, 1)` = `r round(pnorm(4,5,1), 3)`
 
 ## Proportion as a mean
 
@@ -352,7 +351,7 @@ $$\text{SE}(\hat{p}) \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
 
 ## CI for single proportion
 
-So the formula for a (symmetric) $\gamma\times 100\%$ CI for $\hat{p}$ is:
+So the formula for a (symmetric) $\gamma\times 100\%$ CI for $p$ is:
 
 ::: fragment
 $$

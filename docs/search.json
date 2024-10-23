@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\n\n\n\nR 10/24\nTopic: CIs with mathematical models (cont.)\n\nIntroduce final project\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs with mathematical models (cont.)\n\nIntroduce final project\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -3231,7 +3231,7 @@
     "href": "slides/slides-17-clt.html#central-limit-theorem-clt",
     "title": "Central Limit Theorem",
     "section": "Central Limit Theorem (CLT)",
-    "text": "Central Limit Theorem (CLT)\n\nAssume that you have a sufficiently large sample of \\(n\\) independent values from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nThen the distribution of sample means is approximately Normal:\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\n\nThat is, the sampling distribution of the sample mean is approximately normal with mean \\(\\mu\\) and standard error \\(\\sigma/\\sqrt{n}\\)"
+    "text": "Central Limit Theorem (CLT)\n\nAssume that you have a sufficiently large sample of \\(n\\) independent values \\(x_{1},\\ldots, x_{n}\\) from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nThen the distribution of sample means is approximately Normal:\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\n\nThat is, the sampling distribution of the sample mean is approximately normal with mean \\(\\mu\\) and standard error \\(\\sigma/\\sqrt{n}\\)"
   },
   {
     "objectID": "slides/slides-17-clt.html#activity",
@@ -3371,7 +3371,7 @@
     "href": "slides/slides-17-clt.html#ci-for-single-proportion",
     "title": "Central Limit Theorem",
     "section": "CI for single proportion",
-    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(\\hat{p}\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution\n\n\nCome take STAT 311 to see why this is our CI!"
+    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution\n\n\nCome take STAT 311 to see why this is our CI!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#housekeeping",
@@ -3385,42 +3385,42 @@
     "href": "slides/slides-18-ci-mean.html#recap",
     "title": "Confidence Intervals for a Mean",
     "section": "Recap",
-    "text": "Recap\n\nCentral Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N(\\mu, \\sigma/\\sqrt{n})\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N(p, \\sqrt{p(1-p)/n})\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nBut sometimes we need to replace the standard error with an estimate"
+    "text": "Recap\n\nCentral Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nWe needed to replace the standard error with an estimate"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#checking-normality",
     "href": "slides/slides-18-ci-mean.html#checking-normality",
     "title": "Confidence Intervals for a Mean",
     "section": "Checking normality",
-    "text": "Checking normality\n\nRemember, CLT requires a sufficiently large sample size \\(n\\) or assumption of Normality of the underlying data.\nNo perfect way to check Normality, but rule of thumb:\n\nIf \\(n\\) small: we should check that there are no clear outliers in the data. Slight skew okay (and probably expected)\nIf \\(n\\) large: doesn’t matter!"
+    "text": "Checking normality\n\nRemember, CLT requires a sufficiently large sample size \\(n\\) or assumption of Normality of the underlying data.\nNo perfect way to check Normality, but rule of thumb:\n\nIf \\(n < 30\\) small: check that there are no clear outliers\nIf \\(n \\geq 30\\) large: check that there are no particularly extreme outliers"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-known-variance",
     "href": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-known-variance",
     "title": "Confidence Intervals for a Mean",
     "section": "CI for a single mean (known variance)",
-    "text": "CI for a single mean (known variance)\n\nIf CLT holds, then we know\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\nSo our \\(\\gamma \\times 100\\%\\) CI for \\(\\mu\\) is:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}} = \\bar{x} \\pm z_{(1+\\gamma)/2}^* \\times \\frac{\\sigma}{\\sqrt{n}}\n\\]"
+    "text": "CI for a single mean (known variance)\nSuppose we want a \\(\\gamma\\times 100\\%\\) CI for population mean \\(\\mu\\).\n\nWhat would your “best guess” point estimate for \\(\\mu\\) be?\n\n\nIf CLT holds, then we know\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\nSo our \\(\\gamma \\times 100\\%\\) CI for \\(\\mu\\) is:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}} = \\bar{x} \\pm z_{(1+\\gamma)/2}^* \\times \\frac{\\sigma}{\\sqrt{n}}\n\\]"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage",
     "title": "Confidence Intervals for a Mean",
     "section": "Example: age at marriage",
-    "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a survey asking US women their age at first marriage. The standard deviation of the response as 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\n\nWe will construct an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us?"
+    "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\nWhat is/are the population parameter(s)? What is the statistic?\n\n\n\nWe will obtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us? Write this down in statistical notation!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.",
     "title": "Confidence Intervals for a Mean",
     "section": "Example: age at marriage (cont.)",
-    "text": "Example: age at marriage (cont.)\n\n\n\nBy CLT, \\(\\bar{X} \\overset{\\cdot}{\\sim}N(\\mu, 4.72/\\sqrt{25}) = N(\\mu, 0.944)\\)\n\nWe will construct an 80% confidence interval for the mean age of US women at first marriage.\n\n\nCollect necessary components:\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(0.944\\)\nCritical value: \\(z_{0.9}^{*} =\\) qnorm(0.9, 0, 1) \\(= 1.28\\)\n\nSo our 80% confidence interval is:\n\\[\n23.32 \\pm 1.28 \\times 0.944 = (22.11, 24.53)\n\\]\n\n\nInterpret this interval!"
+    "text": "Example: age at marriage (cont.)\n\nObtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\n\nBy CLT: \\[\\bar{X} \\overset{\\cdot}{\\sim}N\\left(\\mu, \\frac{4.72}{\\sqrt{25}}\\right) = N(\\mu, 0.944)\\]\n\nCollect necessary components:\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(0.944\\)\nCritical value: \\(z_{0.9}^{*} =\\) qnorm(0.9, 0, 1) \\(= 1.28\\)\n\n\nSo our 80% confidence interval is \\(23.32 \\pm 1.28 \\times 0.944 = (22.11, 24.53)\\)\n\n\n\nInterpret this interval!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#utility-of-this-model",
     "href": "slides/slides-18-ci-mean.html#utility-of-this-model",
     "title": "Confidence Intervals for a Mean",
     "section": "Utility of this model",
-    "text": "Utility of this model\n\nThe previous formula for CI for \\(\\mu\\) only applies if \\(\\sigma\\) is known\nBut wait…\n\nWant to construct a CI for the mean \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\widehat{\\text{SE}}(\\bar{X}) = \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nSimilar to CI for \\(p\\), we replaced \\(p\\) with \\(\\hat{p}\\) in the standard error"
+    "text": "Utility of this model\n\nThe previous formula for the confidence interval for \\(\\mu\\) relies on knowing \\(\\sigma\\)\nBut wait…\n\nWant to construct a CI for \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\widehat{\\text{SE}}(\\bar{X}) = \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nSimilar to CI for \\(p\\), where we replaced \\(p\\) with \\(\\hat{p}\\) in the standard error"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#variance-issue",
@@ -3441,35 +3441,35 @@
     "href": "slides/slides-18-ci-mean.html#t-distribution",
     "title": "Confidence Intervals for a Mean",
     "section": "\\(t\\)-distribution",
-    "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\) distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\nAs df increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t\\) is nearly identical to \\(N(0,1)\\)"
+    "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\)-distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\nAs \\(df\\) increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t_{df}\\) is nearly identical to \\(N(0,1)\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#working-with-t-distribution",
     "href": "slides/slides-18-ci-mean.html#working-with-t-distribution",
     "title": "Confidence Intervals for a Mean",
     "section": "Working with \\(t\\) distribution",
-    "text": "Working with \\(t\\) distribution\n\n\n\nLet’s draw pictures for the following:\n\nWhat proportion of the \\(t_{2}\\)-distribution falls below -1.5?\nWhat value of the \\(t_{2}\\)-distribution has \\(70\\) area lying below it?"
+    "text": "Working with \\(t\\) distribution\n\n\n\nLet’s draw pictures for the following:\n\nWhat proportion of the \\(t_{2}\\)-distribution falls below -1.5?\nWhat value of the \\(t_{2}\\)-distribution has \\(70\\%\\) area lying below it?"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#t-distribution-in-r",
     "href": "slides/slides-18-ci-mean.html#t-distribution-in-r",
     "title": "Confidence Intervals for a Mean",
     "section": "\\(t\\) distribution in R",
-    "text": "\\(t\\) distribution in R\n\nWe use pnorm(<x>, mean, sd) and qnorm(<percent>, mean, sd) to find probabilities and percentiles for the Normal distribution\nAnalogous functions for \\(t\\) distribution: pt(<x>, df) and qt(<percent>, df)\n\n\n\n\n\n\n\n\n\n\n\npt(-1.5,df =2) = 0.1361966\n\n\n\n\n\n\n\n\n\n\nqt(0.7, df =2) = 0.6172134"
+    "text": "\\(t\\) distribution in R\n\npnorm(x, mean, sd) and qnorm(%, mean, sd) used to find probabilities and percentiles for the Normal distribution\nAnalogous functions for \\(t\\)-distribution: pt(x, df) and qt(%, df)\n\n\n\n\n\n\n\n\n\n\n\npt(-1.5,df =2) = 0.1361966\n\n\n\n\n\n\n\n\n\n\nqt(0.7, df =2) = 0.6172134"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-unknown-variance",
     "href": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-unknown-variance",
     "title": "Confidence Intervals for a Mean",
     "section": "CI for a single mean (unknown variance)",
-    "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and one of:\n\nNormal data\nlarge \\(n\\)\nsmall \\(n\\) with approximate normality\n\nFormula for \\(\\gamma \\times 100\\%\\) CI is same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\text{point estimate} \\pm t^*_{df} \\times \\hat{SE} = \\bar{x} \\pm t_{df}^* \\times \\frac{s}{\\sqrt{n}}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
+    "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and the Normality condition:\nGeneral formula for \\(\\gamma \\times 100\\%\\) CI is same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\text{point estimate} \\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} = \\bar{x} \\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s}{\\sqrt{n}}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df, (1+\\gamma)/2}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.-1",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.-1",
     "title": "Confidence Intervals for a Mean",
     "section": "Example: age at marriage (cont.)",
-    "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(xbar\\) years and standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{SE} = 4.03/\\sqrt{25} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
+    "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(23.32\\) years and a sample standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{SE} = \\frac{s}{\\sqrt{n}}= \\frac{4.03}{\\sqrt{25}} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#comparing-cis",
@@ -3533,5 +3533,75 @@
     "title": "Central Limit Theorem",
     "section": "Warm-up",
     "text": "Warm-up\n\nLet \\(Z \\sim N(0,1)\\). If the 10th percentile of \\(Z\\) is -1.28, what is the 90th percentile?\nLet \\(X \\sim N(0,2)\\). If the 10th percentile of \\(X\\) is -2.56, what is the 90th percentile? Or can you not say without code?\nLet \\(Y \\sim N(2,1)\\). If the 10th percentile of \\(Y\\) is 0.72, what is the 90th percentile? Or can you not say without code?"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#paired-data",
+    "href": "slides/slides-18-ci-mean.html#paired-data",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Paired data",
+    "text": "Paired data\nSuppose we have two sets of observations/data \\(\\boldsymbol{x} = (x_{1}, x_{2}, \\ldots x_{n})\\) and \\(\\boldsymbol{y} = (y_{1}, y_{2}, \\ldots, y_{n})\\)\n\nThe data are considered paired data if each \\(x_{i}\\) corresponds to exactly one \\(y_{i}\\)\nExample: your score on the midterm and your score on the final\nWhen analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#paired-differences",
+    "href": "slides/slides-18-ci-mean.html#paired-differences",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Paired differences",
+    "text": "Paired differences\n\nLet \\(d_{i} = y_{i} - x_{i}\\) for each \\(i = 1,\\ldots, n\\) be the observed differences.\nThe \\(d_{i}\\) come from larger population with true mean difference \\(\\mu_{d}\\) and standard deviation of differences \\(\\sigma_{d}\\)\nThe sample mean difference and sample standard deviation of the differences are\n\n\\[\\bar{d} = \\frac{1}{n}\\sum_{i=1}^{n} d_{i} \\qquad \\qquad s_{d} = \\frac{1}{n-1}\\sum_{i=1}^{n} (d_{i} - \\bar{d})^2 \\]"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#clt-for-mean-difference-in-pairs",
+    "href": "slides/slides-18-ci-mean.html#clt-for-mean-difference-in-pairs",
+    "title": "Confidence Intervals for a Mean",
+    "section": "CLT for mean difference in pairs",
+    "text": "CLT for mean difference in pairs\n\nSuppose the \\(n\\) observational units are independent and the distribution of the differences is approximately normal.\nThen CLT says:\n\\[\n\\bar{d} \\overset{\\cdot}{\\sim} N\\left(\\mu_{d}, \\frac{\\sigma_{d}}{\\sqrt{n}} \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#ci-for-mean-difference-in-pairs",
+    "href": "slides/slides-18-ci-mean.html#ci-for-mean-difference-in-pairs",
+    "title": "Confidence Intervals for a Mean",
+    "section": "CI for mean difference in pairs",
+    "text": "CI for mean difference in pairs\n\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\\[\n\\text{point estimate} \\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} = \\bar{d} \\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\]\nwhere \\(df = n-1\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-zinc",
+    "href": "slides/slides-18-ci-mean.html#example-zinc",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Example: zinc",
+    "text": "Example: zinc\n\n\n\nData consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Let’s answer this using a 95% confidence interval.\n\n\n\n\n\n\n\n\n\n\n\n\n  bottom surface\n1  0.430   0.415\n2  0.266   0.238\n3  0.567   0.390\n4  0.531   0.410\n5  0.707   0.605\n6  0.716   0.609\n\n\n\nAre the data paired? Does CLT apply?"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-zinc-cont.",
+    "href": "slides/slides-18-ci-mean.html#example-zinc-cont.",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Example: zinc (cont.)",
+    "text": "Example: zinc (cont.)\n\n\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\nLet’s collect our information:\n\npoint estimate: \\(\\bar{d} = 0.0804\\)\nSE \\(\\approx\\) \\(\\frac{s_{d}}{\\sqrt{n}} = \\frac{0.052}{\\sqrt{10}} = 0.016\\)\ncritical value: \\(df = n-1 = 9\\)\n\n\\(t_{9, 0.975}^{*} =\\) qt(0.975,9) \\(= 2.26\\)\n\n\n\n\nSo our 95% confidence interval is:\n\\[0.0804 \\pm 2.26(0.016) = (0.044, 0.117)\\]\n\n\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain."
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-zinc-cont.-1",
+    "href": "slides/slides-18-ci-mean.html#example-zinc-cont.-1",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Example: zinc (cont.)",
+    "text": "Example: zinc (cont.)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#difference-of-two-means",
+    "href": "slides/slides-18-ci-mean.html#difference-of-two-means",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Difference of two means",
+    "text": "Difference of two means\nNow consider two populations under the condition that the data/populations are not paired.\nWe might be interested in learning about whether or not the two means are equal (think about the voice jitter homework problem)!\n\nLet \\(\\mu_{1}\\) and \\(\\mu_{2}\\) represent the population means for the two populations 1 and 2\nWe take samples of size \\(n_{1}\\) and \\(n_{2}\\) from each population, respectively\nWe might think it reasonable to use \\(\\bar{x}_{1} - \\bar{x}_{2}\\) as a point estimate for \\(\\mu_{1} - \\mu_{2}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#conditions-for-inference",
+    "href": "slides/slides-18-ci-mean.html#conditions-for-inference",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Conditions for inference",
+    "text": "Conditions for inference\nThe conditions for the CLT and use of the \\(t\\)-distribution for inference will look slightly different now that we have two populations:\n\nIndependence (extended): need data within and between the two groups. E.g. the two data sets come from independent random samples or from a randomized experiment.\nNormality: we need to check for approximate normality for both groups separately"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#formula-for-ci-for-difference-in-two-means",
+    "href": "slides/slides-18-ci-mean.html#formula-for-ci-for-difference-in-two-means",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Formula for CI for difference in two means",
+    "text": "Formula for CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI of \\(\\text{point estimate} \\pm \\text{Margin of Error}\\) still holds!\n\npoint estimate: \\(\\bar{x}_{1} - \\bar{x}_{2}\\)\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\widehat{\\text{SE}} = \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
   }
 ]
