@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs with mathematical models (cont.)\n\nIntroduce final project\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -3383,51 +3383,51 @@
   {
     "objectID": "slides/slides-18-ci-mean.html#recap",
     "href": "slides/slides-18-ci-mean.html#recap",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Recap",
-    "text": "Recap\n\nCentral Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nWe needed to replace the standard error with an estimate"
+    "text": "Recap\n\n\n\n\nCentral Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nWe needed to replace the standard error with an estimate"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#checking-normality",
     "href": "slides/slides-18-ci-mean.html#checking-normality",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Checking normality",
     "text": "Checking normality\n\nRemember, CLT requires a sufficiently large sample size \\(n\\) or assumption of Normality of the underlying data.\nNo perfect way to check Normality, but rule of thumb:\n\nIf \\(n < 30\\) small: check that there are no clear outliers\nIf \\(n \\geq 30\\) large: check that there are no particularly extreme outliers"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-known-variance",
     "href": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-known-variance",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "CI for a single mean (known variance)",
     "text": "CI for a single mean (known variance)\nSuppose we want a \\(\\gamma\\times 100\\%\\) CI for population mean \\(\\mu\\).\n\nWhat would your “best guess” point estimate for \\(\\mu\\) be?\n\n\nIf CLT holds, then we know\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\nSo our \\(\\gamma \\times 100\\%\\) CI for \\(\\mu\\) is:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}} = \\bar{x} \\pm z_{(1+\\gamma)/2}^* \\times \\frac{\\sigma}{\\sqrt{n}}\n\\]"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Example: age at marriage",
-    "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\nWhat is/are the population parameter(s)? What is the statistic?\n\n\n\nWe will obtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us? Write this down in statistical notation!"
+    "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\nWhat is/are the population parameter(s)? What is the statistic?\n\n\n\nWe will obtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us?"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Example: age at marriage (cont.)",
     "text": "Example: age at marriage (cont.)\n\nObtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\n\nBy CLT: \\[\\bar{X} \\overset{\\cdot}{\\sim}N\\left(\\mu, \\frac{4.72}{\\sqrt{25}}\\right) = N(\\mu, 0.944)\\]\n\nCollect necessary components:\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(0.944\\)\nCritical value: \\(z_{0.9}^{*} =\\) qnorm(0.9, 0, 1) \\(= 1.28\\)\n\n\nSo our 80% confidence interval is \\(23.32 \\pm 1.28 \\times 0.944 = (22.11, 24.53)\\)\n\n\n\nInterpret this interval!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#utility-of-this-model",
     "href": "slides/slides-18-ci-mean.html#utility-of-this-model",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Utility of this model",
-    "text": "Utility of this model\n\nThe previous formula for the confidence interval for \\(\\mu\\) relies on knowing \\(\\sigma\\)\nBut wait…\n\nWant to construct a CI for \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\widehat{\\text{SE}}(\\bar{X}) = \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nSimilar to CI for \\(p\\), where we replaced \\(p\\) with \\(\\hat{p}\\) in the standard error"
+    "text": "Utility of this model\n\nThe previous formula for the confidence interval for \\(\\mu\\) relies on knowing \\(\\sigma\\)\nBut wait…\n\nWant to construct a CI for \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\text{SE}\\approx \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nRecall we did something similar for CI for \\(p\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#variance-issue",
     "href": "slides/slides-18-ci-mean.html#variance-issue",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Variance issue",
-    "text": "Variance issue\n\nReplacing \\(s\\) for \\(\\sigma\\) works well enough when \\(n\\) is large so we can estimate \\(\\sigma\\) accurately\nHowever, estimating variance is very hard when \\(n\\) is small\nSo if \\(n\\) small and \\(\\sigma\\) unknown, we cannot use the Normal approximation to model \\(\\bar{X}\\) for inferential tasks\nInstead, we will use a new distribution for inference calculations, called the \\(t\\)-distribution"
+    "text": "Variance issue\n\nReplacing \\(s\\) for \\(\\sigma\\) works well enough when \\(n\\) is extremely large so we can estimate \\(\\sigma\\) accurately\nHowever, estimating variance is extremely difficult when \\(n\\) is small, and still not great for large \\(n\\)\nSo if \\(\\sigma\\) is unknown, we cannot use the Normal approximation to model \\(\\bar{X}\\) for inferential tasks\nInstead, we will use a new distribution for inference calculations, called the \\(t\\)-distribution"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#quick-remarks",
@@ -3439,49 +3439,49 @@
   {
     "objectID": "slides/slides-18-ci-mean.html#t-distribution",
     "href": "slides/slides-18-ci-mean.html#t-distribution",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "\\(t\\)-distribution",
-    "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\)-distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\nAs \\(df\\) increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t_{df}\\) is nearly identical to \\(N(0,1)\\)"
+    "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\)-distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\n\n\n\n\n\nAs \\(df\\) increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t_{df}\\) is nearly identical to \\(N(0,1)\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#working-with-t-distribution",
     "href": "slides/slides-18-ci-mean.html#working-with-t-distribution",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Working with \\(t\\) distribution",
     "text": "Working with \\(t\\) distribution\n\n\n\nLet’s draw pictures for the following:\n\nWhat proportion of the \\(t_{2}\\)-distribution falls below -1.5?\nWhat value of the \\(t_{2}\\)-distribution has \\(70\\%\\) area lying below it?"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#t-distribution-in-r",
     "href": "slides/slides-18-ci-mean.html#t-distribution-in-r",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "\\(t\\) distribution in R",
     "text": "\\(t\\) distribution in R\n\npnorm(x, mean, sd) and qnorm(%, mean, sd) used to find probabilities and percentiles for the Normal distribution\nAnalogous functions for \\(t\\)-distribution: pt(x, df) and qt(%, df)\n\n\n\n\n\n\n\n\n\n\n\npt(-1.5,df =2) = 0.1361966\n\n\n\n\n\n\n\n\n\n\nqt(0.7, df =2) = 0.6172134"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-unknown-variance",
     "href": "slides/slides-18-ci-mean.html#ci-for-a-single-mean-unknown-variance",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "CI for a single mean (unknown variance)",
-    "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and the Normality condition:\nGeneral formula for \\(\\gamma \\times 100\\%\\) CI is same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\text{point estimate} \\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} = \\bar{x} \\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s}{\\sqrt{n}}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df, (1+\\gamma)/2}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
+    "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and the Normality condition for CLT\nGeneral formula for \\(\\gamma \\times 100\\%\\) CI is the same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{x} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s}{\\sqrt{n}}\n\\end{align*}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df, (1+\\gamma)/2}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.-1",
     "href": "slides/slides-18-ci-mean.html#example-age-at-marriage-cont.-1",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Example: age at marriage (cont.)",
-    "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(23.32\\) years and a sample standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{SE} = \\frac{s}{\\sqrt{n}}= \\frac{4.03}{\\sqrt{25}} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
+    "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(23.32\\) years and a sample standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{\\text{SE}} = \\frac{s}{\\sqrt{n}}= \\frac{4.03}{\\sqrt{25}} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#comparing-cis",
     "href": "slides/slides-18-ci-mean.html#comparing-cis",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Comparing CIs",
     "text": "Comparing CIs\n\n\nKnown variance:\n80% CI: (22.11, 24.53)\n\nUnknown variance:\n80% CI: (22.26, 24.38)\n\n\n\n\nHow do the two intervals compare?\n\nInterpretation of CI does not change even if we use a different model!"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#examples",
     "href": "slides/slides-18-ci-mean.html#examples",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Examples",
     "text": "Examples\nAssume that all conditions necessary for inference are satisfied.\n\n\n\nqnorm(0.90) = 1.28\nqnorm(0.95) = 1.64\nqnorm(0.975) = 1.96\n\n\n\nqt(0.90, df = 35) = 1.31\nqt(0.95, df = 35) = 1.69\nqt(0.975, df = 35) = 2.03\n\n\n\nqt(0.90, df = 36) = 1.31\nqt(0.95, df = 36) = 1.69\nqt(0.975, df = 36) = 2.03\n\n\n\n\n\nA 90% confidence interval for a population mean \\(\\mu\\) is given as \\((18.985, 21.015)\\). The interval was obtained based on a SRS for 36 observations. Calculate the sample mean and sample standard deviation.\nThe standard deviation for students at particular Ivy League college is 250 points. Two students, Raina and Luke, want to estimate the average SAT score of students at this college. They want their margin of error to be no more than 25 points.\n\nRaina wants to use a 90% confidence level. How large a sample does Raina need to collect?\nLuke wants to use a 95% confidence level. Without calculations, determine whether Luke’s sample should be larger or smaller than Raina’s. Explain your reasoning.\nCalculate the minimum sample size for Luke."
   },
@@ -3537,44 +3537,44 @@
   {
     "objectID": "slides/slides-18-ci-mean.html#paired-data",
     "href": "slides/slides-18-ci-mean.html#paired-data",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Paired data",
     "text": "Paired data\nSuppose we have two sets of observations/data \\(\\boldsymbol{x} = (x_{1}, x_{2}, \\ldots x_{n})\\) and \\(\\boldsymbol{y} = (y_{1}, y_{2}, \\ldots, y_{n})\\)\n\nThe data are considered paired data if each \\(x_{i}\\) corresponds to exactly one \\(y_{i}\\)\nExample: your score on the midterm and your score on the final\nWhen analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#paired-differences",
     "href": "slides/slides-18-ci-mean.html#paired-differences",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Paired differences",
-    "text": "Paired differences\n\nLet \\(d_{i} = y_{i} - x_{i}\\) for each \\(i = 1,\\ldots, n\\) be the observed differences.\nThe \\(d_{i}\\) come from larger population with true mean difference \\(\\mu_{d}\\) and standard deviation of differences \\(\\sigma_{d}\\)\nThe sample mean difference and sample standard deviation of the differences are\n\n\\[\\bar{d} = \\frac{1}{n}\\sum_{i=1}^{n} d_{i} \\qquad \\qquad s_{d} = \\frac{1}{n-1}\\sum_{i=1}^{n} (d_{i} - \\bar{d})^2 \\]"
+    "text": "Paired differences\n\nLet \\(d_{i} = y_{i} - x_{i}\\) for each \\(i = 1,\\ldots, n\\) be the observed differences\nThe \\(d_{i}\\) come from larger population with true mean difference \\(\\mu_{d}\\) and standard deviation of differences \\(\\sigma_{d}\\)\nThe sample mean difference and sample standard deviation of the differences are\n\n\n\\[\\bar{d} = \\frac{1}{n}\\sum_{i=1}^{n} d_{i} \\qquad \\qquad s_{d} = \\frac{1}{n-1}\\sum_{i=1}^{n} (d_{i} - \\bar{d})^2 \\]"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#clt-for-mean-difference-in-pairs",
     "href": "slides/slides-18-ci-mean.html#clt-for-mean-difference-in-pairs",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "CLT for mean difference in pairs",
-    "text": "CLT for mean difference in pairs\n\nSuppose the \\(n\\) observational units are independent and the distribution of the differences is approximately normal.\nThen CLT says:\n\\[\n\\bar{d} \\overset{\\cdot}{\\sim} N\\left(\\mu_{d}, \\frac{\\sigma_{d}}{\\sqrt{n}} \\right)\n\\]"
+    "text": "CLT for mean difference in pairs\n\nSuppose the \\(n\\) observational units are independent and the distribution of the differences is approximately normal. Then CLT says:\n\\[\n\\bar{d} \\overset{\\cdot}{\\sim} N\\left(\\mu_{d}, \\frac{\\sigma_{d}}{\\sqrt{n}} \\right)\n\\]\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{d} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\end{align*}\n\\]\nwhere \\(df = n-1\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#ci-for-mean-difference-in-pairs",
     "href": "slides/slides-18-ci-mean.html#ci-for-mean-difference-in-pairs",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "CI for mean difference in pairs",
-    "text": "CI for mean difference in pairs\n\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\\[\n\\text{point estimate} \\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} = \\bar{d} \\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\]\nwhere \\(df = n-1\\)"
+    "text": "CI for mean difference in pairs\n\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{d} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\end{align*}\n\\]\nwhere \\(df = n-1\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-zinc",
     "href": "slides/slides-18-ci-mean.html#example-zinc",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Example: zinc",
     "text": "Example: zinc\n\n\n\nData consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Let’s answer this using a 95% confidence interval.\n\n\n\n\n\n\n\n\n\n\n\n\n  bottom surface\n1  0.430   0.415\n2  0.266   0.238\n3  0.567   0.390\n4  0.531   0.410\n5  0.707   0.605\n6  0.716   0.609\n\n\n\nAre the data paired? Does CLT apply?"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-zinc-cont.",
     "href": "slides/slides-18-ci-mean.html#example-zinc-cont.",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Example: zinc (cont.)",
-    "text": "Example: zinc (cont.)\n\n\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\nLet’s collect our information:\n\npoint estimate: \\(\\bar{d} = 0.0804\\)\nSE \\(\\approx\\) \\(\\frac{s_{d}}{\\sqrt{n}} = \\frac{0.052}{\\sqrt{10}} = 0.016\\)\ncritical value: \\(df = n-1 = 9\\)\n\n\\(t_{9, 0.975}^{*} =\\) qt(0.975,9) \\(= 2.26\\)\n\n\n\n\nSo our 95% confidence interval is:\n\\[0.0804 \\pm 2.26(0.016) = (0.044, 0.117)\\]\n\n\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain."
+    "text": "Example: zinc (cont.)\n\n\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\n\n\npoint estimate: \\(\\bar{d} = 0.0804\\)\nSE \\(\\approx\\) \\(\\frac{s_{d}}{\\sqrt{n}} = \\frac{0.052}{\\sqrt{10}} = 0.016\\)\n\ncritical value: what code would you write?\n\n\n\\(df = n-1 = 9\\)\n\\(t_{9, 0.975}^{*} =\\) qt(0.975,9) \\(= 2.26\\)\n\n\n\n\n\nSo our 95% confidence interval is:\n\\[0.0804 \\pm 2.26(0.016) = (0.044, 0.117)\\]\n\n\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain."
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#example-zinc-cont.-1",
@@ -3586,22 +3586,162 @@
   {
     "objectID": "slides/slides-18-ci-mean.html#difference-of-two-means",
     "href": "slides/slides-18-ci-mean.html#difference-of-two-means",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Difference of two means",
-    "text": "Difference of two means\nNow consider two populations under the condition that the data/populations are not paired.\nWe might be interested in learning about whether or not the two means are equal (think about the voice jitter homework problem)!\n\nLet \\(\\mu_{1}\\) and \\(\\mu_{2}\\) represent the population means for the two populations 1 and 2\nWe take samples of size \\(n_{1}\\) and \\(n_{2}\\) from each population, respectively\nWe might think it reasonable to use \\(\\bar{x}_{1} - \\bar{x}_{2}\\) as a point estimate for \\(\\mu_{1} - \\mu_{2}\\)"
+    "text": "Difference of two means\nNow consider two populations under the condition that the data/populations are not paired.\nWe might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!\n\nLet \\(\\mu_{1}\\) and \\(\\mu_{2}\\) represent the population means for the two populations 1 and 2\nSamples of size \\(n_{1}\\) and \\(n_{2}\\) from each population, respectively\nWe might think it reasonable to use \\(\\bar{x}_{1} - \\bar{x}_{2}\\) as a point estimate for \\(\\mu_{1} - \\mu_{2}\\)"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#conditions-for-inference",
     "href": "slides/slides-18-ci-mean.html#conditions-for-inference",
-    "title": "Confidence Intervals for a Mean",
+    "title": "Confidence Intervals for Means",
     "section": "Conditions for inference",
-    "text": "Conditions for inference\nThe conditions for the CLT and use of the \\(t\\)-distribution for inference will look slightly different now that we have two populations:\n\nIndependence (extended): need data within and between the two groups. E.g. the two data sets come from independent random samples or from a randomized experiment.\nNormality: we need to check for approximate normality for both groups separately"
+    "text": "Conditions for inference\nNow that we have two populations, conditions for CLT and use of the \\(t\\)-distribution for inference will look slightly different:\n\nIndependence (extended): need data within and between the two groups\n\ne.g.the two data sets come from independent random samples or from a randomized experiment\n\nNormality: we need to check for approximate normality for both groups separately"
   },
   {
     "objectID": "slides/slides-18-ci-mean.html#formula-for-ci-for-difference-in-two-means",
     "href": "slides/slides-18-ci-mean.html#formula-for-ci-for-difference-in-two-means",
     "title": "Confidence Intervals for a Mean",
     "section": "Formula for CI for difference in two means",
-    "text": "Formula for CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI of \\(\\text{point estimate} \\pm \\text{Margin of Error}\\) still holds!\n\npoint estimate: \\(\\bar{x}_{1} - \\bar{x}_{2}\\)\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\widehat{\\text{SE}} = \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+    "text": "Formula for CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\npoint estimate: \\(\\bar{x}_{1} - \\bar{x}_{2}\\)\n\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\n\\(\\widehat{\\text{SE}} = \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-birth-term",
+    "href": "slides/slides-18-ci-mean.html#example-birth-term",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: birth term",
+    "text": "Example: birth term\nThe births dataset from openintro contains a random sample of births for babies in NC where the mother was or was not a smoker. We will consider the birth weights of babies who were carried to full term.\n\n\n\n\nConvince yourself that this data isn’t paired!\n\n\nPopulation 1: mothers who smoke (in NC)\nPopulation 2: mothers who don’t smoke (in NC)\n\n\nResearch question: are average birth weight of full term babies different between smoking and non-smoking mothers? Create a 95% confidence interval to answer this question.\n\n\nWe care about the difference in means \\(\\mu_{smoke} - \\mu_{non}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-birth-term-cont.",
+    "href": "slides/slides-18-ci-mean.html#example-birth-term-cont.",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: birth term (cont.)",
+    "text": "Example: birth term (cont.)\n\nAre average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\n\n\n\n\n\n\nstatus\nn\nxbar\ns\n\n\n\n\nHealthy\n48\n0.163\n0.058\n\n\nPD\n147\n0.321\n0.208\n\n\n\n\n\n\n\n\nList of 136\n $ line                            :List of 6\n  ..$ colour       : chr \"black\"\n  ..$ linewidth    : num 0.5\n  ..$ linetype     : num 1\n  ..$ lineend      : chr \"butt\"\n  ..$ arrow        : logi FALSE\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_line\" \"element\"\n $ rect                            :List of 5\n  ..$ fill         : chr \"white\"\n  ..$ colour       : chr \"black\"\n  ..$ linewidth    : num 0.5\n  ..$ linetype     : num 1\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_rect\" \"element\"\n $ text                            :List of 11\n  ..$ family       : chr \"\"\n  ..$ face         : chr \"plain\"\n  ..$ colour       : chr \"black\"\n  ..$ size         : num 28\n  ..$ hjust        : num 0.5\n  ..$ vjust        : num 0.5\n  ..$ angle        : num 0\n  ..$ lineheight   : num 0.9\n  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : logi FALSE\n  ..$ inherit.blank: logi FALSE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ title                           : NULL\n $ aspect.ratio                    : NULL\n $ axis.title                      : NULL\n $ axis.title.x                    :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 1\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 2.75points 0points 0points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.title.x.top                :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 0\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 0points 2.75points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.title.x.bottom             : NULL\n $ axis.title.y                    :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 1\n  ..$ angle        : num 90\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 2.75points 0points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.title.y.left               : NULL\n $ axis.title.y.right              :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 1\n  ..$ angle        : num -90\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.75points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text                       :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : chr \"grey30\"\n  ..$ size         : 'rel' num 0.8\n  ..$ hjust        : NULL\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : NULL\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text.x                     :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 1\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 2.2points 0points 0points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text.x.top                 :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : NULL\n  ..$ vjust        : num 0\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 0points 2.2points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text.x.bottom              : NULL\n $ axis.text.y                     :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : num 1\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 2.2points 0points 0points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text.y.left                : NULL\n $ axis.text.y.right               :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : num 0\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.2points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.text.theta                 : NULL\n $ axis.text.r                     :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : num 0.5\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : 'margin' num [1:4] 0points 2.2points 0points 2.2points\n  .. ..- attr(*, \"unit\")= int 8\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ axis.ticks                      : list()\n  ..- attr(*, \"class\")= chr [1:2] \"element_blank\" \"element\"\n $ axis.ticks.x                    : NULL\n $ axis.ticks.x.top                : NULL\n $ axis.ticks.x.bottom             : NULL\n $ axis.ticks.y                    : NULL\n $ axis.ticks.y.left               : NULL\n $ axis.ticks.y.right              : NULL\n $ axis.ticks.theta                : NULL\n $ axis.ticks.r                    : NULL\n $ axis.minor.ticks.x.top          : NULL\n $ axis.minor.ticks.x.bottom       : NULL\n $ axis.minor.ticks.y.left         : NULL\n $ axis.minor.ticks.y.right        : NULL\n $ axis.minor.ticks.theta          : NULL\n $ axis.minor.ticks.r              : NULL\n $ axis.ticks.length               : 'simpleUnit' num 2.75points\n  ..- attr(*, \"unit\")= int 8\n $ axis.ticks.length.x             : NULL\n $ axis.ticks.length.x.top         : NULL\n $ axis.ticks.length.x.bottom      : NULL\n $ axis.ticks.length.y             : NULL\n $ axis.ticks.length.y.left        : NULL\n $ axis.ticks.length.y.right       : NULL\n $ axis.ticks.length.theta         : NULL\n $ axis.ticks.length.r             : NULL\n $ axis.minor.ticks.length         : 'rel' num 0.75\n $ axis.minor.ticks.length.x       : NULL\n $ axis.minor.ticks.length.x.top   : NULL\n $ axis.minor.ticks.length.x.bottom: NULL\n $ axis.minor.ticks.length.y       : NULL\n $ axis.minor.ticks.length.y.left  : NULL\n $ axis.minor.ticks.length.y.right : NULL\n $ axis.minor.ticks.length.theta   : NULL\n $ axis.minor.ticks.length.r       : NULL\n $ axis.line                       : list()\n  ..- attr(*, \"class\")= chr [1:2] \"element_blank\" \"element\"\n $ axis.line.x                     : NULL\n $ axis.line.x.top                 : NULL\n $ axis.line.x.bottom              : NULL\n $ axis.line.y                     : NULL\n $ axis.line.y.left                : NULL\n $ axis.line.y.right               : NULL\n $ axis.line.theta                 : NULL\n $ axis.line.r                     : NULL\n $ legend.background               : list()\n  ..- attr(*, \"class\")= chr [1:2] \"element_blank\" \"element\"\n $ legend.margin                   : 'margin' num [1:4] 5.5points 5.5points 5.5points 5.5points\n  ..- attr(*, \"unit\")= int 8\n $ legend.spacing                  : 'simpleUnit' num 11points\n  ..- attr(*, \"unit\")= int 8\n $ legend.spacing.x                : NULL\n $ legend.spacing.y                : NULL\n $ legend.key                      : list()\n  ..- attr(*, \"class\")= chr [1:2] \"element_blank\" \"element\"\n $ legend.key.size                 : 'simpleUnit' num 1.2lines\n  ..- attr(*, \"unit\")= int 3\n $ legend.key.height               : NULL\n $ legend.key.width                : NULL\n $ legend.key.spacing              : 'simpleUnit' num 5.5points\n  ..- attr(*, \"unit\")= int 8\n $ legend.key.spacing.x            : NULL\n $ legend.key.spacing.y            : NULL\n $ legend.frame                    : NULL\n $ legend.ticks                    : NULL\n $ legend.ticks.length             : 'rel' num 0.2\n $ legend.axis.line                : NULL\n $ legend.text                     :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : 'rel' num 0.8\n  ..$ hjust        : NULL\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : NULL\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ legend.text.position            : NULL\n $ legend.title                    :List of 11\n  ..$ family       : NULL\n  ..$ face         : NULL\n  ..$ colour       : NULL\n  ..$ size         : NULL\n  ..$ hjust        : num 0\n  ..$ vjust        : NULL\n  ..$ angle        : NULL\n  ..$ lineheight   : NULL\n  ..$ margin       : NULL\n  ..$ debug        : NULL\n  ..$ inherit.blank: logi TRUE\n  ..- attr(*, \"class\")= chr [1:2] \"element_text\" \"element\"\n $ legend.title.position           : NULL\n $ legend.position                 : chr \"right\"\n $ legend.position.inside          : NULL\n $ legend.direction                : NULL\n $ legend.byrow                    : NULL\n $ legend.justification            : chr \"center\"\n $ legend.justification.top        : NULL\n $ legend.justification.bottom     : NULL\n $ legend.justification.left       : NULL\n $ legend.justification.right      : NULL\n $ legend.justification.inside     : NULL\n $ legend.location                 : NULL\n $ legend.box                      : NULL\n $ legend.box.just                 : NULL\n $ legend.box.margin               : 'margin' num [1:4] 0cm 0cm 0cm 0cm\n  ..- attr(*, \"unit\")= int 1\n $ legend.box.background           : list()\n  ..- attr(*, \"class\")= chr [1:2] \"element_blank\" \"element\"\n $ legend.box.spacing              : 'simpleUnit' num 11points\n  ..- attr(*, \"unit\")= int 8\n  [list output truncated]\n - attr(*, \"class\")= chr [1:2] \"theme\" \"gg\"\n - attr(*, \"complete\")= logi TRUE\n - attr(*, \"validate\")= logi TRUE\n\n\n\n\nDo assumptions for CLT hold?\n\n\nIndependence: random sample!\nNormality condition: \\(n \\geq 30\\) in both groups with no particularly extreme outliers\n\n\n\nSet-up/find the following:\n\n\nPoint estimate\nStandard error\nCode for critical value"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-birth-term-cont.-1",
+    "href": "slides/slides-18-ci-mean.html#example-birth-term-cont.-1",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: birth term (cont.)",
+    "text": "Example: birth term (cont.)\n\n\n\n\nPoint estimate: \\(\\bar{x}_{\\text{PD}} - \\bar{x}_{\\text{H}} = 0.32 - 0.16 = 0.158\\)\nSE \\(\\approx \\sqrt{\\frac{s_{\\text{PD}}^2}{n_{\\text{PD}}} + \\frac{s_{\\text{H}}^2}{n_{\\text{H}}}} = \\sqrt{\\frac{0.21^2}{147} + \\frac{0.06^2}{48}} = 0.019\\)\nCritical value:\n\n\\(df = \\min\\{n_{\\text{PD}} -1, n_{\\text{H}} -1 \\} = \\min\\{147 - 1, 48- 2\\} = 47\\)\nWant \\(0.975\\)-th percentile of \\(t_{47}\\) distribution: qt(0.975, df =47) = 2.01\n\n\n\n\nPutting everything together, our 95% CI for \\(\\mu_{s} - \\mu_{n}\\) is: \\[\n0.158 \\pm 2.01 \\times 0.019 = (0.12, 0.196)\n\\]\nAre average voice shimmers different between people with and without Parkinson’s? Briefly explain why or why not."
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#temp",
+    "href": "slides/slides-18-ci-mean.html#temp",
+    "title": "Confidence Intervals for a Mean",
+    "section": "Temp",
+    "text": "Temp\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nPoint estimate\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\text{SE} \\approx \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\ni.e. \\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#ci-for-differences-in-two-means",
+    "href": "slides/slides-18-ci-mean.html#ci-for-differences-in-two-means",
+    "title": "Confidence Intervals for a Mean",
+    "section": "CI for differences in two means",
+    "text": "CI for differences in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nPoint estimate\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\text{SE} \\approx \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#ci-for-difference-in-two-means",
+    "href": "slides/slides-18-ci-mean.html#ci-for-difference-in-two-means",
+    "title": "Confidence Intervals for Means",
+    "section": "CI for difference in two means",
+    "text": "CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nPoint estimate\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\text{SE} \\approx \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-voice-jitter",
+    "href": "slides/slides-18-ci-mean.html#example-voice-jitter",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice jitter",
+    "text": "Example: voice jitter\nLet’s consider the voice shimmer of PD vs non-PD patients.\n\n\n\n\nConvince yourself that this data isn’t paired!\n\n\nPopulation 1: people with Parkinson’s Disease\nPopulation 2: people without Parkinson’s Disease\n\n\nResearch question: are average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\nWe care about the difference in means \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-voice-shimmer",
+    "href": "slides/slides-18-ci-mean.html#example-voice-shimmer",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer",
+    "text": "Example: voice shimmer\nLet’s consider the voice shimmer of PD vs non-PD patients from last week’s homework.\n\n\n\n\nConvince yourself that this data isn’t paired!\n\n\nPopulation 1: people with Parkinson’s Disease\nPopulation 2: people without Parkinson’s Disease\n\n\nResearch question: are average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\nWe care about the difference in means \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\)"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-voice-shimmer-cont.",
+    "href": "slides/slides-18-ci-mean.html#example-voice-shimmer-cont.",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer (cont.)",
+    "text": "Example: voice shimmer (cont.)\n\nAre average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\n\n\n\n\n\n\nstatus\nn\nxbar\ns\n\n\n\n\nHealthy\n48\n0.163\n0.058\n\n\nPD\n147\n0.321\n0.208\n\n\n\n\n\n\n\n\n\n\nDo assumptions for CLT hold?\n\n\nIndependence: random sample!\nNormality condition: \\(n \\geq 30\\) in both groups with no particularly extreme outliers\n\n\n\nSet-up/find the following:\n\n\nPoint estimate\nStandard error\nCode for critical value"
+  },
+  {
+    "objectID": "slides/slides-18-ci-mean.html#example-voice-shimmer-cont.-1",
+    "href": "slides/slides-18-ci-mean.html#example-voice-shimmer-cont.-1",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer (cont.)",
+    "text": "Example: voice shimmer (cont.)\n\n\n\n\nPoint estimate: \\(\\bar{x}_{\\text{PD}} - \\bar{x}_{\\text{H}} = 0.32 - 0.16 = 0.158\\)\nSE \\(\\approx \\sqrt{\\frac{s_{\\text{PD}}^2}{n_{\\text{PD}}} + \\frac{s_{\\text{H}}^2}{n_{\\text{H}}}} = \\sqrt{\\frac{0.21^2}{147} + \\frac{0.06^2}{48}} = 0.019\\)\nCritical value:\n\n\\(df = \\min\\{n_{\\text{PD}} -1, n_{\\text{H}} -1 \\} = \\min\\{147 - 1, 48- 2\\} = 47\\)\nWant \\(0.975\\)-th percentile of \\(t_{47}\\) distribution: qt(0.975, df =47) = 2.01\n\n\n\n\nPutting everything together, our 95% CI for \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\) is: \\[\n0.158 \\pm 2.01 \\times 0.019 = (0.12, 0.196)\n\\]\n\nInterpret this CI in context. Note: direction of difference matters!\nAre average voice shimmers different between people with and without Parkinson’s? Briefly explain why or why not."
+  },
+  {
+    "objectID": "live_code/ht_diff_means.html",
+    "href": "live_code/ht_diff_means.html",
+    "title": "HT: Difference in means",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(readr)\nurl_file <- \"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv\"\nparkinsons <- read_csv(url_file)\n\n\nGet summary statistics\n\nx_pd <- parkinsons |>\n  filter(status == \"PD\") |>\n  pull(shimmer)\nx_healthy <- parkinsons |>\n  filter(status == \"Healthy\") |>\n  pull(shimmer)\nn1 <- length(x_pd)\nn2 <- length(x_healthy)\nxbar1 <- mean(x_pd)\nxbar2 <- mean(x_healthy)\ns1 <- sd(x_pd)\ns2 <- sd(x_healthy)\n\n\n\nObtain quantities for CI\n\npoint_est <- xbar1 - xbar2\nSE <- sqrt(s1^2/n1 + s2^2/n2)\ndf <- min(n1-1, n2-1)\ncv <- qt(0.975, df = df)\n\nlower <- point_est - cv * SE\nupper <- point_est + cv * SE\n\nOur 95% CI for the difference in voice shimmers (PD - non PD) is (0.12 , 0.197)."
+  },
+  {
+    "objectID": "live_code/ht_diff_means.html#get-summary-statistics",
+    "href": "live_code/ht_diff_means.html#get-summary-statistics",
+    "title": "HT: Difference in means",
+    "section": "Get summary statistics",
+    "text": "Get summary statistics\n\nx_pd <- parkinsons |>\n  filter(status == \"PD\") |>\n  pull(shimmer)\nx_healthy <- parkinsons |>\n  filter(status == \"Healthy\") |>\n  pull(shimmer)\nn1 <- length(x_pd)\nn2 <- length(x_healthy)\nxbar1 <- mean(x_pd)\nxbar2 <- mean(x_healthy)\ns1 <- sd(x_pd)\ns2 <- sd(x_healthy)"
+  },
+  {
+    "objectID": "live_code/ht_diff_means.html#obtain-quantities-for-ci",
+    "href": "live_code/ht_diff_means.html#obtain-quantities-for-ci",
+    "title": "HT: Difference in means",
+    "section": "Obtain quantities for CI",
+    "text": "Obtain quantities for CI\n\npoint_est <- xbar1 - xbar2\npoint_est\n\n[1] 0.1582457\n\nSE <- sqrt( s1^2/n1 + s2^2/n2)\nSE\n\n[1] 0.01906297\n\ndf <- min(n1-1, n2-1)\ndf\n\n[1] 47\n\ncv <- qt(0.975, df = df)\ncv\n\n[1] 2.011741\n\nlower <- point_est - cv * SE\nupper <- point_est + cv * SE\n\nOur 95% CI for the different in voice shimmers (PD - non PD) is (0.12 , 0.197)."
+  },
+  {
+    "objectID": "project/project_description.html",
+    "href": "project/project_description.html",
+    "title": "Final project",
+    "section": "",
+    "text": "Deliverable\nDate\nTime\n\n\n\n\nGroup creation\nWednesday 10/30\nBeginning of class\n\n\nProposal for data collection\nMonday 11/04\n11:59pm\n\n\nRevised proposal for data collection (if applicable)\nSaturday 11/09\n11:59pm\n\n\nCollect your data\nAnytime between proposal approval and Thanksgiving break\n\n\n\nExcel/GoogleSheets of your data\nSunday 12/01\n11:59pm\n\n\nRough draft of report\nSunday 12/08\n11:59pm\n\n\nFinal presentations (Section AZ)\nWednesday 12/11\n7-10pm (slides due at 6pm)\n\n\nFinal presentations (Section BY)\nThursday 12/12\n9am-12pm (slides due at 8am)\n\n\nFinal report (knitted version and .Rmd) and data with data dictionary\nSunday 12/15 (tentative)\n11:59pm\n\n\nReflection*\nSudday 12/15 (tentative)\n11:59pm\n\n\n\n*Reflection should be submitted individually. All other deliverables are one-per-group."
+  },
+  {
+    "objectID": "project/project_description.html#description",
+    "href": "project/project_description.html#description",
+    "title": "Final project",
+    "section": "Description",
+    "text": "Description\nAs a final project, you will work in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! Your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.\nIn particular, your group will:\n\ncome up with a list of inferential research questions you are interested in answering\ndetermine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy\nhave a finalized data set that anyone can access and use, accompanied by a “data dictionary”\npresent your project to the class (and perhaps other professors/TAs)\nsubmit a well-written, professional report\nsubmit a reflection on the project, which will include a rubric for how much each team member contributed\n\nYou should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)\n\nWeek 12 of the semester will be mostly devoted to project work time."
+  },
+  {
+    "objectID": "project/project_description.html#requirements",
+    "href": "project/project_description.html#requirements",
+    "title": "Final project",
+    "section": "Requirements",
+    "text": "Requirements\nThe following looks like a lot, but is meant to provide you structure for strong final project that you are proud of!\n\n\nGroup creation\n\n\nEach group will ideally contain three people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\n\nYour group of two may be randomly paired with another person or pair\n\ne-mail Prof. Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group\n\n\n\nProposal for data collection\n\n\nBy the due date listed in the table above, your group should submit to Canvas a document detailing the following:\n\nYour target population(s) of interest\nA list of research questions your group is interested in exploring/answering. You should have at least one question per group member, but more is better!\n\nNote: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable \\(x\\) might lead to changes in continuous variable \\(y\\)\n\nA list of variables you will observe/collect from each observational unit that you may be useful and/or required for answering your reseach question(s).\n\nYou should plan to collect at least four numerical variables (at least two of which are continuous), and at least two categorical variables\n\nA detailed description of how you plan to collect your data (i.e. survey students)\n\nHow many people do you plan to include in your data? (You should aim for least 30 people, if possible!)\nHow will you have people submit their data? (e.g. fill out a paper form, GoogleForm)\nIf you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?\nIf you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)\n\nA rough description of the statistical methods you might use to answer each question you listed in (2).\n\nThis might be along the lines of “hypothesis test for a single mean” or “confidence interval for a proportion” or “linear regression” along with a one-two sentence justification for the method is appropriate.\n\n\n\nIt is possible that we haven’t yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn’t apply.\n\n\n\nOnce you have submitted your proposal, Prof. Tang will give you feedback. Based on the feedback, your group will either have to submit a revised proposal, or you will be given the okay to go forth and collect your data.\n\n\n\nData set\n\n\nOnce you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name. This should be submitted to Canvas by the end of Thanksgiving break."
+  },
+  {
+    "objectID": "homework/hw6_r.html",
+    "href": "homework/hw6_r.html",
+    "title": "STAT 201: Problem Set 6 (R)",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)\nknitr::opts_chunk$set(fig.width=6, fig.height=3)\nWe will use the possum data from the openintro library. Take a look at the Help file and the data before proceeding. For this homework, assume the observations were collected via a random sample."
+  },
+  {
+    "objectID": "homework/hw6_r.html#part-1",
+    "href": "homework/hw6_r.html#part-1",
+    "title": "STAT 201: Problem Set 6 (R)",
+    "section": "Part 1",
+    "text": "Part 1\nWe will obtain a 95% confidence interval for the average total length of possums from Victoria.\n\nAre the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question.\n\n\n\n\nAnswer:\n\nRegardless of how you answered in (1), obtain a 95% confidence interval for the average total length of possums from Victoria. Interpret your confidence interval in context.\n\nBe as reproducible as possible, and report your answer using in-line code.\n\n# start by creating vector(s) representing the data of interest for this problem\n\n# now obtain necessary quantities \n\nAnswer:"
+  },
+  {
+    "objectID": "homework/hw6_r.html#part-2",
+    "href": "homework/hw6_r.html#part-2",
+    "title": "STAT 201: Problem Set 6 (R)",
+    "section": "Part 2",
+    "text": "Part 2\nIs the average tail length of possums 5 years old or younger in Victoria different from the average tail length of possums 5 years old or younger in New South Wales or Queensland? We will obtain a confidence interval to answer this question.\n\nAre the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. (Hint: does making a faceted plot sound interesting to you?)\n\n\n\n\nAnswer:\n\nRegardless of how you answered in (1), obtain a 90% confidence interval appropriate for the research question. Be as reproducible as possible, and report your answer using in-line code.\n\n\n# start by creating vector(s) representing the data of interest for this problem\n\n# now obtain necessary quantities \n\nAnswer:\n\nInterpret the confidence interval in context and answer the research question using your interval as support.\n\nAnswer:"
+  },
+  {
+    "objectID": "project/project_description.html#deadlines",
+    "href": "project/project_description.html#deadlines",
+    "title": "Final project",
+    "section": "Deadlines",
+    "text": "Deadlines\n\n\n\nDeliverable\nDate\nTime\n\n\n\n\nGroup creation\nWednesday 10/30\nBeginning of class\n\n\nProposal for data collection\nMonday 11/04\n11:59pm\n\n\nRevised proposal for data collection (if applicable)\nSaturday 11/09\n11:59pm\n\n\nCollect your data\nAnytime between proposal approval and Thanksgiving break\n\n\n\nExcel/GoogleSheets of your data\nSunday 12/01\n11:59pm\n\n\nRough draft of report\nSunday 12/08\n11:59pm\n\n\nFinal presentations (Section AZ)\nWednesday 12/11\n7-10pm (slides due at 6pm)\n\n\nFinal presentations (Section BY)\nThursday 12/12\n9am-12pm (slides due at 8am)\n\n\nFinal report (knitted version and .Rmd) and data with data dictionary\nSunday 12/15 (tentative)\n11:59pm\n\n\nReflection*\nSudday 12/15 (tentative)\n11:59pm\n\n\n\n*Reflection should be submitted individually. All other deliverables are one-per-group."
   }
 ]

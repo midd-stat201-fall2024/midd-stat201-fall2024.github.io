@@ -1,0 +1,70 @@
+---
+title: 'STAT 201: Problem Set 6 (R)'
+author: "Your name"
+date: 'Due: 10/28/24 at 11:59pm'
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message = F}
+library(tidyverse)
+library(openintro)
+knitr::opts_chunk$set(fig.width=6, fig.height=3) 
+```
+
+We will use the `possum` data from the `openintro` library. Take a look at the Help file and the data before proceeding. **For this homework, assume the observations were collected via a random sample.**
+
+## Part 1
+
+We will obtain a 95% confidence interval for the average total length of possums from Victoria.
+
+1.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question.
+
+```{r}
+
+```
+
+**Answer:**
+
+2.  Regardless of how you answered in (1), obtain a 95% confidence interval for the average total length of possums from Victoria. Interpret your confidence interval in context.
+
+Be as reproducible as possible, and report your answer using in-line code.
+
+```{r}
+# start by creating vector(s) representing the data of interest for this problem
+
+# now obtain necessary quantities 
+
+```
+
+**Answer:**
+
+## Part 2
+
+Is the average tail length of possums 5 years old or younger in Victoria different from the average tail length of possums 5 years old or younger in New South Wales or Queensland? We will obtain a confidence interval to answer this question.
+
+4.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. (*Hint: does making a faceted plot sound interesting to you?*)
+
+```{r}
+
+```
+
+**Answer:**
+
+5.  Regardless of how you answered in (1), obtain a 90% confidence interval appropriate for the research question. Be as reproducible as possible, and report your answer using in-line code.
+
+```{r}
+# start by creating vector(s) representing the data of interest for this problem
+
+# now obtain necessary quantities 
+
+```
+
+**Answer:**
+
+6.  Interpret the confidence interval in context and answer the research question using your interval as support.
+
+**Answer:**

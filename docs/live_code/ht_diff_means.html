@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-24">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Final project</title>
+<title>STAT 201: Intro. to Statistics and Data Science - HT: Difference in means</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -59,11 +123,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,10 +154,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../midterms.html">
  <span class="menu-text">Midterms</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../project/project_description.html" aria-current="page">
- <span class="menu-text">Final project</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -117,23 +176,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#deadlines" id="toc-deadlines" class="nav-link active" data-scroll-target="#deadlines">Deadlines</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final project</h1>
+<h1 class="title">HT: Difference in means</h1>
 </div>
 
 
@@ -141,6 +190,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 24, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -148,147 +203,41 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="deadlines" class="level2">
-<h2 class="anchored" data-anchor-id="deadlines">Deadlines</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Deliverable</th>
-<th>Date</th>
-<th>Time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="#group">Group creation</a></td>
-<td>Wednesday 10/30</td>
-<td>Beginning of class</td>
-</tr>
-<tr class="even">
-<td><a href="#proposal">Proposal for data collection</a></td>
-<td>Monday 11/04</td>
-<td>11:59pm</td>
-</tr>
-<tr class="odd">
-<td>Revised proposal for data collection (if applicable)</td>
-<td>Saturday 11/09</td>
-<td>11:59pm</td>
-</tr>
-<tr class="even">
-<td>Collect your data</td>
-<td>Anytime between proposal approval and Thanksgiving break</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><a href="#dataset">Excel/GoogleSheets of your data</a></td>
-<td>Sunday 12/01</td>
-<td>11:59pm</td>
-</tr>
-<tr class="even">
-<td>Rough draft of report</td>
-<td>Sunday 12/08</td>
-<td>11:59pm</td>
-</tr>
-<tr class="odd">
-<td>Final presentations (Section AZ)</td>
-<td>Wednesday 12/11</td>
-<td>7-10pm (slides due at 6pm)</td>
-</tr>
-<tr class="even">
-<td>Final presentations (Section BY)</td>
-<td>Thursday 12/12</td>
-<td>9am-12pm (slides due at 8am)</td>
-</tr>
-<tr class="odd">
-<td>Final report (knitted version and .Rmd) and data with data dictionary</td>
-<td>Sunday 12/15 (tentative)</td>
-<td>11:59pm</td>
-</tr>
-<tr class="even">
-<td>Reflection*</td>
-<td>Sudday 12/15 (tentative)</td>
-<td>11:59pm</td>
-</tr>
-</tbody>
-</table>
-<p>*Reflection should be submitted individually. All other deliverables are one-per-group.</p>
-</section>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>As a final project, you will work in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! Your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.</p>
-<p>In particular, your group will:</p>
-<ul>
-<li><p>come up with a list of inferential research questions you are interested in answering</p></li>
-<li><p>determine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy</p></li>
-<li><p>have a finalized data set that anyone can access and use, accompanied by a “data dictionary”</p></li>
-<li><p>present your project to the class (and perhaps other professors/TAs)</p></li>
-<li><p>submit a well-written, professional report</p></li>
-<li><p>submit a reflection on the project, which will include a rubric for how much each team member contributed</p></li>
-</ul>
-<p>You should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)</p>
-<div style="color: maroon">
-<p>Week 12 of the semester will be mostly devoted to project work time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>parkinsons <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="get-summary-statistics" class="level4">
+<h4 class="anchored" data-anchor-id="get-summary-statistics">Get summary statistics</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x_pd <span class="ot">&lt;-</span> parkinsons <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"PD"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(shimmer)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x_healthy <span class="ot">&lt;-</span> parkinsons <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">"Healthy"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(shimmer)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">length</span>(x_pd)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">length</span>(x_healthy)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>xbar1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(x_pd)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>xbar2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(x_healthy)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(x_pd)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">sd</span>(x_healthy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="requirements" class="level2">
-<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
-<p>The following looks like a lot, but is meant to provide you structure for strong final project that you are proud of!</p>
-<div id="group">
-<section id="group-creation" class="level3">
-<h3 class="anchored" data-anchor-id="group-creation">Group creation</h3>
-</section>
+<section id="obtain-quantities-for-ci" class="level4">
+<h4 class="anchored" data-anchor-id="obtain-quantities-for-ci">Obtain quantities for CI</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>point_est <span class="ot">&lt;-</span> xbar1 <span class="sc">-</span> xbar2</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(s1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n1 <span class="sc">+</span> s2<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n2)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">min</span>(n1<span class="dv">-1</span>, n2<span class="dv">-1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> df)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> point_est <span class="sc">-</span> cv <span class="sc">*</span> SE</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>upper <span class="ot">&lt;-</span> point_est <span class="sc">+</span> cv <span class="sc">*</span> SE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Each group will ideally contain three people.</p>
-<p>By the due date listed in the table above, you should either:</p>
-<ol type="1">
-<li>form a group of three on your own and then e-mail Prof.&nbsp;Tang your decision, cc-ing everyone in the group</li>
-<li>form a group of two and then e-mail Prof.&nbsp;Tang your decision, cc-ing the other person in the group.
-<ul>
-<li>Your group of two may be randomly paired with another person or pair</li>
-</ul></li>
-<li>e-mail Prof.&nbsp;Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group</li>
-</ol>
-<div id="proposal">
-<section id="proposal-for-data-collection" class="level3">
-<h3 class="anchored" data-anchor-id="proposal-for-data-collection">Proposal for data collection</h3>
-</section>
-</div>
-<p>By the due date listed in the table above, your group should submit to Canvas a document detailing the following:</p>
-<ol type="1">
-<li><p>Your <strong>target population(s)</strong> of interest</p></li>
-<li><p>A list of <strong>research questions</strong> your group is interested in exploring/answering. You should have <em>at least</em> one question per group member, but more is better!</p>
-<ul>
-<li>Note: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable <span class="math inline">\(x\)</span> might lead to changes in continuous variable <span class="math inline">\(y\)</span></li>
-</ul></li>
-<li><p>A list of <strong>variables</strong> you will observe/collect from each observational unit that you may be <strong>useful</strong> and/or required for answering your reseach question(s).</p>
-<ul>
-<li>You should plan to collect <strong><em>at least</em></strong> <strong>four numerical</strong> variables (at least two of which are continuous), and <strong><em>at least</em></strong> <strong>two categorical</strong> variables</li>
-</ul></li>
-<li><p>A detailed description of <strong>how you plan to collect your data</strong> (i.e.&nbsp;survey students)</p>
-<ul>
-<li><p>How many people do you plan to include in your data? (You should aim for least 30 people, if possible!)</p></li>
-<li><p>How will you have people submit their data? (e.g.&nbsp;fill out a paper form, GoogleForm)</p></li>
-<li><p>If you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?</p></li>
-<li><p>If you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)</p></li>
-</ul></li>
-<li><p>A rough <strong>description of the statistical methods</strong> you might use to answer each question you listed in (2).</p>
-<ul>
-<li>This might be along the lines of “hypothesis test for a single mean” or “confidence interval for a proportion” or “linear regression” along with a one-two sentence justification for the method is appropriate.</li>
-</ul>
-<!-- -->
-<ul>
-<li>It is possible that we haven’t yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn’t apply.</li>
-</ul></li>
-</ol>
-<div style="color: maroon">
-<p>Once you have submitted your proposal, Prof.&nbsp;Tang will give you feedback. Based on the feedback, your group will either have to submit a revised proposal, or you will be given the okay to go forth and collect your data.</p>
-</div>
-<div id="dataset">
-<section id="data-set" class="level3">
-<h3 class="anchored" data-anchor-id="data-set">Data set</h3>
-</section>
-</div>
-<p>Once you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name. This should be submitted to Canvas by the end of Thanksgiving break.</p>
+<p>Our 95% CI for the difference in voice shimmers (PD - non PD) is (0.12 , 0.197).</p>
 
 
 </section>

@@ -1,0 +1,42 @@
+---
+title: "HT: Difference in means"
+date: "October 24, 2024"
+---
+
+```{r message = F}
+library(tidyverse)
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"
+parkinsons <- read_csv(url_file)
+```
+
+#### Get summary statistics
+
+```{r}
+x_pd <- parkinsons |>
+  filter(status == "PD") |>
+  pull(shimmer)
+x_healthy <- parkinsons |>
+  filter(status == "Healthy") |>
+  pull(shimmer)
+n1 <- length(x_pd)
+n2 <- length(x_healthy)
+xbar1 <- mean(x_pd)
+xbar2 <- mean(x_healthy)
+s1 <- sd(x_pd)
+s2 <- sd(x_healthy)
+```
+
+#### Obtain quantities for CI
+
+```{r}
+point_est <- xbar1 - xbar2
+SE <- sqrt(s1^2/n1 + s2^2/n2)
+df <- min(n1-1, n2-1)
+cv <- qt(0.975, df = df)
+
+lower <- point_est - cv * SE
+upper <- point_est + cv * SE
+```
+
+Our 95% CI for the difference in voice shimmers (PD - non PD) is (`r round(lower,3)` , `r round(upper, 3)`).

@@ -1,5 +1,5 @@
 ---
-title: "Confidence Intervals for a Mean"
+title: "Confidence Intervals for Means"
 date: "October 24, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
@@ -17,9 +17,7 @@ editor_options:
 draft: false
 ---
 
-## Housekeeping
-
--   
+## Recap
 
 ```{r echo = F, message= F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
@@ -30,8 +28,6 @@ library(kableExtra)
 plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
-
-## Recap
 
 -   Central Limit Theorem: if we have a sufficiently large sample of $n$ independent observations from a population with mean $\mu$ and standard deviation $\sigma$, then $\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
 
@@ -56,6 +52,8 @@ source("../stat201_fns.R")
     -   If $n < 30$ small: check that there are no clear outliers
 
     -   If $n \geq 30$ large: check that there are no particularly extreme outliers
+
+# CI for a single mean
 
 ## CI for a single mean (known variance)
 
@@ -114,7 +112,7 @@ We will obtain an 80% confidence interval for the mean age of US women at first 
 ::: discuss
 -   Are conditions of CLT met?
 
--   If so, what does CLT tell us? Write this down in statistical notation!
+-   If so, what does CLT tell us?
 :::
 :::::
 ::::::::
@@ -164,21 +162,21 @@ Interpret this interval!
 
 ::: fragment
 $$
-    \widehat{\text{SE}}(\bar{X}) = \frac{s}{\sqrt{n}}
+    \text{SE}\approx \frac{s}{\sqrt{n}}
 $$
 
 where $s$ is the observed sample standard deviation
 :::
 
--   Similar to CI for $p$, where we replaced $p$ with $\hat{p}$ in the standard error
+-   Recall we did something similar for CI for $p$
 
 ## Variance issue
 
--   Replacing $s$ for $\sigma$ works well enough when $n$ is large so we can estimate $\sigma$ accurately
+-   Replacing $s$ for $\sigma$ works well enough when $n$ is extremely large so we can estimate $\sigma$ accurately
 
--   However, estimating variance is very hard when $n$ is small
+-   However, estimating variance is extremely difficult when $n$ is small, and still not great for large $n$
 
--   So if $n$ small and $\sigma$ unknown, we ***cannot*** use the Normal approximation to model $\bar{X}$ for inferential tasks
+-   So if $\sigma$ is unknown, we ***cannot*** use the Normal approximation to model $\bar{X}$ for inferential tasks
 
 -   Instead, we will use a new distribution for inference calculations, called the $t$-distribution
 
@@ -209,9 +207,10 @@ ggplot() +
 -   $t$-distribution is always centered at 0
 -   One parameter: **degrees of freedom (df)** defines exact shape of the $t$
     -   Denoted $t_{df}$ (e.g. $t_{1}$ or $t_{20}$)
-    -   As $df$ increase, $t$ resembles the $N(0,1)$. When $df \geq 30$, the $t_{df}$ is nearly identical to $N(0,1)$
 :::
 ::::::
+
+-   As $df$ increase, $t$ resembles the $N(0,1)$. When $df \geq 30$, the $t_{df}$ is nearly identical to $N(0,1)$
 
 ## Working with $t$ distribution
 
@@ -286,13 +285,16 @@ ggplot() +
 
 ## CI for a single mean (unknown variance)
 
--   Still require independent observations and the Normality condition:
+-   Still require independent observations and the Normality condition for CLT
 
--   General formula for $\gamma \times 100\%$ CI is same, but we simply change what goes into the margin of error.
+-   General formula for $\gamma \times 100\%$ CI is the same, but we simply change what goes into the margin of error.
 
 ::: fragment
 $$
-\text{point estimate} \pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} = \bar{x} \pm t_{df, (1+\gamma)/2}^* \times \frac{s}{\sqrt{n}}
+\begin{align*}
+\text{point estimate} &\pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} \\
+\bar{x} &\pm t_{df, (1+\gamma)/2}^* \times \frac{s}{\sqrt{n}}
+\end{align*}
 $$
 :::
 
@@ -302,7 +304,7 @@ $$
 
 ## Example: age at marriage (cont.)
 
-Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don't know $\sigma$.
+Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we **don't know $\sigma$**.
 
 ::: fragment
 In our sample of $n = 25$ women, we observed a sample mean of $`r xbar`$ years and a sample standard deviation of $s = `r s_age`$ years.
@@ -316,7 +318,7 @@ ci_t <- round(xbar + tstar90*se_hat*c(-1,1), 2)
 ```
 
 1.  Point estimate: $\bar{x} = `r xbar`$
-2.  Standard error: $\widehat{SE} = \frac{s}{\sqrt{n}}= \frac{`r s_age`}{\sqrt{`r n`}} = `r se_hat`$
+2.  Standard error: $\widehat{\text{SE}} = \frac{s}{\sqrt{n}}= \frac{`r s_age`}{\sqrt{`r n`}} = `r se_hat`$
 3.  Critical value:
     -   $df = n-1 = `r df`$
     -   $t_{`r df`}^*$ = `qt(0.9, df =`r df`)` = `r tstar90`
@@ -399,7 +401,7 @@ Assume that all conditions necessary for inference are satisfied.
     c.  Calculate the minimum sample size for Luke.
 :::
 
-# CIs for Paired data
+# CI for paired mean
 
 ## Paired data
 
@@ -413,35 +415,39 @@ Suppose we have two sets of observations/data $\boldsymbol{x} = (x_{1}, x_{2}, \
 
 ## Paired differences
 
--   Let $d_{i} = y_{i} - x_{i}$ for each $i = 1,\ldots, n$ be the observed differences.
+-   Let $d_{i} = y_{i} - x_{i}$ for each $i = 1,\ldots, n$ be the observed differences
 
 -   The $d_{i}$ come from larger population with true mean difference $\mu_{d}$ and standard deviation of differences $\sigma_{d}$
 
 -   The sample mean difference and sample standard deviation of the differences are
 
+::: fragment
 $$\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_{i} \qquad \qquad s_{d} = \frac{1}{n-1}\sum_{i=1}^{n} (d_{i} - \bar{d})^2 $$
+:::
 
 ## CLT for mean difference in pairs
 
--   Suppose the $n$ observational units are independent and the distribution of the differences is approximately normal.
-
--   Then CLT says:
+-   Suppose the $n$ observational units are independent and the distribution of the differences is approximately normal. Then CLT says:
 
     $$
     \bar{d} \overset{\cdot}{\sim} N\left(\mu_{d}, \frac{\sigma_{d}}{\sqrt{n}} \right)
     $$
 
-## CI for mean difference in pairs
 
 -   We are usually interested in performing inference for $\mu_{d}$ when both $\mu_{d}$ and $\sigma_{d}$ unknown
 
 -   Our formula for $\gamma\times 100\%$ CI for $\mu_{d}$ is analogous to the formula for one mean when $\sigma$ unknown:
 
+::: fragment
 $$
-\text{point estimate} \pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} = \bar{d} \pm t_{df, (1+\gamma)/2}^* \times \frac{s_{d}}{\sqrt{n}}
+\begin{align*}
+\text{point estimate} &\pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} \\
+\bar{d} &\pm t_{df, (1+\gamma)/2}^* \times \frac{s_{d}}{\sqrt{n}}
+\end{align*}
 $$
 
 where $df = n-1$
+:::
 
 ## Example: zinc
 
@@ -484,8 +490,8 @@ Are the data paired? Does CLT apply?
 
 ## Example: zinc (cont.)
 
-:::::::: columns
-::: {.column width="50%"}
+::::: columns
+::: {.column width="40%"}
 ```{r echo = T}
 zinc <- zinc |>
   mutate(d = bottom - surface)
@@ -504,19 +510,23 @@ df <- n-1
 tstar <- round(qt(0.975, df), 2)
 zinc_ci <- round(d_bar + tstar*se*c(-1,1), 3)
 ```
+:::
 
-Let's collect our information:
-
+::: {.column width="60%"}
 1.  point estimate: $\bar{d} = `r d_bar`$
 
 2.  SE $\approx$ $\frac{s_{d}}{\sqrt{n}} = \frac{`r s_d`}{\sqrt{`r n`}} = `r se`$
 
-3.  critical value: $df = n-1 = `r n-1`$
+3.  ::: discuss
+    critical value: what code would you write?
+    :::
+
+    -   $df = n-1 = `r n-1`$
 
     -   $t_{`r df`, 0.975}^{*} =$ `qt(0.975,`r df`)` $= `r tstar`$
 :::
+:::::
 
-:::::: {.column width="50%"}
 ::: fragment
 So our 95% confidence interval is:
 
@@ -528,8 +538,6 @@ $$`r d_bar` \pm `r tstar`(`r se`) = (`r zinc_ci`)$$
 Do the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain.
 :::
 ::::
-::::::
-::::::::
 
 # CIs for difference in two means
 
@@ -537,54 +545,172 @@ Do the data suggest that the true average concentration in the bottom water is d
 
 Now consider two populations under the condition that the data/populations are not paired.
 
-We might be interested in learning about whether or not the two means are equal (think about the voice jitter homework problem)!
+We might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!
 
 -   Let $\mu_{1}$ and $\mu_{2}$ represent the population means for the two populations 1 and 2
 
--   We take samples of size $n_{1}$ and $n_{2}$ from each population, respectively
+-   Samples of size $n_{1}$ and $n_{2}$ from each population, respectively
 
 -   We might think it reasonable to use $\bar{x}_{1} - \bar{x}_{2}$ as a point estimate for $\mu_{1} - \mu_{2}$
 
 ## Conditions for inference
 
-The conditions for the CLT and use of the $t$-distribution for inference will look slightly different now that we have two populations:
+Now that we have two populations, conditions for CLT and use of the $t$-distribution for inference will look slightly different:
 
-1.  **Independence** (extended): need data within *and* between the two groups. E.g. the two data sets come from independent random samples or from a randomized experiment.
+1.  **Independence** (extended): need data within *and* between the two groups
+
+    -   e.g.the two data sets come from independent random samples or from a randomized experiment
+
 2.  **Normality**: we need to check for approximate normality for *both* groups separately
 
-## Formula for CI for difference in two means
+## CI for difference in two means
 
-If the conditions hold, then our usual formula for $\gamma \times 100\%$ CI of $\text{point estimate} \pm \text{Margin of Error}$ still holds!
+If the conditions hold, then our usual formula for $\gamma \times 100\%$ CI still holds:
 
-1.   point estimate: $\bar{x}_{1} - \bar{x}_{2}$
+$$
+\text{point estimate} \pm \text{critical value} \times \text{SE}
+$$
+
+1.  Point estimate
 
 ```{r}
+
 ```
 
 ::::::: columns
 :::: {.column width="50%"}
-::: fragment
-If $\sigma_{1}$ and $\sigma_{2}$ [known]{.underline}:
+::: {.fragment style="color: maroon"}
+If $\sigma_{1}$ and $\sigma_{2}$ known:
 :::
 
 2.  $\text{SE} = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}$
 
 3.  critical value: $z_{(1+\gamma)/2}^*$
 
-    - i.e. $(1+\gamma)/2$ percentile of $N(0,1)$
+    -   $(1+\gamma)/2$ percentile of $N(0,1)$
 ::::
 
 :::: {.column width="50%"}
-::: fragment
-If $\sigma_{1}$ and $\sigma_{2}$ [unknown]{.underline}:
+::: {.fragment style="color: maroon"}
+If $\sigma_{1}$ and $\sigma_{2}$ unknown:
 :::
 
-2.  $\widehat{\text{SE}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
+2.  $\text{SE} \approx \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
 
 3.  critical value: $t_{df, (1+\gamma)/2}^*$
 
-    - i.e. $(1+\gamma)/2$ percentile of $t_{df}$
-    
-    - $df = \min\{n_{1} -1, n_{2} - 1\}$
+    -   $(1+\gamma)/2$ percentile of $t_{df}$
+
+    -   $df = \min\{n_{1} -1, n_{2} - 1\}$
 ::::
 :::::::
+
+## Example: voice shimmer
+
+Let's consider the voice shimmer of PD vs non-PD patients from last week's homework.
+
+```{r}
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"
+parkinsons <- read_csv(url_file)
+x_pd <- parkinsons |>
+  filter(status == "PD") |>
+  pull(shimmer)
+x_healthy <- parkinsons |>
+  filter(status == "Healthy") |>
+  pull(shimmer)
+n1 <- length(x_pd); n2 <- length(x_healthy)
+xbar1 <- mean(x_pd); xbar2 <- mean(x_healthy)
+s1 <- sd(x_pd); s2 <- sd(x_healthy)
+```
+
+::: {style="color: maroon"}
+Convince yourself that this data isn't paired!
+:::
+
+-   Population 1: people with Parkinson's Disease
+
+-   Population 2: people without Parkinson's Disease
+
+::: {.fragment style="color: maroon"}
+Research question: are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
+:::
+
+-   We care about the difference in means $\mu_{\text{PD}} - \mu_{\text{H}}$
+
+## Example: voice shimmer (cont.)
+
+::: {style="color: maroon"}
+Are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
+:::
+
+:::::::: columns
+::: {.column width="50%"}
+```{r}
+shimmer_sum <- parkinsons |>
+  group_by(status) |>
+  summarise(n = n(), xbar = mean(shimmer), s = sd(shimmer))
+kableExtra::kable(shimmer_sum, digits = 3)
+parkinsons |> 
+  ggplot(aes(x = shimmer))+
+    geom_histogram(bins = 20) +
+    facet_wrap(~ status, scales = "free") +
+  labs(x = "Voice shimmer") +
+    theme_minimal()+
+    theme(text = element_text(size = 28))
+```
+:::
+
+:::::: {.column width="50%"}
+::: discuss
+Do assumptions for CLT hold?
+:::
+
+-   Independence: random sample!
+-   Normality condition: $n \geq 30$ in both groups with no particularly extreme outliers
+
+:::: fragment
+::: discuss
+Set-up/find the following:
+:::
+
+1.  Point estimate
+2.  Standard error
+3.  Code for critical value
+::::
+::::::
+::::::::
+
+## Example: voice shimmer (cont.)
+
+```{r}
+#kableExtra::kable(birth_sum, digits = 3)
+point_est <- round(xbar1 - xbar2,3)
+se <- round(sqrt(s1^2/n1  + s2^2 / n2), 3)
+df <- min(c(n1-1, n2-1))
+t975 <- round(qt(0.975, df), 2)
+
+ci <- round(point_est + se * t975 * c(-1,1), 3)
+```
+
+1.  Point estimate: $\bar{x}_{\text{PD}} - \bar{x}_{\text{H}} = `r round(xbar1, 2)` - `r round(xbar2,2)` = `r point_est`$
+
+2.  SE $\approx \sqrt{\frac{s_{\text{PD}}^2}{n_{\text{PD}}} + \frac{s_{\text{H}}^2}{n_{\text{H}}}} = \sqrt{\frac{`r round(s1,2)`^2}{`r n1`} + \frac{`r round(s2,2)`^2}{`r n2`}} = `r se`$
+
+3.  Critical value:
+
+    -   $df = \min\{n_{\text{PD}} -1, n_{\text{H}} -1 \} = \min\{`r n1` - 1, `r n2`- 2\} = `r df`$
+
+    -   Want $0.975$-th percentile of $t_{`r df`}$ distribution: `qt(0.975, df =`r df`)` = `r t975`
+
+:::: fragment
+::: discuss
+Putting everything together, our 95% CI for $\mu_{\text{PD}} - \mu_{\text{H}}$ is: 
+$$
+`r point_est` \pm `r t975` \times `r se` = (`r ci`)
+$$
+
+- Interpret this CI in context. Note: direction of difference matters! 
+
+- Are average voice shimmers different between people with and without Parkinson's? Briefly explain why or why not.
+:::
+::::

@@ -1,3 +1,106 @@
 ---
 title: "Final project"
+toc: true
 ---
+
+## Deadlines
+
+| Deliverable | Date | Time |
+|------------------------------|---------------------|---------------------|
+| [Group creation](#group) | Wednesday 10/30 | Beginning of class |
+| [Proposal for data collection](#proposal) | Monday 11/04 | 11:59pm |
+| Revised proposal for data collection (if applicable) | Saturday 11/09 | 11:59pm |
+| Collect your data | Anytime between proposal approval and Thanksgiving break |  |
+| [Excel/GoogleSheets of your data](#dataset) | Sunday 12/01 | 11:59pm |
+| Rough draft of report | Sunday 12/08 | 11:59pm |
+| Final presentations (Section AZ) | Wednesday 12/11 | 7-10pm (slides due at 6pm) |
+| Final presentations (Section BY) | Thursday 12/12 | 9am-12pm (slides due at 8am) |
+| Final report (knitted version and .Rmd) and data with data dictionary | Sunday 12/15 (tentative) | 11:59pm |
+| Reflection\* | Sudday 12/15 (tentative) | 11:59pm |
+
+\*Reflection should be submitted individually. All other deliverables are one-per-group.
+
+## Description
+
+As a final project, you will work in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! Your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.
+
+In particular, your group will:
+
+-   come up with a list of inferential research questions you are interested in answering
+
+-   determine your target population, create a list of variables you'd like to observe, and devise an appropriate sampling strategy
+
+-   have a finalized data set that anyone can access and use, accompanied by a "data dictionary"
+
+-   present your project to the class (and perhaps other professors/TAs)
+
+-   submit a well-written, professional report
+
+-   submit a reflection on the project, which will include a rubric for how much each team member contributed
+
+You should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)
+
+::: {style="color: maroon"}
+Week 12 of the semester will be mostly devoted to project work time.
+:::
+
+## Requirements
+
+The following looks like a lot, but is meant to provide you structure for strong final project that you are proud of!
+
+::: {#group}
+### Group creation
+:::
+
+Each group will ideally contain three people.
+
+By the due date listed in the table above, you should either:
+
+1.  form a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group
+2.  form a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.
+    -   Your group of two may be randomly paired with another person or pair
+3.  e-mail Prof. Tang if you don't have a preference and/or want to meet new people and would like to be randomly placed in a group
+
+::: {#proposal}
+### Proposal for data collection
+:::
+
+By the due date listed in the table above, your group should submit to Canvas a document detailing the following:
+
+1.  Your **target population(s)** of interest
+
+2.  A list of **research questions** your group is interested in exploring/answering. You should have *at least* one question per group member, but more is better!
+
+    -   Note: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable $x$ might lead to changes in continuous variable $y$
+
+3.  A list of **variables** you will observe/collect from each observational unit that you may be **useful** and/or required for answering your reseach question(s).
+
+    -   You should plan to collect ***at least*** **four numerical** variables (at least two of which are continuous), and ***at least*** **two categorical** variables
+
+4.  A detailed description of **how you plan to collect your data** (i.e. survey students)
+
+    -   How many people do you plan to include in your data? (You should aim for least 30 people, if possible!)
+
+    -   How will you have people submit their data? (e.g. fill out a paper form, GoogleForm)
+
+    -   If you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?
+
+    -   If you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)
+
+5.  A rough **description of the statistical methods** you might use to answer each question you listed in (2).
+
+    -   This might be along the lines of "hypothesis test for a single mean" or "confidence interval for a proportion" or "linear regression" along with a one-two sentence justification for the method is appropriate.
+
+    <!-- -->
+
+    -   It is possible that we haven't yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn't apply.
+
+::: {style="color: maroon"}
+Once you have submitted your proposal, Prof. Tang will give you feedback. Based on the feedback, your group will either have to submit a revised proposal, or you will be given the okay to go forth and collect your data.
+:::
+
+::: {#dataset}
+### Data set
+:::
+
+Once you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name. This should be submitted to Canvas by the end of Thanksgiving break.
