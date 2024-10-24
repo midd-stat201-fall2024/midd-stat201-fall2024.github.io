@@ -698,7 +698,7 @@ ci <- round(point_est + se * t975 * c(-1,1), 3)
 
 3.  Critical value:
 
-    -   $df = \min\{n_{\text{PD}} -1, n_{\text{H}} -1 \} = \min\{`r n1` - 1, `r n2`- 2\} = `r df`$
+    -   $df = \min\{n_{\text{PD}} -1, n_{\text{H}} -1 \} = \min\{`r n1` - 1, `r n2`- 1\} = `r df`$
 
     -   Want $0.975$-th percentile of $t_{`r df`}$ distribution: `qt(0.975, df =`r df`)` = `r t975`
 
