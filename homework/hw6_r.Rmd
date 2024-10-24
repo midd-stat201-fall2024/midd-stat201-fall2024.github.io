@@ -17,11 +17,13 @@ knitr::opts_chunk$set(fig.width=6, fig.height=3)
 
 We will use the `possum` data from the `openintro` library. Take a look at the Help file and the data before proceeding. **For this homework, assume the observations were collected via a random sample.**
 
+**Also, your code will continue to be graded for reproducibility and "clean code". If you make figures, make sure to have informative axis labels.**
+
 ## Part 1
 
 We will obtain a 95% confidence interval for the average total length of possums from Victoria.
 
-1.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question.
+1.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. 
 
 ```{r}
 
@@ -46,7 +48,7 @@ Be as reproducible as possible, and report your answer using in-line code.
 
 Is the average tail length of possums 5 years old or younger in Victoria different from the average tail length of possums 5 years old or younger in New South Wales or Queensland? We will obtain a confidence interval to answer this question.
 
-4.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. (*Hint: does making a faceted plot sound interesting to you?*)
+3.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. (*Hint: does making a faceted plot sound interesting to you?*)
 
 ```{r}
 
@@ -54,7 +56,7 @@ Is the average tail length of possums 5 years old or younger in Victoria differe
 
 **Answer:**
 
-5.  Regardless of how you answered in (1), obtain a 90% confidence interval appropriate for the research question. Be as reproducible as possible, and report your answer using in-line code.
+4.  Regardless of how you answered in (1), obtain a 90% confidence interval appropriate for the research question. Be as reproducible as possible, and report your answer using in-line code.
 
 ```{r}
 # start by creating vector(s) representing the data of interest for this problem
@@ -65,6 +67,6 @@ Is the average tail length of possums 5 years old or younger in Victoria differe
 
 **Answer:**
 
-6.  Interpret the confidence interval in context and answer the research question using your interval as support.
+5.  Interpret the confidence interval in context and answer the research question using your interval as support.
 
 **Answer:**
