@@ -3,7 +3,6 @@ title: 'STAT 201: Problem Set 6 (R)'
 author: "Your name"
 date: 'Due: 10/28/24 at 11:59pm'
 output:
-  pdf_document: default
   html_document: default
 editor_options:
   chunk_output_type: console
@@ -23,7 +22,7 @@ We will use the `possum` data from the `openintro` library. Take a look at the H
 
 We will obtain a 95% confidence interval for the average total length of possums from Victoria.
 
-1.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question. 
+1.  Are the conditions for inference satisfied? Explain. You may (and should!) write code in the following R chunk to help you answer this question.
 
 ```{r}
 

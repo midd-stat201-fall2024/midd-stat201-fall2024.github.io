@@ -3777,7 +3777,7 @@
     "href": "slides/slides-19-ht-prop.html#collect-data-set-significance",
     "title": "Hypothesis testing with CLT",
     "section": "2. Collect data, set significance",
-    "text": "2. Collect data, set significance\n\nObtain sample proportion \\(\\hat{p}\\)\nSet \\(\\alpha\\) significance level"
+    "text": "2. Collect data, set significance\n\nObtain observed sample proportion \\(\\hat{p}_{obs}\\)\nSet \\(\\alpha\\) significance level"
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#null-distribution-and-p-value",
@@ -3791,27 +3791,76 @@
     "href": "slides/slides-19-ht-prop.html#null-distribution-and-p-value-cont.",
     "title": "Hypothesis testing with CLT",
     "section": "3. Null distribution and p-value (cont.)",
-    "text": "3. Null distribution and p-value (cont.)\nIf CLT holds and \\(H_{0}\\) is true, then:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nThis specific Normal distribution is our null distribution!\nWe can standardize the null distribution:\n\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\] ## 3. Null distribution and p-value (cont.)\n\nNow, let’s compare our observed data to the null distribution to obtain our p-value\nCalculate a test statistic: a quantity that assesses how consistent your sample data are with \\(H_{0}\\)\n\nour statistic here is \\(z = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}}\\) where now \\(\\hat{p}\\) is coming from our observed data\n\nIf \\(|z|\\) large, then that means \\(\\hat{p}\\) is extremely unusual for \\(H_{0}\\) -> evidence suggesting we should reject \\(H_{0}\\)\n\n\nWe will use the test statistic along with pnorm() to obtain our p-value!"
+    "text": "3. Null distribution and p-value (cont.)\nIf CLT holds and \\(H_{0}\\) is true, then:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nThis specific Normal distribution is our null distribution!\nWe can standardize the null distribution:\n\n\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\]"
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#null-distribution-and-p-value-cont.-1",
     "href": "slides/slides-19-ht-prop.html#null-distribution-and-p-value-cont.-1",
     "title": "Hypothesis testing with CLT",
     "section": "3. Null distribution and p-value (cont.)",
-    "text": "3. Null distribution and p-value (cont.)\nWe obtain the z-score of our observed \\(\\hat{p}\\) under the null distribution:\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\]\n\nIn this case, \\(Z\\) is known as a test statistic: a quantity that assesses how consistent your sample data are with \\(H_{0}\\)\n\nIf \\(|Z|\\) large, then that means \\(\\hat{p}\\) is extremely unusual for \\(H_{0}\\) -> evidence suggesting we should reject \\(H_{0}\\)\n\nWe will use the test statistic along with pnorm() to obtain our p-value!"
+    "text": "3. Null distribution and p-value (cont.)\n\np-value requires us to compare our observed data to the null distribution\nCalculate a test statistic: a quantity that assesses how consistent your sample data are with \\(H_{0}\\)\n\nOur test statistic here is:\n\n\n\\[z =\\frac{\\hat{p}_{\\text{obs}} - p_{0}}{\\text{SE}_{0}} =\\frac{\\hat{p}_{\\text{obs}} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}}\\]\n\n\nIf \\(|z|\\) large, then that usually means \\(\\hat{p}\\) is extremely unusual for \\(H_{0}\\), which is convincing evidence against \\(H_{0}\\)\n\np-value is then \\(\\text{Pr}(Z \\geq z)\\) or \\(\\text{Pr}(Z \\leq z)\\) (or both), depending on \\(H_{A}\\)\n\nEasily obtained using pnorm()"
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#example-taste-test",
     "href": "slides/slides-19-ht-prop.html#example-taste-test",
     "title": "Hypothesis testing with CLT",
     "section": "Example: taste test",
-    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanting to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 such people.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\nLet \\(p\\) be the probability of correctly identifying soda type.\n\nDefine hypotheses\n\n\\(H_{0}\\): \\(p = 0.5\\) (random chance)\n\\(H_{A}\\): \\(p > 0.5\\) (better than random chance)\nNote: \\(p_{0} = 0.5\\) is our null hypothesized value!\n\nCollect data: \\(\\hat{p} = \\frac{53}{80} = r 53/80\\)"
+    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanting to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 such people.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the probability/rate of correctly identifying soda type."
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#example-taste-test-cont.",
     "href": "slides/slides-19-ht-prop.html#example-taste-test-cont.",
     "title": "Hypothesis testing with CLT",
     "section": "Example: taste test (cont.)",
-    "text": "Example: taste test (cont.)\n\nObtain null distribution and p-value\n\nCheck conditions for inference satisfied\n\nindependence: random sample\nsuccess-failure: \\(np_{0} = 80(0.5) = 40 \\geq 10\\) and \\(n(1-p_{0}) = 80(0.5) = 40 \\geq 10\\)\n\nNull distribution: \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.5, \\sqrt{\\frac{0.5(1-0.5)}{80}} = 0.056 \\right)\\)\nTest statistic: \\(z = \\frac{0.6625 - 0.5}{0.056} = 2.90\\)\np-value: probability of observing data as or more extreme as our assuming \\(H_{0}\\) true\n\n\\[\\begin{align*}\n\\text{Pr} \\left(\\hat{p} > 0.6625 | H_{0} \\right) &= \\text{Pr}\\left(\\frac{\\hat{p} - 0.5}{0.056} >  \\frac{0.6625 - 0.5}{0.056} | H_{0}\\right) \\\\\n&= \\text{Pr}\\left(Z > z = 2.90 |H_{0} \\right), \\text{ where } Z \\sim N(0,1)\n\\end{align*}\\]"
+    "text": "Example: taste test (cont.)\n\nDefine hypotheses\n\n\\(H_{0}\\): \\(p = 0.5\\) (random guessing)\n\\(H_{A}\\): \\(p > 0.5\\) (better than random guessing)\nNote: \\(p_{0} = 0.5\\) is our null hypothesized value!\n\nCollect data\n\n\\(\\hat{p}_{\\text{obs}} = \\frac{53}{80} = 0.6625\\)\n\n\n\nNote: significance level already determined to be 0.05"
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#make-decision-and-conclude",
+    "href": "slides/slides-19-ht-prop.html#make-decision-and-conclude",
+    "title": "Hypothesis testing with CLT",
+    "section": "4. Make decision and conclude",
+    "text": "4. Make decision and conclude\nSince our p-value of 0.0019 is less than our significance level of 0.05, we reject \\(H_{0}\\). The data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing."
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#example-taste-test-cont.-1",
+    "href": "slides/slides-19-ht-prop.html#example-taste-test-cont.-1",
+    "title": "Hypothesis testing with CLT",
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\nObtain null distribution and p-value\n\n\nCheck conditions for inference satisfied\n\n\nIndependence: random sample\nsuccess-failure: \\(np_{0} = 80(0.5) = 40\\) and \\(n(1-p_{0}) = 80(0.5) = 40\\), both \\(\\geq 10\\)\n\n\nNull distribution\n\n\n\\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.5, \\sqrt{\\frac{0.5(1-0.5)}{80}} = 0.056 \\right)\\]\n\n\nTest statistic:\n\n\n\\[z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.6625 - 0.5}{0.056} = 2.90\\]"
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#p-value-derivation-extra",
+    "href": "slides/slides-19-ht-prop.html#p-value-derivation-extra",
+    "title": "Hypothesis testing with CLT",
+    "section": "p-value derivation (extra)",
+    "text": "p-value derivation (extra)"
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#example-mms",
+    "href": "slides/slides-19-ht-prop.html#example-mms",
+    "title": "Hypothesis testing with CLT",
+    "section": "Example: M&M’s",
+    "text": "Example: M&M’s\nM&M’s reported that 14% of its candies are yellow. We are interested in testing this claim. In a random sample of 100 M&M’s, 9 were found to be yellow. Conduct a hypothesis test at the \\(0.10\\) level.\n\\(p =\\) true proportion of yellow M&M’s\n\n\n\n\nWrite out null and alternative hypotheses\nCollect data (i.e. obtain our observed statistics)\ni) Verify conditions for CLT are met\n\n\n\n\n\\(H_{0}: p = 0.14\\) versus \\(H_{A}: p \\neq 0.14\\)\n\\(\\hat{p}_{obs} = \\frac{9}{100} = 0.09\\)\ni) Independence: random sample\nSuccess-failure: \\(np_{0} = 100(0.14) = 14 \\geq 10\\) and \\(n(1-p_{0}) = 86 \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#example-mms-cont.",
+    "href": "slides/slides-19-ht-prop.html#example-mms-cont.",
+    "title": "Hypothesis testing with CLT",
+    "section": "Example: M&M’s (cont.)",
+    "text": "Example: M&M’s (cont.)\n\n\n\n\nii) Obtain null distribution\niii) Obtain test statistic \\(z\\)\n\n\n\n\nii) By CLT, our null distribution is \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.14, \\sqrt{\\frac{0.14(1-0.14)}{100}} \\right)\\)\n\\(\\quad =N(0.14, 0.035)\\)\n\niii) \\(z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.09 - 0.14}{0.035} = -1.43\\)\n\n\n\n\n\n\n\n\niv) Obtain p-value. Write out in \\(\\text{Pr}()\\) notation or in code what we want to find. Drawing a picture may help!\n\n\n\n\niv) Since \\(H_{A}\\) is two-sided, we want \\[\\begin{align*}\n   \\text{p-value} &= \\text{Pr}(Z \\leq -1.43 \\cup Z \\geq 1.43) \\\\\n&= \\text{Pr}(Z \\leq -1.43) + \\text{Pr}(Z \\geq 1.43)  \\\\\n&= 2\\times \\text{Pr}(Z \\geq 1.43) \\\\\n&= \\texttt{2 * (1 - pnorm(1.43))} \\\\\n&= 0.153\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#example-mms-cont.-1",
+    "href": "slides/slides-19-ht-prop.html#example-mms-cont.-1",
+    "title": "Hypothesis testing with CLT",
+    "section": "Example: M&M’s (cont.)",
+    "text": "Example: M&M’s (cont.)\n\n\nMake a decision and conclusion in context.\n\n\nSince our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject \\(H_{0}\\). The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%."
+  },
+  {
+    "objectID": "slides/slides-19-ht-prop.html#example-taste-test-cont.-2",
+    "href": "slides/slides-19-ht-prop.html#example-taste-test-cont.-2",
+    "title": "Hypothesis testing with CLT",
+    "section": "4. Example: taste test (cont.)",
+    "text": "4. Example: taste test (cont.)\n\n\nCalculate p-value\n\n\nRemember \\(H_{A}: p > 0.5\\)\n\n\n\n\\[\n\\text{p-value} = \\text{Pr}(Z \\geq z) = \\text{Pr}(Z \\geq 2.90) = \\texttt{1 - pnorm(2.90, 0, 1) = 0.0019}\n\\]\n\n\nDecision and conclusion\n\nSince our p-value of 0.0019 is less than our significance level of 0.05, we reject \\(H_{0}\\). The data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing."
   }
 ]
