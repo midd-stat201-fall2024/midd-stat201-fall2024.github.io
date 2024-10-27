@@ -30,6 +30,7 @@ source("../stat201_fns.R")
 ```
 
 -   Homework 6 due tonight
+-   Modified office hours
 
 ## Recap
 
@@ -56,6 +57,8 @@ source("../stat201_fns.R")
 -   So the only step that will "look different" is #3: how we obtain our null distribution and p-value
 
     -   Looks different depending on type of data
+
+-   Make a conclusion in terms of $H_{A}$
 
 # Hypothesis test for single proportion
 
@@ -101,7 +104,7 @@ $$
 
 -   This is the *sampling distribution* of $\hat{p}$
 
--   We want the *null distribution* of $\hat{p}$: the sampling distribution under $H_{0}$
+-   But we want the *null distribution* of $\hat{p}$: the sampling distribution under $H_{0}$
 
 -   We should operate in a world where $H_{0}$ is true, which means we operate assuming $p =p_{0}$
 
@@ -112,15 +115,13 @@ $$
 
 ## 3. Null distribution and p-value (cont.)
 
-If CLT holds and $H_{0}$ is true, then:
+If CLT holds and $H_{0}$ is true, then our **null distribution** is:
 
 $$
 \hat{p} \overset{\cdot}{\sim} N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
 $$
 
--   This specific Normal distribution is our **null distribution**!
-
--   We can standardize the null distribution:
+-   We can standardize the null distribution by taking z-score:
 
 ::: fragment
 $$
@@ -128,19 +129,29 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 $$
 :::
 
-## 3. Null distribution and p-value (cont.)
+## 3. Test statistic
 
 -   p-value requires us to compare our observed data to the null distribution
 
 -   Calculate a **test statistic**: a quantity that assesses how consistent your sample data are with $H_{0}$
 
-    -   Our test statistic here is:
+    -   Our test statistic is of the form:
 
     ::: fragment
-    $$z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\text{SE}_{0}} =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}$$
+    $$\frac{\text{point estimate} - \text{null value}}{\text{SE}}$$
     :::
 
-    -   If $|z|$ large, then that usually means $\hat{p}$ is extremely unusual for $H_{0}$, which is convincing evidence against $H_{0}$
+    -   For this specific test, our test statistic is:
+
+    ::: fragment
+    $$z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}$$
+
+    which is distributed $N(0,1)$
+    :::
+
+## Obtain p-value
+
+-   If $|z|$ large, then that usually means observed value is extremely unusual for $H_{0}$, which is convincing evidence against $H_{0}$
 
 -   p-value is then $\text{Pr}(Z \geq z)$ or $\text{Pr}(Z \leq z)$ (or both), depending on $H_{A}$
 
@@ -148,7 +159,7 @@ $$
 
 ## Example: taste test
 
-Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanting to test this claim using a hypothesis test at the 0.05 significance level.
+Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.
 
 -   He randomly sampled 80 such people.
 -   He then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.
@@ -183,8 +194,7 @@ Let $p$ be the probability/rate of correctly identifying soda type.
         :::
 
         -   Independence: random sample
-
-        -   success-failure: $np_{0} = 80(0.5) = 40$ and $n(1-p_{0}) = 80(0.5) = 40$, both $\geq 10$
+        -   success-failure: $np_{0} = 80(0.5) = 40 \geq 10$ and $n(1-p_{0}) = 40 \geq 10$
 
     ii. ::: {style="color: maroon"}
         Null distribution
@@ -200,6 +210,8 @@ Let $p$ be the probability/rate of correctly identifying soda type.
 
          ::: fragment
          $$z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.6625 - 0.5}{0.056} = 2.90$$
+
+         -   i.e. if $H_{0}$ true, our observed $\hat{p}_{obs}$ is 2.90 SDs above the mean
          :::
 
 ## 4. Example: taste test (cont.)
@@ -208,8 +220,8 @@ iv. ::: {style="color: maroon"}
     Calculate p-value
     :::
 
-    - Remember $H_{A}: p > 0.5$
-    
+    -   Remember $H_{A}: p > 0.5$
+
 ::: fragment
 $$
 \text{p-value} = \text{Pr}(Z \geq z) = \text{Pr}(Z \geq 2.90) = \texttt{1 - pnorm(2.90, 0, 1) = `r round(1 - pnorm(2.90, 0, 1), 4)`}
@@ -294,3 +306,97 @@ $p =$ true proportion of yellow M&M's
     :::
 
     -   Since our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject $H_{0}$. The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%.
+
+# Test of two proportions
+
+Now suppose we have samples of binary outcomes from two populations.
+
+## Difference of two proportions
+
+Suppose we have two populations 1 and 2, and wand to conduct a hypothesis test for the difference in population proportions: $p_{1} - p_{2}$
+
+-   We have samples of size $n_{1}$ and $n_{2}$
+
+-   Reasonable point estimate: $\hat{p}_{1, obs} - \hat{p}_{2,obs}$
+
+-   Apply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions
+
+## Sampling dist. of difference of two proportions
+
+-   In order to use CLT approximation, we have to ensure conditions are met:
+
+    1.  Independence (extended): data are independent within *and* between groups
+    2.  Success-failure (extended): success-failure conditions holds for *both* groups (must perform four total checks)
+
+-   If above hold, then:
+
+::: fragment
+$$
+\hat{p}_{1} - \hat{p}_{2} \overset{\cdot}{\sim} N\left(p_{1} - p_{2}, \sqrt{\frac{p_{1} (1-p_{1})}{n_{1}} + \frac{p_{2} (1-p_{2})}{n_{2}}} \right)
+$$
+
+where $p_{1}$ and $p_{2}$ are the population proportions
+:::
+
+## Hypothesis test for difference in proportions
+
+1.  Define hypotheses. Hypothesis tests for difference in proportions in this class will take the form:
+
+::: fragment
+$$
+\begin{align*}
+H_{0}: \ &p_{1} = p_{2} \qquad \Rightarrow \qquad  H_{0}: p_{1} - p_{2} = 0 \\
+H_{A}: \ &p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \neq 0 \\
+\text{ or }\ &p_{1} < p_{2}  \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} < 0 \\
+\text{ or }\ &p_{1} > p_{2} \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} > 0
+\end{align*}
+$$
+:::
+
+2.  Collect data/summarise (i.e. obtain $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$)
+
+## Pooled proportion
+
+-   To obtain null distribution, we would need to know $p_{1}$ and $p_{2}$ to verify success-failure conditions
+
+-   We obviously don't have these values, so maybe use $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$?
+
+-   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$ in theory come from the *same* population
+
+    -   So under this null hypothesis, we use a special proportion called the **pooled proportion** to check the success-failure conditions:
+
+::: fragment
+$$
+\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}} = \frac{n_{1} \hat{p}_{1,obs} + n_{2} \hat{p}_{2,obs}}{n_{1} + n_{2}}
+$$
+
+-   ::: {style="color: maroon"}
+    This is the best estimate of both $p_{1}$ and $p_{2}$ *if null hypothesis of* $p_{1} = p_{2}$ *is true*!
+    :::
+:::
+
+## Hypothesis test (cont.)
+
+3.  Obtain null distribution (first verify conditions for inference using $\hat{p}_{pooled}$)
+    -   If conditions satisfied, then we have the "general" sampling distribution of $\hat{p}_{1} - \hat{p}_{2}$ from previous slide.
+    -   But to obtain the **null distribution**, we assume $H_{0}: p_{1} - p_{2} = 0$ is true, and will estimate $p_{1}$ and $p_{2}$ using $\hat{p}_{pooled}$ to approximate standard error:
+
+::: fragment
+$$
+\begin{align*}
+\hat{p}_{1} - \hat{p}_{2} &\overset{\cdot}{\sim} N\left(p_{1} - p_{2}, \sqrt{\frac{p_{1} (1-p_{1})}{n_{1}} + \frac{p_{2} (1-p_{2})}{n_{2}}}  \right) \qquad \text{(CLT)} \\ &\overset{\cdot}{\sim} N\big(0, \underbrace{\sqrt{\frac{\hat{p}_{pooled}(1 - \hat{p}_{pooled})}{n_{1}} + \frac{\hat{p}_{pooled}(1 - \hat{p}_{pooled})}{n_{2}}}}_{\widehat{\text{SE}}_{0}} \big) \qquad (H_{0})
+\end{align*}
+$$
+:::
+
+## Hypothesis test (cont.)
+
+Obtain test-statistic:
+
+$$
+z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\hat{p}_{1,obs} - \hat{p}_{2,obs}) - 0}{\widehat{\text{SE}}_{0}}
+$$
+
+-   To obtain p-value, we want $\text{Pr}(Z \geq z)$ and/or $\text{Pr}(Z \leq z)$ where $Z \sim N(0,1)$
+
+    -   Obtain using `pnorm(z, 0, 1)`

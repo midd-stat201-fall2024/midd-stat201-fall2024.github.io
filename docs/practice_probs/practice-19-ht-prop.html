@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Practice problems">
-<meta name="dcterms.date" content="2024-10-23">
+<meta name="dcterms.date" content="2024-10-28">
 
-<title>STAT 201: Intro. to Statistics and Data Science - CLT and CIs for proportion</title>
+<title>STAT 201: Intro. to Statistics and Data Science - HT for single proportion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CLT and CIs for proportion</h1>
+<h1 class="title">HT for single proportion</h1>
 </div>
 
 
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 23, 2024</p>
+      <p class="date">October 28, 2024</p>
     </div>
   </div>
   
@@ -156,21 +156,21 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <ol type="1">
-<li><p>A survey found that American families generate an average of 17.2 pounds of glass garbage each year. Assume that the standard deviation is 2.5 pounds.</p>
-<p>Suppose we randomly survey 40 families. Set up a calculation for (and if you have access to R, actually calculate) the probability that the mean of glass garbage of these 40 families is less than 18 pounds.</p></li>
-<li><p>Define what a sampling distribution of the sample distribution is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when <span class="math inline">\(p=0.2\)</span>.</p></li>
-<li><p>A survey of 1509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.</p>
+<li><p>A recent poll found that 11% of US adults say they have smoked cigarettes in the past week, a historical low. In a random sample of 730 randomly selected students at four-year colleges, it was found that 66 students have smoked cigarettes in the past week. Test that claim that the smoking rate of students at four-year colleges is the same the national US adult average at the 0.05 significance level.</p></li>
+<li><p>An apple farmer has historically lost an average of 4% of his trees each year. He believes that he has been losing more trees lately.</p>
 <ol type="a">
-<li>Is this sample a representative sample from the population of all high school seniors in the US? Explain.</li>
-<li>Suppose the conditions for inference are met, regardless of your answer in (a). Using a mathematical model, construct a 90% confidence interval for the proportion of high school seniors who are fairly certain they will participate in a study abroad program in college. Interpret this interval in context.</li>
-<li>Based on this interval, would it be appropriate to claim that the majority of high school seniors are fairly certain they will participate in a study abroad program in college?</li>
+<li><p>In a sample of 300 trees, 20 have died. Test the farmer’s claim at the 0.01 level.</p></li>
+<li><p>How would the situation change if the farmer’s sample size had been 200 instead of 300?</p></li>
 </ol></li>
-<li><p><span class="math inline">\((^*)\)</span> The average teacher salary in Vermont is $62,483. Suppose that the distribution of teacher salaries is approximately normal with standard deviation $7000.</p>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li><span class="math inline">\((^*)\)</span> A survey was conducted on 850 randomly sampled student loan borrowers, asking them if they owed more than $30,000 in student debt. A 95% confidence interval for the true proportion of student loan borrowers with at $30,000 of debt was found to be (0.135, 0.185).
 <ol type="a">
-<li><p>What is the probability that a randomly selected Vermont teacher makes less than $60,000 per year?</p></li>
-<li><p>If we randomly sample 25 Vermont teachers and obtain their salaries, what is the probability that the mean of their salaries is less than $60,000 per year?</p></li>
-<li><p>Compare the probabilities in (a) and (b), and explain mathematically why one is larger than the other.</p></li>
-<li><p>How would your answers to (a) and (b) change if the distribution of teacher salaries was not normal?</p></li>
+<li>Based on this information, out of the 850 respondents, how many answered “yes” to the question? Justify your answer.</li>
+<li>Use hypothesis testing to examine the claim that fewer than 18.2% of all student loan borrowers owe at least $30,000 at the 0.05 significance level.</li>
 </ol></li>
 </ol>
 

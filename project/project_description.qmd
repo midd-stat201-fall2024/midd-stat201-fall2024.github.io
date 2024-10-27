@@ -6,7 +6,7 @@ toc: true
 ## Deadlines
 
 | Deliverable | Date | Time |
-|------------------------------|---------------------|---------------------|
+|----|----|----|
 | [Group creation](#group) | Wednesday 10/30 | Beginning of class |
 | [Proposal for data collection](#proposal) | Monday 11/04 | 11:59pm |
 | Revised proposal for data collection (if applicable) | Saturday 11/09 | 11:59pm |

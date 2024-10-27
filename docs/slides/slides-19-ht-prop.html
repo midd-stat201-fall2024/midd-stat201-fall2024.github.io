@@ -339,6 +339,7 @@
 </div>
 <ul>
 <li class="fragment">Homework 6 due tonight</li>
+<li class="fragment">Modified office hours</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
@@ -366,6 +367,7 @@
 <ul>
 <li class="fragment">Looks different depending on type of data</li>
 </ul></li>
+<li class="fragment"><p>Make a conclusion in terms of <span class="math inline">\(H_{A}\)</span></p></li>
 </ul>
 </section>
 <section>
@@ -413,7 +415,7 @@
 \]</span></p>
 <ul>
 <li class="fragment"><p>This is the <em>sampling distribution</em> of <span class="math inline">\(\hat{p}\)</span></p></li>
-<li class="fragment"><p>We want the <em>null distribution</em> of <span class="math inline">\(\hat{p}\)</span>: the sampling distribution under <span class="math inline">\(H_{0}\)</span></p></li>
+<li class="fragment"><p>But we want the <em>null distribution</em> of <span class="math inline">\(\hat{p}\)</span>: the sampling distribution under <span class="math inline">\(H_{0}\)</span></p></li>
 <li class="fragment"><p>We should operate in a world where <span class="math inline">\(H_{0}\)</span> is true, which means we operate assuming <span class="math inline">\(p =p_{0}\)</span></p></li>
 <li class="fragment"><p>So to use CLT, we must satisfy:</p>
 <ul>
@@ -424,13 +426,12 @@
 </section>
 <section id="null-distribution-and-p-value-cont." class="slide level2">
 <h2>3. Null distribution and p-value (cont.)</h2>
-<p>If CLT holds and <span class="math inline">\(H_{0}\)</span> is true, then:</p>
+<p>If CLT holds and <span class="math inline">\(H_{0}\)</span> is true, then our <strong>null distribution</strong> is:</p>
 <p><span class="math display">\[
 \hat{p} \overset{\cdot}{\sim} N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
 \]</span></p>
 <ul>
-<li class="fragment"><p>This specific Normal distribution is our <strong>null distribution</strong>!</p></li>
-<li class="fragment"><p>We can standardize the null distribution:</p></li>
+<li class="fragment">We can standardize the null distribution by taking z-score:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
@@ -438,20 +439,30 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 \]</span></p>
 </div>
 </section>
-<section id="null-distribution-and-p-value-cont.-1" class="slide level2">
-<h2>3. Null distribution and p-value (cont.)</h2>
+<section id="test-statistic" class="slide level2">
+<h2>3. Test statistic</h2>
 <ul>
 <li class="fragment"><p>p-value requires us to compare our observed data to the null distribution</p></li>
 <li class="fragment"><p>Calculate a <strong>test statistic</strong>: a quantity that assesses how consistent your sample data are with <span class="math inline">\(H_{0}\)</span></p>
 <ul>
-<li class="fragment">Our test statistic here is:</li>
+<li class="fragment">Our test statistic is of the form:</li>
 </ul>
 <div class="fragment">
-<p><span class="math display">\[z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\text{SE}_{0}} =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}\]</span></p>
+<p><span class="math display">\[\frac{\text{point estimate} - \text{null value}}{\text{SE}}\]</span></p>
 </div>
 <ul>
-<li class="fragment">If <span class="math inline">\(|z|\)</span> large, then that usually means <span class="math inline">\(\hat{p}\)</span> is extremely unusual for <span class="math inline">\(H_{0}\)</span>, which is convincing evidence against <span class="math inline">\(H_{0}\)</span></li>
-</ul></li>
+<li class="fragment">For this specific test, our test statistic is:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}\]</span></p>
+<p>which is distributed <span class="math inline">\(N(0,1)\)</span></p>
+</div></li>
+</ul>
+</section>
+<section id="obtain-p-value" class="slide level2">
+<h2>Obtain p-value</h2>
+<ul>
+<li class="fragment"><p>If <span class="math inline">\(|z|\)</span> large, then that usually means observed value is extremely unusual for <span class="math inline">\(H_{0}\)</span>, which is convincing evidence against <span class="math inline">\(H_{0}\)</span></p></li>
 <li class="fragment"><p>p-value is then <span class="math inline">\(\text{Pr}(Z \geq z)\)</span> or <span class="math inline">\(\text{Pr}(Z \leq z)\)</span> (or both), depending on <span class="math inline">\(H_{A}\)</span></p>
 <ul>
 <li class="fragment">Easily obtained using <code>pnorm()</code></li>
@@ -460,7 +471,7 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 </section>
 <section id="example-taste-test" class="slide level2">
 <h2>Example: taste test</h2>
-<p>Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanting to test this claim using a hypothesis test at the 0.05 significance level.</p>
+<p>Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.</p>
 <ul>
 <li class="fragment">He randomly sampled 80 such people.</li>
 <li class="fragment">He then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.</li>
@@ -497,8 +508,8 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 <p>Check conditions for inference satisfied</p>
 </div>
 <ul>
-<li class="fragment"><p>Independence: random sample</p></li>
-<li class="fragment"><p>success-failure: <span class="math inline">\(np_{0} = 80(0.5) = 40\)</span> and <span class="math inline">\(n(1-p_{0}) = 80(0.5) = 40\)</span>, both <span class="math inline">\(\geq 10\)</span></p></li>
+<li class="fragment">Independence: random sample</li>
+<li class="fragment">success-failure: <span class="math inline">\(np_{0} = 80(0.5) = 40 \geq 10\)</span> and <span class="math inline">\(n(1-p_{0}) = 40 \geq 10\)</span></li>
 </ul></li>
 <li class="fragment"><div style="color: maroon">
 <p>Null distribution</p>
@@ -511,6 +522,9 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 </div>
 <div class="fragment">
 <p><span class="math display">\[z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.6625 - 0.5}{0.056} = 2.90\]</span></p>
+<ul>
+<li class="fragment">i.e.&nbsp;if <span class="math inline">\(H_{0}\)</span> true, our observed <span class="math inline">\(\hat{p}_{obs}\)</span> is 2.90 SDs above the mean</li>
+</ul>
 </div></li>
 </ol></li>
 </ol>
@@ -610,6 +624,107 @@ Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
 <li class="fragment">Since our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject <span class="math inline">\(H_{0}\)</span>. The data are not strong enough to suggest that the true proportion of yellow M&amp;Ms is different from 14%.</li>
 </ul></li>
 </ol>
+</section></section>
+<section>
+<section id="test-of-two-proportions" class="title-slide slide level1 center">
+<h1>Test of two proportions</h1>
+<p>Now suppose we have samples of binary outcomes from two populations.</p>
+</section>
+<section id="difference-of-two-proportions" class="slide level2">
+<h2>Difference of two proportions</h2>
+<p>Suppose we have two populations 1 and 2, and wand to conduct a hypothesis test for the difference in population proportions: <span class="math inline">\(p_{1} - p_{2}\)</span></p>
+<ul>
+<li class="fragment"><p>We have samples of size <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span></p></li>
+<li class="fragment"><p>Reasonable point estimate: <span class="math inline">\(\hat{p}_{1, obs} - \hat{p}_{2,obs}\)</span></p></li>
+<li class="fragment"><p>Apply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions</p></li>
+</ul>
+</section>
+<section id="sampling-dist.-of-difference-of-two-proportions" class="slide level2">
+<h2>Sampling dist. of difference of two proportions</h2>
+<ul>
+<li class="fragment"><p>In order to use CLT approximation, we have to ensure conditions are met:</p>
+<ol type="1">
+<li class="fragment">Independence (extended): data are independent within <em>and</em> between groups</li>
+<li class="fragment">Success-failure (extended): success-failure conditions holds for <em>both</em> groups (must perform four total checks)</li>
+</ol></li>
+<li class="fragment"><p>If above hold, then:</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{p}_{1} - \hat{p}_{2} \overset{\cdot}{\sim} N\left(p_{1} - p_{2}, \sqrt{\frac{p_{1} (1-p_{1})}{n_{1}} + \frac{p_{2} (1-p_{2})}{n_{2}}} \right)
+\]</span></p>
+<p>where <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> are the population proportions</p>
+</div>
+</section>
+<section id="hypothesis-test-for-difference-in-proportions" class="slide level2">
+<h2>Hypothesis test for difference in proportions</h2>
+<ol type="1">
+<li class="fragment">Define hypotheses. Hypothesis tests for difference in proportions in this class will take the form:</li>
+</ol>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align*}
+H_{0}: \ &amp;p_{1} = p_{2} \qquad \Rightarrow \qquad  H_{0}: p_{1} - p_{2} = 0 \\
+H_{A}: \ &amp;p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \neq 0 \\
+\text{ or }\ &amp;p_{1} &lt; p_{2}  \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} &lt; 0 \\
+\text{ or }\ &amp;p_{1} &gt; p_{2} \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} &gt; 0
+\end{align*}
+\]</span></p>
+</div>
+<ol start="2" type="1">
+<li class="fragment">Collect data/summarise (i.e.&nbsp;obtain <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>)</li>
+</ol>
+</section>
+<section id="pooled-proportion" class="slide level2">
+<h2>Pooled proportion</h2>
+<ul>
+<li class="fragment"><p>To obtain null distribution, we would need to know <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> to verify success-failure conditions</p></li>
+<li class="fragment"><p>We obviously don’t have these values, so maybe use <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>?</p></li>
+<li class="fragment"><p>But wait! If <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span>, then <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span> in theory come from the <em>same</em> population</p>
+<ul>
+<li class="fragment">So under this null hypothesis, we use a special proportion called the <strong>pooled proportion</strong> to check the success-failure conditions:</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}} = \frac{n_{1} \hat{p}_{1,obs} + n_{2} \hat{p}_{2,obs}}{n_{1} + n_{2}}
+\]</span></p>
+<ul>
+<li class="fragment"><div style="color: maroon">
+<p>This is the best estimate of both <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> <em>if null hypothesis of</em> <span class="math inline">\(p_{1} = p_{2}\)</span> <em>is true</em>!</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="hypothesis-test-cont." class="slide level2">
+<h2>Hypothesis test (cont.)</h2>
+<ol start="3" type="1">
+<li class="fragment">Obtain null distribution (first verify conditions for inference using <span class="math inline">\(\hat{p}_{pooled}\)</span>)
+<ul>
+<li class="fragment">If conditions satisfied, then we have the “general” sampling distribution of <span class="math inline">\(\hat{p}_{1} - \hat{p}_{2}\)</span> from previous slide.</li>
+<li class="fragment">But to obtain the <strong>null distribution</strong>, we assume <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span> is true, and will estimate <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> using <span class="math inline">\(\hat{p}_{pooled}\)</span> to approximate standard error:</li>
+</ul></li>
+</ol>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align*}
+\hat{p}_{1} - \hat{p}_{2} &amp;\overset{\cdot}{\sim} N\left(p_{1} - p_{2}, \sqrt{\frac{p_{1} (1-p_{1})}{n_{1}} + \frac{p_{2} (1-p_{2})}{n_{2}}}  \right) \qquad \text{(CLT)} \\ &amp;\overset{\cdot}{\sim} N\big(0, \underbrace{\sqrt{\frac{\hat{p}_{pooled}(1 - \hat{p}_{pooled})}{n_{1}} + \frac{\hat{p}_{pooled}(1 - \hat{p}_{pooled})}{n_{2}}}}_{\widehat{\text{SE}}_{0}} \big) \qquad (H_{0})
+\end{align*}
+\]</span></p>
+</div>
+</section>
+<section id="hypothesis-test-cont.-1" class="slide level2">
+<h2>Hypothesis test (cont.)</h2>
+<p>Obtain test-statistic:</p>
+<p><span class="math display">\[
+z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\hat{p}_{1,obs} - \hat{p}_{2,obs}) - 0}{\widehat{\text{SE}}_{0}}
+\]</span></p>
+<ul>
+<li class="fragment"><p>To obtain p-value, we want <span class="math inline">\(\text{Pr}(Z \geq z)\)</span> and/or <span class="math inline">\(\text{Pr}(Z \leq z)\)</span> where <span class="math inline">\(Z \sim N(0,1)\)</span></p>
+<ul>
+<li class="fragment">Obtain using <code>pnorm(z, 0, 1)</code></li>
+</ul></li>
+</ul>
 
 <div class="footer footer-default">
 

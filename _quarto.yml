@@ -12,6 +12,8 @@ website:
         text: "Schedule"
       - file: midterms.qmd
         text: "Midterms"
+      - file: project/project_description.qmd
+        text: "Project"
     right:
       - icon: book-half
         text: "Textbook"

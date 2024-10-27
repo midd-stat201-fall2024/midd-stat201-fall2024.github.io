@@ -152,7 +152,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -166,42 +166,40 @@
 \item
   An apple farmer has historically lost an average of 4\% of his trees
   each year. He believes that he has been losing more trees lately.
-\end{enumerate}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi})}
-\item
-  In a sample of 300 trees, 20 have died. Test the farmer's claim at the
-  0.01 level.
-\item
-  How would the situation change if the farmer's sample size had been
-  200 instead of 300?
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    In a sample of 300 trees, 20 have died. Test the farmer's claim at
+    the 0.01 level.
+  \item
+    How would the situation change if the farmer's sample size had been
+    200 instead of 300?
+  \end{enumerate}
 \end{enumerate}
-
-\begin{verbatim}
-[1] 0.04822233
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
 \tightlist
 \item
-  A survey was conducted on 850 randomly sampled student loan borrowers,
-  asking them if they owed more than \$30,000 in student debt. A 95\%
-  confidence interval for the true proportion of student loan borrowers
-  with at \$30,000 of debt was found to be (0.135, 0.185).
-\end{enumerate}
+  \((^*)\) A survey was conducted on 850 randomly sampled student loan
+  borrowers, asking them if they owed more than \$30,000 in student
+  debt. A 95\% confidence interval for the true proportion of student
+  loan borrowers with at \$30,000 of debt was found to be (0.135,
+  0.185).
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi})}
-\item
-  Based on this information, out of the 850 randomly sampled adults, how
-  many answered ``yes'' to the question? Justify your answer.
-\item
-  Use hypothesis testing to examine the claim that fewer than 18.2\% of
-  all student loan borrowers owe at least \$30,000 at the 0.05
-  significance level.
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Based on this information, out of the 850 respondents, how many
+    answered ``yes'' to the question? Justify your answer.
+  \item
+    Use hypothesis testing to examine the claim that fewer than 18.2\%
+    of all student loan borrowers owe at least \$30,000 at the 0.05
+    significance level.
+  \end{enumerate}
 \end{enumerate}
 
 
