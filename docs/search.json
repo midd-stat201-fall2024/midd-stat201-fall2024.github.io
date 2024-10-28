@@ -3932,5 +3932,61 @@
     "title": "Hypothesis testing with CLT",
     "section": "Obtain p-value",
     "text": "Obtain p-value\n\nIf \\(|z|\\) large, then that usually means observed value is extremely unusual for \\(H_{0}\\), which is convincing evidence against \\(H_{0}\\)\np-value is then \\(\\text{Pr}(Z \\geq z)\\) or \\(\\text{Pr}(Z \\leq z)\\) (or both), depending on \\(H_{A}\\)\n\nEasily obtained using pnorm()"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#housekeeping",
+    "href": "slides/slides-20-ht-diff-prop.html#housekeeping",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nModified office hours"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#recap",
+    "href": "slides/slides-20-ht-diff-prop.html#recap",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Recap",
+    "text": "Recap"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#difference-of-two-proportions",
+    "href": "slides/slides-20-ht-diff-prop.html#difference-of-two-proportions",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Difference of two proportions",
+    "text": "Difference of two proportions\nSuppose we have two populations 1 and 2, and want to conduct a hypothesis test for the difference in population proportions: \\(p_{1} - p_{2}\\)\n\nWe have samples of size \\(n_{1}\\) and \\(n_{2}\\)\nReasonable point estimate: \\(\\hat{p}_{1, obs} - \\hat{p}_{2,obs}\\)\nApply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#sampling-dist.-of-difference-of-two-proportions",
+    "href": "slides/slides-20-ht-diff-prop.html#sampling-dist.-of-difference-of-two-proportions",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Sampling dist. of difference of two proportions",
+    "text": "Sampling dist. of difference of two proportions\n\nIn order to use CLT approximation, we have to ensure conditions are met:\n\nIndependence (extended): data are independent within and between groups\nSuccess-failure (extended): success-failure conditions holds for both groups (must perform four total checks)\n\nIf above hold, then:\n\n\n\\[\n\\hat{p}_{1} - \\hat{p}_{2} \\overset{\\cdot}{\\sim} N\\left(p_{1} - p_{2}, \\sqrt{\\frac{p_{1} (1-p_{1})}{n_{1}} + \\frac{p_{2} (1-p_{2})}{n_{2}}} \\right)\n\\]\nwhere \\(p_{1}\\) and \\(p_{2}\\) are the population proportions"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#hypothesis-test-for-difference-in-proportions",
+    "href": "slides/slides-20-ht-diff-prop.html#hypothesis-test-for-difference-in-proportions",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Hypothesis test for difference in proportions",
+    "text": "Hypothesis test for difference in proportions\n\nDefine hypotheses. Hypothesis tests for difference in proportions in this class will take the form:\n\n\n\\[\n\\begin{align*}\nH_{0}: \\ &p_{1} = p_{2} \\qquad \\Rightarrow \\qquad  H_{0}: p_{1} - p_{2} = 0 \\\\\nH_{A}: \\ &p_{1} \\neq p_{2} \\qquad \\Rightarrow \\qquad  H_{A}: p_{1} - p_{2} \\neq 0 \\\\\n\\text{ or }\\ &p_{1} < p_{2}  \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} < 0 \\\\\n\\text{ or }\\ &p_{1} > p_{2} \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} > 0\n\\end{align*}\n\\]\n\n\nCollect data/summarise (i.e. obtain \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\))"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#pooled-proportion",
+    "href": "slides/slides-20-ht-diff-prop.html#pooled-proportion",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Pooled proportion",
+    "text": "Pooled proportion\n\nTo obtain null distribution, we would need to know \\(p_{1}\\) and \\(p_{2}\\) to verify success-failure conditions\nWe obviously don’t have these values, so maybe use \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\)?\nBut wait! If \\(H_{0}: p_{1} = p_{2}\\), then \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\) in theory come from the same population\n\nSo under this null hypothesis, we use a special proportion called the pooled proportion to check the success-failure conditions:\n\n\n\n\\[\n\\hat{p}_{pooled} = \\frac{\\text{total # of successes from both samples}}{\\text{combined sample size}} = \\frac{n_{1} \\hat{p}_{1,obs} + n_{2} \\hat{p}_{2,obs}}{n_{1} + n_{2}}\n\\]\n\n\nThis is the best estimate of both \\(p_{1}\\) and \\(p_{2}\\) if null hypothesis of \\(p_{1} = p_{2}\\) is true!"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#hypothesis-test-cont.",
+    "href": "slides/slides-20-ht-diff-prop.html#hypothesis-test-cont.",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Hypothesis test (cont.)",
+    "text": "Hypothesis test (cont.)\n\nObtain null distribution (first verify conditions for inference using \\(\\hat{p}_{pooled}\\))\n\nIf conditions satisfied, then we have the “general” sampling distribution of \\(\\hat{p}_{1} - \\hat{p}_{2}\\) from previous slide.\nBut to obtain the null distribution, we assume \\(H_{0}: p_{1} - p_{2} = 0\\) is true, and will estimate \\(p_{1}\\) and \\(p_{2}\\) using \\(\\hat{p}_{pooled}\\) to approximate standard error:\n\n\n\n\\[\n\\begin{align*}\n\\hat{p}_{1} - \\hat{p}_{2} &\\overset{\\cdot}{\\sim} N\\left(p_{1} - p_{2}, \\sqrt{\\frac{p_{1} (1-p_{1})}{n_{1}} + \\frac{p_{2} (1-p_{2})}{n_{2}}}  \\right) \\qquad \\text{(CLT)} \\\\ &\\overset{\\cdot}{\\sim} N\\big(0, \\underbrace{\\sqrt{\\frac{\\hat{p}_{pooled}(1 - \\hat{p}_{pooled})}{n_{1}} + \\frac{\\hat{p}_{pooled}(1 - \\hat{p}_{pooled})}{n_{2}}}}_{\\widehat{\\text{SE}}_{0}} \\big) \\qquad (H_{0})\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#hypothesis-test-cont.-1",
+    "href": "slides/slides-20-ht-diff-prop.html#hypothesis-test-cont.-1",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Hypothesis test (cont.)",
+    "text": "Hypothesis test (cont.)\nObtain test-statistic:\n\\[\nz = \\frac{\\text{point estimate} - \\text{null value}}{\\text{SE}} \\approx \\frac{(\\hat{p}_{1,obs} - \\hat{p}_{2,obs}) - 0}{\\widehat{\\text{SE}}_{0}}\n\\]\n\nTo obtain p-value, we want \\(\\text{Pr}(Z \\geq z)\\) and/or \\(\\text{Pr}(Z \\leq z)\\) where \\(Z \\sim N(0,1)\\)\n\nObtain using pnorm(z, 0, 1)"
   }
 ]
