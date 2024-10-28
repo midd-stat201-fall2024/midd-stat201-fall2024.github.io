@@ -166,7 +166,7 @@ Some people claim that they can tell the difference between a diet soda and a re
 -   53 participants correctly identified the soda.
 
 ::: {.fragment style="color: maroon"}
-Let $p$ be the probability/rate of correctly identifying soda type.
+Let $p$ be the probability/rate of correctly identifying soda type among people who think they can tell the difference.
 :::
 
 ## Example: taste test (cont.)
@@ -313,7 +313,7 @@ Now suppose we have samples of binary outcomes from two populations.
 
 ## Difference of two proportions
 
-Suppose we have two populations 1 and 2, and wand to conduct a hypothesis test for the difference in population proportions: $p_{1} - p_{2}$
+Suppose we have two populations 1 and 2, and want to conduct a hypothesis test for the difference in population proportions: $p_{1} - p_{2}$
 
 -   We have samples of size $n_{1}$ and $n_{2}$
 

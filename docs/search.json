@@ -3805,7 +3805,7 @@
     "href": "slides/slides-19-ht-prop.html#example-taste-test",
     "title": "Hypothesis testing with CLT",
     "section": "Example: taste test",
-    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 such people.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the probability/rate of correctly identifying soda type."
+    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 such people.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the probability/rate of correctly identifying soda type among people who think they can tell the difference."
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#example-taste-test-cont.",
@@ -3875,7 +3875,7 @@
     "href": "slides/slides-19-ht-prop.html#difference-of-two-proportions",
     "title": "Hypothesis testing with CLT",
     "section": "Difference of two proportions",
-    "text": "Difference of two proportions\nSuppose we have two populations 1 and 2, and wand to conduct a hypothesis test for the difference in population proportions: \\(p_{1} - p_{2}\\)\n\nWe have samples of size \\(n_{1}\\) and \\(n_{2}\\)\nReasonable point estimate: \\(\\hat{p}_{1, obs} - \\hat{p}_{2,obs}\\)\nApply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions"
+    "text": "Difference of two proportions\nSuppose we have two populations 1 and 2, and want to conduct a hypothesis test for the difference in population proportions: \\(p_{1} - p_{2}\\)\n\nWe have samples of size \\(n_{1}\\) and \\(n_{2}\\)\nReasonable point estimate: \\(\\hat{p}_{1, obs} - \\hat{p}_{2,obs}\\)\nApply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions"
   },
   {
     "objectID": "slides/slides-19-ht-prop.html#sampling-dist.-of-difference-of-two-proportions",
