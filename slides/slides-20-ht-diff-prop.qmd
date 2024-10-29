@@ -30,12 +30,22 @@ plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
--   Modified office hours
+-   No office hours Friday
 
 ## Recap
 
--   
+-   Hypothesis test for single proportion: $H_{0}: p = p_{0}$ vs $H_{A}: p \neq p_{0}$ (or $>, <$)
+    -   Null distribution (assuming CLT holds under $H_{0}$:
 
+        $$
+        \hat{p} \overset{\cdot}{\sim}N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
+        $$
+
+    -   Obtain test statistic and calculate p-value
+
+        $$
+        z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} \sim N(0,1)
+        $$
 
 # Test of two proportions
 
@@ -55,8 +65,8 @@ Suppose we have two populations 1 and 2, and want to conduct a hypothesis test f
 
 -   In order to use CLT approximation, we have to ensure conditions are met:
 
-    1.  Independence (extended): data are independent within *and* between groups
-    2.  Success-failure (extended): success-failure conditions holds for *both* groups (must perform four total checks)
+    1.  **Independence (extended)**: data are independent within *and* between groups
+    2.  **Success-failure (extended)**: success-failure conditions holds for *both* groups (must perform four total checks)
 
 -   If above hold, then:
 
@@ -83,7 +93,7 @@ H_{A}: \ &p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \neq 
 $$
 :::
 
-2.  Collect data/summarise (i.e. obtain $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$)
+2.  Set $\alpha$ and collect data/summarise (i.e. obtain $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$)
 
 ## Pooled proportion
 
@@ -91,7 +101,7 @@ $$
 
 -   We obviously don't have these values, so maybe use $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$?
 
--   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$ in theory come from the *same* population
+-   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$ in theory come from the ***same*** population
 
     -   So under this null hypothesis, we use a special proportion called the **pooled proportion** to check the success-failure conditions:
 
@@ -130,3 +140,222 @@ $$
 -   To obtain p-value, we want $\text{Pr}(Z \geq z)$ and/or $\text{Pr}(Z \leq z)$ where $Z \sim N(0,1)$
 
     -   Obtain using `pnorm(z, 0, 1)`
+
+## Example: offshore drilling
+
+A survey asked 827 randomly sampled registered voters in California: Do you support or oppose about drilling for oil and natural gas of the Coast of California? Or do you now know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:
+
+```{r}
+drilling <- openintro::offshore_drilling |>
+  slice(-1) |>
+  rename("position" = 1,  "college_grad" = 2) |>
+  mutate(position = as.character(position),
+         college_grad = as.character(college_grad))
+ct <- drilling |>
+  group_by(position, college_grad) |>
+  summarise(n = n()) |>
+  spread(college_grad, n) |>
+  ungroup() |>
+  mutate(total =  no + yes)
+
+ct <- ct |>
+  rbind(c("total", colSums(ct[-1])))
+
+ct <- ct |> 
+  kable() |>
+  column_spec(1, border_right = T)
+ct
+```
+
+-   ::: {style="color: maroon"}
+    Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?
+    :::
+
+## Example: offshore drilling (cont.)
+
+::: {style="color: maroon"}
+Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?
+:::
+
+-   Define parameters and hypotheses
+    -   Let $p_{c}$ be the proportion of registered voters from California who are college-graduates who support off-shore drilling
+
+    -   Let $p_{nc}$ be the proportion be the proportion of registered voters from California who are not college-graduates who support off-shore drilling
+
+    -   $H_{0}: p_{nc} - p_{c} = 0$ and $H_{A}: p_{nc} - p_{c} \neq 0$
+-   Obtain observed proportions and pooled proportion
+
+```{r}
+ct
+```
+
+```{r}
+n1 <- drilling |>
+  filter(college_grad == "no") |>
+  nrow()
+n2 <- drilling |>
+  filter(college_grad == "yes") |>
+  nrow()
+
+x1 <- drilling |>
+  filter(college_grad == "no", position == "support") |>
+  nrow()
+
+x2 <- drilling |>
+  filter(college_grad == "yes", position == "support") |>
+  nrow()
+p_hat1 <- round(x1/n1, 3)
+p_hat2 <- round(x2/n2, 3)
+p_pooled <- round((x1 + x2)/(n1 + n2), 3)
+se0 <- round(sqrt((p_pooled) * (1-p_pooled) / n1 + (p_pooled) * (1-p_pooled) / n2), 3)
+z <- round((p_hat1 - p_hat2) / se0, 3)
+```
+
+## Example: offshore drilling (cont.)
+
+$$
+\hat{p}_{pooled} =\frac{`r x1` + `r x2`}{`r n1` + `r n2`} = \frac{`r x1 + x2`}{`r n1 + n2`} = `r p_pooled`
+$$
+
+-   Check conditions for inference:
+
+    -   Independence
+
+    -   Success-failure:
+
+        -   $n_{nc} \hat{p}_{pooled} = `r n1` \times `r p_pooled` = `r round(n1 * p_pooled, 2)` > 10$
+
+        -   $n_{nc} (1 - \hat{p}_{pooled}) = `r n1` \times (1 - `r p_pooled`) = `r round(n1 * (1- p_pooled) , 2)` > 10$
+
+        -   $n_{c} \hat{p}_{pooled} = `r n2` \times `r p_pooled` = `r round(n2 * p_pooled, 2)` > 10$
+
+        -   $n_{c} (1 - \hat{p}_{pooled}) = `r n2` \times (1 - `r p_pooled`) = `r round(n2 * (1- p_pooled) , 2)` > 10$
+
+-   Since conditions are met, we can proceed
+
+## Example: offshore drilling (cont.)
+
+-   Null distribution:
+
+$$
+\hat{p}_{nc} - \hat{p}_{c} \overset{\cdot}{\sim}N\left(0, \sqrt{\frac{`r p_pooled`(1 - `r p_pooled`)}{`r n1`} + \frac{`r p_pooled`(1 - `r p_pooled`)}{`r n2`}} = `r se0` \right)
+$$
+
+-   Test statistic: $$
+    z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(`r p_hat1` - `r p_hat2`) - 0}{`r se0`} = `r z`
+    $$
+
+-   p-value: $\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \text{Pr}(Z \geq `r abs(z)`)$
+
+    -   `2 * (1 - pnorm(0.394)) =` `r round(2*(1 - pnorm(0.394)), 3)`
+
+-   Since our p-value is greater the 0.05, we fail to reject $H_{0}$. The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters.
+
+# Test for a single mean
+
+## Hypotheses and null distribution
+
+Want to conduct a hypothesis test for the mean $\mu$ of a population.
+
+-   Hypotheses: $H_0: \mu= \mu_{0}$ versus $H_{A}: \mu \neq \mu_{0} \ (\text{or } \mu > \mu_{0} \text{ or } \mu < \mu_{0})$
+
+-   Verify conditions for CLT
+
+    1.  Independence
+    2.  Approximate normality or large sample size
+
+-   If conditions satisfied, the CLT under $H_{0}$ gives us **null distribution** for $\bar{X}$:
+
+    $$
+    \bar{X} \overset{\cdot}{\sim}  N\left(\mu_{0}, \frac{\sigma}{\sqrt{n}}\right)
+    $$
+
+## z-test and *t*-test
+
+-   If $\sigma$ known, we perform a **z-test** where our test-statistic is:
+
+::: fragment
+$$z = \frac{\bar{x} - \mu_{0}}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
+
+and we obtain our p-value using `pnorm()`
+:::
+
+-   If $\sigma$ unknown, we perform a ***t*****-test** by estimating $\sigma$ with $s$. Our test statistic is:
+
+::: fragment
+$$
+t = \frac{\bar{x} - \mu_{0}}{\frac{s}{\sqrt{n}}} \sim t_{df} \qquad df = n-1
+$$
+
+and we obtain our p-value using `pt()`
+:::
+
+## Example: height
+
+-   In the US, the average height for women is 5'3.5" or 63.5 inches
+
+-   Let's conduct a hypothesis test to see if the average height of female-identifying students in STAT 201 is equal to national average.
+
+-   ::: discuss
+    Define parameters and hypotheses
+    :::
+
+-   I took a random sample of 10 female-identifying students across both sections
+
+## Example: height (cont.)
+
+:::::: columns
+:::: {.column width="50%"}
+```{r}
+set.seed(2)
+n <- 10
+dat <- read_csv("./data/stat201_f24_data.csv")|>
+  filter(gender == "F") |>
+  sample_n(n)
+xbar <- round(mean(dat$height), 3)
+s <- round(sd(dat$height), 3)
+df <- n-1
+t <- round((xbar - 63.5)/(s/sqrt(n)), 3)
+p_val <- 2*(1-pt(t, df = df))
+dat |>
+  summarise(n = n(), mean = mean(height), sd = sd(height)) |>
+  kable()
+
+ggplot(dat, aes(x = height)) +
+  geom_histogram(bins = 10) +
+  theme_minimal() +
+  theme(text = element_text(size = 27)) +
+  labs(x = "Height (in.)")
+```
+
+::: discuss
+-   Are conditions for inference met?
+
+-   If so, what test (z-test or t-test) should we perform? What is our test-statistic?
+:::
+::::
+
+::: {.column width="50%"}
+-   Conditions:
+
+    -   Independence: random sample
+
+    -   Approximate normality: $n = r n < 30$, but no clear outliers
+
+-   Since we don't know $\sigma$, we perform a $t$-test:
+
+    -   $t = \frac{\bar{x} - \mu_{0}}{\hat{SE}_{0}} = \frac{`r xbar` - 63.5}{`r s` / \sqrt{`r n`}} = `r t`$
+:::
+::::::
+
+## Example: height (cont.)
+
+-   ::: fragment
+    Draw a picture and write code to find our p-value
+    :::
+
+    -   $df = n-1 = `r n-1`$
+
+    -   p-value is $\text{Pr}(T \geq `r t`) + \text{Pr}(T \leq `r -t`) = 2*\text{Pr}(|T| \geq |`r t`|)$ where $T \sim t_{`r df`}$
+
+    -   $\texttt{2 * (1-pt(`r t`, `r df`))}$ = `r p_val`

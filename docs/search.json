@@ -3938,14 +3938,14 @@
     "href": "slides/slides-20-ht-diff-prop.html#housekeeping",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Housekeeping",
-    "text": "Housekeeping\n\n\n\n\nModified office hours"
+    "text": "Housekeeping\n\n\n\n\nNo office hours Friday"
   },
   {
     "objectID": "slides/slides-20-ht-diff-prop.html#recap",
     "href": "slides/slides-20-ht-diff-prop.html#recap",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Recap",
-    "text": "Recap"
+    "text": "Recap\n\nHypothesis test for single proportion: \\(H_{0}: p = p_{0}\\) vs \\(H_{A}: p \\neq p_{0}\\) (or \\(>, <\\))\n\nNull distribution (assuming CLT holds under \\(H_{0}\\):\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim}N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\nObtain test statistic and calculate p-value\n\\[\nz = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} \\sim N(0,1)\n\\]"
   },
   {
     "objectID": "slides/slides-20-ht-diff-prop.html#difference-of-two-proportions",
@@ -3966,7 +3966,7 @@
     "href": "slides/slides-20-ht-diff-prop.html#hypothesis-test-for-difference-in-proportions",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Hypothesis test for difference in proportions",
-    "text": "Hypothesis test for difference in proportions\n\nDefine hypotheses. Hypothesis tests for difference in proportions in this class will take the form:\n\n\n\\[\n\\begin{align*}\nH_{0}: \\ &p_{1} = p_{2} \\qquad \\Rightarrow \\qquad  H_{0}: p_{1} - p_{2} = 0 \\\\\nH_{A}: \\ &p_{1} \\neq p_{2} \\qquad \\Rightarrow \\qquad  H_{A}: p_{1} - p_{2} \\neq 0 \\\\\n\\text{ or }\\ &p_{1} < p_{2}  \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} < 0 \\\\\n\\text{ or }\\ &p_{1} > p_{2} \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} > 0\n\\end{align*}\n\\]\n\n\nCollect data/summarise (i.e. obtain \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\))"
+    "text": "Hypothesis test for difference in proportions\n\nDefine hypotheses. Hypothesis tests for difference in proportions in this class will take the form:\n\n\n\\[\n\\begin{align*}\nH_{0}: \\ &p_{1} = p_{2} \\qquad \\Rightarrow \\qquad  H_{0}: p_{1} - p_{2} = 0 \\\\\nH_{A}: \\ &p_{1} \\neq p_{2} \\qquad \\Rightarrow \\qquad  H_{A}: p_{1} - p_{2} \\neq 0 \\\\\n\\text{ or }\\ &p_{1} < p_{2}  \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} < 0 \\\\\n\\text{ or }\\ &p_{1} > p_{2} \\qquad \\Rightarrow \\qquad   \\qquad \\  p_{1} - p_{2} > 0\n\\end{align*}\n\\]\n\n\nSet \\(\\alpha\\) and collect data/summarise (i.e. obtain \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\))"
   },
   {
     "objectID": "slides/slides-20-ht-diff-prop.html#pooled-proportion",
@@ -3988,5 +3988,47 @@
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Hypothesis test (cont.)",
     "text": "Hypothesis test (cont.)\nObtain test-statistic:\n\\[\nz = \\frac{\\text{point estimate} - \\text{null value}}{\\text{SE}} \\approx \\frac{(\\hat{p}_{1,obs} - \\hat{p}_{2,obs}) - 0}{\\widehat{\\text{SE}}_{0}}\n\\]\n\nTo obtain p-value, we want \\(\\text{Pr}(Z \\geq z)\\) and/or \\(\\text{Pr}(Z \\leq z)\\) where \\(Z \\sim N(0,1)\\)\n\nObtain using pnorm(z, 0, 1)"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling",
+    "href": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Example: offshore drilling",
+    "text": "Example: offshore drilling\nA survey asked 827 randomly sampled registered voters in California: Do you support or oppose about drilling for oil and natural gas of the Coast of California? Or do you now know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    do_not_know \n    131 \n    104 \n    235 \n  \n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    389 \n    438 \n    827 \n  \n\n\n\n\n\n\n\nDo the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.",
+    "href": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Example: offshore drilling (cont.)",
+    "text": "Example: offshore drilling (cont.)\n\nDo the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?\n\n\nDefine parameters and hypotheses\n\nLet \\(p_{c}\\) be the proportion of registered voters from California who are college-graduates who support off-shore drilling\nLet \\(p_{nc}\\) be the proportion be the proportion of registered voters from California who are not college-graduates who support off-shore drilling\n\\(H_{0}: p_{nc} - p_{c} = 0\\) and \\(H_{A}: p_{nc} - p_{c} \\neq 0\\)\n\nObtain observed proportions and pooled proportion\n\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    do_not_know \n    131 \n    104 \n    235 \n  \n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    389 \n    438 \n    827"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.-1",
+    "href": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.-1",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Example: offshore drilling (cont.)",
+    "text": "Example: offshore drilling (cont.)\n\\[\n\\hat{p}_{pooled} =\\frac{132 + 154}{389 + 438} = \\frac{286}{827} = 0.346\n\\]\n\nCheck conditions for inference:\n\nIndependence\nSuccess-failure:\n\n\\(n_{nc} \\hat{p}_{pooled} = 389 \\times 0.346 = 134.59 > 10\\)\n\\(n_{nc} (1 - \\hat{p}_{pooled}) = 389 \\times (1 - 0.346) = 254.41 > 10\\)\n\\(n_{c} \\hat{p}_{pooled} = 438 \\times 0.346 = 151.55 > 10\\)\n\\(n_{c} (1 - \\hat{p}_{pooled}) = 438 \\times (1 - 0.346) = 286.45 > 10\\)\n\n\nSince conditions are met, we can proceed"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.-2",
+    "href": "slides/slides-20-ht-diff-prop.html#example-offshore-drilling-cont.-2",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Example: offshore drilling (cont.)",
+    "text": "Example: offshore drilling (cont.)\n\nNull distribution:\n\n\\[\n\\hat{p}_{nc} - \\hat{p}_{c} \\overset{\\cdot}{\\sim}N\\left(0, \\sqrt{\\frac{0.346(1 - 0.346)}{389} + \\frac{0.346(1 - 0.346)}{438}} = 0.033 \\right)\n\\]\n\nTest statistic: \\[\nz =\\frac{( \\hat{p}_{nc, obs}- \\hat{p}_{c, obs}) - 0}{\\text{SE}_{0}} = \\frac{(0.339 - 0.352) - 0}{0.033} = -0.394\n\\]\np-value: \\(\\text{Pr}(Z \\leq z) + \\text{Pr}(Z \\geq -z) = 2 \\text{Pr}(Z \\geq 0.394)\\)\n\n2 * (1 - pnorm(0.394)) = 0.694\n\nSince our p-value is greater the 0.05, we fail to reject \\(H_{0}\\). The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters."
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#hypotheses-and-null-distribution",
+    "href": "slides/slides-20-ht-diff-prop.html#hypotheses-and-null-distribution",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Hypotheses and null distribution",
+    "text": "Hypotheses and null distribution\nWant to conduct a hypothesis test for the mean \\(\\mu\\) of a population.\n\nHypotheses: \\(H_0: \\mu= \\mu_{0}\\) versus \\(H_{A}: \\mu \\neq \\mu_{0} \\ (\\text{or } \\mu > \\mu_{0} \\text{ or } \\mu < \\mu_{0})\\)\nVerify conditions for CLT (independence, approximate normality or large sample size)\nIf conditions satisfied, the CLT under \\(H_{0}\\) gives us null distribution for \\(\\bar{X}\\):\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim}  N\\left(\\mu_{0}, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/slides-20-ht-diff-prop.html#z-test-and-t-test",
+    "href": "slides/slides-20-ht-diff-prop.html#z-test-and-t-test",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "z-test and t-test",
+    "text": "z-test and t-test\n\nIf \\(\\sigma\\) known, we perform a z-test where our test-statistic is:\n\n\n\\[z = \\frac{\\bar{x} - \\mu_{0}}{\\frac{\\sigma}{\\sqrt{n}}} \\sim N(0,1)\\]\nand we obtain our p-value using pnorm()\n\n\nIf \\(\\sigma\\) unknown, we perform a t-test by estimating \\(\\sigma\\) with \\(s\\). Our test statistic is:\n\n\n\\[\nt = \\frac{\\bar{x} - \\mu_{0}}{\\frac{s}{\\sqrt{n}}} \\sim t_{df} \\qquad df = n-1\n\\]\nand we obtain our p-value using pt()"
   }
 ]

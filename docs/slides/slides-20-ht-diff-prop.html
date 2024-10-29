@@ -319,6 +319,9 @@
       margin-right: 0; 
     }
   </style>
+  
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -339,13 +342,23 @@
 
 </div>
 <ul>
-<li class="fragment">Modified office hours</li>
+<li class="fragment">No office hours Friday</li>
 </ul>
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li class="fragment"></li>
+<li class="fragment">Hypothesis test for single proportion: <span class="math inline">\(H_{0}: p = p_{0}\)</span> vs <span class="math inline">\(H_{A}: p \neq p_{0}\)</span> (or <span class="math inline">\(&gt;, &lt;\)</span>)
+<ul>
+<li class="fragment"><p>Null distribution (assuming CLT holds under <span class="math inline">\(H_{0}\)</span>:</p>
+<p><span class="math display">\[
+\hat{p} \overset{\cdot}{\sim}N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
+\]</span></p></li>
+<li class="fragment"><p>Obtain test statistic and calculate p-value</p>
+<p><span class="math display">\[
+z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} \sim N(0,1)
+\]</span></p></li>
+</ul></li>
 </ul>
 </section>
 <section>
@@ -367,8 +380,8 @@
 <ul>
 <li class="fragment"><p>In order to use CLT approximation, we have to ensure conditions are met:</p>
 <ol type="1">
-<li class="fragment">Independence (extended): data are independent within <em>and</em> between groups</li>
-<li class="fragment">Success-failure (extended): success-failure conditions holds for <em>both</em> groups (must perform four total checks)</li>
+<li class="fragment"><strong>Independence (extended)</strong>: data are independent within <em>and</em> between groups</li>
+<li class="fragment"><strong>Success-failure (extended)</strong>: success-failure conditions holds for <em>both</em> groups (must perform four total checks)</li>
 </ol></li>
 <li class="fragment"><p>If above hold, then:</p></li>
 </ul>
@@ -395,7 +408,7 @@ H_{A}: \ &amp;p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \
 \]</span></p>
 </div>
 <ol start="2" type="1">
-<li class="fragment">Collect data/summarise (i.e.&nbsp;obtain <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>)</li>
+<li class="fragment">Set <span class="math inline">\(\alpha\)</span> and collect data/summarise (i.e.&nbsp;obtain <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>)</li>
 </ol>
 </section>
 <section id="pooled-proportion" class="slide level2">
@@ -403,7 +416,7 @@ H_{A}: \ &amp;p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \
 <ul>
 <li class="fragment"><p>To obtain null distribution, we would need to know <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> to verify success-failure conditions</p></li>
 <li class="fragment"><p>We obviously don’t have these values, so maybe use <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>?</p></li>
-<li class="fragment"><p>But wait! If <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span>, then <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span> in theory come from the <em>same</em> population</p>
+<li class="fragment"><p>But wait! If <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span>, then <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span> in theory come from the <strong><em>same</em></strong> population</p>
 <ul>
 <li class="fragment">So under this null hypothesis, we use a special proportion called the <strong>pooled proportion</strong> to check the success-failure conditions:</li>
 </ul></li>
@@ -448,6 +461,192 @@ z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\
 <li class="fragment">Obtain using <code>pnorm(z, 0, 1)</code></li>
 </ul></li>
 </ul>
+</section>
+<section id="example-offshore-drilling" class="slide level2">
+<h2>Example: offshore drilling</h2>
+<p>A survey asked 827 randomly sampled registered voters in California: Do you support or oppose about drilling for oil and natural gas of the Coast of California? Or do you now know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> position </th>
+   <th style="text-align:left;"> no </th>
+   <th style="text-align:left;"> yes </th>
+   <th style="text-align:left;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> do_not_know </td>
+   <td style="text-align:left;"> 131 </td>
+   <td style="text-align:left;"> 104 </td>
+   <td style="text-align:left;"> 235 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> oppose </td>
+   <td style="text-align:left;"> 126 </td>
+   <td style="text-align:left;"> 180 </td>
+   <td style="text-align:left;"> 306 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> support </td>
+   <td style="text-align:left;"> 132 </td>
+   <td style="text-align:left;"> 154 </td>
+   <td style="text-align:left;"> 286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> total </td>
+   <td style="text-align:left;"> 389 </td>
+   <td style="text-align:left;"> 438 </td>
+   <td style="text-align:left;"> 827 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<ul>
+<li class="fragment"><div style="color: maroon">
+<p>Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?</p>
+</div></li>
+</ul>
+</section>
+<section id="example-offshore-drilling-cont." class="slide level2">
+<h2>Example: offshore drilling (cont.)</h2>
+<div style="color: maroon">
+<p>Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?</p>
+</div>
+<ul>
+<li class="fragment">Define parameters and hypotheses
+<ul>
+<li class="fragment"><p>Let <span class="math inline">\(p_{c}\)</span> be the proportion of registered voters from California who are college-graduates who support off-shore drilling</p></li>
+<li class="fragment"><p>Let <span class="math inline">\(p_{nc}\)</span> be the proportion be the proportion of registered voters from California who are not college-graduates who support off-shore drilling</p></li>
+<li class="fragment"><p><span class="math inline">\(H_{0}: p_{nc} - p_{c} = 0\)</span> and <span class="math inline">\(H_{A}: p_{nc} - p_{c} \neq 0\)</span></p></li>
+</ul></li>
+<li class="fragment">Obtain observed proportions and pooled proportion</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> position </th>
+   <th style="text-align:left;"> no </th>
+   <th style="text-align:left;"> yes </th>
+   <th style="text-align:left;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> do_not_know </td>
+   <td style="text-align:left;"> 131 </td>
+   <td style="text-align:left;"> 104 </td>
+   <td style="text-align:left;"> 235 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> oppose </td>
+   <td style="text-align:left;"> 126 </td>
+   <td style="text-align:left;"> 180 </td>
+   <td style="text-align:left;"> 306 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> support </td>
+   <td style="text-align:left;"> 132 </td>
+   <td style="text-align:left;"> 154 </td>
+   <td style="text-align:left;"> 286 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;border-right:1px solid;"> total </td>
+   <td style="text-align:left;"> 389 </td>
+   <td style="text-align:left;"> 438 </td>
+   <td style="text-align:left;"> 827 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="example-offshore-drilling-cont.-1" class="slide level2">
+<h2>Example: offshore drilling (cont.)</h2>
+<p><span class="math display">\[
+\hat{p}_{pooled} =\frac{132 + 154}{389 + 438} = \frac{286}{827} = 0.346
+\]</span></p>
+<ul>
+<li class="fragment"><p>Check conditions for inference:</p>
+<ul>
+<li class="fragment"><p>Independence</p></li>
+<li class="fragment"><p>Success-failure:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(n_{nc} \hat{p}_{pooled} = 389 \times 0.346 = 134.59 &gt; 10\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(n_{nc} (1 - \hat{p}_{pooled}) = 389 \times (1 - 0.346) = 254.41 &gt; 10\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(n_{c} \hat{p}_{pooled} = 438 \times 0.346 = 151.55 &gt; 10\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(n_{c} (1 - \hat{p}_{pooled}) = 438 \times (1 - 0.346) = 286.45 &gt; 10\)</span></p></li>
+</ul></li>
+</ul></li>
+<li class="fragment"><p>Since conditions are met, we can proceed</p></li>
+</ul>
+</section>
+<section id="example-offshore-drilling-cont.-2" class="slide level2">
+<h2>Example: offshore drilling (cont.)</h2>
+<ul>
+<li class="fragment">Null distribution:</li>
+</ul>
+<p><span class="math display">\[
+\hat{p}_{nc} - \hat{p}_{c} \overset{\cdot}{\sim}N\left(0, \sqrt{\frac{0.346(1 - 0.346)}{389} + \frac{0.346(1 - 0.346)}{438}} = 0.033 \right)
+\]</span></p>
+<ul>
+<li class="fragment"><p>Test statistic: <span class="math display">\[
+z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(0.339 - 0.352) - 0}{0.033} = -0.394
+\]</span></p></li>
+<li class="fragment"><p>p-value: <span class="math inline">\(\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \text{Pr}(Z \geq 0.394)\)</span></p>
+<ul>
+<li class="fragment"><code>2 * (1 - pnorm(0.394)) =</code> 0.694</li>
+</ul></li>
+<li class="fragment"><p>Since our p-value is greater the 0.05, we fail to reject <span class="math inline">\(H_{0}\)</span>. The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="test-for-a-single-mean" class="title-slide slide level1 center">
+<h1>Test for a single mean</h1>
+
+</section>
+<section id="hypotheses-and-null-distribution" class="slide level2">
+<h2>Hypotheses and null distribution</h2>
+<p>Want to conduct a hypothesis test for the mean <span class="math inline">\(\mu\)</span> of a population.</p>
+<ul>
+<li class="fragment"><p>Hypotheses: <span class="math inline">\(H_0: \mu= \mu_{0}\)</span> versus <span class="math inline">\(H_{A}: \mu \neq \mu_{0} \ (\text{or } \mu &gt; \mu_{0} \text{ or } \mu &lt; \mu_{0})\)</span></p></li>
+<li class="fragment"><p>Verify conditions for CLT (independence, approximate normality or large sample size)</p></li>
+<li class="fragment"><p>If conditions satisfied, the CLT under <span class="math inline">\(H_{0}\)</span> gives us <strong>null distribution</strong> for <span class="math inline">\(\bar{X}\)</span>:</p>
+<p><span class="math display">\[
+\bar{X} \overset{\cdot}{\sim}  N\left(\mu_{0}, \frac{\sigma}{\sqrt{n}}\right)
+\]</span></p></li>
+</ul>
+</section>
+<section id="z-test-and-t-test" class="slide level2">
+<h2>z-test and <em>t</em>-test</h2>
+<ul>
+<li class="fragment">If <span class="math inline">\(\sigma\)</span> known, we perform a <strong>z-test</strong> where our test-statistic is:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[z = \frac{\bar{x} - \mu_{0}}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)\]</span></p>
+<p>and we obtain our p-value using <code>pnorm()</code></p>
+</div>
+<ul>
+<li class="fragment">If <span class="math inline">\(\sigma\)</span> unknown, we perform a <strong><em>t</em>-test</strong> by estimating <span class="math inline">\(\sigma\)</span> with <span class="math inline">\(s\)</span>. Our test statistic is:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+t = \frac{\bar{x} - \mu_{0}}{\frac{s}{\sqrt{n}}} \sim t_{df} \qquad df = n-1
+\]</span></p>
+<p>and we obtain our p-value using <code>pt()</code></p>
+</div>
 
 <div class="footer footer-default">
 
