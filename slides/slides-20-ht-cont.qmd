@@ -100,7 +100,7 @@ $$
 
     -   We don't have these values, so maybe use $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$?
 
--   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$come from the ***same*** population
+-   But wait! If $H_{0}: p_{1} = p_{2}$, then maybe $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$ come from the ***same*** population
 
 -   So under this null, we use a special proportion called the **pooled proportion**:
 
@@ -144,7 +144,7 @@ $$
 
 ## Example: offshore drilling
 
-A survey asked 827 randomly sampled registered voters in California: Do you support or oppose about drilling for oil and natural gas of the Coast of California? Or do you now know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:
+A survey asked 827 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? Or do you not know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:
 
 ```{r}
 drilling <- openintro::offshore_drilling |>
@@ -405,4 +405,4 @@ ggplot(dat, aes(x = height)) +
     Make a decision and conclusion in context
     :::
 
-    -   Since our p-value is greater than 0.01, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average.
+    -   Since our p-value is greater than 0.10, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average.

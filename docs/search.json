@@ -4106,7 +4106,7 @@
     "href": "slides/slides-20-ht-cont.html#pooled-proportion",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Pooled proportion",
-    "text": "Pooled proportion\n\nTo verify success-failure conditions, need to know \\(p_{1}\\) and \\(p_{2}\\)\n\nWe don’t have these values, so maybe use \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\)?\n\nBut wait! If \\(H_{0}: p_{1} = p_{2}\\), then \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\)come from the same population\nSo under this null, we use a special proportion called the pooled proportion:\n\n\n\\[\n\\hat{p}_{pooled} = \\frac{\\text{total # of successes from both samples}}{\\text{combined sample size}}\n\\]\n\n\nThis is the best estimate of both \\(p_{1}\\) and \\(p_{2}\\) if \\(H_{0}: p_{1} = p_{2}\\) is true!\n\n\n\n\nFor this reason, use \\(\\hat{p}_{pooled}\\) to verify success-failure conditions"
+    "text": "Pooled proportion\n\nTo verify success-failure conditions, need to know \\(p_{1}\\) and \\(p_{2}\\)\n\nWe don’t have these values, so maybe use \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\)?\n\nBut wait! If \\(H_{0}: p_{1} = p_{2}\\), then maybe \\(\\hat{p}_{1,obs}\\) and \\(\\hat{p}_{2,obs}\\) come from the same population\nSo under this null, we use a special proportion called the pooled proportion:\n\n\n\\[\n\\hat{p}_{pooled} = \\frac{\\text{total # of successes from both samples}}{\\text{combined sample size}}\n\\]\n\n\nThis is the best estimate of both \\(p_{1}\\) and \\(p_{2}\\) if \\(H_{0}: p_{1} = p_{2}\\) is true!\n\n\n\n\nFor this reason, use \\(\\hat{p}_{pooled}\\) to verify success-failure conditions"
   },
   {
     "objectID": "slides/slides-20-ht-cont.html#hypothesis-test-cont.",
@@ -4127,7 +4127,7 @@
     "href": "slides/slides-20-ht-cont.html#example-offshore-drilling",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Example: offshore drilling",
-    "text": "Example: offshore drilling\nA survey asked 827 randomly sampled registered voters in California: Do you support or oppose about drilling for oil and natural gas of the Coast of California? Or do you now know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    do_not_know \n    131 \n    104 \n    235 \n  \n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    389 \n    438 \n    827 \n  \n\n\n\n\n\n\n\nDo the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?"
+    "text": "Example: offshore drilling\nA survey asked 827 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? Or do you not know enough to say? We have the following distribution of responses separated by whether the respondent graduated from college:\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    do_not_know \n    131 \n    104 \n    235 \n  \n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    389 \n    438 \n    827 \n  \n\n\n\n\n\n\n\nDo the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?"
   },
   {
     "objectID": "slides/slides-20-ht-cont.html#example-offshore-drilling-cont.",
@@ -4197,7 +4197,7 @@
     "href": "slides/slides-20-ht-cont.html#example-height-cont.-1",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Example: height (cont.)",
-    "text": "Example: height (cont.)\n\n\nDraw a picture and write code to find our p-value\n\n\n\\(df = n-1 = 9\\)\np-value is \\(\\text{Pr}(T \\geq 0.575) + \\text{Pr}(T \\leq -0.575) = 2\\times \\text{Pr}(T \\geq 0.575)\\) where \\(T \\sim t_{9}\\)\n\\(2 \\times \\texttt{(1-pt(0.575, 9))}\\) = 0.5793797\n\n\nMake a decision and conclusion in context\n\n\nSince our p-value is greater than 0.01, we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average."
+    "text": "Example: height (cont.)\n\n\nDraw a picture and write code to find our p-value\n\n\n\\(df = n-1 = 9\\)\np-value is \\(\\text{Pr}(T \\geq 0.575) + \\text{Pr}(T \\leq -0.575) = 2\\times \\text{Pr}(T \\geq 0.575)\\) where \\(T \\sim t_{9}\\)\n\\(2 \\times \\texttt{(1-pt(0.575, 9))}\\) = 0.5793797\n\n\nMake a decision and conclusion in context\n\n\nSince our p-value is greater than 0.10, we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average."
   },
   {
     "objectID": "practice_probs/practice-20-ht-cont.html",
