@@ -41,7 +41,7 @@ source("../stat201_fns.R")
 
     1.  Two sets of hypotheses (competing claims)
 
-    2.  Collect data, calculate a statistic from the observed statistic, set significance level
+    2.  Collect data, calculate a statistic from the observed data, set significance level
 
     3.  Obtain p-value from the null distribution: sampling distribution assuming if $H_{0}$ were true
 

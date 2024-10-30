@@ -1,0 +1,57 @@
+---
+title: "More with HT"
+author: "Practice problems"
+date: "October 30, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r message = F, echo = F}
+library(tidyverse)
+library(openintro)
+library(kableExtra)
+```
+
+1.  Let's return to the offshore drilling data from class.
+
+```{r echo = F, message= F, warning = F}
+drilling <- openintro::offshore_drilling |>
+  slice(-1) |>
+  rename("position" = 1,  "college_grad" = 2) |>
+  mutate(position = as.character(position),
+         college_grad = as.character(college_grad)) 
+ct <- drilling |>
+  group_by(position, college_grad) |>
+  summarise(n = n()) |>
+  spread(college_grad, n) |>
+  ungroup() |>
+  mutate(total =  no + yes)
+
+ct <- ct |>
+  rbind(c("total", colSums(ct[-1])))
+
+ct <- ct |> 
+  kable() |>
+  column_spec(1, border_right = T)
+ct
+```
+
+Conduct a hypothesis test to determine if the data provide strong evidence that the proportion of college graduates who do not have an opinion on this issue is different than that of non-college graduates.
+
+2.  New York is known as “the city that never sleeps”. A random sample of 25 New Yorkers were asked how much sleep they get per night. Statistical summaries includes a sample mean hours of 7.73 and standard deviation of 0.77. The point estimate suggests New Yorkers sleep less than 8 hours a night on average. Is the result statistically significant at the 0.05 level? Make a conclusion based on the your decision.
+
+3.  $(^*)$ According to a report on sleep deprivation by the Centers for Disease Control and Prevention, the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0%, while this proportion is 8.8% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+    a.  Conduct a hypothesis test to determine if these data provide strong evidence the rate of sleep deprivation is different for the two states. (Reminder: Check conditions)
+    b.  It is possible the conclusion of the test in part (a) is incorrect. If this is the case, what type of error was made?
+
+4.  The population of all verbal GRE scores are known to have a standard deviation of 8.5. A certain graduate department hopes to receive applicants with a verbal GRE scores over 210. This year, the mean verbal GRE scores for the 42 applicants was 212.79. Using a significance level of 0.05, is this new mean significantly greater than the desired mean of 210?

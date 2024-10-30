@@ -350,7 +350,7 @@
 <ul>
 <li class="fragment">Hypothesis test for single proportion: <span class="math inline">\(H_{0}: p = p_{0}\)</span> vs <span class="math inline">\(H_{A}: p \neq p_{0}\)</span> (or <span class="math inline">\(&gt;, &lt;\)</span>)
 <ul>
-<li class="fragment"><p>Null distribution (assuming CLT holds under <span class="math inline">\(H_{0}\)</span>:</p>
+<li class="fragment"><p>Null distribution (assuming CLT holds under <span class="math inline">\(H_{0}\)</span>):</p>
 <p><span class="math display">\[
 \hat{p} \overset{\cdot}{\sim}N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
 \]</span></p></li>
@@ -372,7 +372,7 @@ z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} \sim N(0,1)
 <ul>
 <li class="fragment"><p>We have samples of size <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span></p></li>
 <li class="fragment"><p>Reasonable point estimate: <span class="math inline">\(\hat{p}_{1, obs} - \hat{p}_{2,obs}\)</span></p></li>
-<li class="fragment"><p>Apply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions</p></li>
+<li class="fragment"><p>We will now work with the sampling distribution of the difference of two sample proportions</p></li>
 </ul>
 </section>
 <section id="sampling-dist.-of-difference-of-two-proportions" class="slide level2">
@@ -381,7 +381,7 @@ z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} \sim N(0,1)
 <li class="fragment"><p>In order to use CLT approximation, we have to ensure conditions are met:</p>
 <ol type="1">
 <li class="fragment"><strong>Independence (extended)</strong>: data are independent within <em>and</em> between groups</li>
-<li class="fragment"><strong>Success-failure (extended)</strong>: success-failure conditions holds for <em>both</em> groups (must perform four total checks)</li>
+<li class="fragment"><strong>Success-failure (extended)</strong>: success-failure conditions holds for <strong><em>both</em></strong> groups (must perform four total checks)</li>
 </ol></li>
 <li class="fragment"><p>If above hold, then:</p></li>
 </ul>
@@ -400,10 +400,10 @@ z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} \sim N(0,1)
 <div class="fragment">
 <p><span class="math display">\[
 \begin{align*}
-H_{0}: \ &amp;p_{1} = p_{2} \qquad \Rightarrow \qquad  H_{0}: p_{1} - p_{2} = 0 \\
-H_{A}: \ &amp;p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \neq 0 \\
-\text{ or }\ &amp;p_{1} &lt; p_{2}  \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} &lt; 0 \\
-\text{ or }\ &amp;p_{1} &gt; p_{2} \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} &gt; 0
+H_{0}: \ &amp;p_{1} = p_{2}  \\
+H_{A}: \ &amp;p_{1} \neq p_{2}  \\
+\text{ or }\ &amp;p_{1} &lt; p_{2}   \\
+\text{ or }\ &amp;p_{1} &gt; p_{2}
 \end{align*}
 \]</span></p>
 </div>
@@ -414,31 +414,34 @@ H_{A}: \ &amp;p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \
 <section id="pooled-proportion" class="slide level2">
 <h2>Pooled proportion</h2>
 <ul>
-<li class="fragment"><p>To obtain null distribution, we would need to know <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> to verify success-failure conditions</p></li>
-<li class="fragment"><p>We obviously don’t have these values, so maybe use <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>?</p></li>
-<li class="fragment"><p>But wait! If <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span>, then <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span> in theory come from the <strong><em>same</em></strong> population</p>
+<li class="fragment"><p>To verify success-failure conditions, need to know <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span></p>
 <ul>
-<li class="fragment">So under this null hypothesis, we use a special proportion called the <strong>pooled proportion</strong> to check the success-failure conditions:</li>
+<li class="fragment">We don’t have these values, so maybe use <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>?</li>
 </ul></li>
+<li class="fragment"><p>But wait! If <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span>, then <span class="math inline">\(\hat{p}_{1,obs}\)</span> and <span class="math inline">\(\hat{p}_{2,obs}\)</span>come from the <strong><em>same</em></strong> population</p></li>
+<li class="fragment"><p>So under this null, we use a special proportion called the <strong>pooled proportion</strong>:</p></li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}} = \frac{n_{1} \hat{p}_{1,obs} + n_{2} \hat{p}_{2,obs}}{n_{1} + n_{2}}
+\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}}
 \]</span></p>
 <ul>
 <li class="fragment"><div style="color: maroon">
-<p>This is the best estimate of both <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> <em>if null hypothesis of</em> <span class="math inline">\(p_{1} = p_{2}\)</span> <em>is true</em>!</p>
+<p>This is the best estimate of both <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> if <span class="math inline">\(H_{0}: p_{1} = p_{2}\)</span> <em>is true</em>!</p>
 </div></li>
 </ul>
 </div>
+<ul>
+<li class="fragment">For this reason, <strong>use</strong> <span class="math inline">\(\hat{p}_{pooled}\)</span> <strong>to verify success-failure conditions</strong></li>
+</ul>
 </section>
 <section id="hypothesis-test-cont." class="slide level2">
 <h2>Hypothesis test (cont.)</h2>
 <ol start="3" type="1">
-<li class="fragment">Obtain null distribution (first verify conditions for inference using <span class="math inline">\(\hat{p}_{pooled}\)</span>)
+<li class="fragment">Obtain null distribution
 <ul>
-<li class="fragment">If conditions satisfied, then we have the “general” sampling distribution of <span class="math inline">\(\hat{p}_{1} - \hat{p}_{2}\)</span> from previous slide.</li>
-<li class="fragment">But to obtain the <strong>null distribution</strong>, we assume <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span> is true, and will estimate <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> using <span class="math inline">\(\hat{p}_{pooled}\)</span> to approximate standard error:</li>
+<li class="fragment">If conditions satisfied, then we know the sampling distribution of <span class="math inline">\(\hat{p}_{1} - \hat{p}_{2}\)</span></li>
+<li class="fragment">To obtain the <strong>null distribution</strong> we assume <span class="math inline">\(H_{0}: p_{1} - p_{2} = 0\)</span> is true and we <span class="math inline">\(\hat{p}_{pooled}\)</span> to estimate <span class="math inline">\(p_{1}\)</span> and <span class="math inline">\(p_{2}\)</span> to approximate standard error:</li>
 </ul></li>
 </ol>
 <div class="fragment">
@@ -515,18 +518,28 @@ z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\
 </section>
 <section id="example-offshore-drilling-cont." class="slide level2">
 <h2>Example: offshore drilling (cont.)</h2>
+<div class="cell">
+
+</div>
 <div style="color: maroon">
 <p>Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?</p>
 </div>
 <ul>
-<li class="fragment">Define parameters and hypotheses
+<li class="fragment"><div class="discuss">
+<p>Define parameters and hypotheses</p>
+</div>
 <ul>
 <li class="fragment"><p>Let <span class="math inline">\(p_{c}\)</span> be the proportion of registered voters from California who are college-graduates who support off-shore drilling</p></li>
-<li class="fragment"><p>Let <span class="math inline">\(p_{nc}\)</span> be the proportion be the proportion of registered voters from California who are not college-graduates who support off-shore drilling</p></li>
+<li class="fragment"><p>Let <span class="math inline">\(p_{nc}\)</span> be the proportion be of registered voters from California who are not college-graduates who support off-shore drilling</p></li>
 <li class="fragment"><p><span class="math inline">\(H_{0}: p_{nc} - p_{c} = 0\)</span> and <span class="math inline">\(H_{A}: p_{nc} - p_{c} \neq 0\)</span></p></li>
 </ul></li>
-<li class="fragment">Obtain observed proportions and pooled proportion</li>
 </ul>
+</section>
+<section id="example-offshore-drilling-cont.-1" class="slide level2">
+<h2>Example: offshore drilling (cont.)</h2>
+<div class="discuss">
+<p>Obtain observed proportions and pooled proportion.</p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -569,19 +582,23 @@ z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\
 
 </div>
 </div>
-<div class="cell">
-
+<ul>
+<li class="fragment"><p><span class="math inline">\(\hat{p}_{nc, obs}= \frac{132}{389} = 0.339\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\hat{p}_{c, obs}= \frac{154}{438} = 0.352\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\hat{p}_{pooled} =\frac{132 + 154}{389 + 438} = \frac{286}{827} = 0.346\)</span></p></li>
+</ul>
+<div class="fragment">
+<div class="discuss">
+<p>Check conditions for inference are satisfied.</p>
+</div>
 </div>
 </section>
-<section id="example-offshore-drilling-cont.-1" class="slide level2">
+<section id="example-offshore-drilling-cont.-2" class="slide level2">
 <h2>Example: offshore drilling (cont.)</h2>
-<p><span class="math display">\[
-\hat{p}_{pooled} =\frac{132 + 154}{389 + 438} = \frac{286}{827} = 0.346
-\]</span></p>
 <ul>
-<li class="fragment"><p>Check conditions for inference:</p>
+<li class="fragment"><p>Conditions for inference:</p>
 <ul>
-<li class="fragment"><p>Independence</p></li>
+<li class="fragment"><p>Independence: random sample</p></li>
 <li class="fragment"><p>Success-failure:</p>
 <ul>
 <li class="fragment"><p><span class="math inline">\(n_{nc} \hat{p}_{pooled} = 389 \times 0.346 = 134.59 &gt; 10\)</span></p></li>
@@ -593,23 +610,48 @@ z = \frac{\text{point estimate} - \text{null value}}{\text{SE}} \approx \frac{(\
 <li class="fragment"><p>Since conditions are met, we can proceed</p></li>
 </ul>
 </section>
-<section id="example-offshore-drilling-cont.-2" class="slide level2">
+<section id="example-offshore-drilling-cont.-3" class="slide level2">
 <h2>Example: offshore drilling (cont.)</h2>
 <ul>
-<li class="fragment">Null distribution:</li>
+<li class="fragment"><div class="discuss">
+<p>Find the null distribution for <span class="math inline">\(\hat{p}_{nc} - \hat{p}_{c}\)</span></p>
+</div></li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 \hat{p}_{nc} - \hat{p}_{c} \overset{\cdot}{\sim}N\left(0, \sqrt{\frac{0.346(1 - 0.346)}{389} + \frac{0.346(1 - 0.346)}{438}} = 0.033 \right)
 \]</span></p>
+</div>
 <ul>
-<li class="fragment"><p>Test statistic: <span class="math display">\[
-z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(0.339 - 0.352) - 0}{0.033} = -0.394
-\]</span></p></li>
-<li class="fragment"><p>p-value: <span class="math inline">\(\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \text{Pr}(Z \geq 0.394)\)</span></p>
+<li class="fragment"><div class="discuss">
+<p>Set up calculation for test statistic</p>
+</div></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+    z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(0.339 - 0.352) - 0}{0.033} = -0.394
+\]</span></p>
+</div>
 <ul>
-<li class="fragment"><code>2 * (1 - pnorm(0.394)) =</code> 0.694</li>
-</ul></li>
-<li class="fragment"><p>Since our p-value is greater the 0.05, we fail to reject <span class="math inline">\(H_{0}\)</span>. The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters.</p></li>
+<li class="fragment"><div class="discuss">
+<p>Draw picture and write code for p-value</p>
+</div></li>
+</ul>
+</section>
+<section id="example-offshore-drilling-cont.-4" class="slide level2">
+<h2>Example: offshore drilling (cont.)</h2>
+<p>p-value calculation:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \times \text{Pr}(Z \geq 0.394)\)</span></p></li>
+<li class="fragment"><p><code>2 * (1 - pnorm(0.394)) =</code> 0.694</p></li>
+</ul>
+<div class="fragment">
+<div class="discuss">
+<p>Make a decision and conclusion in context.</p>
+</div>
+</div>
+<ul>
+<li class="fragment">Since our p-value is greater the 0.05, we fail to reject <span class="math inline">\(H_{0}\)</span>. The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters.</li>
 </ul>
 </section></section>
 <section>
@@ -622,7 +664,11 @@ z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(0.3
 <p>Want to conduct a hypothesis test for the mean <span class="math inline">\(\mu\)</span> of a population.</p>
 <ul>
 <li class="fragment"><p>Hypotheses: <span class="math inline">\(H_0: \mu= \mu_{0}\)</span> versus <span class="math inline">\(H_{A}: \mu \neq \mu_{0} \ (\text{or } \mu &gt; \mu_{0} \text{ or } \mu &lt; \mu_{0})\)</span></p></li>
-<li class="fragment"><p>Verify conditions for CLT (independence, approximate normality or large sample size)</p></li>
+<li class="fragment"><p>Verify conditions for CLT</p>
+<ol type="1">
+<li class="fragment">Independence</li>
+<li class="fragment">Approximate normality or large sample size</li>
+</ol></li>
 <li class="fragment"><p>If conditions satisfied, the CLT under <span class="math inline">\(H_{0}\)</span> gives us <strong>null distribution</strong> for <span class="math inline">\(\bar{X}\)</span>:</p>
 <p><span class="math display">\[
 \bar{X} \overset{\cdot}{\sim}  N\left(\mu_{0}, \frac{\sigma}{\sqrt{n}}\right)
@@ -647,6 +693,84 @@ t = \frac{\bar{x} - \mu_{0}}{\frac{s}{\sqrt{n}}} \sim t_{df} \qquad df = n-1
 \]</span></p>
 <p>and we obtain our p-value using <code>pt()</code></p>
 </div>
+</section>
+<section id="example-height" class="slide level2">
+<h2>Example: height</h2>
+<ul>
+<li class="fragment"><p>In the US, the average height for women is 5’3.5” or 63.5 inches</p></li>
+<li class="fragment"><p>Let’s conduct a hypothesis test to see if the average height of female-identifying students in STAT 201 is equal to national average.</p></li>
+<li class="fragment"><div class="discuss">
+<p>Define parameters and hypotheses</p>
+</div></li>
+<li class="fragment"><p>I took a random sample of 10 female-identifying students across both sections. Set <span class="math inline">\(\alpha = 0.10\)</span></p></li>
+</ul>
+</section>
+<section id="example-height-cont." class="slide level2">
+<h2>Example: height (cont.)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">2.748737</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<p><img data-src="slides-20-ht-diff-prop_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</div>
+</div>
+<div class="discuss">
+<ul>
+<li class="fragment"><p>Are conditions for inference met?</p></li>
+<li class="fragment"><p>If so, what test (z-test or t-test) should we perform? What is our test-statistic?</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Conditions:</p>
+<ul>
+<li class="fragment"><p>Independence: random sample</p></li>
+<li class="fragment"><p>Approximate normality: <span class="math inline">\(n = 10 &lt; 30\)</span>, but no clear outliers</p></li>
+</ul></li>
+<li class="fragment"><p>Since we don’t know <span class="math inline">\(\sigma\)</span>, we perform a <span class="math inline">\(t\)</span>-test:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(t = \frac{\bar{x} - \mu_{0}}{s / \sqrt{n}} = \frac{64 - 63.5}{2.749 / \sqrt{10}} = 0.575\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-height-cont.-1" class="slide level2">
+<h2>Example: height (cont.)</h2>
+<ul>
+<li class="fragment"><div class="discuss">
+<p>Draw a picture and write code to find our p-value</p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(df = n-1 = 9\)</span></p></li>
+<li class="fragment"><p>p-value is <span class="math inline">\(\text{Pr}(T \geq 0.575) + \text{Pr}(T \leq -0.575) = 2\times \text{Pr}(T \geq 0.575)\)</span> where <span class="math inline">\(T \sim t_{9}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(2 \times \texttt{(1-pt(0.575, 9))}\)</span> = 0.5793797</p></li>
+</ul></li>
+<li class="fragment"><div class="discuss">
+<p>Make a decision and conclusion in context</p>
+</div>
+<ul>
+<li class="fragment">Since our p-value is greater than 0.01, we fail to reject <span class="math inline">\(H_{0}\)</span>. The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average.</li>
+</ul></li>
+</ul>
 
 <div class="footer footer-default">
 

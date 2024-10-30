@@ -1,6 +1,5 @@
 ---
 title: "Hypothesis testing with CLT (cont.)"
-subtitle: "Difference in proportions"
 date: "October 30, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
@@ -35,7 +34,7 @@ source("../stat201_fns.R")
 ## Recap
 
 -   Hypothesis test for single proportion: $H_{0}: p = p_{0}$ vs $H_{A}: p \neq p_{0}$ (or $>, <$)
-    -   Null distribution (assuming CLT holds under $H_{0}$:
+    -   Null distribution (assuming CLT holds under $H_{0}$):
 
         $$
         \hat{p} \overset{\cdot}{\sim}N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
@@ -59,14 +58,14 @@ Suppose we have two populations 1 and 2, and want to conduct a hypothesis test f
 
 -   Reasonable point estimate: $\hat{p}_{1, obs} - \hat{p}_{2,obs}$
 
--   Apply same process as in previous test for a single proportion, this time working with the sampling distribution of the difference of two sample proportions
+-   We will now work with the sampling distribution of the difference of two sample proportions
 
 ## Sampling dist. of difference of two proportions
 
 -   In order to use CLT approximation, we have to ensure conditions are met:
 
     1.  **Independence (extended)**: data are independent within *and* between groups
-    2.  **Success-failure (extended)**: success-failure conditions holds for *both* groups (must perform four total checks)
+    2.  **Success-failure (extended)**: success-failure conditions holds for ***both*** groups (must perform four total checks)
 
 -   If above hold, then:
 
@@ -85,10 +84,10 @@ where $p_{1}$ and $p_{2}$ are the population proportions
 ::: fragment
 $$
 \begin{align*}
-H_{0}: \ &p_{1} = p_{2} \qquad \Rightarrow \qquad  H_{0}: p_{1} - p_{2} = 0 \\
-H_{A}: \ &p_{1} \neq p_{2} \qquad \Rightarrow \qquad  H_{A}: p_{1} - p_{2} \neq 0 \\
-\text{ or }\ &p_{1} < p_{2}  \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} < 0 \\
-\text{ or }\ &p_{1} > p_{2} \qquad \Rightarrow \qquad   \qquad \  p_{1} - p_{2} > 0
+H_{0}: \ &p_{1} = p_{2}  \\
+H_{A}: \ &p_{1} \neq p_{2}  \\
+\text{ or }\ &p_{1} < p_{2}   \\
+\text{ or }\ &p_{1} > p_{2}
 \end{align*}
 $$
 :::
@@ -97,29 +96,31 @@ $$
 
 ## Pooled proportion
 
--   To obtain null distribution, we would need to know $p_{1}$ and $p_{2}$ to verify success-failure conditions
+-   To verify success-failure conditions, need to know $p_{1}$ and $p_{2}$
 
--   We obviously don't have these values, so maybe use $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$?
+    -   We don't have these values, so maybe use $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$?
 
--   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$ in theory come from the ***same*** population
+-   But wait! If $H_{0}: p_{1} = p_{2}$, then $\hat{p}_{1,obs}$ and $\hat{p}_{2,obs}$come from the ***same*** population
 
-    -   So under this null hypothesis, we use a special proportion called the **pooled proportion** to check the success-failure conditions:
+-   So under this null, we use a special proportion called the **pooled proportion**:
 
 ::: fragment
 $$
-\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}} = \frac{n_{1} \hat{p}_{1,obs} + n_{2} \hat{p}_{2,obs}}{n_{1} + n_{2}}
+\hat{p}_{pooled} = \frac{\text{total # of successes from both samples}}{\text{combined sample size}}
 $$
 
 -   ::: {style="color: maroon"}
-    This is the best estimate of both $p_{1}$ and $p_{2}$ *if null hypothesis of* $p_{1} = p_{2}$ *is true*!
+    This is the best estimate of both $p_{1}$ and $p_{2}$ if $H_{0}: p_{1} = p_{2}$ *is true*!
     :::
 :::
 
+-   For this reason, **use** $\hat{p}_{pooled}$ **to verify success-failure conditions**
+
 ## Hypothesis test (cont.)
 
-3.  Obtain null distribution (first verify conditions for inference using $\hat{p}_{pooled}$)
-    -   If conditions satisfied, then we have the "general" sampling distribution of $\hat{p}_{1} - \hat{p}_{2}$ from previous slide.
-    -   But to obtain the **null distribution**, we assume $H_{0}: p_{1} - p_{2} = 0$ is true, and will estimate $p_{1}$ and $p_{2}$ using $\hat{p}_{pooled}$ to approximate standard error:
+3.  Obtain null distribution
+    -   If conditions satisfied, then we know the sampling distribution of $\hat{p}_{1} - \hat{p}_{2}$
+    -   To obtain the **null distribution** we assume $H_{0}: p_{1} - p_{2} = 0$ is true and we $\hat{p}_{pooled}$ to estimate $p_{1}$ and $p_{2}$ to approximate standard error:
 
 ::: fragment
 $$
@@ -150,7 +151,7 @@ drilling <- openintro::offshore_drilling |>
   slice(-1) |>
   rename("position" = 1,  "college_grad" = 2) |>
   mutate(position = as.character(position),
-         college_grad = as.character(college_grad))
+         college_grad = as.character(college_grad)) 
 ct <- drilling |>
   group_by(position, college_grad) |>
   summarise(n = n()) |>
@@ -172,22 +173,6 @@ ct
     :::
 
 ## Example: offshore drilling (cont.)
-
-::: {style="color: maroon"}
-Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?
-:::
-
--   Define parameters and hypotheses
-    -   Let $p_{c}$ be the proportion of registered voters from California who are college-graduates who support off-shore drilling
-
-    -   Let $p_{nc}$ be the proportion be the proportion of registered voters from California who are not college-graduates who support off-shore drilling
-
-    -   $H_{0}: p_{nc} - p_{c} = 0$ and $H_{A}: p_{nc} - p_{c} \neq 0$
--   Obtain observed proportions and pooled proportion
-
-```{r}
-ct
-```
 
 ```{r}
 n1 <- drilling |>
@@ -211,15 +196,47 @@ se0 <- round(sqrt((p_pooled) * (1-p_pooled) / n1 + (p_pooled) * (1-p_pooled) / n
 z <- round((p_hat1 - p_hat2) / se0, 3)
 ```
 
+::: {style="color: maroon"}
+Do the data provide strong evidence at the 0.05 level that the proportion of college graduates who support off-shore drilling in California is different than that of non-college graduates?
+:::
+
+-   ::: discuss
+    Define parameters and hypotheses
+    :::
+
+    -   Let $p_{c}$ be the proportion of registered voters from California who are college-graduates who support off-shore drilling
+
+    -   Let $p_{nc}$ be the proportion be of registered voters from California who are not college-graduates who support off-shore drilling
+
+    -   $H_{0}: p_{nc} - p_{c} = 0$ and $H_{A}: p_{nc} - p_{c} \neq 0$
+
 ## Example: offshore drilling (cont.)
 
-$$
-\hat{p}_{pooled} =\frac{`r x1` + `r x2`}{`r n1` + `r n2`} = \frac{`r x1 + x2`}{`r n1 + n2`} = `r p_pooled`
-$$
+::: discuss
+Obtain observed proportions and pooled proportion.
+:::
 
--   Check conditions for inference:
+```{r}
+ct
+```
 
-    -   Independence
+-   $\hat{p}_{nc, obs}= \frac{`r x1`}{`r n1`} = `r p_hat1`$
+
+-   $\hat{p}_{c, obs}= \frac{`r x2`}{`r n2`} = `r p_hat2`$
+
+-   $\hat{p}_{pooled} =\frac{`r x1` + `r x2`}{`r n1` + `r n2`} = \frac{`r x1 + x2`}{`r n1 + n2`} = `r p_pooled`$
+
+:::: fragment
+::: discuss
+Check conditions for inference are satisfied.
+:::
+::::
+
+## Example: offshore drilling (cont.)
+
+-   Conditions for inference:
+
+    -   Independence: random sample
 
     -   Success-failure:
 
@@ -235,19 +252,43 @@ $$
 
 ## Example: offshore drilling (cont.)
 
--   Null distribution:
+-   ::: discuss
+    Find the null distribution for $\hat{p}_{nc} - \hat{p}_{c}$
+    :::
 
+::: fragment
 $$
 \hat{p}_{nc} - \hat{p}_{c} \overset{\cdot}{\sim}N\left(0, \sqrt{\frac{`r p_pooled`(1 - `r p_pooled`)}{`r n1`} + \frac{`r p_pooled`(1 - `r p_pooled`)}{`r n2`}} = `r se0` \right)
 $$
+:::
 
--   Test statistic: $$
+-   ::: discuss
+    Set up calculation for test statistic
+    :::
+
+::: fragment
+$$
     z =\frac{( \hat{p}_{nc, obs}- \hat{p}_{c, obs}) - 0}{\text{SE}_{0}} = \frac{(`r p_hat1` - `r p_hat2`) - 0}{`r se0`} = `r z`
-    $$
+$$
+:::
 
--   p-value: $\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \text{Pr}(Z \geq `r abs(z)`)$
+-   ::: discuss
+    Draw picture and write code for p-value
+    :::
 
-    -   `2 * (1 - pnorm(0.394)) =` `r round(2*(1 - pnorm(0.394)), 3)`
+## Example: offshore drilling (cont.)
+
+p-value calculation:
+
+-   $\text{Pr}(Z \leq z) + \text{Pr}(Z \geq -z) = 2 \times \text{Pr}(Z \geq `r abs(z)`)$
+
+-   `2 * (1 - pnorm(0.394)) =` `r round(2*(1 - pnorm(0.394)), 3)`
+
+:::: fragment
+::: discuss
+Make a decision and conclusion in context.
+:::
+::::
 
 -   Since our p-value is greater the 0.05, we fail to reject $H_{0}$. The data do not provide strong evidence of a difference between the proportions of college graduates and non-college graduates who support off-shore drilling among California voters.
 
@@ -300,7 +341,7 @@ and we obtain our p-value using `pt()`
     Define parameters and hypotheses
     :::
 
--   I took a random sample of 10 female-identifying students across both sections
+-   I took a random sample of 10 female-identifying students across both sections. Set $\alpha = 0.10$
 
 ## Example: height (cont.)
 
@@ -309,7 +350,7 @@ and we obtain our p-value using `pt()`
 ```{r}
 set.seed(2)
 n <- 10
-dat <- read_csv("./data/stat201_f24_data.csv")|>
+dat <- read_csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/stat201_f24_data.csv")|>
   filter(gender == "F") |>
   sample_n(n)
 xbar <- round(mean(dat$height), 3)
@@ -340,22 +381,28 @@ ggplot(dat, aes(x = height)) +
 
     -   Independence: random sample
 
-    -   Approximate normality: $n = r n < 30$, but no clear outliers
+    -   Approximate normality: $n = `r n` < 30$, but no clear outliers
 
 -   Since we don't know $\sigma$, we perform a $t$-test:
 
-    -   $t = \frac{\bar{x} - \mu_{0}}{\hat{SE}_{0}} = \frac{`r xbar` - 63.5}{`r s` / \sqrt{`r n`}} = `r t`$
+    -   $t = \frac{\bar{x} - \mu_{0}}{s / \sqrt{n}} = \frac{`r xbar` - 63.5}{`r s` / \sqrt{`r n`}} = `r t`$
 :::
 ::::::
 
 ## Example: height (cont.)
 
--   ::: fragment
+-   ::: discuss
     Draw a picture and write code to find our p-value
     :::
 
     -   $df = n-1 = `r n-1`$
 
-    -   p-value is $\text{Pr}(T \geq `r t`) + \text{Pr}(T \leq `r -t`) = 2*\text{Pr}(|T| \geq |`r t`|)$ where $T \sim t_{`r df`}$
+    -   p-value is $\text{Pr}(T \geq `r t`) + \text{Pr}(T \leq `r -t`) = 2\times \text{Pr}(T \geq `r t`)$ where $T \sim t_{`r df`}$
 
-    -   $\texttt{2 * (1-pt(`r t`, `r df`))}$ = `r p_val`
+    -   $2 \times \texttt{(1-pt(`r t`, `r df`))}$ = `r p_val`
+
+-   ::: discuss
+    Make a decision and conclusion in context
+    :::
+
+    -   Since our p-value is greater than 0.01, we fail to reject $H_{0}$. The data do not provide sufficient evidence to suggest that the average height of female-identifying students in STAT 201 is different from national average.

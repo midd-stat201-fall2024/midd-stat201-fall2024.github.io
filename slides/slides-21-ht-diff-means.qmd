@@ -1,0 +1,138 @@
+---
+title: "Hypothesis testing with CLT (cont.)"
+subtitle: "Difference in means"
+date: "October 30, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(openintro)
+library(readr)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+source("../stat201_fns.R")
+```
+
+-   No office hours tomorrow
+
+-   Daylight savings this weekend
+
+-   Data collection proposal due Monday 11/4 midnight!
+
+## Recap
+
+# Hypothesis test for mean paired difference
+
+## Paired data (recap)
+
+-   Recall paired data: we have two set of data $\boldsymbol{x}$ and $\boldsymbol{y}$ where each $x_{i}$ has a corresponding to one $y_{i}$
+
+    -   Can obtain differences $d_{i} = y_{i} - x_{i}$
+
+    -   We are interested in the true mean difference $\mu_{d}$
+
+-   Recall: if observational units are independent and the differences are approximately Normal, then CLT gives us:
+
+$$
+\bar{d} \overset{\cdot}{\sim} N(\mu_{d}, \frac{\sigma_{d}}{\sqrt{n}})
+$$
+
+-   We don't typically know $\sigma_{d}$, so replaced with sample $s_{d}$ and had to use a $t_{df}$ distribution instead
+
+## Hypothesis test
+
+-   Define parameters and set hypotheses are typically: $H_0: \mu_{d} = \mu_{0}$ versus $H_{A}: \mu_{d} \neq \mu_0$ (or $>$ or $<$ )
+
+-   Obtain summary statistics $\bar{d}_{obs}$ and $s_{d}$
+
+-   ::: discuss
+    Check if CLT holds. If so, what is our **null distribution**?
+    :::
+
+::: fragment
+$$
+\bar{d} \overset{\cdot}{\sim} N\left(\mu_0, \frac{\sigma_{d}}{\sqrt{n}} \right)
+$$
+:::
+
+-   Because we don't know $\sigma_{d}$, our test statistic here is:
+
+::: fragment
+$$
+t = \frac{\bar{d} - \mu_0}{\frac{s_{d}}{\sqrt{n}}} \sim t_{df}
+$$
+
+where $df = n-1$
+:::
+
+## Example: zinc (revisited)
+
+```{r}
+zinc <- data.frame(bottom = c(0.430, 0.266, 0.567, 0.531, 0.707, 0.716, .651,	.589,	.469,	.723),
+                   surface = c(.415,	.238,	.390,	.410,	.605,	.609,	.632,	.523,	.411,	.612))
+```
+
+Data consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:
+
+::: {style="color: maroon"}
+Do the data suggest that the true average concentration in the bottom water is greater than that of surface water? Let's now answer this using a hypothesis test at the 0.05 level.
+:::
+
+-   ::: fragment
+    Define parameters and hypotheses
+    :::
+
+    -   Let $\mu_{d}$ be the true mean difference between zinc concentrations (bottom-surface)
+    -   $H_{0}: \mu_{d} = 0$ versus $H_{A}: \mu_{d} > 0$
+
+-   Last week, we saw conditions for CLT were satisfied
+
+## Example: zinc (cont.)
+
+```{r echo = T}
+zinc <- zinc |>
+  mutate(d = bottom - surface)
+d_bar <- mean(zinc$d)
+d_bar
+s_d <- sd(zinc$d)
+s_d
+```
+
+```{r}
+n <- nrow(zinc)
+d_bar <- round(d_bar, 4)
+s_d <- round(s_d, 3)
+se <- round(s_d/sqrt(n), 3)
+t <- round((d_bar - 0)/(s_d/sqrt(n)), 3)
+df <- n-1
+#p_val <- 
+```
+
+::: discuss
+Find the test-statistic
+:::
+
+::: fragment
+$$t = \frac{\bar{d} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{`r d_bar` - 0}{`r s_d`/sqrt{`r n`}} = `r t`  \sim t_{`r df`}$$
+:::
+
+-   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pnorm(`r t`, `r df`)}$
+
+# Hypothesis test for difference in means
