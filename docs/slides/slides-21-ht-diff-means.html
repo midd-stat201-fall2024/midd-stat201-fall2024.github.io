@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-30">
+<meta name="dcterms.date" content="2024-10-31">
 
 <title>STAT 201: Intro. to Statistics and Data Science - Hypothesis testing with CLT (cont.)</title>
 <style>
@@ -199,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 30, 2024</p>
+      <p class="date">October 31, 2024</p>
     </div>
   </div>
   
@@ -312,14 +312,28 @@ t = \frac{\bar{d} - \mu_0}{\frac{s_{d}}{\sqrt{n}}} \sim t_{df}
 <p><span class="math display">\[t = \frac{\bar{d} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{0.0804 - 0}{0.052/sqrt{10}} = 4.889  \sim t_{9}\]</span></p>
 </div>
 <ul>
-<li>So our p-value is <span class="math inline">\(\text{Pr}(T \geq t) = \text{Pr}(T \geq 4.889) = 1 - \texttt{pnorm(4.889, 9)}\)</span></li>
+<li>So our p-value is <span class="math inline">\(\text{Pr}(T \geq t) = \text{Pr}(T \geq 4.889) = 1 - \texttt{pnorm(4.889, 9)} = 0\)</span></li>
 </ul>
 </section>
 </section>
 <section id="hypothesis-test-for-difference-in-means" class="level1">
 <h1>Hypothesis test for difference in means</h1>
+<section id="sampling-distribution-for-difference-in-means" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-distribution-for-difference-in-means">Sampling distribution for difference in means</h2>
+<ul>
+<li><p>Two populations, interest in <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> (or other order)</p></li>
+<li><p>If CLT holds, we saw sampling distribution of difference in sample means is</p></li>
+</ul>
+<p><span class="math display">\[
+\bar{X}_{1} - \bar{X}_{2} \overset{\cdot}{\sim} N\left(\mu_{1} - \mu_{2}, \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}} \right)
+\]</span></p>
+<ul>
+<li><p>When we don’t know the population standard deviations, we replaced the <span class="math inline">\(\sigma\)</span> with <span class="math inline">\(s\)</span> and had to use a <span class="math inline">\(t\)</span> distribution</p></li>
+<li><p>Same thing will happen for hypothesis test!</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

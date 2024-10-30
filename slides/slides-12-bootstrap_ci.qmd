@@ -61,7 +61,7 @@ for(i in 1:G){
 }
 ```
 
-::: {.fragment}
+:::::: fragment
 ::::: columns
 ::: {.column width="50%"}
 ```{r fig.height = 6}
@@ -94,8 +94,7 @@ ggplot(df_b, aes(x = props)) +
 ```
 :::
 :::::
-
-:::
+::::::
 
 ## Bootstrap recap
 
@@ -293,8 +292,8 @@ df_temp |>
 
     How do you expect the interval to change as level of confidence $\gamma$ changes?
     :::
-    
-- Once again, relies on a representative original sample! 
+
+-   Once again, relies on a representative original sample!
 
 ## Comparing confidence intervals
 
@@ -322,8 +321,8 @@ bounds <- df_all |>
 
 ```
 
-::::: columns
-::: {.column width="70%"}
+:::::: columns
+:::: {.column width="70%"}
 ```{r fig.height=6}
 df_all |>
   ggplot(aes(x = props)) +
@@ -337,11 +336,10 @@ df_all |>
     labs(caption = paste0("orange lines denote ",gamma*100, "% bootstrap CI"), x = "proportion")
 ```
 
-::: {.discuss}
+::: discuss
 What do you notice?
 :::
-
-:::
+::::
 
 ::: {.column width="30%"}
 ```{r}
@@ -360,8 +358,7 @@ bounds |>
   kableExtra::kable(caption = "Section B" )
 ```
 :::
-:::::
-
+::::::
 
 ## Live code + your turn!
 

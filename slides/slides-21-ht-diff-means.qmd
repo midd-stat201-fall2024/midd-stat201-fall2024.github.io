@@ -1,7 +1,7 @@
 ---
 title: "Hypothesis testing with CLT (cont.)"
 subtitle: "Difference in means"
-date: "October 30, 2024"
+date: "October 31, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -122,7 +122,7 @@ s_d <- round(s_d, 3)
 se <- round(s_d/sqrt(n), 3)
 t <- round((d_bar - 0)/(s_d/sqrt(n)), 3)
 df <- n-1
-#p_val <- 
+p_val <- round(1 - pt(t, df), 3)
 ```
 
 ::: discuss
@@ -133,6 +133,20 @@ Find the test-statistic
 $$t = \frac{\bar{d} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{`r d_bar` - 0}{`r s_d`/sqrt{`r n`}} = `r t`  \sim t_{`r df`}$$
 :::
 
--   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pnorm(`r t`, `r df`)}$
+-   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pnorm(`r t`, `r df`)} = `r p_val`$
 
 # Hypothesis test for difference in means
+
+## Sampling distribution for difference in means
+
+-   Two populations, interest in $\mu_{1} - \mu_{2}$ (or other order)
+
+-   If CLT holds, we saw sampling distribution of difference in sample means is
+
+$$
+\bar{X}_{1} - \bar{X}_{2} \overset{\cdot}{\sim} N\left(\mu_{1} - \mu_{2}, \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}} \right)
+$$
+
+-   When we don't know the population standard deviations, we replaced the $\sigma$ with $s$ and had to use a $t$ distribution
+
+-   Same thing will happen for hypothesis test!

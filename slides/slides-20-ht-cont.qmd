@@ -240,13 +240,13 @@ Check conditions for inference are satisfied.
 
     -   Success-failure:
 
-        -   $n_{nc} \hat{p}_{pooled} = `r n1` \times `r p_pooled` = `r round(n1 * p_pooled, 2)` > 10$
+        -   $n_{nc} \hat{p}_{pooled} = `r n1` \times `r p_pooled` = `r round(n1 * p_pooled, 2)` \geq 10$
 
-        -   $n_{nc} (1 - \hat{p}_{pooled}) = `r n1` \times (1 - `r p_pooled`) = `r round(n1 * (1- p_pooled) , 2)` > 10$
+        -   $n_{nc} (1 - \hat{p}_{pooled}) = `r n1` \times (1 - `r p_pooled`) = `r round(n1 * (1- p_pooled) , 2)` \geq 10$
 
-        -   $n_{c} \hat{p}_{pooled} = `r n2` \times `r p_pooled` = `r round(n2 * p_pooled, 2)` > 10$
+        -   $n_{c} \hat{p}_{pooled} = `r n2` \times `r p_pooled` = `r round(n2 * p_pooled, 2)` \geq 10$
 
-        -   $n_{c} (1 - \hat{p}_{pooled}) = `r n2` \times (1 - `r p_pooled`) = `r round(n2 * (1- p_pooled) , 2)` > 10$
+        -   $n_{c} (1 - \hat{p}_{pooled}) = `r n2` \times (1 - `r p_pooled`) = `r round(n2 * (1- p_pooled) , 2)` \geq 10$
 
 -   Since conditions are met, we can proceed
 

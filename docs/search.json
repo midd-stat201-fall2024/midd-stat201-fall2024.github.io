@@ -2510,7 +2510,7 @@
     "href": "slides/slides-12-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
     "title": "Bootstrap Confidence Intervals",
     "section": "Obtaining bootstrap confidence interval",
-    "text": "Obtaining bootstrap confidence interval\n\n\n\n\n\n\nSection A 90% confidence interval for \\(p_{A}\\): (0.3, 0.8)\nSection B 90% confidence interval for \\(p_{B}\\): (0.5, 0.9)"
+    "text": "Obtaining bootstrap confidence interval\n\n\nSection A 90% confidence interval for \\(p_{A}\\): (0.3, 0.8)\nSection B 90% confidence interval for \\(p_{B}\\): (0.5, 0.9)"
   },
   {
     "objectID": "slides/slides-11-bootstrap.html",
@@ -2608,7 +2608,7 @@
     "href": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals",
     "title": "Bootstrap Confidence Intervals",
     "section": "Comparing confidence intervals",
-    "text": "Comparing confidence intervals\nComparing changes in \\(\\gamma \\times 100\\) % CI for sample sizes: \\(n = 5\\), \\(n = 10\\), and \\(n = 17\\):\n\n\n`summarise()` has grouped output by 'n_lab'. You can override using the\n`.groups` argument.\n\n\n\n\n\n\n\n\n\n\nWhat do you notice?\n\n\n\n\n\nSection A\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.2, 1)\n\n\nn = 10\n(0.3, 0.8)\n\n\nn = 17\n(0.41, 0.76)\n\n\n\n\n\n\nSection B\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.4, 1)\n\n\nn = 10\n(0.5, 0.9)\n\n\nn = 17\n(0.53, 0.88)"
+    "text": "Comparing confidence intervals\nComparing changes in \\(\\gamma \\times 100\\) % CI for sample sizes: \\(n = 5\\), \\(n = 10\\), and \\(n = 17\\):\n\n\n\n\n\n\n\n\n\n\n\nWhat do you notice?\n\n\n\n\n\nSection A\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.2, 1)\n\n\nn = 10\n(0.3, 0.8)\n\n\nn = 17\n(0.41, 0.76)\n\n\n\n\n\n\nSection B\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0.4, 1)\n\n\nn = 10\n(0.5, 0.9)\n\n\nn = 17\n(0.53, 0.88)"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#comparing-confidence-intervals-1",
@@ -4148,7 +4148,7 @@
     "href": "slides/slides-20-ht-cont.html#example-offshore-drilling-cont.-2",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Example: offshore drilling (cont.)",
-    "text": "Example: offshore drilling (cont.)\n\nConditions for inference:\n\nIndependence: random sample\nSuccess-failure:\n\n\\(n_{nc} \\hat{p}_{pooled} = 389 \\times 0.346 = 134.59 > 10\\)\n\\(n_{nc} (1 - \\hat{p}_{pooled}) = 389 \\times (1 - 0.346) = 254.41 > 10\\)\n\\(n_{c} \\hat{p}_{pooled} = 438 \\times 0.346 = 151.55 > 10\\)\n\\(n_{c} (1 - \\hat{p}_{pooled}) = 438 \\times (1 - 0.346) = 286.45 > 10\\)\n\n\nSince conditions are met, we can proceed"
+    "text": "Example: offshore drilling (cont.)\n\nConditions for inference:\n\nIndependence: random sample\nSuccess-failure:\n\n\\(n_{nc} \\hat{p}_{pooled} = 389 \\times 0.346 = 134.59 \\geq 10\\)\n\\(n_{nc} (1 - \\hat{p}_{pooled}) = 389 \\times (1 - 0.346) = 254.41 \\geq 10\\)\n\\(n_{c} \\hat{p}_{pooled} = 438 \\times 0.346 = 151.55 \\geq 10\\)\n\\(n_{c} (1 - \\hat{p}_{pooled}) = 438 \\times (1 - 0.346) = 286.45 \\geq 10\\)\n\n\nSince conditions are met, we can proceed"
   },
   {
     "objectID": "slides/slides-20-ht-cont.html#example-offshore-drilling-cont.-3",
@@ -4246,6 +4246,20 @@
     "href": "slides/slides-21-ht-diff-means.html#example-zinc-cont.",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Example: zinc (cont.)",
-    "text": "Example: zinc (cont.)\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\n\nFind the test-statistic\n\n\n\\[t = \\frac{\\bar{d} - \\mu_{0}}{s_{d}/\\sqrt{n}} = \\frac{0.0804 - 0}{0.052/sqrt{10}} = 4.889  \\sim t_{9}\\]\n\n\nSo our p-value is \\(\\text{Pr}(T \\geq t) = \\text{Pr}(T \\geq 4.889) = 1 - \\texttt{pnorm(4.889, 9)}\\)"
+    "text": "Example: zinc (cont.)\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\n\nFind the test-statistic\n\n\n\\[t = \\frac{\\bar{d} - \\mu_{0}}{s_{d}/\\sqrt{n}} = \\frac{0.0804 - 0}{0.052/sqrt{10}} = 4.889  \\sim t_{9}\\]\n\n\nSo our p-value is \\(\\text{Pr}(T \\geq t) = \\text{Pr}(T \\geq 4.889) = 1 - \\texttt{pnorm(4.889, 9)} = 0\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ht-diff-means.html#housekeeping",
+    "href": "slides/slides-21-ht-diff-means.html#housekeeping",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nNo office hours tomorrow\nDaylight savings this weekend\nData collection proposal due Monday 11/4 midnight!"
+  },
+  {
+    "objectID": "slides/slides-21-ht-diff-means.html#sampling-distribution-for-difference-in-means",
+    "href": "slides/slides-21-ht-diff-means.html#sampling-distribution-for-difference-in-means",
+    "title": "Hypothesis testing with CLT (cont.)",
+    "section": "Sampling distribution for difference in means",
+    "text": "Sampling distribution for difference in means\n\nTwo populations, interest in \\(\\mu_{1} - \\mu_{2}\\) (or other order)\nIf CLT holds, we saw sampling distribution of difference in sample means is\n\n\\[\n\\bar{X}_{1} - \\bar{X}_{2} \\overset{\\cdot}{\\sim} N\\left(\\mu_{1} - \\mu_{2}, \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}} \\right)\n\\]\n\nWhen we don’t know the population standard deviations, we replaced the \\(\\sigma\\) with \\(s\\) and had to use a \\(t\\) distribution\nSame thing will happen for hypothesis test!"
   }
 ]
