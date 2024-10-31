@@ -1,5 +1,5 @@
 ---
-title: "HT: Difference in means"
+title: "CI: Difference in means"
 date: "October 24, 2024"
 ---
 

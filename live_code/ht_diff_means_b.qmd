@@ -1,0 +1,43 @@
+---
+title: "HT for difference in means"
+author: "Section B"
+date: "2024-10-31"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, message=FALSE}
+chocolate <- c(18, 16, 19, 19, 18, 17, 16, 19, 19, 18, 16, 19, 16, 18, 15, 16, 18, 16) 
+glazed <- c(16, 15, 16, 17, 15, 14, 15, 17, 18, 16, 15)
+```
+
+```{r}
+sd_c <- sd(chocolate)
+sd_c
+
+sd_g <- sd(glazed)
+sd_g
+
+xbar_c <- mean(chocolate)
+xbar_c
+
+xbar_g <- mean(glazed)
+xbar_g
+
+# check conditions
+hist(chocolate)
+hist(glazed)
+
+n_c <- length(chocolate)
+n_c
+n_g <- length(glazed)
+n_g
+
+se <- sqrt(sd_c^2 / n_c + sd_g^2/n_g)
+test_stat <- ((xbar_c - xbar_g) - 0)/se
+test_stat
+
+df <- min(n_c - 1, n_g - 1)
+2*(1-pt(test_stat, df))
+```
