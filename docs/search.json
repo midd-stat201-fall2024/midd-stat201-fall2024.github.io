@@ -4281,6 +4281,6 @@
     "href": "slides/slides-21-ht-diff-means.html#example-zinc-cont.-1",
     "title": "Hypothesis testing with CLT (cont.)",
     "section": "Example: zinc (cont.)",
-    "text": "Example: zinc (cont.)\n\n\\[t = \\frac{\\bar{d}_{obs} - \\mu_{0}}{s_{d}/\\sqrt{n}} = \\frac{0.0804 - 0}{0.052/\\sqrt{10}} = 4.889  \\sim t_{9}\\]\n\n\nSo our p-value is \\(\\text{Pr}(T \\geq t) = \\text{Pr}(T \\geq 4.889) = 1 - \\texttt{pnorm(4.889, 9)} = 0\\)\nWe reject \\(H_{0}\\)! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water."
+    "text": "Example: zinc (cont.)\n\n\\[t = \\frac{\\bar{d}_{obs} - \\mu_{0}}{s_{d}/\\sqrt{n}} = \\frac{0.0804 - 0}{0.052/\\sqrt{10}} = 4.889  \\sim t_{9}\\]\n\n\nSo our p-value is \\(\\text{Pr}(T \\geq t) = \\text{Pr}(T \\geq 4.889) = 1 - \\texttt{pt(4.889, 9)} = 0\\)\nWe reject \\(H_{0}\\)! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water."
   }
 ]

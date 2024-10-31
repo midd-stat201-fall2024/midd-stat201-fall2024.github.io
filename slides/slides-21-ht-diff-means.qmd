@@ -149,7 +149,7 @@ Find the test-statistic
 $$t = \frac{\bar{d}_{obs} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{`r d_bar` - 0}{`r s_d`/\sqrt{`r n`}} = `r t`  \sim t_{`r df`}$$
 :::
 
--   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pnorm(`r t`, `r df`)} = `r p_val`$
+-   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pt(`r t`, `r df`)} = `r p_val`$
 
 - We reject $H_{0}$! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water.
 

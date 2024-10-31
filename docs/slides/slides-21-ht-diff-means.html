@@ -521,7 +521,7 @@ t = \frac{\bar{d}_{obs} - \mu_0}{\frac{s_{d}}{\sqrt{n}}} \sim t_{df}
 <p><span class="math display">\[t = \frac{\bar{d}_{obs} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{0.0804 - 0}{0.052/\sqrt{10}} = 4.889  \sim t_{9}\]</span></p>
 </div>
 <ul>
-<li class="fragment"><p>So our p-value is <span class="math inline">\(\text{Pr}(T \geq t) = \text{Pr}(T \geq 4.889) = 1 - \texttt{pnorm(4.889, 9)} = 0\)</span></p></li>
+<li class="fragment"><p>So our p-value is <span class="math inline">\(\text{Pr}(T \geq t) = \text{Pr}(T \geq 4.889) = 1 - \texttt{pt(4.889, 9)} = 0\)</span></p></li>
 <li class="fragment"><p>We reject <span class="math inline">\(H_{0}\)</span>! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water.</p></li>
 </ul>
 </section></section>
