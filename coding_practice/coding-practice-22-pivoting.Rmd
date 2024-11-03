@@ -32,10 +32,12 @@ diamond_price <- read_csv("https://raw.githubusercontent.com/midd-stat201-fall20
 
 **Answer:**
 
-4. (Optional) Conduct your simulation-based hypothesis test for the same set of hypotheses. Report your p-value using in-line code.
+4.  (Optional) Conduct your simulation-based hypothesis test for the same set of hypotheses. Report your p-value using in-line code.
 
 ```{r}
 
 ```
 
 **Answer:**
+
+Once finished, knit once more and submit the HTML to Canvas!

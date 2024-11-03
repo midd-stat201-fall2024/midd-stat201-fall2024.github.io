@@ -19,7 +19,7 @@ x1 <- rnorm(n, mu1, sigma1)
 x2 <- rnorm(n, mu2, sigma2)
 df <-  data.frame(carats_99 = x1, carats_1 = x2) |>
   round(digits = 2)
-diamonds <- read_csv("~/Desktop/diamonds.csv")
+diamond_price <- read_csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/diamonds.csv")
 ```
 
 
@@ -32,17 +32,25 @@ relig_income |>
   head()
 ```
 
-This data is currently in "**wide**" format: the same outcome variable appears in multiple columns, where the column names tell us the different groupings. In particular, the outcome that is common across several columns is income range. The different incomes columns are essentially different levels of the same categorical variable.
+This data is currently in "**wide**" format: a row has more than one observation. That is, the same outcome variable appears in multiple columns. In the `relig_income` data, the outcome observation that spans across several columns is income range. The different incomes columns are essentially different levels of the same categorical variable.
 
 Suppose I want to obtain the conditional probability of income bracket by religion type. These probabilities are VERY difficult to obtain with the data frame as is. Would would be extremely useful is if we could create a single categorical variable for the income range.
 
-We will manipulate the data frame to the "**long**" format: the outcome variable only exists in one column, and a second column/variable tells us the different levels.
+We will manipulate the data frame to the "**long**" format: the outcome variable only exists in one column, and a second column/variable tells us the different levels. Each row has one observation, but the units of observation are repeated down one column.
 
+::: column-margin
 This is helpful for us to perform group_by() or facet_wrap().
+:::
+
+::: {.callout-tip collapse="false" icon="false"}
+What are the units of observation in the `relig_income` data? 
+:::
+
+
 
 We will do this with the `pivot_longer()` function. This function requires a couple of arguments:
 
-1.  `cols`: which columns to pivot into a "longer" format
+1.  `cols`: which columns to pivot into a "longer" format. That is, the columns that we should "move"
 
 2.  `names_to`: a string character that provides the new column name for the categorical variable you are creating
 
@@ -54,6 +62,9 @@ relig_income_long <- relig_income |>
 relig_income_long 
 ```
 
+::: column-margin
+Note that the unit of observation is repeated down several rows!
+:::
 
 The following achieve the same result: 
 
@@ -75,4 +86,34 @@ relig_income_long |>
   select(religion, income_range, cond_prob) |>
   head()
 ```
+
 ## pivot_wider()
+
+We can also pivot from long to wide format. Let's look at the `fish_encounters` data.
+
+```{r}
+fish_encounters |>
+  head()
+```
+
+::: {.callout-tip collapse="false" icon="false"}
+
+Suppose our observation unit of interest is `fish`. Explain why this data frame is in the long format.
+:::
+
+We want to pivot the data such that each fish is an observation, and we can easily see which stations it was observed at. We can do this using the `pivot_wider()` function, which takes two arguments:
+
+1. `names_from`: the name of the variable(s) in the data frame to get the name of the output column. 
+
+2. `values_from`: the name of the variable(s) in the data frame to get the cell values from
+
+That is, the input to `names_from` should be the categorical variable(s), and the different levels of this categorical variable will be the new column names. What should we fill these cells with? The values specified by `values_from`.
+
+```{r}
+fish_encounters |>
+  pivot_wider(names_from = station, values_from = seen)
+```
+
+::: column-margin
+Note that there are some `NA` values after pivoting. From the Help file, this is because misses were not directly recorded in the original form of the data. Try adding the argument `values_fill = 0` to the `pivot_wider()` function. 
+:::
