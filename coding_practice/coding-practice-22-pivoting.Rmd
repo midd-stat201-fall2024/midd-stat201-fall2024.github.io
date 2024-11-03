@@ -1,0 +1,41 @@
+---
+title: "Pivoting + HT coding practice"
+author: "Your name"
+date: "Due: 11/4/2024 at 11:59pm"
+output: html_document
+---
+
+```{r setup, message =FALSE}
+library(tidyverse)
+diamond_price <- read_csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/diamonds.csv")
+```
+
+1.  Wrangle/manipulate the `diamond_price` data frame into the long format. Ensure that the variable names you end up choosing are informative/meaningful. Store the resulting data frame into a new data frame called `diamond_price_long`.
+
+```{r}
+
+```
+
+2.  Using your new data frame, check if the conditions for the CLT-based hypothesis test are satisfied.
+
+```{r}
+
+```
+
+**Answer:**
+
+3.  (Optional) Obtain your test statistic and p-value. Report your p-value using in-line code.
+
+```{r}
+
+```
+
+**Answer:**
+
+4. (Optional) Conduct your simulation-based hypothesis test for the same set of hypotheses. Report your p-value using in-line code.
+
+```{r}
+
+```
+
+**Answer:**

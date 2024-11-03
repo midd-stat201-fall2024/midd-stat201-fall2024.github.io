@@ -1,0 +1,302 @@
+---
+title: "Introduction to Simple Linear Regression"
+date: "November 6, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+source("../stat201_fns.R")
+```
+
+-   Homework 7 due tonight!
+
+-   Last problem set is assigned today
+
+# Linear regression
+
+Crash course; take STAT 211 for more depth!
+
+## Fitting a line to data
+
+-   Hopefully we are all familiar with the equation of a line: $y = mx + b$
+
+    -   Intercept $b$ and slope $m$ determine specific line
+
+    -   This function is *deterministic*: as long as we know $x$, we know value of $y$ exactly
+
+-   **Linear regression**: statistical method where the relationship between variable $x$ and variable $y$ is modeled as a **line + error:**
+
+::: fragment
+$$
+y = \underbrace{\beta_{0} + \beta_{1} x}_{\text{line}} + \underbrace{\epsilon}_{\text{error}}
+$$
+:::
+
+## Linear regression model
+
+$$
+y = \beta_{0} + \beta_{1} x + \epsilon
+$$
+
+-   We have two variables:
+
+    1.  $y$ is response variable
+    2.  $x$ is explanatory variable, also called the **predictor** variable
+
+-   $\beta_{0}$ and $\beta_{1}$ are the model **parameters** (intercept and slope)
+
+    -   Estimated using the data, with point estimates $b_{0}$ and $b_{1}$
+
+-   $\epsilon$ (epsilon) represents the **error**
+
+    -   Accounts for variability: we do not expect all data to fall perfectly on the line!
+
+    -   Sometimes we drop the $\epsilon$ term for convenience
+
+## Linear relationship
+
+Suppose we have the following data:
+
+```{r}
+set.seed(2)
+n <- 50
+b0 <- 1
+b1 <- 0.5
+epsilon <- rnorm(n, 0, 1.5)
+x <- sort(runif(n, -5,5))
+y <- b0  + b1 * x + epsilon
+fit <- coef(lm(y~x))
+
+df <- data.frame(x, y)
+p <- ggplot(df, aes(x=x, y = y)) +
+  geom_point(size = 2) +
+  theme_minimal() +
+  theme(text = element_text(size = 24))
+p
+```
+
+-   Observations won't fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!
+
+
+
+## Fitted values
+
+Suppose we have some specific estimates $b_0$ and $b_{1}$. We could fit the linear relationship using these values as:
+
+$$
+\hat{y} = b_{0} + b_{1} x
+$$
+
+-   The hat on $y$ signifies that this is an estimate: the estimated/**fitted** value of $y$ given these specific values of $x$, $b_{0}$ and $b_{1}$
+
+    -   We observe $y$, but can obtain a corresponding estimate $\hat{y}$
+
+-   Note that the fitted value is obtained *without* the error
+
+## Fitted values (cont.)
+
+```{r}
+ids <- c(9, 22, 45)
+x_fit <- x[ids]
+y_hat <- fit[1] + fit[2] * x
+y_fit <- y_hat[ids]
+df_fit <- data.frame(x = x_fit, x_end = x_fit, y = y[ids], y_end = y_fit)
+p1 <- p + geom_abline(slope = fit[2], intercept = fit[1], col = "yellow", linewidth = 2) +
+  labs(title = "Option 1")
+p_resid <- p1 + 
+  geom_segment(data = df_fit,mapping= aes(x = x, xend = x_end, y = y, yend = y_end), linetype = "dashed", col = "#F8766D")+
+    geom_point(data = df_fit, mapping = aes(x = x, y = y_end, col = "fitted"), shape = 4, size = 4)+
+  geom_point(data = df_fit, mapping = aes(x = x, y = y, col = "observed"), size = 2) +
+  theme(legend.title = element_blank(), title = element_blank())
+p_resid
+```
+
+-   Every observed value has a corresponding fitted value; the above plot just shows three specific examples
+
+## Residual
+
+**Residuals** are the remaining variation in the data after fitting a model.
+
+$$
+\text{data} = \text{fit} + \text{residual}
+$$
+
+-   For each observation $i$, we obtain residual $e_{i}$ via:
+
+$$y_{i} = \hat{y}_{i} + e_{i} \quad \Rightarrow \quad e_{i} = \hat{y}_{i} - y_{i}$$
+
+-   Residual = difference between observed and expected
+
+-   Since each observation has a fitted value, each observation has a residual
+
+    -   In the linear regression case, the residual is indicated by the vertical dashed line
+
+    -   ::: discuss
+        What is the ideal value for a residual?
+        :::
+
+## Residual plot
+
+-   Residuals are very helpful in evaluating how well a model fits a set of data
+
+-   **Residual plot** shows residuals plotted at the original $x$ locations, but now $y$-axis represents the residual
+
+```{r}
+df |>
+  add_column(y_hat) |>
+  mutate(residual = y_hat-y) |>
+  ggplot(aes(x = x, y = residual)) +
+  geom_point(size = 2) +
+  theme_minimal() +
+  theme(text = element_text(size = 24)) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
+  labs(title = "Residual plot", subtitle = "Option 1 line", caption = "Red dots = specific points from previous plot")
+```
+
+```{r}
+df |>
+  add_column(y_hat) |>
+  mutate(residual = y_hat-y) |>
+  slice(ids) |>
+  kable(digits = 3)
+```
+
+## Residual plot (cont.)
+
+Residual plots can be useful for identifying characteristics/patterns that remain in the data even after fitting a model.
+
+-   ::: {style="color: maroon"}
+    Just because you fit a model to data, does not mean the model is a good fit!
+    :::
+
+::: fragment
+![](figs/23-residual-plot.png){fig-align="center"}
+:::
+
+::: discuss
+Can you identify any patterns remaining in the residuals?
+:::
+
+## Describing linear relationships
+
+Different data may exhibit different strength of linear relationships:
+
+```{r}
+set.seed(4)
+y2 <- x + rnorm(n, 0, 4)
+y3 <- -2*x + rnorm(n,0, 0.25)
+y4 <- 1 + 0.01*x + rnorm(n)
+data.frame(x=x, y2, y3, y4) |>
+  pivot_longer(cols = 2:4, names_to = "Plot", values_to = "y") |>
+  mutate(Plot = case_when(
+    Plot == "y2" ~ "Data 1",
+    Plot == "y3" ~ "Data 2",
+    Plot == "y4" ~ "Data 3"
+  )) |>
+  ggplot(aes(x=x, y =y )) +
+  geom_point()+
+  facet_wrap(~Plot) +
+  theme_minimal()
+  
+```
+
+-   Can we quantify the strength of the linear relationship?
+
+## Correlation
+
+-   **Correlation** is describes the strength of a *linear* relationship between two variables
+
+    -   Denoted by `R` or $\rho$
+    -   Formula (not important): $R = \frac{1}{n-1} \sum_{i=1}^{n} \left(\frac{x_{i} - \bar{x}}{s_x} \right)\left(\frac{y_{i} - \bar{y}}{s_y} \right)$
+
+-   Always takes a value between -1 and 1
+
+    -   -1 = perfectly linear and negative
+
+    -   1 = perfectly linear and positive
+
+    -   0 = no linear relationship
+
+-   Nonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship
+
+![](figs/23-correlations.png){fig-align="center" width="1610"}
+
+# Least squares regression
+
+In Algebra class, there exists a single (intercept, slope) pair because the $(x,y)$ points had no error; all points landed on the line.
+
+Now, we assume there is error. So how do we choose a single "best" $(b_{0}, b_{1})$ pair?
+
+## Different lines
+
+The following display the same set of `r n` observations.
+
+::: discuss
+Which line would you say fits the data the best?
+:::
+
+```{r}
+fit_abs <- coef(rq(y ~ x, tau = 0.5))
+
+p2 <- p + geom_abline(slope = fit_abs[2], intercept = fit_abs[1], col = "pink", linewidth = 2) +
+  labs(title = "Option 2")
+p3 <- p + geom_abline(slope = b1-0.2, intercept = b0+0.3, col = "purple", linewidth = 2) +
+  labs(title = "Option 3")
+p4 <- p + geom_abline(slope = -1*b1, intercept = b0+0.3, col = "green", linewidth = 2) +
+  labs(title = "Option 4")
+p1+p2+p3+p4
+```
+
+-   There are infinitely many choices of $(b_{0}, b_{1})$ that could be used to create a line for the data
+
+-   We want the BEST choice (i.e. the one that gives us the "line of best fit")
+
+    -   How to define "best"?
+
+## Line of best fit
+
+-   One way to define a "line of best fit" is to choose the specific values of $(b_{0}, b_{1})$ that minimize the total residuals across all $n$ data points
+
+-   Results in following possible criterion:
+
+    -   **Least absolute criterion**: minimize sum of residual magnitudes:
+
+    $$
+    |\epsilon_{1} | + |\epsilon_{2}| + \ldots + |\epsilon_{n}|
+    $$
+
+    -   ::: {style="color: maroon"}
+        **Least squares criterion**: minimize sum of squared residuals:
+        :::
+
+$$
+e_{1}^2 + e_{2}^2 +\ldots + e_{n}^2
+$$
+
+-   The choice of $(b_{0}, b_{1})$ that satisfy least squares criterion yields the **least squares line**, and will be our criterion for "best"
+
+-   Option 1 (yellow line) is our least squares line, whereas pink line is the least absolute line

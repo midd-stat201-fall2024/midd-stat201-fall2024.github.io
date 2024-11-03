@@ -1,0 +1,78 @@
+---
+title: "Pivoting in R"
+date: "November 4, 2024"
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+```{r setup, include=FALSE}
+set.seed(2)
+n <- 23
+mu1 <- 45
+mu2 <- 55
+sigma1 <- 12
+sigma2 <- 17
+x1 <- rnorm(n, mu1, sigma1)
+x2 <- rnorm(n, mu2, sigma2)
+df <-  data.frame(carats_99 = x1, carats_1 = x2) |>
+  round(digits = 2)
+diamonds <- read_csv("~/Desktop/diamonds.csv")
+```
+
+
+## pivot_longer()
+
+Let's take a look at first few observations of the `relig_income` data frame from the `openintro` package:
+
+```{r}
+relig_income |>
+  head()
+```
+
+This data is currently in "**wide**" format: the same outcome variable appears in multiple columns, where the column names tell us the different groupings. In particular, the outcome that is common across several columns is income range. The different incomes columns are essentially different levels of the same categorical variable.
+
+Suppose I want to obtain the conditional probability of income bracket by religion type. These probabilities are VERY difficult to obtain with the data frame as is. Would would be extremely useful is if we could create a single categorical variable for the income range.
+
+We will manipulate the data frame to the "**long**" format: the outcome variable only exists in one column, and a second column/variable tells us the different levels.
+
+This is helpful for us to perform group_by() or facet_wrap().
+
+We will do this with the `pivot_longer()` function. This function requires a couple of arguments:
+
+1.  `cols`: which columns to pivot into a "longer" format
+
+2.  `names_to`: a string character that provides the new column name for the categorical variable you are creating
+
+3.  `values_to`: a string character that provides the new variable name for the response/outcome variable that is common across all levels of the categorical variable
+
+```{r}
+relig_income_long <- relig_income |>
+  pivot_longer(cols = 2:11, names_to = "income_range",  values_to = "count")
+relig_income_long 
+```
+
+
+The following achieve the same result: 
+
+```{r}
+relig_income |>
+  pivot_longer(cols = -c(1), names_to = "income_range",  values_to = "count")
+
+relig_income |>
+  pivot_longer(cols = !religion, names_to = "income_range",  values_to = "count")
+```
+
+Now it is extremely easy to obtain conditional probabilities:
+
+```{r}
+relig_income_long |>
+  group_by(religion) |>
+  mutate(cond_prob = count/sum(count)) |>
+  filter(income_range == "$30-40k") |>
+  select(religion, income_range, cond_prob) |>
+  head()
+```
+## pivot_wider()
