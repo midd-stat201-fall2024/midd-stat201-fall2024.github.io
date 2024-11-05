@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/06\n\nIntroduction to linear regression\n\n\n\nWednesday problems in Problem Set 8\n\n\n\n\nR 11/-7\n\nLinear regression (cont.)\n\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/6\n\nTopic: Introduction to simple linear regression (pdf here)\n\n\n\nWednesday problems in Problem Set 8 (due next Wednesday)\n\n\n\n\nR 11/7\n\nTopic: SLR interpretation\n\n\n\nThursday problems in Problem Set 8\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n10\nM 10/11\n\nTopic: Inference in SLR\nFitting SLR in R\n\nLive code\n\n\n\nFitting SLR coding practice\n\n\nMonday problems in Problem Set 8 (due Wednesday at 11:59pm)\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nDepartment dessert + pre-registration social!\n\nWednesday 11/06 from 3-4:30 in WNS 101\n\nData collection proposal due Monday 11/04 at 11:59pm!\nMake-up office hours: Tuesday 11/05 4-5pm\nProblem Set 7 due this Wednesday 11/06 at 11:59pm\nAdd your R questions here!"
+    "text": "Announcements\n\nDepartment dessert + pre-registration social!\n\nWednesday 11/06 from 3-4:30 in WNS 101\n\nMake-up office hours: Tuesday 11/05 4-5pm\nProblem Set 7 due this Wednesday 11/06 at 11:59pm\nAdd your R questions here!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -4323,7 +4323,7 @@
     "href": "slides/slides-23-slr-intro.html#linear-regression-model",
     "title": "Introduction to Simple Linear Regression",
     "section": "Linear regression model",
-    "text": "Linear regression model\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\nWe have two variables:\n\n\\(y\\) is response variable\n\\(x\\) is explanatory variable, also called the predictor variable\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are the model parameters (intercept and slope)\n\nEstimated using the data, with point estimates \\(b_{0}\\) and \\(b_{1}\\)\n\n\\(\\epsilon\\) (epsilon) represents the error\n\nAccounts for variability: we do not expect all data to fall perfectly on the line!\nSometimes we drop the \\(\\epsilon\\) term for convenience"
+    "text": "Linear regression model\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\nWe have two variables:\n\n\\(y\\) is response variable. Must be continuous numerical.\n\\(x\\) is explanatory variable, also called the predictor variable\n\nCan be numerical or categorical\n\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are the model parameters (intercept and slope)\n\nEstimated using the data, with point estimates \\(b_{0}\\) and \\(b_{1}\\)\n\n\\(\\epsilon\\) (epsilon) represents the error\n\nAccounts for variability: we do not expect all data to fall perfectly on the line!\nSometimes we drop the \\(\\epsilon\\) term for convenience"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#linear-relationship",
@@ -4351,14 +4351,14 @@
     "href": "slides/slides-23-slr-intro.html#residual",
     "title": "Introduction to Simple Linear Regression",
     "section": "Residual",
-    "text": "Residual\nResiduals are the remaining variation in the data after fitting a model.\n\\[\n\\text{data} = \\text{fit} + \\text{residual}\n\\]\n\nFor each observation \\(i\\), we obtain residual \\(e_{i}\\) via:\n\n\\[y_{i} = \\hat{y}_{i} + e_{i} \\quad \\Rightarrow \\quad e_{i} = \\hat{y}_{i} - y_{i}\\]\n\nResidual = difference between observed and expected\nSince each observation has a fitted value, each observation has a residual\n\nIn the linear regression case, the residual is indicated by the vertical dashed line\n\nWhat is the ideal value for a residual?"
+    "text": "Residual\nResiduals are the remaining variation in the data after fitting a model.\n\\[\n\\text{data} = \\text{fit} + \\text{residual}\n\\]\n\nFor each observation \\(i\\), we obtain residual \\(e_{i}\\) via:\n\n\n\\[y_{i} = \\hat{y}_{i} + e_{i} \\quad \\Rightarrow \\quad e_{i} = \\hat{y}_{i} - y_{i}\\]\n\n\nResidual = difference between observed and expected\nSince each observation has a fitted value, each observation has a residual\n\nIn the linear regression case, the residual is indicated by the vertical dashed line\n\nWhat is the ideal value for a residual?"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#residual-plot",
     "href": "slides/slides-23-slr-intro.html#residual-plot",
     "title": "Introduction to Simple Linear Regression",
     "section": "Residual plot",
-    "text": "Residual plot\n\nResiduals are very helpful in evaluating how well a model fits a set of data\nResidual plot shows residuals plotted at the original \\(x\\) locations, but now \\(y\\)-axis represents the residual\n\n\n\n\n\n\n\nx\ny\ny_hat\nresidual\n\n\n\n\n-2.991\n2.481\n-0.130\n-2.611\n\n\n-1.005\n-1.302\n0.691\n1.994\n\n\n3.990\n3.929\n2.757\n-1.172"
+    "text": "Residual plot\n\nResiduals are very helpful in evaluating how well a model fits a set of data\nResidual plot: original \\(x\\) values plotted against their corresponding residuals on \\(y\\)-axis"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#residual-plot-cont.",
@@ -4379,21 +4379,21 @@
     "href": "slides/slides-23-slr-intro.html#correlation",
     "title": "Introduction to Simple Linear Regression",
     "section": "Correlation",
-    "text": "Correlation\n\nCorrelation is describes the strength of a linear relationship between two variables\n\nDenoted by R or \\(\\rho\\)\nFormula (not important): \\(R = \\frac{1}{n-1} \\sum_{i=1}^{n} \\left(\\frac{x_{i} - \\bar{x}}{s_x} \\right)\\left(\\frac{y_{i} - \\bar{y}}{s_y} \\right)\\)\n\nAlways takes a value between -1 and 1\n\n-1 = perfectly linear and negative\n1 = perfectly linear and positive\n0 = no linear relationship\n\nNonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship"
+    "text": "Correlation\n\nCorrelation is describes the strength of a linear relationship between two variables\n\nThe observed sample correlation is denoted by \\(R\\)\nFormula (not important): \\(R = \\frac{1}{n-1} \\sum_{i=1}^{n} \\left(\\frac{x_{i} - \\bar{x}}{s_x} \\right)\\left(\\frac{y_{i} - \\bar{y}}{s_y} \\right)\\)\n\n\n\n\n\nAlways takes a value between -1 and 1\n\n-1 = perfectly linear and negative\n1 = perfectly linear and positive\n0 = no linear relationship\n\nNonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#different-lines",
     "href": "slides/slides-23-slr-intro.html#different-lines",
     "title": "Introduction to Simple Linear Regression",
     "section": "Different lines",
-    "text": "Different lines\nThe following display the same set of 50 observations.\n\nWhich line would you say fits the data the best?\n\n\n\nThere are infinitely many choices of \\((b_{0}, b_{1})\\) that could be used to create a line for the data\nWe want the BEST choice (i.e. the one that gives us the “line of best fit”)\n\nHow to define “best”?"
+    "text": "Different lines\nThe following display the same set of 50 observations.\n\n\n\n\n\n\n\n\n\nWhich line would you say fits the data the best?\n\n\n\n\nThere are infinitely many choices of \\((b_{0}, b_{1})\\) that could be used to create a line\nWe want the BEST choice (i.e. the one that gives us the “line of best fit”)\n\n\nHow to define “best”?"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#line-of-best-fit",
     "href": "slides/slides-23-slr-intro.html#line-of-best-fit",
     "title": "Introduction to Simple Linear Regression",
     "section": "Line of best fit",
-    "text": "Line of best fit\n\nOne way to define a “line of best fit” is to choose the specific values of \\((b_{0}, b_{1})\\) that minimize the total residuals across all \\(n\\) data points\nResults in following possible criterion:\n\nLeast absolute criterion: minimize sum of residual magnitudes:\n\n\\[\n|\\epsilon_{1} | + |\\epsilon_{2}| + \\ldots + |\\epsilon_{n}|\n\\]\n\n\nLeast squared criterion: minimize sum of squared residuals:\n\n\n\n\\[\ne_{1}^2 + e_{2}^2 +\\ldots + e_{n}^2\n\\]\n\nThe choice of \\((b_{0}, b_{1})\\) that satisfy least squares criterion yields the least squares line, and will be our criterion for “best”\nOption 1 (yellow line) is our least squares line, whereas pink line is the least absolute line"
+    "text": "Line of best fit\nOne way to define a “best” is to choose the specific values of \\((b_{0}, b_{1})\\) that minimize the total residuals across all \\(n\\) data points. Results in following possible criterion:\n\nLeast absolute criterion: minimize sum of residual magnitudes:\n\n\n\\[\n|\\epsilon_{1} | + |\\epsilon_{2}| + \\ldots + |\\epsilon_{n}|\n\\]\n\n\n\nLeast squares criterion: minimize sum of squared residuals:\n\n\n\n\\[\ne_{1}^2 + e_{2}^2 +\\ldots + e_{n}^2\n\\]\n\n\nThe choice of \\((b_{0}, b_{1})\\) that satisfy least squares criterion yields the least squares line, and will be our criterion for “best”\nOn previous slide, yellow line is the least squares line, whereas pink line is the least absolute line"
   },
   {
     "objectID": "coding_practice/coding-practice-22-pivoting.html",
@@ -4422,5 +4422,103 @@
     "title": "Pivoting in R",
     "section": "pivot_wider()",
     "text": "pivot_wider()\nWe can also pivot from long to wide format. Let’s look at the fish_encounters data.\n\nfish_encounters |>\n  head()\n\n# A tibble: 6 × 3\n  fish  station  seen\n  <fct> <fct>   <int>\n1 4842  Release     1\n2 4842  I80_1       1\n3 4842  Lisbon      1\n4 4842  Rstr        1\n5 4842  Base_TD     1\n6 4842  BCE         1\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nSuppose our observation unit of interest is fish. Explain why this data frame is in the long format.\n\n\n\nWe want to pivot the data such that each fish is an observation, and we can easily see which stations it was observed at. We can do this using the pivot_wider() function, which takes two arguments:\n\nnames_from: the name of the variable(s) in the data frame to get the name of the output column.\nvalues_from: the name of the variable(s) in the data frame to get the cell values from\n\nThat is, the input to names_from should be the categorical variable(s), and the different levels of this categorical variable will be the new column names. What should we fill these cells with? The values specified by values_from.\n\nfish_encounters |>\n  pivot_wider(names_from = station, values_from = seen)\n\n# A tibble: 19 × 12\n   fish  Release I80_1 Lisbon  Rstr Base_TD   BCE   BCW  BCE2  BCW2   MAE   MAW\n   <fct>   <int> <int>  <int> <int>   <int> <int> <int> <int> <int> <int> <int>\n 1 4842        1     1      1     1       1     1     1     1     1     1     1\n 2 4843        1     1      1     1       1     1     1     1     1     1     1\n 3 4844        1     1      1     1       1     1     1     1     1     1     1\n 4 4845        1     1      1     1       1    NA    NA    NA    NA    NA    NA\n 5 4847        1     1      1    NA      NA    NA    NA    NA    NA    NA    NA\n 6 4848        1     1      1     1      NA    NA    NA    NA    NA    NA    NA\n 7 4849        1     1     NA    NA      NA    NA    NA    NA    NA    NA    NA\n 8 4850        1     1     NA     1       1     1     1    NA    NA    NA    NA\n 9 4851        1     1     NA    NA      NA    NA    NA    NA    NA    NA    NA\n10 4854        1     1     NA    NA      NA    NA    NA    NA    NA    NA    NA\n11 4855        1     1      1     1       1    NA    NA    NA    NA    NA    NA\n12 4857        1     1      1     1       1     1     1     1     1    NA    NA\n13 4858        1     1      1     1       1     1     1     1     1     1     1\n14 4859        1     1      1     1       1    NA    NA    NA    NA    NA    NA\n15 4861        1     1      1     1       1     1     1     1     1     1     1\n16 4862        1     1      1     1       1     1     1     1     1    NA    NA\n17 4863        1     1     NA    NA      NA    NA    NA    NA    NA    NA    NA\n18 4864        1     1     NA    NA      NA    NA    NA    NA    NA    NA    NA\n19 4865        1     1      1    NA      NA    NA    NA    NA    NA    NA    NA\n\n\n\n\n\n\nNote that there are some NA values after pivoting. From the Help file, this is because misses were not directly recorded in the original form of the data. Try adding the argument values_fill = 0 to the pivot_wider() function."
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#linear-regression-model-1",
+    "href": "slides/slides-23-slr-intro.html#linear-regression-model-1",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Linear regression model",
+    "text": "Linear regression model\nRemember, our linear regression model is:\n\\[\ny = \\beta_{0} + \\beta_{1}x + \\epsilon\n\\]\n\nWhile not wrong, it can be good practice to be specific about an observation \\(i\\):\n\\[\ny_{i} = \\beta_{0} + \\beta_{1} x_{i} + \\epsilon_{i}, \\qquad i = 1,\\ldots, n\n\\]\n\n\nHere, we are stating that each observation \\(i\\) has a specific:\n\nexplanatory variable value \\(x_{i}\\)\nresponse variable value \\(y_{i}\\)\nerror/randomness \\(\\epsilon_{i}\\)"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#conditions-for-the-least-squares-line-line",
+    "href": "slides/slides-23-slr-intro.html#conditions-for-the-least-squares-line-line",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Conditions for the least squares line (LINE)",
+    "text": "Conditions for the least squares line (LINE)\nLike when using CLT, we should check some conditions before saying a linear regression model is appropriate!\n\nAssume for now that \\(x\\) is continuous numerical.\n\n\nLinearity: data should show a linear trend between \\(x\\) and \\(y\\)\nIndependence: the observations \\(i\\) are independent of each other\n\ne.g. random sample\nNon-example: time-series data\n\nNormality/nearly normal residuals: the residuals should appear approximately Normal\n\nPossible violations: outliers, influential points (more on this later)\n\nEqual variability: variability of points around the least squares line remains roughly constant"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#running-example",
+    "href": "slides/slides-23-slr-intro.html#running-example",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Running example",
+    "text": "Running example\nWe will see how to check for these four LINE conditions using the cherry data from openintro.\n\n\n\n\n\n\n\ndiam\nvolume\n\n\n\n\n8.3\n10.3\n\n\n8.6\n10.3\n\n\n8.8\n10.2\n\n\n10.5\n16.4\n\n\n10.7\n18.8\n\n\n\n\n\n\n\nExplanatory variable \\(x\\): diam\nResponse variable \\(y\\): volume"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#linearity",
+    "href": "slides/slides-23-slr-intro.html#linearity",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "1. Linearity",
+    "text": "1. Linearity\nAssess before fitting the linear regression model by making a scatterplot of \\(x\\) vs. \\(y\\):\n\n\nDoes there appear to be a linear relationship between diameter and volume?\n\nI would say yes"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#independence",
+    "href": "slides/slides-23-slr-intro.html#independence",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "2. Independence",
+    "text": "2. Independence\nAssess before fitting the linear regression model by understanding how your data were sampled.\n\nThe cherry data do not explicitly say that the trees were randomly sampled, but it might be a reasonable assumption\n\n\nAn example where independence is violated:\n\n\n\n\n\n\n\n\nHere, the data are a time series, where observation at time point \\(i\\) depends on the observation at time \\(i-1\\).\n\nSuccessive/consecutive observations are highly correlated"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#nearly-normal-residuals",
+    "href": "slides/slides-23-slr-intro.html#nearly-normal-residuals",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "3. Nearly normal residuals",
+    "text": "3. Nearly normal residuals\nAssess after fitting the model by obtaining residuals and making a histogram.\n\nRemember, residuals are \\(\\hat{y}_{i} - y_{i}\\)\n\n\n\n\n\ncherry |>\n  mutate(volume_hat = -36.94 + 5.07*diam) |>\n  mutate(residual = volume_hat - volume) \n\n\n\n\n\n \n  \n    diam \n    volume \n    volume_hat \n    residual \n  \n \n\n  \n    8.3 \n    10.3 \n    5.108 \n    -5.192 \n  \n  \n    8.6 \n    10.3 \n    6.628 \n    -3.672 \n  \n  \n    8.8 \n    10.2 \n    7.641 \n    -2.559 \n  \n  \n    10.5 \n    16.4 \n    16.253 \n    -0.147 \n  \n  \n    10.7 \n    18.8 \n    17.266 \n    -1.534 \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDo the residuals appear approximately Normal?\n\nI think so!"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#equal-variance",
+    "href": "slides/slides-23-slr-intro.html#equal-variance",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "4. Equal variance",
+    "text": "4. Equal variance\nAssess after fitting the model by examining a residual plot and looking for patterns.\n\n\nA good residual plot:\n\n\n\n\n\n\nA bad residual plot:\n\n\n\n\n\n\n\nWe usually have a horizontal line at 0 to compare residuals to"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#fitting-the-model",
+    "href": "slides/slides-23-slr-intro.html#fitting-the-model",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitting the model",
+    "text": "Fitting the model\n\n\n\nAt this point, it is time to actually fit our model\n\\[\n\\text{volume} = \\beta_{0} + \\beta_{1} \\text{diameter} +\\epsilon\n\\]\n\nAfter fitting the model, we get the following estimates: \\(b_{0}= -36.94\\) and \\(b_{1} = 5.07\\). So our fitted model is:\n\n\n\\[\n\\widehat{\\text{volume}} = -36.94 + 5.07 \\times \\text{diameter}\n\\]\n\nRemember: the “hat” denotes an estimated/fitted value!\n\n\n\nWe will soon see how \\(b_{0}\\) and \\(b_{1}\\) are calculated and how to interpret them\nThe next two checks can only occur after fitting the model."
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#equal-variance-cont.",
+    "href": "slides/slides-23-slr-intro.html#equal-variance-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "4. Equal variance (cont.)",
+    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\nBased on this plot, I would say the equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#parameter-estimates",
+    "href": "slides/slides-23-slr-intro.html#parameter-estimates",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Parameter estimates",
+    "text": "Parameter estimates\n\nLike in previous topics, we have to estimate the parameters using data\nWe want to estimate \\(\\beta_{0}\\) and \\(\\beta_{1}\\) using the \\((x_{i}, y_{i})\\)\n\nIn practice, we let software do this for us\n\nHowever, we can derive the least-squares estimates using properties of the least-squares line"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#estimating-slope-and-intercept",
+    "href": "slides/slides-23-slr-intro.html#estimating-slope-and-intercept",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Estimating slope and intercept",
+    "text": "Estimating slope and intercept\n\n\nFirst obtain \\(b_{1}\\):\n\n\\[\nb_{1} =\\frac{s_{y}}{s_{x}} R\n\\]\nwhere:\n\n\n\\(s_{x}\\) and \\(s_{y}\\) are the sample standard deviations of the explanatory and response variables\n\\(R\\) is the correlation between \\(x\\) and \\(y\\)\n\n\n\nThen obtain \\(b_{0}\\):\n\n\\[b_{0} = \\bar{y} - b_{1} \\bar{x}\\] where\n\n\n\\(\\bar{y}\\) is the sample mean of the response variable\n\\(x\\) is the sample mean of the explanatory variable\n\n\n\n\n\n\nTake STAT 0211 or 0311 to see where these formulas come from!"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#fitting-cherry-model",
+    "href": "slides/slides-23-slr-intro.html#fitting-cherry-model",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitting cherry model",
+    "text": "Fitting cherry model\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), names_to = \"variable\", values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#fitting-cherry-model-by-hand",
+    "href": "slides/slides-23-slr-intro.html#fitting-cherry-model-by-hand",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitting cherry model (by hand)",
+    "text": "Fitting cherry model (by hand)\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), names_to = \"variable\", values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html#residual-cont.",
+    "href": "slides/slides-23-slr-intro.html#residual-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Residual (cont.)",
+    "text": "Residual (cont.)\n\n\nResidual values for the three highlighted observations:\n\n\n\n\n \n  \n    x \n    y \n    y_hat \n    residual \n  \n \n\n  \n    -2.991 \n    2.481 \n    -0.130 \n    -2.611 \n  \n  \n    -1.005 \n    -1.302 \n    0.691 \n    1.994 \n  \n  \n    3.990 \n    3.929 \n    2.757 \n    -1.172"
   }
 ]

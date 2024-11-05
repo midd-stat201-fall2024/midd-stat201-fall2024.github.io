@@ -10,7 +10,6 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 -   [Department dessert + pre-registration social!](dessert_social_F24.pdf)
     -   Wednesday 11/06 from 3-4:30 in WNS 101
--   Data collection proposal due Monday 11/04 at 11:59pm!
 -   Make-up office hours: Tuesday 11/05 4-5pm
 -   Problem Set 7 due this Wednesday 11/06 at 11:59pm
 -   Add your `R` questions [here](https://docs.google.com/spreadsheets/d/1RZTake0XPfMMgDrGrZWNUDoTlmQnT8e_Ww7rjjyjbIQ/edit?usp=sharing)!

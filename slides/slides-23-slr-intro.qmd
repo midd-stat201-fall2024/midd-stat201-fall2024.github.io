@@ -27,7 +27,8 @@ library(readr)
 library(patchwork)
 library(quantreg)
 library(kableExtra)
-plot_theme <- theme(text = element_text(size = 24))
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
@@ -63,8 +64,9 @@ $$
 
 -   We have two variables:
 
-    1.  $y$ is response variable
+    1.  $y$ is response variable. **Must be continuous numerical.**
     2.  $x$ is explanatory variable, also called the **predictor** variable
+        -   Can be numerical or categorical
 
 -   $\beta_{0}$ and $\beta_{1}$ are the model **parameters** (intercept and slope)
 
@@ -100,8 +102,6 @@ p
 
 -   Observations won't fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!
 
-
-
 ## Fitted values
 
 Suppose we have some specific estimates $b_0$ and $b_{1}$. We could fit the linear relationship using these values as:
@@ -128,9 +128,10 @@ p1 <- p + geom_abline(slope = fit[2], intercept = fit[1], col = "yellow", linewi
   labs(title = "Option 1")
 p_resid <- p1 + 
   geom_segment(data = df_fit,mapping= aes(x = x, xend = x_end, y = y, yend = y_end), linetype = "dashed", col = "#F8766D")+
-    geom_point(data = df_fit, mapping = aes(x = x, y = y_end, col = "fitted"), shape = 4, size = 4)+
-  geom_point(data = df_fit, mapping = aes(x = x, y = y, col = "observed"), size = 2) +
-  theme(legend.title = element_blank(), title = element_blank())
+    geom_point(data = df_fit, mapping = aes(x = x, y = y_end, col = "fitted"), shape = 4, size = 6)+
+  geom_point(data = df_fit, mapping = aes(x = x, y = y, col = "observed"), size = 4) +
+  theme(legend.title = element_blank(), plot.title = element_blank()) +
+  labs(y = "y", x = "x")
 p_resid
 ```
 
@@ -146,7 +147,9 @@ $$
 
 -   For each observation $i$, we obtain residual $e_{i}$ via:
 
+::: fragment
 $$y_{i} = \hat{y}_{i} + e_{i} \quad \Rightarrow \quad e_{i} = \hat{y}_{i} - y_{i}$$
+:::
 
 -   Residual = difference between observed and expected
 
@@ -158,31 +161,42 @@ $$y_{i} = \hat{y}_{i} + e_{i} \quad \Rightarrow \quad e_{i} = \hat{y}_{i} - y_{i
         What is the ideal value for a residual?
         :::
 
-## Residual plot
-
--   Residuals are very helpful in evaluating how well a model fits a set of data
-
--   **Residual plot** shows residuals plotted at the original $x$ locations, but now $y$-axis represents the residual
+## Residual (cont.)
 
 ```{r}
-df |>
-  add_column(y_hat) |>
-  mutate(residual = y_hat-y) |>
-  ggplot(aes(x = x, y = residual)) +
-  geom_point(size = 2) +
-  theme_minimal() +
-  theme(text = element_text(size = 24)) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
-  labs(title = "Residual plot", subtitle = "Option 1 line", caption = "Red dots = specific points from previous plot")
+p_resid
 ```
+
+::: fragment
+Residual values for the three highlighted observations:
 
 ```{r}
 df |>
   add_column(y_hat) |>
   mutate(residual = y_hat-y) |>
   slice(ids) |>
-  kable(digits = 3)
+  kable(digits = 3) |>
+  kable_styling(font_size = 25)
+```
+:::
+
+## Residual plot
+
+-   Residuals are very helpful in evaluating how well a model fits a set of data
+
+-   **Residual plot**: original $x$ values plotted against their corresponding residuals on $y$-axis
+
+```{r}
+df |>
+  add_column(y_hat) |>
+  mutate(residual = y_hat-y) |>
+  ggplot(aes(x = x, y = residual)) +
+  geom_point(size = 4) +
+  theme_minimal() +
+  theme(text = element_text(size = 28)) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
+  labs(title = "Residual plot", subtitle = "Option 1 line", caption = "Red dots = specific points from previous plot")
 ```
 
 ## Residual plot (cont.)
@@ -194,7 +208,7 @@ Residual plots can be useful for identifying characteristics/patterns that remai
     :::
 
 ::: fragment
-![](figs/23-residual-plot.png){fig-align="center"}
+![](figs/23-residual-plot.png){fig-align="center" width="308"}
 :::
 
 ::: discuss
@@ -220,7 +234,8 @@ data.frame(x=x, y2, y3, y4) |>
   ggplot(aes(x=x, y =y )) +
   geom_point()+
   facet_wrap(~Plot) +
-  theme_minimal()
+  theme_minimal() +
+  plot_theme
   
 ```
 
@@ -230,9 +245,11 @@ data.frame(x=x, y2, y3, y4) |>
 
 -   **Correlation** is describes the strength of a *linear* relationship between two variables
 
-    -   Denoted by `R` or $\rho$
+    -   The observed sample correlation is denoted by $R$
     -   Formula (not important): $R = \frac{1}{n-1} \sum_{i=1}^{n} \left(\frac{x_{i} - \bar{x}}{s_x} \right)\left(\frac{y_{i} - \bar{y}}{s_y} \right)$
 
+:::::: columns
+::: {.column width="50%"}
 -   Always takes a value between -1 and 1
 
     -   -1 = perfectly linear and negative
@@ -242,61 +259,428 @@ data.frame(x=x, y2, y3, y4) |>
     -   0 = no linear relationship
 
 -   Nonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship
+:::
 
+:::: {.column width="50%"}
+::: fragment
 ![](figs/23-correlations.png){fig-align="center" width="1610"}
+:::
+::::
+::::::
 
 # Least squares regression
 
 In Algebra class, there exists a single (intercept, slope) pair because the $(x,y)$ points had no error; all points landed on the line.
 
-Now, we assume there is error. So how do we choose a single "best" $(b_{0}, b_{1})$ pair?
+-   Now, we assume there is error
+
+-   How do we choose a single "best" $(b_{0}, b_{1})$ pair?
 
 ## Different lines
 
 The following display the same set of `r n` observations.
 
-::: discuss
-Which line would you say fits the data the best?
-:::
-
+:::::: columns
+::: {.column width="70%"}
 ```{r}
 fit_abs <- coef(rq(y ~ x, tau = 0.5))
 
 p2 <- p + geom_abline(slope = fit_abs[2], intercept = fit_abs[1], col = "pink", linewidth = 2) +
   labs(title = "Option 2")
-p3 <- p + geom_abline(slope = b1-0.2, intercept = b0+0.3, col = "purple", linewidth = 2) +
+p3 <- p + geom_abline(slope = -1*b1, intercept = b0+0.3, col = "green", linewidth = 2) +
   labs(title = "Option 3")
-p4 <- p + geom_abline(slope = -1*b1, intercept = b0+0.3, col = "green", linewidth = 2) +
-  labs(title = "Option 4")
-p1+p2+p3+p4
+p1 + p2+ p3
 ```
+:::
 
--   There are infinitely many choices of $(b_{0}, b_{1})$ that could be used to create a line for the data
+:::: {.column width="30%"}
+::: discuss
+Which line would you say fits the data the best?
+:::
+::::
+::::::
+
+-   There are infinitely many choices of $(b_{0}, b_{1})$ that could be used to create a line
 
 -   We want the BEST choice (i.e. the one that gives us the "line of best fit")
 
-    -   How to define "best"?
+    -   ::: {style="color: maroon"}
+        How to define "best"?
+        :::
 
 ## Line of best fit
 
--   One way to define a "line of best fit" is to choose the specific values of $(b_{0}, b_{1})$ that minimize the total residuals across all $n$ data points
+One way to define a "best" is to choose the specific values of $(b_{0}, b_{1})$ that minimize the total residuals across all $n$ data points. Results in following possible criterion:
 
--   Results in following possible criterion:
+1.  **Least absolute criterion**: minimize sum of residual magnitudes:
 
-    -   **Least absolute criterion**: minimize sum of residual magnitudes:
+::: fragment
+$$
+|\epsilon_{1} | + |\epsilon_{2}| + \ldots + |\epsilon_{n}|
+$$
+:::
 
-    $$
-    |\epsilon_{1} | + |\epsilon_{2}| + \ldots + |\epsilon_{n}|
-    $$
+::: {style="color: maroon"}
+2.  **Least squares criterion**: minimize sum of squared residuals:
+:::
 
-    -   ::: {style="color: maroon"}
-        **Least squares criterion**: minimize sum of squared residuals:
-        :::
-
+::: fragment
 $$
 e_{1}^2 + e_{2}^2 +\ldots + e_{n}^2
 $$
+:::
 
 -   The choice of $(b_{0}, b_{1})$ that satisfy least squares criterion yields the **least squares line**, and will be our criterion for "best"
 
--   Option 1 (yellow line) is our least squares line, whereas pink line is the least absolute line
+-   On previous slide, yellow line is the least squares line, whereas pink line is the least absolute line
+
+## Linear regression model
+
+Remember, our linear regression model is:
+
+$$
+y = \beta_{0} + \beta_{1}x + \epsilon
+$$
+
+::: fragment
+While not wrong, it can be good practice to be specific about an observation $i$:
+
+$$
+y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}, \qquad i = 1,\ldots, n
+$$
+:::
+
+-   Here, we are stating that each observation $i$ has a specific:
+
+    -   explanatory variable value $x_{i}$
+    -   response variable value $y_{i}$
+    -   error/randomness $\epsilon_{i}$
+
+## Conditions for the least squares line (LINE)
+
+Like when using CLT, we should check some conditions before saying a linear regression model is appropriate!
+
+::: {style="color: maroon"}
+Assume for now that $x$ is continuous numerical.
+:::
+
+1.  **Linearity**: data should show a linear trend between $x$ and $y$
+
+2.  **Independence**: the observations $i$ are independent of each other
+
+    -   e.g. random sample
+
+    -   Non-example: time-series data
+
+3.  **Normality/nearly normal residuals**: the residuals should appear approximately Normal
+
+    -   Possible violations: outliers, influential points (more on this later)
+
+4.  **Equal variability**: variability of points around the least squares line remains roughly constant
+
+## Running example
+
+We will see how to check for these four LINE conditions using the `cherry` data from `openintro`.
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+cherry |>
+  select(diam, volume) |>
+  slice(1:5)|>
+  kable()
+```
+:::
+
+::: {.column width="50%"}
+-   Explanatory variable $x$: `diam`
+
+-   Response variable $y$: `volume`
+:::
+:::::
+
+## 1. Linearity
+
+Assess *before* fitting the linear regression model by making a scatterplot of $x$ vs. $y$:
+
+```{r}
+ggplot(cherry, aes(x= diam, y = volume)) +
+  geom_point(size = 3) +
+  labs(title = "Cherry tree diameter vs. volume", x = "diameter (inches)", y = "volume (cubic feet)") +
+  theme_minimal() +
+  theme(text= element_text(size = 24))
+```
+
+::: discuss
+Does there appear to be a linear relationship between diameter and volume?
+
+-   I would say yes
+:::
+
+## 2. Independence
+
+Assess *before* fitting the linear regression model by understanding how your data were sampled.
+
+-   The `cherry` data do not explicitly say that the trees were randomly sampled, but it might be a reasonable assumption
+
+:::::: fragment
+An example where independence is violated:
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+set.seed(2)
+y <- c(0)
+for(i in 2:120){
+  if(i < 20 | (45 <= i & i > 60) | (i > 80 & i < 100)){
+     to_add <- rnorm(1, y[-i] - 0.2, 0.15)
+  } else{
+     to_add <- rnorm(1, y[-i] + 0.2, 0.15)
+  }
+  y <- c(y, to_add)
+}
+ggplot(data.frame(y) |> mutate(x = row_number()), aes(x = x, y = y)) +
+  geom_point(size = 3) +
+  plot_theme +
+  labs(title = "Time series data")
+```
+:::
+
+::: {.column width="50%"}
+Here, the data are a time series, where observation at time point $i$ depends on the observation at time $i-1$.
+
+-   Successive/consecutive observations are highly correlated
+:::
+:::::
+::::::
+
+## Fitting the model
+
+```{r}
+cherry_lm <- lm(volume ~ diam, cherry)
+cherry_coefs <- round(coef(cherry_lm), 2)
+```
+
+At this point, it is time to actually fit our model
+
+$$
+\text{volume} = \beta_{0} + \beta_{1} \text{diameter} +\epsilon
+$$
+
+-   After fitting the model, we get the following estimates: $b_{0}= `r cherry_coefs[1]`$ and $b_{1} = `r cherry_coefs[2]`$. So our **fitted model** is:
+
+:::: fragment
+$$
+\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
+$$
+
+::: {style="color: maroon"}
+Remember: the "hat" denotes an estimated/fitted value!
+:::
+::::
+
+-   We will soon see how $b_{0}$ and $b_{1}$ are calculated and how to interpret them
+
+-   The next two checks can only occur *after* fitting the model.
+
+## 3. Nearly normal residuals
+
+Assess *after* fitting the model by obtaining residuals and making a histogram.
+
+-   Remember, residuals are $\hat{y}_{i} - y_{i}$
+
+:::::: fragment
+::::: columns
+::: {.column width="45%"}
+```{r echo = T, eval = F}
+cherry |>
+  mutate(volume_hat = -36.94 + 5.07*diam) |>
+  mutate(residual = volume_hat - volume) 
+```
+
+```{r echo = F}
+cherry |>
+  select(-height) |>
+  mutate(volume_hat = -36.94 + 5.066*diam) |>
+  mutate(residual = volume_hat - volume) |>
+  slice(1:5)|>
+  kable(digits = 3) |>
+  kable_styling(font_size = 20)
+```
+:::
+
+::: {.column width="55%"}
+```{r}
+library(broom)
+augment(cherry_lm) |>
+  ggplot(mapping = aes(x = .resid)) +
+  geom_histogram(bins = 20) +
+  plot_theme +
+  theme(text = element_text(size = 28)) +
+  labs(x = "residuals")
+```
+:::
+:::::
+::::::
+
+::: discuss
+-   Do the residuals appear approximately Normal?
+
+    -   I think so!
+:::
+
+## 4. Equal variance
+
+Assess *after* fitting the model by examining a residual plot and looking for patterns.
+
+::::: columns
+::: {.column width="50%"}
+A good residual plot:
+
+```{r}
+set.seed(12)
+x <- seq(1,100, 2)
+resid_good <- rnorm(length(x), mean = 0, sd = 4)
+data.frame(x, residual = resid_good) |>
+  ggplot(aes(x = x, y = residual)) +
+  geom_point(size = 4) +
+  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 2, col ="darkgrey") +
+  plot_theme +
+  labs(title = "Constant variance")
+```
+:::
+
+::: {.column width="50%"}
+A bad residual plot:
+
+```{r}
+set.seed(12)
+resid_bad <- 0 + rnorm(length(x), mean = 0, sd = x/2)
+data.frame(x, residual = resid_bad) |>
+  ggplot(aes(x = x, y = residual)) +
+  geom_point(size = 4) +
+  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 2, col ="darkgrey") +
+  plot_theme +
+  labs(title = "Not constant variance")
+```
+:::
+:::::
+
+We usually have a horizontal line at 0 to compare residuals to
+
+## 4. Equal variance (cont.)
+
+Let's examine the residual plot of our fitted model for the `cherry` data:
+
+```{r}
+augment(cherry_lm) |>
+  ggplot(mapping = aes(x = diam, y = .resid)) +
+  geom_point(size = 3) +
+  plot_theme +
+  geom_hline(yintercept = 0, linetype = "dashed", linewidth =1.25, col ="darkgrey") +
+  labs(y = "Residual", title = "Residual plot for cherry model", x = "diameter (inches)")
+```
+
+-   Based on this plot, I would say the equal variance condition is not perfectly met.
+
+    -   Some of the variability in the errors appear related to `diameter`
+
+# Fitting the least-squares line
+
+## Parameter estimates
+
+-   Like in previous topics, we have to estimate the parameters using data
+-   We want to estimate $\beta_{0}$ and $\beta_{1}$ using the $(x_{i}, y_{i})$
+    -   In practice, we let software do this for us
+-   However, we *can* derive the least-squares estimates using properties of the least-squares line
+
+## Estimating slope and intercept
+
+:::::::: columns
+:::: {.column width="50%"}
+First obtain $b_{1}$:
+
+::: fragment
+$$
+b_{1} =\frac{s_{y}}{s_{x}} R
+$$
+
+where:
+:::
+
+-   $s_{x}$ and $s_{y}$ are the sample standard deviations of the explanatory and response variables
+
+-   $R$ is the correlation between $x$ and $y$
+::::
+
+::::: {.column width="50%"}
+:::: fragment
+Then obtain $b_{0}$:
+
+::: fragment
+$$b_{0} = \bar{y} - b_{1} \bar{x}$$ where
+:::
+
+-   $\bar{y}$ is the sample mean of the response variable
+
+-   $x$ is the sample mean of the explanatory variable
+::::
+:::::
+::::::::
+
+-   ::: {style="color: maroon"}
+    Take STAT 0211 or 0311 to see where these formulas come from!
+    :::
+
+## Fitting `cherry` model (by hand)
+
+Verify estimates $b_{0} = `r round(cherry_coefs[1],2)`$ and $b_{1} = `r round(cherry_coefs[2],2)`$ from our model for the cherry data:
+
+```{r echo = T, eval = F}
+cherry |>
+  pivot_longer(cols = c(diam, volume), names_to = "variable", values_to = "val") |>
+  select(-height) |>
+  group_by(variable) |>
+  summarise(mean = mean(val), s = sd(val)) 
+```
+
+```{r echo = F, eval = T}
+cherry |>
+  pivot_longer(cols = c(diam, volume), names_to = "variable", values_to = "val") |>
+  select(-height) |>
+  group_by(variable) |>
+  summarise(mean = mean(val), s = sd(val)) |>
+  kable(digits = 3) |>
+  kable_styling(font_size = 30)
+```
+
+```{r echo = T}
+R <- cor(cherry$diam, cherry$volume)
+R
+```
+
+```{r}
+mean_diam <- round(mean(cherry$diam),3)
+mean_vol <-round(mean(cherry$volume),3)
+s_diam <- round(sd(cherry$diam) ,3)
+s_vol <-round(sd(cherry$volume),3)
+R <- round(R , 3)
+```
+
+:::::: columns
+:::: {.column width="40%"}
+::: discuss
+-   Set-up the calculations:
+
+    -   $b_{1} = \frac{s_{y}}{s_{x}} R$
+
+    -   $b_{0} = \bar{y} -b_{1} \bar{x}$
+:::
+::::
+
+::: {.column width="60%"}
+-   $b_{1} = \frac{`r s_vol`}{`r s_diam`} \times `r R` = `r round(cherry_coefs[2], 2)`$
+
+-   $b_{0} = `r mean_vol` -  `r round(cherry_coefs[2], 2)` \times `r mean_diam` = `r round(cherry_coefs[1], 2)`$
+:::
+::::::
