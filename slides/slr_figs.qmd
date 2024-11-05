@@ -1,0 +1,36 @@
+---
+title: "SLR figures"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+![](figs/23-fit_obs.png){width="500"}
+
+![](figs/23-residual_plot.png){width="400"}
+
+![](figs/23-residual-plot.png){width="600"}
+
+![](figs/23-correlations.png){fig-align="center" width="500"}
+
+![](figs/23-line-options.png)
+
+![](figs/23-cherry_scatter.png){width="400"}
+
+![](figs/23-time_series.png){width="400"}
+
+![](figs/23-cherry_resid_hist.png){width="400"}
+
+![](figs/23-constant_var.png){width="400"}
+
+![](figs/23-non_constant_var.png){width="400"}
+
+![](figs/23-cherry_resid_plot.png){width="400"}

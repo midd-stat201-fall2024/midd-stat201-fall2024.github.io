@@ -34,7 +34,7 @@ source("../stat201_fns.R")
 
 -   Homework 7 due tonight!
 
--   Last problem set is assigned today
+-   Last problem set is assigned today! Atypical due date: Wednesday 11/13
 
 # Linear regression
 
@@ -135,7 +135,8 @@ p_resid <- p1 +
 p_resid
 ```
 
--   Every observed value has a corresponding fitted value; the above plot just shows three specific examples
+-   Suppose our estimated line is the yellow one
+-   Every observed value $y_{i}$ has a corresponding fitted value $\hat{y}_{i}$; the above plot just shows three specific examples
 
 ## Residual
 
@@ -186,7 +187,9 @@ df |>
 
 -   **Residual plot**: original $x$ values plotted against their corresponding residuals on $y$-axis
 
-```{r}
+::: fragment
+
+```{r fig.width=15}
 df |>
   add_column(y_hat) |>
   mutate(residual = y_hat-y) |>
@@ -196,8 +199,10 @@ df |>
   theme(text = element_text(size = 28)) +
   geom_hline(yintercept = 0, linetype = "dashed") +
   geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
-  labs(title = "Residual plot", subtitle = "Option 1 line", caption = "Red dots = specific points from previous plot")
+  labs(title = "Residual plot", caption = "Red dots = specific points from previous plot")
 ```
+
+:::
 
 ## Residual plot (cont.)
 
@@ -207,13 +212,13 @@ Residual plots can be useful for identifying characteristics/patterns that remai
     Just because you fit a model to data, does not mean the model is a good fit!
     :::
 
-::: fragment
-![](figs/23-residual-plot.png){fig-align="center" width="308"}
-:::
+:::: fragment
+![](figs/23-residual-plot.png){fig-align="center" width="532"}
 
 ::: discuss
 Can you identify any patterns remaining in the residuals?
 :::
+::::
 
 ## Describing linear relationships
 
@@ -517,7 +522,7 @@ augment(cherry_lm) |>
   geom_histogram(bins = 20) +
   plot_theme +
   theme(text = element_text(size = 28)) +
-  labs(x = "residuals")
+  labs(x = "residuals", titles="Cherry data")
 ```
 :::
 :::::
@@ -578,7 +583,7 @@ augment(cherry_lm) |>
   geom_point(size = 3) +
   plot_theme +
   geom_hline(yintercept = 0, linetype = "dashed", linewidth =1.25, col ="darkgrey") +
-  labs(y = "Residual", title = "Residual plot for cherry model", x = "diameter (inches)")
+  labs(y = "Residual", title = "Cherry model", x = "diameter (inches)")
 ```
 
 -   Based on this plot, I would say the equal variance condition is not perfectly met.
