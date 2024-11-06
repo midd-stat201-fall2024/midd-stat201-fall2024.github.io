@@ -4484,7 +4484,7 @@
     "href": "slides/slides-23-slr-intro.html#equal-variance-cont.",
     "title": "Introduction to Simple Linear Regression",
     "section": "4. Equal variance (cont.)",
-    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\nBased on this plot, I would say the equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
+    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\nBased on this plot, I would say there is a definite pattern in the residuals and equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#parameter-estimates",
@@ -4520,5 +4520,173 @@
     "title": "Introduction to Simple Linear Regression",
     "section": "Residual (cont.)",
     "text": "Residual (cont.)\n\n\nResidual values for the three highlighted observations:\n\n\n\n\n \n  \n    x \n    y \n    y_hat \n    residual \n  \n \n\n  \n    -2.991 \n    2.481 \n    -0.130 \n    -2.611 \n  \n  \n    -1.005 \n    -1.302 \n    0.691 \n    1.994 \n  \n  \n    3.990 \n    3.929 \n    2.757 \n    -1.172"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#linear-regression-model",
+    "href": "slides/slides-24-slr-interpretation.html#linear-regression-model",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Linear regression model",
+    "text": "Linear regression model\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\nWe have two variables:\n\n\\(y\\) is response variable. Must be continuous numerical.\n\\(x\\) is explanatory variable, also called the predictor variable\n\nCan be numerical or categorical\n\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are the model parameters (intercept and slope)\n\nEstimated using the data, with point estimates \\(b_{0}\\) and \\(b_{1}\\)\n\n\\(\\epsilon\\) (epsilon) represents the error\n\nAccounts for variability: we do not expect all data to fall perfectly on the line!\nSometimes we drop the \\(\\epsilon\\) term for convenience"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#linear-relationship",
+    "href": "slides/slides-24-slr-interpretation.html#linear-relationship",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Linear relationship",
+    "text": "Linear relationship\nSuppose we have the following data:\n\n\n\n\n\n\nObservations won’t fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#fitted-values",
+    "href": "slides/slides-24-slr-interpretation.html#fitted-values",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitted values",
+    "text": "Fitted values\nSuppose we have some specific estimates \\(b_0\\) and \\(b_{1}\\). We could fit the linear relationship using these values as:\n\\[\n\\hat{y} = b_{0} + b_{1} x\n\\]\n\nThe hat on \\(y\\) signifies that this is an estimate: the estimated/fitted value of \\(y\\) given these specific values of \\(x\\), \\(b_{0}\\) and \\(b_{1}\\)\n\nWe observe \\(y\\), but can obtain a corresponding estimate \\(\\hat{y}\\)\n\nNote that the fitted value is obtained without the error"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#fitted-values-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#fitted-values-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitted values (cont.)",
+    "text": "Fitted values (cont.)\n\n\n\n\n\n\nSuppose our estimated line is the yellow one\nEvery observed value \\(y_{i}\\) has a corresponding fitted value \\(\\hat{y}_{i}\\); the above plot just shows three specific examples"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#residual",
+    "href": "slides/slides-24-slr-interpretation.html#residual",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Residual",
+    "text": "Residual\nResiduals are the remaining variation in the data after fitting a model.\n\\[\n\\text{data} = \\text{fit} + \\text{residual}\n\\]\n\nFor each observation \\(i\\), we obtain residual \\(e_{i}\\) via:\n\n\n\\[y_{i} = \\hat{y}_{i} + e_{i} \\quad \\Rightarrow \\quad e_{i} = \\hat{y}_{i} - y_{i}\\]\n\n\nResidual = difference between observed and expected\nSince each observation has a fitted value, each observation has a residual\n\nIn the linear regression case, the residual is indicated by the vertical dashed line\n\nWhat is the ideal value for a residual?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#residual-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#residual-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Residual (cont.)",
+    "text": "Residual (cont.)\n\n\n\n\n\n\nResidual values for the three highlighted observations:\n\n\n\n\n \n  \n    x \n    y \n    y_hat \n    residual \n  \n \n\n  \n    -2.991 \n    2.481 \n    -0.130 \n    -2.611 \n  \n  \n    -1.005 \n    -1.302 \n    0.691 \n    1.994 \n  \n  \n    3.990 \n    3.929 \n    2.757 \n    -1.172"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#residual-plot",
+    "href": "slides/slides-24-slr-interpretation.html#residual-plot",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Residual plot",
+    "text": "Residual plot\n\nResiduals are very helpful in evaluating how well a model fits a set of data\nResidual plot: original \\(x\\) values plotted against their corresponding residuals on \\(y\\)-axis"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#residual-plot-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#residual-plot-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Residual plot (cont.)",
+    "text": "Residual plot (cont.)\nResidual plots can be useful for identifying characteristics/patterns that remain in the data even after fitting a model.\n\n\nJust because you fit a model to data, does not mean the model is a good fit!\n\n\n\n\n\n\n\n\n\nCan you identify any patterns remaining in the residuals?\n\nSorry! The residuals shown here are taken as \\(y_{i} - \\hat{y}_{i}\\)!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#describing-linear-relationships",
+    "href": "slides/slides-24-slr-interpretation.html#describing-linear-relationships",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Describing linear relationships",
+    "text": "Describing linear relationships\nDifferent data may exhibit different strength of linear relationships:\n\n\n\n\n\n\nCan we quantify the strength of the linear relationship?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#correlation",
+    "href": "slides/slides-24-slr-interpretation.html#correlation",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Correlation",
+    "text": "Correlation\n\nCorrelation is describes the strength of a linear relationship between two variables\n\nThe observed sample correlation is denoted by \\(R\\)\nFormula (not important): \\(R = \\frac{1}{n-1} \\sum_{i=1}^{n} \\left(\\frac{x_{i} - \\bar{x}}{s_x} \\right)\\left(\\frac{y_{i} - \\bar{y}}{s_y} \\right)\\)\n\n\n\n\n\nAlways takes a value between -1 and 1\n\n-1 = perfectly linear and negative\n1 = perfectly linear and positive\n0 = no linear relationship\n\nNonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#different-lines",
+    "href": "slides/slides-24-slr-interpretation.html#different-lines",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Different lines",
+    "text": "Different lines\nThe following display the same set of 50 observations.\n\n\n\n\n\n\n\n\n\nWhich line would you say fits the data the best?\n\n\n\n\nThere are infinitely many choices of \\((b_{0}, b_{1})\\) that could be used to create a line\nWe want the BEST choice (i.e. the one that gives us the “line of best fit”)\n\n\nHow to define “best”?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#line-of-best-fit",
+    "href": "slides/slides-24-slr-interpretation.html#line-of-best-fit",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Line of best fit",
+    "text": "Line of best fit\nOne way to define a “best” is to choose the specific values of \\((b_{0}, b_{1})\\) that minimize the total residuals across all \\(n\\) data points. Results in following possible criterion:\n\nLeast absolute criterion: minimize sum of residual magnitudes:\n\n\n\\[\n|e_{1} | + |e_{2}| + \\ldots + |e_{n}|\n\\]\n\n\n\nLeast squares criterion: minimize sum of squared residuals:\n\n\n\n\\[\ne_{1}^2 + e_{2}^2 +\\ldots + e_{n}^2\n\\]\n\n\nThe choice of \\((b_{0}, b_{1})\\) that satisfy least squares criterion yields the least squares line, and will be our criterion for “best”\nOn previous slide, yellow line is the least squares line, whereas pink line is the least absolute line"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#linear-regression-model-1",
+    "href": "slides/slides-24-slr-interpretation.html#linear-regression-model-1",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Linear regression model",
+    "text": "Linear regression model\nRemember, our linear regression model is:\n\\[\ny = \\beta_{0} + \\beta_{1}x + \\epsilon\n\\]\n\nWhile not wrong, it can be good practice to be specific about an observation \\(i\\):\n\\[\ny_{i} = \\beta_{0} + \\beta_{1} x_{i} + \\epsilon_{i}, \\qquad i = 1,\\ldots, n\n\\]\n\n\nHere, we are stating that each observation \\(i\\) has a specific:\n\nexplanatory variable value \\(x_{i}\\)\nresponse variable value \\(y_{i}\\)\nerror/randomness \\(\\epsilon_{i}\\)"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#conditions-for-the-least-squares-line-line",
+    "href": "slides/slides-24-slr-interpretation.html#conditions-for-the-least-squares-line-line",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Conditions for the least squares line (LINE)",
+    "text": "Conditions for the least squares line (LINE)\nLike when using CLT, we should check some conditions before saying a linear regression model is appropriate!\n\nAssume for now that \\(x\\) is continuous numerical.\n\n\nLinearity: data should show a linear trend between \\(x\\) and \\(y\\)\nIndependence: the observations \\(i\\) are independent of each other\n\ne.g. random sample\nNon-example: time-series data\n\nNormality/nearly normal residuals: the residuals should appear approximately Normal\n\nPossible violations: outliers, influential points (more on this later)\n\nEqual variability: variability of points around the least squares line remains roughly constant"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#running-example",
+    "href": "slides/slides-24-slr-interpretation.html#running-example",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Running example",
+    "text": "Running example\nWe will see how to check for these four LINE conditions using the cherry data from openintro.\n\n\n\n\n\n\n\ndiam\nvolume\n\n\n\n\n8.3\n10.3\n\n\n8.6\n10.3\n\n\n8.8\n10.2\n\n\n10.5\n16.4\n\n\n10.7\n18.8\n\n\n\n\n\n\n\nExplanatory variable \\(x\\): diam\nResponse variable \\(y\\): volume"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#linearity",
+    "href": "slides/slides-24-slr-interpretation.html#linearity",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "1. Linearity",
+    "text": "1. Linearity\nAssess before fitting the linear regression model by making a scatterplot of \\(x\\) vs. \\(y\\):\n\n\n\n\n\n\nDoes there appear to be a linear relationship between diameter and volume?\n\nI would say yes"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#independence",
+    "href": "slides/slides-24-slr-interpretation.html#independence",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "2. Independence",
+    "text": "2. Independence\nAssess before fitting the linear regression model by understanding how your data were sampled.\n\nThe cherry data do not explicitly say that the trees were randomly sampled, but it might be a reasonable assumption\n\n\nAn example where independence is violated:\n\n\n\n\n\n\n\n\nHere, the data are a time series, where observation at time point \\(i\\) depends on the observation at time \\(i-1\\).\n\nSuccessive/consecutive observations are highly correlated"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#fitting-the-model",
+    "href": "slides/slides-24-slr-interpretation.html#fitting-the-model",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitting the model",
+    "text": "Fitting the model\n\n\n\nAt this point, it is time to actually fit our model\n\\[\n\\text{volume} = \\beta_{0} + \\beta_{1} \\text{diameter} +\\epsilon\n\\]\n\nAfter fitting the model, we get the following estimates: \\(b_{0}= -36.94\\) and \\(b_{1} = 5.07\\). So our fitted model is:\n\n\n\\[\n\\widehat{\\text{volume}} = -36.94 + 5.07 \\times \\text{diameter}\n\\]\n\nRemember: the “hat” denotes an estimated/fitted value!\n\n\n\nWe will soon see how \\(b_{0}\\) and \\(b_{1}\\) are calculated and how to interpret them\nThe next two checks can only occur after fitting the model."
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#nearly-normal-residuals",
+    "href": "slides/slides-24-slr-interpretation.html#nearly-normal-residuals",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "3. Nearly normal residuals",
+    "text": "3. Nearly normal residuals\nAssess after fitting the model by obtaining residuals and making a histogram.\n\nRemember, residuals are \\(\\hat{y}_{i} - y_{i}\\)\n\n\n\n\n\ncherry |>\n  mutate(volume_hat = -36.94 + 5.07*diam) |>\n  mutate(residual = volume_hat - volume) \n\n\n\n\n\n \n  \n    diam \n    volume \n    volume_hat \n    residual \n  \n \n\n  \n    8.3 \n    10.3 \n    5.108 \n    -5.192 \n  \n  \n    8.6 \n    10.3 \n    6.628 \n    -3.672 \n  \n  \n    8.8 \n    10.2 \n    7.641 \n    -2.559 \n  \n  \n    10.5 \n    16.4 \n    16.253 \n    -0.147 \n  \n  \n    10.7 \n    18.8 \n    17.266 \n    -1.534 \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDo the residuals appear approximately Normal?\n\nI think so!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#equal-variance",
+    "href": "slides/slides-24-slr-interpretation.html#equal-variance",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "4. Equal variance",
+    "text": "4. Equal variance\nAssess after fitting the model by examining a residual plot and looking for patterns.\n\n\nA good residual plot:\n\n\n\n\n\n\nA bad residual plot:\n\n\n\n\n\n\n\nWe usually have a horizontal line at 0 to compare residuals to"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#equal-variance-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#equal-variance-cont.",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "4. Equal variance (cont.)",
+    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\n\n\n\n\nBased on this plot, I would say the equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#parameter-estimates",
+    "href": "slides/slides-24-slr-interpretation.html#parameter-estimates",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Parameter estimates",
+    "text": "Parameter estimates\n\nLike in previous topics, we have to estimate the parameters using data\nWe want to estimate \\(\\beta_{0}\\) and \\(\\beta_{1}\\) using the \\((x_{i}, y_{i})\\)\n\nIn practice, we let software do this for us\n\nHowever, we can derive the least-squares estimates using properties of the least-squares line"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#estimating-slope-and-intercept",
+    "href": "slides/slides-24-slr-interpretation.html#estimating-slope-and-intercept",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Estimating slope and intercept",
+    "text": "Estimating slope and intercept\n\n\nFirst obtain \\(b_{1}\\):\n\n\\[\nb_{1} =\\frac{s_{y}}{s_{x}} R\n\\]\nwhere:\n\n\n\\(s_{x}\\) and \\(s_{y}\\) are the sample standard deviations of the explanatory and response variables\n\\(R\\) is the correlation between \\(x\\) and \\(y\\)\n\n\n\nThen obtain \\(b_{0}\\):\n\n\\[b_{0} = \\bar{y} - b_{1} \\bar{x}\\] where\n\n\n\\(\\bar{y}\\) is the sample mean of the response variable\n\\(x\\) is the sample mean of the explanatory variable\n\n\n\n\n\n\nTake STAT 0211 or 0311 to see where these formulas come from!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#fitting-cherry-model-by-hand",
+    "href": "slides/slides-24-slr-interpretation.html#fitting-cherry-model-by-hand",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "Fitting cherry model (by hand)",
+    "text": "Fitting cherry model (by hand)\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), names_to = \"variable\", values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)"
   }
 ]
