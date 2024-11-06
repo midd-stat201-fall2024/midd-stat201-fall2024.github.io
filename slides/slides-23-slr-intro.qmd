@@ -188,7 +188,6 @@ df |>
 -   **Residual plot**: original $x$ values plotted against their corresponding residuals on $y$-axis
 
 ::: fragment
-
 ```{r fig.width=15}
 df |>
   add_column(y_hat) |>
@@ -201,7 +200,6 @@ df |>
   geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
   labs(title = "Residual plot", caption = "Red dots = specific points from previous plot")
 ```
-
 :::
 
 ## Residual plot (cont.)
@@ -217,6 +215,8 @@ Residual plots can be useful for identifying characteristics/patterns that remai
 
 ::: discuss
 Can you identify any patterns remaining in the residuals?
+
+-   Sorry! The residuals shown here are taken as $y_{i} - \hat{y}_{i}$!
 :::
 ::::
 
@@ -321,7 +321,7 @@ One way to define a "best" is to choose the specific values of $(b_{0}, b_{1})$ 
 
 ::: fragment
 $$
-|\epsilon_{1} | + |\epsilon_{2}| + \ldots + |\epsilon_{n}|
+|e_{1} | + |e_{2}| + \ldots + |e_{n}|
 $$
 :::
 

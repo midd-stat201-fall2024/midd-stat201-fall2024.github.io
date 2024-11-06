@@ -4365,7 +4365,7 @@
     "href": "slides/slides-23-slr-intro.html#residual-plot-cont.",
     "title": "Introduction to Simple Linear Regression",
     "section": "Residual plot (cont.)",
-    "text": "Residual plot (cont.)\nResidual plots can be useful for identifying characteristics/patterns that remain in the data even after fitting a model.\n\n\nJust because you fit a model to data, does not mean the model is a good fit!\n\n\n\n\n\n\n\n\n\nCan you identify any patterns remaining in the residuals?"
+    "text": "Residual plot (cont.)\nResidual plots can be useful for identifying characteristics/patterns that remain in the data even after fitting a model.\n\n\nJust because you fit a model to data, does not mean the model is a good fit!\n\n\n\n\n\n\n\n\n\nCan you identify any patterns remaining in the residuals?\n\nSorry! The residuals shown here are taken as \\(y_{i} - \\hat{y}_{i}\\)!"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#describing-linear-relationships",
@@ -4393,7 +4393,7 @@
     "href": "slides/slides-23-slr-intro.html#line-of-best-fit",
     "title": "Introduction to Simple Linear Regression",
     "section": "Line of best fit",
-    "text": "Line of best fit\nOne way to define a “best” is to choose the specific values of \\((b_{0}, b_{1})\\) that minimize the total residuals across all \\(n\\) data points. Results in following possible criterion:\n\nLeast absolute criterion: minimize sum of residual magnitudes:\n\n\n\\[\n|\\epsilon_{1} | + |\\epsilon_{2}| + \\ldots + |\\epsilon_{n}|\n\\]\n\n\n\nLeast squares criterion: minimize sum of squared residuals:\n\n\n\n\\[\ne_{1}^2 + e_{2}^2 +\\ldots + e_{n}^2\n\\]\n\n\nThe choice of \\((b_{0}, b_{1})\\) that satisfy least squares criterion yields the least squares line, and will be our criterion for “best”\nOn previous slide, yellow line is the least squares line, whereas pink line is the least absolute line"
+    "text": "Line of best fit\nOne way to define a “best” is to choose the specific values of \\((b_{0}, b_{1})\\) that minimize the total residuals across all \\(n\\) data points. Results in following possible criterion:\n\nLeast absolute criterion: minimize sum of residual magnitudes:\n\n\n\\[\n|e_{1} | + |e_{2}| + \\ldots + |e_{n}|\n\\]\n\n\n\nLeast squares criterion: minimize sum of squared residuals:\n\n\n\n\\[\ne_{1}^2 + e_{2}^2 +\\ldots + e_{n}^2\n\\]\n\n\nThe choice of \\((b_{0}, b_{1})\\) that satisfy least squares criterion yields the least squares line, and will be our criterion for “best”\nOn previous slide, yellow line is the least squares line, whereas pink line is the least absolute line"
   },
   {
     "objectID": "coding_practice/coding-practice-22-pivoting.html",
