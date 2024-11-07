@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Simple Linear Regression"
-date: "November 6, 2024"
+title: "SLR coefficient estimates"
+date: "November 7, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -26,13 +26,18 @@ library(openintro)
 library(readr)
 library(patchwork)
 library(quantreg)
+library(broom)
 library(kableExtra)
 plot_theme <-  theme_minimal() +
   theme(text= element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
--   
+-   No TA hours tonight
+
+-   Will discuss details of Midterm 2 next week!
+
+-   Revisions for proposals due Saturday 11:59pm
 
 # Recap
 
@@ -44,539 +49,13 @@ y = \underbrace{\beta_{0} + \beta_{1} x}_{\text{line}} + \underbrace{\epsilon}_{
 $$
 :::
 
-## Linear regression model
+-   $\beta_{0}$ and $\beta_{1}$ are population parameters and their corresponding point estimates $b_{0}$ and $b_{1}$ are estimated from the data
 
-$$
-y = \beta_{0} + \beta_{1} x + \epsilon
-$$
+-   **Fitted** model: $\hat{y} = b_{0} + b_{1}x$
 
--   We have two variables:
+-   Residual: $e_{i} = \hat{y}_{i}  - y_{i}$
 
-    1.  $y$ is response variable. **Must be continuous numerical.**
-    2.  $x$ is explanatory variable, also called the **predictor** variable
-        -   Can be numerical or categorical
-
--   $\beta_{0}$ and $\beta_{1}$ are the model **parameters** (intercept and slope)
-
-    -   Estimated using the data, with point estimates $b_{0}$ and $b_{1}$
-
--   $\epsilon$ (epsilon) represents the **error**
-
-    -   Accounts for variability: we do not expect all data to fall perfectly on the line!
-
-    -   Sometimes we drop the $\epsilon$ term for convenience
-
-## Linear relationship
-
-Suppose we have the following data:
-
-```{r}
-set.seed(2)
-n <- 50
-b0 <- 1
-b1 <- 0.5
-epsilon <- rnorm(n, 0, 1.5)
-x <- sort(runif(n, -5,5))
-y <- b0  + b1 * x + epsilon
-fit <- coef(lm(y~x))
-
-df <- data.frame(x, y)
-p <- ggplot(df, aes(x=x, y = y)) +
-  geom_point(size = 2) +
-  theme_minimal() +
-  theme(text = element_text(size = 24))
-p
-```
-
--   Observations won't fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!
-
-## Fitted values
-
-Suppose we have some specific estimates $b_0$ and $b_{1}$. We could fit the linear relationship using these values as:
-
-$$
-\hat{y} = b_{0} + b_{1} x
-$$
-
--   The hat on $y$ signifies that this is an estimate: the estimated/**fitted** value of $y$ given these specific values of $x$, $b_{0}$ and $b_{1}$
-
-    -   We observe $y$, but can obtain a corresponding estimate $\hat{y}$
-
--   Note that the fitted value is obtained *without* the error
-
-## Fitted values (cont.)
-
-```{r}
-ids <- c(9, 22, 45)
-x_fit <- x[ids]
-y_hat <- fit[1] + fit[2] * x
-y_fit <- y_hat[ids]
-df_fit <- data.frame(x = x_fit, x_end = x_fit, y = y[ids], y_end = y_fit)
-p1 <- p + geom_abline(slope = fit[2], intercept = fit[1], col = "yellow", linewidth = 2) +
-  labs(title = "Option 1")
-p_resid <- p1 + 
-  geom_segment(data = df_fit,mapping= aes(x = x, xend = x_end, y = y, yend = y_end), linetype = "dashed", col = "#F8766D")+
-    geom_point(data = df_fit, mapping = aes(x = x, y = y_end, col = "fitted"), shape = 4, size = 6)+
-  geom_point(data = df_fit, mapping = aes(x = x, y = y, col = "observed"), size = 4) +
-  theme(legend.title = element_blank(), plot.title = element_blank()) +
-  labs(y = "y", x = "x")
-p_resid
-```
-
--   Suppose our estimated line is the yellow one
--   Every observed value $y_{i}$ has a corresponding fitted value $\hat{y}_{i}$; the above plot just shows three specific examples
-
-## Residual
-
-**Residuals** are the remaining variation in the data after fitting a model.
-
-$$
-\text{data} = \text{fit} + \text{residual}
-$$
-
--   For each observation $i$, we obtain residual $e_{i}$ via:
-
-::: fragment
-$$y_{i} = \hat{y}_{i} + e_{i} \quad \Rightarrow \quad e_{i} = \hat{y}_{i} - y_{i}$$
-:::
-
--   Residual = difference between observed and expected
-
--   Since each observation has a fitted value, each observation has a residual
-
-    -   In the linear regression case, the residual is indicated by the vertical dashed line
-
-    -   ::: discuss
-        What is the ideal value for a residual?
-        :::
-
-## Residual (cont.)
-
-```{r}
-p_resid
-```
-
-::: fragment
-Residual values for the three highlighted observations:
-
-```{r}
-df |>
-  add_column(y_hat) |>
-  mutate(residual = y_hat-y) |>
-  slice(ids) |>
-  kable(digits = 3) |>
-  kable_styling(font_size = 25)
-```
-:::
-
-## Residual plot
-
--   Residuals are very helpful in evaluating how well a model fits a set of data
-
--   **Residual plot**: original $x$ values plotted against their corresponding residuals on $y$-axis
-
-::: fragment
-```{r fig.width=15}
-df |>
-  add_column(y_hat) |>
-  mutate(residual = y_hat-y) |>
-  ggplot(aes(x = x, y = residual)) +
-  geom_point(size = 4) +
-  theme_minimal() +
-  theme(text = element_text(size = 28)) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
-  labs(title = "Residual plot", caption = "Red dots = specific points from previous plot")
-```
-:::
-
-## Residual plot (cont.)
-
-Residual plots can be useful for identifying characteristics/patterns that remain in the data even after fitting a model.
-
--   ::: {style="color: maroon"}
-    Just because you fit a model to data, does not mean the model is a good fit!
-    :::
-
-:::: fragment
-![](figs/23-residual-plot.png){fig-align="center" width="532"}
-
-::: discuss
-Can you identify any patterns remaining in the residuals?
-
--   Sorry! The residuals shown here are taken as $y_{i} - \hat{y}_{i}$!
-:::
-::::
-
-## Describing linear relationships
-
-Different data may exhibit different strength of linear relationships:
-
-```{r}
-set.seed(4)
-y2 <- x + rnorm(n, 0, 4)
-y3 <- -2*x + rnorm(n,0, 0.25)
-y4 <- 1 + 0.01*x + rnorm(n)
-data.frame(x=x, y2, y3, y4) |>
-  pivot_longer(cols = 2:4, names_to = "Plot", values_to = "y") |>
-  mutate(Plot = case_when(
-    Plot == "y2" ~ "Data 1",
-    Plot == "y3" ~ "Data 2",
-    Plot == "y4" ~ "Data 3"
-  )) |>
-  ggplot(aes(x=x, y =y )) +
-  geom_point()+
-  facet_wrap(~Plot) +
-  theme_minimal() +
-  plot_theme
-  
-```
-
--   Can we quantify the strength of the linear relationship?
-
-## Correlation
-
--   **Correlation** is describes the strength of a *linear* relationship between two variables
-
-    -   The observed sample correlation is denoted by $R$
-    -   Formula (not important): $R = \frac{1}{n-1} \sum_{i=1}^{n} \left(\frac{x_{i} - \bar{x}}{s_x} \right)\left(\frac{y_{i} - \bar{y}}{s_y} \right)$
-
-:::::: columns
-::: {.column width="50%"}
--   Always takes a value between -1 and 1
-
-    -   -1 = perfectly linear and negative
-
-    -   1 = perfectly linear and positive
-
-    -   0 = no linear relationship
-
--   Nonlinear trends, even when strong, sometimes produce correlations that do not reflect the strength of the relationship
-:::
-
-:::: {.column width="50%"}
-::: fragment
-![](figs/23-correlations.png){fig-align="center" width="1610"}
-:::
-::::
-::::::
-
-# Least squares regression
-
-In Algebra class, there exists a single (intercept, slope) pair because the $(x,y)$ points had no error; all points landed on the line.
-
--   Now, we assume there is error
-
--   How do we choose a single "best" $(b_{0}, b_{1})$ pair?
-
-## Different lines
-
-The following display the same set of `r n` observations.
-
-:::::: columns
-::: {.column width="70%"}
-```{r}
-fit_abs <- coef(rq(y ~ x, tau = 0.5))
-
-p2 <- p + geom_abline(slope = fit_abs[2], intercept = fit_abs[1], col = "pink", linewidth = 2) +
-  labs(title = "Option 2")
-p3 <- p + geom_abline(slope = -1*b1, intercept = b0+0.3, col = "green", linewidth = 2) +
-  labs(title = "Option 3")
-p1 + p2+ p3
-```
-:::
-
-:::: {.column width="30%"}
-::: discuss
-Which line would you say fits the data the best?
-:::
-::::
-::::::
-
--   There are infinitely many choices of $(b_{0}, b_{1})$ that could be used to create a line
-
--   We want the BEST choice (i.e. the one that gives us the "line of best fit")
-
-    -   ::: {style="color: maroon"}
-        How to define "best"?
-        :::
-
-## Line of best fit
-
-One way to define a "best" is to choose the specific values of $(b_{0}, b_{1})$ that minimize the total residuals across all $n$ data points. Results in following possible criterion:
-
-1.  **Least absolute criterion**: minimize sum of residual magnitudes:
-
-::: fragment
-$$
-|e_{1} | + |e_{2}| + \ldots + |e_{n}|
-$$
-:::
-
-::: {style="color: maroon"}
-2.  **Least squares criterion**: minimize sum of squared residuals:
-:::
-
-::: fragment
-$$
-e_{1}^2 + e_{2}^2 +\ldots + e_{n}^2
-$$
-:::
-
--   The choice of $(b_{0}, b_{1})$ that satisfy least squares criterion yields the **least squares line**, and will be our criterion for "best"
-
--   On previous slide, yellow line is the least squares line, whereas pink line is the least absolute line
-
-## Linear regression model
-
-Remember, our linear regression model is:
-
-$$
-y = \beta_{0} + \beta_{1}x + \epsilon
-$$
-
-::: fragment
-While not wrong, it can be good practice to be specific about an observation $i$:
-
-$$
-y_{i} = \beta_{0} + \beta_{1} x_{i} + \epsilon_{i}, \qquad i = 1,\ldots, n
-$$
-:::
-
--   Here, we are stating that each observation $i$ has a specific:
-
-    -   explanatory variable value $x_{i}$
-    -   response variable value $y_{i}$
-    -   error/randomness $\epsilon_{i}$
-
-## Conditions for the least squares line (LINE)
-
-Like when using CLT, we should check some conditions before saying a linear regression model is appropriate!
-
-::: {style="color: maroon"}
-Assume for now that $x$ is continuous numerical.
-:::
-
-1.  **Linearity**: data should show a linear trend between $x$ and $y$
-
-2.  **Independence**: the observations $i$ are independent of each other
-
-    -   e.g. random sample
-
-    -   Non-example: time-series data
-
-3.  **Normality/nearly normal residuals**: the residuals should appear approximately Normal
-
-    -   Possible violations: outliers, influential points (more on this later)
-
-4.  **Equal variability**: variability of points around the least squares line remains roughly constant
-
-## Running example
-
-We will see how to check for these four LINE conditions using the `cherry` data from `openintro`.
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-cherry |>
-  select(diam, volume) |>
-  slice(1:5)|>
-  kable()
-```
-:::
-
-::: {.column width="50%"}
--   Explanatory variable $x$: `diam`
-
--   Response variable $y$: `volume`
-:::
-:::::
-
-## 1. Linearity
-
-Assess *before* fitting the linear regression model by making a scatterplot of $x$ vs. $y$:
-
-```{r}
-ggplot(cherry, aes(x= diam, y = volume)) +
-  geom_point(size = 3) +
-  labs(title = "Cherry tree diameter vs. volume", x = "diameter (inches)", y = "volume (cubic feet)") +
-  theme_minimal() +
-  theme(text= element_text(size = 24))
-```
-
-::: discuss
-Does there appear to be a linear relationship between diameter and volume?
-
--   I would say yes
-:::
-
-## 2. Independence
-
-Assess *before* fitting the linear regression model by understanding how your data were sampled.
-
--   The `cherry` data do not explicitly say that the trees were randomly sampled, but it might be a reasonable assumption
-
-:::::: fragment
-An example where independence is violated:
-
-::::: columns
-::: {.column width="50%"}
-```{r}
-set.seed(2)
-y <- c(0)
-for(i in 2:120){
-  if(i < 20 | (45 <= i & i > 60) | (i > 80 & i < 100)){
-     to_add <- rnorm(1, y[-i] - 0.2, 0.15)
-  } else{
-     to_add <- rnorm(1, y[-i] + 0.2, 0.15)
-  }
-  y <- c(y, to_add)
-}
-ggplot(data.frame(y) |> mutate(x = row_number()), aes(x = x, y = y)) +
-  geom_point(size = 3) +
-  plot_theme +
-  labs(title = "Time series data")
-```
-:::
-
-::: {.column width="50%"}
-Here, the data are a time series, where observation at time point $i$ depends on the observation at time $i-1$.
-
--   Successive/consecutive observations are highly correlated
-:::
-:::::
-::::::
-
-## Fitting the model
-
-```{r}
-cherry_lm <- lm(volume ~ diam, cherry)
-cherry_coefs <- round(coef(cherry_lm), 2)
-```
-
-At this point, it is time to actually fit our model
-
-$$
-\text{volume} = \beta_{0} + \beta_{1} \text{diameter} +\epsilon
-$$
-
--   After fitting the model, we get the following estimates: $b_{0}= `r cherry_coefs[1]`$ and $b_{1} = `r cherry_coefs[2]`$. So our **fitted model** is:
-
-:::: fragment
-$$
-\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
-$$
-
-::: {style="color: maroon"}
-Remember: the "hat" denotes an estimated/fitted value!
-:::
-::::
-
--   We will soon see how $b_{0}$ and $b_{1}$ are calculated and how to interpret them
-
--   The next two checks can only occur *after* fitting the model.
-
-## 3. Nearly normal residuals
-
-Assess *after* fitting the model by obtaining residuals and making a histogram.
-
--   Remember, residuals are $\hat{y}_{i} - y_{i}$
-
-:::::: fragment
-::::: columns
-::: {.column width="45%"}
-```{r echo = T, eval = F}
-cherry |>
-  mutate(volume_hat = -36.94 + 5.07*diam) |>
-  mutate(residual = volume_hat - volume) 
-```
-
-```{r echo = F}
-cherry |>
-  select(-height) |>
-  mutate(volume_hat = -36.94 + 5.066*diam) |>
-  mutate(residual = volume_hat - volume) |>
-  slice(1:5)|>
-  kable(digits = 3) |>
-  kable_styling(font_size = 20)
-```
-:::
-
-::: {.column width="55%"}
-```{r}
-library(broom)
-augment(cherry_lm) |>
-  ggplot(mapping = aes(x = .resid)) +
-  geom_histogram(bins = 20) +
-  plot_theme +
-  theme(text = element_text(size = 28)) +
-  labs(x = "residuals", titles="Cherry data")
-```
-:::
-:::::
-::::::
-
-::: discuss
--   Do the residuals appear approximately Normal?
-
-    -   I think so!
-:::
-
-## 4. Equal variance
-
-Assess *after* fitting the model by examining a residual plot and looking for patterns.
-
-::::: columns
-::: {.column width="50%"}
-A good residual plot:
-
-```{r}
-set.seed(12)
-x <- seq(1,100, 2)
-resid_good <- rnorm(length(x), mean = 0, sd = 4)
-data.frame(x, residual = resid_good) |>
-  ggplot(aes(x = x, y = residual)) +
-  geom_point(size = 4) +
-  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 2, col ="darkgrey") +
-  plot_theme +
-  labs(title = "Constant variance")
-```
-:::
-
-::: {.column width="50%"}
-A bad residual plot:
-
-```{r}
-set.seed(12)
-resid_bad <- 0 + rnorm(length(x), mean = 0, sd = x/2)
-data.frame(x, residual = resid_bad) |>
-  ggplot(aes(x = x, y = residual)) +
-  geom_point(size = 4) +
-  geom_hline(yintercept = 0, linetype = "dashed", linewidth = 2, col ="darkgrey") +
-  plot_theme +
-  labs(title = "Not constant variance")
-```
-:::
-:::::
-
-We usually have a horizontal line at 0 to compare residuals to
-
-## 4. Equal variance (cont.)
-
-Let's examine the residual plot of our fitted model for the `cherry` data:
-
-```{r}
-augment(cherry_lm) |>
-  ggplot(mapping = aes(x = diam, y = .resid)) +
-  geom_point(size = 3) +
-  plot_theme +
-  geom_hline(yintercept = 0, linetype = "dashed", linewidth =1.25, col ="darkgrey") +
-  labs(y = "Residual", title = "Cherry model", x = "diameter (inches)")
-```
-
--   Based on this plot, I would say the equal variance condition is not perfectly met.
-
-    -   Some of the variability in the errors appear related to `diameter`
+-   LINE conditions: **L**inearity, **I**ndependence, **N**ormal residuals, **E**qual variance
 
 # Fitting the least-squares line
 
@@ -627,11 +106,20 @@ $$b_{0} = \bar{y} - b_{1} \bar{x}$$ where
 
 ## Fitting `cherry` model (by hand)
 
+```{r}
+cherry_lm <- lm(volume ~ diam, cherry)
+cherry_coefs <- round(coef(cherry_lm), 2)
+```
+
 Verify estimates $b_{0} = `r round(cherry_coefs[1],2)`$ and $b_{1} = `r round(cherry_coefs[2],2)`$ from our model for the cherry data:
 
+:::::: columns
+::: {.column width="55%"}
 ```{r echo = T, eval = F}
 cherry |>
-  pivot_longer(cols = c(diam, volume), names_to = "variable", values_to = "val") |>
+  pivot_longer(cols = c(diam, volume), 
+               names_to = "variable", 
+               values_to = "val") |>
   select(-height) |>
   group_by(variable) |>
   summarise(mean = mean(val), s = sd(val)) 
@@ -646,11 +134,19 @@ cherry |>
   kable(digits = 3) |>
   kable_styling(font_size = 30)
 ```
+:::
 
+:::: {.column width="45%"}
 ```{r echo = T}
 R <- cor(cherry$diam, cherry$volume)
 R
 ```
+
+::: discuss
+What does this value of $R$ tell us?
+:::
+::::
+::::::
 
 ```{r}
 mean_diam <- round(mean(cherry$diam),3)
@@ -675,5 +171,431 @@ R <- round(R , 3)
 -   $b_{1} = \frac{`r s_vol`}{`r s_diam`} \times `r R` = `r round(cherry_coefs[2], 2)`$
 
 -   $b_{0} = `r mean_vol` -  `r round(cherry_coefs[2], 2)` \times `r mean_diam` = `r round(cherry_coefs[1], 2)`$
+
+-   What do these numbers really mean?
 :::
 ::::::
+
+# Interpreting parameters
+
+Interpreting the parameters (i.e. **coefficients**) in a regression model is one of *the most* important steps in an analysis!
+
+## Intercept interpretation
+
+Our fitted model is $\hat{y} = b_{0} + b_{1}x$.
+
+-   To interpret the estimate of the intercept coefficient $b_{0}$, simply plug in $x= 0$:
+
+$$
+\hat{y} = b_{0} + b_{1} x = b_{0} + b_{1}(0) = b_{0}
+$$
+
+-   So, the intercept describes the **average/expected** value of the response variable $y$ if $x=0$
+
+## Intercept in `cherry` model
+
+$$
+\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
+$$
+
+-   Interpretation of intercept in context: for a tree with a diameter of 0 inches, the expected volume would be `r cherry_coefs[1]` cubic feet
+    -   This interpretation is mathematically correct, but practically speaking is useless
+-   The intercept's interpretation only makes sense when a value of $x=0$ for the explanatory variable is plausible!
+    -   This is typically not the case/relevant in many applications
+    -   Trees with 0 diameter are not able to sampled
+
+## Slope interpretation
+
+-   Let $\hat{y}_{1}$ be the estimated response for a given value of $x$, so $\hat{y}_{1} = b_{0} + b_{1} x$
+-   What happens when we increase $x$ by 1?
+-   Let $\hat{y}_{2}$ be the estimated response for $x +1$:
+
+::: fragment
+$$
+\begin{align*}
+\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\
+&= \color{orange}{b_{0} + b_{1}x}  + b_{1} \\
+&= \color{orange}{\hat{y}_{1}} + b_{1} \Rightarrow \\
+b_{1} &= \hat{y}_{2} - \hat{y}_{1}
+\end{align*}
+$$
+:::
+
+-   Interpretation: for a 1 unit increase in the explanatory variable $x$, we expect the response variable to change by $b_{1}$ units
+
+## Slope in `cherry` model
+
+$$
+\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
+$$
+
+-   Interpretation in context: for every 1 inch increase in diameter, we expect that volume of cherry trees to increase by `r cherry_coefs[2]` cubic feet
+
+## Example: `elmhurst`
+
+The `elmhurst` dataset from `openintro` provides a random sample of 50 students gift aid for students at Elmhurst College.
+
+-   We will examine the relationship between the family income of the student and the gift aid that student received (in \$1000s)
+
+:::::::: columns
+:::: {.column width="70%"}
+::: fragment
+```{r}
+ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
+  geom_point(size = 3) +
+  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)") +
+  theme_minimal() +
+  plot_theme 
+```
+:::
+::::
+
+::::: {.column width="30%"}
+:::: fragment
+::: discuss
+Are the first two conditions of LINE satisfied?
+:::
+::::
+:::::
+::::::::
+
+## Example: `elmhurst` (cont.)
+
+::::: columns
+::: {.column width="60%"}
+```{r}
+elmhurst_lm <- lm(gift_aid ~ family_income, elmhurst)
+elmhurst_b0 <- round(coef(elmhurst_lm)[1], 3)
+elmhurst_b1 <- round(coef(elmhurst_lm)[2], 3)
+```
+
+We run the model in `R`, and the output looks something like this:
+
+```{r}
+tidy(elmhurst_lm) |>
+  kable(digits = 3) |>
+  kable_styling(font_size = 24)
+```
+:::
+
+::: {.column width="40%"}
+```{r}
+ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
+  geom_point(size = 4) +
+  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)", caption = "Least squares line") +
+  theme_minimal() +
+  theme(text = element_text(size= 28)) +
+  geom_smooth(method = "lm", se = F)
+```
+:::
+:::::
+
+-   The values in the estimate column are our $b_{0}$ and $b_{1}$:
+
+    ::: discuss
+    -   $b_{0} =$ ? and $b_{1} =$ ?
+    -   What do you think the second column is?
+    :::
+
+-   ::: discuss
+    Write out our fitted model in context
+    :::
+
+## Example: `elmhurst` model
+
+$$
+\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times \text{family_income}
+$$
+
+-   Before we interpret the coefficients, we should verify that the linear model is appropriate for the data!
+
+::: {.fragment}
+
+```{r fig.height=3}
+p1 <- augment(elmhurst_lm)  |>
+  ggplot(aes(x = .resid)) +
+  geom_histogram(bins = 15) +
+  labs(x = "Residual") +
+  theme_minimal() + 
+  plot_theme
+
+p2 <- augment(elmhurst_lm)  |>
+  ggplot(aes(x = family_income, y = .resid)) +
+  geom_point() +
+  labs(x = "Family income ($1000s)", y = "Residual") +
+  geom_hline(yintercept = 0, linetype = "dashed")+
+  theme_minimal() + 
+  plot_theme
+
+p1 + p2
+```
+
+::: 
+
+::: {.fragment}
+::: discuss
+Do you believe the last two conditions of LINE are satisfied?
+:::
+:::
+
+
+## Example: `elmhurst` interpretation
+
+$$
+\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times \text{family_income}
+$$
+
+:::::: columns
+:::: {.column width="50%"}
+::: discuss
+-   Interpret the slope in context
+
+-   Interpret the intercept in context
+
+-   Is the meaning of the intercept relevant?
+:::
+::::
+
+::: {.column width="50%"}
+-   Slope: for every \$1000 increase in family income, we expect that the student's gift aid will decrease by \$`r abs(elmhurst_b1) * 1000`.
+-   Intercept: for a student whose family income is \$0, we expect that average amount of aid they will receive is \$`r elmhurst_b0*1000`
+-   Since a family could have an income of \$0, the intercept does seem relevant
+:::
+::::::
+
+## Words of caution
+
+-   The estimates from the fitted model will always be imperfect
+
+    -   The linear equation is good at capturing trends, no individual outcome will be perfectly predicted
+
+-   **Do not try to use the model for** $x$ **values** **beyond the range of the observed** $x$!
+
+    -   The true relationship between $x$ and $y$ is almost always much more complex than our simple line
+
+    -   We do not know how the relationship behaves outside our limited window
+
+## Extrapolation
+
+Suppose we would like to use our fitted model to estimate the expected gift aid for someone whose family income is \$1,000,000:
+
+-   ::: discuss
+    Find the estimated gift aid (careful with units)
+    :::
+
+    -   $\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times 1000 = `r elmhurst_b0 + elmhurst_b1 *1000`$
+    -   This is ridiculous!
+
+-   This is an example of **extrapolation**: using the model to estimate values outside the scope of the original data
+
+    - We should *never* extrapolate!
+
+# Strength of fit
+
+If we fit a model and determine LINE was met, we still need a way to describe how "good" the fit is!
+
+## Describing the fit
+
+-   Recall sample correlation $R$ describes the linear relationship between variables $x$ and $y$
+
+-   We typically use the **coefficient of determination** or $R^2$ (**R-squared**) to describe strength of linear fit
+
+    -   Describes amount of variation in $y$ that is explained by predictor $x$ in the least squares line
+
+-   It turns out that $R^2$ in SLR is exactly ... $R$ squared (i.e. the square of the sample correlation)
+
+    -   ::: discuss
+        What are the possible values of $R^2$? What are desirable values of $R^2$?
+        :::
+
+## Example: `elmhurst` model fit
+
+```{r}
+R <- cor(elmhurst$family_income, elmhurst$gift_aid)
+R <- round(R, 3)
+R2 <- round(R^2, 3)
+```
+
+-   The sample correlation between `family income` and `aid` is $R=$ `r R`
+
+-   So the coefficient of determination is $R^2 = (`r R`)^2 = `r R2`$
+
+    -   **Interpretation**: using a linear model, about `r R2*100`% of the variability in `aid` received by the student is explained by `family income`
+
+# Categorical predictor
+
+Thus far, we have assumed that $x$ is numerical. Now let $x$ be categorical.
+
+## Categorical predictor with two levels
+
+-   Remember that the different groupings/categories of categorical variables are called levels
+
+-   ::: {style="color: maroon"}
+    Now assume that $x$ is categorical with two levels
+    :::
+
+-   Running example: the `possum` data from `openintro`
+
+    -   Response variable: `tail_l` (tail length in cm)
+    -   Explanatory variable: `pop` (either `Vic` or `other`)
+
+-   Maybe we would think to write our regression as
+
+::: fragment
+$$\text{tail length} = \beta_{0} + \beta_{1} \text{pop} + \epsilon$$
+:::
+
+-   ::: discuss
+    Why doesn't this work?
+    :::
+
+    -   Functions require a numerical input!
+
+## Indicator variables
+
+We need a mechanism to convert the categorical levels into numerical form!
+
+::::::: columns
+:::: {.column width="60%"}
+-   This is achieved through an **indicator variable** which takes the value 1 for one specific level and the value 0 otherwise:
+
+::: fragment
+$$
+\text{pop_other} = \begin{cases}
+0 & \text{ if  pop = Vic} \\
+1 & \text{ if  pop = other}
+\end{cases}
+$$
+:::
+::::
+
+:::: {.column width="40%"}
+::: fragment
+```{r}
+set.seed(1)
+possum |>
+  select(tail_l, pop) |>
+  mutate(pop_new = 1*(pop == "Vic")) |>
+  sample_n(5) |>
+  kable() |>
+  kable_styling(font_size = 25)
+```
+:::
+::::
+:::::::
+
+-   The level that corresponds to 0 is called the **base** **level**
+
+    -   So `Vic` is the base level
+    -   Choosing which level is the base level can sometimes be important
+
+## Example: `possum` model
+
+This yields the SLR model
+
+$$\text{tail length} = \beta_{0} + \beta_{1} \text{pop_other} + \epsilon$$
+
+::: fragment
+Our estimates are as follows:
+
+```{r}
+possum_lm <- lm(tail_l ~ pop, data = possum)
+possum_b0 <- round(coef(possum_lm)[1], 3)
+possum_b1 <- round(coef(possum_lm)[2], 3)
+
+tidy(possum_lm) |>
+  kable(digits = 3) |>
+  kable_styling(font_size = 25)
+```
+:::
+
+-   ::: discuss
+    Write out the equation of our fitted model
+    :::
+
+## Intercept for categorical $x$
+
+Our fitted model is:
+
+$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1` \times \text{pop_other}$$
+
+-   Let's interpret the intercept by plugging in $0$ for the explanatory variable:
+
+::: fragment
+$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times 0 = `r possum_b0`$$
+:::
+
+-   But wait, when is $\text{pop_other} = 0$? When the possum is from Victoria!
+
+-   ::: {style="color: maroon"}
+    So when $x$ is categorical, the interpretation of $b_{0}$ is the expected value of the response variable for the base level of $x$
+    :::
+
+-   ::: discuss
+    Interpret $b_{0}$ in context
+    :::
+
+    -   The expected tail length of possums from Victoria is `r possum_b0` cm
+
+## Slope for categorical $x$
+
+$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times \text{pop_other}$$
+
+$$
+\text{pop_other} = \begin{cases}
+0 & \text{ if  pop = Vic} \\
+1 & \text{ if  pop = other}
+\end{cases}
+$$
+
+-   Remember, the slope coefficient is interpreted as the expected change in $y$ for a one unit increase in $x$
+
+-   ::: discuss
+    What does it mean for the indicator variable to increase by one unit here?
+    :::
+
+    -   $\text{pop_other}$ increases by one unit by going from 0 to 1. This corresponds to a `pop` value of "other"
+
+-   ::: {style="color: maroon"}
+    When $x$ is categorical, the interpretation of $b_{1}$ is the expected change in $y$ when moving from the base level to the non-base level
+    :::
+
+-   ::: discuss
+    Try interpreting $b_{1}$ in context!
+    :::
+
+## Slope for categorical $x$ (cont.)
+
+$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times \text{pop_other}$$
+
+$$
+\text{pop_other} = \begin{cases}
+0 & \text{ if  pop = Vic} \\
+1 & \text{ if  pop = other}
+\end{cases}
+$$
+
+-   Interpretation of slope: possums from outside of Victoria are expected to have tail lengths about `r possum_b1` cm longer than possums from Victoria
+-   Note: interpretations for $b_{0}$ and $b_{1}$ for categorical $x$ are the same as for numerical $x$, but they have more specific/nuanced interpretations when placed in context
+
+## Assessing linear fit
+
+-   When $x$ is categorical, the LINE conditions still need to hold
+
+-   When $x$ only has two levels, the **L**inearity assumption will always be satisfied
+
+-   We need to evaluate **N**early normal residuals and **E**qual variance for each level:
+
+::: fragment
+```{r fig.width = 12}
+augment(possum_lm) |>
+  ggplot(aes(x = .resid)) + 
+  geom_histogram(bins = 15) +
+  facet_wrap(~pop) +
+  theme_minimal() +
+  plot_theme +
+  labs(x = "Residual")
+```
+:::
+
+# Live code

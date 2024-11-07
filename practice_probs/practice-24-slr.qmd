@@ -1,0 +1,48 @@
+---
+title: "Simple Linear Regression"
+author: "Practice problems"
+date: "November 7, 2024"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+```{r message = F, echo = F}
+library(openintro)
+```
+
+1.  $(^*)$ Researchers studying anthropometry collected body girth measurements and skeletal diameter measurements, as well as age, weight, height and gender for 507 physically active individuals. They are interested in the relationship between height (cm) and shoulder girth (cm). They would like create linear regression model for height using shoulder girth as the predictor.
+
+![](figs/24-shoulder.png){fig-align="center" width="233"}
+
+The mean shoulder girth is 107.20 cm with a standard deviation of 10.37 cm. The mean height is 171.14 cm with a standard deviation of 9.41 cm. The correlation between height and shoulder girth is 0.67.
+
+a.  Write the equation of the fitted regression line for predicting height.
+
+b.  Interpret the slope and intercept in context.
+
+c.  Calculate the $R^2$ of the regression line and interpret it in context.
+
+d.  A one year old has a shoulder girth of 56 cm. Would it be appropriate to use this linear model to predict the height of this child? If so, obtain the predicted height. If not, explain why not.
+
+2\. Data on a random sample of 100 births for babies in North Carolina were obtained. We'd like to fit a linear regression model for the birth weight of the baby in pounds (`weight`) based on if the baby was born premature (`premature`). The `premature` variable is categorical with two levels: "premie" (if baby was born premature) and "full term" (if the baby was not born premature).
+
+We run the model in `R`. The estimated coefficients are as follows:
+
+```{r}
+births_lm <- lm(weight ~ premature, data = births)
+coef(births_lm)
+```
+
+a.  Which level of the variable `premature` is the base level? How can you tell?
+b.  Write out the fitted model for estimated birth weight of a baby.
+c.  Interpret the slope and intercept of the model in context.
+d.  What is the estimated weight of a baby born premature?

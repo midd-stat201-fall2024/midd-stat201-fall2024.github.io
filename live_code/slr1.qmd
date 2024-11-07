@@ -1,0 +1,93 @@
+---
+title: "Linear regression in R"
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+### `lm()` function
+
+The function that will obtain the coefficients for the least-squares line is the `lm()` function. The syntax is as follows:
+
+`lm(response ~ explanatory, data)`
+
+### Example 1: `cherry` data with continuous $x$
+
+Let's once again consider the `cherry` data from `openintro`, where we want to fit the model
+
+$$\text{volume} = \beta_{0} + \beta_{1} \times \text{diameter} + \epsilon$$
+
+What does this look like in `R`?
+
+```{r eval = F}
+lm(volume ~ diam, data = cherry)
+```
+
+-   Note that the variables have to be spelled as they appear in the data frame!
+
+The output is as follows:
+
+```{r}
+lm(volume ~ diam, data = cherry)
+```
+
+This isn't the most informative of output, so what we will do is use an additional function called `summary()` that will give us much more information!
+
+We will first store the output from `lm()` as a variable called `cherry_lm`:
+
+```{r}
+cherry_lm <- lm(volume ~ diam, data = cherry)
+```
+
+Then we will use the `summary()` function and pass in the linear model:
+
+```{r}
+summary(cherry_lm)
+```
+
+There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. In particular:
+
+- The "Multiple R-squared" quantity is the coefficient of determination $R^2$!
+
+Sometimes we just want the coefficients. The `coef()` function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:
+
+```{r}
+coef(cherry_lm)
+```
+
+### Example 2: `possum` data with categorical $x$
+
+The nice thing about `lm()` is that it will automatically convert categorical variables to indicator variables!
+
+Let's re-visit the `possum` model:
+
+$$\text{tail length} = \beta_{0} + \beta_{1} \times \text{pop-other} + \epsilon$$
+$$
+\text{pop-other} = \begin{cases}
+0 & \text{ if  pop = Vic} \\
+1 & \text{ if  pop = other}
+\end{cases}
+$$
+
+We can use the `lm()` function just as before:
+
+```{r}
+possum_lm <- lm(tail_l ~ pop, data = possum)
+summary(possum_lm)
+```
+
+**How does `lm()` choose which level should be the base level?**
+
+1.  Pre-specified as **factor**: In `R`, variables can be coded as "factor" variables where there is a specific numeric ordering under the hood. How can we tell? Using the `str()` function, we can find the data structure of a given variable:
+
+    ```{r}
+    str(possum$pop)
+    ```
+
+    We can see that the `pop` variable has two levels, and the order goes "Vic" then "other". So "Vic" is taken as the base level.
+
+2.  Not-specified: if your categorical variable is coded as a character/string variable and *not* a factor, the default base level is the first level in alphabetic order.
+
+    If you don't like this behavior, you can `mutate()` any variable to be a factor variable!

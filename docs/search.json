@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/6\n\nTopic: Introduction to simple linear regression (pdf here)\n\nPDF with figures\n\n\n\n\nWednesday problems in Problem Set 8 (due next Wednesday)\n\n\n\n\nR 11/7\n\nTopic: SLR interpretation\n\n\n\nThursday problems in Problem Set 8\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n10\nM 10/11\n\nTopic: Inference in SLR\nFitting SLR in R\n\nLive code\n\n\n\nFitting SLR coding practice\n\n\nMonday problems in Problem Set 8 (due Wednesday at 11:59pm)\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/6\n\nTopic: Introduction to simple linear regression (pdf here)\n\nPDF with figures\n\n\n\n\nWednesday problems in Problem Set 8 (due next Wednesday)\n\n\n\n\nR 11/7\n\nTopic: SLR interpretation (pdf here)\n\nLive code for coding SLR in R\nPractice problems\n\n\n\n\nThursday problems in Problem Set 8\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n10\nM 10/11\n\nTopic: Inference in SLR\nFitting SLR in R\n\nLive code\n\n\n\nFitting SLR coding practice\n\n\nMonday problems in Problem Set 8 (due Wednesday at 11:59pm)\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nDepartment dessert + pre-registration social!\n\nWednesday 11/06 from 3-4:30 in WNS 101\n\nProblem Set 7 due this tonight at 11:59pm\nThursday 11/07 TA hours cancelled\nFinal project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!\nAdd your R questions here!"
+    "text": "Announcements\n\nThursday 11/07 TA hours cancelled\nFinal project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!\nAdd your R questions here!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -4330,7 +4330,7 @@
     "href": "slides/slides-23-slr-intro.html#linear-relationship",
     "title": "Introduction to Simple Linear Regression",
     "section": "Linear relationship",
-    "text": "Linear relationship\nSuppose we have the following data:\n\n\nObservations won’t fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!"
+    "text": "Linear relationship\nSuppose we have the following data:\n\n\n\n\n\n\nObservations won’t fall exactly on a line, but do fall around a straight line, so maybe a linear relationship makes sense!"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#fitted-values",
@@ -4344,7 +4344,7 @@
     "href": "slides/slides-23-slr-intro.html#fitted-values-cont.",
     "title": "Introduction to Simple Linear Regression",
     "section": "Fitted values (cont.)",
-    "text": "Fitted values (cont.)\n\n\nSuppose our estimated line is the yellow one\nEvery observed value \\(y_{i}\\) has a corresponding fitted value \\(\\hat{y}_{i}\\); the above plot just shows three specific examples"
+    "text": "Fitted values (cont.)\n\n\n\n\n\n\nSuppose our estimated line is the yellow one\nEvery observed value \\(y_{i}\\) has a corresponding fitted value \\(\\hat{y}_{i}\\); the above plot just shows three specific examples"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#residual",
@@ -4372,7 +4372,7 @@
     "href": "slides/slides-23-slr-intro.html#describing-linear-relationships",
     "title": "Introduction to Simple Linear Regression",
     "section": "Describing linear relationships",
-    "text": "Describing linear relationships\nDifferent data may exhibit different strength of linear relationships:\n\n\nCan we quantify the strength of the linear relationship?"
+    "text": "Describing linear relationships\nDifferent data may exhibit different strength of linear relationships:\n\n\n\n\n\n\nCan we quantify the strength of the linear relationship?"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#correlation",
@@ -4449,7 +4449,7 @@
     "href": "slides/slides-23-slr-intro.html#linearity",
     "title": "Introduction to Simple Linear Regression",
     "section": "1. Linearity",
-    "text": "1. Linearity\nAssess before fitting the linear regression model by making a scatterplot of \\(x\\) vs. \\(y\\):\n\n\nDoes there appear to be a linear relationship between diameter and volume?\n\nI would say yes"
+    "text": "1. Linearity\nAssess before fitting the linear regression model by making a scatterplot of \\(x\\) vs. \\(y\\):\n\n\n\n\n\n\nDoes there appear to be a linear relationship between diameter and volume?\n\nI would say yes"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#independence",
@@ -4484,7 +4484,7 @@
     "href": "slides/slides-23-slr-intro.html#equal-variance-cont.",
     "title": "Introduction to Simple Linear Regression",
     "section": "4. Equal variance (cont.)",
-    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\nBased on this plot, I would say there is a definite pattern in the residuals and equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
+    "text": "4. Equal variance (cont.)\nLet’s examine the residual plot of our fitted model for the cherry data:\n\n\n\n\n\n\nBased on this plot, I would say there is a definite pattern in the residuals and equal variance condition is not perfectly met.\n\nSome of the variability in the errors appear related to diameter"
   },
   {
     "objectID": "slides/slides-23-slr-intro.html#parameter-estimates",
@@ -4519,7 +4519,7 @@
     "href": "slides/slides-23-slr-intro.html#residual-cont.",
     "title": "Introduction to Simple Linear Regression",
     "section": "Residual (cont.)",
-    "text": "Residual (cont.)\n\n\nResidual values for the three highlighted observations:\n\n\n\n\n \n  \n    x \n    y \n    y_hat \n    residual \n  \n \n\n  \n    -2.991 \n    2.481 \n    -0.130 \n    -2.611 \n  \n  \n    -1.005 \n    -1.302 \n    0.691 \n    1.994 \n  \n  \n    3.990 \n    3.929 \n    2.757 \n    -1.172"
+    "text": "Residual (cont.)\n\n\n\n\n\n\nResidual values for the three highlighted observations:\n\n\n\n\n \n  \n    x \n    y \n    y_hat \n    residual \n  \n \n\n  \n    -2.991 \n    2.481 \n    -0.130 \n    -2.611 \n  \n  \n    -1.005 \n    -1.302 \n    0.691 \n    1.994 \n  \n  \n    3.990 \n    3.929 \n    2.757 \n    -1.172"
   },
   {
     "objectID": "slides/slides-24-slr-interpretation.html#linear-regression-model",
@@ -4671,22 +4671,211 @@
   {
     "objectID": "slides/slides-24-slr-interpretation.html#parameter-estimates",
     "href": "slides/slides-24-slr-interpretation.html#parameter-estimates",
-    "title": "Introduction to Simple Linear Regression",
+    "title": "SLR coefficient estimates",
     "section": "Parameter estimates",
     "text": "Parameter estimates\n\nLike in previous topics, we have to estimate the parameters using data\nWe want to estimate \\(\\beta_{0}\\) and \\(\\beta_{1}\\) using the \\((x_{i}, y_{i})\\)\n\nIn practice, we let software do this for us\n\nHowever, we can derive the least-squares estimates using properties of the least-squares line"
   },
   {
     "objectID": "slides/slides-24-slr-interpretation.html#estimating-slope-and-intercept",
     "href": "slides/slides-24-slr-interpretation.html#estimating-slope-and-intercept",
-    "title": "Introduction to Simple Linear Regression",
+    "title": "SLR coefficient estimates",
     "section": "Estimating slope and intercept",
     "text": "Estimating slope and intercept\n\n\nFirst obtain \\(b_{1}\\):\n\n\\[\nb_{1} =\\frac{s_{y}}{s_{x}} R\n\\]\nwhere:\n\n\n\\(s_{x}\\) and \\(s_{y}\\) are the sample standard deviations of the explanatory and response variables\n\\(R\\) is the correlation between \\(x\\) and \\(y\\)\n\n\n\nThen obtain \\(b_{0}\\):\n\n\\[b_{0} = \\bar{y} - b_{1} \\bar{x}\\] where\n\n\n\\(\\bar{y}\\) is the sample mean of the response variable\n\\(x\\) is the sample mean of the explanatory variable\n\n\n\n\n\n\nTake STAT 0211 or 0311 to see where these formulas come from!"
   },
   {
     "objectID": "slides/slides-24-slr-interpretation.html#fitting-cherry-model-by-hand",
     "href": "slides/slides-24-slr-interpretation.html#fitting-cherry-model-by-hand",
-    "title": "Introduction to Simple Linear Regression",
+    "title": "SLR coefficient estimates",
     "section": "Fitting cherry model (by hand)",
-    "text": "Fitting cherry model (by hand)\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), names_to = \"variable\", values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)"
+    "text": "Fitting cherry model (by hand)\n\n\n\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\n\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), \n               names_to = \"variable\", \n               values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\nWhat does this value of \\(R\\) tell us?\n\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)\nWhat do these numbers really mean?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#housekeeping",
+    "href": "slides/slides-24-slr-interpretation.html#housekeeping",
+    "title": "SLR coefficient estimates",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nNo TA hours tonight\nWill discuss details of Midterm 2 next week!\nRevisions for proposals due Saturday 11:59pm"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#intercept-interpretation",
+    "href": "slides/slides-24-slr-interpretation.html#intercept-interpretation",
+    "title": "SLR coefficient estimates",
+    "section": "Intercept interpretation",
+    "text": "Intercept interpretation\nOur fitted model is \\(\\hat{y} = b_{0} + b_{1}x\\).\n\nTo interpret the estimate of the intercept coefficient \\(b_{0}\\), simply plug in \\(x= 0\\):\n\n\\[\n\\hat{y} = b_{0} + b_{1} x = b_{0} + b_{1}(0) = b_{0}\n\\]\n\nSo, the intercept describes the average/expected value of the response variable \\(y\\) if \\(x=0\\)"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#intercept-in-cherry-model",
+    "href": "slides/slides-24-slr-interpretation.html#intercept-in-cherry-model",
+    "title": "SLR coefficient estimates",
+    "section": "Intercept in cherry model",
+    "text": "Intercept in cherry model\n\\[\n\\widehat{\\text{volume}} = -36.94 + 5.07 \\times \\text{diameter}\n\\]\n\nInterpretation of intercept in context: for a tree with a diameter of 0 inches, the expected volume would be -36.94 cubic feet\n\nThis interpretation is mathematically correct, but practically speaking is useless\n\nThe intercept’s interpretation only makes sense when a value of \\(x=0\\) for the explanatory variable is plausible!\n\nThis is typically not the case/relevant in many applications\nTrees with 0 diameter are not able to sampled"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#slope-interpretation",
+    "href": "slides/slides-24-slr-interpretation.html#slope-interpretation",
+    "title": "SLR coefficient estimates",
+    "section": "Slope interpretation",
+    "text": "Slope interpretation\n\nLet \\(\\hat{y}_{1}\\) be the estimated response for a given value of \\(x\\), so \\(\\hat{y}_{1} = b_{0} + b_{1} x\\)\nWhat happens when we increase \\(x\\) by 1?\nLet \\(\\hat{y}_{2}\\) be the estimated response for \\(x +1\\):\n\n\n\\[\n\\begin{align*}\n\\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\\\\n&= \\color{orange}{b_{0} + b_{1}x}  + b_{1} \\\\\n&= \\color{orange}{\\hat{y}_{1}} + b_{1} \\Rightarrow \\\\\nb_{1} &= \\hat{y}_{2} - \\hat{y}_{1}\n\\end{align*}\n\\]\n\n\nInterpretation: for a 1 unit increase in the explanatory variable \\(x\\), we expect the response variable to change by \\(b_{1}\\) units"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#slope-in-cherry-model",
+    "href": "slides/slides-24-slr-interpretation.html#slope-in-cherry-model",
+    "title": "SLR coefficient estimates",
+    "section": "Slope in cherry model",
+    "text": "Slope in cherry model\n\\[\n\\widehat{\\text{volume}} = -36.94 + 5.07 \\times \\text{diameter}\n\\]\n\nInterpretation in context: for every 1 inch increase in diameter, we expect that volume of cherry trees to increase by 5.07 cubic feet"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-elmhurst",
+    "href": "slides/slides-24-slr-interpretation.html#example-elmhurst",
+    "title": "SLR coefficient estimates",
+    "section": "Example: elmhurst",
+    "text": "Example: elmhurst\nThe elmhurst dataset from openintro provides a random sample of 50 students gift aid for students at Elmhurst College.\n\nWe will examine the relationship between the family income of the student and the gift aid that student received (in $1000s)\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre the first two conditions of LINE satisfied?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-elmhurst-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#example-elmhurst-cont.",
+    "title": "SLR coefficient estimates",
+    "section": "Example: elmhurst (cont.)",
+    "text": "Example: elmhurst (cont.)\n\n\n\n\n\nWe run the model in R, and the output looks something like this:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    24.319 \n    1.291 \n    18.831 \n    0 \n  \n  \n    family_income \n    -0.043 \n    0.011 \n    -3.985 \n    0 \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe values in the estimate column are our \\(b_{0}\\) and \\(b_{1}\\):\n\n\n\\(b_{0} =\\) ? and \\(b_{1} =\\) ?\nWhat do you think the second column is?\n\n\n\nWrite out our fitted model in context"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-elmhurst-model",
+    "href": "slides/slides-24-slr-interpretation.html#example-elmhurst-model",
+    "title": "SLR coefficient estimates",
+    "section": "Example: elmhurst model",
+    "text": "Example: elmhurst model\n\\[\n\\widehat{\\text{aid}} = 24.319 + -0.043 \\times \\text{family_income}\n\\]\n\nBefore we interpret the coefficients, we should verify that the linear model is appropriate for the data!\n\n\n\n\n\n\n\n\n\n\nDo you believe the last two conditions of LINE are satisfied?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-elmhurst-interpretation",
+    "href": "slides/slides-24-slr-interpretation.html#example-elmhurst-interpretation",
+    "title": "SLR coefficient estimates",
+    "section": "Example: elmhurst interpretation",
+    "text": "Example: elmhurst interpretation\n\\[\n\\widehat{\\text{aid}} = 24.319 + -0.043 \\times \\text{family_income}\n\\]\n\n\n\n\nInterpret the slope in context\nInterpret the intercept in context\nIs the meaning of the intercept relevant?\n\n\n\n\nSlope: for every $1000 increase in family income, we expect that the student’s gift aid will decrease by $43.\nIntercept: for a student whose family income is $0, we expect that average amount of aid they will receive is $2.4319^{4}\nSince a family could have an income of $0, the intercept does seem relevant"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#words-of-caution",
+    "href": "slides/slides-24-slr-interpretation.html#words-of-caution",
+    "title": "SLR coefficient estimates",
+    "section": "Words of caution",
+    "text": "Words of caution\n\nThe estimates from the fitted model will always be imperfect\n\nThe linear equation is good at capturing trends, no individual outcome will be perfectly predicted\n\nDo not try to use the model for \\(x\\) values beyond the range of the observed \\(x\\)!\n\nThe true relationship between \\(x\\) and \\(y\\) is almost always much more complex than our simple line\nWe do not know how the relationship behaves outside our limited window"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#extrapolation",
+    "href": "slides/slides-24-slr-interpretation.html#extrapolation",
+    "title": "SLR coefficient estimates",
+    "section": "Extrapolation",
+    "text": "Extrapolation\nSuppose we would like to use our fitted model to estimate the expected gift aid for someone whose family income is $1,000,000:\n\n\nFind the estimated gift aid (careful with units)\n\n\n\\(\\widehat{\\text{aid}} = 24.319 + -0.043 \\times 1000 = -18.681\\)\nThis is ridiculous!\n\nThis is an example of extrapolation: using the model to estimate values outside the scope of the original data\n\nWe should never extrapolate!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#describing-the-fit",
+    "href": "slides/slides-24-slr-interpretation.html#describing-the-fit",
+    "title": "SLR coefficient estimates",
+    "section": "Describing the fit",
+    "text": "Describing the fit\n\nRecall sample correlation \\(R\\) describes the linear relationship between variables \\(x\\) and \\(y\\)\nWe typically use the coefficient of determination or \\(R^2\\) (R-squared) to describe strength of linear fit\n\nDescribes amount of variation in \\(y\\) that is explained by predictor \\(x\\) in the least squares line\n\nIt turns out that \\(R^2\\) in SLR is exactly … \\(R\\) squared (i.e. the square of the sample correlation)\n\n\nWhat are the possible values of \\(R^2\\)? What are desirable values of \\(R^2\\)?"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-elmhurst-model-fit",
+    "href": "slides/slides-24-slr-interpretation.html#example-elmhurst-model-fit",
+    "title": "SLR coefficient estimates",
+    "section": "Example: elmhurst model fit",
+    "text": "Example: elmhurst model fit\n\n\n\n\nThe sample correlation between family income and aid is \\(R=\\) -0.499\nSo the coefficient of determination is \\(R^2 = (-0.499)^2 = 0.249\\)\n\nInterpretation: using a linear model, about 24.9% of the variability in aid received by the student is explained by family income"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#categorical-predictor-with-two-levels",
+    "href": "slides/slides-24-slr-interpretation.html#categorical-predictor-with-two-levels",
+    "title": "SLR coefficient estimates",
+    "section": "Categorical predictor with two levels",
+    "text": "Categorical predictor with two levels\n\nRemember that the different groupings/categories of categorical variables are called levels\n\nNow assume that \\(x\\) is categorical with two levels\n\nRunning example: the possum data from openintro\n\nResponse variable: tail_l (tail length in cm)\nExplanatory variable: pop (either Vic or other)\n\nMaybe we would think to write our regression as\n\n\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop} + \\epsilon\\]\n\n\n\nWhy doesn’t this work?\n\n\nFunctions require a numerical input!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#indicator-variables",
+    "href": "slides/slides-24-slr-interpretation.html#indicator-variables",
+    "title": "SLR coefficient estimates",
+    "section": "Indicator variables",
+    "text": "Indicator variables\nWe need a mechanism to convert the categorical levels into numerical form!\n\n\n\nThis is achieved through an indicator variable which takes the value 1 for one specific level and the value 0 otherwise:\n\n\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\n\n\n\n\n\n\n \n  \n    tail_l \n    pop \n    pop_new \n  \n \n\n  \n    38.0 \n    other \n    0 \n  \n  \n    34.0 \n    Vic \n    1 \n  \n  \n    36.0 \n    Vic \n    1 \n  \n  \n    36.5 \n    Vic \n    1 \n  \n  \n    41.5 \n    other \n    0 \n  \n\n\n\n\n\n\n\n\n\nThe level that corresponds to 0 is called the base level\n\nSo Vic is the base level\nChoosing which level is the base level can sometimes be important"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#example-possum-model",
+    "href": "slides/slides-24-slr-interpretation.html#example-possum-model",
+    "title": "SLR coefficient estimates",
+    "section": "Example: possum model",
+    "text": "Example: possum model\nThis yields the SLR model\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop_other} + \\epsilon\\]\n\nOur estimates are as follows:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    35.935 \n    0.253 \n    142.065 \n    0 \n  \n  \n    popother \n    1.927 \n    0.339 \n    5.690 \n    0 \n  \n\n\n\n\n\n\n\n\nWrite out the equation of our fitted model"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#interpretation-of-coefficients",
+    "href": "slides/slides-24-slr-interpretation.html#interpretation-of-coefficients",
+    "title": "SLR coefficient estimates",
+    "section": "Interpretation of coefficients",
+    "text": "Interpretation of coefficients\nOur fitted model is:\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927 \\times \\text{pop_other}\\]\n\nLet’s interpret the intercept by plugging in \\(0\\) for the explanatory variable:\n\n\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times 0 = 35.935\\]\n\n\nBut wait, when is \\(\\text{pop_other} = 0\\)? When the possum is from Victoria!\nSo when \\(x\\) is categorical, the interpretation of \\(b_{0}\\) is the expected value of the response variable for the base level of \\(x\\)\n\n\n\n\n\nInterpret \\(b_{0}\\) in context\n\n\n\n\nThe expected tail length of possums from Victoria is 35.935 cm"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#intercept-for-categorical-x",
+    "href": "slides/slides-24-slr-interpretation.html#intercept-for-categorical-x",
+    "title": "SLR coefficient estimates",
+    "section": "Intercept for categorical \\(x\\)",
+    "text": "Intercept for categorical \\(x\\)\nOur fitted model is:\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927 \\times \\text{pop_other}\\]\n\nLet’s interpret the intercept by plugging in \\(0\\) for the explanatory variable:\n\n\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times 0 = 35.935\\]\n\n\nBut wait, when is \\(\\text{pop_other} = 0\\)? When the possum is from Victoria!\n\nSo when \\(x\\) is categorical, the interpretation of \\(b_{0}\\) is the expected value of the response variable for the base level of \\(x\\)\n\n\nInterpret \\(b_{0}\\) in context\n\n\nThe expected tail length of possums from Victoria is 35.935 cm"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#slope-for-categorical-x",
+    "href": "slides/slides-24-slr-interpretation.html#slope-for-categorical-x",
+    "title": "SLR coefficient estimates",
+    "section": "Slope for categorical \\(x\\)",
+    "text": "Slope for categorical \\(x\\)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\nRemember, the slope coefficient is interpreted as the expected change in \\(y\\) for a one unit increase in \\(x\\)\n\nWhat does it mean for the indicator variable to increase by one unit here?\n\n\n\\(\\text{pop_other}\\) increases by one unit by going from 0 to 1. This corresponds to a pop value of “other”\n\n\nWhen \\(x\\) is categorical, the interpretation of \\(b_{1}\\) is the expected change in \\(y\\) when moving from the base level to the non-base level\n\n\nTry interpreting \\(b_{1}\\) in context!"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#slope-for-categorical-x-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#slope-for-categorical-x-cont.",
+    "title": "SLR coefficient estimates",
+    "section": "Slope for categorical \\(x\\) (cont.)",
+    "text": "Slope for categorical \\(x\\) (cont.)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\nInterpretation of slope: possums from outside of Victoria are expected to have tail lengths about 1.927 cm longer than possums from Victoria\nNote: interpretations for \\(b_{0}\\) and \\(b_{1}\\) for categorical \\(x\\) are the same as for numerical \\(x\\), but they have more specific/nuanced interpretations when placed in context"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#remark",
+    "href": "slides/slides-24-slr-interpretation.html#remark",
+    "title": "SLR coefficient estimates",
+    "section": "Remark",
+    "text": "Remark\n\nWhen \\(x\\) is categorical, the LINE conditions still need to hold\nWhen \\(x\\) only has two levels, the Linearity assumption will always be satisfied\nWe need to evaluate Nearly normal residuals and Equal variance for each level:"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#possum-example-cont.",
+    "href": "slides/slides-24-slr-interpretation.html#possum-example-cont.",
+    "title": "SLR coefficient estimates",
+    "section": "possum example (cont.)",
+    "text": "possum example (cont.)"
+  },
+  {
+    "objectID": "live_code/slr1.html",
+    "href": "live_code/slr1.html",
+    "title": "Linear regression in R",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)\n\n\nlm() function\nThe function that will obtain the coefficients for the least-squares line is the lm() function. The syntax is as follows:\nlm(response ~ explanatory, data)\n\n\nExample 1: cherry data with continuous \\(x\\)\nLet’s once again consider the cherry data from openintro, where we want to fit the model\n\\[\\text{volume} = \\beta_{0} + \\beta_{1} \\times \\text{diameter} + \\epsilon\\]\nWhat does this look like in R?\n\nlm(volume ~ diam, data = cherry)\n\n\nNote that the variables have to be spelled as they appear in the data frame!\n\nThe output is as follows:\n\nlm(volume ~ diam, data = cherry)\n\n\nCall:\nlm(formula = volume ~ diam, data = cherry)\n\nCoefficients:\n(Intercept)         diam  \n    -36.943        5.066  \n\n\nThis isn’t the most informative of output, so what we will do is use an additional function called summary() that will give us much more information!\nWe will first store the output from lm() as a variable called cherry_lm:\n\ncherry_lm <- lm(volume ~ diam, data = cherry)\n\nThen we will use the summary() function and pass in the linear model:\n\nsummary(cherry_lm)\n\n\nCall:\nlm(formula = volume ~ diam, data = cherry)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-8.065 -3.107  0.152  3.495  9.587 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) -36.9435     3.3651  -10.98 7.62e-12 ***\ndiam          5.0659     0.2474   20.48  < 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.252 on 29 degrees of freedom\nMultiple R-squared:  0.9353,    Adjusted R-squared:  0.9331 \nF-statistic: 419.4 on 1 and 29 DF,  p-value: < 2.2e-16\n\n\nThere’s a lot more information here! We can now see the \\(b_{0}\\) and \\(b_{1}\\) estimates, along with some extra information. In particular:\n\nThe “Multiple R-squared” quantity is the coefficient of determination \\(R^2\\)!\n\nSometimes we just want the coefficients. The coef() function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:\n\ncoef(cherry_lm)\n\n(Intercept)        diam \n -36.943459    5.065856 \n\n\n\n\nExample 2: possum data with categorical \\(x\\)\nThe nice thing about lm() is that it will automatically convert categorical variables to indicator variables!\nLet’s re-visit the possum model:\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\times \\text{pop-other} + \\epsilon\\] \\[\n\\text{pop-other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\nWe can use the lm() function just as before:\n\npossum_lm <- lm(tail_l ~ pop, data = possum)\nsummary(possum_lm)\n\n\nCall:\nlm(formula = tail_l ~ pop, data = possum)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.9348 -1.0416  0.1016  0.6379  5.1379 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  35.9348     0.2529  142.06  < 2e-16 ***\npopother      1.9273     0.3387    5.69 1.22e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.716 on 102 degrees of freedom\nMultiple R-squared:  0.2409,    Adjusted R-squared:  0.2335 \nF-statistic: 32.38 on 1 and 102 DF,  p-value: 1.223e-07\n\n\nHow does lm() choose which level should be the base level?\n\nPre-specified as factor: In R, variables can be coded as “factor” variables where there is a specific numeric ordering under the hood. How can we tell? Using the str() function, we can find the data structure of a given variable:\n\nstr(possum$pop)\n\n Factor w/ 2 levels \"Vic\",\"other\": 1 1 1 1 1 1 1 1 1 1 ...\n\n\nWe can see that the pop variable has two levels, and the order goes “Vic” then “other”. So “Vic” is taken as the base level.\nNot-specified: if your categorical variable is coded as a character/string variable and not a factor, the default base level is the first level in alphabetic order.\nIf you don’t like this behavior, you can mutate() any variable to be a factor variable!"
+  },
+  {
+    "objectID": "slides/slides-23-slr-intro.html",
+    "href": "slides/slides-23-slr-intro.html",
+    "title": "Introduction to Simple Linear Regression",
+    "section": "",
+    "text": "Homework 7 due tonight!\nLast problem set is assigned today! Atypical due date: Wednesday 11/13"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html",
+    "href": "slides/slides-24-slr-interpretation.html",
+    "title": "SLR coefficient estimates",
+    "section": "",
+    "text": "No TA hours tonight\nWill discuss details of Midterm 2 next week!\nRevisions for proposals due Saturday 11:59pm"
+  },
+  {
+    "objectID": "slides/slides-24-slr-interpretation.html#assessing-linear-fit",
+    "href": "slides/slides-24-slr-interpretation.html#assessing-linear-fit",
+    "title": "SLR coefficient estimates",
+    "section": "Assessing linear fit",
+    "text": "Assessing linear fit\n\nWhen \\(x\\) is categorical, the LINE conditions still need to hold\nWhen \\(x\\) only has two levels, the Linearity assumption will always be satisfied\nWe need to evaluate Nearly normal residuals and Equal variance for each level:"
+  },
+  {
+    "objectID": "practice_probs/practice-24-slr.html",
+    "href": "practice_probs/practice-24-slr.html",
+    "title": "Simple Linear Regression",
+    "section": "",
+    "text": "library(openintro)\n\n\n\\((^*)\\) Researchers studying anthropometry collected body girth measurements and skeletal diameter measurements, as well as age, weight, height and gender for 507 physically active individuals. They are interested in the relationship between height (cm) and shoulder girth (cm). They would like create linear regression model for height using shoulder girth as the predictor.\n\n\n\n\n\n\nThe mean shoulder girth is 107.20 cm with a standard deviation of 10.37 cm. The mean height is 171.14 cm with a standard deviation of 9.41 cm. The correlation between height and shoulder girth is 0.67.\n\nWrite the equation of the fitted regression line for predicting height.\nInterpret the slope and intercept in context.\nCalculate the \\(R^2\\) of the regression line and interpret it in context.\nA one year old has a shoulder girth of 56 cm. Would it be appropriate to use this linear model to predict the height of this child? If so, obtain the predicted height. If not, explain why not.\n\n\n\nData on a random sample of 100 births for babies in North Carolina were obtained. We’d like to fit a linear regression model for the birth weight of the baby (weight) based on if the baby was born premature (premature). The premature variable is categorical with two levels: “premie” (if baby was born premature) and “full term” (if the baby was not born premature).\n\nWe run the model in R. The output is as follows:\n\nbirths_lm <- lm(weight ~ premature, data = births)\nsummary(births_lm)\n\n\nCall:\nlm(formula = weight ~ premature, data = births)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.6764 -0.6164  0.0571  0.7636  3.1005 \n\nCoefficients:\n                Estimate Std. Error t value Pr(>|t|)    \n(Intercept)       7.4264     0.1025  72.432   <2e-16 ***\nprematurepremie  -2.7168     0.2740  -9.915   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.165 on 148 degrees of freedom\nMultiple R-squared:  0.3991,    Adjusted R-squared:  0.395 \nF-statistic:  98.3 on 1 and 148 DF,  p-value: < 2.2e-16\n\n\n\nWhich level of the variable premature is the base level? How can you tell?\nWrite out the fitted model for estimated birth weight of a baby.\nInterpret the slope and intercept of the model in context.\nWhat is the estimated weight of a baby born premature?"
   }
 ]
