@@ -25,11 +25,12 @@ What does this look like in `R`?
 lm(volume ~ diam, data = cherry)
 ```
 
--   Note that the variables have to be spelled as they appear in the data frame!
+*Note that the variables have to be spelled as they appear in the data frame!*
 
-The output is as follows:
 
-```{r}
+The output from this line of code is:
+
+```{r echo = F}
 lm(volume ~ diam, data = cherry)
 ```
 
@@ -47,15 +48,9 @@ Then we will use the `summary()` function and pass in the linear model:
 summary(cherry_lm)
 ```
 
-There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. In particular:
+There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. 
 
-- The "Multiple R-squared" quantity is the coefficient of determination $R^2$!
-
-Sometimes we just want the coefficients. The `coef()` function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:
-
-```{r}
-coef(cherry_lm)
-```
+In particular, the "Multiple R-squared" quantity is the coefficient of determination $R^2$!
 
 ### Example 2: `possum` data with categorical $x$
 
@@ -63,8 +58,7 @@ The nice thing about `lm()` is that it will automatically convert categorical va
 
 Let's re-visit the `possum` model:
 
-$$\text{tail length} = \beta_{0} + \beta_{1} \times \text{pop-other} + \epsilon$$
-$$
+$$\text{tail length} = \beta_{0} + \beta_{1} \times \text{pop-other} + \epsilon$$ $$
 \text{pop-other} = \begin{cases}
 0 & \text{ if  pop = Vic} \\
 1 & \text{ if  pop = other}
@@ -75,8 +69,15 @@ We can use the `lm()` function just as before:
 
 ```{r}
 possum_lm <- lm(tail_l ~ pop, data = possum)
-summary(possum_lm)
 ```
+
+Sometimes we just want the coefficients. The `coef()` function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:
+
+```{r}
+coef(possum_lm)
+```
+
+### factors in `R`
 
 **How does `lm()` choose which level should be the base level?**
 
@@ -88,6 +89,26 @@ summary(possum_lm)
 
     We can see that the `pop` variable has two levels, and the order goes "Vic" then "other". So "Vic" is taken as the base level.
 
+    ::: {.callout-tip collapse="false" icon="false"}
+    If you want a different base level, we can change it using `mutate()`!
+
+    ```{r}
+    possum |> 
+      mutate(pop = factor(pop, levels = c("other", "Vic"))) |>
+      pull(pop) |>
+      str()
+    ```
+    :::
+
 2.  Not-specified: if your categorical variable is coded as a character/string variable and *not* a factor, the default base level is the first level in alphabetic order.
 
-    If you don't like this behavior, you can `mutate()` any variable to be a factor variable!
+    ::: {.callout-tip collapse="false" icon="false"}
+    If you don't like this behavior, you can `mutate()` any variable to be a factor variable.
+
+    ```{r}
+    data.frame(fruit = c("apple", "kiwi")) |>
+      mutate(fruit_factor = factor(fruit, levels = c("kiwi", "apple"))) |>
+      pull(fruit_factor) |>
+      str()
+    ```
+    :::

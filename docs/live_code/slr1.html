@@ -218,12 +218,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Note that the variables have to be spelled as they appear in the data frame!</li>
-</ul>
-<p>The output is as follows:</p>
+<p><em>Note that the variables have to be spelled as they appear in the data frame!</em></p>
+<p>The output from this line of code is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -237,11 +234,11 @@ Coefficients:
 <p>This isn’t the most informative of output, so what we will do is use an additional function called <code>summary()</code> that will give us much more information!</p>
 <p>We will first store the output from <code>lm()</code> as a variable called <code>cherry_lm</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cherry_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cherry_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then we will use the <code>summary()</code> function and pass in the linear model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -263,18 +260,8 @@ Multiple R-squared:  0.9353,    Adjusted R-squared:  0.9331
 F-statistic: 419.4 on 1 and 29 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>There’s a lot more information here! We can now see the <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> estimates, along with some extra information. In particular:</p>
-<ul>
-<li>The “Multiple R-squared” quantity is the coefficient of determination <span class="math inline">\(R^2\)</span>!</li>
-</ul>
-<p>Sometimes we just want the coefficients. The <code>coef()</code> function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept)        diam 
- -36.943459    5.065856 </code></pre>
-</div>
-</div>
+<p>There’s a lot more information here! We can now see the <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> estimates, along with some extra information.</p>
+<p>In particular, the “Multiple R-squared” quantity is the coefficient of determination <span class="math inline">\(R^2\)</span>!</p>
 </section>
 <section id="example-2-possum-data-with-categorical-x" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-possum-data-with-categorical-x">Example 2: <code>possum</code> data with categorical <span class="math inline">\(x\)</span></h3>
@@ -288,41 +275,80 @@ F-statistic: 419.4 on 1 and 29 DF,  p-value: &lt; 2.2e-16</code></pre>
 \]</span></p>
 <p>We can use the <code>lm()</code> function just as before:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>possum_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> pop, <span class="at">data =</span> possum)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(possum_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>possum_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> pop, <span class="at">data =</span> possum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sometimes we just want the coefficients. The <code>coef()</code> function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(possum_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = tail_l ~ pop, data = possum)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3.9348 -1.0416  0.1016  0.6379  5.1379 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  35.9348     0.2529  142.06  &lt; 2e-16 ***
-popother      1.9273     0.3387    5.69 1.22e-07 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1.716 on 102 degrees of freedom
-Multiple R-squared:  0.2409,    Adjusted R-squared:  0.2335 
-F-statistic: 32.38 on 1 and 102 DF,  p-value: 1.223e-07</code></pre>
+<pre><code>(Intercept)    popother 
+  35.934783    1.927286 </code></pre>
 </div>
 </div>
+</section>
+<section id="factors-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="factors-in-r">factors in <code>R</code></h3>
 <p><strong>How does <code>lm()</code> choose which level should be the base level?</strong></p>
 <ol type="1">
 <li><p>Pre-specified as <strong>factor</strong>: In <code>R</code>, variables can be coded as “factor” variables where there is a specific numeric ordering under the hood. How can we tell? Using the <code>str()</code> function, we can find the data structure of a given variable:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(possum<span class="sc">$</span>pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(possum<span class="sc">$</span>pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Factor w/ 2 levels "Vic","other": 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 </div>
 </div>
-<p>We can see that the <code>pop</code> variable has two levels, and the order goes “Vic” then “other”. So “Vic” is taken as the base level.</p></li>
+<p>We can see that the <code>pop</code> variable has two levels, and the order goes “Vic” then “other”. So “Vic” is taken as the base level.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you want a different base level, we can change it using <code>mutate()</code>!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>possum <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop =</span> <span class="fu">factor</span>(pop, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"other"</span>, <span class="st">"Vic"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(pop) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Factor w/ 2 levels "other","Vic": 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></li>
 <li><p>Not-specified: if your categorical variable is coded as a character/string variable and <em>not</em> a factor, the default base level is the first level in alphabetic order.</p>
-<p>If you don’t like this behavior, you can <code>mutate()</code> any variable to be a factor variable!</p></li>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you don’t like this behavior, you can <code>mutate()</code> any variable to be a factor variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">fruit =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"kiwi"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fruit_factor =</span> <span class="fu">factor</span>(fruit, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"kiwi"</span>, <span class="st">"apple"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(fruit_factor) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Factor w/ 2 levels "kiwi","apple": 2 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></li>
 </ol>
 
 
