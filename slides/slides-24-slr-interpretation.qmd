@@ -309,8 +309,7 @@ $$
 
 -   Before we interpret the coefficients, we should verify that the linear model is appropriate for the data!
 
-::: {.fragment}
-
+::: fragment
 ```{r fig.height=3}
 p1 <- augment(elmhurst_lm)  |>
   ggplot(aes(x = .resid)) +
@@ -329,15 +328,13 @@ p2 <- augment(elmhurst_lm)  |>
 
 p1 + p2
 ```
+:::
 
-::: 
-
-::: {.fragment}
+:::: fragment
 ::: discuss
 Do you believe the last two conditions of LINE are satisfied?
 :::
-:::
-
+::::
 
 ## Example: `elmhurst` interpretation
 
@@ -388,7 +385,7 @@ Suppose we would like to use our fitted model to estimate the expected gift aid 
 
 -   This is an example of **extrapolation**: using the model to estimate values outside the scope of the original data
 
-    - We should *never* extrapolate!
+    -   We should *never* extrapolate!
 
 # Strength of fit
 
@@ -475,7 +472,7 @@ $$
 set.seed(1)
 possum |>
   select(tail_l, pop) |>
-  mutate(pop_new = 1*(pop == "Vic")) |>
+  mutate(pop_new = 1*(pop == "other")) |>
   sample_n(5) |>
   kable() |>
   kable_styling(font_size = 25)
