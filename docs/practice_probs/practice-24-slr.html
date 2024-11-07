@@ -216,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <ol type="1">
 <li><span class="math inline">\((^*)\)</span> Researchers studying anthropometry collected body girth measurements and skeletal diameter measurements, as well as age, weight, height and gender for 507 physically active individuals. They are interested in the relationship between height (cm) and shoulder girth (cm). They would like create linear regression model for height using shoulder girth as the predictor.</li>
@@ -233,33 +233,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Calculate the <span class="math inline">\(R^2\)</span> of the regression line and interpret it in context.</p></li>
 <li><p>A one year old has a shoulder girth of 56 cm. Would it be appropriate to use this linear model to predict the height of this child? If so, obtain the predicted height. If not, explain why not.</p></li>
 </ol>
-<!-- -->
-<ol start="2" type="1">
-<li>Data on a random sample of 100 births for babies in North Carolina were obtained. We’d like to fit a linear regression model for the birth weight of the baby (<code>weight</code>) based on if the baby was born premature (<code>premature</code>). The <code>premature</code> variable is categorical with two levels: “premie” (if baby was born premature) and “full term” (if the baby was not born premature).</li>
-</ol>
-<p>We run the model in <code>R</code>. The output is as follows:</p>
+<p>2. Data on a random sample of 100 births for babies in North Carolina were obtained. We’d like to fit a linear regression model for the birth weight of the baby in pounds (<code>weight</code>) based on if the baby was born premature (<code>premature</code>). The <code>premature</code> variable is categorical with two levels: “premie” (if baby was born premature) and “full term” (if the baby was not born premature).</p>
+<p>We run the model in <code>R</code>. The estimated coefficients are as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>births_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> premature, <span class="at">data =</span> births)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(births_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>births_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> premature, <span class="at">data =</span> births)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(births_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = weight ~ premature, data = births)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3.6764 -0.6164  0.0571  0.7636  3.1005 
-
-Coefficients:
-                Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)       7.4264     0.1025  72.432   &lt;2e-16 ***
-prematurepremie  -2.7168     0.2740  -9.915   &lt;2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1.165 on 148 degrees of freedom
-Multiple R-squared:  0.3991,    Adjusted R-squared:  0.395 
-F-statistic:  98.3 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>    (Intercept) prematurepremie 
+       7.426357       -2.716833 </code></pre>
 </div>
 </div>
 <ol type="a">
