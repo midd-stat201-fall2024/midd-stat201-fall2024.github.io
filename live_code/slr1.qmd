@@ -27,7 +27,6 @@ lm(volume ~ diam, data = cherry)
 
 *Note that the variables have to be spelled as they appear in the data frame!*
 
-
 The output from this line of code is:
 
 ```{r echo = F}
@@ -48,9 +47,7 @@ Then we will use the `summary()` function and pass in the linear model:
 summary(cherry_lm)
 ```
 
-There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. 
-
-In particular, the "Multiple R-squared" quantity is the coefficient of determination $R^2$!
+There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. In particular, the "Multiple R-squared" quantity is the coefficient of determination $R^2$!
 
 ### Example 2: `possum` data with categorical $x$
 
@@ -77,38 +74,64 @@ Sometimes we just want the coefficients. The `coef()` function will output the c
 coef(possum_lm)
 ```
 
-### factors in `R`
+## Pretty output using `broom`
 
-**How does `lm()` choose which level should be the base level?**
+The `broom` package has a function that turns the output from `lm()` into tidy, data frame form. We simply pass in the fitted model into the function of interest!
 
-1.  Pre-specified as **factor**: In `R`, variables can be coded as "factor" variables where there is a specific numeric ordering under the hood. How can we tell? Using the `str()` function, we can find the data structure of a given variable:
+::: column-margin
+Install the package either by typing `install.packages("broom")` in your Console, or in the Packages pane.
+:::
 
-    ```{r}
-    str(possum$pop)
-    ```
+### `tidy()`
 
-    We can see that the `pop` variable has two levels, and the order goes "Vic" then "other". So "Vic" is taken as the base level.
+The function `tidy()` turns the information about the coefficients into a nice data frame:
 
-    ::: {.callout-tip collapse="false" icon="false"}
-    If you want a different base level, we can change it using `mutate()`!
+```{r}
+library(broom)
+tidy(cherry_lm)
+```
 
-    ```{r}
-    possum |> 
-      mutate(pop = factor(pop, levels = c("other", "Vic"))) |>
-      pull(pop) |>
-      str()
-    ```
-    :::
+Since this is in data frame, each column is a variable, and all of our `dplyr` wrangling functions work!
 
-2.  Not-specified: if your categorical variable is coded as a character/string variable and *not* a factor, the default base level is the first level in alphabetic order.
+```{r}
+tidy(cherry_lm) |>
+  pull(estimate)
+```
 
-    ::: {.callout-tip collapse="false" icon="false"}
-    If you don't like this behavior, you can `mutate()` any variable to be a factor variable.
+### `glance()`
 
-    ```{r}
-    data.frame(fruit = c("apple", "kiwi")) |>
-      mutate(fruit_factor = factor(fruit, levels = c("kiwi", "apple"))) |>
-      pull(fruit_factor) |>
-      str()
-    ```
-    :::
+The function `glance()` turns the extra information about the model fit into nice data frame:
+
+```{r}
+glance(cherry_lm)
+glance(cherry_lm) |>
+  pull(r.squared)
+```
+
+### `augment()`
+
+The function `augment()` adds information about observations to the dataset:
+
+```{r}
+augment(cherry_lm) |>
+  slice(1:3)
+```
+
+You can see the original `x` and `y` values (`diam` and `volume`), as well as:
+
+-   `.fitted`: the fitted (estimated) values $\hat{y}$ for the corresponding observation
+
+-   `.resid`: the residual for the observation (taken as $y - \hat{y}$...)
+
+::: column-margin
+The periods are important!
+:::
+
+We can use the output from augment to plot residuals:
+
+```{r fig.height=3.5, fig.width=6}
+augment(cherry_lm) |>
+  ggplot(aes(x = diam, y = .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed")
+```

@@ -1,0 +1,364 @@
+---
+title: "Inference in SLR"
+date: "November 11, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(moderndive)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(broom)
+library(kableExtra)
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 24))
+source("../stat201_fns.R")
+```
+
+-   Last set of homework problems are released today!
+
+## Recap
+
+-   Learned how to interpret slope and intercept of fitted model
+    -   $b_0$ is expected value of response when $x=0$
+    -   $b_{1}$ is expected change in $y$ for a one unit increase in $x$
+-   When explanatory $x$ is categorical, we have a slightly more nuanced interpretation
+-   Coefficient of determination $R^2$ assesses strength of linear model fit
+
+## Variability of coefficient estimates
+
+-   Remember, a linear regression is fit using a sample of data
+
+-   Different samples from the same population will yield *different* point estimates of $(b_{0}, b_{1})$
+
+    -   I will generate 30 data points under the following model: $y = 1 + 0.5x+\epsilon$
+
+        -   How? Randomly generate some $x$ and $\epsilon$ values and then plug into model to get corresponding $y$
+
+    -   Fit SLR to these $(x,y)$ data, and obtain estimates $(b_{0}, b_{1})$
+
+    -   Repeat this 50 times
+
+## Variability of coefficient estimates
+
+```{r}
+set.seed(2)
+n <- 30
+B <- 50
+beta0 <- 1
+beta1 <- 0.5
+b_mat <- matrix(NA, nrow = B, ncol = 2)
+for(i in 1:B){
+  x <-  rnorm(n)
+  y <- beta0 + beta1 *x + rnorm(n,0,0.5)
+  b_mat[i,] <- coef(lm(y~x))
+}
+p1 <- data.frame(b_mat) |>
+  rename("b0" = 1, "b1" = 2) |>
+  ggplot() +
+  xlim(c(-2,2)) +
+  ylim(c(-2,3))+
+  labs(x = "x", y = "y", title = "Fitted/estimated lines", subtitle= "From 50 simulations", caption = "Pink = line using true intercept and slope")+
+  geom_abline(mapping = aes(slope = b1, intercept = b0), col = "grey") +
+  geom_abline(slope = beta0, intercept =  beta0, col = "pink",linewidth = 2 ) +
+  plot_theme
+
+p2<- data.frame(b_mat) |>
+  rename("b0" = 1, "b1" = 2) |>
+  pivot_longer(cols = 1:2, names_to = "coefficient", values_to = "estimate") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(bins = 13) +
+  geom_vline(data = data.frame(estimate = c(beta0, beta1), coefficient = c("b0", "b1")), mapping = aes(xintercept = estimate),
+             col = "pink", linewidth = 2) +
+  facet_wrap(~coefficient, scales = "free") +
+  plot_theme +
+  labs(title = "Sampling distribution")
+p1 + p2
+
+```
+
+## What are we interested in?
+
+Remember: we fit SLR to understand how $x$ is (linearly) related to $y$:
+
+$$
+y = \beta_{0} + \beta_{1} x + \epsilon
+$$
+
+-   ::: discuss
+    What would a value of $\beta_{1} = 0$ mean?
+    :::
+
+    -   If $\beta_{1} = 0$, then the effect of $x$ disappears and there is in fact no linear relationship between $x$ and $y$
+
+-   We don't know $\beta_{1}$, so let's look at estimate $b_{1}$:
+
+    -   ::: discuss
+        Is an estimate of $b_{1}= 0$ a convincing evidence of no relationship? What if $b_{1} = 0.1$?
+        :::
+
+    -   It depends! We saw that $b_{1}$ varies by sample! So let's perform inference for $\beta_{1}$
+
+# Inference for SLR
+
+Using mathematical model, not simulation!
+
+## Running example: `evals` data
+
+Data on 463 courses at UT Austin were obtained to answer the question: "What factors explain differences in instructor teaching evaluation scores?"
+
+-   One hypothesis was that more attractive instructors receive better teaching evaluations
+
+-   We will look at the variables:
+
+    -   `score`: course instructor's average teaching score, where average is calculated from all students in that course. Scores ranged from 1-5, with 1 being lowest.
+
+    -   `bty_avg`: course instructor's average "beauty" score, where average is calculated from six student evaluations of "beauty". Scores ranged from 1-10, with 1 being lowest.
+
+## Teaching evaluations data
+
+```{r}
+p1 <- ggplot(evals, mapping = aes(x = bty_avg, y = score)) +
+  geom_point() +
+  labs(x = "Average beauty score", "Average rating", title = "Relationship between teaching and beauty scores")+
+  plot_theme +
+  geom_smooth(method = "lm", se = FALSE)
+p1 
+```
+
+::: discuss
+Does this line really have a non-zero slope?
+:::
+
+## Hypothesis test for slope
+
+-   We have the following hypotheses:
+
+    -   $H_{0}: \beta_{1} = 0$: the true linear model has slope zero
+
+    -   $H_{A}: \beta_{1} \neq 0$: the true linear model has a non-zero slope. An instructor's average beauty score is predictive of their average teaching evaluation score.
+
+-   To assess, we do what we usually do:
+
+    -   Check if methods are appropriate
+
+    -   If so: obtain an estimate, identify/estimate standard error of the estimate, find an appropriate test statistic, and calculate p-value
+
+-   ::: {style="color: maroon"}
+    The output from `lm()` actually does all of this for us, but we will see how the test statistic and p-value are calculated!
+    :::
+
+## Teaching evaluations: model assessment
+
+We fit the model in `R`, and obtain the following plots.
+
+::: discuss
+Are all conditions of LINE met?
+:::
+
+```{r echo = F}
+eval_mod <- lm(score ~ bty_avg, data = evals)
+tidy_eval <- eval_mod |>
+  tidy()
+est <- tidy_eval|>
+  filter(term == "bty_avg") |>
+  pull(estimate)
+se <- tidy_eval|>
+  filter(term == "bty_avg") |>
+  pull(std.error)
+test_stat <- tidy_eval|>
+  filter(term == "bty_avg") |>
+  pull(statistic)
+n <- nrow(evals)
+df <- n -2
+p_val <- 2*(1-pt(test_stat,df))
+```
+
+```{r fig.width=12}
+p2 <- eval_mod |>
+  augment() |>
+  ggplot(aes(x = .resid)) +
+  geom_histogram(bins = 25) +
+  labs(x = "Residual")+
+  plot_theme
+
+p3 <- eval_mod |>
+  augment() |>
+  ggplot(aes(x = bty_avg, y= .resid)) +
+  geom_point()+
+  labs(y = "Residual", x = "Average beauty score") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  plot_theme
+
+p1 + p2 + p3
+```
+
+
+
+## Looking at `lm()` output
+
+```{r echo = T, eval = F}
+library(broom)
+eval_mod <- lm(score ~ bty_avg, data = evals)
+eval_mod |>
+  tidy()
+```
+
+```{r}
+tidy_eval |>
+  kable() |>
+  kable_styling(font_size = 24)
+```
+
+::: discuss
+Assuming the linear model is appropriate, interpret the coefficients!
+:::
+
+-   Intercept: an instructor with an average beauty score of 0 would be expected to have an average evaluation score of `r round(coef(eval_mod)[1], 3)`
+
+-   Slope: for every one point increase in average beauty score an instructor receives, their evaluation score is expected to incrase by `r round(coef(eval_mod)[2], 3)` points
+
+## Looking at `lm()` output
+
+```{r}
+tidy_eval |>
+  kable() |>
+  kable_styling(font_size = 24)
+```
+
+::::: columns
+::: {.column width="50%"}
+-   `estimate`: the observed point estimate ($b_{0}$ or $b_{1}$)
+
+-   `std.error`: the estimated standard error of the estimate
+:::
+
+::: {.column width="50%"}
+-   `statistic`: the value of the test statistic
+
+-   `p.value`: p-value associated with the *two-sided alternative* $H_{A}: \beta_{1} \neq 0$
+:::
+:::::
+
+-   Let's confirm the test statistic calculation:
+
+::: fragment
+$$
+t = \frac{\text{observed} - \text{null}}{\text{SE}_{0}} =\frac{b_{1,obs} - \beta_{1, 0}}{\widehat{\text{SE}}_{0}} = \frac{`r est` - 0}{`r se`} = `r test_stat` \sim t_{df}
+$$
+
+where $df = n-2$
+:::
+
+## p-value and conclusion
+
+```{r}
+tidy_eval |>
+  kable() |>
+  kable_styling(font_size = 24)
+```
+
+Let's confirm the p-value calculation:
+
+$$\text{p-value} = \text{Pr}(T \geq 4.09) + \text{Pr}(T \leq -4.09)$$ where $T \sim t_{`r df`}$
+
+-   So our p-value is: `2 * (1 - pt(4.09, 461))` = `r p_val`
+
+-   **Assuming the LINE conditions are met**: since our p-value `r p_val` is extremely small, we would reject $H_{0}$ at any reasonable significant level. Thus, the data provide convincing evidence that there is a linear relationship between instructor's beauty score and evaluation score.
+
+## Different $H_{A}$
+
+```{r}
+tidy_eval |>
+  kable() |>
+  kable_styling(font_size = 24)
+```
+
+::::::: columns
+:::: {.column width="50%"}
+::: discuss
+What would your p-value be if your alternative was $H_{A}: \beta_{1} > 0$? What would your conclusion be?
+:::
+
+-   $\text{Pr}(T \geq `r round(test_stat, 3)`)$ = `(1-pt(4.09, 461)` = `r p_val/2`
+
+-   The data provide convincing evidence that there is a *positive* relationship between instructor's beauty score and evaluation score.
+::::
+
+:::: {.column width="50%"}
+::: discuss
+What would your p-value be if your alternative was $H_{A}: \beta_{1} < 0$? What would your conclusion be?
+:::
+
+-   $\text{Pr}(T \leq `r round(test_stat, 3)`)$ = `pt(4.09, 461)` = `r pt(4.09, 461)`
+
+-   The data do *not* provide convincing evidence that there is a *negative* relationship between instructor's beauty score and evaluation score.
+::::
+:::::::
+
+## Confidence intervals
+
+```{r}
+cv <- qt(0.975, df)
+ub <- round(est + (cv * se ) , 3)
+lb <- round(est - (cv * se ) , 3)
+
+tidy_eval |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+
+We can also construct confidence intervals using the output from `lm()`! Remember:
+
+$$
+\text{CI} = \text{point est.} \pm \text{critical value} \times \text{SE}
+$$
+
+-   Critical value also comes from $t_{n-2}$ distribution
+
+-   Suppose we want a 95% confidence intervals for $\beta_{1}$:
+
+    -   ::: discuss
+        What code would you use to obtain critical value?
+        :::
+
+    -   `` qt(0.975, `r df`) `` = `r round(cv, 2)`
+
+-   So our 95% CI for $\beta_{1}$ is: $`r round(est, 3)` \pm `r round(cv, 2)` \times `r round(se, 3)` = (`r lb`, `r ub`)$
+
+## Remarks
+
+-   Note: for $\beta_{1}$, the null hypothesis is **always** of the form $H_{0}: \beta_{1} = 0$
+
+-   LINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, simulation-based methods would be a better choice
+
+-   Here, the **I**ndependence conditions did not seem to be met
+
+    -   Take STAT 412 or other course to learn how to incorporate dependencies between observations!
+
+-   **So what can we say**?
+
+    -   The results suggested by our inference should be viewed as preliminary, and not conclusive
+
+    -   Further investigation is certainly warranted!
+
+    -   Checking LINE can be very subjective, but that's how real-world analysis will be!

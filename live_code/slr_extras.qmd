@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+---
+
+```{r packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+
+### factors in `R`
+
+**How does `lm()` choose which level should be the base level?**
+
+1.  Pre-specified as **factor**: In `R`, variables can be coded as "factor" variables where there is a specific numeric ordering under the hood. How can we tell? Using the `str()` function, we can find the data structure of a given variable:
+
+    ```{r}
+    str(possum$pop)
+    ```
+
+    We can see that the `pop` variable has two levels, and the order goes "Vic" then "other". So "Vic" is taken as the base level.
+
+    ::: {.callout-tip collapse="false" icon="false"}
+    If you want a different base level, we can change it using `mutate()`!
+
+    ```{r}
+    possum |> 
+      mutate(pop = factor(pop, levels = c("other", "Vic"))) |>
+      pull(pop) |>
+      str()
+    ```
+    :::
+
+2.  Not-specified: if your categorical variable is coded as a character/string variable and *not* a factor, the default base level is the first level in alphabetic order.
+
+    ::: {.callout-tip collapse="false" icon="false"}
+    If you don't like this behavior, you can `mutate()` any variable to be a factor variable.
+
+    ```{r}
+    data.frame(fruit = c("apple", "kiwi")) |>
+      mutate(fruit_factor = factor(fruit, levels = c("kiwi", "apple"))) |>
+      pull(fruit_factor) |>
+      str()
+    ```
+    :::
