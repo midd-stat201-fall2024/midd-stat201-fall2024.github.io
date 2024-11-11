@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 201: Intro. to Statistics and Data Science - Untitled</title>
+<title>STAT 201: Intro. to Statistics and Data Science - broom and factors for SLR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,10 +122,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -179,13 +180,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">broom and factors for SLR</h1>
 </div>
 
 
@@ -204,13 +206,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="factors-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="factors-in-r">factors in <code>R</code></h3>
+<p>Let’s bring back our <code>cherry_lm</code> model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cherry_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="pretty-output-using-broom" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="pretty-output-using-broom">Pretty output using <code>broom</code></h2>
+<p>The <code>broom</code> package has a function that turns the output from <code>lm()</code> into tidy, data frame form. We simply pass in the fitted model into the function of interest!</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Install the package either by typing <code>install.packages("broom")</code> in your Console, or in the Packages pane.</p>
+</div></div><section id="tidy" class="level3">
+<h3 class="anchored" data-anchor-id="tidy"><code>tidy()</code></h3>
+<p>The function <code>tidy()</code> turns the information about the coefficients into a nice data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)   -36.9      3.37      -11.0 7.62e-12
+2 diam            5.07     0.247      20.5 8.64e-19</code></pre>
+</div>
+</div>
+<p>Since this is in data frame, each column is a variable, and all of our <code>dplyr</code> wrangling functions work!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(cherry_lm) <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(estimate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -36.943459   5.065856</code></pre>
+</div>
+</div>
+</section>
+<section id="glance" class="level3">
+<h3 class="anchored" data-anchor-id="glance"><code>glance()</code></h3>
+<p>The function <code>glance()</code> turns the extra information about the model fit into nice data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(cherry_lm) <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9353199</code></pre>
+</div>
+</div>
+</section>
+<section id="augment" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="augment"><code>augment()</code></h3>
+<p>The function <code>augment()</code> adds information about observations to the dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(cherry_lm) <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+  volume  diam .fitted .resid   .hat .sigma .cooksd .std.resid
+   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+1   10.3   8.3    5.10   5.20 0.115    4.20  0.110       1.30 
+2   10.3   8.6    6.62   3.68 0.105    4.26  0.0492      0.914
+3   10.2   8.8    7.64   2.56 0.0992   4.30  0.0222      0.635</code></pre>
+</div>
+</div>
+<p>You can see the original <code>x</code> and <code>y</code> values (<code>diam</code> and <code>volume</code>), as well as:</p>
+<ul>
+<li><p><code>.fitted</code>: the fitted (estimated) values <span class="math inline">\(\hat{y}\)</span> for the corresponding observation</p></li>
+<li><p><code>.resid</code>: the residual for the observation (taken as <span class="math inline">\(y - \hat{y}\)</span>…)</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The periods are important!</p>
+</div></div><p>We can use the output from augment to plot residuals:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(cherry_lm) <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diam, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="slr_extras_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="factors-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="factors-in-r">factors in <code>R</code></h2>
 <p><strong>How does <code>lm()</code> choose which level should be the base level?</strong></p>
 <ol type="1">
 <li><p>Pre-specified as <strong>factor</strong>: In <code>R</code>, variables can be coded as “factor” variables where there is a specific numeric ordering under the hood. How can we tell? Using the <code>str()</code> function, we can find the data structure of a given variable:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(possum<span class="sc">$</span>pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(possum<span class="sc">$</span>pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Factor w/ 2 levels "Vic","other": 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 </div>
@@ -230,10 +319,10 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you want a different base level, we can change it using <code>mutate()</code>!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>possum <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop =</span> <span class="fu">factor</span>(pop, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"other"</span>, <span class="st">"Vic"</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(pop) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>possum <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop =</span> <span class="fu">factor</span>(pop, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"other"</span>, <span class="st">"Vic"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(pop) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Factor w/ 2 levels "other","Vic": 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
 </div>
@@ -256,10 +345,10 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you don’t like this behavior, you can <code>mutate()</code> any variable to be a factor variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">fruit =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"kiwi"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fruit_factor =</span> <span class="fu">factor</span>(fruit, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"kiwi"</span>, <span class="st">"apple"</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(fruit_factor) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">fruit =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"kiwi"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fruit_factor =</span> <span class="fu">factor</span>(fruit, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"kiwi"</span>, <span class="st">"apple"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(fruit_factor) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Factor w/ 2 levels "kiwi","apple": 2 1</code></pre>
 </div>

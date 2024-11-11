@@ -126,7 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -180,10 +180,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -285,91 +284,8 @@ F-statistic: 419.4 on 1 and 29 DF,  p-value: &lt; 2.2e-16</code></pre>
   35.934783    1.927286 </code></pre>
 </div>
 </div>
-</section>
-<section id="pretty-output-using-broom" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="pretty-output-using-broom">Pretty output using <code>broom</code></h2>
-<p>The <code>broom</code> package has a function that turns the output from <code>lm()</code> into tidy, data frame form. We simply pass in the fitted model into the function of interest!</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Install the package either by typing <code>install.packages("broom")</code> in your Console, or in the Packages pane.</p>
-</div></div><section id="tidy" class="level3">
-<h3 class="anchored" data-anchor-id="tidy"><code>tidy()</code></h3>
-<p>The function <code>tidy()</code> turns the information about the coefficients into a nice data frame:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 5
-  term        estimate std.error statistic  p.value
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1 (Intercept)   -36.9      3.37      -11.0 7.62e-12
-2 diam            5.07     0.247      20.5 8.64e-19</code></pre>
-</div>
-</div>
-<p>Since this is in data frame, each column is a variable, and all of our <code>dplyr</code> wrangling functions work!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(cherry_lm) <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(estimate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -36.943459   5.065856</code></pre>
-</div>
-</div>
-</section>
-<section id="glance" class="level3">
-<h3 class="anchored" data-anchor-id="glance"><code>glance()</code></h3>
-<p>The function <code>glance()</code> turns the extra information about the model fit into nice data frame:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 12
-  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
-      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1     0.935         0.933  4.25      419. 8.64e-19     1  -87.8  182.  186.
-# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(cherry_lm) <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9353199</code></pre>
-</div>
-</div>
-</section>
-<section id="augment" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="augment"><code>augment()</code></h3>
-<p>The function <code>augment()</code> adds information about observations to the dataset:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(cherry_lm) <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 8
-  volume  diam .fitted .resid   .hat .sigma .cooksd .std.resid
-   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
-1   10.3   8.3    5.10   5.20 0.115    4.20  0.110       1.30 
-2   10.3   8.6    6.62   3.68 0.105    4.26  0.0492      0.914
-3   10.2   8.8    7.64   2.56 0.0992   4.30  0.0222      0.635</code></pre>
-</div>
-</div>
-<p>You can see the original <code>x</code> and <code>y</code> values (<code>diam</code> and <code>volume</code>), as well as:</p>
-<ul>
-<li><p><code>.fitted</code>: the fitted (estimated) values <span class="math inline">\(\hat{y}\)</span> for the corresponding observation</p></li>
-<li><p><code>.resid</code>: the residual for the observation (taken as <span class="math inline">\(y - \hat{y}\)</span>…)</p></li>
-</ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>The periods are important!</p>
-</div></div><p>We can use the output from augment to plot residuals:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(cherry_lm) <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diam, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="slr1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
