@@ -1,42 +1,69 @@
 ---
-title: "STAT 201: Homework 8 (R)"
+title: 'STAT 201: Homework 8 (R)'
 author: "Your name here"
-date: "Due: 11/14/24 at 11:59pm"
-output: html_document
+date: 'Due: 11/14/24 at 11:59pm'
+output:
+  html_document: default
 ---
 
-0.  We will once again examine the `evals` data from the `openintro` package. You will need to load in the `openintro`, `tidyverse`, and `broom` packages below.
+We will examine data that were collected at Baystate Medical Center, Springfield, MA during 1986 on the birth weights of 189 babies, along with descriptive information about the mother. Researchers wanted to learn about risk factors for underweight babies. The variables are:
+
+-   `low`: indicator of `bwt` less than 2.5 kg
+-   `age`: mother's age in years
+-   `lwt`: mother's weight in pounds at last menstrual period
+-   `race`: mother's race (`1` = white, `2` = black, `3` = other)
+-   `smoke`: smoking status during pregnancy (no or yes)
+-   `ptl`: number of previous premature labours
+-   `ht`: history of hypertension (0 = no, 1 = yes)
+-   `ui`: presence of uterine irritability (0 = no, 1 = yes)
+-   `ftv`: number of physician visits during the first trimester
+-   `bwt`: birth weight in grams
+
+0.  Load in the `tidyverse` and `broom` packages below. Then run the code chunk and take a look at the data.
 
 ```{r setup, message =FALSE}
-# load necessary packages here
+library(readr)
+birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/birthwt.csv")
+# load other necessary packages here
+
 ```
 
-1.  Fit a linear regression model for the average teaching score of the course instructor using the percent of students in the class who completed the evaluation as the explanatory variable. Store this as an object called `score_lm`, then display the "tidy" output of `score_lm`.
+1.  Modify your data frame so that it only contains data for mothers with no history of hypertension.
 
 ```{r}
 
 ```
 
-2.  Based off your output above, does there appear to be a linear relationship between the percent of students in the class who completed the evaluation and the average evaluation score? Why or why not?
-
-**Answer:**
-
-3.  Using code, obtain the $R^2$ of the model and store it as a variable called `r2`. Using in-line code, report the the $R^2$ of the model and interpret what it means in context.
+2.  Using your new data frame, fit a linear regression model for the birth weight of the baby using the smoke status of the mother as the explanatory variable. Store this as an object called `birth_lm`, then display summary information of the coefficients of `birth_lm` ("tidy" or not are both fine).
 
 ```{r}
 
 ```
 
+3.  Provide an example/scenario where the independence condition would be violated.
+
 **Answer:**
 
-4.  Check if the nearly normal condition and equal variance conditions are satisfied. Briefly explain in words why or why not, referencing the appropriate plot were necessary. Be sure to have informative axis labels.
+4.  Check if the normality condition is satisfied. Briefly explain in words why or why not. Be sure to have informative axis labels and title. *Make sure the residuals are of the form $\hat{y} - y$.*
 
-```{r}
+```{r fig.height = 3}
 
 ```
 
 **Answer:**
 
-5.  Does a significant linear relationship between $x$ and $y$ imply that a model is actually useful? Use your answers from 2-4 above to answer this question.
+5.  Based off the model output, is there evidence of a linear relationship between the mother's smoke status and the birth weight of the baby (for mothers with no history of hypertension)? Why or why not?
+
+**Answer:**
+
+6.  Using code, obtain the $R^2$ of the model and store it as a variable called `r2`. Using in-line code, report the the $R^2$ of the model and interpret what it means in context.
+
+```{r}
+
+```
+
+**Answer:** 
+
+7.  Does a significant linear relationship between $x$ and $y$ imply that a model is actually useful? Use your answers above to answer this question.
 
 **Answer:**

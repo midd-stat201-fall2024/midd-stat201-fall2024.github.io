@@ -204,6 +204,7 @@ p_val <- 2*(1-pt(test_stat,df))
 ```{r fig.width=12}
 p2 <- eval_mod |>
   augment() |>
+    mutate(.resid = -1*.resid) |>
   ggplot(aes(x = .resid)) +
   geom_histogram(bins = 25) +
   labs(x = "Residual")+
@@ -211,6 +212,7 @@ p2 <- eval_mod |>
 
 p3 <- eval_mod |>
   augment() |>
+  mutate(.resid = -1*.resid) |>
   ggplot(aes(x = bty_avg, y= .resid)) +
   geom_point()+
   labs(y = "Residual", x = "Average beauty score") +
