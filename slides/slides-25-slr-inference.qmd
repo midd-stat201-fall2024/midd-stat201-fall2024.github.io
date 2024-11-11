@@ -87,7 +87,7 @@ p1 <- data.frame(b_mat) |>
   ylim(c(-2,3))+
   labs(x = "x", y = "y", title = "Fitted/estimated lines", subtitle= "From 50 simulations", caption = "Pink = line using true intercept and slope")+
   geom_abline(mapping = aes(slope = b1, intercept = b0), col = "grey") +
-  geom_abline(slope = beta0, intercept =  beta0, col = "pink",linewidth = 2 ) +
+  geom_abline(slope = beta1, intercept =  beta0, col = "pink",linewidth = 2 ) +
   plot_theme
 
 p2<- data.frame(b_mat) |>
