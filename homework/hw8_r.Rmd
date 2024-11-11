@@ -1,0 +1,42 @@
+---
+title: "STAT 201: Homework 8 (R)"
+author: "Your name here"
+date: "Due: 11/14/24 at 11:59pm"
+output: html_document
+---
+
+0.  We will once again examine the `evals` data from the `openintro` package. You will need to load in the `openintro`, `tidyverse`, and `broom` packages below.
+
+```{r setup, message =FALSE}
+# load necessary packages here
+```
+
+1.  Fit a linear regression model for the average teaching score of the course instructor using the percent of students in the class who completed the evaluation as the explanatory variable. Store this as an object called `score_lm`, then display the "tidy" output of `score_lm`.
+
+```{r}
+
+```
+
+2.  Based off your output above, does there appear to be a linear relationship between the percent of students in the class who completed the evaluation and the average evaluation score? Why or why not?
+
+**Answer:**
+
+3.  Using code, obtain the $R^2$ of the model and store it as a variable called `r2`. Using in-line code, report the the $R^2$ of the model and interpret what it means in context.
+
+```{r}
+
+```
+
+**Answer:**
+
+4.  Check if the nearly normal condition and equal variance conditions are satisfied. Briefly explain in words why or why not, referencing the appropriate plot were necessary. Be sure to have informative axis labels.
+
+```{r}
+
+```
+
+**Answer:**
+
+5.  Does a significant linear relationship between $x$ and $y$ imply that a model is actually useful? Use your answers from 2-4 above to answer this question.
+
+**Answer:**

@@ -36,6 +36,14 @@ source("../stat201_fns.R")
 
 -   Last set of homework problems are released today!
 
+-   Office hours changed this week:
+
+    -   Today: 2-3pm only
+
+    -   Wednesday 4-5pm
+
+    -   Friday: cancelled, moved to next week before midterm
+
 ## Recap
 
 -   Learned how to interpret slope and intercept of fitted model
@@ -211,8 +219,6 @@ p3 <- eval_mod |>
 
 p1 + p2 + p3
 ```
-
-
 
 ## Looking at `lm()` output
 

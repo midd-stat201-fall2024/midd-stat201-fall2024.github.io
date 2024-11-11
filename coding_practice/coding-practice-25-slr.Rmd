@@ -1,0 +1,44 @@
+---
+title: "SLR coding practice"
+author: "Your name"
+date: "Due: 11/11/24 at 11:59pm"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(openintro)
+library(broom)
+```
+
+1.  Using the `possum` data again, fit a linear regression for the length of heads for a possum using their tail lengths as a predictor. Store the model output as a variable called `possum_lm` and display information about the coefficients in tidy form using the appropriate function.
+
+```{r}
+
+```
+
+2.  Create a residual plot of the fitted model using the `augment()` function and `ggplot()`. Try adding a horizontal dashed line at 0!
+
+```{r}
+
+```
+
+3.  Suppose we found a tail of a possum on the ground! We measure the tail to be 36.1 cm. Being as reproducible as possible, obtain the estimated head length of this squirrel by doing the following:
+
+-   Create variable called `x_pred` that stores the value of the explanatory variable we'd like to obtain a prediction for.
+
+-   Obtain the estimated coefficients from the tidy output by `pull()`-ing the relevant column. Store them as a variable called `possum_coeffs`.
+
+-   Indexing `coeffs` (i.e. using bracket notation) and using `x`, obtain the estimated head length and store this as a value called `head_l_pred`.
+
+```{r}
+# create x
+
+# create possum_coeffs
+
+# create head_l_pred
+```
+
+Report your answer using in-line code.
+
+**Answer:**
