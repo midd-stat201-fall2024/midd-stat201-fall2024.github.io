@@ -1,0 +1,98 @@
+---
+title: "Bootstrapping for slope"
+editor_options: 
+  chunk_output_type: console
+---
+```{r echo = F}
+knitr::opts_chunk$set(fig.height = 3) 
+```
+
+```{r message = FALSE}
+library(tidyverse)
+library(openintro)
+library(broom)
+```
+
+## Bootstrap distribution of $b_{1}$
+
+```{r}
+set.seed(311)
+n <- nrow(evals)
+B <- 1000
+b1_boot <- rep(NA, B)
+
+# option 1
+for(b in 1:B){
+  # create a vector of indices for sampling row-by-row:
+  resamp_inds <- sample(1:n, size = n, replace = T)
+  
+  # create new data frame by grabbing the resampled rows
+  evals_resamp <- evals[resamp_inds,]
+  
+  # fit lm on new model and grab the corresponding coefficient
+  coefs <- coef(lm(score ~ bty_avg, data = evals_resamp))
+  b1_boot[b] <- coefs[2]
+}
+```
+
+```{r eval = F}
+# option 2: dplyr (slower)
+set.seed(311)
+b1_boot <- rep(NA, B)
+for(b in 1:B){
+  # create new data frame using sample_n() to sample rows
+  evals_resamp <- evals |>
+    sample_n(size = n, replace = T)
+  
+  # get coefficient using broom functions
+  b1_boot[b] <- lm(score ~ bty_avg, data = evals_resamp) |>
+    tidy() |>
+    slice(2) |>
+    pull(estimate)
+}
+```
+
+Visualize the bootstrap distribution:
+
+```{r echo = F}
+p1 <- data.frame(b1 = b1_boot) |>
+  ggplot(aes(x = b1)) +
+  geom_histogram(bins = 20, col = "white") +
+  labs(x = expression("Bootstrap dist. of" ~ b[1])) +
+  theme_minimal() +
+  theme(text =element_text(size = 16))
+p1
+```
+
+## Bootstrap CI for $\beta_{1}$
+
+```{r echo = F}
+eval_lm <- lm(score ~ bty_avg, data = evals)
+point_est <- coef(eval_lm)[2]
+se <- eval_lm |>
+  tidy() |>
+  slice(2) |>
+  pull(std.error)
+cv <- qt(0.975, n - 2)
+
+math_ci <- point_est + cv * se *c(-1,1)
+boot_ci<- c(quantile(b1_boot, 0.025), quantile(b1_boot, 0.975))
+```
+
+We will obtain the 95% bootstrap interval: 
+
+```{r}
+boot_ci <- quantile(b1_boot, c(0.025, 0.975))
+boot_ci
+```
+
+Visualize bootstrap distribution and CI, and compare to 95% CI obtained via mathematical model:
+
+```{r echo = F}
+p1 + 
+  geom_vline(xintercept = boot_ci, linetype = "dashed", linewidth = 1.5) +
+  geom_vline(xintercept = math_ci, linetype = "dotted", col = "orange", linewidth = 1.5) +
+  labs(caption = "Black = Bootstrap CI, Orange = CLT CI")+
+  theme_minimal() +
+  theme(text =element_text(size = 16))
+```

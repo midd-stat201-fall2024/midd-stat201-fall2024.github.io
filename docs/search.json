@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\nWeek 10\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/6\n\nTopic: Introduction to simple linear regression (pdf here)\n\nPDF with figures\n\n\n\n\nWednesday problems in Problem Set 8 (due next Thursday)\n\n\n\n\nR 11/7\n\nTopic: SLR interpretation (pdf here)\n\nPractice problems\n\n\n\n\nThursday problems in Problem Set 8 (due next Thursday)\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n10\nM 10/11\n\nTopic: Inference in SLR (pdf here)\nFitting SLR in R\n\nLive code for coding SLR in R\n\nIntroduce Midterm 2\n\n\n\nMonday problems in Problem Set 8 (due Thursday)\nNote: questions 4-7 in the .Rmd will probably have to wait until Wednesday class. Sorry!\n Problem Set 8 \n\n\n\n\nW 10/13\n\nIntro to MLR\nLive code for pretty output using broom and factors\n\n\nFitting SLR coding practice\n Coding practice \n\n\nHomework 8 due tomorrow!\nStart studying for Midterm 2\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\nWeek 3\nWeek 4\nWeek 5\nWeek 6\nWeek 7\nWeek 8\nWeek 9\nWeek 10\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 09/09\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nBring your completed quiz to next class\nFill out this survey by next class.\n\n\n\n\nW 09/11\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/12\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n2\nM 09/16\n\nTopic: Numerical data (part 1) (pdf here)\n\nLive code and associated template:  Rmd \nPractice problems\n\n\n\n\nMonday problems on Problem Set 2\nSunflower field\n\n\n\n\nW 09/18\n\nTopic: Numerical data (part 2) (pdf here)\n\nLive code\nPractice problems\n\n\n\nBasic plots and summary statistics in R\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 09/19\n\nTopic: ggplot for numerical variables (pdf here)\n\nLive code\n\n\n\nIntroduction to ggplot\n Coding practice \n\n\nThursday problems on Problem Set 2\nAssociated R problems\n Problem Set 2 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n3\nM 09/23\n\nTopic: categorical data (pdf here)\n\n\nVisualizing categorical data\n Coding practice \n\n\nMonday problems on Problem Set 3\n\n\n\n\nW 09/25\n\nTopic: Introduction to data wrangling (pdf here)\n\nLive code example\n\n\n\nPractice with wrangling\n Coding practice \n\nBegin working through this R lab:\n Problem Set 3 \n\n\n\nR 09/26\n\nTopic: Data wrangling (cont.)\n\nLive code example\n\nGroup exercise\n .Rmd \n\n\nContinue working on the above lab.\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n4\nM 09/30\nTopic: Probability basics (pdf here)\n\nIntroduce Midterm 1\nPractice problems\n\n\n\nMonday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nW 10/02\nTopic: Conditional probability (pdf here)\n\nPractice problems\n\n\n\nWednesday problems on Problem Set 4\n\nNote: this week’s problem set is due Saturday 10/05 midnight!\n\n\n\nR 10/03\nTopic: Simpson’s paradox (pdf here)\n\nPractice with wrangling: probabilities\n Coding practice \n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n5\nM 10/07\nTopic: Introduction to Bootstrap (pdf here)\n\nLive code\n\n\nNo problem set this week. Study for midterm!\n\n\n\nW 10/09\nTopic: Bootstrap confidence intervals (pdf here)\n\nPlease complete this mid-semester survey\n\n\nBootstrap CIs (due Monday midnight)\n Coding practice \n\n\n\n\n\nR 10/10\nMidterm 1!\n\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n6\nM 10/14\n\nTopic: Introduction to Hypothesis Testing (HT) with simulation (pdf here)\n\nPractice problems\n\n\n\nBootstrap CIs from last Thursday due tonight\n\n\nMonday problems in Problem Set 5\n\n\n\n\nW 10/16\n\nTopic: HTs with randomization (pdf here)\n\nLive code for HT for one proportion\nLive code for HT for difference in proportions\nPractice problems\n\n\n\n\nGet started on problems 1-3 in the .Rmd problems.\n Problem Set 5 \n\n\n\n\nR 10/18\n\nTopic: HTs with bootstrapping (pdf here)\n\nPractice problems (CI and HT concepts)\n\n\n\n\nContinue working on Problem Set 5\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n7\nM 10/21\nTopic: Normal distribution (worksheet)\n\nPractice problems (some in worksheet)\n\n\n\nMonday problems in Problem Set 6\n\n\n\n\nW 10/23\nTopic: Central Limit Theorem + CIs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 6\n\n\n\n\nR 10/24\nTopic: CIs for means using CLT (pdf here)\n\nLive code\n\n\n\nThursday problems in Problem Set 6\n Problem Set 6 \n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n8\nM 10/28\nTopic: Introduce final project, HTs with mathematical models (pdf here)\n\nPractice problems\n\n\n\nMonday problems in Problem Set 7\nFinal project groups!\n\n\n\n\nW 10/30\nTopic: HTs (cont.) (diff. in proportions and single mean) (pdf here)\n\nPractice problems\n\n\n\nWednesday problems in Problem Set 7\n\n\n\nSo spooky!\nR 10/31\nTopic: HTs (cont.) (paired difference, diff. in means) (pdf here)\n\nSection A: live code\nSection B: live code\nProject work day\n\n\n\nWork on proposal for data collection (due Monday 11/4 midnight)\nThursday problems in Problem Set 7\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n9\nM 11/4\n\nReview of inference with CLT\n\nPractice problems\n\nLive code for pivoting\n\n\nPivoting coding practice (due tonight midnight)\n Coding practice \n\n\nProposal for data collection due tonight!\nProblem set 7 due Wednesday\n\n\n\nDessert social 3-4:30pm in WNS 101\nW 11/6\n\nTopic: Introduction to simple linear regression (pdf here)\n\nPDF with figures\n\n\n\n\nWednesday problems in Problem Set 8 (due next Thursday)\n\n\n\n\nR 11/7\n\nTopic: SLR interpretation (pdf here)\n\nPractice problems\n\n\n\n\nThursday problems in Problem Set 8 (due next Thursday)\n\n\n\n\n\n\n\nIn-class material\nCoding practice\nAssignments\n\n\n10\nM 11/11\n\nTopic: Inference in SLR (pdf here)\nFitting SLR in R\n\nLive code for coding SLR in R\n\nIntroduce Midterm 2\n\n\n\nMonday problems in Problem Set 8 (due Thursday)\nNote: questions 4-7 in the .Rmd will probably have to wait until Wednesday class. Sorry!\n Problem Set 8 \n\n\n\n\nW 11/13\n\nTopic: Simulation-based CIs for SLR (pdf here)\n\nLive code\n\nLive code for pretty output using broom and factors\n\n\nFitting SLR coding practice\n Coding practice \n\n\nHomework 8 due tomorrow!\n\n\n\n\nR 11/14\n\nTopic: Simulation-based HTs for SLR\n\n\n\nHomework 8 due tonight\nStart studying for Midterm 2\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nOffice hours change:\n\nMonday 11/11: 2-3pm only\nWednesday 11/13: 4-5pm\nFriday 11/15: cancelled, moved to next week!\n\nWomen in Data Science (WiDS) event next Monday, 11/18 from 4:30-7:00pm in Johnson 204\n\nMore information to come!\n\nFinal project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!\nAdd your R questions here!"
+    "text": "Announcements\n\nOffice hours change:\n\nWednesday 11/13: 4-5pm\nFriday 11/15: cancelled, moved to next week!\n\nWomen in Data Science (WiDS) event next Monday, 11/18 from 4:30-7:00pm in Johnson 204\nFinal project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!\nAdd your R questions here!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -5073,5 +5073,243 @@
     "title": "Inference in SLR",
     "section": "",
     "text": "Last set of homework problems are released today!\nOffice hours changed this week:\n\nToday: 2-3pm only\nWednesday 4-5pm\nFriday: cancelled, moved to next week before midterm"
+  },
+  {
+    "objectID": "live_code/slr_bootstrap.html",
+    "href": "live_code/slr_bootstrap.html",
+    "title": "Bootstrapping for slope",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)\nlibrary(broom)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html",
+    "href": "slides/slides-26-slr-simulation.html",
+    "title": "Inference in SLR",
+    "section": "",
+    "text": "Last set of homework problems are released today!\nOffice hours changed this week:\n\nToday: 2-3pm only\nWednesday 4-5pm\nFriday: cancelled, moved to next week before midterm"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#recap",
+    "href": "slides/slides-26-slr-simulation.html#recap",
+    "title": "Simulation-based inference in SLR",
+    "section": "Recap",
+    "text": "Recap\n\nPoint estimates \\((b_{0}, b_{1})\\) also have variability as their specific values depend on a given set of data\nWe saw how to use output from lm() to test hypotheses about and create confidence intervals for \\(\\beta_{0}\\) and \\(\\beta_{1}\\)\n\nRelies on LINE conditions being met\n\nLet’s turn to simulation-based techniques (good refresher before midterm!)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#variability-of-coefficient-estimates",
+    "href": "slides/slides-26-slr-simulation.html#variability-of-coefficient-estimates",
+    "title": "Inference in SLR",
+    "section": "Variability of coefficient estimates",
+    "text": "Variability of coefficient estimates\n\nRemember, a linear regression is fit using a sample of data\nDifferent samples from the same population will yield different point estimates of \\((b_{0}, b_{1})\\)\n\nI will generate 30 data points under the following model: \\(y = 1 + 0.5x+\\epsilon\\)\n\nHow? Randomly generate some \\(x\\) and \\(\\epsilon\\) values and then plug into model to get corresponding \\(y\\)\n\nFit SLR to these \\((x,y)\\) data, and obtain estimates \\((b_{0}, b_{1})\\)\nRepeat this 50 times"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#variability-of-coefficient-estimates-1",
+    "href": "slides/slides-26-slr-simulation.html#variability-of-coefficient-estimates-1",
+    "title": "Inference in SLR",
+    "section": "Variability of coefficient estimates",
+    "text": "Variability of coefficient estimates"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#what-are-we-interested-in",
+    "href": "slides/slides-26-slr-simulation.html#what-are-we-interested-in",
+    "title": "Inference in SLR",
+    "section": "What are we interested in?",
+    "text": "What are we interested in?\nRemember: we fit SLR to understand how \\(x\\) is (linearly) related to \\(y\\):\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\n\nWhat would a value of \\(\\beta_{1} = 0\\) mean?\n\n\nIf \\(\\beta_{1} = 0\\), then the effect of \\(x\\) disappears and there is in fact no linear relationship between \\(x\\) and \\(y\\)\n\nWe don’t know \\(\\beta_{1}\\), so let’s look at estimate \\(b_{1}\\):\n\n\nIs an estimate of \\(b_{1}= 0\\) a convincing evidence of no relationship? What if \\(b_{1} = 0.1\\)?\n\nIt depends! We saw that \\(b_{1}\\) varies by sample! So let’s perform inference for \\(\\beta_{1}\\)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#running-example-evals-data",
+    "href": "slides/slides-26-slr-simulation.html#running-example-evals-data",
+    "title": "Inference in SLR",
+    "section": "Running example: evals data",
+    "text": "Running example: evals data\nData on 463 courses at UT Austin were obtained to answer the question: “What factors explain differences in instructor teaching evaluation scores?”\n\nOne hypothesis was that more attractive instructors receive better teaching evaluations\nWe will look at the variables:\n\nscore: course instructor’s average teaching score, where average is calculated from all students in that course. Scores ranged from 1-5, with 1 being lowest.\nbty_avg: course instructor’s average “beauty” score, where average is calculated from six student evaluations of “beauty”. Scores ranged from 1-10, with 1 being lowest."
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#teaching-evaluations-data",
+    "href": "slides/slides-26-slr-simulation.html#teaching-evaluations-data",
+    "title": "Inference in SLR",
+    "section": "Teaching evaluations data",
+    "text": "Teaching evaluations data\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nDoes this line really have a non-zero slope?"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#hypothesis-test-for-slope",
+    "href": "slides/slides-26-slr-simulation.html#hypothesis-test-for-slope",
+    "title": "Inference in SLR",
+    "section": "Hypothesis test for slope",
+    "text": "Hypothesis test for slope\n\nWe have the following hypotheses:\n\n\\(H_{0}: \\beta_{1} = 0\\): the true linear model has slope zero\n\\(H_{A}: \\beta_{1} \\neq 0\\): the true linear model has a non-zero slope. An instructor’s average beauty score is predictive of their average teaching evaluation score.\n\nTo assess, we do what we usually do:\n\nCheck if methods are appropriate\nIf so: obtain an estimate, identify/estimate standard error of the estimate, find an appropriate test statistic, and calculate p-value\n\n\nThe output from lm() actually does all of this for us, but we will see how the test statistic and p-value are calculated!"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#teaching-evaluations-model-assessment",
+    "href": "slides/slides-26-slr-simulation.html#teaching-evaluations-model-assessment",
+    "title": "Inference in SLR",
+    "section": "Teaching evaluations: model assessment",
+    "text": "Teaching evaluations: model assessment\nWe fit the model in R, and obtain the following plots.\n\nAre all conditions of LINE met?\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#looking-at-lm-output",
+    "href": "slides/slides-26-slr-simulation.html#looking-at-lm-output",
+    "title": "Inference in SLR",
+    "section": "Looking at lm() output",
+    "text": "Looking at lm() output\n\nlibrary(broom)\neval_mod <- lm(score ~ bty_avg, data = evals)\neval_mod |>\n  tidy()\n\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\nAssuming the linear model is appropriate, interpret the coefficients!\n\n\nIntercept: an instructor with an average beauty score of 0 would be expected to have an average evaluation score of 3.88\nSlope: for every one point increase in average beauty score an instructor receives, their evaluation score is expected to incrase by 0.067 points"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#looking-at-lm-output-1",
+    "href": "slides/slides-26-slr-simulation.html#looking-at-lm-output-1",
+    "title": "Inference in SLR",
+    "section": "Looking at lm() output",
+    "text": "Looking at lm() output\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\n\n\nestimate: the observed point estimate (\\(b_{0}\\) or \\(b_{1}\\))\nstd.error: the estimated standard error of the estimate\n\n\n\nstatistic: the value of the test statistic\np.value: p-value associated with the two-sided alternative \\(H_{A}: \\beta_{1} \\neq 0\\)\n\n\n\n\nLet’s confirm the test statistic calculation:\n\n\n\\[\nt = \\frac{\\text{observed} - \\text{null}}{\\text{SE}_{0}} =\\frac{b_{1,obs} - \\beta_{1, 0}}{\\widehat{\\text{SE}}_{0}} = \\frac{0.066637 - 0}{0.0162912} = 4.0903823 \\sim t_{df}\n\\]\nwhere \\(df = n-2\\)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#p-value-and-conclusion",
+    "href": "slides/slides-26-slr-simulation.html#p-value-and-conclusion",
+    "title": "Inference in SLR",
+    "section": "p-value and conclusion",
+    "text": "p-value and conclusion\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nLet’s confirm the p-value calculation:\n\\[\\text{p-value} = \\text{Pr}(T \\geq 4.09) + \\text{Pr}(T \\leq -4.09)\\] where \\(T \\sim t_{461}\\)\n\nSo our p-value is: 2 * (1 - pt(4.09, 461)) = 5.0827307^{-5}\nAssuming the LINE conditions are met: since our p-value 5.0827307^{-5} is extremely small, we would reject \\(H_{0}\\) at any reasonable significant level. Thus, the data provide convincing evidence that there is a linear relationship between instructor’s beauty score and evaluation score."
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#different-h_a",
+    "href": "slides/slides-26-slr-simulation.html#different-h_a",
+    "title": "Inference in SLR",
+    "section": "Different \\(H_{A}\\)",
+    "text": "Different \\(H_{A}\\)\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\n\n\nWhat would your p-value be if your alternative was \\(H_{A}: \\beta_{1} > 0\\)? What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\geq 4.09)\\) = (1-pt(4.09, 461) = 2.5413653^{-5}\nThe data provide convincing evidence that there is a positive relationship between instructor’s beauty score and evaluation score.\n\n\n\nWhat would your p-value be if your alternative was \\(H_{A}: \\beta_{1} < 0\\)? What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\leq 4.09)\\) = pt(4.09, 461) = 0.9999745\nThe data do not provide convincing evidence that there is a negative relationship between instructor’s beauty score and evaluation score."
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#confidence-intervals",
+    "href": "slides/slides-26-slr-simulation.html#confidence-intervals",
+    "title": "Simulation-based inference in SLR",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\nCompare to our 95% CI for \\(\\beta_{1}\\) using mathematical model: (0.035, 0.099)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#remarks",
+    "href": "slides/slides-26-slr-simulation.html#remarks",
+    "title": "Inference in SLR",
+    "section": "Remarks",
+    "text": "Remarks\n\nNote: for \\(\\beta_{1}\\), the null hypothesis is always of the form \\(H_{0}: \\beta_{1} = 0\\)\nLINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, simulation-based methods would be a better choice\nHere, the Independence conditions did not seem to be met\n\nTake STAT 412 or other course to learn how to incorporate dependencies between observations!\n\nSo what can we say?\n\nThe results suggested by our inference should be viewed as preliminary, and not conclusive\nFurther investigation is certainly warranted!\nChecking LINE can be very subjective, but that’s how real-world analysis will be!"
+  },
+  {
+    "objectID": "live_code/slr_bootstrap.html#bootstrap-distribution-of-b_1",
+    "href": "live_code/slr_bootstrap.html#bootstrap-distribution-of-b_1",
+    "title": "Bootstrapping for slope",
+    "section": "Bootstrap distribution of \\(b_{1}\\)",
+    "text": "Bootstrap distribution of \\(b_{1}\\)\n\nset.seed(311)\nn <- nrow(evals)\nB <- 1000\nb1_boot <- rep(NA, B)\n\n# option 1\nfor(b in 1:B){\n  # create a vector of indices for sampling row-by-row:\n  resamp_inds <- sample(1:n, size = n, replace = T)\n  \n  # create new data frame by grabbing the resampled rows\n  evals_resamp <- evals[resamp_inds,]\n  \n  # fit lm on new model and grab the corresponding coefficient\n  coefs <- coef(lm(score ~ bty_avg, data = evals_resamp))\n  b1_boot[b] <- coefs[2]\n}\n\n\n# option 2: dplyr (slower)\nset.seed(311)\nb1_boot <- rep(NA, B)\nfor(b in 1:B){\n  # create new data frame using sample_n() to sample rows\n  evals_resamp <- evals |>\n    sample_n(size = n, replace = T)\n  \n  # get coefficient using broom functions\n  b1_boot[b] <- lm(score ~ bty_avg, data = evals_resamp) |>\n    tidy() |>\n    slice(2) |>\n    pull(estimate)\n}\n\nVisualize the bootstrap distribution:"
+  },
+  {
+    "objectID": "live_code/slr_bootstrap.html#bootstrap-ci-for-beta_1",
+    "href": "live_code/slr_bootstrap.html#bootstrap-ci-for-beta_1",
+    "title": "Bootstrapping for slope",
+    "section": "Bootstrap CI for \\(\\beta_{1}\\)",
+    "text": "Bootstrap CI for \\(\\beta_{1}\\)\n\n\n\nWe will obtain the 95% bootstrap interval:\n\nboot_ci <- quantile(b1_boot, c(0.025, 0.975))\nboot_ci\n\n     2.5%     97.5% \n0.0329399 0.1012776 \n\n\nVisualize bootstrap distribution and CI, and compare to 95% CI obtained via mathematical model:"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#housekeeping",
+    "href": "slides/slides-26-slr-simulation.html#housekeeping",
+    "title": "Simulation-based inference in SLR",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nLast set of homework problems are released today!\nOffice hours changed this week:\n\nWednesday (today!) 4-5pm\nFriday: cancelled, moved to next week before midterm"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#bootstrapping",
+    "href": "slides/slides-26-slr-simulation.html#bootstrapping",
+    "title": "Simulation-based inference in SLR",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\nRepeat \\(B\\) times:\n\nSample with replacement from the original data, of the same sample size as the original data\nCalculate the quantity of interest using the resampled data\n\n\nIn the case of SLR: what exactly should we be “resampling”? What is the quantity/quantities of interest?"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#bootstrapping-for-slr",
+    "href": "slides/slides-26-slr-simulation.html#bootstrapping-for-slr",
+    "title": "Simulation-based inference in SLR",
+    "section": "Bootstrapping for SLR",
+    "text": "Bootstrapping for SLR\n\nFor a given observation \\(i\\), we need to keep \\((x_{i}, y_{i})\\) together\n\nWant to keep pairs of score and bty_avg together, but different pairs may be re-sampled\nWe will re-sample with replacement row-by-row\n\nFor each re-sampled dataset, fit a linear regression model and record \\(b_{1}\\)\n\n\nThis yields bootstrap distribution of estimated slope coefficients!"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#live-code-for-bootstrapped-slope",
+    "href": "slides/slides-26-slr-simulation.html#live-code-for-bootstrapped-slope",
+    "title": "Simulation-based inference in SLR",
+    "section": "Live code for bootstrapped slope",
+    "text": "Live code for bootstrapped slope\n\n\n\n\n\nBootstrap distribution of \\(b_{1}\\):\n\n\n\n\n\n\n95% bootstrap CI for \\(\\beta_{1}\\): (0.033, 0.101):"
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#bootstrap-dist.",
+    "href": "slides/slides-26-slr-simulation.html#bootstrap-dist.",
+    "title": "Simulation-based inference in SLR",
+    "section": "Bootstrap dist.",
+    "text": "Bootstrap dist."
+  },
+  {
+    "objectID": "slides/slides-26-slr-simulation.html#hypotheses",
+    "href": "slides/slides-26-slr-simulation.html#hypotheses",
+    "title": "Simulation-based inference in SLR",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nRecall our hypotheses:\n\\[\nH_{0}: \\beta_{1} = 0 \\qquad \\text{vs.} \\qquad H_{A}: \\beta_{1} \\neq 0 \\text{ (or >, <)}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html",
+    "href": "slides/slides-26-slr-bootstrap-ci.html",
+    "title": "Simulation-based CIs for SLR",
+    "section": "",
+    "text": "Last set of homework problems are released today!\nOffice hours changed this week:\n\nWednesday (today!) 4-5pm\nFriday: cancelled, moved to next week before midterm"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#recap",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#recap",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Recap",
+    "text": "Recap\n\nPoint estimates \\((b_{0}, b_{1})\\) also have variability as their specific values depend on a given set of data\nWe saw how to use output from lm() to test hypotheses about and create confidence intervals for \\(\\beta_{0}\\) and \\(\\beta_{1}\\)\n\nRelies on LINE conditions being met\n\nLet’s turn to simulation-based techniques (good refresher before midterm!)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#bootstrapping",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#bootstrapping",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\nRepeat \\(B\\) times:\n\nSample with replacement from the original data, of the same sample size as the original data\nCalculate the quantity of interest using the resampled data\n\n\nIn the case of SLR: what exactly should we be “resampling”? What is the quantity/quantities of interest?"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#bootstrapping-for-slr",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#bootstrapping-for-slr",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Bootstrapping for SLR",
+    "text": "Bootstrapping for SLR\n\nFor a given observation \\(i\\), we need to keep \\((x_{i}, y_{i})\\) together\n\nWant to keep pairs of score and bty_avg together, but different pairs may be re-sampled\nWe will re-sample with replacement row-by-row\n\nFor each re-sampled dataset, fit a linear regression model and record \\(b_{1}\\)\n\n\nThis yields bootstrap distribution of estimated slope coefficients!"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#live-code-for-bootstrapped-slope",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#live-code-for-bootstrapped-slope",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Live code for bootstrapped slope",
+    "text": "Live code for bootstrapped slope\n\n\n\n\n\nBootstrap distribution of \\(b_{1}\\):\n\n\n\n\n\n\n95% bootstrap CI for \\(\\beta_{1}\\): (0.033, 0.101):"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#confidence-intervals",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#confidence-intervals",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nCompare to our 95% CI for \\(\\beta_{1}\\) using mathematical model: (0.035, 0.099)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#hypotheses",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#hypotheses",
+    "title": "Simulation-based inference in SLR",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nRecall our hypotheses:\n\\[\nH_{0}: \\beta_{1} = 0 \\qquad \\text{vs.} \\qquad H_{A}: \\beta_{1} \\neq 0 \\text{ (or >, <)}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#housekeeping",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#housekeeping",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nOffice hours changed this week:\n\nWednesday (today!) 4-5pm\nFriday: cancelled, moved to next week before midterm\n\nCoding practice due tonight"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#looking-towards-testing",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#looking-towards-testing",
+    "title": "Simulation-based CIs for SLR",
+    "section": "Looking towards testing",
+    "text": "Looking towards testing\nRecall our hypotheses for the slope: \\(H_{0}: \\beta_{1} = 0\\) versus \\(H_{A}: \\beta_{1} \\neq 0\\)\n\nHow might we use simulation to test these hypotheses? (i.e. how can we simulate “null world”?)"
+  },
+  {
+    "objectID": "slides/slides-26-slr-bootstrap-ci.html#evals-data",
+    "href": "slides/slides-26-slr-bootstrap-ci.html#evals-data",
+    "title": "Simulation-based CIs for SLR",
+    "section": "evals data",
+    "text": "evals data\nFirst six observations:\n\n\n\n\n \n  \n    course_id \n    prof_id \n    score \n    bty_avg \n  \n \n\n  \n    1 \n    1 \n    4.7 \n    5 \n  \n  \n    2 \n    1 \n    4.1 \n    5 \n  \n  \n    3 \n    1 \n    3.9 \n    5 \n  \n  \n    4 \n    1 \n    4.8 \n    5 \n  \n  \n    5 \n    2 \n    4.6 \n    3 \n  \n  \n    6 \n    2 \n    4.3 \n    3 \n  \n\n\n\n\n\n\nRecall our model:\n\\[\\underbrace{\\text{score}}_{y} = \\beta_{0} + \\beta_{1} \\underbrace{\\text{bty_avg}}_{x} + \\epsilon\\]\n\n\nWe can index to denote specific row/observation pairs \\((x_{i}, y_{i})\\)\n\ne.g. \\((x_{1}, y_{1}) = (5, 4.7 )\\)"
   }
 ]

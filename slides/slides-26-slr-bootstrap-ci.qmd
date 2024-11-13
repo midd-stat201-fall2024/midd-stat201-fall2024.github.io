@@ -1,0 +1,194 @@
+---
+title: "Simulation-based CIs for SLR"
+date: "November 13, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(moderndive)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(broom)
+library(kableExtra)
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 28))
+source("../stat201_fns.R")
+```
+
+
+-   Office hours changed this week:
+
+    -   Wednesday (today!) 4-5pm
+
+    -   Friday: cancelled, moved to next week before midterm
+    
+- Coding practice due tonight
+
+
+## Recap
+
+-   Point estimates $(b_{0}, b_{1})$ also have variability as their specific values depend on a given set of data
+
+-   We saw how to use output from `lm()` to test hypotheses about and create confidence intervals for $\beta_{0}$ and $\beta_{1}$
+
+    -   Relies on LINE conditions being met
+
+-   Let's turn to simulation-based techniques (good refresher before midterm!)
+
+# Bootstrap CI for slope
+
+## `evals` data
+
+First six observations:
+
+```{r}
+evals |>
+  dplyr::select(course_id, prof_id, score, bty_avg) |>
+  slice(1:6) |>
+  kable() |>
+  kable_styling(font_size = 16)
+```
+
+::: {.fragment}
+Recall our model: 
+
+$$\underbrace{\text{score}}_{y} = \beta_{0} + \beta_{1} \underbrace{\text{bty_avg}}_{x} + \epsilon$$
+:::
+
+- We can index to denote specific row/observation pairs $(x_{i}, y_{i})$
+    - e.g. $(x_{1}, y_{1}) = (`r evals$bty_avg[1]`, `r evals$score[1]` )$
+
+
+## Bootstrapping
+
+-   Repeat $B$ times:
+
+    1.  Sample with replacement from the original data, of the same sample size as the original data
+
+    2.  Calculate the quantity of interest using the resampled data
+
+-   ::: discuss
+    In the case of SLR: what exactly should we be "resampling"? What is the quantity/quantities of interest?
+    :::
+
+## Bootstrapping for SLR
+
+1.  For a given observation $i$, we need to keep $(x_{i}, y_{i})$ together
+    -   Want to keep pairs of `score` and `bty_avg` together, but different pairs may be re-sampled
+
+    -   We will re-sample with replacement *row-by-row*
+2.  For each re-sampled dataset, fit a linear regression model and record $b_{1}$
+
+-   This yields bootstrap distribution of estimated slope coefficients!
+
+## Live code for bootstrapped slope
+
+
+```{r echo = FALSE}
+set.seed(311)
+n <- nrow(evals)
+B <- 1000
+b1_boot <- rep(NA, B)
+
+# option 1
+for(b in 1:B){
+  # create a vector of indices for sampling row-by-row:
+  resamp_inds <- sample(1:n, size = n, replace = T)
+  
+  # create new data frame by grabbing the resampled rows
+  evals_resamp <- evals[resamp_inds,]
+  
+  # fit lm on new model and grab the corrresponding b1 estimate
+  coefs <- coef(lm(score ~ bty_avg, data = evals_resamp))
+  b1_boot[b] <- coefs[2]
+}
+
+eval_lm <- lm(score ~ bty_avg, data = evals)
+point_est <- coef(eval_lm)[2]
+se <- eval_lm |>
+  tidy() |>
+  slice(2) |>
+  pull(std.error)
+cv <- qt(0.975, n - 2)
+
+math_ci <- point_est + cv * se *c(-1,1)
+boot_ci<- c(quantile(b1_boot, 0.025), quantile(b1_boot, 0.975))
+p1 <- data.frame(b1 = b1_boot) |>
+  ggplot(aes(x = b1)) +
+  geom_histogram(bins = 20, col = "white") +
+  labs(x = expression("Bootstrap dist. of" ~ b[1]))
+```
+
+::::: columns
+::: {.column width="50%"}
+Bootstrap distribution of $b_{1}$:
+
+
+```{r}
+p1 +
+  plot_theme
+```
+:::
+
+::: {.column width="50%"}
+95% bootstrap CI for $\beta_{1}$: (`r round(boot_ci, 3)`):
+
+```{r}
+p1 + 
+  geom_vline(xintercept = boot_ci, linetype = "dashed", linewidth = 1.5) +
+  labs(caption = "Bootstrap CI") +
+  plot_theme
+```
+:::
+:::::
+
+
+
+## Confidence intervals
+
+```{r}
+eval_mod <- lm(score ~ bty_avg, data = evals)
+eval_mod |>
+  tidy() |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+
+
+Compare to our 95% CI for $\beta_{1}$ using mathematical model: (`r round(math_ci, 3)`)
+
+```{r}
+p1 + 
+  geom_vline(xintercept = boot_ci, linetype = "dashed", linewidth = 1.5) +
+  geom_vline(xintercept = math_ci, linetype = "dotted", col = "orange",linewidth = 1.5) +
+  labs(caption = "Black = Bootstrap CI, Orange = Math CI",title = "95% CI for slope") +
+  plot_theme
+```
+
+## Looking towards testing
+
+Recall our hypotheses for the slope: $H_{0}: \beta_{1} = 0$ versus $H_{A}: \beta_{1} \neq 0$
+
+::: {.discuss}
+How might we use simulation to test these hypotheses? (i.e. how can we simulate "null world"?)
+:::
+
