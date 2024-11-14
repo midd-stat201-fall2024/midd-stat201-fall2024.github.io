@@ -53,8 +53,6 @@ birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/mid
 
     -   Tuesday: 11am-12:00pm, 4:00-5:00pm
 
-
-
 ## Simulation-based HT for slope
 
 Recall our hypotheses for the slope: $H_{0}: \beta_{1} = 0$ versus $H_{A}: \beta_{1} \neq 0$
@@ -144,7 +142,7 @@ B <- 1000
 b1_null <- rep(NA, B)
 for(b in 1:B){
   evals_null <- evals |>
-    mutate(score_shuffle = sample(score, replace = T))
+    mutate(score_shuffle = sample(score, replace = F))
   null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)
   b1_null[b] <- coef(null_lm)[2]
 }

@@ -5366,7 +5366,7 @@
     "href": "live_code/slr-ht-randomization.html",
     "title": "Hypothesis test for SLR with simulation",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(openintro)\n\n\nset.seed(116)\nB <- 1000\nb1_null <- rep(NA, B)\nfor(b in 1:B){\n  evals_null <- evals |>\n    mutate(score_shuffle = sample(score, replace = T))\n  null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)\n  b1_null[b] <- coef(null_lm)[2]\n}"
+    "text": "library(tidyverse)\nlibrary(openintro)\n\n\nset.seed(116)\nB <- 1000\nb1_null <- rep(NA, B)\nfor(b in 1:B){\n  evals_null <- evals |>\n    mutate(score_shuffle = sample(score, replace = F))\n  null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)\n  b1_null[b] <- coef(null_lm)[2]\n}"
   },
   {
     "objectID": "coding_practice/coding-practice-27-slr-randomization.html",

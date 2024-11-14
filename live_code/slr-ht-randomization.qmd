@@ -13,7 +13,7 @@ B <- 1000
 b1_null <- rep(NA, B)
 for(b in 1:B){
   evals_null <- evals |>
-    mutate(score_shuffle = sample(score, replace = T))
+    mutate(score_shuffle = sample(score, replace = F))
   null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)
   b1_null[b] <- coef(null_lm)[2]
 }
