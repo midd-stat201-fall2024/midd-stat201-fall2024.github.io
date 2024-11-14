@@ -44,7 +44,7 @@ birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/mid
 
 **Answer:**
 
-4.  Check if the normality condition is satisfied. Briefly explain in words why or why not. Be sure to have informative axis labels and title. *Make sure the residuals are of the form $\hat{y} - y$.*
+4.  Check if the normality condition is satisfied. Briefly explain in words why or why not. Be sure to have informative axis labels and title. *Make sure the residuals are of the form* $\hat{y} - y$.
 
 ```{r fig.height = 3}
 
@@ -62,7 +62,7 @@ birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/mid
 
 ```
 
-**Answer:** 
+**Answer:**
 
 7.  Does a significant linear relationship between $x$ and $y$ imply that a model is actually useful? Use your answers above to answer this question.
 

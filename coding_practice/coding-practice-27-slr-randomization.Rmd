@@ -1,0 +1,33 @@
+---
+title: "Hypothesis test for SLR with simulation"
+author: "Your name here"
+date: "2024-11-14"
+output: html_document
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+Feel free to type `View(evals)` in your console to look at the data!
+
+## Obtain null distribution
+
+```{r}
+# set a seed
+
+
+# define/create necessary quantities
+
+
+# code for null distribution
+
+```
+
+## Visualize your null distribution
+
+```{r}
+
+
+```

@@ -1,0 +1,200 @@
+---
+title: "Simulation-based HTs for SLR"
+date: "November 14, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(moderndive)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(broom)
+library(kableExtra)
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 28))
+source("../stat201_fns.R")
+```
+
+Data for end of class (copy when needed):
+
+```{r echo = T}
+library(readr)
+birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/birthwt.csv")
+```
+
+-   Office hours changed this week:
+
+    -   Friday: cancelled, moved to next week before midterm
+
+-   Homework 8 due tonight
+
+-   Office hours next week:
+
+    -   Monday 2:00-4:00pm
+
+    -   Tuesday: 11am-12:00pm, 4:00-5:00pm
+
+
+
+## Simulation-based HT for slope
+
+Recall our hypotheses for the slope: $H_{0}: \beta_{1} = 0$ versus $H_{A}: \beta_{1} \neq 0$
+
+::: discuss
+How might we use simulation to test these hypotheses? (i.e. how can we simulate "null world"?)
+:::
+
+-   Under $H_{0}$, there is no relationship between $x$ and $y$, so we can shuffle/permute/break up the $(x_{i}, y_{i})$ under $H_{0}$
+
+    -   i.e. there is no special correspondence between $x_{i}$ and $y_{i}$
+
+## Randomization test (demonstration)
+
+Here's how it would look like using cards. Repeat the following $B$ times:
+
+1.  Write down all $x_1,\ldots, x_{n}$ values and all $y_{1},\ldots, y_{n}$ values on cards.
+
+2.  Shuffle the response variable cards to get $y_{1}^{shuff}, \ldots, y_{n}^{shuff}$
+
+3.  Deal out the shuffled responses to pair with an explanatory: $(x_{1}, y_{1}^{shuff}),\ldots, (x_{n}, y_{n}^{shuff})$
+
+4.  Fit linear regression model to these shuffled data and record $b_{1}$
+
+::: {style="color: maroon"}
+-   Convince yourself this corresponds to $H_0: \beta_{1} = 0$!
+
+-   We are *not* sampling with replacement
+:::
+
+## `evals`
+
+Let's return to our `evals` data and model: $\text{score} = \beta_{0} + \beta_{1} \text{bty_avg} + \epsilon$
+
+::::::: columns
+:::: {.column width="40%"}
+::: fragment
+First six rows of original data:
+
+```{r}
+evals |>
+  slice(1:6) |>
+  select(course_id, bty_avg, score) |>
+  kable() |>
+  kable_styling(font_size = 28)
+```
+:::
+::::
+
+:::: {.column width="60%"}
+::: fragment
+First six rows of one iteration of *shuffled data:*
+
+```{r}
+set.seed(1)
+evals |>
+  mutate(score_shuff = sample(score)) |>
+  slice(1:6) |>
+  select(course_id, bty_avg, score, score_shuff) |>
+  kable() |>
+  kable_styling(font_size = 28)
+```
+:::
+::::
+:::::::
+
+## Your turn!!
+
+$$\text{score} = \beta_{0} + \beta_{1} \text{bty_avg} + \epsilon$$
+
+In groups, obtain the null distribution for this $H_{0}$ via simulation and visualize it using `ggplot` with **informative** title and axis labels. (You could be expected to do something like this for your midterm...)
+
+-   Suggestion: in a ***relevant*** place in your code, use the data frame `evals` to create a new data frame called `evals_null`
+
+    -   `evals_null` should have a variable called `score_shuffle` that represents the shuffled `score`s
+
+## `evals` null distribution
+
+$H_{0}: \beta_{1} = 0$ (there is no linear relationship between `score` and `bty_avg`)
+
+$H_{A}: \beta_{1} > 0$ (there is a positive linear relationship between `score` and `bty_avg`)
+
+::: fragment
+```{r}
+set.seed(116)
+B <- 1000
+b1_null <- rep(NA, B)
+for(b in 1:B){
+  evals_null <- evals |>
+    mutate(score_shuffle = sample(score, replace = T))
+  null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)
+  b1_null[b] <- coef(null_lm)[2]
+}
+
+p_null <- data.frame(b1 = b1_null) |>
+  ggplot(aes(x = b1)) +
+  geom_histogram(bins = 20, color = "white") +
+  plot_theme +
+  labs(x = expression(b[1]), title = "Null distribution",
+       caption= paste(B, "iterations"))
+p_null
+```
+:::
+
+## p-value
+
+```{r echo = T, eval = F}
+score_lm <- lm(score ~ bty_avg, data = evals)
+tidy(score_lm)
+```
+
+```{r echo = F, eval = T}
+score_lm <- lm(score ~ bty_avg, data = evals)
+tidy(score_lm) |>
+  kable() |>
+  kable_styling(font_size = 25)
+b1_fit <- coef(score_lm)[2]
+
+```
+
+-   Compare our observed fitted $b_{1,obs} = `r round(b1_fit, 3)`$ coefficient to null distribution:
+
+:::::: columns
+:::: {.column width="60%"}
+::: fragment
+```{r}
+p_null +
+  geom_vline(xintercept = b1_fit, colour = "purple") +
+  labs(caption = "Estimated slope")
+
+p_val <- mean(b1_null >= b1_fit)
+```
+:::
+::::
+
+::: {.column width="40%"}
+-   Recall: $H_{A}: \beta_{1} > 0$
+
+-   p-value is calculated as $\frac{\text{number of simulated } b_{1} > `r round(b1_fit, 3)`}{B} = `r p_val`$
+:::
+::::::
+
+## 

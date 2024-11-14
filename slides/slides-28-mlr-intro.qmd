@@ -1,0 +1,90 @@
+---
+title: "Introduction to Multiple Linear Regression"
+date: "November 14, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(moderndive)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(broom)
+library(kableExtra)
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 28))
+source("../stat201_fns.R")
+```
+
+-   Study for midterm!
+
+## Multiple linear regression
+
+-   We have seen *simple* linear regression, which is where we have one explanatory variable
+
+-   Linear regression can naturally extend to include more than one predictor
+
+    -   Seems natural: usually several factors affect behavior of phenomena
+
+-   Takes the form: $$y = \beta_{0} + \beta_{1} x_{1} + \beta_{2} x_{2} + \ldots + \beta_{p} x_{p} + \epsilon$$
+
+    -   Now there are $p$ different explanatory variables $x_{1},\ldots, x_{p}$ per observation
+    -   Still one response $y$ and error $\epsilon$ per observation
+
+## Birth weight data
+
+Baystate Medical Center, Springfield, MA during 1986 on the birth weights of 189 babies, along with descriptive information about the mother
+
+```{r}
+library(readr)
+birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/birthwt.csv")
+```
+
+-   Want to understand risk factors for a baby's birth weight (`bwt`)
+
+-   Homework 8 explores the effect of mother's `smoke` status on birth weight of baby
+
+-   Let's look at a different variable: `race` of mother
+
+    -  Variable `race` numerical where 1 = white, 2 = black, 3 = other
+
+```{r}
+str(birthwt)
+```
+
+## Converting to factor
+
+We need to convert data to categorical! Does not make sense to do "math" on this `race` variable even though the data are numerical.
+
+```{r echo = T}
+birthwt2 <- birthwt |>
+  mutate(race = case_when(race == 1 ~ "white",
+                          race == 2 ~ "black",
+                          race == 3 ~ "other")) |>
+  mutate(race = factor(race, levels = c("white", "black", "other")))
+
+str(birthwt2)
+```
+
+```{r}
+bwt_lm <- lm(bwt ~ race, data = birthwt2)
+tidy(bwt_lm)
+```

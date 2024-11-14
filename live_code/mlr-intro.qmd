@@ -1,0 +1,53 @@
+---
+title: "Introduction to MLR"
+subtitle: "Categorical predictor (more than two levels)"
+---
+
+```{r message = F}
+library(tidyverse)
+library(broom)
+```
+
+## Birth weight data
+
+Baystate Medical Center, Springfield, MA during 1986 on the birth weights of 189 babies, along with descriptive information about the mother
+
+```{r}
+library(readr)
+birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/birthwt.csv")
+```
+
+We want to understand risk factors for a baby's birth weight (`bwt`). Homework 8 explores the effect of mother's `smoke` status on birth weight of baby.
+
+Let's look at a different variable: `race` of mother
+
+  -  Variable `race` is numerical where 1 = white, 2 = black, 3 = other
+
+```{r}
+# wrong! This is bad!!
+lm(bwt ~ race, data = birthwt) |>
+  tidy()
+```
+
+## Converting to factor
+
+We need to convert `race` variable to categorical! 
+
+```{r echo = T}
+birthwt2 <- birthwt |>
+  mutate(race = case_when(race == 1 ~ "white",
+                          race == 2 ~ "black",
+                          race == 3 ~ "other")) |>
+  mutate(race = factor(race, levels = c("white", "black", "other")))
+
+str(birthwt2$race)
+```
+
+Let's go ahead and fit this model using `lm()` as we usually would and look at the tidy output:
+
+```{r}
+bwt_lm <- lm(bwt ~ race, data = birthwt2)
+tidy(bwt_lm)
+```
+
+Let's write out the form of the linear regression model:

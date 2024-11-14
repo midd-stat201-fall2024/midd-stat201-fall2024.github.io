@@ -1,0 +1,38 @@
+---
+title: "Hypothesis test for SLR with simulation"
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+```{r}
+set.seed(116)
+B <- 1000
+b1_null <- rep(NA, B)
+for(b in 1:B){
+  evals_null <- evals |>
+    mutate(score_shuffle = sample(score, replace = T))
+  null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)
+  b1_null[b] <- coef(null_lm)[2]
+}
+
+```
+
+```{r echo = F, fig.height = 4}
+p_null <- data.frame(b1 = b1_null) |>
+  ggplot(aes(x = b1)) +
+  geom_histogram(bins = 20, color = "white") +
+  # plot_theme +
+  labs(x = expression(b[1]), title = "Null distribution") +
+  theme(text =element_text(size = 16))
+
+b1_fit <- coef(lm(score ~ bty_avg, data = evals))[2]
+
+p_null +
+  geom_vline(xintercept = b1_fit, colour = "purple") +
+  labs(caption = "Purple line denotes estimated/fitted slope")
+
+p_val <- mean(b1_null >= b1_fit)
+```
