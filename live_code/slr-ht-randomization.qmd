@@ -11,9 +11,12 @@ library(openintro)
 set.seed(116)
 B <- 1000
 b1_null <- rep(NA, B)
+scores <- evals |>
+  pull(score)
 for(b in 1:B){
+  score_shuff <- sample(scores)
   evals_null <- evals |>
-    mutate(score_shuffle = sample(score, replace = F))
+    mutate(score_shuffle = score_shuff)
   null_lm <- lm(score_shuffle ~ bty_avg, data = evals_null)
   b1_null[b] <- coef(null_lm)[2]
 }
