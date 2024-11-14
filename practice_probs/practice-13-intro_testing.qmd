@@ -64,7 +64,7 @@ opts_chunk$set(fig.width=12, fig.height=4)
 
     e.  Briefly comment on how your conclusions in (c) and (d) compare.
 
-5.  A study conducted in 2020 found that the U.S. adjusted divorce rate was 14 per 1000 married women. Joe is suspicious and disagrees with the stated divorce rate. Joe somehow collected data from 323 married or previously-married women, and asked them if they had a divorce in 2020. 55 of the women responded that they indeed had a divorce in 2020.
+5.  A study conducted in 2020 found that the U.S. adjusted divorce rate was 14 per 100 married women. Joe is suspicious and disagrees with the stated divorce rate. Joe somehow collected data from 323 married or previously-married women, and asked them if they had a divorce in 2020. 55 of the women responded that they indeed had a divorce in 2020.
 
     a.  Write out the hypotheses corresponding to this scenario.
 
