@@ -28,7 +28,9 @@ title: "Midterms"
 
 ### What to bring
 
--   **You can bring a single-sided 8.5"x11" formula sheet.** This sheet should include formulas only! No worked out examples, pictures, descriptions, or definitions are allowed. You will be asked to submit the formula sheet alongside the midterm on Wednesday. The formula sheet will be returned to you for your midterm on Thursday, so be sure to write your name on your sheet.
+-   **For Wednesday: you can bring a single-sided 8.5"x11" formula sheet.** This sheet should include formulas only! No worked out examples, pictures, descriptions, or definitions are allowed. You will be asked to submit the formula sheet alongside the midterm on Wednesday. The formula sheet will be returned to you for your midterm on Thursday, so be sure to write your name on your sheet.
+
+-   **For Thursday**: during the coding component of the midterm, you are welcome to use/access your own code and any code posted on the course website. Aside from accessing the course website, the midterm is *not* open internet. Once again, use of Google/ChatGPT/other AI Tools during the midterm is strictly forbidden and would be in violation of the Honor Code.
 
 -   ::: {style="color: maroon"}
     You should bring a calculator to day 1 of the midterm. If you do not have one, the department can provide very basic calculators.
