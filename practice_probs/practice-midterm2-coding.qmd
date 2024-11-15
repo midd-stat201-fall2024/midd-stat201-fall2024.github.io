@@ -1,0 +1,101 @@
+---
+title: "Extra practice problems: coding"
+subtitle: "Midterm 2"
+format:
+  pdf:
+    keep-tex: true
+    include-in-header:
+      text: |
+        \setkomafont{author}{\small}
+        \setkomafont{date}{\small}
+    geometry:
+      - left=1in
+      - right=1in
+      - top=1in
+---
+
+Almost all of following problems should require to use `R` in some way. Remember to check conditions where appropriate!
+
+1.  An apple farmer has historically lost an average of 4% of his trees each year. He believes that he has been losing more trees lately. In a random sample of 200 trees, 12 have died.
+    a.  Using an appropriate method, test the farmer's claim at the 0.01 level.
+    b.  Using the data from his sample, obtain a 90% confidence interval for the farmer's loss rate of trees.
+
+```{r echo = F, eval = F}
+set.seed(1)
+p0 <- 0.04
+p_hat_obs <- 12/200
+n <- 200
+B <- 5000
+p_hat_null <- rep(NA, B)
+for(b in 1:B){
+  null_samp <- sample(c("died", "survived"), size = n, replace = T, prob = c(p0, 1-p0))
+  p_hat_null[b] <- sum(null_samp == "died")/n
+}
+# optional visualization of null distribution
+data.frame(p_hat = p_hat_null) |>
+  ggplot(aes(x = p_hat)) + 
+  geom_histogram(bins = 20)
+
+# p-value
+sum(p_hat_null >= p_hat_obs)/B
+```
+
+```{r echo = F, eval = F}
+# Using CLT-based method, since success-failure satisfied under p_hat
+n <- 200
+p_hat <- 12/200
+se <- sqrt(p_hat*(1-p_hat)/n)
+cv <- qnorm(0.95)
+lb <- p_hat - cv * se
+ub <- p_hat + cv * se
+c(lb, ub)
+
+# bootstrapping method
+set.seed(1)
+B <- 5000
+p_hat_boot <- rep(NA, B)
+observed_vec <- c(rep("died", 12), rep("survived", 188))
+for(b in 1:B){
+  # bootstrap: many ways you could code this
+  boot_samp <- sample(observed_vec, size = n, replace = T)
+  p_hat_boot[b] <- sum(boot_samp == "died")/n
+}
+quantile(p_hat_boot, c(0.05, 0.95))
+```
+
+2.  Recall that the `starbucks` data from `openintro` has several different `type`s of food items. We'd like to know if the average calories in hot breakfast items are different from the average calories of sandwich items. Answer this two ways: 1) using an appropriate hypothesis test and 2) using an appropriate confidence interval. Try to do one via mathematical model (if appropriate) and another via simulation.
+3.  Working with the `starbucks` data again: Using an appropriate method, obtain a 95% confidence interval for the mean calorie per carbohydrate of bakery type items.
+4.  Take a look at the Help file of the `satgpa` data from `openintro`. Fit a linear model where we use math SAT percentiles to estimate the first year college GPA. Check if your model is appropriate. If so, is a student's performance on the math section of the SAT predictive of their first-year GPA?
+5.  Yawning. Take a look at the Help file for the `yawn` data from `openintro`. Write down null and alternative hypotheses (in words or in notation is) that correspond to the research question implied in the Help file Description. Make a plot of the data that would be appropriate/helpful exploratory analysis for the researchers. Then using simulation, test your hypotheses at the 0.05 significance level. *Optional but good practice before coding: describe in words how you would implement the simulation using props/cards.* Make a conclusion in context.
+
+```{r echo = F, eval = F}
+ggplot(yawn, aes(x = group, fill = result)) +
+  geom_bar(position = "fill")
+
+B <- 1000
+n_c <- yawn |>
+  filter(group == "ctrl") |>
+  nrow()
+n_t <- yawn |>
+  filter(group == "trmt") |>
+  nrow()
+results <- yawn$result
+diff_prop <- rep(NA, B)
+for(b in 1:B){
+  result_shuff <- sample(results)
+  control_sim <- result_shuff[1:n_c]
+  treat_sim <- result_shuff[-c(1:n_c)]
+  
+  p_c_sim <- sum(control_sim == "yawn")/n_c
+  p_t_sim <-  sum(treat_sim == "yawn")/n_t
+  diff_prop[b] <- p_t_sim - p_c_sim
+}
+cond_probs  <- yawn |>
+  group_by(group) |>
+  summarise(p = mean(result == "yawn" )) |>
+  pull(p) 
+obs_diff <- cond_probs[2] - cond_probs[1]  
+
+# p-value
+sum(diff_prop >= obs_diff)/B
+```

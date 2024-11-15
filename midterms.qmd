@@ -55,7 +55,9 @@ title: "Midterms"
 
 -   For coding, go back through your old `.Rmd`s and make sure you understand everything that is happening! You might also consider re-doing a coding problem without looking at your previous code.
 
--   More practice problems will be made available soon!
+-   More practice problems:
+
+    -   [Practice problems involving coding](practice_probs/practice-midterm2-coding.qmd)
 
 ------------------------------------------------------------------------
 

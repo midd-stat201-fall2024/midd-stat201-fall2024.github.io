@@ -137,8 +137,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={CLT and CIs for proportion},
-  pdfauthor={Practice problems},
+  pdftitle={Extra practice problems: coding},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -146,72 +145,76 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{CLT and CIs for proportion}
-\author{Practice problems}
-\date{10/23/24}
+\title{Extra practice problems: coding}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Midterm 2}
+\author{}
+\date{}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, interior hidden, breakable, enhanced, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+
+Almost all of following problems should require to use \texttt{R} in
+some way. Remember to check conditions where appropriate!
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  A survey found that American families generate an average of 17.2
-  pounds of glass garbage each year. Assume that the standard deviation
-  is 2.5 pounds.
-
-  Suppose we randomly survey 40 families. Set up a calculation for (and
-  if you have access to R, actually calculate) the probability that the
-  mean of glass garbage of these 40 families is less than 18 pounds.
-\item
-  Define what a sampling distribution of the sample distribution is.
-  Describe how the shape, center, and spread of the sampling
-  distribution change as the sample size increases when \(p=0.2\).
-\item
-  A survey of 1509 high school seniors who took the SAT and who
-  completed an optional web survey shows that 55\% of high school
-  seniors are fairly certain that they will participate in a study
-  abroad program in college.
+  An apple farmer has historically lost an average of 4\% of his trees
+  each year. He believes that he has been losing more trees lately. In a
+  random sample of 200 trees, 12 have died.
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    Is this sample a representative sample from the population of all
-    high school seniors in the US? Explain.
+    Using an appropriate method, test the farmer's claim at the 0.01
+    level.
   \item
-    Suppose the conditions for inference are met, regardless of your
-    answer in (a). Using a mathematical model, construct a 90\%
-    confidence interval for the proportion of high school seniors who
-    are fairly certain they will participate in a study abroad program
-    in college. Interpret this interval in context.
-  \item
-    Based on this interval, would it be appropriate to claim that the
-    majority of high school seniors are fairly certain they will
-    participate in a study abroad program in college?
+    Using the data from his sample, obtain a 90\% confidence interval
+    for the farmer's loss rate of trees.
   \end{enumerate}
-\item
-  \((^*)\) The average teacher salary in Vermont is \$62,483. Suppose
-  that the distribution of teacher salaries is approximately normal with
-  standard deviation \$7000.
+\end{enumerate}
 
-  \begin{enumerate}
-  \def\labelenumii{\alph{enumii}.}
-  \item
-    What is the probability that a randomly selected Vermont teacher
-    makes less than \$60,000 per year?
-  \item
-    If we randomly sample 25 Vermont teachers and obtain their salaries,
-    what is the probability that the mean of their salaries is less than
-    \$60,000 per year?
-  \item
-    Compare the probabilities in (a) and (b), and explain mathematically
-    why one is larger than the other.
-  \item
-    How would your answers to (a) and (b) change if the distribution of
-    teacher salaries was not normal?
-  \end{enumerate}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Recall that the \texttt{starbucks} data from \texttt{openintro} has
+  several different \texttt{type}s of food items. We'd like to know if
+  the average calories in hot breakfast items are different from the
+  average calories of sandwich items. Answer this two ways: 1) using an
+  appropriate hypothesis test and 2) using an appropriate confidence
+  interval. Try to do one via mathematical model (if appropriate) and
+  another via simulation.
+\item
+  Working with the \texttt{starbucks} data again: Using an appropriate
+  method, obtain a 95\% confidence interval for the mean calorie per
+  carbohydrate of bakery type items.
+\item
+  Take a look at the Help file of the \texttt{satgpa} data from
+  \texttt{openintro}. Fit a linear model where we use math SAT
+  percentiles to estimate the first year college GPA. Check if your
+  model is appropriate. If so, is a student's performance on the math
+  section of the SAT predictive of their first-year GPA?
+\item
+  Yawning. Take a look at the Help file for the \texttt{yawn} data from
+  \texttt{openintro}. Write down null and alternative hypotheses (in
+  words or in notation is) that correspond to the research question
+  implied in the Help file Description. Make a plot of the data that
+  would be appropriate/helpful exploratory analysis for the researchers.
+  Then using simulation, test your hypotheses at the 0.05 significance
+  level. \emph{Optional but good practice before coding: describe in
+  words how you would implement the simulation using props/cards.} Make
+  a conclusion in context.
 \end{enumerate}
 
 

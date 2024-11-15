@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.15)  14 NOV 2024 13:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.15)  15 NOV 2024 09:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,42 +534,76 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: images/13-defund.png Graphic file (type png)
 <use images/13-defund.png>
 Package pdftex.def Info: images/13-defund.png  used on input line 218.
-(pdftex.def)             Requested size: 341.77605pt x 169.13145pt.
- [2 <./images/13-defund.png>]
-<images/13-divorce.png, id=40, 665.48625pt x 334.24875pt>
+(pdftex.def)             Requested size: 273.41666pt x 135.30309pt.
+<images/13-divorce.png, id=30, 665.48625pt x 334.24875pt>
 File: images/13-divorce.png Graphic file (type png)
 <use images/13-divorce.png>
 Package pdftex.def Info: images/13-divorce.png  used on input line 252.
-(pdftex.def)             Requested size: 332.74231pt x 167.12396pt.
-
+(pdftex.def)             Requested size: 266.18977pt x 133.69713pt.
+ [2 <./images/13-defund.png>]
+<images/14-heart-transplant-eda.png, id=42, 639.38875pt x 318.18875pt>
+File: images/14-heart-transplant-eda.png Graphic file (type png)
+<use images/14-heart-transplant-eda.png>
+Package pdftex.def Info: images/14-heart-transplant-eda.png  used on input line
+ 293.
+(pdftex.def)             Requested size: 255.75096pt x 127.27324pt.
+ [3 <./images/13-divorce.png>]
+<images/14-heart-transplant-null.png, id=54, 592.2125pt x 354.32375pt>
+File: images/14-heart-transplant-null.png Graphic file (type png)
+<use images/14-heart-transplant-null.png>
+Package pdftex.def Info: images/14-heart-transplant-null.png  used on input lin
+e 343.
+(pdftex.def)             Requested size: 236.8808pt x 141.72697pt.
+ [4 <./images/14-heart-transplant-eda.png>]
+<images/14-asian-tobacco-null.png, id=65, 639.38875pt x 444.66125pt>
+File: images/14-asian-tobacco-null.png Graphic file (type png)
+<use images/14-asian-tobacco-null.png>
+Package pdftex.def Info: images/14-asian-tobacco-null.png  used on input line 3
+86.
+(pdftex.def)             Requested size: 255.75096pt x 177.86134pt.
+ [5 <./images/14-heart-transplant-null.png>]
+<images/14-asian-tobacco-boot.png, id=76, 639.38875pt x 444.66125pt>
+File: images/14-asian-tobacco-boot.png Graphic file (type png)
+<use images/14-asian-tobacco-boot.png>
+Package pdftex.def Info: images/14-asian-tobacco-boot.png  used on input line 4
+08.
+(pdftex.def)             Requested size: 255.75096pt x 177.86134pt.
+ [6 <./images/14-asian-tobacco-null.png> <./images/14-asian-tobacco-boot.png>] 
+[7] [8] [9] [10] [11]
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 14.
 See the caption package documentation for explanation.
 
-[3 <./images/13-divorce.png>] (./practice_solns.aux)
+[12] (./practice_solns.aux)
 Package rerunfilecheck Info: File `practice_solns.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 13121 strings out of 478268
- 205698 string characters out of 5846347
- 511045 words of memory out of 5000000
- 31145 multiletter control sequences out of 15000+600000
- 475155 words of font info for 50 fonts, out of 8000000 for 9000
+ 13236 strings out of 478268
+ 207403 string characters out of 5846347
+ 511047 words of memory out of 5000000
+ 31177 multiletter control sequences out of 15000+600000
+ 476866 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,63p,345b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on practice_solns.pdf (3 pages, 183812 bytes).
+ 60i,12n,63p,757b,523s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on practice_solns.pdf (12 pages, 328761 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

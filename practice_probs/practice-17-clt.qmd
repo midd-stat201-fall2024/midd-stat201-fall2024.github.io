@@ -26,7 +26,7 @@ opts_chunk$set(fig.width=12, fig.height=4)
 
     Suppose we randomly survey 40 families. Set up a calculation for (and if you have access to R, actually calculate) the probability that the mean of glass garbage of these 40 families is less than 18 pounds.
 
-2.  Define what a sampling distribution of the sample distribution is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when $p=0.2$.
+2.  Define what a sampling distribution of the sample proportion is. Describe how the shape, center, and spread of the sampling distribution change as the sample size increases when $p=0.2$.
 
 3.  A survey of 1509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.
 

@@ -8,9 +8,10 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 ## Announcements
 
--   **Office hours change:**
-    -   Friday 11/15: cancelled, moved to next week:
+-   **Week 11 office hours**
+    -   Monday 11/18: 2:00-4:00pm
     -   Tuesday 11/19: 11am-12:00pm, 4:00-5:00pm
+-   Check the [Midterm](midterms.qmd) page for some practice problems involving coding
 -   [**Women in Data Science (WiDS) event**](wids_fall24.pdf) next Monday, 11/18 from 4:30-7:00pm in Johnson 204
 -   Final project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!
 -   Add your `R` questions [here](https://docs.google.com/spreadsheets/d/1RZTake0XPfMMgDrGrZWNUDoTlmQnT8e_Ww7rjjyjbIQ/edit?usp=sharing)!

@@ -34,7 +34,7 @@ opts_chunk$set(fig.width=12, fig.height=4)
 
 <!-- -->
 
-3.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl with weighs between 60 and 85 pounds two ways:
+3.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl weighs between 60 and 85 pounds two ways:
 
     a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
 
