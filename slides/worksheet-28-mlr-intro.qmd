@@ -28,6 +28,9 @@ tidy(bwt_mlr)  |>
 glance(bwt_mlr)|>
   kable()
 ```
+
+\pagebreak
+
 ```{r echo =F}
 summary(bwt_mlr)
 ```

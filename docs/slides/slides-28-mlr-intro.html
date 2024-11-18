@@ -515,7 +515,7 @@
 <p><span class="math display">\[
 \widehat{\text{birth_wt}} = 3102.72  -383.03 \text{raceBlack}  -297.44 \text{raceOther}
 \]</span></p>
-<p><span class="math display">\[\text{raceBlack} = \begin{cases}0 &amp; \text{if race = Black}  \\ 0 &amp; \text{otherwise} \end{cases} \qquad \text{raceOther} = \begin{cases}0 &amp; \text{if race = Other}  \\ 0 &amp; \text{otherwise} \end{cases}\]</span></p>
+<p><span class="math display">\[\text{raceBlack} = \begin{cases}1 &amp; \text{if race = Black}  \\ 0 &amp; \text{otherwise} \end{cases} \qquad \text{raceOther} = \begin{cases}1 &amp; \text{if race = Other}  \\ 0 &amp; \text{otherwise} \end{cases}\]</span></p>
 </div>
 <div class="fragment">
 <div class="discuss">
@@ -1127,7 +1127,7 @@ F-statistic: 4.293 on 4 and 184 DF,  p-value: 0.00241</code></pre>
 </div>
 </div>
 <ul>
-<li class="fragment"><p>Intercept: the birth weight of babies whose mothers are White have an estimated birth weight of 2486.9 grams, holding all other variables (i.e.&nbsp;<code>lwt</code>) constant</p></li>
+<li class="fragment"><p>Intercept: the birth weight of babies whose mothers are White and weigh 0 lbs have an estimated birth weight of 2486.9 grams</p></li>
 <li class="fragment"><p>Coefficient for <code>lwt</code>: for every one pound increase in the mother’s weight at last period, the birth weight of the baby is expected to increase by 4.66 grams, holding all other variables (i.e.&nbsp;<code>race</code>) constant</p></li>
 </ul>
 </section>

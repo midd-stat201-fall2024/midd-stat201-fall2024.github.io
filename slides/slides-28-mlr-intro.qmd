@@ -94,7 +94,7 @@ $$
 \widehat{\text{birth_wt}} = `r bwt_coefs[1]`  `r bwt_coefs[2]` \text{raceBlack}  `r bwt_coefs[3]` \text{raceOther}
 $$
 
-$$\text{raceBlack} = \begin{cases}0 & \text{if race = Black}  \\ 0 & \text{otherwise} \end{cases} \qquad \text{raceOther} = \begin{cases}0 & \text{if race = Other}  \\ 0 & \text{otherwise} \end{cases}$$
+$$\text{raceBlack} = \begin{cases}1 & \text{if race = Black}  \\ 0 & \text{otherwise} \end{cases} \qquad \text{raceOther} = \begin{cases}1 & \text{if race = Other}  \\ 0 & \text{otherwise} \end{cases}$$
 :::
 
 ::: {.fragment}
@@ -416,7 +416,7 @@ tidy(bwt_mlr_no_age) |>
   kable_styling(font_size = 25)
 ```
 
--   Intercept: the birth weight of babies whose mothers are White have an estimated birth weight of `r coefs2[1]` grams, holding all other variables (i.e. `lwt`) constant
+-   Intercept: the birth weight of babies whose mothers are White and weigh 0 lbs have an estimated birth weight of `r coefs2[1]` grams
 
 -   Coefficient for `lwt`: for every one pound increase in the mother's weight at last period, the birth weight of the baby is expected to increase by `r coefs2[4]` grams, holding all other variables (i.e. `race`) constant
 
