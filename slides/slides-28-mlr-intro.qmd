@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Multiple Linear Regression"
-date: "November 14, 2024"
+date: "November 18, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -36,19 +36,6 @@ source("../stat201_fns.R")
 
 -   Study for midterm!
 
-## Multiple linear regression
-
--   We have seen *simple* linear regression, which is where we have one explanatory variable
-
--   Linear regression can naturally extend to include more than one predictor
-
-    -   Seems natural: usually several factors affect behavior of phenomena
-
--   Takes the form: $$y = \beta_{0} + \beta_{1} x_{1} + \beta_{2} x_{2} + \ldots + \beta_{p} x_{p} + \epsilon$$
-
-    -   Now there are $p$ different explanatory variables $x_{1},\ldots, x_{p}$ per observation
-    -   Still one response $y$ and error $\epsilon$ per observation
-
 ## Birth weight data
 
 Baystate Medical Center, Springfield, MA during 1986 on the birth weights of 189 babies, along with descriptive information about the mother
@@ -64,15 +51,17 @@ birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/mid
 
 -   Let's look at a different variable: `race` of mother
 
-    -  Variable `race` numerical where 1 = white, 2 = black, 3 = other
+    -   Variable `race` numerical where 1 = white, 2 = black, 3 = other
 
+::: fragment
 ```{r}
 str(birthwt)
 ```
+:::
 
 ## Converting to factor
 
-We need to convert data to categorical! Does not make sense to do "math" on this `race` variable even though the data are numerical.
+We need to convert variable `race` to categorical! Does not make sense to do "math" on variable:
 
 ```{r echo = T}
 birthwt2 <- birthwt |>
@@ -84,7 +73,422 @@ birthwt2 <- birthwt |>
 str(birthwt2)
 ```
 
-```{r}
+## Fit model
+
+```{r eval = F, echo = T}
 bwt_lm <- lm(bwt ~ race, data = birthwt2)
 tidy(bwt_lm)
 ```
+
+```{r}
+bwt_lm <- lm(bwt ~ race, data = birthwt2)
+tidy(bwt_lm) |>
+  kable()
+bwt_coefs <- round(coef(bwt_lm), 2)
+```
+ 
+::: {.fragment}
+Fitted model:
+
+$$
+\widehat{\text{birth_wt}} = `r bwt_coefs[1]`  `r bwt_coefs[2]` \text{raceBlack}  `r bwt_coefs[3]` \text{raceOther}
+$$
+
+$$\text{raceBlack} = \begin{cases}0 & \text{if race = Black}  \\ 0 & \text{otherwise} \end{cases} \qquad \text{raceOther} = \begin{cases}0 & \text{if race = Other}  \\ 0 & \text{otherwise} \end{cases}$$
+:::
+
+::: {.fragment}
+::: discuss
+Estimate the birth weight for babies whose mothers are White
+:::
+:::
+
+## Interpreting coefficients
+
+$$
+\widehat{\text{birth_wt}} = `r bwt_coefs[1]` + `r bwt_coefs[2]` \text{raceBlack} + `r bwt_coefs[3]` \text{raceOther}
+$$
+
+-   $\widehat{\text{birth_wt}} = `r bwt_coefs[1]`  `r bwt_coefs[2]` \times \color{orange}{0}  `r bwt_coefs[3]` \times \color{orange}{0}$
+
+-   The estimated birth weight of babies whose mothers are White is `r bwt_coefs[1]` grams
+
+-   ::: {style="color: maroon"}
+    More generally: $b_{0}$ is the estimated value of the response variable for the base level
+    :::
+
+-   ::: discuss
+    What is the interpretation of $b_{1}$ = `r bwt_coefs[2]`? Of $b_{2}$ = `r bwt_coefs[3]`?
+    :::
+
+    -   Babies whose mothers are Black have an estimated birth weight about `r abs(bwt_coefs[2])` grams less than babies whose mothers are White
+
+    -   Babies whose mothers are race "Other" (i.e. not Black or White) have an estimated birth weight about `r abs(bwt_coefs[3])` grams less than babies whose mothers are White
+
+## General interpretation
+
+```{r}
+tidy(bwt_lm) |>
+  kable()
+```
+
+-   When fitting a regression model with a categorical variable with $k > 2$ levels, the software will always provide a coefficient for $k-1$ of the levels
+
+    -   ::: {style="color: maroon"}
+        The base level does not receive a coefficient
+        :::
+
+    -   Interpretation of the coefficient associated with a non-base level is the expected change in the response **relative to** the base level
+
+-   Note: the fitted model has more than one "slope" coefficient, but the `race` variable is still a single explanatory variable
+
+-   What happens if we explicitly want to include more than one explanatory variable?
+
+# Multiple linear regression
+
+## Multiple linear regression
+
+-   We have seen *simple* linear regression, where we had one explanatory variable
+
+-   Extend to include multiple explanatory variables
+
+    -   Seems natural: usually several factors affect behavior of phenomena
+
+-   **Multiple linear regression** takes the form: $$y = \beta_{0} + \beta_{1} x_{1} + \beta_{2} x_{2} + \ldots + \beta_{p} x_{p} + \epsilon$$
+
+    -   Now there are $p$ different explanatory variables $x_{1},\ldots, x_{p}$ per observation
+
+    -   Still one response $y$ and error $\epsilon$ per observation
+
+-   Represents a holistic approach for modeling all of the variables simultaneously
+
+## Birthweight data (cont.)
+
+Suppose we would also like to include the mother's age (`age`) and weight at last period (`lwt`) into the model:
+
+$$\text{birth_wt} = \beta_{0} + \beta_{1} \text{raceBlack} + \beta_{2} \text{raceOther} + \beta_{3} \text{age} + \beta_4 \text{lwt} + \epsilon$$
+
+-   Just as in the case of SLR, the estimates of $\beta_{0},\ldots, \beta_{4}$ parameters are chosen via the squared deviation criterion
+
+## Multiple regression in `R`
+
+Very easy to code:
+
+```{r echo = T}
+bwt_mlr <- lm(bwt ~ race + age + lwt, data = birthwt2)
+```
+
+```{r}
+mlr_coefs <- round(coef(bwt_mlr),2)
+tidy(bwt_mlr) |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+
+
+-   Simply identify the estimated coefficients from the output to obtain fitted model
+
+::: fragment
+$$
+\begin{align*}
+\widehat{\text{birth_wt}} &= `r mlr_coefs[1]`  `r mlr_coefs[2]` \text{raceBlack} `r mlr_coefs[3]` \text{raceOther} +  `r mlr_coefs[4]` \text{age}  \\
+& \quad + `r mlr_coefs[5]` \text{lwt}
+\end{align*}
+$$
+:::
+
+-   Note that the number of explanatory variables need not equal the number of parameters in the model!
+
+## Interpretation
+
+-   When we have more than one predictor variable, interpretation of the coefficients requires a bit of care
+
+    -   Multiple moving parts
+
+-   Interpretation of a particular coefficient $b_{m}$ relies on "holding the other variables fixed/constant" (assuming the model is appropriate)
+
+::: fragment
+$$
+\begin{align*}
+\widehat{\text{birth_wt}} &= `r mlr_coefs[1]`  `r mlr_coefs[2]` \text{raceBlack} `r mlr_coefs[3]` \text{raceOther} + \color{orange}{`r mlr_coefs[4]`} \text{age}  \\
+& \quad + `r mlr_coefs[5]` \text{lwt}
+\end{align*}
+$$
+:::
+
+-   For every one year older the mother is, the baby's birth weight is expected to increase by $\color{orange}{`r mlr_coefs[4]`}$ grams, **holding all other variables constant**
+
+-   ::: discuss
+    Interpret the coefficient associated with the mother's weight (`lwt`)
+    :::
+
+## Interpretation (cont.)
+
+$$
+\begin{align*}
+\widehat{\text{birth_wt}} &= `r mlr_coefs[1]`  `r mlr_coefs[2]` \text{raceBlack} `r mlr_coefs[3]` \text{raceOther} +  `r mlr_coefs[4]` \text{age}  \\
+& \quad + \color{orange}{`r mlr_coefs[5]`} \text{lwt}
+\end{align*}
+$$
+
+-   For every one pound heavier the mother's weight at last period was, the baby's birth weight is expected to increase by $\color{orange}{`r mlr_coefs[5]`}$ grams, holding all other variables constant
+
+
+## More isn't always better
+
+-   You might be tempted to throw in all available predictors into your model! Don't fall into temptation!
+
+-   Quality over quantity
+
+-   For SLR, we used the coefficient of determination $R^2$ to assess how good the model was
+
+    -   $R^2$ is less helpful when there are many variables
+
+    -   Why? The $R^2$ will never decrease (and will *almost* *always* increase) when we include an additional predictor
+
+## Adjusted $R^2$
+
+-   For multiple linear regression, we use the **adjusted** $R^2$ to assess the quality of model fit
+
+    -   "Adjusted" for the presence of additional predictors
+
+    -   Take STAT 211 to learn the formula and intuition behind it!
+
+-   Adjusted $R^2$ is always less than $R^2$
+
+## Adjusted $R^2$ (cont.)
+
+::::: columns
+::: {.column width="65%"}
+```{r echo = T}
+summary(bwt_mlr)
+```
+:::
+
+::: {.column width="35%"}
+```{r echo = T, eval = F}
+glance(bwt_mlr)
+```
+
+```{r}
+glance(bwt_mlr)|>
+  kable(digits = 4) |>
+  kable_styling(font_size = 20)
+```
+:::
+:::::
+
+
+## Conditions for inference
+
+We still need LINE to hold
+
+-   **Linearity**: harder to assess now that multiple predictors are involved. Good idea to make several scatter plots
+
+-   **Independence**: same as before
+
+-   **Nearly normal residuals**: same as before
+
+-   **Equal variance**: residual plot has *fitted* values on the x-axis, instead of an explanatory variable
+
+::: {.fragment}
+```{r fig.width=25}
+p0 <- ggplot(birthwt2, aes(x = age, y = bwt)) + 
+  geom_point(size = 2) +
+  plot_theme +
+  theme(text =element_text(size = 35))
+
+p1 <- ggplot(birthwt2, aes(x = lwt, y = bwt)) + 
+  geom_point(size = 2) +
+  plot_theme +
+  theme(text =element_text(size = 35))
+
+p2 <- augment(bwt_mlr) |>
+  mutate(residuals = -1 * .resid) |>
+  ggplot(aes(x=.fitted, y = residuals)) + 
+  geom_point(size = 2) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  plot_theme+
+  theme(text =element_text(size = 35))
+
+p3 <- augment(bwt_mlr) |>
+  mutate(residuals = -1 * .resid) |>
+  ggplot(aes(x= residuals)) + 
+  geom_histogram() +
+  plot_theme+
+  theme(text =element_text(size = 35))
+
+gridExtra::grid.arrange(grobs = list(p0, p1,p3,p2), nrow = 1)
+```
+:::
+
+# Inference in MLR
+
+## Hypothesis testing in MLR
+
+-   In MLR, we are interested in the effect of a variable $m$ on the response $y$.
+
+    -   Need to account for presence of other predictors in the model
+
+-   $H_{0}: \beta_m = 0$, given other predictors in the model
+
+-   $H_{A}: \beta_m \neq 0$, given other predictors in the model (or $>, <$)
+
+-   We can write down one null hypothesis for each coefficient in the model
+
+## Hypothesis tests from `lm()`
+
+Returning to the larger model:
+
+$$\text{birth_wt} = \beta_{0} + \beta_{1} \text{raceBlack} + \beta_{2} \text{raceOther} + \beta_{3} \text{age} + \beta_4 \text{lwt} + \epsilon$$
+
+-   We can test the following null hypotheses (no need to write down):
+
+    -   $H_{0}: \beta_{1} = 0$, given `age` and `lwt` are included in the model
+    -   $H_{0}: \beta_{2} = 0$, given `age` and `lwt` are included in the model
+    -   $H_{0}: \beta_{3} = 0$, given `race` and `lwt` are included in the model
+    -   $H_{0}: \beta_{4} = 0$, given `race` and `age` are included in the model
+
+## Hypothesis tests from `lm()`
+
+```{r}
+tidy(bwt_mlr) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+```
+
+-   Output from `lm()` provides:
+
+    -   Test statistic, which follows $t_{n-p}$ where $p =$ total number of unknown parameters (i.e. $\beta$ terms)
+
+    -   p-values for testing two-sided $H_{A}$ provided
+
+:::: fragment
+::: discuss
+Based on the model fit, which variables seem to be important predictors of birth weight of a baby? Why?
+:::
+::::
+
+## Hypothesis tests from `lm()` (cont.)
+
+```{r}
+tidy(bwt_mlr) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+```
+
+-   `lwt` **does** seem to be an important predictor for birth weight, despite inclusion of `race` and `age` in the model
+
+    -   Low p-value suggests it would be extremely unlikely to see data that produce $b_{4} =  `r mlr_coefs[5]`$ if the true relationship between `lwt`and `bwt` was non-existent (i.e., if $\beta_{4} = 0$) and the model also included `age` and `race`
+
+-   `race` **does** seem to be an important predictor, despite inclusion of `age` and `lwt`
+
+-   `age` **does not** seem to be an important predictor after including `race` and `lwt`
+
+## Simpler model
+
+Let's see the model that does not include mother's age in the model:
+
+```{r echo = T, eval = F}
+bwt_mlr_no_age <- lm(bwt ~ race + lwt, data = birthwt2)
+tidy(bwt_mlr_no_age)
+```
+
+```{r}
+bwt_mlr_no_age <- lm(bwt ~ race + lwt, data = birthwt2)
+tidy(bwt_mlr_no_age) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+coefs2 <- round(coef(bwt_mlr_no_age), 2)
+```
+
+::: {.fragment}
+::: discuss
+Write out the fitted model. Interpret the intercept and the coefficient for `lwt` in context
+:::
+:::
+
+## Simpler model (cont.)
+
+```{r}
+tidy(bwt_mlr_no_age) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+```
+
+-   Intercept: the birth weight of babies whose mothers are White have an estimated birth weight of `r coefs2[1]` grams, holding all other variables (i.e. `lwt`) constant
+
+-   Coefficient for `lwt`: for every one pound increase in the mother's weight at last period, the birth weight of the baby is expected to increase by `r coefs2[4]` grams, holding all other variables (i.e. `race`) constant
+
+## Comparing models
+
+Let's compare the model that includes `age` to the model without `age`:
+
+::::: columns
+::: {.column width="50%"}
+```{r echo = T, eval = F}
+tidy(bwt_mlr) |>
+  select(term, estimate, p.value)
+```
+
+```{r }
+tidy(bwt_mlr)  |>
+  select(term, estimate, p.value)|>
+  kable(digits = 4) |>
+  kable_styling(font_size = 24)
+```
+
+```{r echo = T, eval = F}
+glance(bwt_mlr)
+```
+
+```{r }
+glance(bwt_mlr) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+```{r echo = T, eval = F}
+tidy(bwt_mlr_no_age) |>
+  select(term, estimate, p.value)
+```
+
+```{r}
+tidy(bwt_mlr_no_age)  |>
+  select(term, estimate, p.value)|>
+  kable(digits = 4) |>
+  kable_styling(font_size = 24)
+```
+
+```{r echo = T, eval = F}
+glance(bwt_mlr_no_age)
+```
+
+```{r}
+glance(bwt_mlr_no_age) |>
+  kable(digits = 4) |>
+  kable_styling(font_size = 25)
+```
+:::
+:::::
+
+::: discuss
+What do you notice about the estimated coefficients, $R^2$, and adjusted $R^2$?
+:::
+
+
+## Remarks
+
+-   We have only scratched the surface of MLR
+
+-   Things to consider:
+
+    -   Multicollinearity (when the predictor variables are correlated with each other)
+    
+    - Model selection
+    
+    - More than one categorical variable
+
+    -   Interaction effects

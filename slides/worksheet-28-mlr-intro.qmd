@@ -1,0 +1,35 @@
+---
+title: "MLR Intro"
+---
+
+```{r echo = F, message = F}
+library(tidyverse)
+library(readr)
+library(broom)
+library(kableExtra)
+birthwt <- read.csv("https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/birthwt.csv")
+birthwt2 <- birthwt |>
+  mutate(race = case_when(race == 1 ~ "white",
+                          race == 2 ~ "black",
+                          race == 3 ~ "other")) |>
+  mutate(race = factor(race, levels = c("white", "black", "other")))
+```
+```{r eval = F}
+bwt_mlr <- lm(bwt ~ race + age + lwt, data = birthwt2)
+```
+```{r echo = F}
+bwt_mlr <- lm(bwt ~ race + age + lwt, data = birthwt2)
+tidy(bwt_mlr)  |>
+  kable() |>
+  kable_styling()
+```
+
+```{r echo = F}
+glance(bwt_mlr)|>
+  kable()
+```
+```{r echo =F}
+summary(bwt_mlr)
+```
+
+
