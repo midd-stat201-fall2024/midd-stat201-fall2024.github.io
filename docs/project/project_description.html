@@ -125,6 +125,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#deadlines" id="toc-deadlines" class="nav-link active" data-scroll-target="#deadlines">Deadlines</a></li>
   <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#report" id="toc-report" class="nav-link" data-scroll-target="#report">Report</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
+  <ul class="collapse">
+  <li><a href="#general-grading-structure" id="toc-general-grading-structure" class="nav-link" data-scroll-target="#general-grading-structure">General grading structure</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -185,17 +191,18 @@ ul.task-list li input[type="checkbox"] {
 <td>11:59pm</td>
 </tr>
 <tr class="even">
-<td>Rough draft of report</td>
+<td>Rough draft of <a href="#report">report</a></td>
 <td>Sunday 12/08</td>
 <td>11:59pm</td>
 </tr>
 <tr class="odd">
-<td>Final presentations (Section AZ)</td>
+<td><p>Final <a href="#presentation">Presentation</a></p>
+<p>(Section AZ)</p></td>
 <td>Wednesday 12/11</td>
 <td>7-10pm (slides due at 6pm)</td>
 </tr>
 <tr class="even">
-<td>Final presentations (Section BY)</td>
+<td>Final <a href="#presentation">Presentation</a> (Section BY)</td>
 <td>Thursday 12/12</td>
 <td>9am-12pm (slides due at 8am)</td>
 </tr>
@@ -206,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Reflection*</td>
-<td>Sudday 12/15 (tentative)</td>
+<td>Sunday 12/15 (tentative)</td>
 <td>11:59pm</td>
 </tr>
 </tbody>
@@ -218,12 +225,12 @@ ul.task-list li input[type="checkbox"] {
 <p>As a final project, you will work in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! Your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.</p>
 <p>In particular, your group will:</p>
 <ul>
-<li><p>come up with a list of inferential research questions you are interested in answering</p></li>
-<li><p>determine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy</p></li>
-<li><p>have a finalized data set that anyone can access and use, accompanied by a “data dictionary”</p></li>
-<li><p>present your project to the class (and perhaps other professors/TAs)</p></li>
-<li><p>submit a well-written, professional report</p></li>
-<li><p>submit a reflection on the project, which will include a rubric for how much each team member contributed</p></li>
+<li>come up with a list of inferential research questions you are interested in answering</li>
+<li>determine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy</li>
+<li>have a finalized data set that anyone can access and use, accompanied by a “data dictionary”</li>
+<li>present your project to the class (and perhaps other professors/TAs)</li>
+<li>submit a well-written, professional report</li>
+<li>submit a reflection on the project, which will include a rubric for how much each team member contributed</li>
 </ul>
 <p>You should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)</p>
 <div style="color: maroon">
@@ -255,28 +262,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>By the due date listed in the table above, your group should submit to Canvas a document detailing the following:</p>
 <ol type="1">
-<li><p>Your <strong>target population(s)</strong> of interest</p></li>
-<li><p>A list of <strong>research questions</strong> your group is interested in exploring/answering. You should have <em>at least</em> one question per group member, but more is better!</p>
+<li>Your <strong>target population(s)</strong> of interest</li>
+<li>A list of <strong>research questions</strong> your group is interested in exploring/answering. You should have <em>at least</em> one question per group member, but more is better!
 <ul>
 <li>Note: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable <span class="math inline">\(x\)</span> might lead to changes in continuous variable <span class="math inline">\(y\)</span></li>
 </ul></li>
-<li><p>A list of <strong>variables</strong> you will observe/collect from each observational unit that you may be <strong>useful</strong> and/or required for answering your reseach question(s).</p>
+<li>A list of <strong>variables</strong> you will observe/collect from each observational unit that you may be <strong>useful</strong> and/or required for answering your reseach question(s).
 <ul>
 <li>You should plan to collect <strong><em>at least</em></strong> <strong>four numerical</strong> variables (at least two of which are continuous), and <strong><em>at least</em></strong> <strong>two categorical</strong> variables</li>
 </ul></li>
-<li><p>A detailed description of <strong>how you plan to collect your data</strong> (i.e.&nbsp;survey students)</p>
+<li>A detailed description of <strong>how you plan to collect your data</strong> (i.e.&nbsp;survey students)
 <ul>
-<li><p>How many people do you plan to include in your data? (You should aim for least 30 people, if possible!)</p></li>
-<li><p>How will you have people submit their data? (e.g.&nbsp;fill out a paper form, GoogleForm)</p></li>
-<li><p>If you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?</p></li>
-<li><p>If you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)</p></li>
+<li>How many people do you plan to include in your data? (You should aim for least 30 people, if possible!)</li>
+<li>How will you have people submit their data? (e.g.&nbsp;fill out a paper form, GoogleForm)</li>
+<li>If you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?</li>
+<li>If you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)</li>
 </ul></li>
-<li><p>A rough <strong>description of the statistical methods</strong> you might use to answer each question you listed in (2).</p>
+<li>A rough <strong>description of the statistical methods</strong> you might use to answer each question you listed in (2).
 <ul>
 <li>This might be along the lines of “hypothesis test for a single mean” or “confidence interval for a proportion” or “linear regression” along with a one-two sentence justification for the method is appropriate.</li>
-</ul>
-<!-- -->
-<ul>
 <li>It is possible that we haven’t yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn’t apply.</li>
 </ul></li>
 </ol>
@@ -289,8 +293,197 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <p>Once you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name. This should be submitted to Canvas by the end of Thanksgiving break.</p>
+</section>
+<section id="report" class="level2">
+<h2 class="anchored" data-anchor-id="report">Report</h2>
+<p>Each group will write a final report created in an <code>.Rmd</code> file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). <strong>The code in your report should be as reproducible as possible</strong> (e.g.&nbsp;not hard coding specific values, setting a <a href="#presentation">Presentation</a> when appropriate)<strong>.</strong></p>
+<p><strong>Additionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself.</strong> This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option <code>echo = F</code>. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting <code>echo = T</code>.</p>
+<p>The report does not have a minimum length, but should contain each of the following sections. <em>The report should also have an informative, academically appropriate title along with each group member’s name.</em></p>
+<section id="introduction" class="level4">
+<h4 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h4>
+<ul>
+<li>The introduction should introduce your research questions and the population(s) of interest. <strong>Your report should have at least one research question per team member</strong>. In the introduction, you should briefly motivate the research questions (i.e.&nbsp;explain why they were of interest to your group)!
+<ul>
+<li>It could be helpful to identify/label your research questions as “Question 1”, “Question 2”, etc. for easier reference moving forward.</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-collection" class="level4">
+<h4 class="anchored" data-anchor-id="data-collection"><strong>Data collection</strong></h4>
+<p>This section should describe your data and the sampling process: <strong>how</strong> the data were collected and a summary description of the variables you collected.</p>
+</section>
+<section id="methods" class="level4">
+<h4 class="anchored" data-anchor-id="methods"><strong>Methods</strong></h4>
+<p>For <strong>each</strong> research question, you should:</p>
+<ol type="1">
+<li><p>Identify the specific variables used to address the research question. Also describe if you had to create/mutate new variables or filter out/subset your analysis to focus on certain observations for this research question.</p></li>
+<li><p>Include at least one visualization or table of summary statistics that will be useful/informative for answering the research question. Briefly interpret the visualization/summary table.</p>
+<ul>
+<li>It is okay if if one visualization is complex enough to address multiple research questions!</li>
+</ul></li>
+<li><p>Describe and justify the statistical method(s) that you will use to answer your research questions. Part of the “justification” component includes conditions being met, if applicable. For linear regression, you should only verify the “L” and the “I” at this point.</p>
+<ul>
+<li><p>Be specific about different groups/populations, direction of differences, explanatory vs response variable, etc.</p></li>
+<li><p>If you are conducting a hypothesis test, don’t forget to define your hypotheses and set the significance level. If you are creating a confidence interval, be sure to specify the level of confidence.</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results"><strong>Results</strong></h4>
+<ul>
+<li>Using appropriate code, conduct the statistical methods you described in the Methods section for each research question. Then interpret your results in context (i.e.&nbsp;use your interval/p-value/model to actually answer the question).
+<ul>
+<li>If you do linear regression, you should check the “N” and “E” conditions here.</li>
+</ul></li>
+<li>The goal is not to do an exhaustive data analysis (i.e., do not calculate every statistic and procedure you have learned for every variable), but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.</li>
+</ul>
+</section>
+<section id="discussion" class="level4">
+<h4 class="anchored" data-anchor-id="discussion"><strong>Discussion</strong></h4>
+<p>This section is a conclusion and discussion. This will require:</p>
+<ol type="1">
+<li>A summary of what you have learned about your research questions along with statistical arguments supporting your conclusions.</li>
+<li>A critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data/data collection and appropriateness of the statistical analysis should also be discussed here.</li>
+<li>A paragraph on what your group would do differently if you were able to start over with the project or what you would do next if you were going to continue work on the project should also be included.</li>
+</ol>
+</section>
+</section>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>Each group will present their work during the exam period. Presentation duration is a maximum of 3 minutes per group member (i.e.&nbsp;two-person groups have 6 minutes, three-person groups have 9 minutes, and four-person groups have 12 minutes). Your presentation will be followed by 1-2 minutes of questions from the audience.</p>
+<p>Your presentation should be accompanied by <strong>slides</strong> that summarize and showcase your project. Introduce your research questions and data/data collection, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment and will be graded for content and quality.</p>
+<p>The slides are due to Canvas <strong>one hour before our final exam/presentation period.</strong></p>
+<ul>
+<li>You do not need to discuss all of your research questions if you don’t want to! You are not expected to have finished all your analyses by the time you present, but you shouldhave <em>some</em> results (whether preliminary or finalized).</li>
+<li>It’s most important that your audience understands the research questions you present, how you obtained your data, and how you plan to answer the research questions.</li>
+<li>Pictures and summary tables are always preferred over sentences!</li>
+<li>A general recommendation is to have one slide per minute of the presentation.</li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<section id="general-grading-structure" class="level3">
+<h3 class="anchored" data-anchor-id="general-grading-structure">General grading structure</h3>
+<p>Grading of the project will take into account the following:</p>
+<ul>
+<li>Content - What is the quality of research and/or policy question and relevancy of data to those questions?</li>
+<li>Correctness - Are statistical procedures carried out and explained correctly?</li>
+<li>Writing and Presentation - What is the quality of the statistical presentation, writing, and explanations?</li>
+<li>Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?</li>
+<li>Contribution to group – Did you contribute meaningfully to all aspects of the project?</li>
+</ul>
+<p>A general breakdown of scoring for the final report and presentation is as follows:</p>
+<ul>
+<li><em>90%-100%</em>: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.</li>
+<li><em>80%-89%</em>: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.</li>
+<li><em>70%-79%</em>: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.</li>
+<li><em>60%-69%</em>: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.</li>
+<li><em>Below 60%</em>: Student is not making a sufficient effort.</li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 65%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Section</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Project proposal</strong></td>
+<td></td>
+<td>15 points</td>
+</tr>
+<tr class="even">
+<td><strong>Initial data set submission</strong></td>
+<td></td>
+<td>1 point</td>
+</tr>
+<tr class="odd">
+<td><strong>Rough draft</strong></td>
+<td>Pick two sections you’d like Prof.&nbsp;Tang to give feedback on!</td>
+<td>5 points</td>
+</tr>
+<tr class="even">
+<td><strong>Presentation</strong></td>
+<td>Presentation style: well-practiced, equal distribution of speaking time, within time limit</td>
+<td>8 points</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Slides: content, quality</td>
+<td>5 points</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Participation</td>
+<td>2 points</td>
+</tr>
+<tr class="odd">
+<td><strong>Final report</strong></td>
+<td>Introduction</td>
+<td>5 points</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Data collection description</td>
+<td>5 points</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Methods</td>
+<td>25 points</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Results</td>
+<td>20 points</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Discussion</td>
+<td>10 points</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Clean code + reproducibility</td>
+<td>3 points</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Submission of both PDF and .Rmd report</td>
+<td>1 point</td>
+</tr>
+<tr class="even">
+<td><strong>Reflection</strong></td>
+<td></td>
+<td>3 points</td>
+</tr>
+<tr class="odd">
+<td><strong>Misc. items</strong></td>
+<td>Finalized data set with accompanying dictionary (12/15)</td>
+<td>2 point</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Contribution to group</td>
+<td>10 points</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td></td>
+<td>120 points</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,159 @@
+---
+title: "Final project"
+date: "December 2, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(moderndive)
+library(openintro)
+library(readr)
+library(patchwork)
+library(quantreg)
+library(broom)
+library(kableExtra)
+plot_theme <-  theme_minimal() +
+  theme(text= element_text(size = 28))
+source("../stat201_fns.R")
+```
+
+Please sit with your final project group!
+
+## Final report: Requirements
+
+Review the Report components on the Project description page.
+
+## `.Rmd` template
+
+I have provided you with a `.Rmd` template for the final project. Feel free to add to/modify the template as your group sees fit!
+
+-   Please ensure your `.Rmd` is in your STAT 201 folder
+
+-   Then, have a copy of your working dataset as a .csv file located in the same STAT 201 folder
+
+## Data file
+
+-   **In your group, everyone should have the same file name for the data**.
+
+-   Now modify the second code chunk in the template to read in your data:
+
+::: fragment
+![](figs/29-read-data.png){width="633"}
+
+Note: name the variable whatever you like (i.e. not need to use `my_data`, so long as your group is consistent.
+:::
+
+## R chunk headers
+
+:::::: columns
+::: {.column width="60%"}
+In `.Rmd` documents, we can control the behavior of specific code chunks by changing the settings in the chunk header:
+:::
+
+:::: {.column width="40%"}
+::: fragment
+![](figs/29-r-chunk-header.png)
+:::
+::::
+::::::
+
+::: fragment
+For example, setting the option `eval = F` in the code chunk header means "do not evaluate the code in this chunk".
+:::
+
+::::::: columns
+:::: {.column width="50%"}
+::: fragment
+Code:
+
+![](figs/29-eval_f_code.png)
+:::
+::::
+
+:::: {.column width="50%"}
+::: fragment
+Output:
+
+![](figs/29-eval_f_output.png)
+:::
+::::
+:::::::
+
+## Hiding code
+
+We can hide code from the viewer but still have it execute using the `echo` setting.
+
+:::::: columns
+::: {.column width="50%"}
+Code:
+
+![](figs/29-echo_t_code.png)
+:::
+
+:::: {.column width="50%"}
+::: fragment
+Output:
+
+![](figs/29-echo_t_output.png)
+:::
+::::
+::::::
+
+::::::: columns
+:::: {.column width="50%"}
+::: fragment
+Code:
+
+![](figs/29-echo_f_code.png)
+:::
+::::
+
+:::: {.column width="50%"}
+::: fragment
+Output:
+
+![](figs/29-echo_f_output.png)
+:::
+::::
+:::::::
+
+## Working methods
+
+-   Collaborative working styles:
+
+    -   Physically work together on the same `.Rmd` document
+
+    -   Work on separate `.Rmd` documents and then share code with each other (e.g. via a Googledoc) to compile one master `.Rmd`
+
+    -   A combination of the above two as the project comes together
+
+-   Recommendations:
+
+    -   Clear your environment before running new, shared code
+
+    -   Knit often
+
+## Cleaning your data
+
+-   You might need to clean your data before working with it. This is probably most easily achieved within GoogleSheets or Excel rather than in `R`.
+
+    -   E.g. a data entry is "6.4 hours" instead of 6.4, or there is inconsistent capitalization
+
+-   Once/if your group has cleaned the data, you should replace the old data file in your STAT 201 folder with the cleaned version.

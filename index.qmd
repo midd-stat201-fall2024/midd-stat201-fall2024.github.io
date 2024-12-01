@@ -8,13 +8,9 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 ## Announcements
 
--   **Week 11 office hours**
-    -   Monday 11/18: 2:00-4:00pm
-    -   Tuesday 11/19: 11am-12:00pm, 4:00-5:00pm
--   Check the [Midterm](midterms.qmd) page for some practice problems!
--   [**Women in Data Science (WiDS) event**](wids_fall24.pdf) today from 4:30-7:00pm in Johnson 204
--   Final project data collection: do NOT let your survey respondents know what you are trying to answer/test. This could bias their answers!
--   Add your `R` questions [here](https://docs.google.com/spreadsheets/d/1RZTake0XPfMMgDrGrZWNUDoTlmQnT8e_Ww7rjjyjbIQ/edit?usp=sharing)!
+-   Usual office hours this last Week 12. Come work on your final project during this time!
+-   If your group would like focused time with Prof. Tang, sign up for 15-minute meetings here: [Calendly link](https://calendly.com/beckytang/1-1-with-prof-tang)
+    -   Feel free to book back-to-back meetings if you think that is necessary
 
 ------------------------------------------------------------------------
 
