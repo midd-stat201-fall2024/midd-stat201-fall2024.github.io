@@ -5688,7 +5688,7 @@
     "href": "slides/slides-29-project.html#data-file",
     "title": "Final project",
     "section": "Data file",
-    "text": "Data file\n\nIn your group, everyone should have the same file name for the data.\nNow modify the second code chunk in the template to read in your data:\n\n\n\nNote: name the variable whatever you like (i.e. not need to use my_data, so long as your group is consistent.\n\n\nIf you prefer to use a .xlsx file, you will need to load the readxl package at the top of the document (may need to install first) and then modify the code to\n\n\n\nmy_data <- read_xslx(\"data_file_name.csv\")"
+    "text": "Data file\n\nIn your group, everyone should have the same file name for the data.\nNow modify the second code chunk in the template to read in your data:\n\n\n\nNote: name the variable whatever you like (i.e. not need to use my_data, so long as your group is consistent.\n\n\nIf you prefer to use a .xlsx file, you will need to load the readxl package at the top of the document (may need to install first) and then modify the code to\n\n\n\nmy_data <- read_xlsx(\"data_file_name.xlsx\")"
   },
   {
     "objectID": "slides/slides-29-project.html#cleaning-your-data",

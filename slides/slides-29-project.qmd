@@ -64,9 +64,9 @@ Note: name the variable whatever you like (i.e. not need to use `my_data`, so lo
 
 -   If you prefer to use a `.xlsx` file, you will need to load the `readxl` package at the top of the document (may need to install first) and then modify the code to
 
-::: {.fragment}
+::: fragment
 ```{r echo = T, eval = F}
-my_data <- read_xslx("data_file_name.csv")
+my_data <- read_xlsx("data_file_name.xlsx")
 ```
 :::
 
