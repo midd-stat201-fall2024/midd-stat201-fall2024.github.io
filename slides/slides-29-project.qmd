@@ -34,7 +34,9 @@ plot_theme <-  theme_minimal() +
 source("../stat201_fns.R")
 ```
 
-Please sit with your final project group!
+-   Please sit with your final project group this week!
+
+-   Office hours + additional 1:1 meetings available
 
 ## Final report: Requirements
 
@@ -58,6 +60,14 @@ I have provided you with a `.Rmd` template for the final project. Feel free to a
 ![](figs/29-read-data.png){width="633"}
 
 Note: name the variable whatever you like (i.e. not need to use `my_data`, so long as your group is consistent.
+:::
+
+-   If you prefer to use a `.xlsx` file, you will need to load the `readxl` package at the top of the document (may need to install first) and then modify the code to
+
+::: {.fragment}
+```{r echo = T, eval = F}
+my_data <- read_xslx("data_file_name.csv")
+```
 :::
 
 ## R chunk headers
