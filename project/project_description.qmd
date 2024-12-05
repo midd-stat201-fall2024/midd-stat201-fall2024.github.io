@@ -101,7 +101,7 @@ Once you have collected your data, you should compile it all into a single Excel
 
 ## Report
 
-Each group will write a final report created in an `.Rmd` file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). **The code in your report should be as reproducible as possible** (e.g. not hard coding specific values, setting a [Presentation] when appropriate)**.**
+Each group will write a final report created in an `.Rmd` file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). **The code in your report should be as reproducible as possible** (e.g. not hard coding specific values, setting a seed when appropriate)**.**
 
 **Additionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself.** This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option `echo = F`. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting `echo = T`.
 
@@ -148,16 +148,39 @@ This section is a conclusion and discussion. This will require:
 
 ## Presentation
 
-Each group will present their work during the exam period. Presentation duration is a maximum of 3 minutes per group member (i.e. two-person groups have 6 minutes, three-person groups have 9 minutes, and four-person groups have 12 minutes). Your presentation will be followed by 1-2 minutes of questions from the audience.
+Each group will present their work during the exam period. Presentation duration lengths (before questions) are:
+
+-   Groups of two: 6-7 minutes
+
+-   Groups of three: 9-10 minutes
+
+-   Groups of four: 12-13 minutes
+
+Part of your presentation grade will be sticking to the presentation duration. Your presentation will be followed by a few minutes for questions from the audience.
 
 Your presentation should be accompanied by **slides** that summarize and showcase your project. Introduce your research questions and data/data collection, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment and will be graded for content and quality.
 
 The slides are due to Canvas **one hour before our final exam/presentation period.**
 
--   You do not need to discuss all of your research questions if you don't want to! You are not expected to have finished all your analyses by the time you present, but you shouldhave *some* results (whether preliminary or finalized).
+-   You do not need to discuss all of your research questions if you don't want to! You are not expected to have finished all your analyses by the time you present, but you should have *some* results (whether preliminary or finalized).
 -   It's most important that your audience understands the research questions you present, how you obtained your data, and how you plan to answer the research questions.
 -   Pictures and summary tables are always preferred over sentences!
 -   A general recommendation is to have one slide per minute of the presentation.
+-   Make sure the font is large enough. Also, less is more!
+
+Part of the presentation component is participation. You should be an engaged audience member. You will be asked to give feedback to a few groups and you are expected to ask questions.
+
+## Misc. submission items
+
+### Finalized data set + dictionary
+
+You will be asked to submit your finalized, clean dataset. This may take the form of a `.csv` file or a link to a GoogleSheet. Please give each variable an informative one-word name. Alongside the submission, please include a separate file for the **data dictionary**: a bulleted list or table containing each variable name, a brief description of the variable, and the variable type. Include units if appropriate. If the variable is categorical, please provide all the levels as they appear in the data.
+
+The purpose of the data dictionary is to enable future use of your data.
+
+### Reflection
+
+You will be asked to write a brief reflection about the final project. There will be a few questions/prompts pertaining to your specific contribution, learning, and experience, along with an opportunity to comment on the group dynamics and working methods. The prompts/questions will be provided on the associated Canvas assignment.
 
 ## Grading
 
@@ -179,40 +202,40 @@ A general breakdown of scoring for the final report and presentation is as follo
 -   *60%-69%*: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.
 -   *Below 60%*: Student is not making a sufficient effort.
 
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| Component                       | Section                                                                                    | Points            |
-+=================================+============================================================================================+===================+
-| **Project proposal**            |                                                                                            | 15 points         |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Initial data set submission** |                                                                                            | 1 point           |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Rough draft**                 | Pick two sections you'd like Prof. Tang to give feedback on!                               | 5 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Presentation**                | Presentation style: well-practiced, equal distribution of speaking time, within time limit | 8 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Slides: content, quality                                                                   | 5 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Participation                                                                              | 2 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Final report**                | Introduction                                                                               | 5 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Data collection description                                                                | 5 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Methods                                                                                    | 25 points         |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Results                                                                                    | 20 points         |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Discussion                                                                                 | 10 points         |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Clean code + reproducibility                                                               | 3 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Submission of both PDF and .Rmd report                                                     | 1 point           |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Reflection**                  |                                                                                            | 3 points          |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Misc. items**                 | Finalized data set with accompanying dictionary (12/15)                                    | 2 point           |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-|                                 | Contribution to group                                                                      | 10 points         |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| **Total**                       |                                                                                            | 120 points        |
-+---------------------------------+--------------------------------------------------------------------------------------------+-------------------+
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| Component                       | Section                                                                                    | Points      |
++=================================+============================================================================================+=============+
+| **Project proposal**            |                                                                                            | 15 points   |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Initial data set submission** |                                                                                            | 1 point     |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Rough draft**                 | Pick two sections you'd like Prof. Tang to give feedback on!                               | 5 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Presentation**                | Presentation style: well-practiced, equal distribution of speaking time, within time limit | 8 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Slides: content, quality                                                                   | 5 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Participation                                                                              | 2 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Final report**                | Introduction                                                                               | 5 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Data collection description                                                                | 5 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Methods                                                                                    | 25 points   |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Results                                                                                    | 20 points   |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Discussion                                                                                 | 10 points   |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Clean code + reproducibility                                                               | 3 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Submission of both PDF and .Rmd report                                                     | 1 point     |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Reflection**                  |                                                                                            | 3 points    |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Misc. items**                 | Finalized data set with accompanying dictionary (12/15)                                    | 2 point     |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+|                                 | Contribution to group                                                                      | 10 points   |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+
+| **Total**                       |                                                                                            | 120 points  |
++---------------------------------+--------------------------------------------------------------------------------------------+-------------+

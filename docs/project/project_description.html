@@ -127,6 +127,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
   <li><a href="#report" id="toc-report" class="nav-link" data-scroll-target="#report">Report</a></li>
   <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
+  <li><a href="#misc.-submission-items" id="toc-misc.-submission-items" class="nav-link" data-scroll-target="#misc.-submission-items">Misc. submission items</a>
+  <ul class="collapse">
+  <li><a href="#finalized-data-set-dictionary" id="toc-finalized-data-set-dictionary" class="nav-link" data-scroll-target="#finalized-data-set-dictionary">Finalized data set + dictionary</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
   <ul class="collapse">
   <li><a href="#general-grading-structure" id="toc-general-grading-structure" class="nav-link" data-scroll-target="#general-grading-structure">General grading structure</a></li>
@@ -296,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="report" class="level2">
 <h2 class="anchored" data-anchor-id="report">Report</h2>
-<p>Each group will write a final report created in an <code>.Rmd</code> file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). <strong>The code in your report should be as reproducible as possible</strong> (e.g.&nbsp;not hard coding specific values, setting a <a href="#presentation">Presentation</a> when appropriate)<strong>.</strong></p>
+<p>Each group will write a final report created in an <code>.Rmd</code> file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). <strong>The code in your report should be as reproducible as possible</strong> (e.g.&nbsp;not hard coding specific values, setting a seed when appropriate)<strong>.</strong></p>
 <p><strong>Additionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself.</strong> This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option <code>echo = F</code>. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting <code>echo = T</code>.</p>
 <p>The report does not have a minimum length, but should contain each of the following sections. <em>The report should also have an informative, academically appropriate title along with each group member’s name.</em></p>
 <section id="introduction" class="level4">
@@ -350,15 +355,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="presentation" class="level2">
 <h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
-<p>Each group will present their work during the exam period. Presentation duration is a maximum of 3 minutes per group member (i.e.&nbsp;two-person groups have 6 minutes, three-person groups have 9 minutes, and four-person groups have 12 minutes). Your presentation will be followed by 1-2 minutes of questions from the audience.</p>
+<p>Each group will present their work during the exam period. Presentation duration lengths (before questions) are:</p>
+<ul>
+<li><p>Groups of two: 6-7 minutes</p></li>
+<li><p>Groups of three: 9-10 minutes</p></li>
+<li><p>Groups of four: 12-13 minutes</p></li>
+</ul>
+<p>Part of your presentation grade will be sticking to the presentation duration. Your presentation will be followed by a few minutes for questions from the audience.</p>
 <p>Your presentation should be accompanied by <strong>slides</strong> that summarize and showcase your project. Introduce your research questions and data/data collection, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment and will be graded for content and quality.</p>
 <p>The slides are due to Canvas <strong>one hour before our final exam/presentation period.</strong></p>
 <ul>
-<li>You do not need to discuss all of your research questions if you don’t want to! You are not expected to have finished all your analyses by the time you present, but you shouldhave <em>some</em> results (whether preliminary or finalized).</li>
+<li>You do not need to discuss all of your research questions if you don’t want to! You are not expected to have finished all your analyses by the time you present, but you should have <em>some</em> results (whether preliminary or finalized).</li>
 <li>It’s most important that your audience understands the research questions you present, how you obtained your data, and how you plan to answer the research questions.</li>
 <li>Pictures and summary tables are always preferred over sentences!</li>
 <li>A general recommendation is to have one slide per minute of the presentation.</li>
+<li>Make sure the font is large enough. Also, less is more!</li>
 </ul>
+<p>Part of the presentation component is participation. You should be an engaged audience member. You will be asked to give feedback to a few groups and you are expected to ask questions.</p>
+</section>
+<section id="misc.-submission-items" class="level2">
+<h2 class="anchored" data-anchor-id="misc.-submission-items">Misc. submission items</h2>
+<section id="finalized-data-set-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="finalized-data-set-dictionary">Finalized data set + dictionary</h3>
+<p>You will be asked to submit your finalized, clean dataset. This may take the form of a <code>.csv</code> file or a link to a GoogleSheet. Please give each variable an informative one-word name. Alongside the submission, please include a separate file for the <strong>data dictionary</strong>: a bulleted list or table containing each variable name, a brief description of the variable, and the variable type. Include units if appropriate. If the variable is categorical, please provide all the levels as they appear in the data.</p>
+<p>The purpose of the data dictionary is to enable future use of your data.</p>
+</section>
+<section id="reflection" class="level3">
+<h3 class="anchored" data-anchor-id="reflection">Reflection</h3>
+<p>You will be asked to write a brief reflection about the final project. There will be a few questions/prompts pertaining to your specific contribution, learning, and experience, along with an opportunity to comment on the group dynamics and working methods. The prompts/questions will be provided on the associated Canvas assignment.</p>
+</section>
 </section>
 <section id="grading" class="level2">
 <h2 class="anchored" data-anchor-id="grading">Grading</h2>
@@ -382,9 +407,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <table class="table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 62%">
-<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 65%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
