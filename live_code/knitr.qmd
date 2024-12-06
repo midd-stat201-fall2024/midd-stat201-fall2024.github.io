@@ -1,0 +1,38 @@
+---
+title: "Knitting beautiful tables"
+---
+
+```{r message = F, warning = F, echo = F}
+library(tidyverse)
+library(openintro)
+library(broom)
+```
+
+You may have noticed that the data frames are not the most beautiful in the knitted output. With the help of the `knitr` package, we can make the tables knit beautifully. **When you knit for the first time, it may take a minute or two as more things get installed. Don't panic! It will knit!**
+
+1.  At the top of your document, load in the `knitr` package: `library(knitr)`.
+    -   You may need to install this package first. Either do this in the "Packages" tab on the right, or in the **Console** by typing `install.packages("knitr")`.
+2.  Then for any data frame/table you'd like to knit beautifully, just pipe directly to the `kable()` function. For example:
+
+```{r}
+library(knitr)
+mod <- lm(volume ~ diam, data = cherry)
+## equivalently: kable(tidy(mod))
+tidy(mod) |>
+  kable()
+```
+
+Compare this to when we don't use `kable()`:
+
+```{r}
+tidy(mod)
+```
+
+You can control the number of digits shown in the table:
+
+```{r}
+tidy(mod) |>
+  kable(digits = 3)
+```
+
+Look at the Help file for more customization!

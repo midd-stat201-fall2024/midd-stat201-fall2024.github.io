@@ -8,7 +8,7 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 ## Announcements
 
--   Usual office hours this last Week 12. Come work on your final project during this time!
+-   See this [document for knitting more beautiful tables](live_code/knitr.qmd).
 -   If your group would like focused time with Prof. Tang, sign up for 15-minute meetings here: [Calendly link](https://calendly.com/beckytang/1-1-with-prof-tang)
     -   Feel free to book back-to-back meetings if you think that is necessary
 -   **Midterm 2 revisions** (written portion only)

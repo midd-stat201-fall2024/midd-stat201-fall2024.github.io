@@ -101,6 +101,8 @@ Once you have collected your data, you should compile it all into a single Excel
 
 ## Report
 
+[Knitting more beautiful tables.](../live_code/knitr.qmd)
+
 Each group will write a final report created in an `.Rmd` file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). **The code in your report should be as reproducible as possible** (e.g. not hard coding specific values, setting a seed when appropriate)**.**
 
 **Additionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself.** This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option `echo = F`. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting `echo = T`.
